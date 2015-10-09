@@ -1,5 +1,4 @@
 Bundle-SymbolicName: org.gemoc.arduino;singleton:=true
-Export-Package: arduino.xdsml.api.impl
 Bundle-Name: Arduino
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
