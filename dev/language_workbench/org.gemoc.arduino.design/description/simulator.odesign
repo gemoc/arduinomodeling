@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" name="simulator" version="9.0.0">
+  <ownedViewpoints name="ArduinoSimulator" modelFileExtension="arduino">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="HardwareSimulator" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Hardware">
+      <layers name="Simulator" activeByDefault="true">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="strokeColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="borderColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true" attributeName="borderSizeComputationExpression" value="1"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="workspacePath" value="service:getSimulatingImage">
+              <appliedOn href="viewpoint:/fr.obeo.dsl.arduino.design/Arduino#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Module']/@style"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="SketchSimulator" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Sketch">
+      <layers name="Simulator" activeByDefault="true">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.hasBeenActivated">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="borderColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='current%20instruction']"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true" attributeName="borderSizeComputationExpression" value="2"/>
+          </vsmElementCustomizations>
+        </customization>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="FunctionSimulator" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Function">
+      <layers name="Simulator" activeByDefault="true">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.hasBeenActivated">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="borderColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='current%20instruction']"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true" attributeName="borderSizeComputationExpression" value="1"/>
+          </vsmElementCustomizations>
+        </customization>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.arduino.design.services.ArduinoDebuggerServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.arduino.design.services.ArduinoAnimatorServices"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="Arduino Palette">
+    <entries xsi:type="description:UserFixedColor" red="255" green="0" blue="0" name="current instruction"/>
+    <entries xsi:type="description:InterpolatedColor" name="level intencity" colorValueComputationExpression="service:self.getLevel">
+      <colorSteps associatedValue="0">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+      </colorSteps>
+      <colorSteps associatedValue="1023">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+      </colorSteps>
+    </entries>
+  </userColorsPalettes>
+</description:Group>

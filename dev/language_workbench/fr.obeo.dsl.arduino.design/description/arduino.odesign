@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="arduino" version="9.0.0">
+  <ownedViewpoints name="Hardware Kit" modelFileExtension="arduino">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware Kit Definition" domainClass="arduino.Project">
+      <metamodel href="viewpoint:/../fr.obeo.dsl.arduino/model/arduino.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="HL_InputModule" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Named%20Element']" domainClass="arduino.InputModule">
+          <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/digital_input.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[kind=ModuleKind::analog/]">
+            <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/analog_input.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="HL_OutputModule" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Named%20Element']" domainClass="arduino.OutputModule">
+          <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/digital_output.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[kind=ModuleKind::analog/]">
+            <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/analog_output.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <containerMappings name="HL_Platform" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Named%20Element']" domainClass="arduino.Platform" childrenPresentation="List">
+          <subNodeMappings name="HD_DigitalPins" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Digital%20Pin']" semanticCandidatesExpression="var:self" domainClass="arduino.Platform">
+            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[digitalPins->size()/]" iconPath="/fr.obeo.dsl.arduino.design/images/digital.png" tooltipExpression="Number of digital pins" sizeComputationExpression="1" labelPosition="node">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HD_AnalogPins" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Analog%20Pin']" semanticCandidatesExpression="var:self" domainClass="arduino.Platform">
+            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[analogPins->size()/]" iconPath="/fr.obeo.dsl.arduino.design/images/analog.png" tooltipExpression="Number of analog pins" labelPosition="node">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelFormat="bold" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" roundedCorner="true" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Create">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Platform" label="Platform" containerMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@containerMappings[name='HL_Platform']" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Platform" referenceName="platform" variableName="platform">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Arduino"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Named Element">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Digital Pin">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[updateDigitalPins(arg0)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Digital Input Module" label="Digital Input" nodeMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@nodeMappings[name='HL_InputModule']" iconPath="/fr.obeo.dsl.arduino.design/images/digital_input.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.InputModule" referenceName="modules">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Digital Input Module"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="digital"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Digital Output Module" label="Digital Output" nodeMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@nodeMappings[name='HL_OutputModule']" iconPath="/fr.obeo.dsl.arduino.design/images/digital_output.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.OutputModule" referenceName="modules">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Digital Output Module"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="digital"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Input Module" label="Analog Input" nodeMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@nodeMappings[name='HL_OutputModule']" iconPath="/fr.obeo.dsl.arduino.design/images/analog_input.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.InputModule" referenceName="modules">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Analog Input Module"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="analog"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Output Module" label="Analog Output" nodeMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@nodeMappings[name='HL_OutputModule']" iconPath="/fr.obeo.dsl.arduino.design/images/analog_output.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.OutputModule" referenceName="modules">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Analog Output Module"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="analog"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Analog Pin">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[updateAnalogPins(arg0)/]"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Extended Dashboard" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Dashboard">
+      <layers name="Hardware kit" activeByDefault="true">
+        <nodeMappings name="Hardware kit" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentationExtensions[name='Extended%20Dashboard']/@layers[name='Hardware%20kit']/@toolSections.0/@ownedTools[name='Hardware%20kit']" domainClass="arduino.Project">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="0" sizeComputationExpression="20" workspacePath="/fr.obeo.dsl.arduino.design/images/hardwareKit.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="Tool">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Hardware kit" mappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentationExtensions[name='Extended%20Dashboard']/@layers[name='Hardware%20kit']/@nodeMappings[name='Hardware%20kit']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.arduino.design.services.ArduinoServices"/>
+  </ownedViewpoints>
+  <ownedViewpoints name="Arduino" modelFileExtension="arduino">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware" titleExpression="Hardware" initialisation="true" showOnStartup="true" domainClass="arduino.Hardware" enablePopupBars="true">
+      <metamodel href="viewpoint:/../fr.obeo.dsl.arduino/model/arduino.ecore#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/1.1.0#//diagram"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="HW_Platform" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Platform']" semanticCandidatesExpression="feature:platforms" domainClass="arduino.Platform">
+          <borderedNodeMappings name="HS_DigitalPin" semanticCandidatesExpression="feature:digitalPins" domainClass="arduino.DigitalPin">
+            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="HS_AnalogPin" semanticCandidatesExpression="feature:analogPins" domainClass="arduino.AnalogPin">
+            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" showIcon="false" labelExpression="feature:id" tooltipExpression="['Analog pin '+id/]" sizeComputationExpression="2" labelPosition="node">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="imageFromModel">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="HW_Module" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" semanticCandidatesExpression="feature:modules" domainClass="arduino.Module">
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="imageFromModel"/>
+        </nodeMappings>
+        <edgeMappings name="HW_Wire" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Delete_Wire']" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Module']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']" targetFinderExpression="feature:pin" sourceFinderExpression="feature:module" domainClass="arduino.Connector" useDomainElement="true" reconnections="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Reconnect_Wire_Target'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Reconnect_Wire_Source']">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="2" endsCentering="Both">
+            <centerLabelStyleDescription showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[self.module.oclIsKindOf(arduino::OutputModule)/]">
+            <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" lineStyle="dash" sourceArrow="InputClosedArrow" targetArrow="NoDecoration" sizeComputationExpression="2" endsCentering="Both">
+              <centerLabelStyleDescription showIcon="false">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <toolSections name="Tool">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Platform" label="Platform" precondition="[oclIsKindOf(arduino::Hardware)/]" candidatesExpression="service:getPlatforms" message="Select an hardware platform" iconPath="/fr.obeo.dsl.arduino.design/icons/Platform.png" windowTitle="Select an Arduino platform" windowImagePath="/fr.obeo.dsl.arduino.design/icons/Platform.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="platforms" elementExpression="[container.platforms/]"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="platforms" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Module" label="Module" precondition="[oclIsKindOf(arduino::Hardware)/]" candidatesExpression="service:getModules" multiple="true" message="Select an hardware module" iconPath="/fr.obeo.dsl.arduino.design/icons/Module.png" windowTitle="Select an hardware module" windowImagePath="/fr.obeo.dsl.arduino.design/icons/Module.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:For" expression="var:element">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="modules" valueExpression="var:i"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="HW_Delete_Wire">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="HW_Reconnect_Wire_Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="HW_Reconnect_Wire_Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wire" precondition="[isValidConnector(preTarget)/]" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']" iconPath="/fr.obeo.dsl.arduino.design/icons/Wire.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[sourceView.eContainer().oclAsType(diagram::DSemanticDiagram).target/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Connector" referenceName="connectors" variableName="connector">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:source"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete Module">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[containerView.oclAsType(DSemanticDiagram).target.oclAsType(arduino::Hardware)/]">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[removeWire(element)/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="modules" elementExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete Platform">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[containerView.oclAsType(DSemanticDiagram).target.oclAsType(arduino::Hardware)/]">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[removeWire(element)/]">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="platforms" elementExpression="var:element"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Module']/@style" attributeName="workspacePath" value="service:getImage"/>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" domainClass="arduino.Sketch" enablePopupBars="true">
+      <metamodel href="viewpoint:/../fr.obeo.dsl.arduino/model/arduino.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="SK_Loop" semanticCandidatesExpression="var:self" domainClass="arduino.Sketch">
+          <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.arduino.design/images/loop.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="service:isInvalidSketch">
+            <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.arduino.design/images/loop_invalid.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="SK_Delay" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Edit_Delay']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.Delay">
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="feature:value" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" tooltipExpression="['Wait '+value+' '+unit/]" workspacePath="/fr.obeo.dsl.arduino.design/images/delay.svg"/>
+        </nodeMappings>
+        <nodeMappings name="SK_Status" semanticCandidatesExpression="feature:instructions" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Change_Status']" domainClass="arduino.Status">
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeStatusLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromModel"/>
+        </nodeMappings>
+        <nodeMappings name="SK_Sensor" semanticCandidatesExpression="service:getSensors" domainClass="arduino.Sensor">
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromModel"/>
+        </nodeMappings>
+        <nodeMappings name="SK_Level" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Edit_Level']" semanticCandidatesExpression="feature:instructions" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Select_Level']" domainClass="arduino.Level">
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLevelLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromModel"/>
+        </nodeMappings>
+        <nodeMappings name="SK_Variable" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Variable']" semanticCandidatesExpression="service:getVariables" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Select_Variable']" domainClass="arduino.Variable">
+          <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20violet']"/>
+        </nodeMappings>
+        <nodeMappings name="SK_Constant" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Constant']" semanticCandidatesExpression="service:getConstants" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Select_Constant']" domainClass="arduino.Constant">
+          <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="feature:value" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
+        </nodeMappings>
+        <edgeMappings name="SK_Link" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Delete_Flow']" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Loop'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@containerMappings[name='FU_Function']/@subNodeMappings[name='FU_ParameterCall']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Loop'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@containerMappings[name='FU_Function']/@subNodeMappings[name='FU_ParameterCall']" targetFinderExpression="service:getInstructions" reconnections="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Reconnect_Flow_Source'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Reconnect_Flow_Target']">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" sizeComputationExpression="2" endsCentering="Both">
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[oclIsKindOf(arduino::Sensor)/]">
+            <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sizeComputationExpression="2" endsCentering="Both">
+              <endLabelStyleDescription labelFormat="italic" labelExpression="service:view.computeLinkLabel()">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </endLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="SK_LinkSetToVariable" preconditionExpression="[sourceView.eContainer()=targetView.eContainer()/]" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set']/@subNodeMappings[name='Equal']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable']" targetFinderExpression="feature:variable">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
+            <centerLabelStyleDescription labelExpression="[/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SK_LinkSetToValue" preconditionExpression="[sourceView.eContainer()=targetView.eContainer()/]" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set']/@subNodeMappings[name='Equal']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']" targetFinderExpression="feature:value">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sizeComputationExpression="2" routingStyle="tree">
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SK_LinkMathOperatorLeft" preconditionExpression="[sourceView.eContainer()=targetView.eContainer()/]" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']/@subNodeMappings[name='Operator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']/@subNodeMappings[name='Operator']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" targetFinderExpression="feature:left">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" endsCentering="Both">
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SK_LinkMathOperatorRight" preconditionExpression="[sourceView.eContainer()=targetView.eContainer()/]" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']/@subNodeMappings[name='Operator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']/@subNodeMappings[name='Operator']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" targetFinderExpression="feature:right">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sizeComputationExpression="2" endsCentering="Both">
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SK_LinkWhileToCondition" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" targetFinderExpression="feature:condition">
+          <style strokeColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20gray']" lineStyle="dash" sizeComputationExpression="2" routingStyle="tree">
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="SK_Repeat" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Edit_Repeat']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.Repeat" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Loop'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="['Repeat '+self.iteration/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_While" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Delete_While_and_If']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.While" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_Set" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_Set']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.Set" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']">
+          <subNodeMappings name="Equal" semanticCandidatesExpression="var:self" domainClass="arduino.Set">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="=" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']"/>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_NumericalOperator" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_MathOperator']" semanticCandidatesExpression="service:getNumericalOperators" domainClass="arduino.NumericalOperator" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']">
+          <subNodeMappings name="Operator" semanticCandidatesExpression="var:self" domainClass="arduino.NumericalOperator">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[operator.computeLabelOperator()/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']"/>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_BooleanOperator" preconditionExpression="[not oclIsKindOf(arduino::Sensor)/]" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_MathOperator']" semanticCandidatesExpression="service:getBooleanOperators" domainClass="arduino.BooleanOperator" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']">
+          <subNodeMappings name="Operator" semanticCandidatesExpression="var:self" domainClass="arduino.BooleanOperator">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[operator.computeLabelOperator()/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20green']"/>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20green']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20green']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_If" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Delete_While_and_If']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.If" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_Function" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.5/@ownedTools[name='SK_Edit_Function']" semanticCandidatesExpression="feature:instructions" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.5/@ownedTools[name='SK_Open_Function']" domainClass="arduino.FunctionCall">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="[definition.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Utilities">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_Delay" label="Delay" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay']" iconPath="/fr.obeo.dsl.arduino.design/icons/Delay.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Delay" referenceName="instructions" variableName="delay">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="100"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:delay"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SK_Create_Flow" label="Flow" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_Link']" iconPath="/fr.obeo.dsl.arduino.design/icons/Flow.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source.oclIsKindOf(arduino::Sensor) and target.oclIsKindOf(arduino::Status)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sensor" valueExpression="var:source"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[not source.oclIsKindOf(arduino::Sensor)/]">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source.oclIsKindOf(arduino::Sensor) and target.oclIsKindOf(arduino::While)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:source"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source.oclIsKindOf(arduino::Sensor) and target.oclIsKindOf(arduino::If)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:source"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[source.oclIsKindOf(arduino::Sensor) and target.oclIsKindOf(arduino::Level)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="level" valueExpression="var:source"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="SK_Delete_Flow">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="next" elementExpression="[elementView.targetNode.oclAsType(diagram::DDiagramElement).target/]"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.targetNode.oclAsType(diagram::DDiagramElement).target/]">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="sensor" elementExpression="[elementView.sourceNode.oclAsType(diagram::DDiagramElement).target/]"/>
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="level" elementExpression="[elementView.sourceNode.oclAsType(diagram::DDiagramElement).target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="SK_Reconnect_Flow_Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[element.oclIsKindOf(arduino::Sensor)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                    <subModelOperations xsi:type="tool_1:Unset" featureName="sensor" elementExpression="var:element"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sensor" valueExpression="var:element"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="SK_Reconnect_Flow_Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[target.oclIsKindOf(arduino::Sensor)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element.status/]">
+                    <subModelOperations xsi:type="tool_1:Unset" featureName="sensor" elementExpression="var:source"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sensor" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="[source.next/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="next" elementExpression="[source.next/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Delay">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Hardware">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Status" label="On/Off" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']" iconPath="/fr.obeo.dsl.arduino.design/icons/Status.png">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="module" candidatesExpression="[container.getSketch().oclAsType(arduino::Sketch).getStatusModules()/]" message="Select an hardware module"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Status" referenceName="instructions" variableName="status">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:module"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:container.isLastInstructionValid">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:container.getLastInstruction">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:status"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Level" label="Level" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']" iconPath="/fr.obeo.dsl.arduino.design/icons/Level.png">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="modules" candidatesExpression="[container.getSketch().getLevelModules()/]" message="Select an hardware module"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Level" referenceName="instructions" variableName="level">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:modules"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:level"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Sensor" label="Sensor" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']" iconPath="/fr.obeo.dsl.arduino.design/icons/Sensor.png">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="selectedModule" candidatesExpression="[container.getSketch().getConnectedModules()->select(oclIsKindOf(arduino::InputModule))/]" message="Select sensors"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Sensor" referenceName="instructions" variableName="sensor">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(arduino::Set)/]">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="value" elementExpression="[container.value/]"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:sensor"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(arduino::MathOperator)/]">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:sensor"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:sensor"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right&lt;>null/]">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:sensor"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                        <subModelOperations xsi:type="tool_1:Unset" featureName="left" elementExpression="[container.left/]"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:sensor"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(arduino::While)/]">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="condition" elementExpression="[container.condition/]"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:sensor"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Change_Status" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="status" valueExpression="[not status/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Level">
+            <mask mask="{0}={1}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[updateValue(arg1)/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Select_Level" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']">
+            <element name="element">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="level" candidatesExpression="[eContainer(arduino::Sketch).eAllContents(arduino::Value)->select(oclIsKindOf(arduino::Variable) or oclIsKindOf(arduino::Constant))/]" message="Select an existing variable"/>
+            </element>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[element.oclAsType(arduino::Instruction).updateValue(level, element.level)/]"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Controls">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sk_Create_Repeat" label="Repeat" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat']" iconPath="/fr.obeo.dsl.arduino.design/icons/Repeat.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Repeat" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Repeat" inputLabelExpression="feature:iteration">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="iteration" valueExpression="var:0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_While" label="While" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']" iconPath="/fr.obeo.dsl.arduino.design/icons/While.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.While" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="SK_Delete_While_and_If">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:condition">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_If" label="If" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']" iconPath="/fr.obeo.dsl.arduino.design/icons/If.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.If" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Variables">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="SK_Delete_Set">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Select_Variable" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable']">
+            <element name="element">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="variable" candidatesExpression="[eContainer(arduino::Sketch).eAllContents(arduino::Variable)/]" message="Select an existing variable"/>
+            </element>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.eContainer().oclAsType(DDiagramElement).target.oclAsType(arduino::Instruction).updateValue(variable, element)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_Variable" label="Variable" precondition="[container.oclIsKindOf(arduino::Set) or container.oclIsKindOf(arduino::MathOperator)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Variable']" iconPath="/fr.obeo.dsl.arduino.design/icons/Variable.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Variable" referenceName="instructions" variableName="variable">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['var'+eContainer(arduino::Sketch).instructions->select(oclIsKindOf(arduino::Variable))->size()/]"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.addVariable(variable)/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_Constant" label="Constant" precondition="[container.oclIsKindOf(arduino::Set) or container.oclIsKindOf(arduino::MathOperator)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant']" iconPath="/fr.obeo.dsl.arduino.design/icons/Constant.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[eAllContents(arduino::Constant)->select(value='0')->size()=0/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Constant" referenceName="instructions" variableName="constant">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="['0'/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.addValue(eAllContents(arduino::Constant)->select(value='0')->first())/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Variable">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Constant">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="SK_Delete_MathOperator">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Select_Constant" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant']">
+            <element name="element">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="variable" candidatesExpression="[eContainer(arduino::Sketch).eAllContents(arduino::Constant)/]" message="Select an existing variable"/>
+            </element>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.eContainer().oclAsType(DDiagramElement).target.oclAsType(arduino::Instruction).updateValue(variable, element)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Set" label="Set" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set']" iconPath="/fr.obeo.dsl.arduino.design/icons/Set.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Set" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="MathOperator">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Equal" label="=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="equal"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Upper" label=">" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/Upper.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="upper"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_UpperOrEqual" label=">=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/UpperOrEqual.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="upperOrEqual"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Lower" label="&lt;" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/Lower.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="lower"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_LowerOrEqual" label="&lt;=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/LowerOrEqual.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="lowerOrEqual"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Plus" label="+" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/Plus.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.NumericalOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="plus"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Minus" label="-" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanOperator)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_NumericalOperator']" iconPath="/fr.obeo.dsl.arduino.design/icons/Minus.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(arduino::Sketch)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.NumericalOperator" referenceName="instructions" variableName="operator">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="minus"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::MathOperator)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="right" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null and right=null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left=null  and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="[left&lt;>null and right&lt;>null/]">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="left" valueExpression="var:operator"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::Set)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::While)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(arduino::If)/]">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="var:operator"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteUnusedValues"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Functions">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Function" label="New" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']" iconPath="/fr.obeo.dsl.arduino.design/icons/Function.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.Function" referenceName="functions" variableName="function">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newFunction"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.FunctionCall" referenceName="instructions">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="definition" valueExpression="var:function"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Function">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:definition">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:arg0"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Open_Function" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:target">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:openFunctionDiagram"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SK_Use_Function" label="Use" precondition="[oclIsTypeOf(arduino::Sketch) or oclIsKindOf(arduino::Control)/]" candidatesExpression="[getSketch().functions/]" message="Select an existing function" iconPath="/fr.obeo.dsl.arduino.design/icons/UseFunction.png" windowTitle="Selection an existing function">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.FunctionCall" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="definition" valueExpression="var:element"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SK_Create_Parameter" label="Parameter" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_Link']" iconPath="/fr.obeo.dsl.arduino.design/icons/Parameter.png">
+            <sourceVariable name="source">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="paramDef" candidatesExpression="[definition.paramDefs/]" message="Select parameter definition"/>
+            </sourceVariable>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="parameters" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="definition" valueExpression="var:paramDef"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']/@style" attributeName="workspacePath" value="service:getImage"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:detectIssueInInstruction">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[status=null/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[parameters->size()&lt;>definition.paramDefs->size()/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Function" domainClass="arduino.Function" enablePopupBars="true">
+      <metamodel href="viewpoint:/../fr.obeo.dsl.arduino/model/arduino.ecore#/"/>
+      <defaultLayer name="Default" reusedMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_Link'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_LinkMathOperatorLeft'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_LinkMathOperatorRight'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_LinkSetToValue'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_LinkSetToVariable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_LinkWhileToCondition']">
+        <nodeMappings name="FU_Parameter_Definition" semanticCandidatesExpression="feature:paramDefs" domainClass="arduino.ParameterDefinition">
+          <conditionnalStyles predicateExpression="[type=arduino::ParameterType::Delay/]">
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" workspacePath="/fr.obeo.dsl.arduino.design/images/delay.svg"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[type=arduino::ParameterType::Status/]">
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Status.png"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[type=arduino::ParameterType::Level/]">
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Level.png"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[type=arduino::ParameterType::Sensor/]">
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Sensor.png"/>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="FU_Parameter" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@containerMappings[name='FU_Function']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@nodeMappings[name='FU_Parameter_Definition']" targetFinderExpression="feature:paramDefs">
+          <style lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="FU_Function" semanticCandidatesExpression="var:self" domainClass="arduino.Function" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BooleanOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']" inheritsAncestorFilters="false" importedMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']">
+          <subNodeMappings name="FU_ParameterCall" semanticCandidatesExpression="feature:instructions" domainClass="arduino.ParameterCall">
+            <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="[definition.type=arduino::ParameterType::Delay/]">
+              <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="[definition.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" workspacePath="/fr.obeo.dsl.arduino.design/images/delay.svg"/>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[definition.type=arduino::ParameterType::Sensor/]">
+              <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="[definition.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Sensor.png"/>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[definition.type=arduino::ParameterType::Level/]">
+              <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="[definition.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Level.png"/>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[definition.type=arduino::ParameterType::Status/]">
+              <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="[definition.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/icons/Status.png"/>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Utilities" reusedTools="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Create_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Create_Flow'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Delete_Flow'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Edit_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Reconnect_Flow_Source'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Reconnect_Flow_Target']"/>
+        <toolSections name="Hardware" reusedTools="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Change_Status'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Edit_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Select_Level'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Sensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Status']"/>
+        <toolSections name="Controls" reusedTools="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Create_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='Sk_Create_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Create_While'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Delete_While_and_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Edit_Repeat']"/>
+        <toolSections name="Variables" reusedTools="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Create_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Create_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Create_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_MathOperator'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_Set'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Variable'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Select_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Select_Variable']"/>
+        <toolSections name="MathOperator" reusedTools="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_Equal'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_Lower'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_LowerOrEqual'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_Minus'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_Plus'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_Upper'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.4/@ownedTools[name='SK_Create_UpperOrEqual']"/>
+        <toolSections name="Functions">
+          <ownedTools xsi:type="tool:ToolGroup" name="Parameters">
+            <tools xsi:type="tool:NodeCreationDescription" name="FU_Create_Param_Delay" label="Delay Parameter" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@nodeMappings[name='FU_Parameter_Definition']" iconPath="/fr.obeo.dsl.arduino.design/icons/Delay.png">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ParameterDefinition" referenceName="paramDefs">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="[arduino::ParameterType::Delay/]"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['param'+eContainer(arduino::Function).paramDefs->size()/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="FU_Create_Param_Status" label="Status Parameter" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@nodeMappings[name='FU_Parameter_Definition']" iconPath="/fr.obeo.dsl.arduino.design/icons/Status.png">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ParameterDefinition" referenceName="paramDefs">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="[arduino::ParameterType::Status/]"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['param'+eContainer(arduino::Function).paramDefs->size()/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="FU_Create_Param_Level" label="Level Parameter" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@nodeMappings[name='FU_Parameter_Definition']" iconPath="/fr.obeo.dsl.arduino.design/icons/Level.png">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ParameterDefinition" referenceName="paramDefs">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="[arduino::ParameterType::Level/]"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['param'+eContainer(arduino::Function).paramDefs->size()/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="FU_Create_Param_Sensor" label="Sensor Parameter" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Function']/@defaultLayer/@nodeMappings[name='FU_Parameter_Definition']" iconPath="/fr.obeo.dsl.arduino.design/icons/Sensor.png">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ParameterDefinition" referenceName="paramDefs">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="[arduino::ParameterType::Sensor/]"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['param'+eContainer(arduino::Function).paramDefs->size()/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Use Parameter" candidatesExpression="feature:paramDefs" message="Select parameter" iconPath="/fr.obeo.dsl.arduino.design/icons/Parameter.png" windowTitle="Select a parameter to referenced">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ParameterCall" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="definition" valueExpression="var:element"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Module']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Level']/@style" attributeName="workspacePath" value="service:getImage"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:detectIssueInInstruction">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Status']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']/@style //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Function']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[status=null/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Sensor']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.arduino.design.services.ArduinoServices"/>
+    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.arduino.utils.ArduinoServices"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="Arduino Palette">
+    <entries xsi:type="description:UserFixedColor" red="231" green="191" blue="188" name="Arduino red"/>
+    <entries xsi:type="description:UserFixedColor" red="157" green="214" blue="210" name="Arduino blue"/>
+    <entries xsi:type="description:UserFixedColor" red="202" green="236" blue="243" name="Arduino light blue"/>
+    <entries xsi:type="description:UserFixedColor" red="160" green="214" blue="179" name="Arduino green"/>
+    <entries xsi:type="description:UserFixedColor" red="235" green="242" blue="187" name="Arduino light green"/>
+    <entries xsi:type="description:UserFixedColor" red="201" green="183" blue="203" name="Arduino violet"/>
+    <entries xsi:type="description:UserFixedColor" red="240" green="242" blue="220" name="Arduino white"/>
+    <entries xsi:type="description:UserFixedColor" red="135" green="121" blue="111" name="Arduino gray"/>
+    <entries xsi:type="description:UserFixedColor" red="120" green="113" blue="113" name="Arduino dark gray"/>
+    <entries xsi:type="description:UserFixedColor" red="149" green="186" blue="192" name="Arduino dark blue"/>
+  </userColorsPalettes>
+</description:Group>
