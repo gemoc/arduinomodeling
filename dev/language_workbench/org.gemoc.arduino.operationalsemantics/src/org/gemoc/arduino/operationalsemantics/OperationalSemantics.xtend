@@ -98,17 +98,17 @@ class Status_ExecutableAspect extends ModuleInstruction_ExecutableAspect {
 		var res = 0
 		if (_self.sensor == null) {
 			if (!_self.status) {
-				res = Main.HIGH
+				res = Pin_EvaluableAspect.HIGH
 			} else {
-				res = Main.LOW
+				res = Pin_EvaluableAspect.LOW
 			}
 		} else {
 			val value = _self.sensor.evaluateAsNumber
 			if (!_self.status) {
-				if(value.intValue == Main.LOW.intValue) {
-					res = Main.HIGH
+				if(value.intValue == Pin_EvaluableAspect.LOW.intValue) {
+					res = Pin_EvaluableAspect.HIGH
 				} else {
-					res = Main.LOW
+					res = Pin_EvaluableAspect.LOW
 				}
 			} else {
 				res = value.intValue
@@ -348,6 +348,9 @@ class FunctionCall_ExecutableAspect extends Instruction_ExecutableAspect {
 
 @Aspect(className=Pin)
 class Pin_EvaluableAspect {
+	public static final Integer LOW = 0
+	public static final Integer HIGH = 1023
+
 	public Integer level;
 }
 
@@ -374,17 +377,17 @@ abstract class Expression_EvaluableAspect {
 		var Number res
 		var value = _self.evaluate
 		if (value instanceof String) {
-			res = Main.LOW
+			res = Pin_EvaluableAspect.LOW
 		} else if (value instanceof Number) {
 			res = value as Number
 		} else if (value instanceof Boolean) {
 			if (Boolean.TRUE.equals(value)) {
-				res = Main.HIGH
+				res = Pin_EvaluableAspect.HIGH
 			} else {
-				res = Main.LOW
+				res = Pin_EvaluableAspect.LOW
 			}
 		} else {
-			res = Main.LOW
+			res = Pin_EvaluableAspect.LOW
 		}
 		return res;
 	}
@@ -397,7 +400,7 @@ abstract class Expression_EvaluableAspect {
 		} else if (value instanceof Boolean) {
 			res = value as Boolean
 		} else if (value instanceof Number) {
-			res = (value as Number).intValue() != Main.LOW		
+			res = (value as Number).intValue() != Pin_EvaluableAspect.LOW
 		} else {
 			res = Boolean.FALSE
 		}
