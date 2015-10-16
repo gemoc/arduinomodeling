@@ -13,7 +13,6 @@ package fr.obeo.dsl.arduino.impl;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Sensor;
 import fr.obeo.dsl.arduino.Status;
-import fr.obeo.dsl.arduino.Value;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;

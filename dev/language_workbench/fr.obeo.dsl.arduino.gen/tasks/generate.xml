@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="fr.obeo.dsl.arduino.gen">
-    <property name="ECLIPSE_HOME" value="../../../../../../../Téléchargements/gemoc-studio-beta"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../Téléchargements/gemoc-studio-latest"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->

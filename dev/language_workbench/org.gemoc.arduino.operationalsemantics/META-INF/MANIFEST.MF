@@ -4,15 +4,21 @@ Bundle-Name: Operationalsemantics
 Bundle-SymbolicName: org.gemoc.arduino.operationalsemantics
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- fr.obeo.dsl.arduino;bundle-version="0.0.0";visibility:=reexport,
  org.gemoc.gemoc_language_workbench.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="1.0.0",
  fr.obeo.dsl.debug.ide,
  org.gemoc.gemoc_language_workbench.api;bundle-version="0.1.0",
  org.gemoc.execution.engine;bundle-version="0.1.0",
- org.gemoc.execution.engine.ui;bundle-version="0.1.0"
+ org.gemoc.execution.engine.ui;bundle-version="0.1.0",
+ fr.obeo.dsl.arduino;bundle-version="1.0.0",
+ org.eclipse.xtend.core;bundle-version="2.7.3",
+ org.eclipse.emf.ecore,
+ org.eclipse.core.resources;bundle-version="3.9.1",
+ org.eclipse.jdt.core;bundle-version="3.10.0",
+ org.gemoc.executionengine.java.sequential_xdsml.model;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gemoc.arduino.operationalsemantics,
  org.gemoc.arduino.operationalsemantics.debug
+Import-Package: org.gemoc.gemoc_modeling_workbench.ui.launcher

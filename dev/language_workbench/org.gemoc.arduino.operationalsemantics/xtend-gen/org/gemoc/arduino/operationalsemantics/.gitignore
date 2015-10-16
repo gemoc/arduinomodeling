@@ -150,3 +150,12 @@
 /Value_EvaluableAspectValueAspectProperties.java
 /While_ExecutableAspectWhileAspectContext.java
 /While_ExecutableAspectWhileAspectProperties.java
+/Expression_EvaluableAspect.java
+/Expression_EvaluableAspectExpressionAspectContext.java
+/Expression_EvaluableAspectExpressionAspectProperties.java
+/Sensor_EvaluableAspect.java
+/Sensor_EvaluableAspectSensorAspectContext.java
+/Sensor_EvaluableAspectSensorAspectProperties.java
+/Variable_EvaluableAspect.java
+/Variable_EvaluableAspectVariableAspectContext.java
+/Variable_EvaluableAspectVariableAspectProperties.java

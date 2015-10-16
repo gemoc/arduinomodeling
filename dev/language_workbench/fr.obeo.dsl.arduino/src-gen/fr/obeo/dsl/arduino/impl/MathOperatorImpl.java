@@ -11,9 +11,9 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
+import fr.obeo.dsl.arduino.Expression;
 import fr.obeo.dsl.arduino.MathOperator;
 import fr.obeo.dsl.arduino.OperatorKind;
-import fr.obeo.dsl.arduino.Value;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class MathOperatorImpl extends ValueImpl implements MathOperator {
+public abstract class MathOperatorImpl extends ExpressionImpl implements MathOperator {
 	/**
 	 * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * @generated
 	 * @ordered
 	 */
-	protected Value left;
+	protected Expression left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
@@ -56,7 +56,7 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * @generated
 	 * @ordered
 	 */
-	protected Value right;
+	protected Expression right;
 
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -102,10 +102,10 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value getLeft() {
+	public Expression getLeft() {
 		if (left != null && left.eIsProxy()) {
 			InternalEObject oldLeft = (InternalEObject)left;
-			left = (Value)eResolveProxy(oldLeft);
+			left = (Expression)eResolveProxy(oldLeft);
 			if (left != oldLeft) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.MATH_OPERATOR__LEFT, oldLeft, left));
@@ -119,7 +119,7 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value basicGetLeft() {
+	public Expression basicGetLeft() {
 		return left;
 	}
 
@@ -128,8 +128,8 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeft(Value newLeft) {
-		Value oldLeft = left;
+	public void setLeft(Expression newLeft) {
+		Expression oldLeft = left;
 		left = newLeft;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.MATH_OPERATOR__LEFT, oldLeft, left));
@@ -140,10 +140,10 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value getRight() {
+	public Expression getRight() {
 		if (right != null && right.eIsProxy()) {
 			InternalEObject oldRight = (InternalEObject)right;
-			right = (Value)eResolveProxy(oldRight);
+			right = (Expression)eResolveProxy(oldRight);
 			if (right != oldRight) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.MATH_OPERATOR__RIGHT, oldRight, right));
@@ -157,7 +157,7 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value basicGetRight() {
+	public Expression basicGetRight() {
 		return right;
 	}
 
@@ -166,8 +166,8 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRight(Value newRight) {
-		Value oldRight = right;
+	public void setRight(Expression newRight) {
+		Expression oldRight = right;
 		right = newRight;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.MATH_OPERATOR__RIGHT, oldRight, right));
@@ -223,10 +223,10 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.MATH_OPERATOR__LEFT:
-				setLeft((Value)newValue);
+				setLeft((Expression)newValue);
 				return;
 			case ArduinoPackage.MATH_OPERATOR__RIGHT:
-				setRight((Value)newValue);
+				setRight((Expression)newValue);
 				return;
 			case ArduinoPackage.MATH_OPERATOR__OPERATOR:
 				setOperator((OperatorKind)newValue);
@@ -244,10 +244,10 @@ public abstract class MathOperatorImpl extends ValueImpl implements MathOperator
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.MATH_OPERATOR__LEFT:
-				setLeft((Value)null);
+				setLeft((Expression)null);
 				return;
 			case ArduinoPackage.MATH_OPERATOR__RIGHT:
-				setRight((Value)null);
+				setRight((Expression)null);
 				return;
 			case ArduinoPackage.MATH_OPERATOR__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
