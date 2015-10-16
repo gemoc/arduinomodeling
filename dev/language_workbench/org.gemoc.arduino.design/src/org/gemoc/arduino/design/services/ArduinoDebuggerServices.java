@@ -27,7 +27,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 
 	public Integer getLevel(Pin pin) {
-		return Pin_EvaluableAspect.getLevel(pin);
+		return Pin_EvaluableAspect.level(pin);
 	}
 
 	public Integer getLevel(Connector connector) {
