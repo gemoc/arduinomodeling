@@ -348,41 +348,26 @@ class FunctionCall_ExecutableAspect extends Instruction_ExecutableAspect {
 
 @Aspect(className=Pin)
 class Pin_EvaluableAspect {
-	
-	private Integer level;
-	
-	def void setLevel(Integer level) {
-		level(_self,level)
-	}
-	
-	def Integer getLevel() {
-		return level(_self)
-	}
+	public Integer level;
 }
 
 @Aspect(className=Variable)
 class Variable_EvaluableAspect extends Expression_EvaluableAspect {
 	
-	private Object value
-	
+	public Object value
+		
 	@OverrideAspectMethod
 	def Object evaluate() {
-		return _self.getValue()
-	}
-	
-	def Object getValue() {
-		return value(_self)
-	}
-	
-	def void setValue(Object value) {
-		value(_self,value)
+		return _self.value
 	}
 	
 }
 
 @Aspect(className=Expression)
 abstract class Expression_EvaluableAspect {
-		
+	
+	
+	
 	def abstract Object evaluate()
 	
 	def Number evaluateAsNumber() {
