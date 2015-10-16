@@ -1,0 +1,7 @@
+package fr.obeo.dsl.arduino
+
+language Arduino {
+	syntax "platform:/resource/fr.obeo.dsl.arduino/model/arduino.ecore"
+	with org.gemoc.arduino.operationalsemantics.*
+	exactType ArduinoMT
+}
