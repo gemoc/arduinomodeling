@@ -3,5 +3,5 @@
   <domainModelProject projectName="fr.obeo.dsl.arduino" defaultRootEObjectQualifiedName="arduino::Project" genmodeluri="platform:/resource/fr.obeo.dsl.arduino/model/arduino.genmodel"/>
   <editorProjects xsi:type="xdsml_base:SiriusEditorProject" projectName="fr.obeo.dsl.arduino.design"/>
   <animatorProjects xsi:type="xdsml_base:SiriusAnimatorProject" projectName="org.gemoc.arduino.design"/>
-  <dsaProject projectName="org.gemoc.arduino.operationalsemantics" entryPoint="org.gemoc.arduino.operationalsemantics.Main"/>
+  <dsaProject projectName="org.gemoc.arduino.operationalsemantics" entryPoint="org.gemoc.arduino.operationalsemantics.main.Main"/>
 </sequential_xdsml:SequentialLanguageDefinition>
