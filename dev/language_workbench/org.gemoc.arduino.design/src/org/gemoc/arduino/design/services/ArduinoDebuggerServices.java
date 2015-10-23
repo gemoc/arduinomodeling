@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;
+import org.gemoc.gemoc_language_workbench.extensions.sirius.modelloader.DefaultModelLoader;
 import org.gemoc.gemoc_language_workbench.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.osgi.framework.Bundle;
 
@@ -17,6 +18,7 @@ import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.design.services.ArduinoServices;
+import org.gemoc.executionengine.java.sequential_modeling_workbench.ui.launcher.Launcher;
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
@@ -77,5 +79,9 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 				module.getImage().indexOf(".jpg"))
 				+ "_" + level + ".jpg";
 		return imageName;
+	}
+	
+	public String getModelIdentifier() {
+		return Launcher.MODEL_ID;
 	}
 }
