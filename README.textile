@@ -7,4 +7,4 @@ To use it you need to launch a Gemoc Studio with the projects located in languag
 You can then import the ifdemo project, located in the modeling_workbench folder, and create a new "Gemoc Sequential eXecutable Model" debug configuration, specifying the model to execute (in our case /ifdemo/model.arduino), the xDSML to use (arduino), and the animator (/ifdemo/model.aird).
 
 In the debug view, in suspended state, the stackframe at the bottom of the stack shows the mutable data of the model in the variable view.
-These mutable fields can be modified in the same way as the eclipse java debugger.
+These mutable fields can be modified in the same way as in the eclipse java debugger.
