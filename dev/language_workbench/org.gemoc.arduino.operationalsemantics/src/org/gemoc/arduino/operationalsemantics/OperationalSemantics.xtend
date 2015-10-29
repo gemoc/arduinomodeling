@@ -131,6 +131,7 @@ class Level_ExecutableAspect extends ModuleInstruction_ExecutableAspect {
 @Aspect(className=Sensor)
 class Sensor_EvaluableAspect extends MathOperator_EvaluableAspect {
 	@OverrideAspectMethod
+	@Step
 	def Object evaluate() {
 		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
 		return pin.level

@@ -13,13 +13,21 @@
          point="fr.inria.diverse.melange.language">
       <language
             exactType="fr.obeo.dsl.arduino.ArduinoMT"
-            uri="http://arduinomt/"
+            uri="http://www.obeo.fr/arduino"
             id="fr.obeo.dsl.arduino.Arduino">
          <adapter
                class="fr.obeo.dsl.arduino.arduino.adapters.arduinomt.ArduinoAdapter"
                modeltypeId="fr.obeo.dsl.arduino.ArduinoMT">
          </adapter>
       </language>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ArduinoMT -->
+      <package
+            uri="http://arduinomt/"
+            class="fr.obeo.dsl.arduino.arduino.ArduinomtPackage"
+            genModel="model-gen/ArduinoMT.genmodel"/>
    </extension>
 
 </plugin>
