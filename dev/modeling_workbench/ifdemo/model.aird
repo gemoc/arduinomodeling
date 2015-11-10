@@ -213,7 +213,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jDwMHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.1"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#1"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jDwMXc9EeWJT9pbcE0Geg" key="_1P0ELnc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jDwM3c9EeWJT9pbcE0Geg" value="_1jDwMnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -221,7 +221,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jE-UHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.2"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#2"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jE-UXc9EeWJT9pbcE0Geg" key="_1P0EM3c9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jE-U3c9EeWJT9pbcE0Geg" value="_1jE-Unc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -229,7 +229,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jGMcHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.3"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#3"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jGMcXc9EeWJT9pbcE0Geg" key="_1P0EOHc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jGMc3c9EeWJT9pbcE0Geg" value="_1jGMcnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -237,7 +237,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jHakHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.4"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#4"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jHakXc9EeWJT9pbcE0Geg" key="_1P0EPXc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jHak3c9EeWJT9pbcE0Geg" value="_1jHaknc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -245,7 +245,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jIosHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.5"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#5"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jIosXc9EeWJT9pbcE0Geg" key="_1P0EQnc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jIos3c9EeWJT9pbcE0Geg" value="_1jIosnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -253,7 +253,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jJ20Hc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.6"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#6"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jJ20Xc9EeWJT9pbcE0Geg" key="_1P0ER3c9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jJ203c9EeWJT9pbcE0Geg" value="_1jJ20nc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -261,7 +261,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jLE8Hc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.7"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#7"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jLE8Xc9EeWJT9pbcE0Geg" key="_1P0ETHc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jLE83c9EeWJT9pbcE0Geg" value="_1jLE8nc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -269,7 +269,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jMTEHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.8"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#8"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jMTEXc9EeWJT9pbcE0Geg" key="_1P0EUXc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jMTE3c9EeWJT9pbcE0Geg" value="_1jMTEnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -277,7 +277,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jM6JHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.9"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#9"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jM6JXc9EeWJT9pbcE0Geg" key="_1P0EVnc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jM6J3c9EeWJT9pbcE0Geg" value="_1jM6Jnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -285,7 +285,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jOIQHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.10"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#10"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jOIQXc9EeWJT9pbcE0Geg" key="_1P0EW3c9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jOIQ3c9EeWJT9pbcE0Geg" value="_1jOIQnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -293,7 +293,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jOvUHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.11"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#11"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jOvUXc9EeWJT9pbcE0Geg" key="_1P0EYHc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jOvU3c9EeWJT9pbcE0Geg" value="_1jOvUnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -301,7 +301,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jPWYHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.12"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#12"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jPWYXc9EeWJT9pbcE0Geg" key="_1P0EZXc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jPWY3c9EeWJT9pbcE0Geg" value="_1jPWYnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -309,7 +309,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jP9dHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.13"/>
+              <key xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#13"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jP9dXc9EeWJT9pbcE0Geg" key="_1P0Eanc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jP9d3c9EeWJT9pbcE0Geg" value="_1jP9dnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -320,7 +320,7 @@
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_1jRLkHc9EeWJT9pbcE0Geg">
             <key xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jRLkXc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.0"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#14"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jRLknc9EeWJT9pbcE0Geg" key="_1P0Eb3c9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jRLlHc9EeWJT9pbcE0Geg" value="_1jRLk3c9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -328,7 +328,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jgcIHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.1"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#15"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jgcIXc9EeWJT9pbcE0Geg" key="_1P0EdHc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jgcI3c9EeWJT9pbcE0Geg" value="_1jgcInc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -336,7 +336,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jiRUHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.2"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#16"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jiRUXc9EeWJT9pbcE0Geg" key="_1P0EeXc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jiRU3c9EeWJT9pbcE0Geg" value="_1jiRUnc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -344,7 +344,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1ji4YHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.3"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#17"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1ji4YXc9EeWJT9pbcE0Geg" key="_1P0Efnc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1ji4Y3c9EeWJT9pbcE0Geg" value="_1ji4Ync9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -352,7 +352,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jjfdHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.4"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#18"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jjfdXc9EeWJT9pbcE0Geg" key="_1P0Eg3c9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jkGgXc9EeWJT9pbcE0Geg" value="_1jkGgHc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -360,7 +360,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_1jktkHc9EeWJT9pbcE0Geg">
-              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.5"/>
+              <key xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#19"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_1jktkXc9EeWJT9pbcE0Geg" key="_1P0rIXc9EeWJT9pbcE0Geg">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_1jktk3c9EeWJT9pbcE0Geg" value="_1jktknc9EeWJT9pbcE0Geg">
                   <key xmi:type="arduino:Platform" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0"/>
@@ -763,8 +763,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0ELnc9EeWJT9pbcE0Geg" name="1" tooltipText="Digital pin 1" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.1"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.1"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#1"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#1"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jEXQHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jDwMnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jEXQXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jEXQnc9EeWJT9pbcE0Geg"/>
@@ -773,8 +773,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EM3c9EeWJT9pbcE0Geg" name="2" tooltipText="Digital pin 2" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.2"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.2"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#2"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#2"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jFlYHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jE-Unc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jFlYXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jFlYnc9EeWJT9pbcE0Geg"/>
@@ -783,8 +783,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EOHc9EeWJT9pbcE0Geg" name="3" tooltipText="Digital pin 3" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.3"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.3"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#3"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#3"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jGzgHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jGMcnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jGzgXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jGzgnc9EeWJT9pbcE0Geg"/>
@@ -793,8 +793,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EPXc9EeWJT9pbcE0Geg" name="4" tooltipText="Digital pin 4" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.4"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.4"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#4"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#4"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jIBoHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jHaknc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jIBoXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jIBonc9EeWJT9pbcE0Geg"/>
@@ -803,8 +803,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EQnc9EeWJT9pbcE0Geg" name="5" tooltipText="Digital pin 5" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.5"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.5"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#5"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#5"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jJPwHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jIosnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jJPwXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jJPwnc9EeWJT9pbcE0Geg"/>
@@ -813,8 +813,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0ER3c9EeWJT9pbcE0Geg" name="6" tooltipText="Digital pin 6" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.6"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.6"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#6"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#6"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jKd4Hc9EeWJT9pbcE0Geg" showIcon="false" description="_1jJ20nc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jKd4Xc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jKd4nc9EeWJT9pbcE0Geg"/>
@@ -823,8 +823,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0ETHc9EeWJT9pbcE0Geg" name="7" tooltipText="Digital pin 7" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.7"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.7"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#7"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#7"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jLsAHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jLE8nc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jLsAXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jLsAnc9EeWJT9pbcE0Geg"/>
@@ -833,8 +833,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EUXc9EeWJT9pbcE0Geg" name="8" tooltipText="Digital pin 8" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.8"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.8"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#8"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#8"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jM6IHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jMTEnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jM6IXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jM6Inc9EeWJT9pbcE0Geg"/>
@@ -843,8 +843,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EVnc9EeWJT9pbcE0Geg" name="9" tooltipText="Digital pin 9" incomingEdges="_1P0rOXc9EeWJT9pbcE0Geg" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.9"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.9"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#9"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#9"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jNhMHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jM6Jnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jNhMXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jNhMnc9EeWJT9pbcE0Geg"/>
@@ -853,8 +853,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EW3c9EeWJT9pbcE0Geg" name="10" tooltipText="Digital pin 10" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.10"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.10"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#10"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#10"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jOIRHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jOIQnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jOIRXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jOIRnc9EeWJT9pbcE0Geg"/>
@@ -863,8 +863,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EYHc9EeWJT9pbcE0Geg" name="11" tooltipText="Digital pin 11" incomingEdges="_1P0rPnc9EeWJT9pbcE0Geg" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.11"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.11"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#11"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#11"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jOvVHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jOvUnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jOvVXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jOvVnc9EeWJT9pbcE0Geg"/>
@@ -873,8 +873,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EZXc9EeWJT9pbcE0Geg" name="12" tooltipText="Digital pin 12" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.12"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.12"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#12"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#12"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jP9cHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jPWYnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jP9cXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jP9cnc9EeWJT9pbcE0Geg"/>
@@ -883,8 +883,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0Eanc9EeWJT9pbcE0Geg" name="13" tooltipText="Digital pin 13" incomingEdges="_1P0rQ3c9EeWJT9pbcE0Geg" width="2" height="2">
-          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.13"/>
-          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@digitalPins.13"/>
+          <target xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#13"/>
+          <semanticElements xmi:type="arduino:DigitalPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#13"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jQkgHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jP9dnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jQkgXc9EeWJT9pbcE0Geg"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jQkgnc9EeWJT9pbcE0Geg"/>
@@ -893,8 +893,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0Eb3c9EeWJT9pbcE0Geg" name="0" tooltipText="Analog pin 0" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.0"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.0"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#14"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#14"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jf1EHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jRLk3c9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jf1EXc9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jf1Enc9EeWJT9pbcE0Geg"/>
@@ -903,8 +903,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EdHc9EeWJT9pbcE0Geg" name="1" tooltipText="Analog pin 1" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.1"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.1"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#15"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#15"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jhDMHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jgcInc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jhDMXc9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jhDMnc9EeWJT9pbcE0Geg"/>
@@ -913,8 +913,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0EeXc9EeWJT9pbcE0Geg" name="2" tooltipText="Analog pin 2" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.2"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.2"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#16"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#16"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jiRVHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jiRUnc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jiRVXc9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jiRVnc9EeWJT9pbcE0Geg"/>
@@ -923,8 +923,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0Efnc9EeWJT9pbcE0Geg" name="3" tooltipText="Analog pin 3" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.3"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.3"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#17"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#17"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jjfcHc9EeWJT9pbcE0Geg" showIcon="false" description="_1ji4Ync9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jjfcXc9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jjfcnc9EeWJT9pbcE0Geg"/>
@@ -933,8 +933,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0Eg3c9EeWJT9pbcE0Geg" name="4" tooltipText="Analog pin 4" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.4"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.4"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#18"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#18"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jkGgnc9EeWJT9pbcE0Geg" showIcon="false" description="_1jkGgHc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jkGg3c9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jkGhHc9EeWJT9pbcE0Geg"/>
@@ -943,8 +943,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Platform']/@borderedNodeMappings[name='HS_AnalogPin']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1P0rIXc9EeWJT9pbcE0Geg" name="5" tooltipText="Analog pin 5" width="2" height="2">
-          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.5"/>
-          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@platform.0/@analogPins.5"/>
+          <target xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#19"/>
+          <semanticElements xmi:type="arduino:AnalogPin" href="platform:/plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#19"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_1jktlHc9EeWJT9pbcE0Geg" showIcon="false" description="_1jktknc9EeWJT9pbcE0Geg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1jktlXc9EeWJT9pbcE0Geg" red="209" green="209" blue="209"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1jktlnc9EeWJT9pbcE0Geg"/>

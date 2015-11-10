@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoTrace" nsURI="arduinoTrace" nsPrefix="arduinoTrace">
+  <eClassifiers xsi:type="ecore:EClass" name="Trace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statesTrace" upperBound="-1"
+        eType="#//States/State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" upperBound="-1"
+        eType="#//Steps/Step" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedVariables"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedNumberValues"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedNumberValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBooleanValues"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedBooleanValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedStringValues"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedStringValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedDigitalPins"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedDigitalPin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedAnalogPins"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedAnalogPin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_If_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_If_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Level_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Level_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Status_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Status_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Set_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Set_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Utilities_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Utilities_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Delay_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Delay_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Status_Call_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Status_Call"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Repeat_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Repeat_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Project_Setup_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Project_Setup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Utilities_Call_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Utilities_Call"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_FunctionCall_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_FunctionCall_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_While_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_While_Execute"/>
+  </eClassifiers>
+  <eSubpackages name="Steps" nsURI="arduinoTrace_Steps" nsPrefix="events">
+    <eClassifiers xsi:type="ecore:EClass" name="SmallStep" abstract="true" eSuperTypes="#//Steps/Step"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BigStep" abstract="true" eSuperTypes="#//Steps/Step"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startingState" lowerBound="1"
+          eType="#//States/State" eOpposite="#//States/State/startedSteps"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endingState" eType="#//States/State"
+          eOpposite="#//States/State/endedSteps"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RootFillStep" eSuperTypes="#//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute" eSuperTypes="#//Steps/BigStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//If"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_If_Execute_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_FillStep" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Set_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Set"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Level_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep #//Steps/Arduino_Status_Call_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Level"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Status_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep #//Steps/Arduino_Status_Call_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Status"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Delay"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/BigStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Repeat"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_Repeat_Execute_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_While_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/BigStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//While"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_While_Execute_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Utilities_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Utilities"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_FunctionCall_Execute" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_Utilities_Call_AbstractSubStep #//Steps/BigStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep #//Steps/Arduino_While_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//FunctionCall"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_FunctionCall_Execute_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Status_Call" eSuperTypes="#//Steps/BigStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Status"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_Status_Call_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Status_Call_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Status_Call_FillStep" eSuperTypes="#//Steps/Arduino_Status_Call_AbstractSubStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_FillStep" eSuperTypes="#//Steps/Arduino_Repeat_Execute_AbstractSubStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Project_Setup" eSuperTypes="#//Steps/SmallStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Project"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Utilities_Call" eSuperTypes="#//Steps/BigStep #//Steps/Arduino_FunctionCall_Execute_AbstractSubStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="this" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Utilities"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_Utilities_Call_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Utilities_Call_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Utilities_Call_FillStep" eSuperTypes="#//Steps/Arduino_Utilities_Call_AbstractSubStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_FunctionCall_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_FunctionCall_Execute_FillStep"
+        eSuperTypes="#//Steps/Arduino_FunctionCall_Execute_AbstractSubStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_While_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_While_Execute_FillStep" eSuperTypes="#//Steps/Arduino_While_Execute_AbstractSubStep"/>
+  </eSubpackages>
+  <eSubpackages name="States" nsURI="arduinoTrace_States" nsPrefix="tracedclasses">
+    <eClassifiers xsi:type="ecore:EClass" name="State">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startedSteps" upperBound="-1"
+          eType="#//Steps/Step" eOpposite="#//Steps/Step/startingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endedSteps" upperBound="-1"
+          eType="#//Steps/Step" eOpposite="#//Steps/Step/endingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pin_level_Values" ordered="false"
+          upperBound="-1" eType="#//States/Pin_level_Value" eOpposite="#//States/Pin_level_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variable_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/Variable_value_Value" eOpposite="#//States/Variable_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="numberValue_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/NumberValue_value_Value"
+          eOpposite="#//States/NumberValue_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="booleanValue_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/BooleanValue_value_Value"
+          eOpposite="#//States/BooleanValue_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="stringValue_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/StringValue_value_Value"
+          eOpposite="#//States/StringValue_value_Value/states"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pin_level_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedPin" eOpposite="#//States/arduino/TracedPin/levelSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/pin_level_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable_value_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//States/arduino/TracedValue">
+        <eAnnotations/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedVariable" eOpposite="#//States/arduino/TracedVariable/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/variable_value_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberValue_value_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedNumberValue" eOpposite="#//States/arduino/TracedNumberValue/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/numberValue_value_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanValue_value_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedBooleanValue" eOpposite="#//States/arduino/TracedBooleanValue/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/booleanValue_value_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringValue_value_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedStringValue" eOpposite="#//States/arduino/TracedStringValue/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/stringValue_value_Values"/>
+    </eClassifiers>
+    <eSubpackages name="arduino" nsURI="arduinoTrace_arduino" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedPin" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="levelSequence" upperBound="-1"
+            eType="#//States/Pin_level_Value" containment="true" eOpposite="#//States/Pin_level_Value/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedVariable" eSuperTypes="#//States/arduino/TracedExpression #//States/arduino/TracedInstruction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Value">
+          <eAnnotations/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//Variable"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/Variable_value_Value" containment="true" eOpposite="#//States/Variable_value_Value/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedInstruction" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//States/arduino/TracedInstruction"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//States/arduino/TracedInstruction"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedNumberValue" eSuperTypes="#//States/arduino/TracedValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/NumberValue_value_Value" containment="true" eOpposite="#//States/NumberValue_value_Value/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedParameter" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//ParameterDefinition"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedBooleanValue" eSuperTypes="#//States/arduino/TracedValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/BooleanValue_value_Value" containment="true" eOpposite="#//States/BooleanValue_value_Value/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedStringValue" eSuperTypes="#//States/arduino/TracedValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/StringValue_value_Value" containment="true" eOpposite="#//States/StringValue_value_Value/parent"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedDigitalPin" eSuperTypes="#//States/arduino/TracedPin">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//DigitalPin"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedAnalogPin" eSuperTypes="#//States/arduino/TracedPin">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../fr.obeo.dsl.arduino/model/arduino.ecore#//AnalogPin"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedExpression" abstract="true"
+          eSuperTypes="#//States/arduino/TracedInstruction #//States/arduino/TracedParameter"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedValue" abstract="true"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

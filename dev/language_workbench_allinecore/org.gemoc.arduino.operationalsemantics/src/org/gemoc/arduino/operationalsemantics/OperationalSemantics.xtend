@@ -159,7 +159,9 @@ class If_ExecutableAspect extends Control_ExecutableAspect {
 		if (_self.condition.evaluateAsBoolean.value) {
 			var Instruction current = _self.instructions.get(0)
 			while (current != null) {
-				current.execute()
+				if(current != _self) {
+					current.execute()
+				}
 				current = current.next
 			}
 		}
