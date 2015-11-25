@@ -497,7 +497,10 @@ public class ArduinoServices {
 		if (isInteger(Expression)) {
 			fr.obeo.dsl.arduino.Constant constant = ArduinoFactory.eINSTANCE
 					.createConstant();
-			constant.setValue(Expression);
+			fr.obeo.dsl.arduino.NumberValue value = ArduinoFactory.eINSTANCE
+					.createNumberValue();
+			value.setValue(Integer.parseInt(Expression));
+			constant.setValue(value);
 			sketch.getInstructions().add(constant);
 			return constant;
 		}
@@ -732,7 +735,9 @@ public class ArduinoServices {
 		}
 
 		Constant constant = ArduinoFactory.eINSTANCE.createConstant();
-		constant.setValue(String.valueOf(Expression));
+		fr.obeo.dsl.arduino.NumberValue value = ArduinoFactory.eINSTANCE.createNumberValue();
+		value.setValue(Expression);
+		constant.setValue(value);
 		sketch.getInstructions().add(constant);
 		return constant;
 	}
