@@ -3,7 +3,9 @@ package org.gemoc.arduino.operationalsemantics
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
+import fr.obeo.dsl.arduino.ArduinoFactory
 import fr.obeo.dsl.arduino.ArduinoUtils
+import fr.obeo.dsl.arduino.BooleanValue
 import fr.obeo.dsl.arduino.Connector
 import fr.obeo.dsl.arduino.Constant
 import fr.obeo.dsl.arduino.Control
@@ -15,6 +17,7 @@ import fr.obeo.dsl.arduino.Instruction
 import fr.obeo.dsl.arduino.Level
 import fr.obeo.dsl.arduino.MathOperator
 import fr.obeo.dsl.arduino.ModuleInstruction
+import fr.obeo.dsl.arduino.NumberValue
 import fr.obeo.dsl.arduino.Parameter
 import fr.obeo.dsl.arduino.ParameterCall
 import fr.obeo.dsl.arduino.Pin
@@ -24,7 +27,9 @@ import fr.obeo.dsl.arduino.Sensor
 import fr.obeo.dsl.arduino.Set
 import fr.obeo.dsl.arduino.Sketch
 import fr.obeo.dsl.arduino.Status
+import fr.obeo.dsl.arduino.StringValue
 import fr.obeo.dsl.arduino.Utilities
+import fr.obeo.dsl.arduino.Value
 import fr.obeo.dsl.arduino.Variable
 import fr.obeo.dsl.arduino.While
 
@@ -32,15 +37,9 @@ import static extension org.gemoc.arduino.operationalsemantics.Expression_Evalua
 import static extension org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.ModuleInstruction_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Parameter_CallableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Project_SetupAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Sketch_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Value_ExecutableAspect.*
-import fr.obeo.dsl.arduino.NumberValue
-import fr.obeo.dsl.arduino.ArduinoFactory
-import fr.obeo.dsl.arduino.BooleanValue
-import fr.obeo.dsl.arduino.StringValue
-import fr.obeo.dsl.arduino.Value
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -318,7 +317,7 @@ class Set_ExecutableAspect extends Instruction_ExecutableAspect {
 class Constant_EvaluableAspect extends Expression_EvaluableAspect {
 	@OverrideAspectMethod
 	def Value evaluate() {
-		return ValueHelper::get(_self.value)
+		return _self.value
 	}
 }
 
@@ -489,57 +488,3 @@ class StringValue_ExecutableAspect extends Value_ExecutableAspect {
 			false
 	}
 }
-//abstract class Value {
-//}
-//class NumberValue_aspect extends Value {
-//	public val int value
-//
-//	new(int n) {
-//		value = n
-//	}
-//
-//	override equals(Object obj) {
-//		return if (obj instanceof NumberValue)
-//			this.value.equals(obj.value)
-//		else
-//			false
-//	}
-//
-//}
-//
-//class BooleanValue extends Value {
-//	public val boolean value
-//
-//	public static val TRUE = new BooleanValue(true)
-//	public static val FALSE = new BooleanValue(false)
-//
-//	private new(boolean n) {
-//		value = n
-//	}
-//
-//	public static def BooleanValue get(boolean b) {
-//		return if(b) TRUE else FALSE
-//	}
-//
-//	override equals(Object obj) {
-//		return if (obj instanceof BooleanValue)
-//			this.value.equals(obj.value)
-//		else
-//			false
-//	}
-//}
-//
-//class StringValue extends Value {
-//	public val String value
-//
-//	new(String n) {
-//		value = n
-//	}
-//
-//	override equals(Object obj) {
-//		return if (obj instanceof StringValue)
-//			this.value.equals(obj.value)
-//		else
-//			false
-//	}
-//}

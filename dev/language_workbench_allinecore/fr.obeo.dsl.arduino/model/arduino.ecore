@@ -144,8 +144,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BooleanOperator" eSuperTypes="#//MathOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Instruction #//Parameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Value"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Library">
     <eLiterals name="none"/>

@@ -1715,7 +1715,7 @@ public interface ArduinoPackage extends EPackage {
 	int CONSTANT__DEFINITION = EXPRESSION__DEFINITION;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2905,15 +2905,15 @@ public interface ArduinoPackage extends EPackage {
 	EClass getConstant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Constant#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.Constant#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see fr.obeo.dsl.arduino.Constant#getValue()
 	 * @see #getConstant()
 	 * @generated
 	 */
-	EAttribute getConstant_Value();
+	EReference getConstant_Value();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.If <em>If</em>}'.
@@ -3859,12 +3859,12 @@ public interface ArduinoPackage extends EPackage {
 		EClass CONSTANT = eINSTANCE.getConstant();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONSTANT__VALUE = eINSTANCE.getConstant_Value();
+		EReference CONSTANT__VALUE = eINSTANCE.getConstant_Value();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.IfImpl <em>If</em>}' class.

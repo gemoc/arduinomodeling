@@ -1092,8 +1092,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstant_Value() {
-		return (EAttribute)constantEClass.getEStructuralFeatures().get(0);
+	public EReference getConstant_Value() {
+		return (EReference)constantEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1476,7 +1476,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		expressionEClass = createEClass(EXPRESSION);
 
 		constantEClass = createEClass(CONSTANT);
-		createEAttribute(constantEClass, CONSTANT__VALUE);
+		createEReference(constantEClass, CONSTANT__VALUE);
 
 		ifEClass = createEClass(IF);
 		createEReference(ifEClass, IF__CONDITION);
@@ -1688,7 +1688,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstant_Value(), ecorePackage.getEString(), "value", "0", 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstant_Value(), this.getValue(), null, "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIf_Condition(), this.getBooleanOperator(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

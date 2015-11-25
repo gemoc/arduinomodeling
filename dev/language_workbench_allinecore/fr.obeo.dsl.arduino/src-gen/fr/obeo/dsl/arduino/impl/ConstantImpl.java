@@ -13,10 +13,12 @@ package fr.obeo.dsl.arduino.impl;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Constant;
 
+import fr.obeo.dsl.arduino.Value;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,24 +36,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ConstantImpl extends ExpressionImpl implements Constant {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = "0";
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
+	protected Value value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +69,15 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
+	public Value getValue() {
+		if (value != null && value.eIsProxy()) {
+			InternalEObject oldValue = (InternalEObject)value;
+			value = (Value)eResolveProxy(oldValue);
+			if (value != oldValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.CONSTANT__VALUE, oldValue, value));
+			}
+		}
 		return value;
 	}
 
@@ -86,8 +86,17 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
+	public Value basicGetValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Value newValue) {
+		Value oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.CONSTANT__VALUE, oldValue, value));
@@ -102,7 +111,8 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.CONSTANT__VALUE:
-				return getValue();
+				if (resolve) return getValue();
+				return basicGetValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,7 +126,7 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.CONSTANT__VALUE:
-				setValue((String)newValue);
+				setValue((Value)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,7 +141,7 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.CONSTANT__VALUE:
-				setValue(VALUE_EDEFAULT);
+				setValue((Value)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,25 +156,9 @@ public class ConstantImpl extends ExpressionImpl implements Constant {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.CONSTANT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return value != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ConstantImpl
