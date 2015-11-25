@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.concurrent.xdsml">
+    <XDSML_Definition name="concurrent_arduino" xdsmlFilePath="/org.gemoc.arduino.concurrent/project.xdsml" modelLoader_class="org.gemoc.gemoc_language_workbench.extensions.sirius.modelloader.DefaultModelLoader" codeExecutor_class="concurrent_arduino.xdsml.api.impl.Concurrent_arduinoCodeExecutor" toCCSLQVTOFilePath="/org.gemoc.arduino.ecl/qvto-gen/modeling/arduinoML.qvto" solver_class="org.gemoc.gemoc_language_workbench.extensions.timesquare.moc.impl.CcslSolver" />
+  </extension>
+</plugin>
