@@ -1,0 +1,7 @@
+package org.gemoc.arduino.melange
+
+language Arduino {
+	syntax "platform:/resource/fr.obeo.dsl.arduino/model/arduino.ecore"
+	with org.gemoc.arduino.operationalsemantics.*
+	exactType ArduinoMT
+}

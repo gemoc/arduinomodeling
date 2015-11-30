@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="fr.inria.diverse.melange.modeltype">
+      <modeltype
+            uri="http://arduinomt/"
+            id="org.gemoc.arduino.melange.ArduinoMT">
+      </modeltype>
+   </extension>
+   <extension
+         point="fr.inria.diverse.melange.language">
+      <language
+            exactType="org.gemoc.arduino.melange.ArduinoMT"
+            uri="http://arduinomt/"
+            id="org.gemoc.arduino.melange.Arduino">
+         <adapter
+               class="org.gemoc.arduino.melange.arduino.adapters.arduinomt.ArduinoAdapter"
+               modeltypeId="org.gemoc.arduino.melange.ArduinoMT">
+         </adapter>
+      </language>
+   </extension>
+
+</plugin>
