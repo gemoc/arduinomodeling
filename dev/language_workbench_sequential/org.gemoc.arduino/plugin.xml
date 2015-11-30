@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition gemocDebuggerFactory_class="org.gemoc.arduino.operationalsemantics.debug.ArduinoDebuggerFactory" modelLoader_class="org.gemoc.gemoc_language_workbench.extensions.sirius.modelloader.DefaultModelLoader" name="arduino" xdsmlFilePath="/org.gemoc.arduino/project.xdsml" />
+  </extension>
+</plugin>
