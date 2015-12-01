@@ -27,7 +27,6 @@ import fr.obeo.dsl.arduino.While
 import static extension org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.ModuleInstruction_ExecutableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.ModuleInstruction_CallableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Project_SetupAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Sketch_ExecutableAspect.*
@@ -57,6 +56,49 @@ class Instruction_ExecutableAspect {
 	} 
 }
 
+@Aspect(className=Project)
+class Project_ExecutableAspect {
+	def void execute() {
+		_self.setup()
+		val sketch = _self.sketch
+		while(true) {
+			sketch.execute()
+		}
+	}
+}
+
+@Aspect(className=Project)
+class Project_SetupAspect {
+	def void setup() {
+		_self.eAllContents().forEach[o|{
+			if (o instanceof IntegerVariable) {
+				o.value = o.initialValue
+			} else if (o instanceof BooleanVariable) {
+				o.value = o.initialValue
+			} else if (o instanceof Pin) {
+				(o as Pin).level = Integer.valueOf(0)
+			} else if (o instanceof Connector) {
+				(o as Connector).getPin().level = Integer.valueOf(0)
+			}
+		}];
+	}
+}
+
+@Aspect(className=VariableAssignment)
+class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
+	@OverrideAspectMethod
+	@Step
+	def void execute() {
+		val variable = _self.variable
+		val value = _self.operand.evaluate
+		if (variable instanceof IntegerVariable){
+			variable.value = value as Integer
+		}
+		if (variable instanceof BooleanVariable){
+			variable.value = value as Boolean
+		}
+	}
+}
 
 @Aspect(className=Sketch)
 class Sketch_ExecutableAspect extends Instruction_ExecutableAspect {
@@ -79,20 +121,7 @@ class ModuleInstruction_ExecutableAspect extends Instruction_ExecutableAspect {
 	def void execute() {
 	}
 }
-@Aspect(className=ModuleInstruction)
-class ModuleInstruction_CallableAspect{
-	def void call() {
-	}
-}
 
-@Aspect(className=ModuleAssignment)
-class ModuleAssignment_CallableAspect extends ModuleInstruction_CallableAspect {
-	@OverrideAspectMethod
-	@Step
-	def void call() {
-		_self.execute
-	}
-}
 @Aspect(className=ModuleAssignment)
 class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspect {
 	@OverrideAspectMethod
@@ -124,46 +153,7 @@ class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect 
 	}
 }
 
-@Aspect(className=BooleanModuleGet) 
-class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	@Step
-	def Object evaluate() {
-		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
-		if (pin.level == 0){
-			return false
-		}
-		return true	
-	}
-}
 
-@Aspect(className=BooleanConstant) 
-class BooleanConstant_ExecutableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	@Step
-	def Object evaluate() {
-		return _self.value
-	}
-}	
-
-@Aspect(className=IntegerConstant) 
-class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	@Step
-	def Object evaluate() {
-		return _self.value
-	}
-}	
-
-@Aspect(className=IntegerModuleGet) 
-class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	@Step
-	def Object evaluate() {
-		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
-		return pin.level	
-	}
-}
 
 @Aspect(className=Control)
 class Control_ExecutableAspect extends Instruction_ExecutableAspect {
@@ -231,14 +221,7 @@ class While_ExecutableAspect extends Control_ExecutableAspect {
 	}
 }
 
-//@Aspect(className=Utilities)
-//class Utilities_CallableAspect extends ModuleInstruction_CallableAspect {
-//	@OverrideAspectMethod
-//	@Step
-//	def void call() {
-//		_self.execute()
-//	}
-//}
+
 @Aspect(className=Utilities)
 class Utilities_ExecutableAspect extends Instruction_ExecutableAspect {
 	@OverrideAspectMethod
@@ -309,6 +292,47 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 	}
 }
 
+@Aspect(className=BooleanModuleGet) 
+class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
+	@OverrideAspectMethod
+	@Step
+	def Object evaluate() {
+		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
+		if (pin.level == 0){
+			return false
+		}
+		return true	
+	}
+}
+
+@Aspect(className=BooleanConstant) 
+class BooleanConstant_ExecutableAspect extends Expression_EvaluableAspect{
+	@OverrideAspectMethod
+	@Step
+	def Object evaluate() {
+		return _self.value
+	}
+}	
+
+@Aspect(className=IntegerConstant) 
+class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
+	@OverrideAspectMethod
+	@Step
+	def Object evaluate() {
+		return _self.value
+	}
+}	
+
+@Aspect(className=IntegerModuleGet) 
+class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
+	@OverrideAspectMethod
+	@Step
+	def Object evaluate() {
+		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
+		return pin.level	
+	}
+}
+
 
 @Aspect(className=BinaryBooleanExpression)
 class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect {
@@ -370,21 +394,8 @@ class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect
 	}
 }
 
-@Aspect(className=VariableAssignment)
-class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
-	@OverrideAspectMethod
-	@Step
-	def void execute() {
-		val variable = _self.variable
-		val value = _self.operand.evaluate
-		if (variable instanceof IntegerVariable){
-			variable.value = value as Integer
-		}
-		if (variable instanceof BooleanVariable){
-			variable.value = value as Boolean
-		}
-	}
-}
+
+
 
 @Aspect(className=Constant)
 class Constant_EvaluableAspect extends Expression_EvaluableAspect {
@@ -440,32 +451,4 @@ class VariableDeclaration_EvaluableAspect extends Expression_EvaluableAspect{
 @Aspect(className=Expression)
 abstract class Expression_EvaluableAspect {
 	def abstract Object evaluate()
-}
-
-@Aspect(className=Project)
-class Project_ExecutableAspect {
-	def void execute() {
-		_self.setup()
-		val sketch = _self.sketch
-		while(true) {
-			sketch.execute()
-		}
-	}
-}
-
-@Aspect(className=Project)
-class Project_SetupAspect {
-	def void setup() {
-		_self.eAllContents().forEach[o|{
-			if (o instanceof IntegerVariable) {
-				o.value = o.initialValue
-			} else if (o instanceof BooleanVariable) {
-				o.value = o.initialValue
-			} else if (o instanceof Pin) {
-				(o as Pin).level = Integer.valueOf(0)
-			} else if (o instanceof Connector) {
-				(o as Connector).getPin().level = Integer.valueOf(0)
-			}
-		}];
-	}
 }

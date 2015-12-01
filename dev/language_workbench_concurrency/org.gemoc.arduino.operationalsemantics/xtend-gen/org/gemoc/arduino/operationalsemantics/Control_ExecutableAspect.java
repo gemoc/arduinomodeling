@@ -12,12 +12,12 @@ public class Control_ExecutableAspect extends Instruction_ExecutableAspect {
   @OverrideAspectMethod
   public static void execute(final Control _self) {
     org.gemoc.arduino.operationalsemantics.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.operationalsemantics.Control_ExecutableAspectControlAspectContext.getSelf(_self);
-     if (_self instanceof fr.obeo.dsl.arduino.If){
-     org.gemoc.arduino.operationalsemantics.If_ExecutableAspect.execute((fr.obeo.dsl.arduino.If)_self);
-    } else  if (_self instanceof fr.obeo.dsl.arduino.Repeat){
+     if (_self instanceof fr.obeo.dsl.arduino.Repeat){
      org.gemoc.arduino.operationalsemantics.Repeat_ExecutableAspect.execute((fr.obeo.dsl.arduino.Repeat)_self);
     } else  if (_self instanceof fr.obeo.dsl.arduino.While){
      org.gemoc.arduino.operationalsemantics.While_ExecutableAspect.execute((fr.obeo.dsl.arduino.While)_self);
+    } else  if (_self instanceof fr.obeo.dsl.arduino.If){
+     org.gemoc.arduino.operationalsemantics.If_ExecutableAspect.execute((fr.obeo.dsl.arduino.If)_self);
     } else  if (_self instanceof fr.obeo.dsl.arduino.Control){
      org.gemoc.arduino.operationalsemantics.Control_ExecutableAspect._privk3_execute(_self_, (fr.obeo.dsl.arduino.Control)_self);
     } else  if (_self instanceof fr.obeo.dsl.arduino.Instruction){
