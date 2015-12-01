@@ -52,14 +52,6 @@ public interface ModuleInstruction extends Instruction {
 	 * @model
 	 * @generated
 	 */
-	void call();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void execute();
 
 } // ModuleInstruction

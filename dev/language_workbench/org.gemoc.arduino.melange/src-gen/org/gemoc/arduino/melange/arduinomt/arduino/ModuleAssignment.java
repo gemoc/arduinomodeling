@@ -20,14 +20,6 @@ public interface ModuleAssignment extends ModuleInstruction, Assignment {
 	 * @model
 	 * @generated
 	 */
-	void call();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void execute();
 
 } // ModuleAssignment

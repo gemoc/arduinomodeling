@@ -1684,14 +1684,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(moduleAssignmentEClass, ModuleAssignment.class, "ModuleAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(moduleAssignmentEClass, null, "call", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(moduleAssignmentEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(moduleInstructionEClass, ModuleInstruction.class, "ModuleInstruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModuleInstruction_Module(), this.getModule(), null, "module", null, 1, 1, ModuleInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(moduleInstructionEClass, null, "call", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(moduleInstructionEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1914,17 +1910,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (moduleAssignmentEClass.getEOperations().get(1), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (moduleInstructionEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (moduleInstructionEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	

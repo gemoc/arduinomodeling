@@ -79,11 +79,6 @@ public class ModuleAssignmentAdapter extends EObjectAdapter<ModuleAssignment> im
   }
   
   @Override
-  public void call() {
-    org.gemoc.arduino.operationalsemantics.ModuleAssignment_CallableAspect.call(adaptee) ;
-  }
-  
-  @Override
   public EClass eClass() {
     return org.gemoc.arduino.melange.arduinomt.arduino.ArduinoPackage.eINSTANCE.getModuleAssignment();
   }

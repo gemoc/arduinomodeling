@@ -13,7 +13,7 @@
          point="fr.inria.diverse.melange.language">
       <language
             exactType="org.gemoc.arduino.melange.ArduinoMT"
-            uri="http://www.obeo.fr/arduino"
+            uri="http://arduinomt/"
             id="org.gemoc.arduino.melange.Arduino">
          <adapter
                class="org.gemoc.arduino.melange.arduino.adapters.arduinomt.ArduinoAdapter"

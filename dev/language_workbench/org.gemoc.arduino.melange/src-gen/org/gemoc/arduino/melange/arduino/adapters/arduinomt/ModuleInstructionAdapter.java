@@ -64,11 +64,6 @@ public class ModuleInstructionAdapter extends EObjectAdapter<ModuleInstruction> 
   }
   
   @Override
-  public void call() {
-    org.gemoc.arduino.operationalsemantics.ModuleInstruction_CallableAspect.call(adaptee) ;
-  }
-  
-  @Override
   public EClass eClass() {
     return org.gemoc.arduino.melange.arduinomt.arduino.ArduinoPackage.eINSTANCE.getModuleInstruction();
   }

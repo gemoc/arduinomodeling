@@ -44,7 +44,6 @@ import fr.obeo.dsl.arduino.ModuleGet;
 import fr.obeo.dsl.arduino.ModuleInstruction;
 import fr.obeo.dsl.arduino.ModuleKind;
 import fr.obeo.dsl.arduino.NamedElement;
-import fr.obeo.dsl.arduino.ParameterType;
 import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
@@ -69,7 +68,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 

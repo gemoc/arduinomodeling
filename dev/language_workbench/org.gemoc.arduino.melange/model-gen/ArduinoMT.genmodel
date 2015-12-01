@@ -204,9 +204,6 @@
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//ModuleAssignment"/>
       <genOperations>
-        <ecoreOperation href="ArduinoMT.ecore#//ModuleAssignment/call"/>
-      </genOperations>
-      <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//ModuleAssignment/execute"/>
       </genOperations>
     </genClasses>
@@ -215,9 +212,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//ModuleInstruction/module"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="ArduinoMT.ecore#//ModuleInstruction/call"/>
-      </genOperations>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//ModuleInstruction/execute"/>
       </genOperations>
