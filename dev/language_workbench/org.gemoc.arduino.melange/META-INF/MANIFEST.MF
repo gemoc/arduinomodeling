@@ -17,3 +17,8 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0
+Export-Package: org.gemoc.arduino.melange,
+ org.gemoc.arduino.melange.arduino.adapters.arduinomt,
+ org.gemoc.arduino.melange.arduinomt.arduino,
+ org.gemoc.arduino.melange.arduinomt.arduino.impl,
+ org.gemoc.arduino.melange.arduinomt.arduino.util
