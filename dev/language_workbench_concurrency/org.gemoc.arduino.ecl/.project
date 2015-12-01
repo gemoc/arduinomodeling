@@ -20,9 +20,15 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.gemoc.gemoc_language_workbench.concurrent.ui.dse_builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.gemoc.gemoc_language_workbench.ui.dse_nature</nature>
+		<nature>org.gemoc.gemoc_language_workbench.concurrent.ui.dse_nature</nature>
 	</natures>
 </projectDescription>
