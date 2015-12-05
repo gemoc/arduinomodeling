@@ -45,4 +45,12 @@ public interface Control extends Instruction {
 	 */
 	EList<Instruction> getInstructions();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean evaluate();
+
 } // Control

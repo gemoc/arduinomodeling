@@ -54,6 +54,10 @@ import fr.obeo.dsl.arduino.VariableRef
 class Instruction_ExecutableAspect {
 	def void execute() {
 	} 
+	
+	def void finalize() {
+	} 
+	
 }
 
 @Aspect(className=Project)
@@ -87,7 +91,6 @@ class Project_SetupAspect {
 @Aspect(className=VariableAssignment)
 class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 	@OverrideAspectMethod
-	@Step
 	def void execute() {
 		val variable = _self.variable
 		val value = _self.operand.evaluate
@@ -125,7 +128,6 @@ class ModuleInstruction_ExecutableAspect extends Instruction_ExecutableAspect {
 @Aspect(className=ModuleAssignment)
 class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspect {
 	@OverrideAspectMethod
-	@Step
 	def void execute() {
 		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
 		if (_self.operand instanceof IntegerExpression){
@@ -144,7 +146,6 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 @Aspect(className=VariableDeclaration)
 class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect {
 	@OverrideAspectMethod
-	@Step
 	def void execute() {
 		switch (_self.variable){
 			case IntegerVariable : (_self.variable as IntegerVariable).value = (_self.variable as IntegerVariable).initialValue	
@@ -159,14 +160,21 @@ class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect 
 class Control_ExecutableAspect extends Instruction_ExecutableAspect {
 	@OverrideAspectMethod
 	def void execute() {
+		
+	}
+}
+
+@Aspect(className=Control)
+class Control_EvaluableAspect extends Instruction_ExecutableAspect{
+	def Boolean evaluate() {
 	}
 }
 
 @Aspect(className=If)
-class If_ExecutableAspect extends Control_ExecutableAspect {
+class If_EvaluableAspect extends Control_EvaluableAspect {
 	@OverrideAspectMethod
-	@Step
-	def void execute() {
+	//@Step
+	def Boolean evaluate() {
 		var Boolean resCond  =false
 		if (_self.condition instanceof BooleanExpression){
 			resCond = _self.condition.evaluate as Boolean
@@ -177,47 +185,36 @@ class If_ExecutableAspect extends Control_ExecutableAspect {
 				resCond = m.level
 			}
 		}
-		if(resCond) {
-			var Instruction current = _self.instructions.get(0)
-			while(current != null) {
-				current.execute()
-				current = current.next			
-			}
-		}
+		return resCond
 	}
 } 
 
 @Aspect(className=Repeat)
-class Repeat_ExecutableAspect extends Control_ExecutableAspect {
+class Repeat_EvaluableAspect extends Control_EvaluableAspect  {
+	var Integer i = 0;
+
 	@OverrideAspectMethod
-	@Step
-	def void execute() {
-		val Instruction first = _self.instructions.get(0)
-		for(var i = 0; i < _self.iteration; i++) {
-			var Instruction current = first
-			while(current != null) {
-				current.execute()
-				current = current.next			
-			}
-		}
+	def Boolean evaluate() {
+		var Boolean resCond  =false
+		resCond = (_self.i  < _self.iteration)
+		_self.i = _self.i+1
+		return resCond;
+	}
+
+	@OverrideAspectMethod
+	def void finalize() {
+		_self.i = 0
+		return;
 	}
 }
 
 @Aspect(className=While)
-class While_ExecutableAspect extends Control_ExecutableAspect {
+class While_EvaluableAspect extends Control_EvaluableAspect {
+	
 	@OverrideAspectMethod
-	@Step
-	def void execute() {
-		val Instruction first = _self.instructions.get(0)
-		var Boolean condition = _self.condition.evaluate as Boolean
-		while (condition) {
-			var Instruction current = first
-			while(current != null) {
-				current.execute()
-				current = current.next
-			}
-			condition = _self.condition.evaluate as Boolean
-		}
+	def Boolean evaluate() {
+		var Boolean resCond = _self.condition.evaluate as Boolean
+		return resCond
 	}
 }
 
@@ -225,7 +222,6 @@ class While_ExecutableAspect extends Control_ExecutableAspect {
 @Aspect(className=Utilities)
 class Utilities_ExecutableAspect extends Instruction_ExecutableAspect {
 	@OverrideAspectMethod
-	@Step
 	def void execute() {
 	}
 }
@@ -233,7 +229,6 @@ class Utilities_ExecutableAspect extends Instruction_ExecutableAspect {
 @Aspect(className=Delay)
 class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
 	@OverrideAspectMethod
-	@Step
 	def void execute() {
 		try {
 			Thread.sleep(_self.value)
@@ -295,7 +290,6 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 @Aspect(className=BooleanModuleGet) 
 class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
-	@Step
 	def Object evaluate() {
 		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
 		if (pin.level == 0){
@@ -308,7 +302,6 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 @Aspect(className=BooleanConstant) 
 class BooleanConstant_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
-	@Step
 	def Object evaluate() {
 		return _self.value
 	}
@@ -317,7 +310,6 @@ class BooleanConstant_ExecutableAspect extends Expression_EvaluableAspect{
 @Aspect(className=IntegerConstant) 
 class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
-	@Step
 	def Object evaluate() {
 		return _self.value
 	}
@@ -326,7 +318,6 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 @Aspect(className=IntegerModuleGet) 
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
-	@Step
 	def Object evaluate() {
 		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
 		return pin.level	

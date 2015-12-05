@@ -55,7 +55,7 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
- [sketch.next.genINO()/]
+ [sketch.instructions-> first().genINO()/]
 }
 [/file]
 [/template]

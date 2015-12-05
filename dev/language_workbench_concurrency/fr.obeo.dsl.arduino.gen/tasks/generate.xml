@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="fr.obeo.dsl.arduino.gen">
-    <property name="ECLIPSE_HOME" value="../../../../../../../../../../../install/gemoc/build207"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../../../../../install/gemoc/v2.0"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../../../workspace_language_arduinoML"/>
 
     <!-- The classpath with only the dependencies used by the project -->

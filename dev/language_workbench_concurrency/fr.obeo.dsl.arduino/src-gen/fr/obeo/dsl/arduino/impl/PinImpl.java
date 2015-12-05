@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.PinImpl#getId <em>Id</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.PinImpl#getLevel <em>Level</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +54,26 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 	 * @ordered
 	 */
 	protected int id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LEVEL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected int level = LEVEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,11 +120,34 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getLevel() {
+		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLevel(int newLevel) {
+		int oldLevel = level;
+		level = newLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.PIN__LEVEL, oldLevel, level));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.PIN__ID:
 				return getId();
+			case ArduinoPackage.PIN__LEVEL:
+				return getLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,6 +162,9 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 		switch (featureID) {
 			case ArduinoPackage.PIN__ID:
 				setId((Integer)newValue);
+				return;
+			case ArduinoPackage.PIN__LEVEL:
+				setLevel((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,6 +181,9 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 			case ArduinoPackage.PIN__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case ArduinoPackage.PIN__LEVEL:
+				setLevel(LEVEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -148,6 +198,8 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 		switch (featureID) {
 			case ArduinoPackage.PIN__ID:
 				return id != ID_EDEFAULT;
+			case ArduinoPackage.PIN__LEVEL:
+				return level != LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,6 +216,8 @@ public abstract class PinImpl extends EObjectImpl implements Pin {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
+		result.append(", level: ");
+		result.append(level);
 		result.append(')');
 		return result.toString();
 	}

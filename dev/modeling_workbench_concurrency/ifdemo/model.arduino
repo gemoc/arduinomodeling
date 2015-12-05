@@ -23,8 +23,8 @@
       <module xsi:type="arduino:Sensor" href="../../plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@modules.1"/>
     </connectors>
   </hardware>
-  <sketch name="Sketch" previous="//@sketch/@instructions.0" next="//@sketch/@instructions.0" hardware="//@hardware">
-    <instructions xsi:type="arduino:If" next="//@sketch">
+  <sketch name="Sketch" hardware="//@hardware">
+    <instructions xsi:type="arduino:If">
       <instructions xsi:type="arduino:Repeat" next="//@sketch/@instructions.0/@instructions.1" iteration="2">
         <instructions xsi:type="arduino:ModuleAssignment" next="//@sketch/@instructions.0/@instructions.0/@instructions.1">
           <module xsi:type="arduino:Actuator" href="../../plugin/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino#//@modules.3"/>
@@ -82,7 +82,7 @@
         <right xsi:type="arduino:BooleanConstant"/>
       </condition>
     </instructions>
-    <instructions xsi:type="arduino:VariableDeclaration">
+    <instructions xsi:type="arduino:VariableDeclaration" next="//@sketch/@instructions.0">
       <variable xsi:type="arduino:BooleanVariable" name="var0"/>
     </instructions>
   </sketch>
