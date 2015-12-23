@@ -28,24 +28,24 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="//Pin"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sketch" eSuperTypes="//NamedElement //Instruction">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" lowerBound="1" eType="//Hardware"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Project">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eOperations name="setup">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" eType="//Hardware" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sketch" eType="//Sketch" containment="true"/>
@@ -54,36 +54,36 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="//Instruction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="//Instruction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleAssignment" eSuperTypes="//ModuleInstruction //Assignment">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleInstruction" abstract="true" eSuperTypes="//Instruction">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1" eType="//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" abstract="true" eSuperTypes="//Instruction">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Utilities" abstract="true" eSuperTypes="//Instruction">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="//Utilities">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="//Time"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
@@ -111,7 +111,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="//Control">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iteration" defaultValueLiteral="5">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -122,7 +122,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="//Control">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//Expression" containment="true"/>
   </eClassifiers>
@@ -142,30 +142,30 @@
   <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="//Expression //NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableAssignment" eSuperTypes="//Instruction //Assignment">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryIntegerExpression" eSuperTypes="//BinaryExpression //IntegerExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//BinaryIntegerOperatorKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryBooleanExpression" eSuperTypes="//BinaryExpression //BooleanExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//BinaryBooleanOperatorKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" abstract="true" eSuperTypes="//Expression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Library">
@@ -175,13 +175,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="//Control">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerConstant" eSuperTypes="//Constant //IntegerExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" defaultValueLiteral="0">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -189,7 +189,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanConstant" eSuperTypes="//Constant //BooleanExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" defaultValueLiteral="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -202,36 +202,36 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable" eSuperTypes="//Variable //IntegerExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="0">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable" eSuperTypes="//Variable //BooleanExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanModuleGet" eSuperTypes="//ModuleGet //BooleanExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerModuleGet" eSuperTypes="//ModuleGet //IntegerExpression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BinaryBooleanOperatorKind">
@@ -262,13 +262,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="//Instruction">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//Variable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableRef" eSuperTypes="//Expression">
     <eOperations name="evaluate" eType="//Object">
-      <eAnnotations source="aspect"/>
+      <eAnnotations source="dynamic"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//Variable"/>
   </eClassifiers>
