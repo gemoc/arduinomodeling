@@ -28,7 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eAnnotations/>
+      <eAnnotations source="dynamic"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="#//Pin"/>
@@ -132,7 +132,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Value"
         containment="true">
-      <eAnnotations/>
+      <eAnnotations source="dynamic"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Set" eSuperTypes="#//Instruction">
@@ -186,18 +186,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//ParameterDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true">
-    <eAnnotations/>
+    <eAnnotations source="dynamic"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//Value">
-    <eAnnotations/>
+    <eAnnotations source="dynamic"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumberValue" eSuperTypes="#//Value">
-    <eAnnotations/>
+    <eAnnotations source="dynamic"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//Value">
-    <eAnnotations/>
+    <eAnnotations source="dynamic"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

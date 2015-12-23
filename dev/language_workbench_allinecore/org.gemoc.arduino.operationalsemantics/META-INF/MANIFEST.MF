@@ -4,13 +4,9 @@ Bundle-Name: Operationalsemantics
 Bundle-SymbolicName: org.gemoc.arduino.operationalsemantics
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- org.gemoc.gemoc_language_workbench.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="1.0.0",
  fr.obeo.dsl.debug.ide,
- org.gemoc.gemoc_language_workbench.api;bundle-version="0.1.0",
- org.gemoc.execution.engine;bundle-version="0.1.0",
- org.gemoc.execution.engine.ui;bundle-version="0.1.0",
  fr.obeo.dsl.arduino;bundle-version="1.0.0",
  org.eclipse.xtend.core;bundle-version="2.7.3",
  org.eclipse.emf.ecore,

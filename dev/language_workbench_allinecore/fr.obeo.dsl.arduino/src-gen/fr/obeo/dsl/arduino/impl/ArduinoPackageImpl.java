@@ -1766,18 +1766,18 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// null
-		createNullAnnotations();
+		// dynamic
+		createDynamicAnnotations();
 	}
 
 	/**
-	 * Initializes the annotations for <b>null</b>.
+	 * Initializes the annotations for <b>dynamic</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createNullAnnotations() {
-		String source = null;	
+	protected void createDynamicAnnotations() {
+		String source = "dynamic";	
 		addAnnotation
 		  (getPin_Level(), 
 		   source, 
