@@ -7,8 +7,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;
-import org.gemoc.gemoc_language_workbench.extensions.sirius.modelloader.DefaultModelLoader;
-import org.gemoc.gemoc_language_workbench.extensions.sirius.services.AbstractGemocDebuggerServices;
+import org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader;
+import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.osgi.framework.Bundle;
 
 import fr.obeo.dsl.arduino.ArduinoUtils;
