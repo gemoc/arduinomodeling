@@ -15,7 +15,7 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  fr.obeo.dsl.arduino;bundle-version="0.0.0";visibility:="reexport",
  
- org.gemoc.gemoc_language_workbench.extensions.sirius;bundle-version="0.0.0";visibility:="reexport",
+ org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:="reexport",
  
  fr.obeo.dsl.arduino.design;bundle-version="0.0.0";visibility:="reexport",
  
@@ -23,13 +23,11 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  org.gemoc.arduino.operationalsemantics;bundle-version="0.0.0";visibility:=reexport,
  
- org.gemoc.gemoc_language_workbench.extensions.k3;bundle-version="0.0.0";visibility:="reexport",
+ org.gemoc.execution.sequential.javaengine;bundle-version="0.0.0",
  
- org.gemoc.executionengine.ccsljava.engine;bundle-version="1.0.0",
+ org.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0",
  
- org.gemoc.executionengine.ccsljava.api;bundle-version="1.0.0",
- 
- org.gemoc.execution.engine;bundle-version="0.1.0",
+ org.gemoc.executionframework.engine;bundle-version="0.1.0",
  
  org.gemoc.xdsmlframework.extensions.sirius;bundle-version="0.0.0";visibility:="reexport"
 Bundle-ManifestVersion: 2

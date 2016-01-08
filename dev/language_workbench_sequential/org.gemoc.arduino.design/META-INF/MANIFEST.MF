@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.debug.ui;bundle-version="3.8.2",
  fr.obeo.dsl.arduino,
  fr.obeo.dsl.arduino.design,
- org.gemoc.executionengine.java.sequential_modeling_workbench.ui;bundle-version="0.1.0",
+ org.gemoc.execution.sequential.javaengine.ui;bundle-version="0.1.0",
  org.gemoc.executionframework.extensions.sirius,
  org.gemoc.arduino.operationalsemantics;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

@@ -18,7 +18,7 @@ import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.design.services.ArduinoServices;
-import org.gemoc.executionengine.java.sequential_modeling_workbench.ui.launcher.Launcher;
+import org.gemoc.execution.sequential.javaengine.ui.launcher.Launcher;
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
