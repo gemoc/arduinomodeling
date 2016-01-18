@@ -3,7 +3,6 @@ package org.gemoc.arduino.operationalsemantics;
 import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import fr.obeo.dsl.arduino.BooleanVariable;
 import fr.obeo.dsl.arduino.IntegerVariable;
 import fr.obeo.dsl.arduino.Variable;
@@ -17,25 +16,13 @@ import org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspe
 @SuppressWarnings("all")
 public class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect {
   @OverrideAspectMethod
-  @Step
   public static void execute(final VariableDeclaration _self) {
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties _self_ = org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspectVariableDeclarationAspectContext.getSelf(_self);
-    		 if (_self instanceof fr.obeo.dsl.arduino.VariableDeclaration){
-    		 org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspect._privk3_execute(_self_, (fr.obeo.dsl.arduino.VariableDeclaration)_self);
-    		} else  if (_self instanceof fr.obeo.dsl.arduino.Instruction){
-    		 org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.execute((fr.obeo.dsl.arduino.Instruction)_self);
-    		} else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (manager != null) {
-    	manager.executeStep(_self,command,"VariableDeclaration","execute");
-    } else {
-    	command.execute();
-    }
+    org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties _self_ = org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspectVariableDeclarationAspectContext.getSelf(_self);
+     if (_self instanceof fr.obeo.dsl.arduino.VariableDeclaration){
+     org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspect._privk3_execute(_self_, (fr.obeo.dsl.arduino.VariableDeclaration)_self);
+    } else  if (_self instanceof fr.obeo.dsl.arduino.Instruction){
+     org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.execute((fr.obeo.dsl.arduino.Instruction)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_execute(final VariableDeclaration _self) {

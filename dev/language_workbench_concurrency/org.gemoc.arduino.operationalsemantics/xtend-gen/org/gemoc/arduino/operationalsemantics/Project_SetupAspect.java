@@ -12,7 +12,6 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect;
 import org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;
 import org.gemoc.arduino.operationalsemantics.Project_SetupAspectProjectAspectProperties;
 
 @Aspect(className = Project.class)
@@ -36,12 +35,12 @@ public class Project_SetupAspect {
         } else {
           if ((o instanceof Pin)) {
             Integer _valueOf = Integer.valueOf(0);
-            Pin_EvaluableAspect.level(((Pin) o), _valueOf);
+            ((Pin) o).setLevel((_valueOf).intValue());
           } else {
             if ((o instanceof Connector)) {
               Pin _pin = ((Connector) o).getPin();
               Integer _valueOf_1 = Integer.valueOf(0);
-              Pin_EvaluableAspect.level(_pin, _valueOf_1);
+              _pin.setLevel((_valueOf_1).intValue());
             }
           }
         }

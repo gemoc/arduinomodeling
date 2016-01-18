@@ -336,8 +336,14 @@
         <nodeMappings name="SK_ModuleGet" semanticCandidatesExpression="service:getModuleGets" domainClass="arduino.ModuleGet">
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromModel"/>
         </nodeMappings>
-        <nodeMappings name="SK_VariableDeclaration" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Variable']" semanticCandidatesExpression="service:getVariableDeclarations" domainClass="arduino.VariableDeclaration">
-          <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[self.variable.eClass().name +'  ' +self.variable.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20violet']"/>
+        <nodeMappings name="SK_VariableDeclaration" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Edit_Variable']" semanticCandidatesExpression="service:getVariableDeclarations" domainClass="arduino.VariableDeclaration">
+          <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[self.variable.name+' = unknown'/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20violet']"/>
+          <conditionnalStyles predicateExpression="[self.variable.oclIsKindOf(IntegerVariable)/]">
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[self.variable.name+' = '+self.variable.oclAsType(IntegerVariable).initialValue/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20violet']"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.variable.oclIsKindOf(BooleanVariable)/]">
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="[self.variable.name+' = '+self.variable.oclAsType(BooleanVariable).initialValue/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20violet']"/>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_Constant" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Constant']" semanticCandidatesExpression="service:getConstants" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Change_Constant']" domainClass="arduino.Constant">
           <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['unknown'/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
@@ -416,6 +422,12 @@
         <containerMappings name="SK_VariableAssignment" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Delete_VariableAssignment']" semanticCandidatesExpression="feature:instructions" domainClass="arduino.VariableAssignment" reusedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet']" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']">
           <subNodeMappings name="Equal" semanticCandidatesExpression="var:self" domainClass="arduino.VariableAssignment">
             <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="=" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="4" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']"/>
+          </subNodeMappings>
+          <subNodeMappings name="SK_VariableSubNode" semanticCandidatesExpression="[self.variable/]" domainClass="arduino.Variable">
+            <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="[self.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']">
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
@@ -559,6 +571,15 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SK_Edit_Variable">
+            <mask mask="{0}={1}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:1"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Hardware">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Status" label="On/Off" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Status.png">
@@ -582,14 +603,16 @@
           <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleAssignment" label="ModuleAssignment" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Level.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="modules" candidatesExpression="[container.getSketch().getLevelModules()/]" message="Select an hardware module"/>
-              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="instruction" candidatesExpression="[container.getSketch().instructions->select(e|e.oclIsKindOf(Expression))/]" message="Select an expression to set"/>
             </variable>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ModuleAssignment" referenceName="instructions" variableName="moduleSet">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:modules"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operand" valueExpression="var:instruction"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanConstant" referenceName="operand" variableName="aBooleanConstant">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="[true/]"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operand" valueExpression="var:aBooleanConstant"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
@@ -868,11 +891,25 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_VariableAssignment" label="VariableAssignment" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Set.png">
-            <variable name="container"/>
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="theVariable" candidatesExpression="[container.getSketch().eAllContents()->select(e | e.oclIsKindOf(Variable))/]" message="select the Variable to set"/>
+            </variable>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.VariableAssignment" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.VariableAssignment" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="variable" valueExpression="var:theVariable"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[theVariable.oclIsKindOf(IntegerVariable)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerConstant" referenceName="operand" variableName="theConstant">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="0"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[theVariable.oclIsKindOf(BooleanVariable)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanConstant" referenceName="operand" variableName="theConstant">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="false"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.getLastInstruction() &lt;> null/]">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container.getLastInstruction()/]">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:instance"/>

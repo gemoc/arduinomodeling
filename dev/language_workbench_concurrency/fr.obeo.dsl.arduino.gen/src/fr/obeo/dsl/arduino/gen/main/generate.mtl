@@ -55,6 +55,7 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
+//my compiler
  [sketch.instructions-> first().genINO()/]
 }
 [/file]
@@ -101,7 +102,7 @@ digitalWrite([instruction.module.getVariableName()/], [getStatus(instruction)/])
 
 [template private getStatus(instruction : ModuleAssignment)post (trim())]
 [if ((not instruction.operand.oclIsInvalid()) and instruction.operand.oclIsTypeOf(BooleanConstant))]
-	[if (instruction.operand.oclAsType(BooleanConstant).value=false)]
+	[if (instruction.operand.oclAsType(BooleanConstant).value=true)]
 HIGH
 	[else]
 LOW
@@ -232,7 +233,7 @@ analogWrite([instruction.eContainer(arduino::Sketch).getPinId(instruction.module
 [/template]
 
 [template public generateExpression(expression :  ModuleGet)post (trim())]
-[expression.module.getVariableName()/]
+[expression.module.getVariableName()/]_value
 [/template]
 
 [template public generateExpression(instruction : IntegerConstant)post (trim())]

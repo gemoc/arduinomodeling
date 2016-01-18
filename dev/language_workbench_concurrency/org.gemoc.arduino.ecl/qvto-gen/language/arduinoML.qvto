@@ -167,6 +167,14 @@ main() {
 
 
 		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), VariableAssignment.oclAsType(EClass)).oclAsType(VariableAssignment)->map VA_atomic12VA_atomic();
+		
+		
+
+		
+
+
+		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_nonReentrant12I_nonReentrant();
 		
 		
@@ -1197,6 +1205,25 @@ main() {
 
 //relation stuff		
 	
+		mapping inMM1::VariableAssignment::VA_atomic12VA_atomic(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_VA_atomic";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_stop']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+
+//relation stuff		
+	
 		mapping inMM1::If::I_nonReentrant12I_nonReentrant(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_I_nonReentrant";
@@ -1514,6 +1541,12 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Control.oclAsType(EClass)).oclAsType(Control)->map doEvaluate12ActionFeedBack();
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Control.oclAsType(EClass)).oclAsType(Control)->map doEvaluate22ActionFeedBack();
+
+
+
+		
+
+
 
 
 

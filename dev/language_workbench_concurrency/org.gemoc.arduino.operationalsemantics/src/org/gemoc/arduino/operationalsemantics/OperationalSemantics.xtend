@@ -49,6 +49,9 @@ import fr.obeo.dsl.arduino.VariableDeclaration
 import fr.obeo.dsl.arduino.BooleanModuleGet
 import fr.obeo.dsl.arduino.IntegerModuleGet
 import fr.obeo.dsl.arduino.VariableRef
+import fr.obeo.dsl.arduino.ModuleKind
+import java.awt.Toolkit
+import java.awt.event.KeyEvent
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -291,6 +294,12 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
+		// dirty tricks to make the model more usable
+		if (_self.module.name.contains("button")){
+			var boolean res = Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK);
+			println(res);
+			return res;
+		}	
 		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
 		if (pin.level == 0){
 			return false

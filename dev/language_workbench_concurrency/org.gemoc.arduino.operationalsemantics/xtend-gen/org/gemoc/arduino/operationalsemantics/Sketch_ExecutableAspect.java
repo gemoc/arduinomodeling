@@ -32,7 +32,7 @@ public class Sketch_ExecutableAspect extends Instruction_ExecutableAspect {
     while ((!Objects.equal(current, null))) {
       {
         if ((!(current instanceof Sketch))) {
-          Instruction_ExecutableAspect.execute(current);
+          current.execute();
         }
         Instruction _next = current.getNext();
         current = _next;

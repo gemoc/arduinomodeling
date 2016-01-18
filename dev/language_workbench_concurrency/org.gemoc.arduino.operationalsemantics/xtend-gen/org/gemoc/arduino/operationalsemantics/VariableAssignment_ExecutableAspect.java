@@ -2,7 +2,6 @@ package org.gemoc.arduino.operationalsemantics;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import fr.obeo.dsl.arduino.BooleanVariable;
 import fr.obeo.dsl.arduino.Expression;
 import fr.obeo.dsl.arduino.IntegerVariable;
@@ -18,25 +17,13 @@ import org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspec
 @SuppressWarnings("all")
 public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
   @OverrideAspectMethod
-  @Step
   public static void execute(final VariableAssignment _self) {
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_ = org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspectVariableAssignmentAspectContext.getSelf(_self);
-    		 if (_self instanceof fr.obeo.dsl.arduino.VariableAssignment){
-    		 org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspect._privk3_execute(_self_, (fr.obeo.dsl.arduino.VariableAssignment)_self);
-    		} else  if (_self instanceof fr.obeo.dsl.arduino.Instruction){
-    		 org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.execute((fr.obeo.dsl.arduino.Instruction)_self);
-    		} else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (manager != null) {
-    	manager.executeStep(_self,command,"VariableAssignment","execute");
-    } else {
-    	command.execute();
-    }
+    org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_ = org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspectVariableAssignmentAspectContext.getSelf(_self);
+     if (_self instanceof fr.obeo.dsl.arduino.VariableAssignment){
+     org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspect._privk3_execute(_self_, (fr.obeo.dsl.arduino.VariableAssignment)_self);
+    } else  if (_self instanceof fr.obeo.dsl.arduino.Instruction){
+     org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.execute((fr.obeo.dsl.arduino.Instruction)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_execute(final VariableAssignment _self) {

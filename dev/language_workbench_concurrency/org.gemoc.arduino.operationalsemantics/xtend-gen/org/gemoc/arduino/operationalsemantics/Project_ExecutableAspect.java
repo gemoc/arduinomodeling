@@ -5,7 +5,6 @@ import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
 import org.gemoc.arduino.operationalsemantics.Project_ExecutableAspectProjectAspectProperties;
 import org.gemoc.arduino.operationalsemantics.Project_SetupAspect;
-import org.gemoc.arduino.operationalsemantics.Sketch_ExecutableAspect;
 
 @Aspect(className = Project.class)
 @SuppressWarnings("all")
@@ -19,7 +18,7 @@ public class Project_ExecutableAspect {
     Project_SetupAspect.setup(_self);
     final Sketch sketch = _self.getSketch();
     while (true) {
-      Sketch_ExecutableAspect.execute(sketch);
+      sketch.execute();
     }
   }
 }

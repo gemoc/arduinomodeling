@@ -7,8 +7,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;
-import org.gemoc.gemoc_language_workbench.extensions.sirius.modelloader.DefaultModelLoader;
-import org.gemoc.gemoc_language_workbench.extensions.sirius.services.AbstractGemocDebuggerServices;
+import org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher.Launcher;
+import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.osgi.framework.Bundle;
 
 import fr.obeo.dsl.arduino.ArduinoUtils;
@@ -18,7 +18,6 @@ import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.design.services.ArduinoServices;
-import org.gemoc.executionengine.java.sequential_modeling_workbench.ui.launcher.Launcher;
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 

@@ -50,6 +50,10 @@ context VariableDeclaration
 	inv VD_atomic:
 		Relation Coincides(self.start, self.stop)
  
+context VariableAssignment
+	inv VA_atomic:
+		Relation Coincides(self.start, self.stop)
+ 
 context If
 	inv I_nonReentrant:
 		Relation Alternates(self.start, self.stop)
