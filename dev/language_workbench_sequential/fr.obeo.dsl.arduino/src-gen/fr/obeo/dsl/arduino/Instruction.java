@@ -82,4 +82,20 @@ public interface Instruction extends EObject {
 	 */
 	void setNext(Instruction value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void execute();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void finalize();
+
 } // Instruction

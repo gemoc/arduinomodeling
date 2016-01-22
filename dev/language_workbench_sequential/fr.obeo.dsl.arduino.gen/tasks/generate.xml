@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="fr.obeo.dsl.arduino.gen">
-    <property name="ECLIPSE_HOME" value="../../../../../../../../../../../install/gemoc/build207"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../workspace_language_arduinoML"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Downloads/gemoc_studio"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="fr.obeo.dsl.arduino.gen.libraryclasspath">
@@ -11,6 +11,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.10.2.v20150203-1939.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.weaving.hook_1.1.100.weaving-hook-20140821.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.fx.osgi_2.1.0.201508240501.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.0.1.v20140709-1414.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.6.1.v20141014-1248.jar"/>

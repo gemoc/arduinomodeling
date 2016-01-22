@@ -44,7 +44,6 @@ import fr.obeo.dsl.arduino.ModuleGet;
 import fr.obeo.dsl.arduino.ModuleInstruction;
 import fr.obeo.dsl.arduino.ModuleKind;
 import fr.obeo.dsl.arduino.NamedElement;
-import fr.obeo.dsl.arduino.ParameterType;
 import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
@@ -69,7 +68,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -476,9 +474,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theArduinoPackage.createPackageContents();
 
@@ -636,6 +631,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EAttribute getPin_Id() {
 		return (EAttribute)pinEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPin_Level() {
+		return (EAttribute)pinEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1165,6 +1169,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIntegerVariable_Value() {
+		return (EAttribute)integerVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBooleanVariable() {
 		return booleanVariableEClass;
 	}
@@ -1176,6 +1189,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EAttribute getBooleanVariable_InitialValue() {
 		return (EAttribute)booleanVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanVariable_Value() {
+		return (EAttribute)booleanVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1397,6 +1419,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		pinEClass = createEClass(PIN);
 		createEAttribute(pinEClass, PIN__ID);
+		createEAttribute(pinEClass, PIN__LEVEL);
 
 		analogPinEClass = createEClass(ANALOG_PIN);
 
@@ -1485,9 +1508,11 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		integerVariableEClass = createEClass(INTEGER_VARIABLE);
 		createEAttribute(integerVariableEClass, INTEGER_VARIABLE__INITIAL_VALUE);
+		createEAttribute(integerVariableEClass, INTEGER_VARIABLE__VALUE);
 
 		booleanVariableEClass = createEClass(BOOLEAN_VARIABLE);
 		createEAttribute(booleanVariableEClass, BOOLEAN_VARIABLE__INITIAL_VALUE);
+		createEAttribute(booleanVariableEClass, BOOLEAN_VARIABLE__VALUE);
 
 		booleanModuleGetEClass = createEClass(BOOLEAN_MODULE_GET);
 
@@ -1540,9 +1565,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1622,6 +1644,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(pinEClass, Pin.class, "Pin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPin_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPin_Level(), ecorePackage.getEIntegerObject(), "level", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analogPinEClass, AnalogPin.class, "AnalogPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1639,6 +1662,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getInstruction_Previous(), this.getInstruction(), null, "previous", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstruction_Next(), this.getInstruction(), null, "next", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(instructionEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(instructionEClass, null, "finalize", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(moduleAssignmentEClass, ModuleAssignment.class, "ModuleAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(moduleInstructionEClass, ModuleInstruction.class, "ModuleInstruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1646,6 +1673,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(controlEClass, Control.class, "Control", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControl_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(controlEClass, ecorePackage.getEBoolean(), "evaluate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(utilitiesEClass, Utilities.class, "Utilities", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1696,10 +1725,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getIf_Condition(), this.getExpression(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integerConstantEClass, IntegerConstant.class, "IntegerConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerConstant_Value(), theEcorePackage.getEInt(), "value", "0", 0, 1, IntegerConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerConstant_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, IntegerConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBooleanConstant_Value(), theEcorePackage.getEBoolean(), "value", "false", 0, 1, BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanConstant_Value(), ecorePackage.getEBoolean(), "value", "false", 0, 1, BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1709,10 +1738,12 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getAssignment_Operand(), this.getExpression(), null, "operand", null, 1, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integerVariableEClass, IntegerVariable.class, "IntegerVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerVariable_InitialValue(), theEcorePackage.getEInt(), "initialValue", "0", 0, 1, IntegerVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerVariable_InitialValue(), ecorePackage.getEInt(), "initialValue", "0", 0, 1, IntegerVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerVariable_Value(), ecorePackage.getEIntegerObject(), "value", "0", 0, 1, IntegerVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanVariableEClass, BooleanVariable.class, "BooleanVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBooleanVariable_InitialValue(), theEcorePackage.getEBoolean(), "initialValue", "false", 0, 1, BooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanVariable_InitialValue(), ecorePackage.getEBoolean(), "initialValue", "false", 0, 1, BooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanVariable_Value(), ecorePackage.getEBooleanObject(), "value", "false", 0, 1, BooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanModuleGetEClass, BooleanModuleGet.class, "BooleanModuleGet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1775,6 +1806,35 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// dynamic
+		createDynamicAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>dynamic</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDynamicAnnotations() {
+		String source = "dynamic";	
+		addAnnotation
+		  (getPin_Level(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getIntegerVariable_Value(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBooleanVariable_Value(), 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //ArduinoPackageImpl

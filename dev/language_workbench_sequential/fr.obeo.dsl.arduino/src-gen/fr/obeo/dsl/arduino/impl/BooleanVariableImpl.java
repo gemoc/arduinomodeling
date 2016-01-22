@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.BooleanVariableImpl#isInitialValue <em>Initial Value</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.BooleanVariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +53,26 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * @ordered
 	 */
 	protected boolean initialValue = INITIAL_VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean VALUE_EDEFAULT = Boolean.FALSE;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,11 +119,34 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Boolean newValue) {
+		Boolean oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.BOOLEAN_VARIABLE__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				return isInitialValue();
+			case ArduinoPackage.BOOLEAN_VARIABLE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +161,9 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 		switch (featureID) {
 			case ArduinoPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				setInitialValue((Boolean)newValue);
+				return;
+			case ArduinoPackage.BOOLEAN_VARIABLE__VALUE:
+				setValue((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,6 +180,9 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 			case ArduinoPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
 				return;
+			case ArduinoPackage.BOOLEAN_VARIABLE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -147,6 +197,8 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 		switch (featureID) {
 			case ArduinoPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				return initialValue != INITIAL_VALUE_EDEFAULT;
+			case ArduinoPackage.BOOLEAN_VARIABLE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -163,6 +215,8 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (initialValue: ");
 		result.append(initialValue);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

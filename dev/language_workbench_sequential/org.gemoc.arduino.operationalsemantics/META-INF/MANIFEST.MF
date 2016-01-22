@@ -12,8 +12,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.core.resources;bundle-version="3.9.1",
  org.eclipse.jdt.core;bundle-version="3.10.0",
- org.gemoc.execution.sequential.javaxdsml.model;bundle-version="0.1.0"
+ fr.inria.diverse.k3.ui;bundle-version="3.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gemoc.arduino.operationalsemantics,
  org.gemoc.arduino.operationalsemantics.main
+Import-Package: org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher,
+ org.gemoc.executionframework.engine.ui.launcher

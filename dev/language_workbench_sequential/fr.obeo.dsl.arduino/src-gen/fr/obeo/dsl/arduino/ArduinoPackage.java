@@ -286,13 +286,22 @@ public interface ArduinoPackage extends EPackage {
 	int PIN__ID = 0;
 
 	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__LEVEL = 1;
+
+	/**
 	 * The number of structural features of the '<em>Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_FEATURE_COUNT = 1;
+	int PIN_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.DigitalPinImpl <em>Digital Pin</em>}' class.
@@ -312,6 +321,15 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIGITAL_PIN__ID = PIN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIGITAL_PIN__LEVEL = PIN__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Digital Pin</em>' class.
@@ -340,6 +358,15 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALOG_PIN__ID = PIN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALOG_PIN__LEVEL = PIN__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Analog Pin</em>' class.
@@ -1522,13 +1549,22 @@ public interface ArduinoPackage extends EPackage {
 	int INTEGER_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_VARIABLE__VALUE = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Integer Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int INTEGER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
@@ -1559,13 +1595,22 @@ public interface ArduinoPackage extends EPackage {
 	int BOOLEAN_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE__VALUE = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Boolean Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int BOOLEAN_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.BooleanModuleGetImpl <em>Boolean Module Get</em>}' class.
@@ -2040,6 +2085,17 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPin_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Pin#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see fr.obeo.dsl.arduino.Pin#getLevel()
+	 * @see #getPin()
+	 * @generated
+	 */
+	EAttribute getPin_Level();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.AnalogPin <em>Analog Pin</em>}'.
@@ -2650,6 +2706,17 @@ public interface ArduinoPackage extends EPackage {
 	EAttribute getIntegerVariable_InitialValue();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.IntegerVariable#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see fr.obeo.dsl.arduino.IntegerVariable#getValue()
+	 * @see #getIntegerVariable()
+	 * @generated
+	 */
+	EAttribute getIntegerVariable_Value();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.BooleanVariable <em>Boolean Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2669,6 +2736,17 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBooleanVariable_InitialValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.BooleanVariable#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see fr.obeo.dsl.arduino.BooleanVariable#getValue()
+	 * @see #getBooleanVariable()
+	 * @generated
+	 */
+	EAttribute getBooleanVariable_Value();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.BooleanModuleGet <em>Boolean Module Get</em>}'.
@@ -3024,6 +3102,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PIN__ID = eINSTANCE.getPin_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIN__LEVEL = eINSTANCE.getPin_Level();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.AnalogPinImpl <em>Analog Pin</em>}' class.
@@ -3550,6 +3636,14 @@ public interface ArduinoPackage extends EPackage {
 		EAttribute INTEGER_VARIABLE__INITIAL_VALUE = eINSTANCE.getIntegerVariable_InitialValue();
 
 		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGER_VARIABLE__VALUE = eINSTANCE.getIntegerVariable_Value();
+
+		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3566,6 +3660,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOLEAN_VARIABLE__INITIAL_VALUE = eINSTANCE.getBooleanVariable_InitialValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VARIABLE__VALUE = eINSTANCE.getBooleanVariable_Value();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.BooleanModuleGetImpl <em>Boolean Module Get</em>}' class.

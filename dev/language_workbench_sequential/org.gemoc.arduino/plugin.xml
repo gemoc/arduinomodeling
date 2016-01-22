@@ -1,7 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition gemocDebuggerFactory_class="org.gemoc.arduino.operationalsemantics.debug.ArduinoDebuggerFactory" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="arduino" xdsmlFilePath="/org.gemoc.arduino/project.xdsml" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.Arduino" xdsmlFilePath="/org.gemoc.arduino/bin/org/gemoc/arduino/Main.melange">
+      <XDSML_Definition_Customization fileExtensions="tfsm"/>
+    </XDSML_Definition>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.arduino.ArduinoMT" uri="http://arduinomt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="VariableRef:org.gemoc.arduino.operationalsemantics.VariableDeclaration_EvaluableAspect;Constant:org.gemoc.arduino.operationalsemantics.Constant_EvaluableAspect;ModuleAssignment:org.gemoc.arduino.operationalsemantics.ModuleAssignment_ExecutableAspect;BooleanModuleGet:org.gemoc.arduino.operationalsemantics.BooleanModuleGet_ExecutableAspect;Repeat:org.gemoc.arduino.operationalsemantics.Repeat_ExecutableAspect,org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect;ModuleInstruction:org.gemoc.arduino.operationalsemantics.ModuleInstruction_ExecutableAspect;Instruction:org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect;Delay:org.gemoc.arduino.operationalsemantics.Delay_ExecutableAspect;Control:org.gemoc.arduino.operationalsemantics.Control_ExecutableAspect,org.gemoc.arduino.operationalsemantics.Control_EvaluableAspect;Utilities:org.gemoc.arduino.operationalsemantics.Utilities_ExecutableAspect;IntegerVariable:org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect;VariableDeclaration:org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspect;IntegerModuleGet:org.gemoc.arduino.operationalsemantics.IntegerModuleGet_ExecutableAspect;VariableAssignment:org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspect;BinaryIntegerExpression:org.gemoc.arduino.operationalsemantics.BinaryIntegerExpression_EvaluableAspect;BinaryBooleanExpression:org.gemoc.arduino.operationalsemantics.BinaryBooleanExpression_EvaluableAspect;While:org.gemoc.arduino.operationalsemantics.While_EvaluableAspect,org.gemoc.arduino.operationalsemantics.While_ExecutableAspect;IntegerConstant:org.gemoc.arduino.operationalsemantics.IntegerConstant_ExecutableAspect;Project:org.gemoc.arduino.operationalsemantics.Project_ExecutableAspect;Pin:org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;Expression:org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect;BooleanVariable:org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect;BooleanConstant:org.gemoc.arduino.operationalsemantics.BooleanConstant_ExecutableAspect;Sketch:org.gemoc.arduino.operationalsemantics.Sketch_ExecutableAspect;If:org.gemoc.arduino.operationalsemantics.If_EvaluableAspect,org.gemoc.arduino.operationalsemantics.If_ExecutableAspect" entryPoints="org.gemoc.arduino.operationalsemantics.Project_ExecutableAspect.main(fr.obeo.dsl.arduino.Project)" exactType="org.gemoc.arduino.ArduinoMT" id="org.gemoc.arduino.Arduino" uri="http://www.obeo.fr/arduino">
+      <adapter class="org.gemoc.arduino.arduino.adapters.arduinomt.ArduinoAdapter" modeltypeId="org.gemoc.arduino.ArduinoMT"/>
+    </language>
   </extension>
 </plugin>

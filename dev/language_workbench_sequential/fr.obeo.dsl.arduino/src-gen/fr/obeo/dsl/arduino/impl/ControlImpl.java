@@ -86,6 +86,17 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean evaluate() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

@@ -20,9 +20,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.debug.ui;bundle-version="3.8.2",
  fr.obeo.dsl.arduino,
  fr.obeo.dsl.arduino.design,
- org.gemoc.execution.sequential.javaengine.ui;bundle-version="0.1.0",
- org.gemoc.executionframework.extensions.sirius,
- org.gemoc.arduino.operationalsemantics;bundle-version="1.0.0"
+ org.gemoc.arduino.operationalsemantics,
+ org.gemoc.executionframework.extensions.sirius;bundle-version="0.1.0",
+ org.gemoc.xdsmlframework.extensions.sirius;bundle-version="0.1.0",
+ org.gemoc.execution.concurrent.ccsljavaengine.ui,
+ org.gemoc.executionframework.engine;bundle-version="0.1.0",
+ org.gemoc.executionframework.engine.ui;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: com.google.common.collect

@@ -6493,6 +6493,9 @@
           <children xmi:type="notation:Node" xmi:id="_y7yasJISEeW7taS_fHFHAA" type="2003" element="_y4VeEJISEeW7taS_fHFHAA">
             <children xmi:type="notation:Node" xmi:id="_y7yas5ISEeW7taS_fHFHAA" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_y7yatJISEeW7taS_fHFHAA" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_BAdeYJ9QEeWspbZyzRA0vQ" type="3010" element="_A-5_MJ9QEeWspbZyzRA0vQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_BAdeYZ9QEeWspbZyzRA0vQ"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_y7yatZISEeW7taS_fHFHAA"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_y7yatpISEeW7taS_fHFHAA"/>
             </children>
@@ -6526,9 +6529,6 @@
           <children xmi:type="notation:Node" xmi:id="_y70P45ISEeW7taS_fHFHAA" type="2003" element="_y4ZIcJISEeW7taS_fHFHAA">
             <children xmi:type="notation:Node" xmi:id="_y7028JISEeW7taS_fHFHAA" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_y7028ZISEeW7taS_fHFHAA" type="7004">
-              <children xmi:type="notation:Node" xmi:id="_sXlJ0JRiEeWctOjWizI3dg" type="3010" element="_sWouoJRiEeWctOjWizI3dg">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXlJ0ZRiEeWctOjWizI3dg"/>
-              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_y7028pISEeW7taS_fHFHAA"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_y70285ISEeW7taS_fHFHAA"/>
             </children>
@@ -6558,6 +6558,9 @@
             <children xmi:type="notation:Node" xmi:id="_y73TN5ISEeW7taS_fHFHAA" type="7004">
               <children xmi:type="notation:Node" xmi:id="_lnNpQJRiEeWctOjWizI3dg" type="3010" element="_llys8JRiEeWctOjWizI3dg">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_lnNpQZRiEeWctOjWizI3dg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_BA0qwJ9QEeWspbZyzRA0vQ" type="3010" element="_A_As4J9QEeWspbZyzRA0vQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_BA0qwZ9QEeWspbZyzRA0vQ"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_y73TOJISEeW7taS_fHFHAA"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_y73TOZISEeW7taS_fHFHAA"/>
@@ -6675,6 +6678,9 @@
             <children xmi:type="notation:Node" xmi:id="_y8AdIZISEeW7taS_fHFHAA" type="7004">
               <children xmi:type="notation:Node" xmi:id="_y8MqZpISEeW7taS_fHFHAA" type="3010" element="_y56LZJISEeW7taS_fHFHAA">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_y8MqZ5ISEeW7taS_fHFHAA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_BA1R0J9QEeWspbZyzRA0vQ" type="3010" element="_A_EXQJ9QEeWspbZyzRA0vQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_BA1R0Z9QEeWspbZyzRA0vQ"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_y8AdIpISEeW7taS_fHFHAA"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_y8AdI5ISEeW7taS_fHFHAA"/>
@@ -8688,6 +8694,17 @@
           <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_y4WsNJISEeW7taS_fHFHAA" red="228" green="228" blue="228"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_A-5_MJ9QEeWspbZyzRA0vQ" name="evaluate() : EBoolean" tooltipText="evaluate() : EBoolean">
+          <target xmi:type="ecore:EOperation" href="arduino.ecore#//Control/evaluate"/>
+          <semanticElements xmi:type="ecore:EOperation" href="arduino.ecore#//Control/evaluate"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_A-9CgJ9QEeWspbZyzRA0vQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_A-9CgZ9QEeWspbZyzRA0vQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_A-9Cgp9QEeWspbZyzRA0vQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_A-9Cg59QEeWspbZyzRA0vQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_y4XTQJISEeW7taS_fHFHAA" name="Delay" tooltipText="" outgoingEdges="_y62mkJISEeW7taS_fHFHAA" width="12" height="10">
         <target xmi:type="ecore:EClass" href="arduino.ecore#//Delay"/>
@@ -8755,17 +8772,6 @@
           <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_y4ZvhJISEeW7taS_fHFHAA" red="228" green="228" blue="228"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_sWouoJRiEeWctOjWizI3dg" name="evaluate()" tooltipText="evaluate()">
-          <target xmi:type="ecore:EOperation" href="arduino.ecore#//Expression/evaluate"/>
-          <semanticElements xmi:type="ecore:EOperation" href="arduino.ecore#//Expression/evaluate"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_sWpVsJRiEeWctOjWizI3dg" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_sWpVsZRiEeWctOjWizI3dg"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_sWpVspRiEeWctOjWizI3dg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_sWpVs5RiEeWctOjWizI3dg"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
-        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_y4cy0JISEeW7taS_fHFHAA" name="Hardware" tooltipText="" outgoingEdges="_y6gBRpISEeW7taS_fHFHAA _y6hPYJISEeW7taS_fHFHAA _y6h2cJISEeW7taS_fHFHAA _y66Q9pISEeW7taS_fHFHAA" incomingEdges="_y6okIJISEeW7taS_fHFHAA _y6uDsJISEeW7taS_fHFHAA" width="12" height="10">
         <target xmi:type="ecore:EClass" href="arduino.ecore#//Hardware"/>
@@ -8819,6 +8825,17 @@
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ll0iIpRiEeWctOjWizI3dg"/>
             <color xmi:type="viewpoint:RGBValues" xmi:id="_ll0iI5RiEeWctOjWizI3dg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_A_As4J9QEeWspbZyzRA0vQ" name="finalize()" tooltipText="finalize()">
+          <target xmi:type="ecore:EOperation" href="arduino.ecore#//Instruction/finalize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="arduino.ecore#//Instruction/finalize"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_A_BT8J9QEeWspbZyzRA0vQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_A_BT8Z9QEeWspbZyzRA0vQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_A_BT8p9QEeWspbZyzRA0vQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_A_BT859QEeWspbZyzRA0vQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
@@ -9120,6 +9137,17 @@
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_y56ycpISEeW7taS_fHFHAA"/>
             <color xmi:type="viewpoint:RGBValues" xmi:id="_y56yc5ISEeW7taS_fHFHAA"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_A_EXQJ9QEeWspbZyzRA0vQ" name="level : EInt = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="arduino.ecore#//Pin/level"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="arduino.ecore#//Pin/level"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_A_EXQZ9QEeWspbZyzRA0vQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_A_EXQp9QEeWspbZyzRA0vQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_A_EXQ59QEeWspbZyzRA0vQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_A_EXRJ9QEeWspbZyzRA0vQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
