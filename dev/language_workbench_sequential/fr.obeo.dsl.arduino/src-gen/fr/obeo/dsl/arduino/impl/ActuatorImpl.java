@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ActuatorImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.ActuatorImpl#getImage <em>Image</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ActuatorImpl#isLevel <em>Level</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ActuatorImpl#getLibrary <em>Library</em>}</li>
  * </ul>
@@ -57,26 +56,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 	 * @ordered
 	 */
 	protected ModuleKind kind = KIND_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String IMAGE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected String image = IMAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isLevel() <em>Level</em>}' attribute.
@@ -163,27 +142,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getImage() {
-		return image;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImage(String newImage) {
-		String oldImage = image;
-		image = newImage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ACTUATOR__IMAGE, oldImage, image));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isLevel() {
 		return level;
 	}
@@ -231,8 +189,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 		switch (featureID) {
 			case ArduinoPackage.ACTUATOR__KIND:
 				return getKind();
-			case ArduinoPackage.ACTUATOR__IMAGE:
-				return getImage();
 			case ArduinoPackage.ACTUATOR__LEVEL:
 				return isLevel();
 			case ArduinoPackage.ACTUATOR__LIBRARY:
@@ -251,9 +207,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 		switch (featureID) {
 			case ArduinoPackage.ACTUATOR__KIND:
 				setKind((ModuleKind)newValue);
-				return;
-			case ArduinoPackage.ACTUATOR__IMAGE:
-				setImage((String)newValue);
 				return;
 			case ArduinoPackage.ACTUATOR__LEVEL:
 				setLevel((Boolean)newValue);
@@ -276,9 +229,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 			case ArduinoPackage.ACTUATOR__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case ArduinoPackage.ACTUATOR__IMAGE:
-				setImage(IMAGE_EDEFAULT);
-				return;
 			case ArduinoPackage.ACTUATOR__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
 				return;
@@ -299,8 +249,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 		switch (featureID) {
 			case ArduinoPackage.ACTUATOR__KIND:
 				return kind != KIND_EDEFAULT;
-			case ArduinoPackage.ACTUATOR__IMAGE:
-				return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
 			case ArduinoPackage.ACTUATOR__LEVEL:
 				return level != LEVEL_EDEFAULT;
 			case ArduinoPackage.ACTUATOR__LIBRARY:
@@ -321,8 +269,6 @@ public class ActuatorImpl extends NamedElementImpl implements Actuator {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
-		result.append(", image: ");
-		result.append(image);
 		result.append(", level: ");
 		result.append(level);
 		result.append(", library: ");

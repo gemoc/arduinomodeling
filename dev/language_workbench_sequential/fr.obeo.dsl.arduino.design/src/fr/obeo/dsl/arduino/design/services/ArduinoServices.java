@@ -176,13 +176,13 @@ public class ArduinoServices {
 //	}
 
 	public String getImage(Module module) {
-		String imageName = module.getImage();
-		return getImage(imageName);
+//		String imageName = module.getImage();
+		return getImage("");
 	}
 
 	public String getImage(Platform platform) {
-		String imageName = platform.getImage();
-		return getImage(imageName);
+//		String imageName = platform.getImage();
+		return getImage("");
 	}
 
 	private String getImage(String imageName) {
@@ -205,6 +205,9 @@ public class ArduinoServices {
 				}
 			}
 		}
+		
+//		Platform platform = ArduinoFactory.eINSTANCE.createPlatform();
+//		platform.g
 
 		return result;
 	}
@@ -882,13 +885,15 @@ public class ArduinoServices {
 	}
 
 	public String getImage(ModuleInstruction instruction) {
-		return "/fr.obeo.dsl.arduino.design/images/"
-				+ instruction.getModule().getImage();
+		return "/fr.obeo.dsl.arduino.design/images/default.svg";
+//		return "/fr.obeo.dsl.arduino.design/images/"
+//				+ instruction.getModule().getImage();
 	}
 
 	public String getImage(ModuleGet instruction) {
-		return "/fr.obeo.dsl.arduino.design/images/"
-				+ instruction.getModule().getImage();
+		return "/fr.obeo.dsl.arduino.design/images/default.svg";
+//		return "/fr.obeo.dsl.arduino.design/images/"
+//				+ instruction.getModule().getImage();
 	}
 	
 	

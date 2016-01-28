@@ -24,7 +24,6 @@ int [mod.getVariableName()/] = [sketch.getPinId(mod)/];
 [mod.library.toString().toUpperFirst()/] [mod.getVariableName()/];
 [/for]
 [for (mod : Module | sketch.eAllContents("ModuleGet").module->select(m |m.oclIsKindOf(Sensor))->asOrderedSet())]
-// [mod.image/]
 int [mod.getVariableName()/] = [sketch.getPinId(mod)/]; 
 [/for]
 [for (instruction : Repeat | getRepeatInstructions(sketch))]

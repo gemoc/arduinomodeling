@@ -14,13 +14,11 @@
         eType="#//DigitalPin" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="analogPins" upperBound="-1"
         eType="#//AnalogPin" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" interface="true"
       eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ModuleKind"
         defaultValueLiteral="digital"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="library" eType="#//Library"/>
   </eClassifiers>
@@ -202,4 +200,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//Variable"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Buzzer" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RotationSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MicroServo" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfraRedSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AmbientLightSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoundSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fan" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MusicPlayer" eSuperTypes="#//Actuator"/>
 </ecore:EPackage>

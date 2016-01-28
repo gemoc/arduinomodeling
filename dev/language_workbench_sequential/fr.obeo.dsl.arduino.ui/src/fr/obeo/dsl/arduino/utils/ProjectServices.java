@@ -207,6 +207,7 @@ public class ProjectServices {
 									sketch.setName("Sketch");
 									sketch.setHardware(hardware);
 									rootObject.setSketch(sketch);
+									
 								}
 								try {
 									res.save(Maps.newHashMap());
@@ -219,12 +220,13 @@ public class ProjectServices {
 										monitor);
 
 								// Add ardublock kit
-								final URI defaultKitModelURI = URI
-										.createPlatformPluginURI(
-												"/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino",
-												true);
-								session.addSemanticResource(defaultKitModelURI,
-										monitor);
+//								final URI defaultKitModelURI = URI
+//										.createPlatformPluginURI(
+//												"/fr.obeo.dsl.arduino.design/resources/ArdublockKit.arduino",
+//												true);
+//								session.addSemanticResource(defaultKitModelURI,
+//										monitor);
+								
 
 								session.save(monitor);
 							}

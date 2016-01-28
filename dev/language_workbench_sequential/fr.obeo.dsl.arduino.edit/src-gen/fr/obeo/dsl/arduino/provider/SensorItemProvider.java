@@ -54,7 +54,6 @@ public class SensorItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
-			addImagePropertyDescriptor(object);
 			addLevelPropertyDescriptor(object);
 			addLibraryPropertyDescriptor(object);
 		}
@@ -75,28 +74,6 @@ public class SensorItemProvider extends NamedElementItemProvider {
 				 getString("_UI_Module_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Module_kind_feature", "_UI_Module_type"),
 				 ArduinoPackage.Literals.MODULE__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Image feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Module_image_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Module_image_feature", "_UI_Module_type"),
-				 ArduinoPackage.Literals.MODULE__IMAGE,
 				 true,
 				 false,
 				 false,
@@ -188,7 +165,6 @@ public class SensorItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Sensor.class)) {
 			case ArduinoPackage.SENSOR__KIND:
-			case ArduinoPackage.SENSOR__IMAGE:
 			case ArduinoPackage.SENSOR__LEVEL:
 			case ArduinoPackage.SENSOR__LIBRARY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

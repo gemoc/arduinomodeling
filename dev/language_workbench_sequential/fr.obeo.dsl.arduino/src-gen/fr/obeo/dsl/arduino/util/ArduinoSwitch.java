@@ -402,6 +402,96 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ArduinoPackage.LED: {
+				LED led = (LED)theEObject;
+				T result = caseLED(led);
+				if (result == null) result = caseActuator(led);
+				if (result == null) result = caseModule(led);
+				if (result == null) result = caseNamedElement(led);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.PUSH_BUTTON: {
+				PushButton pushButton = (PushButton)theEObject;
+				T result = casePushButton(pushButton);
+				if (result == null) result = caseSensor(pushButton);
+				if (result == null) result = caseModule(pushButton);
+				if (result == null) result = caseNamedElement(pushButton);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.BUZZER: {
+				Buzzer buzzer = (Buzzer)theEObject;
+				T result = caseBuzzer(buzzer);
+				if (result == null) result = caseActuator(buzzer);
+				if (result == null) result = caseModule(buzzer);
+				if (result == null) result = caseNamedElement(buzzer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ROTATION_SENSOR: {
+				RotationSensor rotationSensor = (RotationSensor)theEObject;
+				T result = caseRotationSensor(rotationSensor);
+				if (result == null) result = caseSensor(rotationSensor);
+				if (result == null) result = caseModule(rotationSensor);
+				if (result == null) result = caseNamedElement(rotationSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.MICRO_SERVO: {
+				MicroServo microServo = (MicroServo)theEObject;
+				T result = caseMicroServo(microServo);
+				if (result == null) result = caseActuator(microServo);
+				if (result == null) result = caseModule(microServo);
+				if (result == null) result = caseNamedElement(microServo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.INFRA_RED_SENSOR: {
+				InfraRedSensor infraRedSensor = (InfraRedSensor)theEObject;
+				T result = caseInfraRedSensor(infraRedSensor);
+				if (result == null) result = caseSensor(infraRedSensor);
+				if (result == null) result = caseModule(infraRedSensor);
+				if (result == null) result = caseNamedElement(infraRedSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.AMBIENT_LIGHT_SENSOR: {
+				AmbientLightSensor ambientLightSensor = (AmbientLightSensor)theEObject;
+				T result = caseAmbientLightSensor(ambientLightSensor);
+				if (result == null) result = caseSensor(ambientLightSensor);
+				if (result == null) result = caseModule(ambientLightSensor);
+				if (result == null) result = caseNamedElement(ambientLightSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.SOUND_SENSOR: {
+				SoundSensor soundSensor = (SoundSensor)theEObject;
+				T result = caseSoundSensor(soundSensor);
+				if (result == null) result = caseSensor(soundSensor);
+				if (result == null) result = caseModule(soundSensor);
+				if (result == null) result = caseNamedElement(soundSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.FAN: {
+				Fan fan = (Fan)theEObject;
+				T result = caseFan(fan);
+				if (result == null) result = caseActuator(fan);
+				if (result == null) result = caseModule(fan);
+				if (result == null) result = caseNamedElement(fan);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.MUSIC_PLAYER: {
+				MusicPlayer musicPlayer = (MusicPlayer)theEObject;
+				T result = caseMusicPlayer(musicPlayer);
+				if (result == null) result = caseActuator(musicPlayer);
+				if (result == null) result = caseModule(musicPlayer);
+				if (result == null) result = caseNamedElement(musicPlayer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1048,6 +1138,156 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariableRef(VariableRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>LED</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>LED</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLED(LED object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Push Button</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Push Button</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePushButton(PushButton object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Buzzer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Buzzer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBuzzer(Buzzer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rotation Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rotation Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRotationSensor(RotationSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Micro Servo</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Micro Servo</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMicroServo(MicroServo object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infra Red Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infra Red Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInfraRedSensor(InfraRedSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ambient Light Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ambient Light Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAmbientLightSensor(AmbientLightSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sound Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sound Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSoundSensor(SoundSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fan</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFan(Fan object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Music Player</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Music Player</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMusicPlayer(MusicPlayer object) {
 		return null;
 	}
 

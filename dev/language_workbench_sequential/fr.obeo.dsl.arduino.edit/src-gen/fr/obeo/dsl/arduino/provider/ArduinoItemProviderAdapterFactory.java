@@ -701,6 +701,236 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.LED} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LEDItemProvider ledItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.LED}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLEDAdapter() {
+		if (ledItemProvider == null) {
+			ledItemProvider = new LEDItemProvider(this);
+		}
+
+		return ledItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.PushButton} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PushButtonItemProvider pushButtonItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.PushButton}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPushButtonAdapter() {
+		if (pushButtonItemProvider == null) {
+			pushButtonItemProvider = new PushButtonItemProvider(this);
+		}
+
+		return pushButtonItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Buzzer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BuzzerItemProvider buzzerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Buzzer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBuzzerAdapter() {
+		if (buzzerItemProvider == null) {
+			buzzerItemProvider = new BuzzerItemProvider(this);
+		}
+
+		return buzzerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.RotationSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RotationSensorItemProvider rotationSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.RotationSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRotationSensorAdapter() {
+		if (rotationSensorItemProvider == null) {
+			rotationSensorItemProvider = new RotationSensorItemProvider(this);
+		}
+
+		return rotationSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.MicroServo} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MicroServoItemProvider microServoItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.MicroServo}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMicroServoAdapter() {
+		if (microServoItemProvider == null) {
+			microServoItemProvider = new MicroServoItemProvider(this);
+		}
+
+		return microServoItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.InfraRedSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InfraRedSensorItemProvider infraRedSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.InfraRedSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInfraRedSensorAdapter() {
+		if (infraRedSensorItemProvider == null) {
+			infraRedSensorItemProvider = new InfraRedSensorItemProvider(this);
+		}
+
+		return infraRedSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.AmbientLightSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AmbientLightSensorItemProvider ambientLightSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.AmbientLightSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAmbientLightSensorAdapter() {
+		if (ambientLightSensorItemProvider == null) {
+			ambientLightSensorItemProvider = new AmbientLightSensorItemProvider(this);
+		}
+
+		return ambientLightSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.SoundSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SoundSensorItemProvider soundSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.SoundSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSoundSensorAdapter() {
+		if (soundSensorItemProvider == null) {
+			soundSensorItemProvider = new SoundSensorItemProvider(this);
+		}
+
+		return soundSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Fan} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FanItemProvider fanItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Fan}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFanAdapter() {
+		if (fanItemProvider == null) {
+			fanItemProvider = new FanItemProvider(this);
+		}
+
+		return fanItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.MusicPlayer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MusicPlayerItemProvider musicPlayerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.MusicPlayer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMusicPlayerAdapter() {
+		if (musicPlayerItemProvider == null) {
+			musicPlayerItemProvider = new MusicPlayerItemProvider(this);
+		}
+
+		return musicPlayerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -826,6 +1056,16 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (unaryIntegerExpressionItemProvider != null) unaryIntegerExpressionItemProvider.dispose();
 		if (variableDeclarationItemProvider != null) variableDeclarationItemProvider.dispose();
 		if (variableRefItemProvider != null) variableRefItemProvider.dispose();
+		if (ledItemProvider != null) ledItemProvider.dispose();
+		if (pushButtonItemProvider != null) pushButtonItemProvider.dispose();
+		if (buzzerItemProvider != null) buzzerItemProvider.dispose();
+		if (rotationSensorItemProvider != null) rotationSensorItemProvider.dispose();
+		if (microServoItemProvider != null) microServoItemProvider.dispose();
+		if (infraRedSensorItemProvider != null) infraRedSensorItemProvider.dispose();
+		if (ambientLightSensorItemProvider != null) ambientLightSensorItemProvider.dispose();
+		if (soundSensorItemProvider != null) soundSensorItemProvider.dispose();
+		if (fanItemProvider != null) fanItemProvider.dispose();
+		if (musicPlayerItemProvider != null) musicPlayerItemProvider.dispose();
 	}
 
 }

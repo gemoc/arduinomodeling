@@ -74,9 +74,10 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 
 	private String getImageLevel(Module module, int level) {
-		String imageName = module.getImage().substring(0,
-				module.getImage().indexOf(".jpg"))
-				+ "_" + level + ".jpg";
+//		String imageName = module.getImage().substring(0,
+//				module.getImage().indexOf(".jpg"))
+//				+ "_" + level + ".jpg";
+		String imageName = "/fr.obeo.dsl.arduino.design/images/default.svg";
 		return imageName;
 	}
 	

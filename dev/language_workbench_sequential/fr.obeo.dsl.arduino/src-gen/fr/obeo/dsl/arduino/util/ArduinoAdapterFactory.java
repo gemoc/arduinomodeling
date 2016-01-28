@@ -248,6 +248,46 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createVariableRefAdapter();
 			}
 			@Override
+			public Adapter caseLED(LED object) {
+				return createLEDAdapter();
+			}
+			@Override
+			public Adapter casePushButton(PushButton object) {
+				return createPushButtonAdapter();
+			}
+			@Override
+			public Adapter caseBuzzer(Buzzer object) {
+				return createBuzzerAdapter();
+			}
+			@Override
+			public Adapter caseRotationSensor(RotationSensor object) {
+				return createRotationSensorAdapter();
+			}
+			@Override
+			public Adapter caseMicroServo(MicroServo object) {
+				return createMicroServoAdapter();
+			}
+			@Override
+			public Adapter caseInfraRedSensor(InfraRedSensor object) {
+				return createInfraRedSensorAdapter();
+			}
+			@Override
+			public Adapter caseAmbientLightSensor(AmbientLightSensor object) {
+				return createAmbientLightSensorAdapter();
+			}
+			@Override
+			public Adapter caseSoundSensor(SoundSensor object) {
+				return createSoundSensorAdapter();
+			}
+			@Override
+			public Adapter caseFan(Fan object) {
+				return createFanAdapter();
+			}
+			@Override
+			public Adapter caseMusicPlayer(MusicPlayer object) {
+				return createMusicPlayerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -866,6 +906,146 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariableRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.LED <em>LED</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.LED
+	 * @generated
+	 */
+	public Adapter createLEDAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.PushButton <em>Push Button</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.PushButton
+	 * @generated
+	 */
+	public Adapter createPushButtonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.Buzzer <em>Buzzer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.Buzzer
+	 * @generated
+	 */
+	public Adapter createBuzzerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.RotationSensor <em>Rotation Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.RotationSensor
+	 * @generated
+	 */
+	public Adapter createRotationSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.MicroServo <em>Micro Servo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.MicroServo
+	 * @generated
+	 */
+	public Adapter createMicroServoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.InfraRedSensor <em>Infra Red Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.InfraRedSensor
+	 * @generated
+	 */
+	public Adapter createInfraRedSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.AmbientLightSensor <em>Ambient Light Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.AmbientLightSensor
+	 * @generated
+	 */
+	public Adapter createAmbientLightSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.SoundSensor <em>Sound Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.SoundSensor
+	 * @generated
+	 */
+	public Adapter createSoundSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.Fan <em>Fan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.Fan
+	 * @generated
+	 */
+	public Adapter createFanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.MusicPlayer <em>Music Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.MusicPlayer
+	 * @generated
+	 */
+	public Adapter createMusicPlayerAdapter() {
 		return null;
 	}
 

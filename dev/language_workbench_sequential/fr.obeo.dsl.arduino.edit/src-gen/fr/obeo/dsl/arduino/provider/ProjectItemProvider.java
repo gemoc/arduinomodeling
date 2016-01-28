@@ -184,6 +184,56 @@ public class ProjectItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createLED()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createPushButton()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createBuzzer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createRotationSensor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createMicroServo()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createInfraRedSensor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createAmbientLightSensor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createSoundSensor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createFan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.PROJECT__MODULES,
+				 ArduinoFactory.eINSTANCE.createMusicPlayer()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ArduinoPackage.Literals.PROJECT__PLATFORM,
 				 ArduinoFactory.eINSTANCE.createPlatform()));
 	}

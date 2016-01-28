@@ -92,6 +92,16 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			case ArduinoPackage.UNARY_INTEGER_EXPRESSION: return createUnaryIntegerExpression();
 			case ArduinoPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
 			case ArduinoPackage.VARIABLE_REF: return createVariableRef();
+			case ArduinoPackage.LED: return createLED();
+			case ArduinoPackage.PUSH_BUTTON: return createPushButton();
+			case ArduinoPackage.BUZZER: return createBuzzer();
+			case ArduinoPackage.ROTATION_SENSOR: return createRotationSensor();
+			case ArduinoPackage.MICRO_SERVO: return createMicroServo();
+			case ArduinoPackage.INFRA_RED_SENSOR: return createInfraRedSensor();
+			case ArduinoPackage.AMBIENT_LIGHT_SENSOR: return createAmbientLightSensor();
+			case ArduinoPackage.SOUND_SENSOR: return createSoundSensor();
+			case ArduinoPackage.FAN: return createFan();
+			case ArduinoPackage.MUSIC_PLAYER: return createMusicPlayer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -419,6 +429,106 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	public VariableRef createVariableRef() {
 		VariableRefImpl variableRef = new VariableRefImpl();
 		return variableRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LED createLED() {
+		LEDImpl led = new LEDImpl();
+		return led;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PushButton createPushButton() {
+		PushButtonImpl pushButton = new PushButtonImpl();
+		return pushButton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Buzzer createBuzzer() {
+		BuzzerImpl buzzer = new BuzzerImpl();
+		return buzzer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RotationSensor createRotationSensor() {
+		RotationSensorImpl rotationSensor = new RotationSensorImpl();
+		return rotationSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MicroServo createMicroServo() {
+		MicroServoImpl microServo = new MicroServoImpl();
+		return microServo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InfraRedSensor createInfraRedSensor() {
+		InfraRedSensorImpl infraRedSensor = new InfraRedSensorImpl();
+		return infraRedSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AmbientLightSensor createAmbientLightSensor() {
+		AmbientLightSensorImpl ambientLightSensor = new AmbientLightSensorImpl();
+		return ambientLightSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SoundSensor createSoundSensor() {
+		SoundSensorImpl soundSensor = new SoundSensorImpl();
+		return soundSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Fan createFan() {
+		FanImpl fan = new FanImpl();
+		return fan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MusicPlayer createMusicPlayer() {
+		MusicPlayerImpl musicPlayer = new MusicPlayerImpl();
+		return musicPlayer;
 	}
 
 	/**

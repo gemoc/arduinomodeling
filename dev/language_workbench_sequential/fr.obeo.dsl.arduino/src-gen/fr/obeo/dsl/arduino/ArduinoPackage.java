@@ -185,22 +185,13 @@ public interface ArduinoPackage extends EPackage {
 	int PLATFORM__ANALOG_PINS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Image</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM__IMAGE = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Platform</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLATFORM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PLATFORM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.Module <em>Module</em>}' class.
@@ -231,22 +222,13 @@ public interface ArduinoPackage extends EPackage {
 	int MODULE__KIND = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Image</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODULE__IMAGE = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODULE__LEVEL = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MODULE__LEVEL = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Library</b></em>' attribute.
@@ -255,7 +237,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODULE__LIBRARY = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MODULE__LIBRARY = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Module</em>' class.
@@ -264,7 +246,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.PinImpl <em>Pin</em>}' class.
@@ -801,15 +783,6 @@ public interface ArduinoPackage extends EPackage {
 	int SENSOR__KIND = MODULE__KIND;
 
 	/**
-	 * The feature id for the '<em><b>Image</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSOR__IMAGE = MODULE__IMAGE;
-
-	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -863,15 +836,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTUATOR__KIND = MODULE__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Image</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTUATOR__IMAGE = MODULE__IMAGE;
 
 	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -1845,6 +1809,556 @@ public interface ArduinoPackage extends EPackage {
 	int VARIABLE_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.LEDImpl <em>LED</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.LEDImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getLED()
+	 * @generated
+	 */
+	int LED = 43;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__KIND = ACTUATOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__LEVEL = ACTUATOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__LIBRARY = ACTUATOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>LED</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.PushButtonImpl <em>Push Button</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.PushButtonImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getPushButton()
+	 * @generated
+	 */
+	int PUSH_BUTTON = 44;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON__KIND = SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON__LEVEL = SENSOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON__LIBRARY = SENSOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Push Button</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.BuzzerImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBuzzer()
+	 * @generated
+	 */
+	int BUZZER = 45;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZER__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZER__KIND = ACTUATOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZER__LEVEL = ACTUATOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZER__LIBRARY = ACTUATOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Buzzer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZER_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.RotationSensorImpl <em>Rotation Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.RotationSensorImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getRotationSensor()
+	 * @generated
+	 */
+	int ROTATION_SENSOR = 46;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_SENSOR__KIND = SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_SENSOR__LEVEL = SENSOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_SENSOR__LIBRARY = SENSOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Rotation Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.MicroServoImpl <em>Micro Servo</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.MicroServoImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMicroServo()
+	 * @generated
+	 */
+	int MICRO_SERVO = 47;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MICRO_SERVO__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MICRO_SERVO__KIND = ACTUATOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MICRO_SERVO__LEVEL = ACTUATOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MICRO_SERVO__LIBRARY = ACTUATOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Micro Servo</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MICRO_SERVO_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.InfraRedSensorImpl <em>Infra Red Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.InfraRedSensorImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getInfraRedSensor()
+	 * @generated
+	 */
+	int INFRA_RED_SENSOR = 48;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_SENSOR__KIND = SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_SENSOR__LEVEL = SENSOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_SENSOR__LIBRARY = SENSOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Infra Red Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.AmbientLightSensorImpl <em>Ambient Light Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.AmbientLightSensorImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getAmbientLightSensor()
+	 * @generated
+	 */
+	int AMBIENT_LIGHT_SENSOR = 49;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENT_LIGHT_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENT_LIGHT_SENSOR__KIND = SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENT_LIGHT_SENSOR__LEVEL = SENSOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENT_LIGHT_SENSOR__LIBRARY = SENSOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Ambient Light Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENT_LIGHT_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.SoundSensorImpl <em>Sound Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.SoundSensorImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getSoundSensor()
+	 * @generated
+	 */
+	int SOUND_SENSOR = 50;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_SENSOR__KIND = SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_SENSOR__LEVEL = SENSOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_SENSOR__LIBRARY = SENSOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Sound Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUND_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.FanImpl <em>Fan</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.FanImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getFan()
+	 * @generated
+	 */
+	int FAN = 51;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAN__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAN__KIND = ACTUATOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAN__LEVEL = ACTUATOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAN__LIBRARY = ACTUATOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Fan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAN_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.MusicPlayerImpl <em>Music Player</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.MusicPlayerImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMusicPlayer()
+	 * @generated
+	 */
+	int MUSIC_PLAYER = 52;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC_PLAYER__NAME = ACTUATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC_PLAYER__KIND = ACTUATOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC_PLAYER__LEVEL = ACTUATOR__LEVEL;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC_PLAYER__LIBRARY = ACTUATOR__LIBRARY;
+
+	/**
+	 * The number of structural features of the '<em>Music Player</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUSIC_PLAYER_FEATURE_COUNT = ACTUATOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1852,7 +2366,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 43;
+	int TIME = 53;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.ModuleKind <em>Module Kind</em>}' enum.
@@ -1862,7 +2376,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getModuleKind()
 	 * @generated
 	 */
-	int MODULE_KIND = 44;
+	int MODULE_KIND = 54;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.BinaryIntegerOperatorKind <em>Binary Integer Operator Kind</em>}' enum.
@@ -1872,7 +2386,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBinaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int BINARY_INTEGER_OPERATOR_KIND = 45;
+	int BINARY_INTEGER_OPERATOR_KIND = 55;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.Library <em>Library</em>}' enum.
@@ -1882,7 +2396,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getLibrary()
 	 * @generated
 	 */
-	int LIBRARY = 46;
+	int LIBRARY = 56;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.BinaryBooleanOperatorKind <em>Binary Boolean Operator Kind</em>}' enum.
@@ -1892,7 +2406,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBinaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int BINARY_BOOLEAN_OPERATOR_KIND = 47;
+	int BINARY_BOOLEAN_OPERATOR_KIND = 57;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.UnaryIntegerOperatorKind <em>Unary Integer Operator Kind</em>}' enum.
@@ -1902,7 +2416,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getUnaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int UNARY_INTEGER_OPERATOR_KIND = 48;
+	int UNARY_INTEGER_OPERATOR_KIND = 58;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.UnaryBooleanOperatorKind <em>Unary Boolean Operator Kind</em>}' enum.
@@ -1912,7 +2426,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getUnaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int UNARY_BOOLEAN_OPERATOR_KIND = 49;
+	int UNARY_BOOLEAN_OPERATOR_KIND = 59;
 
 
 	/**
@@ -1991,17 +2505,6 @@ public interface ArduinoPackage extends EPackage {
 	EReference getPlatform_AnalogPins();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Platform#getImage <em>Image</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Image</em>'.
-	 * @see fr.obeo.dsl.arduino.Platform#getImage()
-	 * @see #getPlatform()
-	 * @generated
-	 */
-	EAttribute getPlatform_Image();
-
-	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Module <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2021,17 +2524,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getModule_Kind();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Module#getImage <em>Image</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Image</em>'.
-	 * @see fr.obeo.dsl.arduino.Module#getImage()
-	 * @see #getModule()
-	 * @generated
-	 */
-	EAttribute getModule_Image();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Module#isLevel <em>Level</em>}'.
@@ -2874,6 +3366,106 @@ public interface ArduinoPackage extends EPackage {
 	EReference getVariableRef_Variable();
 
 	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.LED <em>LED</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>LED</em>'.
+	 * @see fr.obeo.dsl.arduino.LED
+	 * @generated
+	 */
+	EClass getLED();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.PushButton <em>Push Button</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Push Button</em>'.
+	 * @see fr.obeo.dsl.arduino.PushButton
+	 * @generated
+	 */
+	EClass getPushButton();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Buzzer <em>Buzzer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Buzzer</em>'.
+	 * @see fr.obeo.dsl.arduino.Buzzer
+	 * @generated
+	 */
+	EClass getBuzzer();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.RotationSensor <em>Rotation Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rotation Sensor</em>'.
+	 * @see fr.obeo.dsl.arduino.RotationSensor
+	 * @generated
+	 */
+	EClass getRotationSensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.MicroServo <em>Micro Servo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Micro Servo</em>'.
+	 * @see fr.obeo.dsl.arduino.MicroServo
+	 * @generated
+	 */
+	EClass getMicroServo();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.InfraRedSensor <em>Infra Red Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Infra Red Sensor</em>'.
+	 * @see fr.obeo.dsl.arduino.InfraRedSensor
+	 * @generated
+	 */
+	EClass getInfraRedSensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.AmbientLightSensor <em>Ambient Light Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ambient Light Sensor</em>'.
+	 * @see fr.obeo.dsl.arduino.AmbientLightSensor
+	 * @generated
+	 */
+	EClass getAmbientLightSensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.SoundSensor <em>Sound Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sound Sensor</em>'.
+	 * @see fr.obeo.dsl.arduino.SoundSensor
+	 * @generated
+	 */
+	EClass getSoundSensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Fan <em>Fan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fan</em>'.
+	 * @see fr.obeo.dsl.arduino.Fan
+	 * @generated
+	 */
+	EClass getFan();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.MusicPlayer <em>Music Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Music Player</em>'.
+	 * @see fr.obeo.dsl.arduino.MusicPlayer
+	 * @generated
+	 */
+	EClass getMusicPlayer();
+
+	/**
 	 * Returns the meta object for enum '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3026,14 +3618,6 @@ public interface ArduinoPackage extends EPackage {
 		EReference PLATFORM__ANALOG_PINS = eINSTANCE.getPlatform_AnalogPins();
 
 		/**
-		 * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLATFORM__IMAGE = eINSTANCE.getPlatform_Image();
-
-		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.Module <em>Module</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3050,14 +3634,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODULE__KIND = eINSTANCE.getModule_Kind();
-
-		/**
-		 * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODULE__IMAGE = eINSTANCE.getModule_Image();
 
 		/**
 		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
@@ -3778,6 +4354,106 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIABLE_REF__VARIABLE = eINSTANCE.getVariableRef_Variable();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.LEDImpl <em>LED</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.LEDImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getLED()
+		 * @generated
+		 */
+		EClass LED = eINSTANCE.getLED();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.PushButtonImpl <em>Push Button</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.PushButtonImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getPushButton()
+		 * @generated
+		 */
+		EClass PUSH_BUTTON = eINSTANCE.getPushButton();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.BuzzerImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBuzzer()
+		 * @generated
+		 */
+		EClass BUZZER = eINSTANCE.getBuzzer();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.RotationSensorImpl <em>Rotation Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.RotationSensorImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getRotationSensor()
+		 * @generated
+		 */
+		EClass ROTATION_SENSOR = eINSTANCE.getRotationSensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.MicroServoImpl <em>Micro Servo</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.MicroServoImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMicroServo()
+		 * @generated
+		 */
+		EClass MICRO_SERVO = eINSTANCE.getMicroServo();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.InfraRedSensorImpl <em>Infra Red Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.InfraRedSensorImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getInfraRedSensor()
+		 * @generated
+		 */
+		EClass INFRA_RED_SENSOR = eINSTANCE.getInfraRedSensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.AmbientLightSensorImpl <em>Ambient Light Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.AmbientLightSensorImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getAmbientLightSensor()
+		 * @generated
+		 */
+		EClass AMBIENT_LIGHT_SENSOR = eINSTANCE.getAmbientLightSensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.SoundSensorImpl <em>Sound Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.SoundSensorImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getSoundSensor()
+		 * @generated
+		 */
+		EClass SOUND_SENSOR = eINSTANCE.getSoundSensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.FanImpl <em>Fan</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.FanImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getFan()
+		 * @generated
+		 */
+		EClass FAN = eINSTANCE.getFan();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.MusicPlayerImpl <em>Music Player</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.MusicPlayerImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMusicPlayer()
+		 * @generated
+		 */
+		EClass MUSIC_PLAYER = eINSTANCE.getMusicPlayer();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.

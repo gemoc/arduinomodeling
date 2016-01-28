@@ -11,6 +11,7 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.Actuator;
+import fr.obeo.dsl.arduino.AmbientLightSensor;
 import fr.obeo.dsl.arduino.AnalogPin;
 import fr.obeo.dsl.arduino.ArduinoFactory;
 import fr.obeo.dsl.arduino.ArduinoPackage;
@@ -24,32 +25,40 @@ import fr.obeo.dsl.arduino.BooleanConstant;
 import fr.obeo.dsl.arduino.BooleanExpression;
 import fr.obeo.dsl.arduino.BooleanModuleGet;
 import fr.obeo.dsl.arduino.BooleanVariable;
+import fr.obeo.dsl.arduino.Buzzer;
 import fr.obeo.dsl.arduino.Connector;
 import fr.obeo.dsl.arduino.Constant;
 import fr.obeo.dsl.arduino.Control;
 import fr.obeo.dsl.arduino.Delay;
 import fr.obeo.dsl.arduino.DigitalPin;
 import fr.obeo.dsl.arduino.Expression;
+import fr.obeo.dsl.arduino.Fan;
 import fr.obeo.dsl.arduino.Hardware;
 import fr.obeo.dsl.arduino.If;
+import fr.obeo.dsl.arduino.InfraRedSensor;
 import fr.obeo.dsl.arduino.Instruction;
 import fr.obeo.dsl.arduino.IntegerConstant;
 import fr.obeo.dsl.arduino.IntegerExpression;
 import fr.obeo.dsl.arduino.IntegerModuleGet;
 import fr.obeo.dsl.arduino.IntegerVariable;
 import fr.obeo.dsl.arduino.Library;
+import fr.obeo.dsl.arduino.MicroServo;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.ModuleAssignment;
 import fr.obeo.dsl.arduino.ModuleGet;
 import fr.obeo.dsl.arduino.ModuleInstruction;
 import fr.obeo.dsl.arduino.ModuleKind;
+import fr.obeo.dsl.arduino.MusicPlayer;
 import fr.obeo.dsl.arduino.NamedElement;
 import fr.obeo.dsl.arduino.Pin;
 import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
+import fr.obeo.dsl.arduino.PushButton;
 import fr.obeo.dsl.arduino.Repeat;
+import fr.obeo.dsl.arduino.RotationSensor;
 import fr.obeo.dsl.arduino.Sensor;
 import fr.obeo.dsl.arduino.Sketch;
+import fr.obeo.dsl.arduino.SoundSensor;
 import fr.obeo.dsl.arduino.Time;
 import fr.obeo.dsl.arduino.UnaryBooleanExpression;
 import fr.obeo.dsl.arduino.UnaryBooleanOperatorKind;
@@ -384,6 +393,76 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass ledEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pushButtonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass buzzerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rotationSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass microServoEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass infraRedSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ambientLightSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass soundSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fanEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass musicPlayerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum timeEEnum = null;
 
 	/**
@@ -557,15 +636,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlatform_Image() {
-		return (EAttribute)platformEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getModule() {
 		return moduleEClass;
 	}
@@ -584,7 +654,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModule_Image() {
+	public EAttribute getModule_Level() {
 		return (EAttribute)moduleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -593,17 +663,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModule_Level() {
-		return (EAttribute)moduleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getModule_Library() {
-		return (EAttribute)moduleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)moduleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1313,6 +1374,96 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLED() {
+		return ledEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPushButton() {
+		return pushButtonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBuzzer() {
+		return buzzerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRotationSensor() {
+		return rotationSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMicroServo() {
+		return microServoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInfraRedSensor() {
+		return infraRedSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAmbientLightSensor() {
+		return ambientLightSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSoundSensor() {
+		return soundSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFan() {
+		return fanEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMusicPlayer() {
+		return musicPlayerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTime() {
 		return timeEEnum;
 	}
@@ -1407,11 +1558,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		platformEClass = createEClass(PLATFORM);
 		createEReference(platformEClass, PLATFORM__DIGITAL_PINS);
 		createEReference(platformEClass, PLATFORM__ANALOG_PINS);
-		createEAttribute(platformEClass, PLATFORM__IMAGE);
 
 		moduleEClass = createEClass(MODULE);
 		createEAttribute(moduleEClass, MODULE__KIND);
-		createEAttribute(moduleEClass, MODULE__IMAGE);
 		createEAttribute(moduleEClass, MODULE__LEVEL);
 		createEAttribute(moduleEClass, MODULE__LIBRARY);
 
@@ -1533,6 +1682,26 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		variableRefEClass = createEClass(VARIABLE_REF);
 		createEReference(variableRefEClass, VARIABLE_REF__VARIABLE);
 
+		ledEClass = createEClass(LED);
+
+		pushButtonEClass = createEClass(PUSH_BUTTON);
+
+		buzzerEClass = createEClass(BUZZER);
+
+		rotationSensorEClass = createEClass(ROTATION_SENSOR);
+
+		microServoEClass = createEClass(MICRO_SERVO);
+
+		infraRedSensorEClass = createEClass(INFRA_RED_SENSOR);
+
+		ambientLightSensorEClass = createEClass(AMBIENT_LIGHT_SENSOR);
+
+		soundSensorEClass = createEClass(SOUND_SENSOR);
+
+		fanEClass = createEClass(FAN);
+
+		musicPlayerEClass = createEClass(MUSIC_PLAYER);
+
 		// Create enums
 		timeEEnum = createEEnum(TIME);
 		moduleKindEEnum = createEEnum(MODULE_KIND);
@@ -1622,6 +1791,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		unaryIntegerExpressionEClass.getESuperTypes().add(this.getIntegerExpression());
 		variableDeclarationEClass.getESuperTypes().add(this.getInstruction());
 		variableRefEClass.getESuperTypes().add(this.getExpression());
+		ledEClass.getESuperTypes().add(this.getActuator());
+		pushButtonEClass.getESuperTypes().add(this.getSensor());
+		buzzerEClass.getESuperTypes().add(this.getActuator());
+		rotationSensorEClass.getESuperTypes().add(this.getSensor());
+		microServoEClass.getESuperTypes().add(this.getActuator());
+		infraRedSensorEClass.getESuperTypes().add(this.getSensor());
+		ambientLightSensorEClass.getESuperTypes().add(this.getSensor());
+		soundSensorEClass.getESuperTypes().add(this.getSensor());
+		fanEClass.getESuperTypes().add(this.getActuator());
+		musicPlayerEClass.getESuperTypes().add(this.getActuator());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(hardwareEClass, Hardware.class, "Hardware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1632,11 +1811,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPlatform_DigitalPins(), this.getDigitalPin(), null, "digitalPins", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPlatform_AnalogPins(), this.getAnalogPin(), null, "analogPins", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlatform_Image(), ecorePackage.getEString(), "image", null, 0, 1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModule_Kind(), this.getModuleKind(), "kind", "digital", 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModule_Image(), ecorePackage.getEString(), "image", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModule_Level(), ecorePackage.getEBoolean(), "level", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModule_Library(), this.getLibrary(), "library", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1763,6 +1940,26 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(variableRefEClass, VariableRef.class, "VariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableRef_Variable(), this.getVariable(), null, "variable", null, 1, 1, VariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ledEClass, fr.obeo.dsl.arduino.LED.class, "LED", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pushButtonEClass, PushButton.class, "PushButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(buzzerEClass, Buzzer.class, "Buzzer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(rotationSensorEClass, RotationSensor.class, "RotationSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(microServoEClass, MicroServo.class, "MicroServo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(infraRedSensorEClass, InfraRedSensor.class, "InfraRedSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ambientLightSensorEClass, AmbientLightSensor.class, "AmbientLightSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(soundSensorEClass, SoundSensor.class, "SoundSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(fanEClass, Fan.class, "Fan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(musicPlayerEClass, MusicPlayer.class, "MusicPlayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");

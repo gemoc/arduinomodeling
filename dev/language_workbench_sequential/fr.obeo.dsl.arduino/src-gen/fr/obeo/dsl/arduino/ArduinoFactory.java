@@ -273,6 +273,96 @@ public interface ArduinoFactory extends EFactory {
 	VariableRef createVariableRef();
 
 	/**
+	 * Returns a new object of class '<em>LED</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>LED</em>'.
+	 * @generated
+	 */
+	LED createLED();
+
+	/**
+	 * Returns a new object of class '<em>Push Button</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Push Button</em>'.
+	 * @generated
+	 */
+	PushButton createPushButton();
+
+	/**
+	 * Returns a new object of class '<em>Buzzer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Buzzer</em>'.
+	 * @generated
+	 */
+	Buzzer createBuzzer();
+
+	/**
+	 * Returns a new object of class '<em>Rotation Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rotation Sensor</em>'.
+	 * @generated
+	 */
+	RotationSensor createRotationSensor();
+
+	/**
+	 * Returns a new object of class '<em>Micro Servo</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Micro Servo</em>'.
+	 * @generated
+	 */
+	MicroServo createMicroServo();
+
+	/**
+	 * Returns a new object of class '<em>Infra Red Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Infra Red Sensor</em>'.
+	 * @generated
+	 */
+	InfraRedSensor createInfraRedSensor();
+
+	/**
+	 * Returns a new object of class '<em>Ambient Light Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ambient Light Sensor</em>'.
+	 * @generated
+	 */
+	AmbientLightSensor createAmbientLightSensor();
+
+	/**
+	 * Returns a new object of class '<em>Sound Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sound Sensor</em>'.
+	 * @generated
+	 */
+	SoundSensor createSoundSensor();
+
+	/**
+	 * Returns a new object of class '<em>Fan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fan</em>'.
+	 * @generated
+	 */
+	Fan createFan();
+
+	/**
+	 * Returns a new object of class '<em>Music Player</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Music Player</em>'.
+	 * @generated
+	 */
+	MusicPlayer createMusicPlayer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
