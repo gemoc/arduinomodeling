@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface MusicPlayer extends Actuator {
+public interface MusicPlayer extends ArduinoAnalogModule {
 } // MusicPlayer

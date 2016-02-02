@@ -23,7 +23,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -55,77 +54,8 @@ public class SketchItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPreviousPropertyDescriptor(object);
-			addNextPropertyDescriptor(object);
-			addHardwarePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Previous feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPreviousPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instruction_previous_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instruction_previous_feature", "_UI_Instruction_type"),
-				 ArduinoPackage.Literals.INSTRUCTION__PREVIOUS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Next feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instruction_next_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instruction_next_feature", "_UI_Instruction_type"),
-				 ArduinoPackage.Literals.INSTRUCTION__NEXT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Hardware feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHardwarePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Sketch_hardware_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sketch_hardware_feature", "_UI_Sketch_type"),
-				 ArduinoPackage.Literals.SKETCH__HARDWARE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -140,7 +70,7 @@ public class SketchItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS);
+			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__BLOCK);
 		}
 		return childrenFeatures;
 	}
@@ -196,7 +126,7 @@ public class SketchItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Sketch.class)) {
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
+			case ArduinoPackage.SKETCH__BLOCK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -216,43 +146,8 @@ public class SketchItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createSketch()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createModuleAssignment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createDelay()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createRepeat()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createWhile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createVariableAssignment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createIf()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.SKETCH__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createVariableDeclaration()));
+				(ArduinoPackage.Literals.SKETCH__BLOCK,
+				 ArduinoFactory.eINSTANCE.createBlock()));
 	}
 
 }

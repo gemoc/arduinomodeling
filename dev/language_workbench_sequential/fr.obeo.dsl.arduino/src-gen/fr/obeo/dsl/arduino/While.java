@@ -37,12 +37,12 @@ public interface While extends Control {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Condition</em>' containment reference.
-	 * @see #setCondition(Expression)
+	 * @see #setCondition(BooleanExpression)
 	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getWhile_Condition()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getCondition();
+	BooleanExpression getCondition();
 
 	/**
 	 * Sets the value of the '{@link fr.obeo.dsl.arduino.While#getCondition <em>Condition</em>}' containment reference.
@@ -52,6 +52,6 @@ public interface While extends Control {
 	 * @see #getCondition()
 	 * @generated
 	 */
-	void setCondition(Expression value);
+	void setCondition(BooleanExpression value);
 
 } // While

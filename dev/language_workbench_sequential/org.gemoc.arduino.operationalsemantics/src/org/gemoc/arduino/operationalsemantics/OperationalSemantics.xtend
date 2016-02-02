@@ -8,11 +8,11 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step
 import fr.obeo.dsl.arduino.ArduinoUtils
 import fr.obeo.dsl.arduino.BinaryBooleanExpression
 import fr.obeo.dsl.arduino.BinaryIntegerExpression
+import fr.obeo.dsl.arduino.Block
 import fr.obeo.dsl.arduino.BooleanConstant
 import fr.obeo.dsl.arduino.BooleanExpression
 import fr.obeo.dsl.arduino.BooleanModuleGet
 import fr.obeo.dsl.arduino.BooleanVariable
-import fr.obeo.dsl.arduino.Connector
 import fr.obeo.dsl.arduino.Constant
 import fr.obeo.dsl.arduino.Control
 import fr.obeo.dsl.arduino.Delay
@@ -23,35 +23,28 @@ import fr.obeo.dsl.arduino.IntegerConstant
 import fr.obeo.dsl.arduino.IntegerExpression
 import fr.obeo.dsl.arduino.IntegerModuleGet
 import fr.obeo.dsl.arduino.IntegerVariable
-import fr.obeo.dsl.arduino.Module
 import fr.obeo.dsl.arduino.ModuleAssignment
-import fr.obeo.dsl.arduino.ModuleGet
 import fr.obeo.dsl.arduino.ModuleInstruction
 import fr.obeo.dsl.arduino.Pin
 import fr.obeo.dsl.arduino.Project
 import fr.obeo.dsl.arduino.Repeat
-import fr.obeo.dsl.arduino.Sensor
-import fr.obeo.dsl.arduino.Sketch
 import fr.obeo.dsl.arduino.Utilities
 import fr.obeo.dsl.arduino.VariableAssignment
 import fr.obeo.dsl.arduino.VariableDeclaration
 import fr.obeo.dsl.arduino.VariableRef
 import fr.obeo.dsl.arduino.While
-import java.awt.Toolkit
-import java.awt.event.KeyEvent
 import java.util.List
 
 import static org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
 
-import static extension org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.Sketch_ExecutableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.Block_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Control_EvaluableAspect.*
-
-/*
- * FIXME We currently have to call aspect methods statically instead of using the object.method notation
- * 
- */ 
+import static extension org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.If_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect.*
+import java.awt.Toolkit
+import java.awt.event.KeyEvent
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -67,8 +60,7 @@ class Project_ExecutableAspect {
 	def void execute() {
 		val sketch = _self.sketch
 		while(true) {
-			//FIXME
-			execute(sketch)
+			sketch.block.execute
 		}
 	}
 	
@@ -89,8 +81,6 @@ class Project_ExecutableAspect {
 				o.value = o.initialValue
 			} else if (o instanceof Pin) {
 				(o as Pin).level = Integer.valueOf(0)
-			} else if (o instanceof Connector) {
-				(o as Connector).getPin().level = Integer.valueOf(0)
 			}
 		}];
 	}
@@ -117,20 +107,10 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 	}
 }
 
-@Aspect(className=Sketch)
-class Sketch_ExecutableAspect extends Instruction_ExecutableAspect {
-	@Step
-	@OverrideAspectMethod
+@Aspect(className=Block)
+class Block_ExecutableAspect {
 	def void execute() {
-		val Instruction first = _self.next
-		var current = first
-		while(current != null) {
-			if(!(current instanceof Sketch)) {
-				//FIXME
-				execute(current)
-			}
-			current = current.next
-		}
+		_self.instructions.forEach[i|i.execute]
 	}
 }
 
@@ -189,16 +169,17 @@ class Control_EvaluableAspect extends Instruction_ExecutableAspect {
 class If_EvaluableAspect extends Control_EvaluableAspect {
 	@OverrideAspectMethod
 	def Boolean evaluate() {
-		var Boolean resCond  =false
+		var Boolean resCond = false
 		if (_self.condition instanceof BooleanExpression){
 			resCond = _self.condition.evaluate as Boolean
 		}
-		if (_self.condition instanceof ModuleGet){
-			var Module m = (_self.condition as ModuleGet).module
-			if (m instanceof Sensor){
-				resCond = m.level
-			}
-		}
+		//FIXME
+//		if (_self.condition instanceof ModuleGet){
+//			var Module m = (_self.condition as ModuleGet).module
+//			if (m instanceof Sensor){
+//				resCond = m.level
+//			}
+//		}
 		return resCond
 	}
 }
@@ -208,13 +189,8 @@ class If_ExecutableAspect extends Control_ExecutableAspect {
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
-			//FIXME
-		val cond = evaluate(_self)
-		if (cond) {
-			_self.instructions.forEach[
-				//FIXME
-				i|execute(i)
-			]
+		if (_self.evaluate) {
+			_self.block.execute
 		}
 	}
 }
@@ -242,15 +218,10 @@ class Repeat_EvaluableAspect extends Control_EvaluableAspect {
 class Repeat_ExecutableAspect extends Control_ExecutableAspect  {
 	@OverrideAspectMethod
 	def void execute() {
-		//FIXME
-		while (evaluate(_self)) {
-			_self.instructions.forEach[
-				//FIXME
-				i|execute(i)
-			]
+		while (_self.evaluate) {
+			_self.block.execute
 		}
-		//FIXME
-		finalize(_self)
+		_self.finalize
 	}
 }
 
@@ -267,12 +238,8 @@ class While_EvaluableAspect extends Control_EvaluableAspect {
 class While_ExecutableAspect extends Control_ExecutableAspect {
 	@OverrideAspectMethod
 	def void execute() {
-		//FIXME
-		while (evaluate(_self)) {
-			_self.instructions.forEach[
-				//FIXME
-				i|execute(i)
-			]
+		while (_self.evaluate) {
+			_self.block.execute
 		}
 	}
 }
@@ -360,7 +327,7 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 		if (pin.level == 0){
 			return false
 		}
-		return true	
+		return true
 	}
 }
 

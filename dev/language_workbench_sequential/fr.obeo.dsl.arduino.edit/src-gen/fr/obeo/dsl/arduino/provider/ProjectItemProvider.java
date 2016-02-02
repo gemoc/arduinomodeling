@@ -85,10 +85,8 @@ public class ProjectItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__HARDWARE);
+			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__BOARD);
 			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__SKETCH);
-			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__MODULES);
-			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__PLATFORM);
 		}
 		return childrenFeatures;
 	}
@@ -141,10 +139,8 @@ public class ProjectItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Project.class)) {
-			case ArduinoPackage.PROJECT__HARDWARE:
+			case ArduinoPackage.PROJECT__BOARD:
 			case ArduinoPackage.PROJECT__SKETCH:
-			case ArduinoPackage.PROJECT__MODULES:
-			case ArduinoPackage.PROJECT__PLATFORM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -164,78 +160,13 @@ public class ProjectItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__HARDWARE,
-				 ArduinoFactory.eINSTANCE.createHardware()));
+				(ArduinoPackage.Literals.PROJECT__BOARD,
+				 ArduinoFactory.eINSTANCE.createArduinoBoard()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.PROJECT__SKETCH,
 				 ArduinoFactory.eINSTANCE.createSketch()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createSensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createActuator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createLED()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createPushButton()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createBuzzer()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createRotationSensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createMicroServo()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createInfraRedSensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createAmbientLightSensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createSoundSensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createFan()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__MODULES,
-				 ArduinoFactory.eINSTANCE.createMusicPlayer()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__PLATFORM,
-				 ArduinoFactory.eINSTANCE.createPlatform()));
 	}
 
 	/**

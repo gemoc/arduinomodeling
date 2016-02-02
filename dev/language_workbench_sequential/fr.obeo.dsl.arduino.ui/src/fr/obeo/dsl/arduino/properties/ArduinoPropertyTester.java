@@ -29,7 +29,7 @@ public class ArduinoPropertyTester extends PropertyTester {
 			return false;
 		}
 
-		if ("existHardware".equals(property) && project.getHardware() != null) {
+		if ("existHardware".equals(property) && project.getBoard() != null) {
 			return true;
 		}
 

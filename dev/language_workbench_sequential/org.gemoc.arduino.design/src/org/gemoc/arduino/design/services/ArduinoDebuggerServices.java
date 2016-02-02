@@ -6,16 +6,14 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect;
 import org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher.Launcher;
 import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.osgi.framework.Bundle;
 
 import fr.obeo.dsl.arduino.ArduinoUtils;
-import fr.obeo.dsl.arduino.Connector;
+import fr.obeo.dsl.arduino.Board;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.Pin;
-import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.design.services.ArduinoServices;
 
@@ -36,10 +34,6 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 		return pin.getLevel();
 	}
 
-	public Integer getLevel(Connector connector) {
-		return getLevel(connector.getPin());
-	}
-
 	public Integer getLevel(Module module) {
 		final Project project = getUserRootProject(module);
 		
@@ -56,7 +50,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 		return null;
 	}
 	
-	public Integer getLevel(Platform platform) {
+	public Integer getLevel(Board platform) {
 		return 0;
 	}
 	

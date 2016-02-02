@@ -11,9 +11,18 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.AmbientLightSensor;
+import fr.obeo.dsl.arduino.ArduinoAnalogModule;
+import fr.obeo.dsl.arduino.ArduinoModule;
 import fr.obeo.dsl.arduino.ArduinoPackage;
+import fr.obeo.dsl.arduino.Module;
+import fr.obeo.dsl.arduino.NamedElement;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AmbientLightSensorImpl extends SensorImpl implements AmbientLightSensor {
+public class AmbientLightSensorImpl extends ArduinoAnalogModuleImpl implements AmbientLightSensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

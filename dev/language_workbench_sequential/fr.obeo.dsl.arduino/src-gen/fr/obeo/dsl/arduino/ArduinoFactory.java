@@ -30,24 +30,6 @@ public interface ArduinoFactory extends EFactory {
 	ArduinoFactory eINSTANCE = fr.obeo.dsl.arduino.impl.ArduinoFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Hardware</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hardware</em>'.
-	 * @generated
-	 */
-	Hardware createHardware();
-
-	/**
-	 * Returns a new object of class '<em>Platform</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Platform</em>'.
-	 * @generated
-	 */
-	Platform createPlatform();
-
-	/**
 	 * Returns a new object of class '<em>Digital Pin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,33 +82,6 @@ public interface ArduinoFactory extends EFactory {
 	 * @generated
 	 */
 	Delay createDelay();
-
-	/**
-	 * Returns a new object of class '<em>Sensor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sensor</em>'.
-	 * @generated
-	 */
-	Sensor createSensor();
-
-	/**
-	 * Returns a new object of class '<em>Actuator</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Actuator</em>'.
-	 * @generated
-	 */
-	Actuator createActuator();
-
-	/**
-	 * Returns a new object of class '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connector</em>'.
-	 * @generated
-	 */
-	Connector createConnector();
 
 	/**
 	 * Returns a new object of class '<em>Repeat</em>'.
@@ -361,6 +316,24 @@ public interface ArduinoFactory extends EFactory {
 	 * @generated
 	 */
 	MusicPlayer createMusicPlayer();
+
+	/**
+	 * Returns a new object of class '<em>Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Block</em>'.
+	 * @generated
+	 */
+	Block createBlock();
+
+	/**
+	 * Returns a new object of class '<em>Board</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Board</em>'.
+	 * @generated
+	 */
+	ArduinoBoard createArduinoBoard();
 
 	/**
 	 * Returns the package supported by this factory.

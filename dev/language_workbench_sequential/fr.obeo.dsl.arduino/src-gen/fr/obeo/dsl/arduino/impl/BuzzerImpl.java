@@ -10,10 +10,19 @@
  */
 package fr.obeo.dsl.arduino.impl;
 
+import fr.obeo.dsl.arduino.ArduinoDigitalModule;
+import fr.obeo.dsl.arduino.ArduinoModule;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Buzzer;
+import fr.obeo.dsl.arduino.Module;
+import fr.obeo.dsl.arduino.NamedElement;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BuzzerImpl extends ActuatorImpl implements Buzzer {
+public class BuzzerImpl extends ArduinoDigitalModuleImpl implements Buzzer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

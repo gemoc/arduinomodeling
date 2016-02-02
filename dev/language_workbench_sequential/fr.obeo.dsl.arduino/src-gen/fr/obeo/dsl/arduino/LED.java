@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface LED extends Actuator {
+public interface LED extends ArduinoDigitalModule {
 } // LED

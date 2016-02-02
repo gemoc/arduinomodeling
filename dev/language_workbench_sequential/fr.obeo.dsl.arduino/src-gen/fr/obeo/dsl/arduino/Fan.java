@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface Fan extends Actuator {
+public interface Fan extends ArduinoDigitalModule {
 } // Fan

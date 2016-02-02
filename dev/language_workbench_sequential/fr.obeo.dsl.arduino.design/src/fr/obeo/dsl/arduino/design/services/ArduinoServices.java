@@ -41,40 +41,42 @@ import com.google.common.collect.Lists;
 
 import fr.obeo.dsl.arduino.Actuator;
 import fr.obeo.dsl.arduino.AnalogPin;
+import fr.obeo.dsl.arduino.ArduinoAnalogModule;
+import fr.obeo.dsl.arduino.ArduinoBoard;
+import fr.obeo.dsl.arduino.ArduinoDigitalModule;
 import fr.obeo.dsl.arduino.ArduinoFactory;
-import fr.obeo.dsl.arduino.BinaryBooleanOperatorKind;
-import fr.obeo.dsl.arduino.BinaryIntegerOperatorKind;
-import fr.obeo.dsl.arduino.BooleanConstant;
 import fr.obeo.dsl.arduino.BinaryBooleanExpression;
+import fr.obeo.dsl.arduino.BinaryBooleanOperatorKind;
+import fr.obeo.dsl.arduino.BinaryExpression;
+import fr.obeo.dsl.arduino.BinaryIntegerExpression;
+import fr.obeo.dsl.arduino.BinaryIntegerOperatorKind;
+import fr.obeo.dsl.arduino.Block;
+import fr.obeo.dsl.arduino.Board;
+import fr.obeo.dsl.arduino.BooleanConstant;
 import fr.obeo.dsl.arduino.BooleanExpression;
 import fr.obeo.dsl.arduino.BooleanModuleGet;
-import fr.obeo.dsl.arduino.Connector;
 import fr.obeo.dsl.arduino.Constant;
-import fr.obeo.dsl.arduino.Control;
 import fr.obeo.dsl.arduino.DigitalPin;
 import fr.obeo.dsl.arduino.Expression;
-import fr.obeo.dsl.arduino.Hardware;
 import fr.obeo.dsl.arduino.If;
 import fr.obeo.dsl.arduino.Instruction;
 import fr.obeo.dsl.arduino.IntegerConstant;
-import fr.obeo.dsl.arduino.BinaryExpression;
 import fr.obeo.dsl.arduino.IntegerModuleGet;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.ModuleAssignment;
 import fr.obeo.dsl.arduino.ModuleGet;
 import fr.obeo.dsl.arduino.ModuleInstruction;
-import fr.obeo.dsl.arduino.BinaryIntegerExpression;
 import fr.obeo.dsl.arduino.Pin;
-import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
+import fr.obeo.dsl.arduino.Sensor;
+import fr.obeo.dsl.arduino.Sketch;
 import fr.obeo.dsl.arduino.UnaryBooleanExpression;
 import fr.obeo.dsl.arduino.UnaryBooleanOperatorKind;
 import fr.obeo.dsl.arduino.UnaryExpression;
 import fr.obeo.dsl.arduino.UnaryIntegerExpression;
 import fr.obeo.dsl.arduino.UnaryIntegerOperatorKind;
-import fr.obeo.dsl.arduino.VariableAssignment;
-import fr.obeo.dsl.arduino.Sketch;
 import fr.obeo.dsl.arduino.Variable;
+import fr.obeo.dsl.arduino.VariableAssignment;
 import fr.obeo.dsl.arduino.VariableDeclaration;
 import fr.obeo.dsl.arduino.While;
 
@@ -82,7 +84,7 @@ public class ArduinoServices {
 
 	private static final String IMAGES_PATH = "/fr.obeo.dsl.arduino.design/images/";
 
-	public void updateDigitalPins(Platform platform, String totalOfPins) {
+	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
 		pinsTmp.addAll(platform.getDigitalPins());
 
@@ -107,7 +109,7 @@ public class ArduinoServices {
 		}
 	}
 
-	public void updateAnalogPins(Platform platform, String totalOfPins) {
+	public void updateAnalogPins(ArduinoBoard platform, String totalOfPins) {
 		List<AnalogPin> pinsTmp = new ArrayList<AnalogPin>();
 		pinsTmp.addAll(platform.getAnalogPins());
 
@@ -132,55 +134,22 @@ public class ArduinoServices {
 		}
 	}
 
-	public boolean isValidConnector(Module module, Pin pin) {
-		switch (module.getKind()) {
-		case DIGITAL:
-			return pin instanceof DigitalPin && getModule(pin) == null;
-
-		default:
-			return pin instanceof AnalogPin && getModule(pin) == null;
-		}
-	}
-
 	public Module getModule(Pin pin) {
-		List<Connector> connectors = getConnectors(pin);
-		for (Connector connector : connectors) {
-			if (connector.getPin().equals(pin)) {
-				return connector.getModule();
-			}
+		Module res = null;
+		if (pin instanceof AnalogPin) {
+			res = ((AnalogPin) pin).getModule();
+		} else if (pin instanceof DigitalPin) {
+			res = ((DigitalPin) pin).getModule();
 		}
-		return null;
+		return res;
 	}
-
-//	public List<Instruction> getInstructions(Instruction instruction) {
-//		List<Instruction> instructions = Lists.newArrayList();
-//		if (instruction instanceof ModuleAssignment) {
-////			if (((ModuleAssignment) instruction).getOperand() != null) {
-////				instructions.add(((ModuleAssignment) instruction).getOperand());
-////			} else {
-//				ResourceSet resourceSet = instruction.eResource()
-//						.getResourceSet();
-//				ECrossReferenceAdapter adapter = new ECrossReferenceAdapter();
-//				resourceSet.eAdapters().add(adapter);
-//				Collection<Setting> refs = adapter.getInverseReferences(
-//						instruction, true);
-//				for (Setting setting : refs) {
-//					if (setting.getEObject() instanceof ) {
-//						instructions.add((Instruction) setting.getEObject());
-//					}
-//				}
-////			}
-//		}
-//		instructions.add(instruction.getNext());
-//		return instructions;
-//	}
 
 	public String getImage(Module module) {
 //		String imageName = module.getImage();
 		return getImage("");
 	}
 
-	public String getImage(Platform platform) {
+	public String getImage(ArduinoBoard platform) {
 //		String imageName = platform.getImage();
 		return getImage("");
 	}
@@ -192,22 +161,19 @@ public class ArduinoServices {
 		return IMAGES_PATH + "default.svg";
 	}
 
-	public List<Platform> getPlatforms(EObject object) {
-		List<Platform> result = Lists.newArrayList();
+	public List<Board> getPlatforms(EObject object) {
+		List<Board> result = Lists.newArrayList();
 		Session session = SessionManager.INSTANCE.getSession(object);
 
 		for (Resource resource : session.getSemanticResources()) {
 			for (Iterator<EObject> iterator = resource.getAllContents(); iterator
 					.hasNext();) {
 				EObject content = iterator.next();
-				if (content instanceof Platform) {
-					result.add((Platform) content);
+				if (content instanceof Board) {
+					result.add((Board) content);
 				}
 			}
 		}
-		
-//		Platform platform = ArduinoFactory.eINSTANCE.createPlatform();
-//		platform.g
 
 		return result;
 	}
@@ -228,14 +194,27 @@ public class ArduinoServices {
 		return result;
 	}
 
-	public List<Actuator> getActuators(Sketch sketch) {
-		List<Actuator> result = new ArrayList<Actuator>();
+	public List<Module> getActuators(Sketch sketch) {
+		List<Module> result = new ArrayList<>();
 		List<Module> modules = ImmutableList
-				.copyOf(getConnectedModules(sketch));
+				.copyOf(getConnectedModules(sketch.getProject().getBoard()));
 
 		for (Module module : modules) {
 			if (module instanceof Actuator) {
-				result.add((Actuator) module);
+				result.add(module);
+			}
+		}
+		return result;
+	}
+
+	public List<Module> getSensors(Sketch sketch) {
+		List<Module> result = new ArrayList<>();
+		List<Module> modules = ImmutableList
+				.copyOf(getConnectedModules(sketch.getProject().getBoard()));
+
+		for (Module module : modules) {
+			if (module instanceof Sensor) {
+				result.add(module);
 			}
 		}
 		return result;
@@ -265,28 +244,20 @@ public class ArduinoServices {
 		return (Sketch) eObject;
 	}
 
-	public List<Module> getConnectedModules(Sketch sketch) {
-		return getConnectedModules(sketch.getHardware());
-	}
-
-	private List<Module> getConnectedModules(Hardware hardware) {
-		List<Module> result = Lists.newArrayList();
-		for (Connector connector : hardware.getConnectors()) {
-			result.add(connector.getModule());
-		}
-		return result;
-	}
-
-	public List<Connector> getConnectors(EObject object) {
-		List<Connector> result = Lists.newArrayList();
-		Session session = SessionManager.INSTANCE.getSession(object);
-
-		for (Resource resource : session.getSemanticResources()) {
-			for (Iterator<EObject> iterator = resource.getAllContents(); iterator
-					.hasNext();) {
-				EObject content = iterator.next();
-				if (content instanceof Connector) {
-					result.add((Connector) content);
+	private List<Module> getConnectedModules(Board board) {
+		List<Module> result = new ArrayList<>();
+		if (board instanceof ArduinoBoard) {
+			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+				final Module module = pin.getModule();
+				if (module != null) {
+					result.add(module);
+				}
+			}
+			for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+				final Module module = pin.getModule();
+				if (module != null) {
+					result.add(module);
 				}
 			}
 		}
@@ -570,17 +541,6 @@ public class ArduinoServices {
 	}
 
 	public Expression getExpression(Sketch sketch, String expression) {
-		for (Instruction instruction : sketch.getInstructions()) {
-			if (instruction instanceof Expression
-//					&& Expression.equals(((Expression) instruction).getExpression())
-					) {
-				return (Expression) instruction;
-			}
-			if (instruction instanceof Variable
-					&& expression.equals(((Variable) instruction).getName())) {
-				return (Expression) instruction;
-			}
-		}
 		if (isInteger(expression)) {
 			fr.obeo.dsl.arduino.IntegerConstant constant = ArduinoFactory.eINSTANCE
 					.createIntegerConstant();
@@ -639,8 +599,7 @@ public class ArduinoServices {
 	}
 
 	public void deleteUnusedExpressions(Sketch sketch) {
-		ImmutableList<Instruction> instructions = ImmutableList.copyOf(sketch
-				.getInstructions());
+		ImmutableList<Instruction> instructions = ImmutableList.copyOf(sketch.getBlock().getInstructions());
 		for (Instruction instruction : instructions) {
 			if (instruction instanceof Expression) {
 				deleteUnusedExpression(sketch, (Expression) instruction);
@@ -673,6 +632,39 @@ public class ArduinoServices {
 		}
 		return variableDeclarations;
 	}
+	
+	public EObject getConnectedPin(EObject module) {
+		return module.eContainer();
+	}
+	
+	public Instruction getLastInstruction(Block block) {
+		List<Instruction> instructions = block.getInstructions();
+		if (!instructions.isEmpty()) {
+			return instructions.get(instructions.size()-1);
+		}
+		return null;
+	}
+	
+	public EObject getNextInstruction(EObject current) {
+		EObject res = null;
+		if (current instanceof Instruction) {
+			Block block = (Block)current.eContainer();
+			List<Instruction> instructions = block.getInstructions();
+			int index = instructions.indexOf(current);
+			if (index != -1) {
+				index++;
+				if (index == instructions.size() && block instanceof Sketch) {
+					res = block;
+				} else if (index < instructions.size()) {
+					res = instructions.get(index);
+				}
+			}
+		} else if (current instanceof Sketch) {
+			List<Instruction> instructions = ((Sketch)current).getBlock().getInstructions();
+			res = instructions.isEmpty() ? null : instructions.get(0);
+		}
+		return res;
+	}
 
 	public List<BinaryIntegerExpression> getNumericalExpressions(EObject container) {
 		List<BinaryIntegerExpression> expressions = Lists.newArrayList();
@@ -697,12 +689,13 @@ public class ArduinoServices {
 	public List<ModuleGet> getModuleGets(EObject container) {
 		List<ModuleGet> moduleGetters = Lists.newArrayList();
 		if (container instanceof Sketch) {
-			List<Instruction> instructions = ((Sketch) container)
+			List<Instruction> instructions = ((Sketch) container).getBlock()
 					.getInstructions();
 			for (Instruction instruction : instructions) {
 				if (instruction instanceof ModuleGet) {
-					if (instruction.getNext() == null
-							|| isNotUsedAnymore((Sketch) container,
+					if (
+//							instruction.getNext() == null ||
+							isNotUsedAnymore((Sketch) container,
 									(ModuleGet) instruction)) {
 						moduleGetters.add((ModuleGet) instruction);
 					}
@@ -774,114 +767,63 @@ public class ArduinoServices {
 		return constant;
 	}
 
-	public Instruction getLastInstruction(Sketch sketch) {
-		if (sketch != null) {
-			Instruction instruction = sketch;
-			while (instruction != null && instruction.getNext() != null
-					&& !(instruction.getNext() instanceof Sketch)) {
-				instruction = instruction.getNext();
+	public void removeWire(Board board, Module module) {
+		if (board instanceof ArduinoBoard) {
+			boolean found = false;
+			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+				if (pin.getModule() == module) {
+					pin.setModule(null);
+					found = true;
+					break;
+				}
 			}
-
-			if (instruction != null && instruction.getNext() instanceof Sketch) {
-				return sketch;
-			}
-			return instruction;
-		}
-
-		return null;
-	}
-
-	public Instruction getLastInstruction(Control control) {
-		if (control != null && control.getInstructions().size() > 0) {
-			Instruction instruction = control.getInstructions().get(0);
-			while (instruction != null && instruction.getNext() != null) {
-				instruction = instruction.getNext();
-			}
-
-			if (control.getInstructions().size() > 1) {
-				return instruction;
-			}
-		}
-
-		return null;
-	}
-
-//	public Instruction getLastInstruction(Function function) {
-//		if (function != null && function.getInstructions().size() > 0) {
-//			Instruction instruction = function.getInstructions().get(0);
-//			while (instruction != null && instruction.getNext() != null) {
-//				instruction = instruction.getNext();
-//			}
-//
-//			if (function.getInstructions().size() > 1) {
-//				return instruction;
-//			}
-//		}
-//
-//		return null;
-//	}
-
-	public boolean isLastInstructionValid(Sketch container) {
-		if (getLastInstruction(container) != null) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean isLastInstructionValid(Control container) {
-		if (getLastInstruction(container) != null) {
-			return true;
-		}
-		return false;
-	}
-
-//	public boolean isLastInstructionValid(Function container) {
-//		if (getLastInstruction(container) != null) {
-//			return true;
-//		}
-//		return false;
-//	}
-
-	public void removeWire(Hardware hardware, Module module) {
-		List<Connector> connectors = getConnectors(hardware);
-		for (Connector connector : connectors) {
-			if (connector.getModule().equals(module)) {
-				EcoreUtil.delete(connector);
+			if (!found) {
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					pin.setModule(null);
+					break;
+				}
 			}
 		}
 	}
 
-	public void removeWire(Hardware hardware, Platform platform) {
-		List<Connector> connectors = getConnectors(hardware);
-		for (Connector connector : connectors) {
-			if (connector.getPin().eContainer().equals(platform)) {
-				EcoreUtil.delete(connector);
+	public void removeWire(Board board) {
+		if (board instanceof ArduinoBoard) {
+			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+				pin.setModule(null);
+			}
+			for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+				pin.setModule(null);
 			}
 		}
 	}
 
-	public boolean isInvalidSketch(Project project) {
+	public boolean isValidSketch(Project project) {
 		Sketch sketch = project.getSketch();
 		if (sketch == null) {
-			return true;
+			return false;
 		}
 		fr.obeo.dsl.arduino.utils.ArduinoServices service = new fr.obeo.dsl.arduino.utils.ArduinoServices();
-		return !(service.isValidSketch(sketch));
+		return service.isValidSketch(sketch);
 	}
-
-	public boolean isInvalidHardware(Project project) {
-		return project.getHardware() == null
-				|| project.getHardware().getPlatforms().size() == 0
-				|| project.getHardware().getModules().size() == 0
-				|| getConnectedModules(project.getHardware()).size() == 0;
+	
+	public boolean isValidConnector(Module module, Pin pin) {
+		boolean result = false;
+		if (pin instanceof AnalogPin) {
+			result = module instanceof ArduinoAnalogModule;
+		} else if (pin instanceof DigitalPin){
+			result = module instanceof ArduinoDigitalModule;
+		}
+		return result;
 	}
 
 	public boolean isValidHardware(Project project) {
-		return !isInvalidHardware(project);
+		return project.getBoard() != null;
 	}
 
 	public boolean isUploadable(Project project) {
-		return isValidHardware(project) && !isInvalidSketch(project);
+		return isValidHardware(project) && isValidSketch(project);
 	}
 
 	public String getImage(ModuleInstruction instruction) {
@@ -896,8 +838,6 @@ public class ArduinoServices {
 //				+ instruction.getModule().getImage();
 	}
 	
-	
-
 	public void addVariable(Instruction container, Variable variable) {
 		if (container instanceof BinaryExpression) {
 			addMathOperatorExpression((BinaryExpression) container, variable);
@@ -953,9 +893,9 @@ public class ArduinoServices {
 		deleteUnusedExpressions(getSketch(container));
 	}
 
-	public void openHardwareDiagram(Hardware hardware) {
+	public void openHardwareDiagram(Board hardware) {
 		Session session = SessionManager.INSTANCE.getSession(hardware);
-		DRepresentation hardwareDiagram = getHardwareDiagram(hardware);
+		DRepresentation hardwareDiagram = getBoardDiagram(hardware);
 		DialectUIManager.INSTANCE.openEditor(session, hardwareDiagram,
 				new NullProgressMonitor());
 	}
@@ -966,14 +906,6 @@ public class ArduinoServices {
 		DialectUIManager.INSTANCE.openEditor(session, sketchDiagram,
 				new NullProgressMonitor());
 	}
-
-//	public void openFunctionDiagram(FunctionCall function) {
-//		Session session = SessionManager.INSTANCE.getSession(function);
-//		DRepresentation functionDiagram = getDiagram(function.getDefinition(),
-//				function.getDefinition().getName(), "Function");
-//		DialectUIManager.INSTANCE.openEditor(session, functionDiagram,
-//				new NullProgressMonitor());
-//	}
 
 	private RepresentationDescription getDiagramDescription(Session session,
 			String diagramDescriptionName) {
@@ -989,16 +921,15 @@ public class ArduinoServices {
 		return null;
 	}
 
-	private DRepresentation getHardwareDiagram(Hardware hardware) {
-		return getDiagram(hardware, "Hardware", "Hardware");
+	private DRepresentation getBoardDiagram(Board board) {
+		return getDiagram(board, "Hardware", "Hardware");
 	}
 
 	private DRepresentation getSketchDiagram(Sketch sketch) {
 		return getDiagram(sketch, "Sketch", "Sketch");
 	}
 
-	private DRepresentation getDiagram(EObject semantic, String diagramName,
-			String diagramDescriptionName) {
+	private DRepresentation getDiagram(EObject semantic, String diagramName, String diagramDescriptionName) {
 		fr.obeo.dsl.arduino.utils.ArduinoServices service = new fr.obeo.dsl.arduino.utils.ArduinoServices();
 		Session session = SessionManager.INSTANCE.getSession(semantic);
 		DRepresentation diagram = service.getDiagram(session, diagramName);
@@ -1011,39 +942,5 @@ public class ArduinoServices {
 		}
 
 		return diagram;
-	}
-
-	public boolean detectIssueInInstruction(EObject instruction) {
-		boolean issue = false;
-		if (!(instruction instanceof ModuleGet)
-				&& instruction instanceof Instruction) {
-			Instruction inst = (Instruction) instruction;
-
-			if (inst.eContainer() instanceof Sketch) {
-				issue = inst.getNext() == null;
-			} else if (inst.eContainer() instanceof Control) {
-				Control ctrl = (Control) inst.eContainer();
-				// The generator begin by the first instruction, there should be
-				// no other instruction pointing to it with its next reference.
-				// Control is the container of the instruction, so the list
-				// cannot be empty.
-				issue = inst.getNext() == ctrl.getInstructions().get(0);
-				// We should have only one instruction with next = null;
-				issue = issue || inst.getNext() == null
-						&& getPotentialEnds(ctrl).size() > 1;
-			}
-		}
-		return issue;
-
-	}
-
-	private Collection<Instruction> getPotentialEnds(Control ctrl) {
-		Collection<Instruction> ends = Lists.newArrayList();
-		for (Instruction ctrlInst : ctrl.getInstructions()) {
-			if (ctrlInst.getNext() == null) {
-				ends.add(ctrlInst);
-			}
-		}
-		return ends;
 	}
 }

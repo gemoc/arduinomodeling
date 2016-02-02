@@ -10,6 +10,7 @@
  */
 package fr.obeo.dsl.arduino;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,8 +19,8 @@ package fr.obeo.dsl.arduino;
  *
  *
  * @see fr.obeo.dsl.arduino.ArduinoPackage#getSensor()
- * @model
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface Sensor extends Module {
+public interface Sensor extends EObject {
 } // Sensor

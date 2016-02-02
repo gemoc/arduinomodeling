@@ -10,7 +10,6 @@
  */
 package fr.obeo.dsl.arduino;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,8 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.Sketch#getHardware <em>Hardware</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.Sketch#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Sketch#getProject <em>Project</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Sketch#getBlock <em>Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,47 +28,59 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Sketch extends NamedElement, Instruction {
+public interface Sketch extends NamedElement {
+
 	/**
-	 * Returns the value of the '<em><b>Hardware</b></em>' reference.
+	 * Returns the value of the '<em><b>Project</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.obeo.dsl.arduino.Project#getSketch <em>Sketch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hardware</em>' reference isn't clear,
+	 * If the meaning of the '<em>Project</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hardware</em>' reference.
-	 * @see #setHardware(Hardware)
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getSketch_Hardware()
-	 * @model required="true"
+	 * @return the value of the '<em>Project</em>' container reference.
+	 * @see #setProject(Project)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getSketch_Project()
+	 * @see fr.obeo.dsl.arduino.Project#getSketch
+	 * @model opposite="sketch" required="true" transient="false"
 	 * @generated
 	 */
-	Hardware getHardware();
+	Project getProject();
 
 	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Sketch#getHardware <em>Hardware</em>}' reference.
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Sketch#getProject <em>Project</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hardware</em>' reference.
-	 * @see #getHardware()
+	 * @param value the new value of the '<em>Project</em>' container reference.
+	 * @see #getProject()
 	 * @generated
 	 */
-	void setHardware(Hardware value);
+	void setProject(Project value);
 
 	/**
-	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.obeo.dsl.arduino.Instruction}.
+	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Block</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructions</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getSketch_Instructions()
+	 * @return the value of the '<em>Block</em>' containment reference.
+	 * @see #setBlock(Block)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getSketch_Block()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instruction> getInstructions();
+	Block getBlock();
 
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Sketch#getBlock <em>Block</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Block</em>' containment reference.
+	 * @see #getBlock()
+	 * @generated
+	 */
+	void setBlock(Block value);
 } // Sketch

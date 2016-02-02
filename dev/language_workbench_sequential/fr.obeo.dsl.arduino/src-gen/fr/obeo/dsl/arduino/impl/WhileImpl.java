@@ -11,6 +11,7 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
+import fr.obeo.dsl.arduino.BooleanExpression;
 import fr.obeo.dsl.arduino.Expression;
 import fr.obeo.dsl.arduino.While;
 
@@ -44,7 +45,7 @@ public class WhileImpl extends ControlImpl implements While {
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression condition;
+	protected BooleanExpression condition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +71,7 @@ public class WhileImpl extends ControlImpl implements While {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getCondition() {
+	public BooleanExpression getCondition() {
 		return condition;
 	}
 
@@ -79,8 +80,8 @@ public class WhileImpl extends ControlImpl implements While {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs) {
-		Expression oldCondition = condition;
+	public NotificationChain basicSetCondition(BooleanExpression newCondition, NotificationChain msgs) {
+		BooleanExpression oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.WHILE__CONDITION, oldCondition, newCondition);
@@ -94,7 +95,7 @@ public class WhileImpl extends ControlImpl implements While {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(Expression newCondition) {
+	public void setCondition(BooleanExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
 			if (condition != null)
@@ -145,7 +146,7 @@ public class WhileImpl extends ControlImpl implements While {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.WHILE__CONDITION:
-				setCondition((Expression)newValue);
+				setCondition((BooleanExpression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,7 +161,7 @@ public class WhileImpl extends ControlImpl implements While {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.WHILE__CONDITION:
-				setCondition((Expression)null);
+				setCondition((BooleanExpression)null);
 				return;
 		}
 		super.eUnset(featureID);

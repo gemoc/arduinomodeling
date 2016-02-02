@@ -11,8 +11,9 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
-import fr.obeo.dsl.arduino.Hardware;
+import fr.obeo.dsl.arduino.Block;
 import fr.obeo.dsl.arduino.Instruction;
+import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
 
 import java.util.Collection;
@@ -26,8 +27,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -37,10 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getPrevious <em>Previous</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getNext <em>Next</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getHardware <em>Hardware</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getProject <em>Project</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getBlock <em>Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,45 +47,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SketchImpl extends NamedElementImpl implements Sketch {
 	/**
-	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
+	 * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrevious()
+	 * @see #getBlock()
 	 * @generated
 	 * @ordered
 	 */
-	protected Instruction previous;
-
-	/**
-	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Instruction next;
-
-	/**
-	 * The cached value of the '{@link #getHardware() <em>Hardware</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHardware()
-	 * @generated
-	 * @ordered
-	 */
-	protected Hardware hardware;
-
-	/**
-	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstructions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Instruction> instructions;
-
+	protected Block block;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,16 +79,40 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instruction getPrevious() {
-		if (previous != null && previous.eIsProxy()) {
-			InternalEObject oldPrevious = (InternalEObject)previous;
-			previous = (Instruction)eResolveProxy(oldPrevious);
-			if (previous != oldPrevious) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.SKETCH__PREVIOUS, oldPrevious, previous));
-			}
+	public Project getProject() {
+		if (eContainerFeatureID() != ArduinoPackage.SKETCH__PROJECT) return null;
+		return (Project)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProject(Project newProject, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newProject, ArduinoPackage.SKETCH__PROJECT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProject(Project newProject) {
+		if (newProject != eInternalContainer() || (eContainerFeatureID() != ArduinoPackage.SKETCH__PROJECT && newProject != null)) {
+			if (EcoreUtil.isAncestor(this, newProject))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newProject != null)
+				msgs = ((InternalEObject)newProject).eInverseAdd(this, ArduinoPackage.PROJECT__SKETCH, Project.class, msgs);
+			msgs = basicSetProject(newProject, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return previous;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__PROJECT, newProject, newProject));
 	}
 
 	/**
@@ -128,8 +120,8 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instruction basicGetPrevious() {
-		return previous;
+	public Block getBlock() {
+		return block;
 	}
 
 	/**
@@ -137,28 +129,14 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPrevious(Instruction newPrevious) {
-		Instruction oldPrevious = previous;
-		previous = newPrevious;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__PREVIOUS, oldPrevious, previous));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Instruction getNext() {
-		if (next != null && next.eIsProxy()) {
-			InternalEObject oldNext = (InternalEObject)next;
-			next = (Instruction)eResolveProxy(oldNext);
-			if (next != oldNext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.SKETCH__NEXT, oldNext, next));
-			}
+	public NotificationChain basicSetBlock(Block newBlock, NotificationChain msgs) {
+		Block oldBlock = block;
+		block = newBlock;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__BLOCK, oldBlock, newBlock);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return next;
+		return msgs;
 	}
 
 	/**
@@ -166,37 +144,18 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instruction basicGetNext() {
-		return next;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNext(Instruction newNext) {
-		Instruction oldNext = next;
-		next = newNext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__NEXT, oldNext, next));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hardware getHardware() {
-		if (hardware != null && hardware.eIsProxy()) {
-			InternalEObject oldHardware = (InternalEObject)hardware;
-			hardware = (Hardware)eResolveProxy(oldHardware);
-			if (hardware != oldHardware) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.SKETCH__HARDWARE, oldHardware, hardware));
-			}
+	public void setBlock(Block newBlock) {
+		if (newBlock != block) {
+			NotificationChain msgs = null;
+			if (block != null)
+				msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.SKETCH__BLOCK, null, msgs);
+			if (newBlock != null)
+				msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.SKETCH__BLOCK, null, msgs);
+			msgs = basicSetBlock(newBlock, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return hardware;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__BLOCK, newBlock, newBlock));
 	}
 
 	/**
@@ -204,54 +163,15 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hardware basicGetHardware() {
-		return hardware;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHardware(Hardware newHardware) {
-		Hardware oldHardware = hardware;
-		hardware = newHardware;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__HARDWARE, oldHardware, hardware));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Instruction> getInstructions() {
-		if (instructions == null) {
-			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, ArduinoPackage.SKETCH__INSTRUCTIONS);
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ArduinoPackage.SKETCH__PROJECT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetProject((Project)otherEnd, msgs);
 		}
-		return instructions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void execute() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void finalize() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -262,8 +182,10 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
-				return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
+			case ArduinoPackage.SKETCH__PROJECT:
+				return basicSetProject(null, msgs);
+			case ArduinoPackage.SKETCH__BLOCK:
+				return basicSetBlock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -274,19 +196,26 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ArduinoPackage.SKETCH__PROJECT:
+				return eInternalContainer().eInverseRemove(this, ArduinoPackage.PROJECT__SKETCH, Project.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.SKETCH__PREVIOUS:
-				if (resolve) return getPrevious();
-				return basicGetPrevious();
-			case ArduinoPackage.SKETCH__NEXT:
-				if (resolve) return getNext();
-				return basicGetNext();
-			case ArduinoPackage.SKETCH__HARDWARE:
-				if (resolve) return getHardware();
-				return basicGetHardware();
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
-				return getInstructions();
+			case ArduinoPackage.SKETCH__PROJECT:
+				return getProject();
+			case ArduinoPackage.SKETCH__BLOCK:
+				return getBlock();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,18 +229,11 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.SKETCH__PREVIOUS:
-				setPrevious((Instruction)newValue);
+			case ArduinoPackage.SKETCH__PROJECT:
+				setProject((Project)newValue);
 				return;
-			case ArduinoPackage.SKETCH__NEXT:
-				setNext((Instruction)newValue);
-				return;
-			case ArduinoPackage.SKETCH__HARDWARE:
-				setHardware((Hardware)newValue);
-				return;
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
-				getInstructions().clear();
-				getInstructions().addAll((Collection<? extends Instruction>)newValue);
+			case ArduinoPackage.SKETCH__BLOCK:
+				setBlock((Block)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,17 +247,11 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.SKETCH__PREVIOUS:
-				setPrevious((Instruction)null);
+			case ArduinoPackage.SKETCH__PROJECT:
+				setProject((Project)null);
 				return;
-			case ArduinoPackage.SKETCH__NEXT:
-				setNext((Instruction)null);
-				return;
-			case ArduinoPackage.SKETCH__HARDWARE:
-				setHardware((Hardware)null);
-				return;
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
-				getInstructions().clear();
+			case ArduinoPackage.SKETCH__BLOCK:
+				setBlock((Block)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -349,50 +265,12 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.SKETCH__PREVIOUS:
-				return previous != null;
-			case ArduinoPackage.SKETCH__NEXT:
-				return next != null;
-			case ArduinoPackage.SKETCH__HARDWARE:
-				return hardware != null;
-			case ArduinoPackage.SKETCH__INSTRUCTIONS:
-				return instructions != null && !instructions.isEmpty();
+			case ArduinoPackage.SKETCH__PROJECT:
+				return getProject() != null;
+			case ArduinoPackage.SKETCH__BLOCK:
+				return block != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Instruction.class) {
-			switch (derivedFeatureID) {
-				case ArduinoPackage.SKETCH__PREVIOUS: return ArduinoPackage.INSTRUCTION__PREVIOUS;
-				case ArduinoPackage.SKETCH__NEXT: return ArduinoPackage.INSTRUCTION__NEXT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Instruction.class) {
-			switch (baseFeatureID) {
-				case ArduinoPackage.INSTRUCTION__PREVIOUS: return ArduinoPackage.SKETCH__PREVIOUS;
-				case ArduinoPackage.INSTRUCTION__NEXT: return ArduinoPackage.SKETCH__NEXT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //SketchImpl

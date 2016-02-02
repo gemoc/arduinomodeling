@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface InfraRedSensor extends Sensor {
+public interface InfraRedSensor extends ArduinoDigitalModule {
 } // InfraRedSensor

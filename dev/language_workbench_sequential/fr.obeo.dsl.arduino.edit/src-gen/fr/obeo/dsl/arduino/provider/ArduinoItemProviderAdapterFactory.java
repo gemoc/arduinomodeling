@@ -80,52 +80,6 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Hardware} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HardwareItemProvider hardwareItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Hardware}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHardwareAdapter() {
-		if (hardwareItemProvider == null) {
-			hardwareItemProvider = new HardwareItemProvider(this);
-		}
-
-		return hardwareItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Platform} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PlatformItemProvider platformItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Platform}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPlatformAdapter() {
-		if (platformItemProvider == null) {
-			platformItemProvider = new PlatformItemProvider(this);
-		}
-
-		return platformItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.DigitalPin} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -261,75 +215,6 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		}
 
 		return delayItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Sensor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SensorItemProvider sensorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Sensor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSensorAdapter() {
-		if (sensorItemProvider == null) {
-			sensorItemProvider = new SensorItemProvider(this);
-		}
-
-		return sensorItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Actuator} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActuatorItemProvider actuatorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Actuator}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActuatorAdapter() {
-		if (actuatorItemProvider == null) {
-			actuatorItemProvider = new ActuatorItemProvider(this);
-		}
-
-		return actuatorItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Connector} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConnectorItemProvider connectorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Connector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConnectorAdapter() {
-		if (connectorItemProvider == null) {
-			connectorItemProvider = new ConnectorItemProvider(this);
-		}
-
-		return connectorItemProvider;
 	}
 
 	/**
@@ -931,6 +816,52 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.Block} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BlockItemProvider blockItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.Block}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBlockAdapter() {
+		if (blockItemProvider == null) {
+			blockItemProvider = new BlockItemProvider(this);
+		}
+
+		return blockItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.ArduinoBoard} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArduinoBoardItemProvider arduinoBoardItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.ArduinoBoard}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArduinoBoardAdapter() {
+		if (arduinoBoardItemProvider == null) {
+			arduinoBoardItemProvider = new ArduinoBoardItemProvider(this);
+		}
+
+		return arduinoBoardItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1029,17 +960,12 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (hardwareItemProvider != null) hardwareItemProvider.dispose();
-		if (platformItemProvider != null) platformItemProvider.dispose();
 		if (digitalPinItemProvider != null) digitalPinItemProvider.dispose();
 		if (analogPinItemProvider != null) analogPinItemProvider.dispose();
 		if (sketchItemProvider != null) sketchItemProvider.dispose();
 		if (projectItemProvider != null) projectItemProvider.dispose();
 		if (moduleAssignmentItemProvider != null) moduleAssignmentItemProvider.dispose();
 		if (delayItemProvider != null) delayItemProvider.dispose();
-		if (sensorItemProvider != null) sensorItemProvider.dispose();
-		if (actuatorItemProvider != null) actuatorItemProvider.dispose();
-		if (connectorItemProvider != null) connectorItemProvider.dispose();
 		if (repeatItemProvider != null) repeatItemProvider.dispose();
 		if (whileItemProvider != null) whileItemProvider.dispose();
 		if (variableAssignmentItemProvider != null) variableAssignmentItemProvider.dispose();
@@ -1066,6 +992,8 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (soundSensorItemProvider != null) soundSensorItemProvider.dispose();
 		if (fanItemProvider != null) fanItemProvider.dispose();
 		if (musicPlayerItemProvider != null) musicPlayerItemProvider.dispose();
+		if (blockItemProvider != null) blockItemProvider.dispose();
+		if (arduinoBoardItemProvider != null) arduinoBoardItemProvider.dispose();
 	}
 
 }

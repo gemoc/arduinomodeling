@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface MicroServo extends Actuator {
+public interface MicroServo extends ArduinoDigitalModule {
 } // MicroServo

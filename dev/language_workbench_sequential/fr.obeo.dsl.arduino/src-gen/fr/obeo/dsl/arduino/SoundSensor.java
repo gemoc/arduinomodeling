@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface SoundSensor extends Sensor {
+public interface SoundSensor extends ArduinoAnalogModule {
 } // SoundSensor

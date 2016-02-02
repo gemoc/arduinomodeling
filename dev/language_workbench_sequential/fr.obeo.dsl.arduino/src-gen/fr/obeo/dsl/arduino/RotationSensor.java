@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface RotationSensor extends Sensor {
+public interface RotationSensor extends ArduinoAnalogModule {
 } // RotationSensor

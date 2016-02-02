@@ -11,9 +11,9 @@
 package fr.obeo.dsl.arduino.provider;
 
 
+import fr.obeo.dsl.arduino.ArduinoBoard;
 import fr.obeo.dsl.arduino.ArduinoFactory;
 import fr.obeo.dsl.arduino.ArduinoPackage;
-import fr.obeo.dsl.arduino.Hardware;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,24 +23,23 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.Hardware} object.
+ * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.ArduinoBoard} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class HardwareItemProvider extends NamedElementItemProvider {
+public class ArduinoBoardItemProvider extends BoardItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HardwareItemProvider(AdapterFactory adapterFactory) {
+	public ArduinoBoardItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,54 +54,8 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPlatformsPropertyDescriptor(object);
-			addModulesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Platforms feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlatformsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Hardware_platforms_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Hardware_platforms_feature", "_UI_Hardware_type"),
-				 ArduinoPackage.Literals.HARDWARE__PLATFORMS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Modules feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModulesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Hardware_modules_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Hardware_modules_feature", "_UI_Hardware_type"),
-				 ArduinoPackage.Literals.HARDWARE__MODULES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -117,7 +70,8 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.HARDWARE__CONNECTORS);
+			childrenFeatures.add(ArduinoPackage.Literals.ARDUINO_BOARD__DIGITAL_PINS);
+			childrenFeatures.add(ArduinoPackage.Literals.ARDUINO_BOARD__ANALOG_PINS);
 		}
 		return childrenFeatures;
 	}
@@ -136,14 +90,14 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns Hardware.gif.
+	 * This returns ArduinoBoard.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Hardware"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArduinoBoard"));
 	}
 
 	/**
@@ -154,10 +108,10 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Hardware)object).getName();
+		String label = ((ArduinoBoard)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Hardware_type") :
-			getString("_UI_Hardware_type") + " " + label;
+			getString("_UI_ArduinoBoard_type") :
+			getString("_UI_ArduinoBoard_type") + " " + label;
 	}
 	
 
@@ -172,8 +126,9 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Hardware.class)) {
-			case ArduinoPackage.HARDWARE__CONNECTORS:
+		switch (notification.getFeatureID(ArduinoBoard.class)) {
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,8 +148,13 @@ public class HardwareItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.HARDWARE__CONNECTORS,
-				 ArduinoFactory.eINSTANCE.createConnector()));
+				(ArduinoPackage.Literals.ARDUINO_BOARD__DIGITAL_PINS,
+				 ArduinoFactory.eINSTANCE.createDigitalPin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.ARDUINO_BOARD__ANALOG_PINS,
+				 ArduinoFactory.eINSTANCE.createAnalogPin()));
 	}
 
 }

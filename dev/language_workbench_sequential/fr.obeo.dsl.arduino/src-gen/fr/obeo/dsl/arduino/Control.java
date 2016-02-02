@@ -10,7 +10,6 @@
  */
 package fr.obeo.dsl.arduino;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.Control#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Control#getBlock <em>Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,27 +29,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Control extends Instruction {
 	/**
-	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.obeo.dsl.arduino.Instruction}.
+	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Block</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructions</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getControl_Instructions()
-	 * @model containment="true"
+	 * @return the value of the '<em>Block</em>' containment reference.
+	 * @see #setBlock(Block)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getControl_Block()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Instruction> getInstructions();
+	Block getBlock();
 
 	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Control#getBlock <em>Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @param value the new value of the '<em>Block</em>' containment reference.
+	 * @see #getBlock()
 	 * @generated
 	 */
-	boolean evaluate();
+	void setBlock(Block value);
 
 } // Control

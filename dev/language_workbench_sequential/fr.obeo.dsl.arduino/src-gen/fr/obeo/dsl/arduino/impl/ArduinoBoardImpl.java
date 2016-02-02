@@ -11,13 +11,12 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.AnalogPin;
+import fr.obeo.dsl.arduino.ArduinoBoard;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.DigitalPin;
-import fr.obeo.dsl.arduino.Platform;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -25,26 +24,24 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Platform</b></em>'.
+ * An implementation of the model object '<em><b>Board</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.impl.PlatformImpl#getDigitalPins <em>Digital Pins</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.PlatformImpl#getAnalogPins <em>Analog Pins</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ArduinoBoardImpl#getDigitalPins <em>Digital Pins</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ArduinoBoardImpl#getAnalogPins <em>Analog Pins</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PlatformImpl extends NamedElementImpl implements Platform {
+public class ArduinoBoardImpl extends BoardImpl implements ArduinoBoard {
 	/**
 	 * The cached value of the '{@link #getDigitalPins() <em>Digital Pins</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,7 +67,7 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PlatformImpl() {
+	protected ArduinoBoardImpl() {
 		super();
 	}
 
@@ -81,7 +78,7 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ArduinoPackage.Literals.PLATFORM;
+		return ArduinoPackage.Literals.ARDUINO_BOARD;
 	}
 
 	/**
@@ -91,7 +88,7 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	 */
 	public EList<DigitalPin> getDigitalPins() {
 		if (digitalPins == null) {
-			digitalPins = new EObjectContainmentEList<DigitalPin>(DigitalPin.class, this, ArduinoPackage.PLATFORM__DIGITAL_PINS);
+			digitalPins = new EObjectContainmentEList<DigitalPin>(DigitalPin.class, this, ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS);
 		}
 		return digitalPins;
 	}
@@ -103,7 +100,7 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	 */
 	public EList<AnalogPin> getAnalogPins() {
 		if (analogPins == null) {
-			analogPins = new EObjectContainmentEList<AnalogPin>(AnalogPin.class, this, ArduinoPackage.PLATFORM__ANALOG_PINS);
+			analogPins = new EObjectContainmentEList<AnalogPin>(AnalogPin.class, this, ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS);
 		}
 		return analogPins;
 	}
@@ -116,9 +113,9 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
 				return ((InternalEList<?>)getDigitalPins()).basicRemove(otherEnd, msgs);
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				return ((InternalEList<?>)getAnalogPins()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -132,9 +129,9 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
 				return getDigitalPins();
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				return getAnalogPins();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -149,11 +146,11 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
 				getDigitalPins().clear();
 				getDigitalPins().addAll((Collection<? extends DigitalPin>)newValue);
 				return;
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				getAnalogPins().clear();
 				getAnalogPins().addAll((Collection<? extends AnalogPin>)newValue);
 				return;
@@ -169,10 +166,10 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
 				getDigitalPins().clear();
 				return;
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				getAnalogPins().clear();
 				return;
 		}
@@ -187,12 +184,12 @@ public class PlatformImpl extends NamedElementImpl implements Platform {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS:
 				return digitalPins != null && !digitalPins.isEmpty();
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+			case ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS:
 				return analogPins != null && !analogPins.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PlatformImpl
+} //ArduinoBoardImpl

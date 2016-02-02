@@ -70,7 +70,7 @@ public class ControlItemProvider extends InstructionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS);
+			childrenFeatures.add(ArduinoPackage.Literals.CONTROL__BLOCK);
 		}
 		return childrenFeatures;
 	}
@@ -112,7 +112,7 @@ public class ControlItemProvider extends InstructionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Control.class)) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
+			case ArduinoPackage.CONTROL__BLOCK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -132,43 +132,8 @@ public class ControlItemProvider extends InstructionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createSketch()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createModuleAssignment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createDelay()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createRepeat()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createWhile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createVariableAssignment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createIf()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.CONTROL__INSTRUCTIONS,
-				 ArduinoFactory.eINSTANCE.createVariableDeclaration()));
+				(ArduinoPackage.Literals.CONTROL__BLOCK,
+				 ArduinoFactory.eINSTANCE.createBlock()));
 	}
 
 }

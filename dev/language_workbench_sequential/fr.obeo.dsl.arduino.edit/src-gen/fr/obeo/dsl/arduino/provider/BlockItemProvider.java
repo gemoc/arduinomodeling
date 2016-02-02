@@ -13,7 +13,7 @@ package fr.obeo.dsl.arduino.provider;
 
 import fr.obeo.dsl.arduino.ArduinoFactory;
 import fr.obeo.dsl.arduino.ArduinoPackage;
-import fr.obeo.dsl.arduino.Platform;
+import fr.obeo.dsl.arduino.Block;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,27 +21,40 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.Platform} object.
+ * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.Block} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PlatformItemProvider extends NamedElementItemProvider {
+public class BlockItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlatformItemProvider(AdapterFactory adapterFactory) {
+	public BlockItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,8 +85,7 @@ public class PlatformItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.PLATFORM__DIGITAL_PINS);
-			childrenFeatures.add(ArduinoPackage.Literals.PLATFORM__ANALOG_PINS);
+			childrenFeatures.add(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -92,14 +104,14 @@ public class PlatformItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns Platform.gif.
+	 * This returns Block.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Platform"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Block"));
 	}
 
 	/**
@@ -110,10 +122,7 @@ public class PlatformItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Platform)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Platform_type") :
-			getString("_UI_Platform_type") + " " + label;
+		return getString("_UI_Block_type");
 	}
 	
 
@@ -128,9 +137,8 @@ public class PlatformItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Platform.class)) {
-			case ArduinoPackage.PLATFORM__DIGITAL_PINS:
-			case ArduinoPackage.PLATFORM__ANALOG_PINS:
+		switch (notification.getFeatureID(Block.class)) {
+			case ArduinoPackage.BLOCK__INSTRUCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,13 +158,49 @@ public class PlatformItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.PLATFORM__DIGITAL_PINS,
-				 ArduinoFactory.eINSTANCE.createDigitalPin()));
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createModuleAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.PLATFORM__ANALOG_PINS,
-				 ArduinoFactory.eINSTANCE.createAnalogPin()));
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createDelay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createRepeat()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createWhile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createVariableAssignment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createIf()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createVariableDeclaration()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ArduinoEditPlugin.INSTANCE;
 	}
 
 }

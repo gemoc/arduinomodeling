@@ -10,8 +10,6 @@
  */
 package fr.obeo.dsl.arduino;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,10 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.Project#getHardware <em>Hardware</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Project#getBoard <em>Board</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.Project#getSketch <em>Sketch</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.Project#getModules <em>Modules</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.Project#getPlatform <em>Platform</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,33 +31,36 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Project extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Hardware</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Board</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link fr.obeo.dsl.arduino.Board#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hardware</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Board</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hardware</em>' containment reference.
-	 * @see #setHardware(Hardware)
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getProject_Hardware()
-	 * @model containment="true"
+	 * @return the value of the '<em>Board</em>' containment reference.
+	 * @see #setBoard(Board)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getProject_Board()
+	 * @see fr.obeo.dsl.arduino.Board#getProject
+	 * @model opposite="project" containment="true"
 	 * @generated
 	 */
-	Hardware getHardware();
+	Board getBoard();
 
 	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Project#getHardware <em>Hardware</em>}' containment reference.
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Project#getBoard <em>Board</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hardware</em>' containment reference.
-	 * @see #getHardware()
+	 * @param value the new value of the '<em>Board</em>' containment reference.
+	 * @see #getBoard()
 	 * @generated
 	 */
-	void setHardware(Hardware value);
+	void setBoard(Board value);
 
 	/**
 	 * Returns the value of the '<em><b>Sketch</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link fr.obeo.dsl.arduino.Sketch#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sketch</em>' containment reference isn't clear,
@@ -71,7 +70,8 @@ public interface Project extends EObject {
 	 * @return the value of the '<em>Sketch</em>' containment reference.
 	 * @see #setSketch(Sketch)
 	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getProject_Sketch()
-	 * @model containment="true"
+	 * @see fr.obeo.dsl.arduino.Sketch#getProject
+	 * @model opposite="project" containment="true"
 	 * @generated
 	 */
 	Sketch getSketch();
@@ -85,37 +85,5 @@ public interface Project extends EObject {
 	 * @generated
 	 */
 	void setSketch(Sketch value);
-
-	/**
-	 * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.obeo.dsl.arduino.Module}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Modules</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modules</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getProject_Modules()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Module> getModules();
-
-	/**
-	 * Returns the value of the '<em><b>Platform</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.obeo.dsl.arduino.Platform}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Platform</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Platform</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getProject_Platform()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Platform> getPlatform();
 
 } // Project

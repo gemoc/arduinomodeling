@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface AmbientLightSensor extends Sensor {
+public interface AmbientLightSensor extends ArduinoAnalogModule {
 } // AmbientLightSensor

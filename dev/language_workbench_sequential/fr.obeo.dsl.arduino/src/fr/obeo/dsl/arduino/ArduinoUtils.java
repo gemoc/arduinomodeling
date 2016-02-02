@@ -29,12 +29,21 @@ public final class ArduinoUtils {
 	public static Pin getPin(Project project, Module module) {
 		Pin res = null;
 
-		final Hardware hardware = project.getHardware();
-		if (hardware != null) {
-			for (Connector connector : hardware.getConnectors()) {
-				if (connector.getModule() == module) {
-					res = connector.getPin();
+		final Board board = project.getBoard();
+		if (board != null && board instanceof ArduinoBoard) {
+			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+				if (pin.getModule() == module) {
+					res = pin;
 					break;
+				}
+			}
+			if (res == null) {
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					if (pin.getModule() == module) {
+						res = pin;
+						break;
+					}
 				}
 			}
 		}
@@ -51,19 +60,13 @@ public final class ArduinoUtils {
 	 * @return the {@link Module} {@link Connector connected} to the given
 	 *         {@link Pin} if any, <code>null</code> otherwise
 	 */
-	public static Module getModule(Project project , Pin pin) {
+	public static Module getModule(Pin pin) {
 		Module res = null;
-
-		final Hardware hardware = project.getHardware();
-		if (hardware != null) {
-			for (Connector connector : hardware.getConnectors()) {
-				if (connector.getModule() == pin) {
-					res = connector.getModule();
-					break;
-				}
-			}
+		if (pin instanceof AnalogPin) {
+			res = ((AnalogPin) pin).getModule();
+		} else if (pin instanceof DigitalPin) {
+			res = ((DigitalPin) pin).getModule();
 		}
-
 		return res;
 	}
 

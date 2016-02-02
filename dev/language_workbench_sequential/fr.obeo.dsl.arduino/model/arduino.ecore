@@ -1,66 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://www.obeo.fr/arduino" nsPrefix="arduino">
-  <eClassifiers xsi:type="ecore:EClass" name="Hardware" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="platforms" lowerBound="1"
-        upperBound="-1" eType="#//Platform"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
-        eType="#//Module"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-        eType="#//Connector" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Platform" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="digitalPins" upperBound="-1"
-        eType="#//DigitalPin" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="analogPins" upperBound="-1"
-        eType="#//AnalogPin" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Board" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="#//Project" eOpposite="#//Project/board"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" interface="true"
       eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ModuleKind"
-        defaultValueLiteral="digital"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="library" eType="#//Library"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DigitalPin" eSuperTypes="#//Pin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalPin" eSuperTypes="#//Pin">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//ArduinoDigitalModule"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
       <eAnnotations source="dynamic"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="#//Pin"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sketch" eSuperTypes="#//NamedElement #//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" lowerBound="1"
-        eType="#//Hardware"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
-        eType="#//Instruction" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="#//Pin">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//ArduinoAnalogModule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sketch" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="#//Project" eOpposite="#//Project/sketch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Project">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" eType="#//Hardware"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="board" eType="#//Board"
+        containment="true" eOpposite="#//Board/project"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sketch" eType="#//Sketch"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
-        eType="#//Module" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="platform" upperBound="-1"
-        eType="#//Platform" containment="true"/>
+        containment="true" eOpposite="#//Sketch/project"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
-    <eOperations name="execute"/>
-    <eOperations name="finalize"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//Instruction"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Instruction"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleAssignment" eSuperTypes="#//ModuleInstruction #//Assignment"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleInstruction" abstract="true" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
         eType="#//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" abstract="true" eSuperTypes="#//Instruction">
-    <eOperations name="evaluate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
-        eType="#//Instruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="#//Block"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Utilities" abstract="true" eSuperTypes="#//Instruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="#//Utilities">
@@ -71,18 +54,8 @@
     <eLiterals name="MilliSecond"/>
     <eLiterals name="MicroSecond"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="ModuleKind">
-    <eLiterals name="digital"/>
-    <eLiterals name="analog"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Connector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pin" eType="#//Pin"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iteration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -94,7 +67,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+        eType="#//BooleanExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//Expression"
@@ -124,14 +97,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" abstract="true" eSuperTypes="#//Expression"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="Library">
-    <eLiterals name="none"/>
-    <eLiterals name="servo"/>
-    <eLiterals name="music"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+        eType="#//BooleanExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerConstant" eSuperTypes="#//Constant #//IntegerExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -200,14 +168,29 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Buzzer" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RotationSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MicroServo" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InfraRedSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AmbientLightSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SoundSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Fan" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MusicPlayer" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Buzzer" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RotationSensor" eSuperTypes="#//ArduinoAnalogModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MicroServo" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfraRedSensor" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AmbientLightSensor" eSuperTypes="#//ArduinoAnalogModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoundSensor" eSuperTypes="#//ArduinoAnalogModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fan" eSuperTypes="#//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MusicPlayer" eSuperTypes="#//ArduinoAnalogModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoModule" abstract="true" eSuperTypes="#//Module"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoBoard" eSuperTypes="#//Board">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="digitalPins" upperBound="-1"
+        eType="#//DigitalPin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analogPins" upperBound="-1"
+        eType="#//AnalogPin" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoDigitalModule" abstract="true"
+      eSuperTypes="#//ArduinoModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoAnalogModule" abstract="true"
+      eSuperTypes="#//ArduinoModule"/>
 </ecore:EPackage>

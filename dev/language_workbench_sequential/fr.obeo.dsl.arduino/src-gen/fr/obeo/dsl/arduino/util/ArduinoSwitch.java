@@ -74,17 +74,10 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ArduinoPackage.HARDWARE: {
-				Hardware hardware = (Hardware)theEObject;
-				T result = caseHardware(hardware);
-				if (result == null) result = caseNamedElement(hardware);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ArduinoPackage.PLATFORM: {
-				Platform platform = (Platform)theEObject;
-				T result = casePlatform(platform);
-				if (result == null) result = caseNamedElement(platform);
+			case ArduinoPackage.BOARD: {
+				Board board = (Board)theEObject;
+				T result = caseBoard(board);
+				if (result == null) result = caseNamedElement(board);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,7 +112,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				Sketch sketch = (Sketch)theEObject;
 				T result = caseSketch(sketch);
 				if (result == null) result = caseNamedElement(sketch);
-				if (result == null) result = caseInstruction(sketch);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,31 +165,9 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ArduinoPackage.SENSOR: {
-				Sensor sensor = (Sensor)theEObject;
-				T result = caseSensor(sensor);
-				if (result == null) result = caseModule(sensor);
-				if (result == null) result = caseNamedElement(sensor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ArduinoPackage.ACTUATOR: {
-				Actuator actuator = (Actuator)theEObject;
-				T result = caseActuator(actuator);
-				if (result == null) result = caseModule(actuator);
-				if (result == null) result = caseNamedElement(actuator);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ArduinoPackage.NAMED_ELEMENT: {
 				NamedElement namedElement = (NamedElement)theEObject;
 				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ArduinoPackage.CONNECTOR: {
-				Connector connector = (Connector)theEObject;
-				T result = caseConnector(connector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,7 +375,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.LED: {
 				LED led = (LED)theEObject;
 				T result = caseLED(led);
-				if (result == null) result = caseActuator(led);
+				if (result == null) result = caseArduinoDigitalModule(led);
+				if (result == null) result = caseArduinoModule(led);
 				if (result == null) result = caseModule(led);
 				if (result == null) result = caseNamedElement(led);
 				if (result == null) result = defaultCase(theEObject);
@@ -414,7 +385,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.PUSH_BUTTON: {
 				PushButton pushButton = (PushButton)theEObject;
 				T result = casePushButton(pushButton);
-				if (result == null) result = caseSensor(pushButton);
+				if (result == null) result = caseArduinoDigitalModule(pushButton);
+				if (result == null) result = caseArduinoModule(pushButton);
 				if (result == null) result = caseModule(pushButton);
 				if (result == null) result = caseNamedElement(pushButton);
 				if (result == null) result = defaultCase(theEObject);
@@ -423,7 +395,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.BUZZER: {
 				Buzzer buzzer = (Buzzer)theEObject;
 				T result = caseBuzzer(buzzer);
-				if (result == null) result = caseActuator(buzzer);
+				if (result == null) result = caseArduinoDigitalModule(buzzer);
+				if (result == null) result = caseArduinoModule(buzzer);
 				if (result == null) result = caseModule(buzzer);
 				if (result == null) result = caseNamedElement(buzzer);
 				if (result == null) result = defaultCase(theEObject);
@@ -432,7 +405,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.ROTATION_SENSOR: {
 				RotationSensor rotationSensor = (RotationSensor)theEObject;
 				T result = caseRotationSensor(rotationSensor);
-				if (result == null) result = caseSensor(rotationSensor);
+				if (result == null) result = caseArduinoAnalogModule(rotationSensor);
+				if (result == null) result = caseArduinoModule(rotationSensor);
 				if (result == null) result = caseModule(rotationSensor);
 				if (result == null) result = caseNamedElement(rotationSensor);
 				if (result == null) result = defaultCase(theEObject);
@@ -441,7 +415,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.MICRO_SERVO: {
 				MicroServo microServo = (MicroServo)theEObject;
 				T result = caseMicroServo(microServo);
-				if (result == null) result = caseActuator(microServo);
+				if (result == null) result = caseArduinoDigitalModule(microServo);
+				if (result == null) result = caseArduinoModule(microServo);
 				if (result == null) result = caseModule(microServo);
 				if (result == null) result = caseNamedElement(microServo);
 				if (result == null) result = defaultCase(theEObject);
@@ -450,7 +425,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.INFRA_RED_SENSOR: {
 				InfraRedSensor infraRedSensor = (InfraRedSensor)theEObject;
 				T result = caseInfraRedSensor(infraRedSensor);
-				if (result == null) result = caseSensor(infraRedSensor);
+				if (result == null) result = caseArduinoDigitalModule(infraRedSensor);
+				if (result == null) result = caseArduinoModule(infraRedSensor);
 				if (result == null) result = caseModule(infraRedSensor);
 				if (result == null) result = caseNamedElement(infraRedSensor);
 				if (result == null) result = defaultCase(theEObject);
@@ -459,7 +435,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.AMBIENT_LIGHT_SENSOR: {
 				AmbientLightSensor ambientLightSensor = (AmbientLightSensor)theEObject;
 				T result = caseAmbientLightSensor(ambientLightSensor);
-				if (result == null) result = caseSensor(ambientLightSensor);
+				if (result == null) result = caseArduinoAnalogModule(ambientLightSensor);
+				if (result == null) result = caseArduinoModule(ambientLightSensor);
 				if (result == null) result = caseModule(ambientLightSensor);
 				if (result == null) result = caseNamedElement(ambientLightSensor);
 				if (result == null) result = defaultCase(theEObject);
@@ -468,7 +445,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.SOUND_SENSOR: {
 				SoundSensor soundSensor = (SoundSensor)theEObject;
 				T result = caseSoundSensor(soundSensor);
-				if (result == null) result = caseSensor(soundSensor);
+				if (result == null) result = caseArduinoAnalogModule(soundSensor);
+				if (result == null) result = caseArduinoModule(soundSensor);
 				if (result == null) result = caseModule(soundSensor);
 				if (result == null) result = caseNamedElement(soundSensor);
 				if (result == null) result = defaultCase(theEObject);
@@ -477,7 +455,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.FAN: {
 				Fan fan = (Fan)theEObject;
 				T result = caseFan(fan);
-				if (result == null) result = caseActuator(fan);
+				if (result == null) result = caseArduinoDigitalModule(fan);
+				if (result == null) result = caseArduinoModule(fan);
 				if (result == null) result = caseModule(fan);
 				if (result == null) result = caseNamedElement(fan);
 				if (result == null) result = defaultCase(theEObject);
@@ -486,9 +465,50 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.MUSIC_PLAYER: {
 				MusicPlayer musicPlayer = (MusicPlayer)theEObject;
 				T result = caseMusicPlayer(musicPlayer);
-				if (result == null) result = caseActuator(musicPlayer);
+				if (result == null) result = caseArduinoAnalogModule(musicPlayer);
+				if (result == null) result = caseArduinoModule(musicPlayer);
 				if (result == null) result = caseModule(musicPlayer);
 				if (result == null) result = caseNamedElement(musicPlayer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ARDUINO_MODULE: {
+				ArduinoModule arduinoModule = (ArduinoModule)theEObject;
+				T result = caseArduinoModule(arduinoModule);
+				if (result == null) result = caseModule(arduinoModule);
+				if (result == null) result = caseNamedElement(arduinoModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.BLOCK: {
+				Block block = (Block)theEObject;
+				T result = caseBlock(block);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ARDUINO_BOARD: {
+				ArduinoBoard arduinoBoard = (ArduinoBoard)theEObject;
+				T result = caseArduinoBoard(arduinoBoard);
+				if (result == null) result = caseBoard(arduinoBoard);
+				if (result == null) result = caseNamedElement(arduinoBoard);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ARDUINO_DIGITAL_MODULE: {
+				ArduinoDigitalModule arduinoDigitalModule = (ArduinoDigitalModule)theEObject;
+				T result = caseArduinoDigitalModule(arduinoDigitalModule);
+				if (result == null) result = caseArduinoModule(arduinoDigitalModule);
+				if (result == null) result = caseModule(arduinoDigitalModule);
+				if (result == null) result = caseNamedElement(arduinoDigitalModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ARDUINO_ANALOG_MODULE: {
+				ArduinoAnalogModule arduinoAnalogModule = (ArduinoAnalogModule)theEObject;
+				T result = caseArduinoAnalogModule(arduinoAnalogModule);
+				if (result == null) result = caseArduinoModule(arduinoAnalogModule);
+				if (result == null) result = caseModule(arduinoAnalogModule);
+				if (result == null) result = caseNamedElement(arduinoAnalogModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -497,32 +517,17 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hardware</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Board</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hardware</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Board</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHardware(Hardware object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Platform</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Platform</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePlatform(Platform object) {
+	public T caseBoard(Board object) {
 		return null;
 	}
 
@@ -707,36 +712,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sensor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sensor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSensor(Sensor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Actuator</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Actuator</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActuator(Actuator object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -748,21 +723,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConnector(Connector object) {
 		return null;
 	}
 
@@ -1288,6 +1248,81 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMusicPlayer(MusicPlayer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduinoModule(ArduinoModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Block</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBlock(Block object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Board</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Board</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduinoBoard(ArduinoBoard object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Digital Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Digital Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduinoDigitalModule(ArduinoDigitalModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analog Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analog Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduinoAnalogModule(ArduinoAnalogModule object) {
 		return null;
 	}
 

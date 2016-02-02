@@ -13,7 +13,11 @@ package fr.obeo.dsl.arduino.impl;
 import fr.obeo.dsl.arduino.Actuator;
 import fr.obeo.dsl.arduino.AmbientLightSensor;
 import fr.obeo.dsl.arduino.AnalogPin;
+import fr.obeo.dsl.arduino.ArduinoAnalogModule;
+import fr.obeo.dsl.arduino.ArduinoBoard;
+import fr.obeo.dsl.arduino.ArduinoDigitalModule;
 import fr.obeo.dsl.arduino.ArduinoFactory;
+import fr.obeo.dsl.arduino.ArduinoModule;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Assignment;
 import fr.obeo.dsl.arduino.BinaryBooleanExpression;
@@ -21,19 +25,19 @@ import fr.obeo.dsl.arduino.BinaryBooleanOperatorKind;
 import fr.obeo.dsl.arduino.BinaryExpression;
 import fr.obeo.dsl.arduino.BinaryIntegerExpression;
 import fr.obeo.dsl.arduino.BinaryIntegerOperatorKind;
+import fr.obeo.dsl.arduino.Block;
+import fr.obeo.dsl.arduino.Board;
 import fr.obeo.dsl.arduino.BooleanConstant;
 import fr.obeo.dsl.arduino.BooleanExpression;
 import fr.obeo.dsl.arduino.BooleanModuleGet;
 import fr.obeo.dsl.arduino.BooleanVariable;
 import fr.obeo.dsl.arduino.Buzzer;
-import fr.obeo.dsl.arduino.Connector;
 import fr.obeo.dsl.arduino.Constant;
 import fr.obeo.dsl.arduino.Control;
 import fr.obeo.dsl.arduino.Delay;
 import fr.obeo.dsl.arduino.DigitalPin;
 import fr.obeo.dsl.arduino.Expression;
 import fr.obeo.dsl.arduino.Fan;
-import fr.obeo.dsl.arduino.Hardware;
 import fr.obeo.dsl.arduino.If;
 import fr.obeo.dsl.arduino.InfraRedSensor;
 import fr.obeo.dsl.arduino.Instruction;
@@ -41,17 +45,14 @@ import fr.obeo.dsl.arduino.IntegerConstant;
 import fr.obeo.dsl.arduino.IntegerExpression;
 import fr.obeo.dsl.arduino.IntegerModuleGet;
 import fr.obeo.dsl.arduino.IntegerVariable;
-import fr.obeo.dsl.arduino.Library;
 import fr.obeo.dsl.arduino.MicroServo;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.ModuleAssignment;
 import fr.obeo.dsl.arduino.ModuleGet;
 import fr.obeo.dsl.arduino.ModuleInstruction;
-import fr.obeo.dsl.arduino.ModuleKind;
 import fr.obeo.dsl.arduino.MusicPlayer;
 import fr.obeo.dsl.arduino.NamedElement;
 import fr.obeo.dsl.arduino.Pin;
-import fr.obeo.dsl.arduino.Platform;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.PushButton;
 import fr.obeo.dsl.arduino.Repeat;
@@ -92,14 +93,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hardwareEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass platformEClass = null;
+	private EClass boardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,28 +184,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sensorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actuatorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass namedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass connectorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -463,6 +436,41 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass arduinoModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass blockEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduinoBoardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduinoDigitalModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduinoAnalogModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum timeEEnum = null;
 
 	/**
@@ -470,21 +478,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum moduleKindEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum binaryIntegerOperatorKindEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum libraryEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -573,8 +567,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHardware() {
-		return hardwareEClass;
+	public EClass getBoard() {
+		return boardEClass;
 	}
 
 	/**
@@ -582,53 +576,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHardware_Platforms() {
-		return (EReference)hardwareEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getHardware_Modules() {
-		return (EReference)hardwareEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getHardware_Connectors() {
-		return (EReference)hardwareEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPlatform() {
-		return platformEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlatform_DigitalPins() {
-		return (EReference)platformEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlatform_AnalogPins() {
-		return (EReference)platformEClass.getEStructuralFeatures().get(1);
+	public EReference getBoard_Project() {
+		return (EReference)boardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -645,26 +594,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModule_Kind() {
-		return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getModule_Level() {
-		return (EAttribute)moduleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getModule_Library() {
-		return (EAttribute)moduleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -674,6 +605,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EClass getDigitalPin() {
 		return digitalPinEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDigitalPin_Module() {
+		return (EReference)digitalPinEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -717,6 +657,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAnalogPin_Module() {
+		return (EReference)analogPinEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSketch() {
 		return sketchEClass;
 	}
@@ -726,7 +675,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSketch_Hardware() {
+	public EReference getSketch_Project() {
 		return (EReference)sketchEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -735,7 +684,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSketch_Instructions() {
+	public EReference getSketch_Block() {
 		return (EReference)sketchEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -753,7 +702,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProject_Hardware() {
+	public EReference getProject_Board() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -771,44 +720,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProject_Modules() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getProject_Platform() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInstruction() {
 		return instructionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInstruction_Previous() {
-		return (EReference)instructionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInstruction_Next() {
-		return (EReference)instructionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -852,7 +765,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControl_Instructions() {
+	public EReference getControl_Block() {
 		return (EReference)controlEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -897,24 +810,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSensor() {
-		return sensorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getActuator() {
-		return actuatorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -926,33 +821,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConnector() {
-		return connectorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConnector_Pin() {
-		return (EReference)connectorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConnector_Module() {
-		return (EReference)connectorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1464,6 +1332,78 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getArduinoModule() {
+		return arduinoModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBlock() {
+		return blockEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBlock_Instructions() {
+		return (EReference)blockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduinoBoard() {
+		return arduinoBoardEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArduinoBoard_DigitalPins() {
+		return (EReference)arduinoBoardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArduinoBoard_AnalogPins() {
+		return (EReference)arduinoBoardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduinoDigitalModule() {
+		return arduinoDigitalModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduinoAnalogModule() {
+		return arduinoAnalogModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTime() {
 		return timeEEnum;
 	}
@@ -1473,26 +1413,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getModuleKind() {
-		return moduleKindEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getBinaryIntegerOperatorKind() {
 		return binaryIntegerOperatorKindEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getLibrary() {
-		return libraryEEnum;
 	}
 
 	/**
@@ -1550,41 +1472,31 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		hardwareEClass = createEClass(HARDWARE);
-		createEReference(hardwareEClass, HARDWARE__PLATFORMS);
-		createEReference(hardwareEClass, HARDWARE__MODULES);
-		createEReference(hardwareEClass, HARDWARE__CONNECTORS);
-
-		platformEClass = createEClass(PLATFORM);
-		createEReference(platformEClass, PLATFORM__DIGITAL_PINS);
-		createEReference(platformEClass, PLATFORM__ANALOG_PINS);
+		boardEClass = createEClass(BOARD);
+		createEReference(boardEClass, BOARD__PROJECT);
 
 		moduleEClass = createEClass(MODULE);
-		createEAttribute(moduleEClass, MODULE__KIND);
 		createEAttribute(moduleEClass, MODULE__LEVEL);
-		createEAttribute(moduleEClass, MODULE__LIBRARY);
 
 		digitalPinEClass = createEClass(DIGITAL_PIN);
+		createEReference(digitalPinEClass, DIGITAL_PIN__MODULE);
 
 		pinEClass = createEClass(PIN);
 		createEAttribute(pinEClass, PIN__ID);
 		createEAttribute(pinEClass, PIN__LEVEL);
 
 		analogPinEClass = createEClass(ANALOG_PIN);
+		createEReference(analogPinEClass, ANALOG_PIN__MODULE);
 
 		sketchEClass = createEClass(SKETCH);
-		createEReference(sketchEClass, SKETCH__HARDWARE);
-		createEReference(sketchEClass, SKETCH__INSTRUCTIONS);
+		createEReference(sketchEClass, SKETCH__PROJECT);
+		createEReference(sketchEClass, SKETCH__BLOCK);
 
 		projectEClass = createEClass(PROJECT);
-		createEReference(projectEClass, PROJECT__HARDWARE);
+		createEReference(projectEClass, PROJECT__BOARD);
 		createEReference(projectEClass, PROJECT__SKETCH);
-		createEReference(projectEClass, PROJECT__MODULES);
-		createEReference(projectEClass, PROJECT__PLATFORM);
 
 		instructionEClass = createEClass(INSTRUCTION);
-		createEReference(instructionEClass, INSTRUCTION__PREVIOUS);
-		createEReference(instructionEClass, INSTRUCTION__NEXT);
 
 		moduleAssignmentEClass = createEClass(MODULE_ASSIGNMENT);
 
@@ -1592,7 +1504,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(moduleInstructionEClass, MODULE_INSTRUCTION__MODULE);
 
 		controlEClass = createEClass(CONTROL);
-		createEReference(controlEClass, CONTROL__INSTRUCTIONS);
+		createEReference(controlEClass, CONTROL__BLOCK);
 
 		utilitiesEClass = createEClass(UTILITIES);
 
@@ -1600,16 +1512,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEAttribute(delayEClass, DELAY__UNIT);
 		createEAttribute(delayEClass, DELAY__VALUE);
 
-		sensorEClass = createEClass(SENSOR);
-
-		actuatorEClass = createEClass(ACTUATOR);
-
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
-		connectorEClass = createEClass(CONNECTOR);
-		createEReference(connectorEClass, CONNECTOR__PIN);
-		createEReference(connectorEClass, CONNECTOR__MODULE);
 
 		repeatEClass = createEClass(REPEAT);
 		createEAttribute(repeatEClass, REPEAT__ITERATION);
@@ -1702,11 +1606,22 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		musicPlayerEClass = createEClass(MUSIC_PLAYER);
 
+		arduinoModuleEClass = createEClass(ARDUINO_MODULE);
+
+		blockEClass = createEClass(BLOCK);
+		createEReference(blockEClass, BLOCK__INSTRUCTIONS);
+
+		arduinoBoardEClass = createEClass(ARDUINO_BOARD);
+		createEReference(arduinoBoardEClass, ARDUINO_BOARD__DIGITAL_PINS);
+		createEReference(arduinoBoardEClass, ARDUINO_BOARD__ANALOG_PINS);
+
+		arduinoDigitalModuleEClass = createEClass(ARDUINO_DIGITAL_MODULE);
+
+		arduinoAnalogModuleEClass = createEClass(ARDUINO_ANALOG_MODULE);
+
 		// Create enums
 		timeEEnum = createEEnum(TIME);
-		moduleKindEEnum = createEEnum(MODULE_KIND);
 		binaryIntegerOperatorKindEEnum = createEEnum(BINARY_INTEGER_OPERATOR_KIND);
-		libraryEEnum = createEEnum(LIBRARY);
 		binaryBooleanOperatorKindEEnum = createEEnum(BINARY_BOOLEAN_OPERATOR_KIND);
 		unaryIntegerOperatorKindEEnum = createEEnum(UNARY_INTEGER_OPERATOR_KIND);
 		unaryBooleanOperatorKindEEnum = createEEnum(UNARY_BOOLEAN_OPERATOR_KIND);
@@ -1740,21 +1655,17 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		hardwareEClass.getESuperTypes().add(this.getNamedElement());
-		platformEClass.getESuperTypes().add(this.getNamedElement());
+		boardEClass.getESuperTypes().add(this.getNamedElement());
 		moduleEClass.getESuperTypes().add(this.getNamedElement());
 		digitalPinEClass.getESuperTypes().add(this.getPin());
 		analogPinEClass.getESuperTypes().add(this.getPin());
 		sketchEClass.getESuperTypes().add(this.getNamedElement());
-		sketchEClass.getESuperTypes().add(this.getInstruction());
 		moduleAssignmentEClass.getESuperTypes().add(this.getModuleInstruction());
 		moduleAssignmentEClass.getESuperTypes().add(this.getAssignment());
 		moduleInstructionEClass.getESuperTypes().add(this.getInstruction());
 		controlEClass.getESuperTypes().add(this.getInstruction());
 		utilitiesEClass.getESuperTypes().add(this.getInstruction());
 		delayEClass.getESuperTypes().add(this.getUtilities());
-		sensorEClass.getESuperTypes().add(this.getModule());
-		actuatorEClass.getESuperTypes().add(this.getModule());
 		repeatEClass.getESuperTypes().add(this.getControl());
 		moduleGetEClass.getESuperTypes().add(this.getExpression());
 		whileEClass.getESuperTypes().add(this.getControl());
@@ -1791,57 +1702,47 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		unaryIntegerExpressionEClass.getESuperTypes().add(this.getIntegerExpression());
 		variableDeclarationEClass.getESuperTypes().add(this.getInstruction());
 		variableRefEClass.getESuperTypes().add(this.getExpression());
-		ledEClass.getESuperTypes().add(this.getActuator());
-		pushButtonEClass.getESuperTypes().add(this.getSensor());
-		buzzerEClass.getESuperTypes().add(this.getActuator());
-		rotationSensorEClass.getESuperTypes().add(this.getSensor());
-		microServoEClass.getESuperTypes().add(this.getActuator());
-		infraRedSensorEClass.getESuperTypes().add(this.getSensor());
-		ambientLightSensorEClass.getESuperTypes().add(this.getSensor());
-		soundSensorEClass.getESuperTypes().add(this.getSensor());
-		fanEClass.getESuperTypes().add(this.getActuator());
-		musicPlayerEClass.getESuperTypes().add(this.getActuator());
+		ledEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		pushButtonEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		buzzerEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		rotationSensorEClass.getESuperTypes().add(this.getArduinoAnalogModule());
+		microServoEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		infraRedSensorEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		ambientLightSensorEClass.getESuperTypes().add(this.getArduinoAnalogModule());
+		soundSensorEClass.getESuperTypes().add(this.getArduinoAnalogModule());
+		fanEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		musicPlayerEClass.getESuperTypes().add(this.getArduinoAnalogModule());
+		arduinoModuleEClass.getESuperTypes().add(this.getModule());
+		arduinoBoardEClass.getESuperTypes().add(this.getBoard());
+		arduinoDigitalModuleEClass.getESuperTypes().add(this.getArduinoModule());
+		arduinoAnalogModuleEClass.getESuperTypes().add(this.getArduinoModule());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(hardwareEClass, Hardware.class, "Hardware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardware_Platforms(), this.getPlatform(), null, "platforms", null, 1, -1, Hardware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHardware_Modules(), this.getModule(), null, "modules", null, 0, -1, Hardware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHardware_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, Hardware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPlatform_DigitalPins(), this.getDigitalPin(), null, "digitalPins", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlatform_AnalogPins(), this.getAnalogPin(), null, "analogPins", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBoard_Project(), this.getProject(), this.getProject_Board(), "project", null, 1, 1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModule_Kind(), this.getModuleKind(), "kind", "digital", 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModule_Level(), ecorePackage.getEBoolean(), "level", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModule_Library(), this.getLibrary(), "library", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(digitalPinEClass, DigitalPin.class, "DigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDigitalPin_Module(), this.getArduinoDigitalModule(), null, "module", null, 0, 1, DigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pinEClass, Pin.class, "Pin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPin_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPin_Level(), ecorePackage.getEIntegerObject(), "level", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analogPinEClass, AnalogPin.class, "AnalogPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalogPin_Module(), this.getArduinoAnalogModule(), null, "module", null, 0, 1, AnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sketchEClass, Sketch.class, "Sketch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSketch_Hardware(), this.getHardware(), null, "hardware", null, 1, 1, Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSketch_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSketch_Project(), this.getProject(), this.getProject_Sketch(), "project", null, 1, 1, Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSketch_Block(), this.getBlock(), null, "block", null, 0, 1, Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProject_Hardware(), this.getHardware(), null, "hardware", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProject_Sketch(), this.getSketch(), null, "sketch", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProject_Modules(), this.getModule(), null, "modules", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProject_Platform(), this.getPlatform(), null, "platform", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Board(), this.getBoard(), this.getBoard_Project(), "board", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Sketch(), this.getSketch(), this.getSketch_Project(), "sketch", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInstruction_Previous(), this.getInstruction(), null, "previous", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstruction_Next(), this.getInstruction(), null, "next", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(instructionEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(instructionEClass, null, "finalize", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(moduleAssignmentEClass, ModuleAssignment.class, "ModuleAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1849,9 +1750,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getModuleInstruction_Module(), this.getModule(), null, "module", null, 1, 1, ModuleInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControl_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(controlEClass, ecorePackage.getEBoolean(), "evaluate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEReference(getControl_Block(), this.getBlock(), null, "block", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(utilitiesEClass, Utilities.class, "Utilities", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1859,16 +1758,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEAttribute(getDelay_Unit(), this.getTime(), "unit", null, 0, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelay_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnector_Pin(), this.getPin(), null, "pin", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnector_Module(), this.getModule(), null, "module", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repeatEClass, Repeat.class, "Repeat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRepeat_Iteration(), ecorePackage.getEInt(), "iteration", "5", 0, 1, Repeat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1877,7 +1768,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getModuleGet_Module(), this.getModule(), null, "module", null, 1, 1, ModuleGet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWhile_Condition(), this.getExpression(), null, "condition", null, 1, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhile_Condition(), this.getBooleanExpression(), null, "condition", null, 1, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinaryExpression_Left(), this.getExpression(), null, "left", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1899,7 +1790,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(constantEClass, Constant.class, "Constant", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIf_Condition(), this.getExpression(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIf_Condition(), this.getBooleanExpression(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integerConstantEClass, IntegerConstant.class, "IntegerConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegerConstant_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, IntegerConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1961,14 +1852,23 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(musicPlayerEClass, MusicPlayer.class, "MusicPlayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(arduinoModuleEClass, ArduinoModule.class, "ArduinoModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBlock_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arduinoBoardEClass, ArduinoBoard.class, "ArduinoBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArduinoBoard_DigitalPins(), this.getDigitalPin(), null, "digitalPins", null, 0, -1, ArduinoBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArduinoBoard_AnalogPins(), this.getAnalogPin(), null, "analogPins", null, 0, -1, ArduinoBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arduinoDigitalModuleEClass, ArduinoDigitalModule.class, "ArduinoDigitalModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(arduinoAnalogModuleEClass, ArduinoAnalogModule.class, "ArduinoAnalogModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");
 		addEEnumLiteral(timeEEnum, Time.MILLI_SECOND);
 		addEEnumLiteral(timeEEnum, Time.MICRO_SECOND);
-
-		initEEnum(moduleKindEEnum, ModuleKind.class, "ModuleKind");
-		addEEnumLiteral(moduleKindEEnum, ModuleKind.DIGITAL);
-		addEEnumLiteral(moduleKindEEnum, ModuleKind.ANALOG);
 
 		initEEnum(binaryIntegerOperatorKindEEnum, BinaryIntegerOperatorKind.class, "BinaryIntegerOperatorKind");
 		addEEnumLiteral(binaryIntegerOperatorKindEEnum, BinaryIntegerOperatorKind.MINUS);
@@ -1978,11 +1878,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		addEEnumLiteral(binaryIntegerOperatorKindEEnum, BinaryIntegerOperatorKind.MIN);
 		addEEnumLiteral(binaryIntegerOperatorKindEEnum, BinaryIntegerOperatorKind.MAX);
 		addEEnumLiteral(binaryIntegerOperatorKindEEnum, BinaryIntegerOperatorKind.POURCENT);
-
-		initEEnum(libraryEEnum, Library.class, "Library");
-		addEEnumLiteral(libraryEEnum, Library.NONE);
-		addEEnumLiteral(libraryEEnum, Library.SERVO);
-		addEEnumLiteral(libraryEEnum, Library.MUSIC);
 
 		initEEnum(binaryBooleanOperatorKindEEnum, BinaryBooleanOperatorKind.class, "BinaryBooleanOperatorKind");
 		addEEnumLiteral(binaryBooleanOperatorKindEEnum, BinaryBooleanOperatorKind.INF);

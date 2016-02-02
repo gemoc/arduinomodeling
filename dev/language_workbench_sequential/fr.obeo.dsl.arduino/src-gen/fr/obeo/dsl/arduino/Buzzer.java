@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface Buzzer extends Actuator {
+public interface Buzzer extends ArduinoDigitalModule {
 } // Buzzer

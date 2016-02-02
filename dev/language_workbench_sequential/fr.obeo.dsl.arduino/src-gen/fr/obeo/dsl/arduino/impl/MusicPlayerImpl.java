@@ -10,10 +10,19 @@
  */
 package fr.obeo.dsl.arduino.impl;
 
+import fr.obeo.dsl.arduino.ArduinoAnalogModule;
+import fr.obeo.dsl.arduino.ArduinoModule;
 import fr.obeo.dsl.arduino.ArduinoPackage;
+import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.MusicPlayer;
+import fr.obeo.dsl.arduino.NamedElement;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MusicPlayerImpl extends ActuatorImpl implements MusicPlayer {
+public class MusicPlayerImpl extends ArduinoAnalogModuleImpl implements MusicPlayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

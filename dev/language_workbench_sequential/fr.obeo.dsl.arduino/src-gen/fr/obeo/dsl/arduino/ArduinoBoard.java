@@ -14,22 +14,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Platform</b></em>'.
+ * A representation of the model object '<em><b>Board</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.Platform#getDigitalPins <em>Digital Pins</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.Platform#getAnalogPins <em>Analog Pins</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.ArduinoBoard#getDigitalPins <em>Digital Pins</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.ArduinoBoard#getAnalogPins <em>Analog Pins</em>}</li>
  * </ul>
  * </p>
  *
- * @see fr.obeo.dsl.arduino.ArduinoPackage#getPlatform()
+ * @see fr.obeo.dsl.arduino.ArduinoPackage#getArduinoBoard()
  * @model
  * @generated
  */
-public interface Platform extends NamedElement {
+public interface ArduinoBoard extends Board {
 	/**
 	 * Returns the value of the '<em><b>Digital Pins</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.obeo.dsl.arduino.DigitalPin}.
@@ -40,7 +40,7 @@ public interface Platform extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Digital Pins</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getPlatform_DigitalPins()
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getArduinoBoard_DigitalPins()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -56,10 +56,10 @@ public interface Platform extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Analog Pins</em>' containment reference list.
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getPlatform_AnalogPins()
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getArduinoBoard_AnalogPins()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<AnalogPin> getAnalogPins();
 
-} // Platform
+} // ArduinoBoard

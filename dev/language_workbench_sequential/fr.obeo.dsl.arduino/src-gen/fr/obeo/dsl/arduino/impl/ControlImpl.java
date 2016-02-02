@@ -11,20 +11,16 @@
 package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
+import fr.obeo.dsl.arduino.Block;
 import fr.obeo.dsl.arduino.Control;
-import fr.obeo.dsl.arduino.Instruction;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.impl.ControlImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ControlImpl#getBlock <em>Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class ControlImpl extends InstructionImpl implements Control {
 	/**
-	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
+	 * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstructions()
+	 * @see #getBlock()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Instruction> instructions;
+	protected Block block;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,11 +70,8 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Instruction> getInstructions() {
-		if (instructions == null) {
-			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, ArduinoPackage.CONTROL__INSTRUCTIONS);
-		}
-		return instructions;
+	public Block getBlock() {
+		return block;
 	}
 
 	/**
@@ -86,10 +79,33 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean evaluate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public NotificationChain basicSetBlock(Block newBlock, NotificationChain msgs) {
+		Block oldBlock = block;
+		block = newBlock;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.CONTROL__BLOCK, oldBlock, newBlock);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBlock(Block newBlock) {
+		if (newBlock != block) {
+			NotificationChain msgs = null;
+			if (block != null)
+				msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.CONTROL__BLOCK, null, msgs);
+			if (newBlock != null)
+				msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.CONTROL__BLOCK, null, msgs);
+			msgs = basicSetBlock(newBlock, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.CONTROL__BLOCK, newBlock, newBlock));
 	}
 
 	/**
@@ -100,8 +116,8 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
-				return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
+			case ArduinoPackage.CONTROL__BLOCK:
+				return basicSetBlock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,8 +130,8 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
-				return getInstructions();
+			case ArduinoPackage.CONTROL__BLOCK:
+				return getBlock();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,13 +141,11 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
-				getInstructions().clear();
-				getInstructions().addAll((Collection<? extends Instruction>)newValue);
+			case ArduinoPackage.CONTROL__BLOCK:
+				setBlock((Block)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -145,8 +159,8 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
-				getInstructions().clear();
+			case ArduinoPackage.CONTROL__BLOCK:
+				setBlock((Block)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,8 +174,8 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.CONTROL__INSTRUCTIONS:
-				return instructions != null && !instructions.isEmpty();
+			case ArduinoPackage.CONTROL__BLOCK:
+				return block != null;
 		}
 		return super.eIsSet(featureID);
 	}

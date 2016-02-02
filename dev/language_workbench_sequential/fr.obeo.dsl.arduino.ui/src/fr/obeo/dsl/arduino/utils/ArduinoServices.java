@@ -40,15 +40,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
-import com.google.common.collect.UnmodifiableIterator;
-
-import fr.obeo.dsl.arduino.Connector;
-import fr.obeo.dsl.arduino.Hardware;
-import fr.obeo.dsl.arduino.Instruction;
-import fr.obeo.dsl.arduino.Module;
-import fr.obeo.dsl.arduino.ModuleInstruction;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
 import fr.obeo.dsl.arduino.build.ArduinoBuilder;
@@ -101,18 +92,8 @@ public class ArduinoServices {
 	}
 
 	public boolean isValidSketch(Sketch sketch) {
-
 		if (sketch != null) {
-			Instruction instruction = sketch;
-			while (instruction != null && instruction.getNext() != null
-					&& !(instruction.getNext() instanceof Sketch)) {
-				instruction = instruction.getNext();
-			}
-
-			if (instruction != null && instruction.getNext() != null
-					&& instruction.getNext() instanceof Sketch) {
-				return true;
-			}
+			return true;
 		}
 		return false;
 	}
@@ -138,8 +119,7 @@ public class ArduinoServices {
 
 					String arduinoSdk = preferences.getArduinoSdk();
 					String serialPort = preferences.getArduinoSerialPort();
-					String boardTag = sketch.getHardware().getPlatforms()
-							.get(0).getName();
+					String boardTag = sketch.getProject().getBoard().getName();
 					String workingDirectory = genFolder.toString();
 					ArduinoBuilder builder = new ArduinoBuilder(arduinoSdk,
 							boardTag, workingDirectory, serialPort);
@@ -182,16 +162,7 @@ public class ArduinoServices {
 	}
 
 	protected List<String> getLibraries(Sketch sketch) {
-		final List<String> libraries = new ArrayList<String>();
-		UnmodifiableIterator<ModuleInstruction> it = Iterators.filter(
-				sketch.eAllContents(), ModuleInstruction.class);
-		while (it.hasNext()) {
-			ModuleInstruction input = it.next();
-			String library = input.getModule().getLibrary().getName();
-			if (!libraries.contains(library) && !library.equals("none")) {
-				libraries.add(library);
-			}
-		}
+		final List<String> libraries = new ArrayList<>();
 		return libraries;
 	}
 
@@ -259,17 +230,6 @@ public class ArduinoServices {
 
 	public boolean isValidHardware() {
 		Project project = getArduinoProject();
-		return !(project == null || project.getHardware() == null
-				|| project.getHardware().getPlatforms().size() == 0
-				|| project.getHardware().getModules().size() == 0 || getConnectedModules(
-					project.getHardware()).size() == 0);
-	}
-
-	private List<Module> getConnectedModules(Hardware hardware) {
-		List<Module> result = Lists.newArrayList();
-		for (Connector connector : hardware.getConnectors()) {
-			result.add(connector.getModule());
-		}
-		return result;
+		return !(project == null || project.getBoard() == null);
 	}
 }

@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface PushButton extends Sensor {
+public interface PushButton extends ArduinoDigitalModule {
 } // PushButton

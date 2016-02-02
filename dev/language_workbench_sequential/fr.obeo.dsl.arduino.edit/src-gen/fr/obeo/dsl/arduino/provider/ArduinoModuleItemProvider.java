@@ -11,6 +11,7 @@
 package fr.obeo.dsl.arduino.provider;
 
 
+import fr.obeo.dsl.arduino.ArduinoModule;
 import fr.obeo.dsl.arduino.ArduinoPackage;
 
 import java.util.Collection;
@@ -19,38 +20,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.Connector} object.
+ * This is the item provider adapter for a {@link fr.obeo.dsl.arduino.ArduinoModule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ArduinoModuleItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorItemProvider(AdapterFactory adapterFactory) {
+	public ArduinoModuleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,65 +53,31 @@ public class ConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPinPropertyDescriptor(object);
-			addModulePropertyDescriptor(object);
+			addLevelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Pin feature.
+	 * This adds a property descriptor for the Level feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPinPropertyDescriptor(Object object) {
+	protected void addLevelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Connector_pin_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_pin_feature", "_UI_Connector_type"),
-				 ArduinoPackage.Literals.CONNECTOR__PIN,
+				 getString("_UI_Module_level_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Module_level_feature", "_UI_Module_type"),
+				 ArduinoPackage.Literals.MODULE__LEVEL,
 				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Module feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModulePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Connector_module_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_module_feature", "_UI_Connector_type"),
-				 ArduinoPackage.Literals.CONNECTOR__MODULE,
-				 true,
 				 false,
-				 true,
-				 null,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This returns Connector.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Connector"));
 	}
 
 	/**
@@ -134,7 +88,10 @@ public class ConnectorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Connector_type");
+		String label = ((ArduinoModule)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ArduinoModule_type") :
+			getString("_UI_ArduinoModule_type") + " " + label;
 	}
 	
 
@@ -148,6 +105,12 @@ public class ConnectorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ArduinoModule.class)) {
+			case ArduinoPackage.ARDUINO_MODULE__LEVEL:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -161,17 +124,6 @@ public class ConnectorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ArduinoEditPlugin.INSTANCE;
 	}
 
 }

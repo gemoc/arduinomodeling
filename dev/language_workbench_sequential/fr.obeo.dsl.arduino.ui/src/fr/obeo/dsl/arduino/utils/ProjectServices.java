@@ -47,7 +47,7 @@ import org.eclipse.ui.PlatformUI;
 import com.google.common.collect.Maps;
 
 import fr.obeo.dsl.arduino.ArduinoFactory;
-import fr.obeo.dsl.arduino.Hardware;
+import fr.obeo.dsl.arduino.Board;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
 import fr.obeo.dsl.arduino.menus.ArduinoUiActivator;
@@ -198,14 +198,13 @@ public class ProjectServices {
 
 								if (rootObject != null) {
 									res.getContents().add(rootObject);
-									final Hardware hardware = ArduinoFactory.eINSTANCE
-											.createHardware();
-									hardware.setName("Hardware");
-									rootObject.setHardware(hardware);
+									final Board board = ArduinoFactory.eINSTANCE
+											.createArduinoBoard();
+									board.setName("Hardware");
+									rootObject.setBoard(board);
 									final Sketch sketch = ArduinoFactory.eINSTANCE
 											.createSketch();
 									sketch.setName("Sketch");
-									sketch.setHardware(hardware);
 									rootObject.setSketch(sketch);
 									
 								}
