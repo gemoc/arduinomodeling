@@ -337,7 +337,7 @@ class BooleanConstant_ExecutableAspect extends Expression_EvaluableAspect{
 	def Object evaluate() {
 		return _self.value
 	}
-}	
+}
 
 @Aspect(className=IntegerConstant) 
 class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{

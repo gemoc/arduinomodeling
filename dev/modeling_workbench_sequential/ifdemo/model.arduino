@@ -23,7 +23,6 @@
         </block>
         <condition xsi:type="arduino:BooleanModuleGet" module="//@board/@digitalPins.0/@module"/>
       </instructions>
-      <instructions xsi:type="arduino:Delay" value="1000"/>
     </block>
   </sketch>
 </arduino:Project>
