@@ -20,7 +20,6 @@ package fr.obeo.dsl.arduino;
  * The following features are supported:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.BooleanVariable#isInitialValue <em>Initial Value</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.BooleanVariable#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,32 +54,5 @@ public interface BooleanVariable extends Variable, BooleanExpression {
 	 * @generated
 	 */
 	void setInitialValue(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(Boolean)
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getBooleanVariable_Value()
-	 * @model default="false"
-	 * @generated
-	 */
-	Boolean getValue();
-
-	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.arduino.BooleanVariable#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(Boolean value);
 
 } // BooleanVariable

@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.Pin#getId <em>Id</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.Pin#getLevel <em>Level</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,31 +54,5 @@ public interface Pin extends EObject {
 	 * @generated
 	 */
 	void setId(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Level</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute.
-	 * @see #setLevel(Integer)
-	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getPin_Level()
-	 * @model
-	 * @generated
-	 */
-	Integer getLevel();
-
-	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Pin#getLevel <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Level</em>' attribute.
-	 * @see #getLevel()
-	 * @generated
-	 */
-	void setLevel(Integer value);
 
 } // Pin
