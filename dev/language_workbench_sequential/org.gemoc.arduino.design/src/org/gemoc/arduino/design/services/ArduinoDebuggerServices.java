@@ -6,16 +6,15 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.gemoc.arduino.execarduino.arduino.Board;
+import org.gemoc.arduino.execarduino.arduino.Module;
+import org.gemoc.arduino.execarduino.arduino.Pin;
+import org.gemoc.arduino.execarduino.arduino.Project;
+import org.gemoc.arduino.execarduino.aspects.ArduinoUtils;
 import org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher.Launcher;
 import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.osgi.framework.Bundle;
 
-import fr.obeo.dsl.arduino.ArduinoUtils;
-import fr.obeo.dsl.arduino.Board;
-import fr.obeo.dsl.arduino.Module;
-import fr.obeo.dsl.arduino.Pin;
-import fr.obeo.dsl.arduino.Project;
-import fr.obeo.dsl.arduino.design.services.ArduinoServices;
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
@@ -61,8 +60,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 				.getBundle("org.gemoc.arduino.design");
 		URL fileURL = bundle.getEntry("/images/" + imageName);
 		if (fileURL == null) {
-			ArduinoServices service = new ArduinoServices();
-			return service.getImage(module);
+			return "";
 		}
 		return "/org.gemoc.arduino.design/images/" + imageName;
 	}

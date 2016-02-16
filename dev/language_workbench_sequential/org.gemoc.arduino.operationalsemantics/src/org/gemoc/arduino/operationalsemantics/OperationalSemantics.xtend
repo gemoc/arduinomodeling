@@ -35,16 +35,18 @@ import fr.obeo.dsl.arduino.VariableRef
 import fr.obeo.dsl.arduino.While
 import java.util.List
 
-import static org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
-
+import static extension org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Block_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Control_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.If_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect.*
-import java.awt.Toolkit
-import java.awt.event.KeyEvent
+import fr.obeo.dsl.arduino.Variable
+import fr.obeo.dsl.arduino.BooleanVariableRef
+import fr.obeo.dsl.arduino.IntegerVariableRef
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -80,7 +82,7 @@ class Project_ExecutableAspect {
 			} else if (o instanceof BooleanVariable) {
 				o.value = o.initialValue
 			} else if (o instanceof Pin) {
-				(o as Pin).level = Integer.valueOf(0)
+				(o as Pin).level = 0;
 			}
 		}];
 	}
@@ -191,6 +193,10 @@ class If_ExecutableAspect extends Control_ExecutableAspect {
 	def void execute() {
 		if (_self.evaluate) {
 			_self.block.execute
+		} else {
+			if (_self.elseBlock != null) {
+				_self.elseBlock.execute
+			}
 		}
 	}
 }
@@ -283,8 +289,7 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 		}
 		switch (_self.operator) {
 			case DIV: {
-				res = iLeft /
-					iRight		
+				res = iLeft / iRight		
 			}
 			case MAX: {
 				res = Math.max(iLeft, iRight)
@@ -360,18 +365,29 @@ class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect {
 	@OverrideAspectMethod
 	def Object evaluate() {
+		var leftIsBoolean = false
+		var rightIsBoolean = false
 		var Boolean res
 		var bLeft = false;
 		var iLeft = 0;
 		switch (_self.left){
-			BooleanExpression: bLeft = _self.left.evaluate as Boolean
+			BooleanExpression: bLeft = {
+				_self.left.evaluate as Boolean
+				leftIsBoolean = true
+			}
 			IntegerExpression: iLeft = _self.left.evaluate as Integer
 		}
 		var bRight = false;
 		var iRight = 0;
 		switch (_self.right){
-			BooleanExpression: bRight = _self.right.evaluate as Boolean
+			BooleanExpression: bRight = {
+				_self.right.evaluate as Boolean
+				rightIsBoolean = true
+			}
 			IntegerExpression: iRight = _self.right.evaluate as Integer
+		}
+		if (leftIsBoolean != rightIsBoolean) {
+			throw new IllegalArgumentException("left operand type does not match right operand type.")
 		}
 		switch (_self.operator) {
 			case AND: {
@@ -393,7 +409,11 @@ class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect
 				res = !(bLeft.equals(bRight))
 			}
 			case EQUAL: {
-				res = (bLeft.equals(bRight))
+				if (leftIsBoolean) {
+					res = (bLeft.equals(bRight))
+				} else {
+					res = (iLeft.equals(iRight))
+				}				
 			}
 			case INF: {
 				res = iLeft < iRight
@@ -430,12 +450,21 @@ class Constant_EvaluableAspect extends Expression_EvaluableAspect {
 
 @Aspect(className=Pin)
 class Pin_EvaluableAspect {
+	public Integer level = LOW
+	
 	public static final Integer LOW = 0
 	public static final Integer HIGH = 1023
 }
 
+@Aspect(className=Variable)
+abstract class Variable_EvaluableAspect {
+	def abstract Object evaluate()
+}
+
 @Aspect(className=IntegerVariable)
-class IntegerVariable_EvaluableAspect extends Expression_EvaluableAspect {
+class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
+	public Integer value
+	
 	@OverrideAspectMethod
 	def Object evaluate(){
 		return _self.value
@@ -443,7 +472,9 @@ class IntegerVariable_EvaluableAspect extends Expression_EvaluableAspect {
 }
 
 @Aspect(className=BooleanVariable)
-class BooleanVariable_EvaluableAspect extends Expression_EvaluableAspect  {	
+class BooleanVariable_EvaluableAspect extends Variable_EvaluableAspect  {	
+	public Boolean value
+	
 	@OverrideAspectMethod
 	def Object evaluate(){
 		return _self.value
@@ -451,9 +482,14 @@ class BooleanVariable_EvaluableAspect extends Expression_EvaluableAspect  {
 }
 
 @Aspect(className=VariableRef)
-class VariableDeclaration_EvaluableAspect extends Expression_EvaluableAspect{
+class VariableRef_EvaluableAspect extends Expression_EvaluableAspect{
+	@OverrideAspectMethod
 	def Object evaluate(){
-		return _self.variable.evaluate
+		switch _self{
+			BooleanVariableRef: return (_self as BooleanVariableRef).variable.evaluate
+			IntegerVariableRef: return (_self as IntegerVariableRef).variable.evaluate
+			default: throw new ClassCastException("type not expected: "+_self.eClass.name)
+		}
 	}
 }
 

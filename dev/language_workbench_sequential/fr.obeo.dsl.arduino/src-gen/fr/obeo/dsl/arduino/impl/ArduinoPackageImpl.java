@@ -31,6 +31,7 @@ import fr.obeo.dsl.arduino.BooleanConstant;
 import fr.obeo.dsl.arduino.BooleanExpression;
 import fr.obeo.dsl.arduino.BooleanModuleGet;
 import fr.obeo.dsl.arduino.BooleanVariable;
+import fr.obeo.dsl.arduino.BooleanVariableRef;
 import fr.obeo.dsl.arduino.Buzzer;
 import fr.obeo.dsl.arduino.Constant;
 import fr.obeo.dsl.arduino.Control;
@@ -45,6 +46,7 @@ import fr.obeo.dsl.arduino.IntegerConstant;
 import fr.obeo.dsl.arduino.IntegerExpression;
 import fr.obeo.dsl.arduino.IntegerModuleGet;
 import fr.obeo.dsl.arduino.IntegerVariable;
+import fr.obeo.dsl.arduino.IntegerVariableRef;
 import fr.obeo.dsl.arduino.MicroServo;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.ModuleAssignment;
@@ -366,6 +368,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass integerVariableRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass ledEClass = null;
 
 	/**
@@ -465,6 +474,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	private EClass arduinoAnalogModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanVariableRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -999,6 +1015,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIf_ElseBlock() {
+		return (EReference)ifEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIntegerConstant() {
 		return integerConstantEClass;
 	}
@@ -1206,8 +1231,17 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVariableRef_Variable() {
-		return (EReference)variableRefEClass.getEStructuralFeatures().get(0);
+	public EClass getIntegerVariableRef() {
+		return integerVariableRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntegerVariableRef_Variable() {
+		return (EReference)integerVariableRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1377,6 +1411,24 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBooleanVariableRef() {
+		return booleanVariableRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBooleanVariableRef_Variable() {
+		return (EReference)booleanVariableRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTime() {
 		return timeEEnum;
 	}
@@ -1517,6 +1569,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		ifEClass = createEClass(IF);
 		createEReference(ifEClass, IF__CONDITION);
+		createEReference(ifEClass, IF__ELSE_BLOCK);
 
 		integerConstantEClass = createEClass(INTEGER_CONSTANT);
 		createEAttribute(integerConstantEClass, INTEGER_CONSTANT__VALUE);
@@ -1554,7 +1607,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__VARIABLE);
 
 		variableRefEClass = createEClass(VARIABLE_REF);
-		createEReference(variableRefEClass, VARIABLE_REF__VARIABLE);
+
+		integerVariableRefEClass = createEClass(INTEGER_VARIABLE_REF);
+		createEReference(integerVariableRefEClass, INTEGER_VARIABLE_REF__VARIABLE);
 
 		ledEClass = createEClass(LED);
 
@@ -1588,6 +1643,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		arduinoDigitalModuleEClass = createEClass(ARDUINO_DIGITAL_MODULE);
 
 		arduinoAnalogModuleEClass = createEClass(ARDUINO_ANALOG_MODULE);
+
+		booleanVariableRefEClass = createEClass(BOOLEAN_VARIABLE_REF);
+		createEReference(booleanVariableRefEClass, BOOLEAN_VARIABLE_REF__VARIABLE);
 
 		// Create enums
 		timeEEnum = createEEnum(TIME);
@@ -1640,7 +1698,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		moduleGetEClass.getESuperTypes().add(this.getExpression());
 		whileEClass.getESuperTypes().add(this.getControl());
 		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
-		variableEClass.getESuperTypes().add(this.getExpression());
 		variableEClass.getESuperTypes().add(this.getNamedElement());
 		variableAssignmentEClass.getESuperTypes().add(this.getInstruction());
 		variableAssignmentEClass.getESuperTypes().add(this.getAssignment());
@@ -1658,9 +1715,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		integerExpressionEClass.getESuperTypes().add(this.getExpression());
 		assignmentEClass.getESuperTypes().add(this.getInstruction());
 		integerVariableEClass.getESuperTypes().add(this.getVariable());
-		integerVariableEClass.getESuperTypes().add(this.getIntegerExpression());
 		booleanVariableEClass.getESuperTypes().add(this.getVariable());
-		booleanVariableEClass.getESuperTypes().add(this.getBooleanExpression());
 		booleanModuleGetEClass.getESuperTypes().add(this.getModuleGet());
 		booleanModuleGetEClass.getESuperTypes().add(this.getBooleanExpression());
 		integerModuleGetEClass.getESuperTypes().add(this.getModuleGet());
@@ -1672,6 +1727,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		unaryIntegerExpressionEClass.getESuperTypes().add(this.getIntegerExpression());
 		variableDeclarationEClass.getESuperTypes().add(this.getInstruction());
 		variableRefEClass.getESuperTypes().add(this.getExpression());
+		integerVariableRefEClass.getESuperTypes().add(this.getVariableRef());
+		integerVariableRefEClass.getESuperTypes().add(this.getIntegerExpression());
 		ledEClass.getESuperTypes().add(this.getArduinoDigitalModule());
 		pushButtonEClass.getESuperTypes().add(this.getArduinoDigitalModule());
 		buzzerEClass.getESuperTypes().add(this.getArduinoDigitalModule());
@@ -1686,6 +1743,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		arduinoBoardEClass.getESuperTypes().add(this.getBoard());
 		arduinoDigitalModuleEClass.getESuperTypes().add(this.getArduinoModule());
 		arduinoAnalogModuleEClass.getESuperTypes().add(this.getArduinoModule());
+		booleanVariableRefEClass.getESuperTypes().add(this.getVariableRef());
+		booleanVariableRefEClass.getESuperTypes().add(this.getBooleanExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1760,6 +1819,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIf_Condition(), this.getBooleanExpression(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIf_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integerConstantEClass, IntegerConstant.class, "IntegerConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegerConstant_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, IntegerConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1796,8 +1856,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableDeclaration_Variable(), this.getVariable(), null, "variable", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableRefEClass, VariableRef.class, "VariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableRef_Variable(), this.getVariable(), null, "variable", null, 1, 1, VariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableRefEClass, VariableRef.class, "VariableRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(integerVariableRefEClass, IntegerVariableRef.class, "IntegerVariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntegerVariableRef_Variable(), this.getIntegerVariable(), null, "variable", null, 1, 1, IntegerVariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ledEClass, fr.obeo.dsl.arduino.LED.class, "LED", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1831,6 +1893,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(arduinoDigitalModuleEClass, ArduinoDigitalModule.class, "ArduinoDigitalModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(arduinoAnalogModuleEClass, ArduinoAnalogModule.class, "ArduinoAnalogModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(booleanVariableRefEClass, BooleanVariableRef.class, "BooleanVariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBooleanVariableRef_Variable(), this.getBooleanVariable(), null, "variable", null, 1, 1, BooleanVariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");

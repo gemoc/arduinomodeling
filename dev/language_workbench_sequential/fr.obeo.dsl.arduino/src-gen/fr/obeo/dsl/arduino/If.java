@@ -20,6 +20,7 @@ package fr.obeo.dsl.arduino;
  * The following features are supported:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.If#getCondition <em>Condition</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.If#getElseBlock <em>Else Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,5 +54,31 @@ public interface If extends Control {
 	 * @generated
 	 */
 	void setCondition(BooleanExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Else Block</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Else Block</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Else Block</em>' containment reference.
+	 * @see #setElseBlock(Block)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getIf_ElseBlock()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Block getElseBlock();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.If#getElseBlock <em>Else Block</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Else Block</em>' containment reference.
+	 * @see #getElseBlock()
+	 * @generated
+	 */
+	void setElseBlock(Block value);
 
 } // If

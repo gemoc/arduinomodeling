@@ -62,6 +62,8 @@ import fr.obeo.dsl.arduino.If;
 import fr.obeo.dsl.arduino.Instruction;
 import fr.obeo.dsl.arduino.IntegerConstant;
 import fr.obeo.dsl.arduino.IntegerModuleGet;
+import fr.obeo.dsl.arduino.IntegerVariable;
+import fr.obeo.dsl.arduino.IntegerVariableRef;
 import fr.obeo.dsl.arduino.Module;
 import fr.obeo.dsl.arduino.ModuleAssignment;
 import fr.obeo.dsl.arduino.ModuleGet;
@@ -547,10 +549,12 @@ public class ArduinoServices {
 			constant.setValue(Integer.parseInt(expression));
 			return constant;
 		}
-		Variable var = ArduinoFactory.eINSTANCE.createIntegerVariable();
+		IntegerVariableRef varRef = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
+		IntegerVariable var = ArduinoFactory.eINSTANCE.createIntegerVariable();
 		var.setName(expression);
+		varRef.setVariable(var);
 //		var.setExpression("0");
-		return var;
+		return varRef;
 	}
 
 	private boolean isInteger(String s) {
@@ -584,13 +588,13 @@ public class ArduinoServices {
 
 	public void editLabel(VariableAssignment instruction, Sketch sketch, String variable,
 			String Expression) {
-		Expression oldVariable = instruction.getVariable();
+//		Variable oldVariable = instruction.getVariable();
 		Expression oldExpression = instruction.getOperand();
 		instruction.setVariable((Variable) getExpression(sketch, variable));
 		instruction.setOperand(getExpression(sketch, Expression));
 
 		// Clean unused Expressions
-		deleteUnusedExpression(sketch, oldVariable);
+//		deleteUnusedExpression(sketch, oldVariable);
 		deleteUnusedExpression(sketch, oldExpression);
 	}
 
@@ -840,7 +844,15 @@ public class ArduinoServices {
 	
 	public void addVariable(Instruction container, Variable variable) {
 		if (container instanceof BinaryExpression) {
-			addMathOperatorExpression((BinaryExpression) container, variable);
+			if (variable instanceof IntegerVariable) {
+				IntegerVariableRef ref = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
+				ref.setVariable((IntegerVariable)variable);
+				addMathOperatorExpression((BinaryExpression) container, ref);
+			} else {
+				IntegerVariableRef ref = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
+				ref.setVariable((IntegerVariable)variable);
+				addMathOperatorExpression((BinaryExpression) container, ref);
+			}
 		} else if (container instanceof VariableAssignment) {
 			((VariableAssignment) container).setVariable(variable);
 		}

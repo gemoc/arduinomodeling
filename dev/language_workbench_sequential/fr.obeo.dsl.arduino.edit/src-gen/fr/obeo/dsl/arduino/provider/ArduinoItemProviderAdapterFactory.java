@@ -563,26 +563,26 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.VariableRef} instances.
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.IntegerVariableRef} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableRefItemProvider variableRefItemProvider;
+	protected IntegerVariableRefItemProvider integerVariableRefItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.VariableRef}.
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.IntegerVariableRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableRefAdapter() {
-		if (variableRefItemProvider == null) {
-			variableRefItemProvider = new VariableRefItemProvider(this);
+	public Adapter createIntegerVariableRefAdapter() {
+		if (integerVariableRefItemProvider == null) {
+			integerVariableRefItemProvider = new IntegerVariableRefItemProvider(this);
 		}
 
-		return variableRefItemProvider;
+		return integerVariableRefItemProvider;
 	}
 
 	/**
@@ -862,6 +862,29 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.arduino.BooleanVariableRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanVariableRefItemProvider booleanVariableRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.arduino.BooleanVariableRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanVariableRefAdapter() {
+		if (booleanVariableRefItemProvider == null) {
+			booleanVariableRefItemProvider = new BooleanVariableRefItemProvider(this);
+		}
+
+		return booleanVariableRefItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -981,7 +1004,7 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (unaryBooleanExpressionItemProvider != null) unaryBooleanExpressionItemProvider.dispose();
 		if (unaryIntegerExpressionItemProvider != null) unaryIntegerExpressionItemProvider.dispose();
 		if (variableDeclarationItemProvider != null) variableDeclarationItemProvider.dispose();
-		if (variableRefItemProvider != null) variableRefItemProvider.dispose();
+		if (integerVariableRefItemProvider != null) integerVariableRefItemProvider.dispose();
 		if (ledItemProvider != null) ledItemProvider.dispose();
 		if (pushButtonItemProvider != null) pushButtonItemProvider.dispose();
 		if (buzzerItemProvider != null) buzzerItemProvider.dispose();
@@ -994,6 +1017,7 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (musicPlayerItemProvider != null) musicPlayerItemProvider.dispose();
 		if (blockItemProvider != null) blockItemProvider.dispose();
 		if (arduinoBoardItemProvider != null) arduinoBoardItemProvider.dispose();
+		if (booleanVariableRefItemProvider != null) booleanVariableRefItemProvider.dispose();
 	}
 
 }

@@ -81,7 +81,7 @@
     <eLiterals name="max" value="5"/>
     <eLiterals name="pourcent" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="#//Expression #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableAssignment" eSuperTypes="#//Instruction #//Assignment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//Variable"/>
@@ -97,6 +97,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//BooleanExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//Block"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerConstant" eSuperTypes="#//Constant #//IntegerExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -112,11 +114,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable" eSuperTypes="#//Variable #//IntegerExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable" eSuperTypes="#//Variable #//BooleanExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
   </eClassifiers>
@@ -153,9 +155,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//Variable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerVariableRef" eSuperTypes="#//VariableRef #//IntegerExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="#//Variable"/>
+        eType="#//IntegerVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="#//ArduinoDigitalModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="#//ArduinoDigitalModule"/>
@@ -182,4 +185,8 @@
       eSuperTypes="#//ArduinoModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoAnalogModule" abstract="true"
       eSuperTypes="#//ArduinoModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanVariableRef" eSuperTypes="#//VariableRef #//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="#//BooleanVariable"/>
+  </eClassifiers>
 </ecore:EPackage>

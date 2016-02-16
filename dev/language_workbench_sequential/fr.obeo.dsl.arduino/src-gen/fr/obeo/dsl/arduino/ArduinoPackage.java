@@ -694,7 +694,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__NAME = EXPRESSION_FEATURE_COUNT + 0;
+	int VARIABLE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
@@ -703,7 +703,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int VARIABLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.VariableAssignmentImpl <em>Variable Assignment</em>}' class.
@@ -882,13 +882,22 @@ public interface ArduinoPackage extends EPackage {
 	int IF__CONDITION = CONTROL_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Else Block</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__ELSE_BLOCK = CONTROL_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>If</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 1;
+	int IF_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.IntegerConstantImpl <em>Integer Constant</em>}' class.
@@ -1283,22 +1292,41 @@ public interface ArduinoPackage extends EPackage {
 	int VARIABLE_REF = 38;
 
 	/**
-	 * The feature id for the '<em><b>Variable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_REF__VARIABLE = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Variable Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int VARIABLE_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.IntegerVariableRefImpl <em>Integer Variable Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.IntegerVariableRefImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getIntegerVariableRef()
+	 * @generated
+	 */
+	int INTEGER_VARIABLE_REF = 39;
+
+	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_VARIABLE_REF__VARIABLE = VARIABLE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Integer Variable Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_VARIABLE_REF_FEATURE_COUNT = VARIABLE_REF_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.LEDImpl <em>LED</em>}' class.
@@ -1308,7 +1336,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getLED()
 	 * @generated
 	 */
-	int LED = 39;
+	int LED = 40;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.PushButtonImpl <em>Push Button</em>}' class.
@@ -1318,7 +1346,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getPushButton()
 	 * @generated
 	 */
-	int PUSH_BUTTON = 40;
+	int PUSH_BUTTON = 41;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
@@ -1328,7 +1356,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBuzzer()
 	 * @generated
 	 */
-	int BUZZER = 41;
+	int BUZZER = 42;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.RotationSensorImpl <em>Rotation Sensor</em>}' class.
@@ -1338,7 +1366,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getRotationSensor()
 	 * @generated
 	 */
-	int ROTATION_SENSOR = 42;
+	int ROTATION_SENSOR = 43;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.MicroServoImpl <em>Micro Servo</em>}' class.
@@ -1348,7 +1376,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMicroServo()
 	 * @generated
 	 */
-	int MICRO_SERVO = 43;
+	int MICRO_SERVO = 44;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.InfraRedSensorImpl <em>Infra Red Sensor</em>}' class.
@@ -1358,7 +1386,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getInfraRedSensor()
 	 * @generated
 	 */
-	int INFRA_RED_SENSOR = 44;
+	int INFRA_RED_SENSOR = 45;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.AmbientLightSensorImpl <em>Ambient Light Sensor</em>}' class.
@@ -1368,7 +1396,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getAmbientLightSensor()
 	 * @generated
 	 */
-	int AMBIENT_LIGHT_SENSOR = 45;
+	int AMBIENT_LIGHT_SENSOR = 46;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.SoundSensorImpl <em>Sound Sensor</em>}' class.
@@ -1378,7 +1406,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getSoundSensor()
 	 * @generated
 	 */
-	int SOUND_SENSOR = 46;
+	int SOUND_SENSOR = 47;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.FanImpl <em>Fan</em>}' class.
@@ -1388,7 +1416,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getFan()
 	 * @generated
 	 */
-	int FAN = 47;
+	int FAN = 48;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.MusicPlayerImpl <em>Music Player</em>}' class.
@@ -1398,7 +1426,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getMusicPlayer()
 	 * @generated
 	 */
-	int MUSIC_PLAYER = 48;
+	int MUSIC_PLAYER = 49;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ArduinoModuleImpl <em>Module</em>}' class.
@@ -1408,7 +1436,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getArduinoModule()
 	 * @generated
 	 */
-	int ARDUINO_MODULE = 49;
+	int ARDUINO_MODULE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1445,7 +1473,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBlock()
 	 * @generated
 	 */
-	int BLOCK = 50;
+	int BLOCK = 51;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ArduinoBoardImpl <em>Board</em>}' class.
@@ -1455,7 +1483,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getArduinoBoard()
 	 * @generated
 	 */
-	int ARDUINO_BOARD = 51;
+	int ARDUINO_BOARD = 52;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ArduinoDigitalModuleImpl <em>Digital Module</em>}' class.
@@ -1465,7 +1493,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getArduinoDigitalModule()
 	 * @generated
 	 */
-	int ARDUINO_DIGITAL_MODULE = 52;
+	int ARDUINO_DIGITAL_MODULE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1583,7 +1611,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getArduinoAnalogModule()
 	 * @generated
 	 */
-	int ARDUINO_ANALOG_MODULE = 53;
+	int ARDUINO_ANALOG_MODULE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1865,6 +1893,34 @@ public interface ArduinoPackage extends EPackage {
 	int ARDUINO_BOARD_FEATURE_COUNT = BOARD_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.BooleanVariableRefImpl <em>Boolean Variable Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.obeo.dsl.arduino.impl.BooleanVariableRefImpl
+	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBooleanVariableRef()
+	 * @generated
+	 */
+	int BOOLEAN_VARIABLE_REF = 55;
+
+	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE_REF__VARIABLE = VARIABLE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Variable Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE_REF_FEATURE_COUNT = VARIABLE_REF_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1872,7 +1928,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 54;
+	int TIME = 56;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.BinaryIntegerOperatorKind <em>Binary Integer Operator Kind</em>}' enum.
@@ -1882,7 +1938,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBinaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int BINARY_INTEGER_OPERATOR_KIND = 55;
+	int BINARY_INTEGER_OPERATOR_KIND = 57;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.BinaryBooleanOperatorKind <em>Binary Boolean Operator Kind</em>}' enum.
@@ -1892,7 +1948,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBinaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int BINARY_BOOLEAN_OPERATOR_KIND = 56;
+	int BINARY_BOOLEAN_OPERATOR_KIND = 58;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.UnaryIntegerOperatorKind <em>Unary Integer Operator Kind</em>}' enum.
@@ -1902,7 +1958,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getUnaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int UNARY_INTEGER_OPERATOR_KIND = 57;
+	int UNARY_INTEGER_OPERATOR_KIND = 59;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.UnaryBooleanOperatorKind <em>Unary Boolean Operator Kind</em>}' enum.
@@ -1912,7 +1968,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getUnaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int UNARY_BOOLEAN_OPERATOR_KIND = 58;
+	int UNARY_BOOLEAN_OPERATOR_KIND = 60;
 
 
 	/**
@@ -2419,6 +2475,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getIf_Condition();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link fr.obeo.dsl.arduino.If#getElseBlock <em>Else Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else Block</em>'.
+	 * @see fr.obeo.dsl.arduino.If#getElseBlock()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EReference getIf_ElseBlock();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.IntegerConstant <em>Integer Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2658,15 +2725,25 @@ public interface ArduinoPackage extends EPackage {
 	EClass getVariableRef();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.VariableRef#getVariable <em>Variable</em>}'.
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.IntegerVariableRef <em>Integer Variable Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integer Variable Ref</em>'.
+	 * @see fr.obeo.dsl.arduino.IntegerVariableRef
+	 * @generated
+	 */
+	EClass getIntegerVariableRef();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.IntegerVariableRef#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Variable</em>'.
-	 * @see fr.obeo.dsl.arduino.VariableRef#getVariable()
-	 * @see #getVariableRef()
+	 * @see fr.obeo.dsl.arduino.IntegerVariableRef#getVariable()
+	 * @see #getIntegerVariableRef()
 	 * @generated
 	 */
-	EReference getVariableRef_Variable();
+	EReference getIntegerVariableRef_Variable();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.LED <em>LED</em>}'.
@@ -2850,6 +2927,27 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArduinoAnalogModule();
+
+	/**
+	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.BooleanVariableRef <em>Boolean Variable Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Variable Ref</em>'.
+	 * @see fr.obeo.dsl.arduino.BooleanVariableRef
+	 * @generated
+	 */
+	EClass getBooleanVariableRef();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.BooleanVariableRef#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see fr.obeo.dsl.arduino.BooleanVariableRef#getVariable()
+	 * @see #getBooleanVariableRef()
+	 * @generated
+	 */
+	EReference getBooleanVariableRef_Variable();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}'.
@@ -3358,6 +3456,14 @@ public interface ArduinoPackage extends EPackage {
 		EReference IF__CONDITION = eINSTANCE.getIf_Condition();
 
 		/**
+		 * The meta object literal for the '<em><b>Else Block</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF__ELSE_BLOCK = eINSTANCE.getIf_ElseBlock();
+
+		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.IntegerConstantImpl <em>Integer Constant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3570,12 +3676,22 @@ public interface ArduinoPackage extends EPackage {
 		EClass VARIABLE_REF = eINSTANCE.getVariableRef();
 
 		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.IntegerVariableRefImpl <em>Integer Variable Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.IntegerVariableRefImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getIntegerVariableRef()
+		 * @generated
+		 */
+		EClass INTEGER_VARIABLE_REF = eINSTANCE.getIntegerVariableRef();
+
+		/**
 		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE_REF__VARIABLE = eINSTANCE.getVariableRef_Variable();
+		EReference INTEGER_VARIABLE_REF__VARIABLE = eINSTANCE.getIntegerVariableRef_Variable();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.LEDImpl <em>LED</em>}' class.
@@ -3750,6 +3866,24 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ARDUINO_ANALOG_MODULE = eINSTANCE.getArduinoAnalogModule();
+
+		/**
+		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.BooleanVariableRefImpl <em>Boolean Variable Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.obeo.dsl.arduino.impl.BooleanVariableRefImpl
+		 * @see fr.obeo.dsl.arduino.impl.ArduinoPackageImpl#getBooleanVariableRef()
+		 * @generated
+		 */
+		EClass BOOLEAN_VARIABLE_REF = eINSTANCE.getBooleanVariableRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOLEAN_VARIABLE_REF__VARIABLE = eINSTANCE.getBooleanVariableRef_Variable();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.

@@ -232,6 +232,10 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createVariableRefAdapter();
 			}
 			@Override
+			public Adapter caseIntegerVariableRef(IntegerVariableRef object) {
+				return createIntegerVariableRefAdapter();
+			}
+			@Override
 			public Adapter caseLED(LED object) {
 				return createLEDAdapter();
 			}
@@ -290,6 +294,10 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseArduinoAnalogModule(ArduinoAnalogModule object) {
 				return createArduinoAnalogModuleAdapter();
+			}
+			@Override
+			public Adapter caseBooleanVariableRef(BooleanVariableRef object) {
+				return createBooleanVariableRefAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -858,6 +866,20 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.IntegerVariableRef <em>Integer Variable Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.IntegerVariableRef
+	 * @generated
+	 */
+	public Adapter createIntegerVariableRefAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.LED <em>LED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1064,6 +1086,20 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArduinoAnalogModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.arduino.BooleanVariableRef <em>Boolean Variable Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.arduino.BooleanVariableRef
+	 * @generated
+	 */
+	public Adapter createBooleanVariableRefAdapter() {
 		return null;
 	}
 

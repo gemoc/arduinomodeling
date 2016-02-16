@@ -204,7 +204,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
-				if (result == null) result = caseExpression(variable);
 				if (result == null) result = caseNamedElement(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -299,8 +298,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				IntegerVariable integerVariable = (IntegerVariable)theEObject;
 				T result = caseIntegerVariable(integerVariable);
 				if (result == null) result = caseVariable(integerVariable);
-				if (result == null) result = caseIntegerExpression(integerVariable);
-				if (result == null) result = caseExpression(integerVariable);
 				if (result == null) result = caseNamedElement(integerVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -309,8 +306,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				BooleanVariable booleanVariable = (BooleanVariable)theEObject;
 				T result = caseBooleanVariable(booleanVariable);
 				if (result == null) result = caseVariable(booleanVariable);
-				if (result == null) result = caseBooleanExpression(booleanVariable);
-				if (result == null) result = caseExpression(booleanVariable);
 				if (result == null) result = caseNamedElement(booleanVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -369,6 +364,15 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				VariableRef variableRef = (VariableRef)theEObject;
 				T result = caseVariableRef(variableRef);
 				if (result == null) result = caseExpression(variableRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.INTEGER_VARIABLE_REF: {
+				IntegerVariableRef integerVariableRef = (IntegerVariableRef)theEObject;
+				T result = caseIntegerVariableRef(integerVariableRef);
+				if (result == null) result = caseVariableRef(integerVariableRef);
+				if (result == null) result = caseIntegerExpression(integerVariableRef);
+				if (result == null) result = caseExpression(integerVariableRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -509,6 +513,15 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = caseArduinoModule(arduinoAnalogModule);
 				if (result == null) result = caseModule(arduinoAnalogModule);
 				if (result == null) result = caseNamedElement(arduinoAnalogModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.BOOLEAN_VARIABLE_REF: {
+				BooleanVariableRef booleanVariableRef = (BooleanVariableRef)theEObject;
+				T result = caseBooleanVariableRef(booleanVariableRef);
+				if (result == null) result = caseVariableRef(booleanVariableRef);
+				if (result == null) result = caseBooleanExpression(booleanVariableRef);
+				if (result == null) result = caseExpression(booleanVariableRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1102,6 +1115,21 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Variable Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Variable Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegerVariableRef(IntegerVariableRef object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>LED</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1323,6 +1351,21 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArduinoAnalogModule(ArduinoAnalogModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Variable Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Variable Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanVariableRef(BooleanVariableRef object) {
 		return null;
 	}
 

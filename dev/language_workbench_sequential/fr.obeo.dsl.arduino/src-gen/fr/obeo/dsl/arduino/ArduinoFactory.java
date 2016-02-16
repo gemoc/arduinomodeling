@@ -219,13 +219,13 @@ public interface ArduinoFactory extends EFactory {
 	VariableDeclaration createVariableDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Variable Ref</em>'.
+	 * Returns a new object of class '<em>Integer Variable Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Ref</em>'.
+	 * @return a new object of class '<em>Integer Variable Ref</em>'.
 	 * @generated
 	 */
-	VariableRef createVariableRef();
+	IntegerVariableRef createIntegerVariableRef();
 
 	/**
 	 * Returns a new object of class '<em>LED</em>'.
@@ -334,6 +334,15 @@ public interface ArduinoFactory extends EFactory {
 	 * @generated
 	 */
 	ArduinoBoard createArduinoBoard();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Variable Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Variable Ref</em>'.
+	 * @generated
+	 */
+	BooleanVariableRef createBooleanVariableRef();
 
 	/**
 	 * Returns the package supported by this factory.

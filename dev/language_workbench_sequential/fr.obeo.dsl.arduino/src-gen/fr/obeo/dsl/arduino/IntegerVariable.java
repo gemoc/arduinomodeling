@@ -27,7 +27,7 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface IntegerVariable extends Variable, IntegerExpression {
+public interface IntegerVariable extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Initial Value</b></em>' attribute.
 	 * The default value is <code>"0"</code>.

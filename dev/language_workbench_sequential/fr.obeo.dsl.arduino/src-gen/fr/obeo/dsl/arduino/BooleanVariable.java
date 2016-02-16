@@ -27,7 +27,7 @@ package fr.obeo.dsl.arduino;
  * @model
  * @generated
  */
-public interface BooleanVariable extends Variable, BooleanExpression {
+public interface BooleanVariable extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Initial Value</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

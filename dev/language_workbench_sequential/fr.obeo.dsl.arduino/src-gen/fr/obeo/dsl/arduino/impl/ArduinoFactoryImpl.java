@@ -86,7 +86,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			case ArduinoPackage.UNARY_BOOLEAN_EXPRESSION: return createUnaryBooleanExpression();
 			case ArduinoPackage.UNARY_INTEGER_EXPRESSION: return createUnaryIntegerExpression();
 			case ArduinoPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
-			case ArduinoPackage.VARIABLE_REF: return createVariableRef();
+			case ArduinoPackage.INTEGER_VARIABLE_REF: return createIntegerVariableRef();
 			case ArduinoPackage.LED: return createLED();
 			case ArduinoPackage.PUSH_BUTTON: return createPushButton();
 			case ArduinoPackage.BUZZER: return createBuzzer();
@@ -99,6 +99,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			case ArduinoPackage.MUSIC_PLAYER: return createMusicPlayer();
 			case ArduinoPackage.BLOCK: return createBlock();
 			case ArduinoPackage.ARDUINO_BOARD: return createArduinoBoard();
+			case ArduinoPackage.BOOLEAN_VARIABLE_REF: return createBooleanVariableRef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -365,9 +366,9 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableRef createVariableRef() {
-		VariableRefImpl variableRef = new VariableRefImpl();
-		return variableRef;
+	public IntegerVariableRef createIntegerVariableRef() {
+		IntegerVariableRefImpl integerVariableRef = new IntegerVariableRefImpl();
+		return integerVariableRef;
 	}
 
 	/**
@@ -488,6 +489,16 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	public ArduinoBoard createArduinoBoard() {
 		ArduinoBoardImpl arduinoBoard = new ArduinoBoardImpl();
 		return arduinoBoard;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanVariableRef createBooleanVariableRef() {
+		BooleanVariableRefImpl booleanVariableRef = new BooleanVariableRefImpl();
+		return booleanVariableRef;
 	}
 
 	/**

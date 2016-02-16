@@ -21,5 +21,5 @@ package fr.obeo.dsl.arduino;
  * @model abstract="true"
  * @generated
  */
-public interface Variable extends Expression, NamedElement {
+public interface Variable extends NamedElement {
 } // Variable

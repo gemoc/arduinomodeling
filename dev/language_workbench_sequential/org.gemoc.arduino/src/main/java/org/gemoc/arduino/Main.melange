@@ -10,10 +10,15 @@ language Arduino {
 	/*
 	 * Declare DSE
 	 */
-	with org.gemoc.arduino.operationalsemantics.*
+//	with org.gemoc.arduino.operationalsemantics.*
 	
 	/*
 	 * Set name of the ModelType (ie: the type of this language)
 	 */
 	exactType ArduinoMT
+}
+
+language ExecArduino inherits Arduino {
+	with org.gemoc.arduino.operationalsemantics.*
+	exactType ExecArduinoMT
 }

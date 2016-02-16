@@ -155,16 +155,6 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.BINARY_EXPRESSION__LEFT,
-				 ArduinoFactory.eINSTANCE.createIntegerVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.BINARY_EXPRESSION__LEFT,
-				 ArduinoFactory.eINSTANCE.createBooleanVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.BINARY_EXPRESSION__LEFT,
 				 ArduinoFactory.eINSTANCE.createBooleanModuleGet()));
 
 		newChildDescriptors.add
@@ -185,7 +175,12 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.BINARY_EXPRESSION__LEFT,
-				 ArduinoFactory.eINSTANCE.createVariableRef()));
+				 ArduinoFactory.eINSTANCE.createIntegerVariableRef()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BINARY_EXPRESSION__LEFT,
+				 ArduinoFactory.eINSTANCE.createBooleanVariableRef()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -210,16 +205,6 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.BINARY_EXPRESSION__RIGHT,
-				 ArduinoFactory.eINSTANCE.createIntegerVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.BINARY_EXPRESSION__RIGHT,
-				 ArduinoFactory.eINSTANCE.createBooleanVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.BINARY_EXPRESSION__RIGHT,
 				 ArduinoFactory.eINSTANCE.createBooleanModuleGet()));
 
 		newChildDescriptors.add
@@ -240,7 +225,12 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.BINARY_EXPRESSION__RIGHT,
-				 ArduinoFactory.eINSTANCE.createVariableRef()));
+				 ArduinoFactory.eINSTANCE.createIntegerVariableRef()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BINARY_EXPRESSION__RIGHT,
+				 ArduinoFactory.eINSTANCE.createBooleanVariableRef()));
 	}
 
 	/**

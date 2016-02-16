@@ -153,16 +153,6 @@ public class AssignmentItemProvider extends InstructionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.ASSIGNMENT__OPERAND,
-				 ArduinoFactory.eINSTANCE.createIntegerVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.ASSIGNMENT__OPERAND,
-				 ArduinoFactory.eINSTANCE.createBooleanVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.ASSIGNMENT__OPERAND,
 				 ArduinoFactory.eINSTANCE.createBooleanModuleGet()));
 
 		newChildDescriptors.add
@@ -183,7 +173,12 @@ public class AssignmentItemProvider extends InstructionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.ASSIGNMENT__OPERAND,
-				 ArduinoFactory.eINSTANCE.createVariableRef()));
+				 ArduinoFactory.eINSTANCE.createIntegerVariableRef()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.ASSIGNMENT__OPERAND,
+				 ArduinoFactory.eINSTANCE.createBooleanVariableRef()));
 	}
 
 }
