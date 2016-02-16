@@ -13,6 +13,7 @@ import fr.obeo.dsl.arduino.BooleanConstant
 import fr.obeo.dsl.arduino.BooleanExpression
 import fr.obeo.dsl.arduino.BooleanModuleGet
 import fr.obeo.dsl.arduino.BooleanVariable
+import fr.obeo.dsl.arduino.BooleanVariableRef
 import fr.obeo.dsl.arduino.Constant
 import fr.obeo.dsl.arduino.Control
 import fr.obeo.dsl.arduino.Delay
@@ -23,30 +24,29 @@ import fr.obeo.dsl.arduino.IntegerConstant
 import fr.obeo.dsl.arduino.IntegerExpression
 import fr.obeo.dsl.arduino.IntegerModuleGet
 import fr.obeo.dsl.arduino.IntegerVariable
+import fr.obeo.dsl.arduino.IntegerVariableRef
 import fr.obeo.dsl.arduino.ModuleAssignment
 import fr.obeo.dsl.arduino.ModuleInstruction
 import fr.obeo.dsl.arduino.Pin
 import fr.obeo.dsl.arduino.Project
 import fr.obeo.dsl.arduino.Repeat
 import fr.obeo.dsl.arduino.Utilities
+import fr.obeo.dsl.arduino.Variable
 import fr.obeo.dsl.arduino.VariableAssignment
 import fr.obeo.dsl.arduino.VariableDeclaration
 import fr.obeo.dsl.arduino.VariableRef
 import fr.obeo.dsl.arduino.While
 import java.util.List
 
-import static extension org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect.*
-import static extension org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Block_ExecutableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Control_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.If_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect.*
-import fr.obeo.dsl.arduino.Variable
-import fr.obeo.dsl.arduino.BooleanVariableRef
-import fr.obeo.dsl.arduino.IntegerVariableRef
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -222,6 +222,7 @@ class Repeat_EvaluableAspect extends Control_EvaluableAspect {
 
 @Aspect(className=Repeat)
 class Repeat_ExecutableAspect extends Control_ExecutableAspect  {
+	@Step
 	@OverrideAspectMethod
 	def void execute() {
 		while (_self.evaluate) {
