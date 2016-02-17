@@ -1,0 +1,256 @@
+[comment encoding = UTF-8 /]
+
+[module generate('http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation', 
+	'http://www.eclipse.org/emf/2002/Ecore', 
+	'http://org.gemoc.moccml/1.0', 
+	'http://fr.inria.aoste.timemodel',
+	'http://org.gemoc.moccml.fsmmodel/1.0',
+	'http://www.eclipse.org/xtend', 
+	'http://www.eclipse.org/xtend/RichString', 
+	'http://www.eclipse.org/xtext/xbase/Xbase',
+	'http://www.obeo.fr/arduino') ]
+[template public generate(aProject : Project)]
+[comment @main/]
+[file (aProject.name+'_FiacreProcess.fcr', false, 'UTF-8')]
+// *********************** Type Declaration ******************************/
+const NUMBER_Boards : int is [aProject.eAllContents(Board)->size()/]
+const NUMBER_Modules : int is [aProject.eAllContents(Module)->size()/]
+const NUMBER_DigitalPins : int is [aProject.eAllContents(DigitalPin)->size()/]
+const NUMBER_Pins : int is [aProject.eAllContents(Pin)->size()/]
+const NUMBER_AnalogPins : int is [aProject.eAllContents(AnalogPin)->size()/]
+const NUMBER_Sketchs : int is [aProject.eAllContents(Sketch)->size()/]
+const NUMBER_Projects : int is [aProject.eAllContents(Project)->size()/]
+const NUMBER_Instructions : int is [aProject.eAllContents(Instruction)->size()/]
+const NUMBER_ModuleAssignments : int is [aProject.eAllContents(ModuleAssignment)->size()/]
+const NUMBER_ModuleInstructions : int is [aProject.eAllContents(ModuleInstruction)->size()/]
+const NUMBER_Controls : int is [aProject.eAllContents(Control)->size()/]
+const NUMBER_Utilitiess : int is [aProject.eAllContents(Utilities)->size()/]
+const NUMBER_Delays : int is [aProject.eAllContents(Delay)->size()/]
+const NUMBER_Repeats : int is [aProject.eAllContents(Repeat)->size()/]
+const NUMBER_ModuleGets : int is [aProject.eAllContents(ModuleGet)->size()/]
+const NUMBER_Whiles : int is [aProject.eAllContents(While)->size()/]
+const NUMBER_BinaryExpressions : int is [aProject.eAllContents(BinaryExpression)->size()/]
+const NUMBER_Variables : int is [aProject.eAllContents(Variable)->size()/]
+const NUMBER_VariableAssignments : int is [aProject.eAllContents(VariableAssignment)->size()/]
+const NUMBER_BinaryIntegerExpressions : int is [aProject.eAllContents(BinaryIntegerExpression)->size()/]
+const NUMBER_BinaryBooleanExpressions : int is [aProject.eAllContents(BinaryBooleanExpression)->size()/]
+const NUMBER_Expressions : int is [aProject.eAllContents(Expression)->size()/]
+const NUMBER_Constants : int is [aProject.eAllContents(Constant)->size()/]
+const NUMBER_Ifs : int is [aProject.eAllContents(If)->size()/]
+const NUMBER_IntegerConstants : int is [aProject.eAllContents(IntegerConstant)->size()/]
+const NUMBER_BooleanConstants : int is [aProject.eAllContents(BooleanConstant)->size()/]
+const NUMBER_BooleanExpressions : int is [aProject.eAllContents(BooleanExpression)->size()/]
+const NUMBER_IntegerExpressions : int is [aProject.eAllContents(IntegerExpression)->size()/]
+const NUMBER_Assignments : int is [aProject.eAllContents(Assignment)->size()/]
+const NUMBER_IntegerVariables : int is [aProject.eAllContents(IntegerVariable)->size()/]
+const NUMBER_BooleanVariables : int is [aProject.eAllContents(BooleanVariable)->size()/]
+const NUMBER_BooleanModuleGets : int is [aProject.eAllContents(BooleanModuleGet)->size()/]
+const NUMBER_IntegerModuleGets : int is [aProject.eAllContents(IntegerModuleGet)->size()/]
+const NUMBER_UnaryExpressions : int is [aProject.eAllContents(UnaryExpression)->size()/]
+const NUMBER_UnaryBooleanExpressions : int is [aProject.eAllContents(UnaryBooleanExpression)->size()/]
+const NUMBER_UnaryIntegerExpressions : int is [aProject.eAllContents(UnaryIntegerExpression)->size()/]
+const NUMBER_VariableDeclarations : int is [aProject.eAllContents(VariableDeclaration)->size()/]
+const NUMBER_VariableRefs : int is [aProject.eAllContents(VariableRef)->size()/]
+const NUMBER_LEDs : int is [aProject.eAllContents(LED)->size()/]
+const NUMBER_PushButtons : int is [aProject.eAllContents(PushButton)->size()/]
+const NUMBER_Buzzers : int is [aProject.eAllContents(Buzzer)->size()/]
+const NUMBER_RotationSensors : int is [aProject.eAllContents(RotationSensor)->size()/]
+const NUMBER_MicroServos : int is [aProject.eAllContents(MicroServo)->size()/]
+const NUMBER_InfraRedSensors : int is [aProject.eAllContents(InfraRedSensor)->size()/]
+const NUMBER_AmbientLightSensors : int is [aProject.eAllContents(AmbientLightSensor)->size()/]
+const NUMBER_SoundSensors : int is [aProject.eAllContents(SoundSensor)->size()/]
+const NUMBER_Fans : int is [aProject.eAllContents(Fan)->size()/]
+const NUMBER_MusicPlayers : int is [aProject.eAllContents(MusicPlayer)->size()/]
+const NUMBER_ArduinoModules : int is [aProject.eAllContents(ArduinoModule)->size()/]
+const NUMBER_ArduinoBoards : int is [aProject.eAllContents(ArduinoBoard)->size()/]
+const NUMBER_ArduinoDigitalModules : int is [aProject.eAllContents(ArduinoDigitalModule)->size()/]
+const NUMBER_ArduinoAnalogModules : int is [aProject.eAllContents(ArduinoAnalogModule)->size()/]
+const NUMBER_Threads : int is [aProject.eAllContents(Thread)->size()/]
+const NUMBER_Channels : int is [aProject.eAllContents(Channel)->size()/]
+const NUMBER_Links : int is [aProject.eAllContents(Link)->size()/]
+const NUMBER_SynchronizationBlocks : int is [aProject.eAllContents(SynchronizationBlock)->size()/]
+const NUMBER_InstructionBlocks : int is [aProject.eAllContents(InstructionBlock)->size()/]
+const NUMBER_ThreadInstructionBlocks : int is [aProject.eAllContents(ThreadInstructionBlock)->size()/]
+
+type Thread_threadsArray is array [Board.eContents(Thread)->size()/] of int
+type Thread_threadsArray is array [Sketch.eContents(Thread)->size()/] of int
+type Channel_channelsArray is array [Sketch.eContents(Channel)->size()/] of int
+type Board_boardsArray is array [Project.eContents(Board)->size()/] of int
+type Link_linksArray is array [Project.eContents(Link)->size()/] of int
+type DigitalPin_digitalPinsArray is array [ArduinoBoard.eContents(DigitalPin)->size()/] of int
+type AnalogPin_analogPinsArray is array [ArduinoBoard.eContents(AnalogPin)->size()/] of int
+type ThreadInstructionBlock_blocksArray is array [Thread.eContents(ThreadInstructionBlock)->size()/] of int
+type Channel_channelsArray is array [Thread.eContents(Channel)->size()/] of int
+type Instruction_instructionsArray is array [InstructionBlock.eContents(Instruction)->size()/] of int
+
+
+/*********************************************************************
+Defining the Functions for : ThreadInstructionBlock
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : Thread
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : InstructionBlock
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : SynchronizationBlock
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : Channel
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : Board
+**********************************************************************/
+/************************* ThreadInstructionBlock Process Instances***************************/
+[for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+process p[element.name/] ['['/][element.name/]_execTib:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:ThreadInstructionBlock
+    from s0  [element.name/]_execTib; global:=ThreadInstructionBlock_execute( global , global.refToElement_id) ;  to s0
+[/for]
+/************************* Thread Process Instances***************************/
+[for (element : Thread| aProject.eAllContents(Thread))]
+process p[element.name/] ['['/][element.name/]_execute:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:Thread
+    from s0  [element.name/]_execute; global:=Thread_execute( global , global.refToElement_id) ;  to s0
+[/for]
+/************************* Channel Process Instances***************************/
+[for (element : Channel| aProject.eAllContents(Channel))]
+process p[element.name/] ['['/][element.name/]_write:in none,[element.name/]_read:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:Channel
+    from s0  [element.name/]_write; global:=Channel_read( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_read; global:=Channel_write( global , global.refToElement_id) ;  to s0
+[/for]
+/************************* Board Process Instances***************************/
+[for (element : Board| aProject.eAllContents(Board))]
+process p[element.name/] ['['/][element.name/]_execBoard:in none,[element.name/]_idleBoard:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:Board
+    from s0  [element.name/]_execBoard;  to s0
+    from s0  [element.name/]_idleBoard;  to s0
+[/for]
+process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+[element.name/]_execTib:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+[/for][for (element : Channel| aProject.eAllContents(Channel))]
+[element.name/]_write:out none,[element.name/]_read:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
+[element.name/]_execBoard:out none,[element.name/]_idleBoard:out none,[/for][']'/] is
+	states s0
+[for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+    from s0  [element.name/]_execTib;  to s0
+
+[/for]
+[for (element : Thread| aProject.eAllContents(Thread))]
+    from s0  [element.name/]_execute;  to s0
+
+[/for]
+[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+
+[/for]
+[for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+
+[/for]
+[for (element : Channel| aProject.eAllContents(Channel))]
+    from s0  [element.name/]_write;  to s0
+    from s0  [element.name/]_read;  to s0
+
+[/for]
+[for (element : Board| aProject.eAllContents(Board))]
+    from s0  [element.name/]_execBoard;  to s0
+    from s0  [element.name/]_idleBoard;  to s0
+
+[/for]
+
+[file ('pUnConstrainedSemantics.fcr', false, 'UTF-8')]
+process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+[element.name/]_execTib:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+[/for][for (element : Channel| aProject.eAllContents(Channel))]
+[element.name/]_write:out none,[element.name/]_read:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
+[element.name/]_execBoard:out none,[element.name/]_idleBoard:out none,[/for][']'/] is
+	
+	states s0
+[for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+    from s0  [element.name/]_execTib;  to s0
+
+[/for]
+[for (element : Thread| aProject.eAllContents(Thread))]
+    from s0  [element.name/]_execute;  to s0
+
+[/for]
+[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+
+[/for]
+[for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+
+[/for]
+[for (element : Channel| aProject.eAllContents(Channel))]
+    from s0  [element.name/]_write;  to s0
+    from s0  [element.name/]_read;  to s0
+
+[/for]
+[for (element : Board| aProject.eAllContents(Board))]
+    from s0  [element.name/]_execBoard;  to s0
+    from s0  [element.name/]_idleBoard;  to s0
+
+[/for]
+[/file]
+/******************** Process Parallelization for Project******************/
+component sys is
+
+var 
+	global : SystemDataRoot,
+    ID: int := 0
+	//global : SystemDataRoot := INITIAL_Configuration
+
+port
+[for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+[element.name/]_execTib: none,
+[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute: none,
+[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+
+[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+
+[/for][for (element : Channel| aProject.eAllContents(Channel))]
+[element.name/]_write: none,[element.name/]_read: none,
+[/for][for (element : Board| aProject.eAllContents(Board))]
+[element.name/]_execBoard: none,[element.name/]_idleBoard: none,
+[/for]
+
+par
+
+pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+[element.name/]_execTib,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+,[/for][for (element : Channel| aProject.eAllContents(Channel))]
+[element.name/]_write,[element.name/]_read,[/for][for (element : Board| aProject.eAllContents(Board))]
+[element.name/]_execBoard,[element.name/]_idleBoard,[/for][']'/]
+[for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
+|| p[element.name/] ['['/][element.name/]_execTib[']'/] (&global, ID)
+[/for]
+[for (element : Thread| aProject.eAllContents(Thread))]
+|| p[element.name/] ['['/][element.name/]_execute[']'/] (&global, ID)
+[/for]
+[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : Channel| aProject.eAllContents(Channel))]
+|| p[element.name/] ['['/][element.name/]_write,[element.name/]_read[']'/] (&global, ID)
+[/for]
+[for (element : Board| aProject.eAllContents(Board))]
+|| p[element.name/] ['['/][element.name/]_execBoard,[element.name/]_idleBoard[']'/] (&global, ID)
+[/for]
+end par
+sys 
+[/file]
+[/template]

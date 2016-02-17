@@ -1,0 +1,77 @@
+package org.gemoc.arduino.xdsml
+
+import org.gemoc.arduino.operationalsemantics.BinaryBooleanExpression_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.BinaryIntegerExpression_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Board_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.BooleanConstant_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.BooleanModuleGet_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.BooleanVariable_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Channel_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Constant_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Control_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Control_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Delay_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Expression_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.If_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.If_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.InstructionBlock_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Instruction_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.IntegerConstant_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.IntegerModuleGet_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.IntegerVariable_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.ModuleAssignment_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.ModuleInstruction_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Project_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.Repeat_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.SynchronizationBlock_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.Utilities_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.VariableDeclaration_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.VariableDeclaration_ExecutableAspect
+import org.gemoc.arduino.operationalsemantics.While_EvaluableAspect
+import org.gemoc.arduino.operationalsemantics.While_ExecutableAspect
+
+language Arduino {
+	syntax "platform:/resource//fr.obeo.dsl.arduino/model/arduino.ecore"
+	
+	with IntegerVariable_EvaluableAspect
+	with BinaryBooleanExpression_EvaluableAspect
+	with Utilities_ExecutableAspect
+	with  While_ExecutableAspect
+	with BooleanVariable_EvaluableAspect
+	with If_EvaluableAspect
+	with  Repeat_ExecutableAspect
+	with Control_ExecutableAspect
+	with While_EvaluableAspect
+	with Project_ExecutableAspect
+	with VariableDeclaration_ExecutableAspect
+	with Instruction_ExecutableAspect
+	with  If_ExecutableAspect
+	with BooleanModuleGet_ExecutableAspect
+	with IntegerModuleGet_ExecutableAspect
+	with BooleanConstant_ExecutableAspect
+	with Pin_EvaluableAspect
+	with  Control_EvaluableAspect
+	with ModuleInstruction_ExecutableAspect
+	with BinaryIntegerExpression_EvaluableAspect
+	with Expression_EvaluableAspect
+	with Repeat_EvaluableAspect
+	with Delay_ExecutableAspect
+	with ModuleAssignment_ExecutableAspect
+	with InstructionBlock_ExecutableAspect
+	with Constant_EvaluableAspect
+	with IntegerConstant_ExecutableAspect
+	with VariableDeclaration_EvaluableAspect
+	with VariableAssignment_ExecutableAspect
+	with Thread_ExecutableAspect
+	with Channel_ExecutableAspect
+	with Board_ExecutableAspect
+	with SynchronizationBlock_ExecutableAspect
+
+	ecl "/org.gemoc.arduino.dse/ecl/ArduinoLanguage.ecl"
+	
+	exactType ArduinoMT
+}

@@ -1,0 +1,85 @@
+
+"Some global constants"
+|system moccmllibs ccsllibs|
+"MoCCML librairies specifications" 
+moccmllibs:={ #Arduino -> {
+		#ChannelFsm -> [ :s :capacity :size :un :deux :inRate :outRate :ChannelSDF_capacity :ChannelSDF_inRate :ChannelSDF_outRate :ChannelSDF_currentSize :ChannelSDF_push :ChannelSDF_pop|
+	
+				s caseOf: {
+							[ 0] -> [|transitions|
+							transitions := OrderedCollection new.
+							true ifTrue: [ 
+									transitions add: (0 -> 1  do: [:configuration |
+										|size_ capacity_ inRate_ outRate_ | 
+										size_ := configuration at: 3.
+										capacity_ := configuration at: 2.
+										inRate_ := configuration at: 6.
+										outRate_ := configuration at: 7.
+										configuration at: 3 put: (ChannelSDF_currentSize).
+										configuration at: 2 put: (ChannelSDF_capacity).
+										configuration at: 6 put: (ChannelSDF_inRate).
+										configuration at: 7 put: (ChannelSDF_outRate).
+
+									]
+									) ].							
+									transitions asArray.
+							].
+							[1] -> [|transitions|
+							transitions := OrderedCollection new.
+							(size >= inRate) ifTrue:[
+									transitions add: (1 -> 1  when:{ChannelSDF_pop}  do: [:configuration |
+										|size_ |
+										size_ := configuration at: 3.
+										configuration at: 3 put: (size - inRate).
+	
+									]
+									) ].
+
+							(size + outRate <= capacity) ifTrue:[
+									transitions add: (1 -> 1  when:{ChannelSDF_push}  do: [:configuration |
+										|size_ |
+										size_ := configuration at: 3.
+										configuration at: 3 put: (size + outRate).
+	
+									]
+									) ].
+
+
+									transitions asArray.
+							].
+
+					
+					} "end caseof"
+ 
+			]. "end #ChannelFsm"
+
+		#BoardFsm -> [ :s   :BoardSDF_execute :BoardSDF_idle|
+	
+				s caseOf: {
+							[ 0] -> [{
+								0 -> 1 when: {} 
+							}] .
+							[1] -> [{
+								1 -> 2 when: {BoardSDF_execute} 
+							}
+							].
+
+							[2] -> [{
+								2 -> 1 when: {BoardSDF_idle}. 
+								2 -> 2 when: {BoardSDF_execute} 
+							}
+							].
+
+					
+					} "end caseof"
+ 
+			]. "end #BoardFsm"
+
+
+} asDictionary }.
+
+	"CCSL librairies specifications"
+
+system := ClockSystem named: 'aProject_withMoC-Arduino'.
+system addLibrary:moccmllibs asDictionary.
+

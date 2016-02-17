@@ -1,0 +1,74 @@
+AutomataConstraintLibrary Arduino{
+	import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as ccsl;
+
+	RelationLibrary newRelationLib1 {
+
+		AutomataRelationDefinition ChannelFsm [ ChannelDecl ] {
+
+			variables {
+				Integer capacity=0
+				Integer size=0
+				Integer un=1
+				Integer deux = 2
+				Integer inRate=0
+				Integer outRate=0
+			 }
+
+			init:  S1
+
+			from S1 to S2 : S1ToS2
+			-> ( 
+				do size = ChannelSDF_currentSize.value
+				do capacity = ChannelSDF_capacity.value
+				do inRate = ChannelSDF_inRate.value
+				do outRate = ChannelSDF_outRate.value
+				)
+
+			from S2 to S2 : S2ToS2
+			-> ( 
+				when ChannelSDF_pop if( size >= inRate ) do size = ( size - inRate )
+			)
+
+			from S2 to S2 : S2ToS22
+			-> ( 
+				when ChannelSDF_push if( (size + outRate ) <= capacity ) do size = ( size + outRate )
+			)
+
+			State S1 ( out : S1ToS2 )
+
+			State S2 ( in : S1ToS2, S2ToS2, S2ToS22 out : S2ToS2, S2ToS22 )
+		}
+
+		AutomataRelationDefinition BoardFsm [ BoardDecl ] {
+
+			init:  BF_S1
+
+			from EXECUTING_STATE to IDLE_STATE : EXECUTING_STATEToIDLE_STATE
+			-> ( when BoardSDF_idle )
+
+			from IDLE_STATE to EXECUTING_STATE : IDLE_STATEToEXECUTING_STATE
+			-> ( when BoardSDF_execute )
+
+			from BF_S1 to IDLE_STATE : BF_S1ToIDLE_STATE
+			-> (  )
+
+			from EXECUTING_STATE to EXECUTING_STATE : EXECUTING_STATEToEXECUTING_STATE
+			-> ( when BoardSDF_execute )
+
+			State BF_S1 ( out : BF_S1ToIDLE_STATE )
+
+			State IDLE_STATE ( in : EXECUTING_STATEToIDLE_STATE, BF_S1ToIDLE_STATE out :
+			IDLE_STATEToEXECUTING_STATE )
+
+			State EXECUTING_STATE ( in : IDLE_STATEToEXECUTING_STATE,
+			EXECUTING_STATEToEXECUTING_STATE out : EXECUTING_STATEToIDLE_STATE,
+			EXECUTING_STATEToEXECUTING_STATE )
+		}
+		RelationDeclaration ChannelDecl ( ChannelSDF_push : clock, ChannelSDF_pop :
+		clock, ChannelSDF_capacity : int, ChannelSDF_inRate : int, ChannelSDF_outRate
+		: int, ChannelSDF_currentSize : int )
+		
+		RelationDeclaration BoardDecl ( BoardSDF_execute : clock, BoardSDF_idle : clock )
+	}
+}

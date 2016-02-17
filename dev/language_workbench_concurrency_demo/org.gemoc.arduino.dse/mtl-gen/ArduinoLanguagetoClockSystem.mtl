@@ -1,0 +1,209 @@
+[comment encoding = UTF-8 /]
+
+[module generate('http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation', 
+	'http://www.eclipse.org/emf/2002/Ecore', 
+	'http://org.gemoc.moccml/1.0', 
+	'http://fr.inria.aoste.timemodel',
+	'http://org.gemoc.moccml.fsmmodel/1.0',
+	'http://www.obeo.fr/arduino') ]
+
+[template public generate(aProject : Project)]
+[comment @main/]
+[file (aProject.name+'_withMoC-Arduino.clocksystem', false, 'UTF-8')]
+
+"Some global constants"
+|system moccmllibs ccsllibs|
+"MoCCML librairies specifications" 
+moccmllibs:={ #Arduino -> {
+		#ChannelFsm -> ['['/]:s :capacity :size :un :deux :inRate :outRate :ChannelSDF_capacity :ChannelSDF_inRate :ChannelSDF_outRate :ChannelSDF_currentSize :ChannelSDF_push :ChannelSDF_pop|
+	
+				s caseOf: {
+							['['/]0[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							true ifTrue: ['['/]
+									transitions add: (0 -> 1  do: ['['/]:configuration |
+										|size_ capacity_ inRate_ outRate_ | 
+										size_ := configuration at: 3.
+										capacity_ := configuration at: 2.
+										inRate_ := configuration at: 6.
+										outRate_ := configuration at: 7.
+										configuration at: 3 put: (ChannelSDF_currentSize).
+										configuration at: 2 put: (ChannelSDF_capacity).
+										configuration at: 6 put: (ChannelSDF_inRate).
+										configuration at: 7 put: (ChannelSDF_outRate).
+
+									[']'/]
+									) [']'/].							
+									transitions asArray.
+							[']'/].
+							['['/]1[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							(size >= inRate) ifTrue:['['/]
+									transitions add: (1 -> 1  when:{ChannelSDF_pop}  do: ['['/]:configuration |
+										|size_ |
+										size_ := configuration at: 3.
+										configuration at: 3 put: (size - inRate).
+	
+									[']'/]
+									) [']'/].
+
+							(size + outRate <= capacity) ifTrue:['['/]
+									transitions add: (1 -> 1  when:{ChannelSDF_push}  do: ['['/]:configuration |
+										|size_ |
+										size_ := configuration at: 3.
+										configuration at: 3 put: (size + outRate).
+	
+									[']'/]
+									) [']'/].
+
+
+									transitions asArray.
+							[']'/].
+
+					
+					} "end caseof"
+ 
+			[']'/]. "end #ChannelFsm"
+
+		#BoardFsm -> ['['/]:s   :BoardSDF_execute :BoardSDF_idle|
+	
+				s caseOf: {
+							['['/]0[']'/] -> ['['/]{
+								0 -> 1 when: {} 
+							}[']'/].
+							['['/]1[']'/] -> ['['/]{
+								1 -> 2 when: {BoardSDF_execute} 
+							}
+							[']'/].
+
+							['['/]2[']'/] -> ['['/]{
+								2 -> 1 when: {BoardSDF_idle}. 
+								2 -> 2 when: {BoardSDF_execute} 
+							}
+							[']'/].
+
+					
+					} "end caseof"
+ 
+			[']'/]. "end #BoardFsm"
+
+
+} asDictionary }.
+
+	"CCSL librairies specifications"
+
+
+"Instanciation" 
+
+
+system := ClockSystem named: '[aProject.name/]_withMoC-Arduino'.
+system addLibrary:moccmllibs asDictionary.
+"system addLibs:ccsllibs asDictionary."
+
+[for (element : arduino::ThreadInstructionBlock| aProject.eAllContents(arduino::ThreadInstructionBlock))]
+"clocks for ThreadInstructionBlock [element.name/]" 
+	system addClocks: #(execTib[element.name /] ).
+[/for]
+[for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
+"clocks for Thread [element.name/]" 
+	system addClocks: #(execute[element.name /] ).
+"internal clocks for arduino::Thread [element.name/]" 
+    system addInternalClocks: #(instruExec[element.name /] instruExec2[element.name /] ).
+[/for]
+[for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
+"clocks for InstructionBlock [element.name/]" 
+	system addClocks: #().
+[/for]
+[for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
+"clocks for SynchronizationBlock [element.name/]" 
+	system addClocks: #().
+[/for]
+[for (element : arduino::Channel| aProject.eAllContents(arduino::Channel))]
+"clocks for Channel [element.name/]" 
+	system addClocks: #(write[element.name /] read[element.name /] ).
+[/for]
+[for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
+"clocks for Board [element.name/]" 
+	system addClocks: #(execBoard[element.name /] idleBoard[element.name /] ).
+"internal clocks for arduino::Board [element.name/]" 
+    system addInternalClocks: #(allThreadsExecutions[element.name /] ).
+[/for]
+
+[for (element : arduino::ThreadInstructionBlock| aProject.eAllContents(arduino::ThreadInstructionBlock))]
+"relations for ThreadInstructionBlock [element.name/]" 
+[/for]
+[for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
+"expressions used by  Thread [element.name/]" 
+	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execTib[ne.name/] [/for]) named: #instruExec[element.name/]. 
+	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execTib[ne.name/] [/for]) named: #instruExec2[element.name/]. 
+"relations for Thread [element.name/]" 
+	"executeAllInstructions in Thread [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(execute[element.name/]  instruExec[element.name/]).
+
+	"executeAllInstructionsInv in Thread [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(instruExec2[element.name/]  execute[element.name/]).
+
+[/for]
+[for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
+"relations for InstructionBlock [element.name/]" 
+	"I_OrderEnforcemenIbt in InstructionBlock [element.name/]"
+	system
+		library: #TODO: complete EclServices.java, ConstraintCS.getLibraryName() for expression type InfixExpCS
+		relation: #TODO: complete EclServices.java, ConstraintCS.getRelationName() for expression type InfixExpCS
+		clocks: #(TODO: complete EclServices.java, ConstraintCS.getClockNamesListedAndSepBySep())
+		constants: {}
+		variables: {TODO: complete EclServices.java, ConstraintCS.getVariablesListedAndSepByDot() for expression type InfixExpCS}.
+
+[/for]
+[for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
+"relations for SynchronizationBlock [element.name/]" 
+	"I_OrderEnforcementSb in SynchronizationBlock [element.name/]"
+	system
+		library: #TODO: complete EclServices.java, ConstraintCS.getLibraryName() for expression type InfixExpCS
+		relation: #TODO: complete EclServices.java, ConstraintCS.getRelationName() for expression type InfixExpCS
+		clocks: #(TODO: complete EclServices.java, ConstraintCS.getClockNamesListedAndSepBySep())
+		constants: {}
+		variables: {TODO: complete EclServices.java, ConstraintCS.getVariablesListedAndSepByDot() for expression type InfixExpCS}.
+
+[/for]
+[for (element : arduino::Channel| aProject.eAllContents(arduino::Channel))]
+"relations for Channel [element.name/]" 
+	"ChannelSDF in Channel [element.name/]"
+	system
+		library: #Arduino
+		relation: #ChannelFsm
+		clocks: #(write[element.name/]  read[element.name/]    )
+		constants: {[element.oclAsType(arduino::Channel).capacity/]. [element.oclAsType(arduino::Channel).inRate/]. [element.oclAsType(arduino::Channel).outRate/]. [element.oclAsType(arduino::Channel).currentSize/]}
+		variables: {0. 0. 1. 2. 0. 0}.
+
+	"write_push in Channel [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(execute[element.source.oclAsType(arduino::Thread).name/]  write[element.name/]).
+
+	"read_pop in Channel [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(read[element.name/]  execute[element.target.oclAsType(arduino::Thread).name/]).
+
+[/for]
+[for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
+"expressions used by  Board [element.name/]" 
+	system allUnion: #([for (ne : arduino::Thread | element.threads.oclAsType(arduino::Thread))]execute[ne.name/] [/for]) named: #allThreadsExecutions[element.name/]. 
+"relations for Board [element.name/]" 
+	"ThreadCanExecuteIfBoardExecute in Board [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(execBoard[element.name/]  allThreadsExecutions[element.name/]).
+
+	"ExecutingXorIdle in Board [element.name/]"
+	system
+		library: #Arduino
+		relation: #BoardFsm
+		clocks: #(execBoard[element.name/]  idleBoard[element.name/])
+		constants: {}
+		variables: {}.
+
+	"oneThreadAtATime in Board [element.name/]"
+		system library: #Kernel relation: #Exclusion clocks: #([for (ne : arduino::Thread | element.threads.oclAsType(arduino::Thread))]execute[ne.name/] [/for]).
+
+[/for]
+[/file]
+[file ('ClkSysFunctionTest.clocksystem', false, 'UTF-8')]
+SimpleSDF example1 system
+[/file]
+[/template]
