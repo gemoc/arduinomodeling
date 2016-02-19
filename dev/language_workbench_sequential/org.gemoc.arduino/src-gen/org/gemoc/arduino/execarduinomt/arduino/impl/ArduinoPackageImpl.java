@@ -34,6 +34,7 @@ import org.gemoc.arduino.execarduinomt.arduino.BooleanModuleGet;
 import org.gemoc.arduino.execarduinomt.arduino.BooleanVariable;
 import org.gemoc.arduino.execarduinomt.arduino.BooleanVariableRef;
 import org.gemoc.arduino.execarduinomt.arduino.Buzzer;
+import org.gemoc.arduino.execarduinomt.arduino.Color;
 import org.gemoc.arduino.execarduinomt.arduino.Constant;
 import org.gemoc.arduino.execarduinomt.arduino.Control;
 import org.gemoc.arduino.execarduinomt.arduino.Delay;
@@ -508,6 +509,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	private EEnum unaryBooleanOperatorKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum colorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1284,6 +1292,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLED_Color() {
+		return (EAttribute)ledEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPushButton() {
 		return pushButtonEClass;
 	}
@@ -1500,6 +1517,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getColor() {
+		return colorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getObject() {
 		return objectEDataType;
 	}
@@ -1650,6 +1676,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(integerVariableRefEClass, INTEGER_VARIABLE_REF__VARIABLE);
 
 		ledEClass = createEClass(LED);
+		createEAttribute(ledEClass, LED__COLOR);
 
 		pushButtonEClass = createEClass(PUSH_BUTTON);
 
@@ -1691,6 +1718,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		binaryBooleanOperatorKindEEnum = createEEnum(BINARY_BOOLEAN_OPERATOR_KIND);
 		unaryIntegerOperatorKindEEnum = createEEnum(UNARY_INTEGER_OPERATOR_KIND);
 		unaryBooleanOperatorKindEEnum = createEEnum(UNARY_BOOLEAN_OPERATOR_KIND);
+		colorEEnum = createEEnum(COLOR);
 
 		// Create data types
 		objectEDataType = createEDataType(OBJECT);
@@ -1973,6 +2001,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getIntegerVariableRef_Variable(), this.getIntegerVariable(), null, "variable", null, 1, 1, IntegerVariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ledEClass, org.gemoc.arduino.execarduinomt.arduino.LED.class, "LED", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLED_Color(), this.getColor(), "color", "blue", 1, 1, org.gemoc.arduino.execarduinomt.arduino.LED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pushButtonEClass, PushButton.class, "PushButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2040,6 +2069,11 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEEnum(unaryBooleanOperatorKindEEnum, UnaryBooleanOperatorKind.class, "UnaryBooleanOperatorKind");
 		addEEnumLiteral(unaryBooleanOperatorKindEEnum, UnaryBooleanOperatorKind.NOT);
+
+		initEEnum(colorEEnum, Color.class, "Color");
+		addEEnumLiteral(colorEEnum, Color.BLUE);
+		addEEnumLiteral(colorEEnum, Color.RED);
+		addEEnumLiteral(colorEEnum, Color.WHITE);
 
 		// Initialize data types
 		initEDataType(objectEDataType, Object.class, "Object", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

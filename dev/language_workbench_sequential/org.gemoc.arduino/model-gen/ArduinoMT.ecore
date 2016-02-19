@@ -151,7 +151,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntegerVariableRef" eSuperTypes="//VariableRef //IntegerExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//IntegerVariable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LED" eSuperTypes="//ArduinoDigitalModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" lowerBound="1" eType="//Color" defaultValueLiteral="blue"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="//ArduinoDigitalModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Buzzer" eSuperTypes="//ArduinoDigitalModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="RotationSensor" eSuperTypes="//ArduinoAnalogModule"/>
@@ -173,5 +175,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoAnalogModule" abstract="true" eSuperTypes="//ArduinoModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanVariableRef" eSuperTypes="//VariableRef //BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//BooleanVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
+    <eLiterals name="blue"/>
+    <eLiterals name="red" value="1"/>
+    <eLiterals name="white" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -61,6 +61,7 @@ import org.gemoc.arduino.execarduino.arduino.IntegerConstant;
 import org.gemoc.arduino.execarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.execarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.execarduino.arduino.IntegerVariableRef;
+import org.gemoc.arduino.execarduino.arduino.LED;
 import org.gemoc.arduino.execarduino.arduino.Module;
 import org.gemoc.arduino.execarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.execarduino.arduino.ModuleGet;
@@ -135,6 +136,22 @@ public class ArduinoServices {
 			}
 		}
 	}
+	
+	public List<AnalogPin> getAnalogPins(EObject obj) {
+		List<AnalogPin> result = new ArrayList<>();
+		for (int i=0;i<6;i++) {
+			result.add(ArduinoFactory.eINSTANCE.createAnalogPin());
+		}
+		return result;
+	}
+	
+	public List<DigitalPin> getDigitalPins(EObject obj) {
+		List<DigitalPin> result = new ArrayList<>();
+		for (int i=0;i<6;i++) {
+			result.add(ArduinoFactory.eINSTANCE.createDigitalPin());
+		}
+		return result;
+	}
 
 	public Module getModule(Pin pin) {
 		Module res = null;
@@ -208,8 +225,8 @@ public class ArduinoServices {
 		return (Sketch) eObject;
 	}
 
-	private List<Module> getConnectedModules(Board board) {
-		List<Module> result = new ArrayList<>();
+	public List<EObject> getConnectedModules(EObject board) {
+		List<EObject> result = new ArrayList<>();
 		if (board instanceof ArduinoBoard) {
 			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
 			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
@@ -754,7 +771,7 @@ public class ArduinoServices {
 		return constant;
 	}
 
-	public void removeWire(Board board, Module module) {
+	public EObject removeWire(Board board, Module module) {
 		if (board instanceof ArduinoBoard) {
 			boolean found = false;
 			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
@@ -772,6 +789,7 @@ public class ArduinoServices {
 				}
 			}
 		}
+		return null;
 	}
 
 	public void removeWire(Board board) {
@@ -822,6 +840,14 @@ public class ArduinoServices {
 	}
 
 	public String getImage(ModuleGet instruction) {
+//		if (instruction instanceof LED) {
+//			switch (((LED)instruction).getColor()) {
+//			case BLUE:
+//				return 
+//			
+//			
+//			}
+//		}
 		return "/fr.obeo.dsl.arduino.design/images/default.svg";
 //		return "/fr.obeo.dsl.arduino.design/images/"
 //				+ instruction.getModule().getImage();

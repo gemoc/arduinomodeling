@@ -1469,13 +1469,22 @@ public interface ArduinoPackage extends EPackage {
 	int LED__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__COLOR = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>LED</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LED_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+	int LED_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.execarduinomt.arduino.impl.PushButtonImpl <em>Push Button</em>}' class.
@@ -2009,6 +2018,16 @@ public interface ArduinoPackage extends EPackage {
 	int UNARY_BOOLEAN_OPERATOR_KIND = 60;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.arduino.execarduinomt.arduino.Color <em>Color</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.arduino.execarduinomt.arduino.Color
+	 * @see org.gemoc.arduino.execarduinomt.arduino.impl.ArduinoPackageImpl#getColor()
+	 * @generated
+	 */
+	int COLOR = 61;
+
+	/**
 	 * The meta object id for the '<em>Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2016,7 +2035,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.execarduinomt.arduino.impl.ArduinoPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 61;
+	int OBJECT = 62;
 
 
 	/**
@@ -2837,6 +2856,17 @@ public interface ArduinoPackage extends EPackage {
 	EClass getLED();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.execarduinomt.arduino.LED#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see org.gemoc.arduino.execarduinomt.arduino.LED#getColor()
+	 * @see #getLED()
+	 * @generated
+	 */
+	EAttribute getLED_Color();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.execarduinomt.arduino.PushButton <em>Push Button</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3079,6 +3109,16 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getUnaryBooleanOperatorKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.gemoc.arduino.execarduinomt.arduino.Color <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Color</em>'.
+	 * @see org.gemoc.arduino.execarduinomt.arduino.Color
+	 * @generated
+	 */
+	EEnum getColor();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Object</em>}'.
@@ -3820,6 +3860,14 @@ public interface ArduinoPackage extends EPackage {
 		EClass LED = eINSTANCE.getLED();
 
 		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LED__COLOR = eINSTANCE.getLED_Color();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.execarduinomt.arduino.impl.PushButtonImpl <em>Push Button</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4050,6 +4098,16 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum UNARY_BOOLEAN_OPERATOR_KIND = eINSTANCE.getUnaryBooleanOperatorKind();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.arduino.execarduinomt.arduino.Color <em>Color</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.arduino.execarduinomt.arduino.Color
+		 * @see org.gemoc.arduino.execarduinomt.arduino.impl.ArduinoPackageImpl#getColor()
+		 * @generated
+		 */
+		EEnum COLOR = eINSTANCE.getColor();
 
 		/**
 		 * The meta object literal for the '<em>Object</em>' data type.

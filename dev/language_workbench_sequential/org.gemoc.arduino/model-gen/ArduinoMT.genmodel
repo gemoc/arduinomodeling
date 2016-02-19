@@ -78,6 +78,18 @@
         <ecoreEnumLiteral href="ArduinoMT.ecore#//UnaryBooleanOperatorKind/not"/>
       </genEnumLiterals>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ArduinoMT.ecore#//Color"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ArduinoMT.ecore#//Color/blue"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ArduinoMT.ecore#//Color/red"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ArduinoMT.ecore#//Color/white"/>
+      </genEnumLiterals>
+    </genEnums>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Board"/>
       <genFeatures property="None" notify="false" createChild="false">
@@ -302,6 +314,9 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//LED"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//LED/color"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//PushButton"/>
