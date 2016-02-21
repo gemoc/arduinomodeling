@@ -5,14 +5,13 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Channel;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Instruction;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock;
 
 @SuppressWarnings("all")
 public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Thread {
-  private ArduinoMTAdaptersFactory adaptersFactory;
+  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
   
   public ThreadAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;
@@ -27,16 +26,6 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
   @Override
   public void setName(final String o) {
     adaptee.setName(o) ;
-  }
-  
-  @Override
-  public int getCycles() {
-    return adaptee.getCycles() ;
-  }
-  
-  @Override
-  public void setCycles(final int o) {
-    adaptee.setCycles(o) ;
   }
   
   private EList<ThreadInstructionBlock> blocks;
@@ -105,6 +94,11 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
   }
   
   @Override
+  public void synchronize() {
+    adaptee.synchronize() ;
+  }
+  
+  @Override
   public void fire() {
     org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect.fire(adaptee) ;
   }
@@ -123,8 +117,6 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
     		return getBlocks();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CHANNELS:
     		return getChannels();
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CYCLES:
-    		return getCycles();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
     		return getCurrentInstruction();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__FIRST:
@@ -149,9 +141,6 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CHANNELS:
     		getChannels().clear();
     		getChannels().addAll((Collection<? extends Channel>) newValue);
-    		return;
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CYCLES:
-    		setCycles((int) newValue);
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
     		setCurrentInstruction((Instruction) newValue);
@@ -178,9 +167,6 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CHANNELS:
     		getChannels().clear();
-    		return;
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CYCLES:
-    		setCycles((Integer) null);
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
     		setCurrentInstruction((Instruction) null);

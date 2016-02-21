@@ -87,6 +87,33 @@ moccmllibs:={ #Arduino -> {
  
 			[']'/]. "end #BoardFsm"
 
+		#ThreadFSM -> ['['/]:s   :Thread_instruction :Thread_synchro|
+	
+				s caseOf: {
+							['['/]0[']'/] -> ['['/]{
+								0 -> 1 when: {} 
+							}[']'/].
+							['['/]2[']'/] -> ['['/]{
+								2 -> 3 when: {Thread_synchro} 
+							}
+							[']'/].
+
+							['['/]3[']'/] -> ['['/]{
+								3 -> 2 when: {Thread_instruction} 
+							}
+							[']'/].
+
+							['['/]1[']'/] -> ['['/]{
+								1 -> 2 when: {Thread_instruction}. 
+								1 -> 3 when: {Thread_synchro} 
+							}
+							[']'/].
+
+					
+					} "end caseof"
+ 
+			[']'/]. "end #ThreadFSM"
+
 
 } asDictionary }.
 
@@ -102,13 +129,13 @@ system addLibrary:moccmllibs asDictionary.
 
 [for (element : arduino::ThreadInstructionBlock| aProject.eAllContents(arduino::ThreadInstructionBlock))]
 "clocks for ThreadInstructionBlock [element.name/]" 
-	system addClocks: #(execTib[element.name /] ).
+	system addClocks: #(execInstruction[element.name /] ).
 [/for]
 [for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
 "clocks for Thread [element.name/]" 
-	system addClocks: #(execute[element.name /] ).
+	system addClocks: #(execute[element.name /] synchronize[element.name /] ).
 "internal clocks for arduino::Thread [element.name/]" 
-    system addInternalClocks: #(instruExec[element.name /] instruExec2[element.name /] ).
+    system addInternalClocks: #(instruExec[element.name /] instruExec2[element.name /] s_firstInternalInstructionStart[element.name /] ).
 [/for]
 [for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
 "clocks for InstructionBlock [element.name/]" 
@@ -134,8 +161,9 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
 "expressions used by  Thread [element.name/]" 
-	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execTib[ne.name/] [/for]) named: #instruExec[element.name/]. 
-	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execTib[ne.name/] [/for]) named: #instruExec2[element.name/]. 
+	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execInstruction[ne.name/] [/for]) named: #instruExec[element.name/]. 
+	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execInstruction[ne.name/] [/for]) named: #instruExec2[element.name/]. 
+	system allInf: #(execInstruction[element.first.name/]) named: #s_firstInternalInstructionStart[element.name/]. 
 "relations for Thread [element.name/]" 
 	"executeAllInstructions in Thread [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(execute[element.name/]  instruExec[element.name/]).
@@ -143,27 +171,33 @@ system addLibrary:moccmllibs asDictionary.
 	"executeAllInstructionsInv in Thread [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(instruExec2[element.name/]  execute[element.name/]).
 
+	"S_startInternalFirst in Thread [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(execute[element.name/]  s_firstInternalInstructionStart[element.name/]).
+
 [/for]
 [for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
 "relations for InstructionBlock [element.name/]" 
 	"I_OrderEnforcemenIbt in InstructionBlock [element.name/]"
 	system
-		library: #TODO: complete EclServices.java, ConstraintCS.getLibraryName() for expression type InfixExpCS
-		relation: #TODO: complete EclServices.java, ConstraintCS.getRelationName() for expression type InfixExpCS
-		clocks: #(TODO: complete EclServices.java, ConstraintCS.getClockNamesListedAndSepBySep())
+		library: #Arduino
+		relation: #ThreadFSM
+		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::SynchronizationBlock).name/])
 		constants: {}
-		variables: {TODO: complete EclServices.java, ConstraintCS.getVariablesListedAndSepByDot() for expression type InfixExpCS}.
+		variables: {}.
 
 [/for]
 [for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
 "relations for SynchronizationBlock [element.name/]" 
-	"I_OrderEnforcementSb in SynchronizationBlock [element.name/]"
+	"I_OrderEnforcemenIbt in SynchronizationBlock [element.name/]"
 	system
-		library: #TODO: complete EclServices.java, ConstraintCS.getLibraryName() for expression type InfixExpCS
-		relation: #TODO: complete EclServices.java, ConstraintCS.getRelationName() for expression type InfixExpCS
-		clocks: #(TODO: complete EclServices.java, ConstraintCS.getClockNamesListedAndSepBySep())
+		library: #Arduino
+		relation: #ThreadFSM
+		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::InstructionBlock).name/])
 		constants: {}
-		variables: {TODO: complete EclServices.java, ConstraintCS.getVariablesListedAndSepByDot() for expression type InfixExpCS}.
+		variables: {}.
+
+	"synchronize in SynchronizationBlock [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(execInstruction[element.name/]  synchronize[element.thread.name/]).
 
 [/for]
 [for (element : arduino::Channel| aProject.eAllContents(arduino::Channel))]
@@ -177,10 +211,10 @@ system addLibrary:moccmllibs asDictionary.
 		variables: {0. 0. 1. 2. 0. 0}.
 
 	"write_push in Channel [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(execute[element.source.oclAsType(arduino::Thread).name/]  write[element.name/]).
+		system library: #Kernel relation: #Coincides clocks: #(synchronize[element.source.oclAsType(arduino::Thread).name/]  write[element.name/]).
 
 	"read_pop in Channel [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(read[element.name/]  execute[element.target.oclAsType(arduino::Thread).name/]).
+		system library: #Kernel relation: #Coincides clocks: #(read[element.name/]  synchronize[element.target.oclAsType(arduino::Thread).name/]).
 
 [/for]
 [for (element : arduino::Board| aProject.eAllContents(arduino::Board))]

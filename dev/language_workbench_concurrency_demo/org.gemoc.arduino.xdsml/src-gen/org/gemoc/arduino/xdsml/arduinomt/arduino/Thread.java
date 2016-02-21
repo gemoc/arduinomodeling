@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getChannels <em>Channels</em>}</li>
- *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getCycles <em>Cycles</em>}</li>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getCurrentInstruction <em>Current Instruction</em>}</li>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getFirst <em>First</em>}</li>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getLast <em>Last</em>}</li>
@@ -61,32 +60,6 @@ public interface Thread extends NamedElement {
 	 * @generated
 	 */
 	EList<Channel> getChannels();
-
-	/**
-	 * Returns the value of the '<em><b>Cycles</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cycles</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cycles</em>' attribute.
-	 * @see #setCycles(int)
-	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage#getThread_Cycles()
-	 * @model
-	 * @generated
-	 */
-	int getCycles();
-
-	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getCycles <em>Cycles</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cycles</em>' attribute.
-	 * @see #getCycles()
-	 * @generated
-	 */
-	void setCycles(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Current Instruction</b></em>' reference.
@@ -173,6 +146,14 @@ public interface Thread extends NamedElement {
 	 * @generated
 	 */
 	void execute();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void synchronize();
 
 	/**
 	 * <!-- begin-user-doc -->

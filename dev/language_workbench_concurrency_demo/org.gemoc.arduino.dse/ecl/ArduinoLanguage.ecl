@@ -9,20 +9,27 @@ ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibr
 package arduino	
 	
 context ThreadInstructionBlock
-		def:execTib: Event = self.execute()  
+		def:execInstruction: Event = self.execute()  
 		
 	
 context Thread
 
-	def:execute: Event = self.execute()       
+	def:execute: Event = self.execute()  
+	def:synchronize: Event = self.synchronize()       
 	
 	inv executeAllInstructions:
-		let instruExec : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execTib) in
+		let instruExec : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
 		Relation Coincides(self.execute, instruExec)
 
 	inv executeAllInstructionsInv:
-		let instruExec2 : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execTib) in
+		let instruExec2 : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
 		Relation Coincides(instruExec2, self.execute)
+		
+	-- Blocked cannot precess acce
+	inv S_startInternalFirst:
+		let s_firstInternalInstructionStart : Event = Expression Inf(self.first.execInstruction) in
+		Relation Precedes(self.execute, s_firstInternalInstructionStart)	
+
 	-- only one instruction at time
 	--inv oneInstructionAtATime:
 	--	Relation Exclusion(self.block.oclAsType(Block).instructions.oclAsType(Instruction).execInstruction)
@@ -32,24 +39,35 @@ context Thread
 	--	Relation Coincides(self.execute, instruExec)
 
 context InstructionBlock
-	--def:executeInstruction: Event = self.execute()
 	
-	inv I_OrderEnforcemenIbt:
-		(self.next <> null ) implies
-		(Relation Precedes(self.execTib, self.next.oclAsType(SynchronizationBlock).execTib))	
-	 
+	--inv I_OrderEnforcemenIbt:
+	--	(self.next <> null ) implies
+	--	(Relation Precedes(self.execInstruction, self.next.oclAsType(SynchronizationBlock).execInstruction))	
 	
+	 inv I_OrderEnforcemenIbt:
+		 Relation ThreadDecl (
+			self.execInstruction,
+			self.next.oclAsType(SynchronizationBlock).execInstruction	  
+		)    
+
 context SynchronizationBlock
-	--def: executeSync : Event = self.execute()
-		
-	inv I_OrderEnforcementSb:
-		(self.previous <> null ) implies
-		(Relation Precedes(self.previous.oclAsType(InstructionBlock).execTib, self.execTib) )
+	
+	--inv I_OrderEnforcementSb:
+	--	(self.previous <> null ) implies
+	--	(Relation Precedes(self.previous.oclAsType(InstructionBlock).execInstruction, self.execInstruction) )
+	inv I_OrderEnforcemenIbt:
+		 Relation ThreadDecl (
+			self.execInstruction,
+			self.next.oclAsType(InstructionBlock).execInstruction	  
+		) 
+	
+	inv synchronize:
+		Relation Coincides(self.execInstruction, self.thread.synchronize)
 			
 context Channel	  
 		
-	def : write :Event = self.read() 
-	def : read :Event = self.write()
+	def : write :Event = self.write() 
+	def : read :Event = self.read()
 
 	inv ChannelSDF: 
 		let capacity : Integer = self.oclAsType(Channel).capacity in
@@ -67,10 +85,10 @@ context Channel
 		)    
 			          
 	inv write_push:
-		Relation Coincides(self.source.oclAsType(Thread).execute, self.write)
+		Relation Coincides(self.source.oclAsType(Thread).synchronize, self.write)
 	
 	inv read_pop:
-		Relation Coincides(self.read,self.target.oclAsType(Thread).execute)
+		Relation Coincides(self.read,self.target.oclAsType(Thread).synchronize)
 	       
 context Board
 		def : execBoard : Event = self

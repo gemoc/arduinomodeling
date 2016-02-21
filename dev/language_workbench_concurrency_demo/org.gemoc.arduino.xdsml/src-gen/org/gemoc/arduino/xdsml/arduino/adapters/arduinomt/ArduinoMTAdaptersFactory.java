@@ -125,7 +125,7 @@ import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.WhileAdapter;
 
 @SuppressWarnings("all")
 public class ArduinoMTAdaptersFactory implements AdaptersFactory {
-  private static ArduinoMTAdaptersFactory instance;
+  private static org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory instance;
   
   private WeakHashMap<EObject, EObjectAdapter> register;
   
@@ -133,7 +133,7 @@ public class ArduinoMTAdaptersFactory implements AdaptersFactory {
     register = new WeakHashMap();
   }
   
-  public static ArduinoMTAdaptersFactory getInstance() {
+  public static org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory getInstance() {
     if (instance == null) {
     	instance = new org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory() ;
     }

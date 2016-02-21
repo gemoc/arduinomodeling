@@ -3,12 +3,11 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.SynchronizationBlock;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.InstructionBlock;
 
 @SuppressWarnings("all")
 public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationBlock> implements org.gemoc.arduino.xdsml.arduinomt.arduino.SynchronizationBlock {
-  private ArduinoMTAdaptersFactory adaptersFactory;
+  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
   
   public SynchronizationBlockAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

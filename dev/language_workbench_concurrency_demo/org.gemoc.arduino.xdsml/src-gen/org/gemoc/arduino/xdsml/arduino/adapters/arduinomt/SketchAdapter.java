@@ -6,13 +6,12 @@ import fr.obeo.dsl.arduino.Sketch;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Channel;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Project;
 
 @SuppressWarnings("all")
 public class SketchAdapter extends EObjectAdapter<Sketch> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Sketch {
-  private ArduinoMTAdaptersFactory adaptersFactory;
+  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
   
   public SketchAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

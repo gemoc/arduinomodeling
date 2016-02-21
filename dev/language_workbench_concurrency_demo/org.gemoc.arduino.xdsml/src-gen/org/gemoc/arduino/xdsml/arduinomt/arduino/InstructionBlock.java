@@ -105,5 +105,4 @@ public interface InstructionBlock extends ThreadInstructionBlock {
 	 */
 	void execute();
 
-
 } // InstructionBlock

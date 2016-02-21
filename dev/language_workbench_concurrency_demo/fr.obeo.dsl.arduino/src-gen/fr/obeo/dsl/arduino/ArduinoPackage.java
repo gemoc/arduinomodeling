@@ -2189,22 +2189,13 @@ public interface ArduinoPackage extends EPackage {
 	int THREAD__CHANNELS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cycles</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAD__CYCLES = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Current Instruction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD__CURRENT_INSTRUCTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int THREAD__CURRENT_INSTRUCTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>First</b></em>' reference.
@@ -2213,7 +2204,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD__FIRST = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int THREAD__FIRST = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Last</b></em>' reference.
@@ -2222,7 +2213,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD__LAST = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int THREAD__LAST = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Thread</em>' class.
@@ -2231,7 +2222,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int THREAD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ChannelImpl <em>Channel</em>}' class.
@@ -3604,17 +3595,6 @@ public interface ArduinoPackage extends EPackage {
 	EReference getThread_Channels();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Thread#getCycles <em>Cycles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cycles</em>'.
-	 * @see fr.obeo.dsl.arduino.Thread#getCycles()
-	 * @see #getThread()
-	 * @generated
-	 */
-	EAttribute getThread_Cycles();
-
-	/**
 	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.Thread#getCurrentInstruction <em>Current Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4822,14 +4802,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference THREAD__CHANNELS = eINSTANCE.getThread_Channels();
-
-		/**
-		 * The meta object literal for the '<em><b>Cycles</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute THREAD__CYCLES = eINSTANCE.getThread_Cycles();
 
 		/**
 		 * The meta object literal for the '<em><b>Current Instruction</b></em>' reference feature.

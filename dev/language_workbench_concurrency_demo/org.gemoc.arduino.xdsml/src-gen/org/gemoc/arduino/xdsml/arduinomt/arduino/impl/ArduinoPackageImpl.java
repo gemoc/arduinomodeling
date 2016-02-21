@@ -1496,17 +1496,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getThread_Cycles() {
-		return (EAttribute)threadEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getThread_CurrentInstruction() {
-		return (EReference)threadEClass.getEStructuralFeatures().get(3);
+		return (EReference)threadEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1515,7 +1506,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EReference getThread_First() {
-		return (EReference)threadEClass.getEStructuralFeatures().get(4);
+		return (EReference)threadEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1524,7 +1515,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EReference getThread_Last() {
-		return (EReference)threadEClass.getEStructuralFeatures().get(5);
+		return (EReference)threadEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1932,7 +1923,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		threadEClass = createEClass(THREAD);
 		createEReference(threadEClass, THREAD__BLOCKS);
 		createEReference(threadEClass, THREAD__CHANNELS);
-		createEAttribute(threadEClass, THREAD__CYCLES);
 		createEReference(threadEClass, THREAD__CURRENT_INSTRUCTION);
 		createEReference(threadEClass, THREAD__FIRST);
 		createEReference(threadEClass, THREAD__LAST);
@@ -2290,12 +2280,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(threadEClass, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, "Thread", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThread_Blocks(), this.getThreadInstructionBlock(), this.getThreadInstructionBlock_Thread(), "blocks", null, 0, -1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_Channels(), this.getChannel(), this.getChannel_Source(), "channels", null, 0, -1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThread_Cycles(), ecorePackage.getEInt(), "cycles", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_CurrentInstruction(), this.getInstruction(), null, "currentInstruction", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_First(), this.getThreadInstructionBlock(), null, "first", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_Last(), this.getThreadInstructionBlock(), null, "last", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(threadEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, null, "synchronize", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(threadEClass, null, "fire", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2319,7 +2310,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getSynchronizationBlock_Next(), this.getInstructionBlock(), this.getInstructionBlock_Previous(), "next", null, 0, 1, SynchronizationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSynchronizationBlock_Previous(), this.getInstructionBlock(), this.getInstructionBlock_Next(), "previous", null, 0, 1, SynchronizationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(synchronizationBlockEClass, null, "fire", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(synchronizationBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instructionBlockEClass, InstructionBlock.class, "InstructionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionBlock_Instructions(), this.getInstruction(), this.getInstruction_OwnedBlock(), "instructions", null, 0, -1, InstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2327,8 +2318,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getInstructionBlock_Previous(), this.getSynchronizationBlock(), this.getSynchronizationBlock_Next(), "previous", null, 0, 1, InstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(instructionBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(instructionBlockEClass, null, "finalize", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threadInstructionBlockEClass, ThreadInstructionBlock.class, "ThreadInstructionBlock", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThreadInstructionBlock_Thread(), this.getThread(), this.getThread_Blocks(), "thread", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2563,7 +2552,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (threadEClass.getEOperations().get(1), 
+		  (threadEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
 		   });	
@@ -2574,11 +2563,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   });	
 		addAnnotation
 		  (instructionBlockEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (instructionBlockEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });

@@ -3,13 +3,12 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.BinaryBooleanExpression;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.BinaryBooleanOperatorKind;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Expression;
 
 @SuppressWarnings("all")
 public class BinaryBooleanExpressionAdapter extends EObjectAdapter<BinaryBooleanExpression> implements org.gemoc.arduino.xdsml.arduinomt.arduino.BinaryBooleanExpression {
-  private ArduinoMTAdaptersFactory adaptersFactory;
+  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
   
   public BinaryBooleanExpressionAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

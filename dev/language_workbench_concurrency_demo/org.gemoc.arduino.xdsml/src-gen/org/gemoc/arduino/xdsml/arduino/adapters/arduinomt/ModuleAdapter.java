@@ -3,11 +3,10 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.Module;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 
 @SuppressWarnings("all")
 public class ModuleAdapter extends EObjectAdapter<Module> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Module {
-  private ArduinoMTAdaptersFactory adaptersFactory;
+  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
   
   public ModuleAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

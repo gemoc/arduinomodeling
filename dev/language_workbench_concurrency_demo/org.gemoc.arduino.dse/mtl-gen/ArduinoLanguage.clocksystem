@@ -75,6 +75,33 @@ moccmllibs:={ #Arduino -> {
  
 			]. "end #BoardFsm"
 
+		#ThreadFSM -> [ :s   :Thread_instruction :Thread_synchro|
+	
+				s caseOf: {
+							[ 0] -> [{
+								0 -> 1 when: {} 
+							}] .
+							[2] -> [{
+								2 -> 3 when: {Thread_synchro} 
+							}
+							].
+
+							[3] -> [{
+								3 -> 2 when: {Thread_instruction} 
+							}
+							].
+
+							[1] -> [{
+								1 -> 2 when: {Thread_instruction}. 
+								1 -> 3 when: {Thread_synchro} 
+							}
+							].
+
+					
+					} "end caseof"
+ 
+			]. "end #ThreadFSM"
+
 
 } asDictionary }.
 

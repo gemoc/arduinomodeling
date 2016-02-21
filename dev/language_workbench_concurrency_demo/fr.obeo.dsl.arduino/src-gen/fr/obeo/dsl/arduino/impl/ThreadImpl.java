@@ -41,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getChannels <em>Channels</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getCycles <em>Cycles</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getCurrentInstruction <em>Current Instruction</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getFirst <em>First</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getLast <em>Last</em>}</li>
@@ -70,26 +69,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	 * @ordered
 	 */
 	protected EList<Channel> channels;
-
-	/**
-	 * The default value of the '{@link #getCycles() <em>Cycles</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCycles()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CYCLES_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getCycles() <em>Cycles</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCycles()
-	 * @generated
-	 * @ordered
-	 */
-	protected int cycles = CYCLES_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCurrentInstruction() <em>Current Instruction</em>}' reference.
@@ -162,27 +141,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 			channels = new EObjectWithInverseResolvingEList<Channel>(Channel.class, this, ArduinoPackage.THREAD__CHANNELS, ArduinoPackage.CHANNEL__SOURCE);
 		}
 		return channels;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getCycles() {
-		return cycles;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCycles(int newCycles) {
-		int oldCycles = cycles;
-		cycles = newCycles;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD__CYCLES, oldCycles, cycles));
 	}
 
 	/**
@@ -315,6 +273,17 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void synchronize() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -355,8 +324,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 				return getBlocks();
 			case ArduinoPackage.THREAD__CHANNELS:
 				return getChannels();
-			case ArduinoPackage.THREAD__CYCLES:
-				return getCycles();
 			case ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
 				if (resolve) return getCurrentInstruction();
 				return basicGetCurrentInstruction();
@@ -387,9 +354,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 				getChannels().clear();
 				getChannels().addAll((Collection<? extends Channel>)newValue);
 				return;
-			case ArduinoPackage.THREAD__CYCLES:
-				setCycles((Integer)newValue);
-				return;
 			case ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
 				setCurrentInstruction((Instruction)newValue);
 				return;
@@ -417,9 +381,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 			case ArduinoPackage.THREAD__CHANNELS:
 				getChannels().clear();
 				return;
-			case ArduinoPackage.THREAD__CYCLES:
-				setCycles(CYCLES_EDEFAULT);
-				return;
 			case ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
 				setCurrentInstruction((Instruction)null);
 				return;
@@ -445,8 +406,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 				return blocks != null && !blocks.isEmpty();
 			case ArduinoPackage.THREAD__CHANNELS:
 				return channels != null && !channels.isEmpty();
-			case ArduinoPackage.THREAD__CYCLES:
-				return cycles != CYCLES_EDEFAULT;
 			case ArduinoPackage.THREAD__CURRENT_INSTRUCTION:
 				return currentInstruction != null;
 			case ArduinoPackage.THREAD__FIRST:
@@ -455,22 +414,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 				return last != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (cycles: ");
-		result.append(cycles);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ThreadImpl

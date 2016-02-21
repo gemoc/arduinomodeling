@@ -56,7 +56,6 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addChannelsPropertyDescriptor(object);
-			addCyclesPropertyDescriptor(object);
 			addCurrentInstructionPropertyDescriptor(object);
 			addFirstPropertyDescriptor(object);
 			addLastPropertyDescriptor(object);
@@ -82,28 +81,6 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cycles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCyclesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Thread_cycles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Thread_cycles_feature", "_UI_Thread_type"),
-				 ArduinoPackage.Literals.THREAD__CYCLES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -242,9 +219,6 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(fr.obeo.dsl.arduino.Thread.class)) {
-			case ArduinoPackage.THREAD__CYCLES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ArduinoPackage.THREAD__BLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

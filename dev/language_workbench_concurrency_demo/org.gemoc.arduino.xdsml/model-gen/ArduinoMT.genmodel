@@ -479,9 +479,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//Thread/channels"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//Thread/cycles"/>
-      </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//Thread/currentInstruction"/>
       </genFeatures>
@@ -493,6 +490,9 @@
       </genFeatures>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//Thread/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Thread/synchronize"/>
       </genOperations>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//Thread/fire"/>
@@ -543,7 +543,7 @@
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//SynchronizationBlock/previous"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="ArduinoMT.ecore#//SynchronizationBlock/fire"/>
+        <ecoreOperation href="ArduinoMT.ecore#//SynchronizationBlock/execute"/>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -559,9 +559,6 @@
       </genFeatures>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//InstructionBlock/execute"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="ArduinoMT.ecore#//InstructionBlock/finalize"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">

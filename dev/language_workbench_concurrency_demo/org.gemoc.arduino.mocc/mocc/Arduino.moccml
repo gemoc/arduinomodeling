@@ -65,10 +65,43 @@ AutomataConstraintLibrary Arduino{
 			EXECUTING_STATEToEXECUTING_STATE out : EXECUTING_STATEToIDLE_STATE,
 			EXECUTING_STATEToEXECUTING_STATE )
 		}
+
+		AutomataRelationDefinition ThreadFSM [ ThreadDecl ] {
+
+			init:  TFSM_S1
+
+			from TFSM_S4 to TFSM_S2 : TFSM_S1ToTFSM_S2
+			-> ( when Thread_instruction )
+
+			from TFSM_S4 to TFSM_S3 : TFSM_S1ToTFSM_S3
+			-> ( when Thread_synchro )
+
+			from TFSM_S2 to TFSM_S3 : TFSM_S2ToTFSM_S3
+			-> ( when Thread_synchro )
+
+			from TFSM_S3 to TFSM_S2 : TFSM_S3ToTFSM_S2
+			-> ( when Thread_instruction )
+
+			from TFSM_S1 to TFSM_S4 : TFSM_S1ToTFSM_S4
+			-> ( )
+
+			State TFSM_S1 ( out : TFSM_S1ToTFSM_S4 )
+
+			State TFSM_S2 ( in : TFSM_S1ToTFSM_S2, TFSM_S3ToTFSM_S2 out :
+			TFSM_S2ToTFSM_S3 )
+
+			State TFSM_S3 ( in : TFSM_S1ToTFSM_S3, TFSM_S2ToTFSM_S3 out :
+			TFSM_S3ToTFSM_S2 )
+
+			State TFSM_S4 ( in : TFSM_S1ToTFSM_S4 out : TFSM_S1ToTFSM_S2,
+			TFSM_S1ToTFSM_S3 )
+		}
 		RelationDeclaration ChannelDecl ( ChannelSDF_push : clock, ChannelSDF_pop :
 		clock, ChannelSDF_capacity : int, ChannelSDF_inRate : int, ChannelSDF_outRate
 		: int, ChannelSDF_currentSize : int )
 		
 		RelationDeclaration BoardDecl ( BoardSDF_execute : clock, BoardSDF_idle : clock )
+		RelationDeclaration ThreadDecl ( Thread_instruction : clock, Thread_synchro :
+		clock )
 	}
 }

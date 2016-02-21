@@ -104,25 +104,26 @@ Defining the Functions for : Board
 **********************************************************************/
 /************************* ThreadInstructionBlock Process Instances***************************/
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-process p[element.name/] ['['/][element.name/]_execTib:in none[']'/](&global : SystemDataRoot, id : read int) is
+process p[element.name/] ['['/][element.name/]_execInstruction:in none[']'/](&global : SystemDataRoot, id : read int) is
 	states s0
 	var _self:ThreadInstructionBlock
-    from s0  [element.name/]_execTib; global:=ThreadInstructionBlock_execute( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_execInstruction; global:=ThreadInstructionBlock_execute( global , global.refToElement_id) ;  to s0
 [/for]
 /************************* Thread Process Instances***************************/
 [for (element : Thread| aProject.eAllContents(Thread))]
-process p[element.name/] ['['/][element.name/]_execute:in none[']'/](&global : SystemDataRoot, id : read int) is
+process p[element.name/] ['['/][element.name/]_execute:in none,[element.name/]_synchronize:in none[']'/](&global : SystemDataRoot, id : read int) is
 	states s0
 	var _self:Thread
     from s0  [element.name/]_execute; global:=Thread_execute( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_synchronize; global:=Thread_synchronize( global , global.refToElement_id) ;  to s0
 [/for]
 /************************* Channel Process Instances***************************/
 [for (element : Channel| aProject.eAllContents(Channel))]
 process p[element.name/] ['['/][element.name/]_write:in none,[element.name/]_read:in none[']'/](&global : SystemDataRoot, id : read int) is
 	states s0
 	var _self:Channel
-    from s0  [element.name/]_write; global:=Channel_read( global , global.refToElement_id) ;  to s0
-    from s0  [element.name/]_read; global:=Channel_write( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_write; global:=Channel_write( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_read; global:=Channel_read( global , global.refToElement_id) ;  to s0
 [/for]
 /************************* Board Process Instances***************************/
 [for (element : Board| aProject.eAllContents(Board))]
@@ -133,19 +134,20 @@ process p[element.name/] ['['/][element.name/]_execBoard:in none,[element.name/]
     from s0  [element.name/]_idleBoard;  to s0
 [/for]
 process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-[element.name/]_execTib:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+[element.name/]_execInstruction:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute:out none,[element.name/]_synchronize:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 [/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 [/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_write:out none,[element.name/]_read:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
 [element.name/]_execBoard:out none,[element.name/]_idleBoard:out none,[/for][']'/] is
 	states s0
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-    from s0  [element.name/]_execTib;  to s0
+    from s0  [element.name/]_execInstruction;  to s0
 
 [/for]
 [for (element : Thread| aProject.eAllContents(Thread))]
     from s0  [element.name/]_execute;  to s0
+    from s0  [element.name/]_synchronize;  to s0
 
 [/for]
 [for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
@@ -167,8 +169,8 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 
 [file ('pUnConstrainedSemantics.fcr', false, 'UTF-8')]
 process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-[element.name/]_execTib:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+[element.name/]_execInstruction:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute:out none,[element.name/]_synchronize:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 [/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 [/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_write:out none,[element.name/]_read:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
@@ -176,11 +178,12 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 	
 	states s0
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-    from s0  [element.name/]_execTib;  to s0
+    from s0  [element.name/]_execInstruction;  to s0
 
 [/for]
 [for (element : Thread| aProject.eAllContents(Thread))]
     from s0  [element.name/]_execute;  to s0
+    from s0  [element.name/]_synchronize;  to s0
 
 [/for]
 [for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
@@ -210,9 +213,9 @@ var
 
 port
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-[element.name/]_execTib: none,
+[element.name/]_execInstruction: none,
 [/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute: none,
+[element.name/]_execute: none,[element.name/]_synchronize: none,
 [/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 
 [/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
@@ -226,17 +229,17 @@ port
 par
 
 pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-[element.name/]_execTib,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+[element.name/]_execInstruction,[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute,[element.name/]_synchronize,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 ,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 ,[/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_write,[element.name/]_read,[/for][for (element : Board| aProject.eAllContents(Board))]
 [element.name/]_execBoard,[element.name/]_idleBoard,[/for][']'/]
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
-|| p[element.name/] ['['/][element.name/]_execTib[']'/] (&global, ID)
+|| p[element.name/] ['['/][element.name/]_execInstruction[']'/] (&global, ID)
 [/for]
 [for (element : Thread| aProject.eAllContents(Thread))]
-|| p[element.name/] ['['/][element.name/]_execute[']'/] (&global, ID)
+|| p[element.name/] ['['/][element.name/]_execute,[element.name/]_synchronize[']'/] (&global, ID)
 [/for]
 [for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 || p[element.name/] ['['/][']'/] (&global, ID)

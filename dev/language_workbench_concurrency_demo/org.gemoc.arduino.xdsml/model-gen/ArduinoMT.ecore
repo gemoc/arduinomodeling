@@ -291,14 +291,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoAnalogModule" abstract="true" eSuperTypes="//ArduinoModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Thread" eSuperTypes="//NamedElement">
     <eOperations name="execute"/>
+    <eOperations name="synchronize"/>
     <eOperations name="fire">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1" eType="//ThreadInstructionBlock" containment="true" eOpposite="//ThreadInstructionBlock/thread"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1" eType="//Channel" eOpposite="//Channel/source"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cycles">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentInstruction" eType="//Instruction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="//ThreadInstructionBlock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="//ThreadInstructionBlock"/>
@@ -326,7 +324,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outBoard" lowerBound="1" eType="//Board"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SynchronizationBlock" eSuperTypes="//ThreadInstructionBlock">
-    <eOperations name="fire">
+    <eOperations name="execute">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="//InstructionBlock" eOpposite="//InstructionBlock/previous"/>
@@ -334,9 +332,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionBlock" eSuperTypes="//ThreadInstructionBlock">
     <eOperations name="execute">
-      <eAnnotations source="aspect"/>
-    </eOperations>
-    <eOperations name="finalize">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true" eOpposite="//Instruction/ownedBlock"/>
