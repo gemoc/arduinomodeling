@@ -4,7 +4,7 @@
 
     <properties>
         <sample_root>${basedir}/../..</sample_root>
-        <gemoc_sequential_mw_root>${sample_root}/modeling_workbench_sequential</gemoc_sequential_root>
+        <gemoc_sequential_mw_root>${sample_root}/modeling_workbench_sequential</gemoc_sequential_mw_root>
         <gemoc_sequential_lw_root>${sample_root}/language_workbench_sequential</gemoc_sequential_lw_root>
     </properties>
     
