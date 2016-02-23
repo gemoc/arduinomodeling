@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.gemoc.arduinomodeling.feature_1.0.0.qualifier.jar" id="org.gemoc.arduinomodeling.feature" version="1.0.0.qualifier">
+      <category name="gemoc.arduinomodeling"/>
+   </feature>
+   
+   <category-def name="gemoc.arduinomodeling" label="GEMOC ArduinoModeling Language"/>
+</site>

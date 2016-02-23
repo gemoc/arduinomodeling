@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <sample_root>${basedir}/../..</sample_root>
+        <gemoc_sequential_mw_root>${sample_root}/modeling_workbench_sequential</gemoc_sequential_root>
+        <gemoc_sequential_lw_root>${sample_root}/language_workbench_sequential</gemoc_sequential_lw_root>
+    </properties>
+    
+	<parent>
+		<relativePath>../..</relativePath>
+		<groupId>org.gemoc.arduinomodeling</groupId>
+		<artifactId>org.gemoc.arduinomodeling.root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>org.gemoc.arduinomodeling.sampledeployer</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<mkdir dir="${basedir}/zips" />
+								
+								<!-- Arduino Sequential Language Workbench  -->
+								
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.build.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.build/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.design.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.design/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.edit.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.edit/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.gen.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.gen/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.gen.ui.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.gen.ui/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.preferences.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.preferences/" />
+								</zip>
+								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.ui.zip">
+									<fileset dir="${gemoc_commons_lw_root}/fr.obeo.dsl.arduino.ui/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.design.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.design/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.operationalsemantics.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.operationalsemantics/" />
+								</zip>
+								<!-- Arduino Modeling Workbench  -->
+								
+								<zip destfile="${basedir}/zips/ifdemo.zip">
+									<fileset dir="${gemoc_sequential_mw_root}/ifdemo/" />
+								</zip>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project> 
+
