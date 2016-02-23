@@ -57,7 +57,7 @@
 									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.preferences/" />
 								</zip>
 								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.ui.zip">
-									<fileset dir="${gemoc_commons_lw_root}/fr.obeo.dsl.arduino.ui/" />
+									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.ui/" />
 								</zip>
 								<zip destfile="${basedir}/zips/org.gemoc.arduino.zip">
 									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino/" />
