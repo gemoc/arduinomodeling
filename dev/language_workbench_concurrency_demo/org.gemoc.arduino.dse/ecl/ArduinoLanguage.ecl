@@ -9,7 +9,7 @@ ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibr
 package arduino	
 	
 context ThreadInstructionBlock
-		def:execInstruction: Event = self.execute()  
+	def:execInstruction: Event = self.execute()  
 		
 	
 context Thread
@@ -21,14 +21,20 @@ context Thread
 		let instruExec : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
 		Relation Coincides(self.execute, instruExec)
 
-	inv executeAllInstructionsInv:
-		let instruExec2 : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
-		Relation Coincides(instruExec2, self.execute)
+	--inv executeAllInstructionsInv:
+		--let instruExec2 : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
+		--Relation Coincides(instruExec2, self.execute)
+	
+	--inv Thread_StartInstructionFirst:
+		--let test : Event = Expression Inf(self.first.execInstruction,self.blocks.execInstruction) in
+	--	Relation Precedes(self.first.execInstruction, self.first.oclAsType(SynchronizationBlock).next.execInstruction)
 		
 	-- Blocked cannot precess acce
-	inv S_startInternalFirst:
-		let s_firstInternalInstructionStart : Event = Expression Inf(self.first.execInstruction) in
-		Relation Precedes(self.execute, s_firstInternalInstructionStart)	
+	--inv S_startInternalFirst:
+	--	let s_firstInternalInstructionStart : Event = Expression Inf(self.first.execInstruction) in
+	--	Relation Precedes(self.execute, s_firstInternalInstructionStart)	
+		
+	
 
 	-- only one instruction at time
 	--inv oneInstructionAtATime:
@@ -44,18 +50,22 @@ context InstructionBlock
 	--	(self.next <> null ) implies
 	--	(Relation Precedes(self.execInstruction, self.next.oclAsType(SynchronizationBlock).execInstruction))	
 	
-	 inv I_OrderEnforcemenIbt:
+	 inv Instruction_OrderEnforcement:
 		 Relation ThreadDecl (
 			self.execInstruction,
 			self.next.oclAsType(SynchronizationBlock).execInstruction	  
 		)    
+
+	--
+	inv InstructionStartFirst:
+		Relation Precedes (self.execInstruction , self.next.oclAsType(SynchronizationBlock).execInstruction)
 
 context SynchronizationBlock
 	
 	--inv I_OrderEnforcementSb:
 	--	(self.previous <> null ) implies
 	--	(Relation Precedes(self.previous.oclAsType(InstructionBlock).execInstruction, self.execInstruction) )
-	inv I_OrderEnforcemenIbt:
+	inv Sync_OrderEnforcement:
 		 Relation ThreadDecl (
 			self.execInstruction,
 			self.next.oclAsType(InstructionBlock).execInstruction	  
@@ -63,6 +73,9 @@ context SynchronizationBlock
 	
 	inv synchronize:
 		Relation Coincides(self.execInstruction, self.thread.synchronize)
+			
+	inv SyncStartFirst:
+		Relation Precedes (self.execInstruction, self.next.oclAsType(InstructionBlock).execInstruction)	
 			
 context Channel	  
 		
