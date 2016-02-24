@@ -3,12 +3,13 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.If;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.BooleanExpression;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.InstructionBlock;
 
 @SuppressWarnings("all")
 public class IfAdapter extends EObjectAdapter<If> implements org.gemoc.arduino.xdsml.arduinomt.arduino.If {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public IfAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

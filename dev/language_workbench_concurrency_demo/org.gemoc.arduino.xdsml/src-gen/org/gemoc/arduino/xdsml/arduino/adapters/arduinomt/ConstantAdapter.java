@@ -3,10 +3,11 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.Constant;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 
 @SuppressWarnings("all")
 public class ConstantAdapter extends EObjectAdapter<Constant> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Constant {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public ConstantAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

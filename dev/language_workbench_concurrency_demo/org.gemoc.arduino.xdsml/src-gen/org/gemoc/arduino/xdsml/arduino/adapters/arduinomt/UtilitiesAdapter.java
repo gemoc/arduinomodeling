@@ -3,11 +3,12 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.Utilities;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.InstructionBlock;
 
 @SuppressWarnings("all")
 public class UtilitiesAdapter extends EObjectAdapter<Utilities> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Utilities {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public UtilitiesAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

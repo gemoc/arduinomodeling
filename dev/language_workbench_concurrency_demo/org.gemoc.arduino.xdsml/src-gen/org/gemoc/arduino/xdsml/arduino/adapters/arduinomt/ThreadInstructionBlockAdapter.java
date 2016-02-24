@@ -3,10 +3,11 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.ThreadInstructionBlock;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 
 @SuppressWarnings("all")
 public class ThreadInstructionBlockAdapter extends EObjectAdapter<ThreadInstructionBlock> implements org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public ThreadInstructionBlockAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;
@@ -37,6 +38,20 @@ public class ThreadInstructionBlockAdapter extends EObjectAdapter<ThreadInstruct
     else adaptee.setThread(null) ;
   }
   
+  private org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock next;
+  
+  @Override
+  public org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock getNext() {
+    return (org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock) adaptersFactory.createAdapter(adaptee.getNext(), eResource) ;
+  }
+  
+  @Override
+  public void setNext(final org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock o) {
+    if (o != null)
+    	adaptee.setNext(((org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ThreadInstructionBlockAdapter) o).getAdaptee()) ;
+    else adaptee.setNext(null) ;
+  }
+  
   @Override
   public void execute() {
     adaptee.execute() ;
@@ -54,6 +69,8 @@ public class ThreadInstructionBlockAdapter extends EObjectAdapter<ThreadInstruct
     		return getName();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
     		return getThread();
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+    		return getNext();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -68,6 +85,9 @@ public class ThreadInstructionBlockAdapter extends EObjectAdapter<ThreadInstruct
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
     		setThread((org.gemoc.arduino.xdsml.arduinomt.arduino.Thread) newValue);
     		return;
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+    		setNext((org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock) newValue);
+    		return;
     }
     
     super.eSet(featureID, newValue);
@@ -81,6 +101,9 @@ public class ThreadInstructionBlockAdapter extends EObjectAdapter<ThreadInstruct
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
     		setThread((org.gemoc.arduino.xdsml.arduinomt.arduino.Thread) null);
+    		return;
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+    		setNext((org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock) null);
     		return;
     }
     

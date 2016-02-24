@@ -3,10 +3,11 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.Buzzer;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 
 @SuppressWarnings("all")
 public class BuzzerAdapter extends EObjectAdapter<Buzzer> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Buzzer {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public BuzzerAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

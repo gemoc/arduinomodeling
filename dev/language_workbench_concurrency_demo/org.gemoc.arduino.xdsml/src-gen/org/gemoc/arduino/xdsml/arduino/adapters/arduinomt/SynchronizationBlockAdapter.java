@@ -3,11 +3,12 @@ package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.SynchronizationBlock;
 import org.eclipse.emf.ecore.EClass;
-import org.gemoc.arduino.xdsml.arduinomt.arduino.InstructionBlock;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
+import org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock;
 
 @SuppressWarnings("all")
 public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationBlock> implements org.gemoc.arduino.xdsml.arduinomt.arduino.SynchronizationBlock {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public SynchronizationBlockAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;
@@ -38,32 +39,18 @@ public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationB
     else adaptee.setThread(null) ;
   }
   
-  private InstructionBlock next;
+  private ThreadInstructionBlock next;
   
   @Override
-  public InstructionBlock getNext() {
-    return (InstructionBlock) adaptersFactory.createAdapter(adaptee.getNext(), eResource) ;
+  public ThreadInstructionBlock getNext() {
+    return (ThreadInstructionBlock) adaptersFactory.createAdapter(adaptee.getNext(), eResource) ;
   }
   
   @Override
-  public void setNext(final InstructionBlock o) {
+  public void setNext(final ThreadInstructionBlock o) {
     if (o != null)
-    	adaptee.setNext(((org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.InstructionBlockAdapter) o).getAdaptee()) ;
+    	adaptee.setNext(((org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ThreadInstructionBlockAdapter) o).getAdaptee()) ;
     else adaptee.setNext(null) ;
-  }
-  
-  private InstructionBlock previous;
-  
-  @Override
-  public InstructionBlock getPrevious() {
-    return (InstructionBlock) adaptersFactory.createAdapter(adaptee.getPrevious(), eResource) ;
-  }
-  
-  @Override
-  public void setPrevious(final InstructionBlock o) {
-    if (o != null)
-    	adaptee.setPrevious(((org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.InstructionBlockAdapter) o).getAdaptee()) ;
-    else adaptee.setPrevious(null) ;
   }
   
   @Override
@@ -85,8 +72,6 @@ public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationB
     		return getThread();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT:
     		return getNext();
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS:
-    		return getPrevious();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -102,10 +87,7 @@ public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationB
     		setThread((org.gemoc.arduino.xdsml.arduinomt.arduino.Thread) newValue);
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT:
-    		setNext((InstructionBlock) newValue);
-    		return;
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS:
-    		setPrevious((InstructionBlock) newValue);
+    		setNext((ThreadInstructionBlock) newValue);
     		return;
     }
     
@@ -122,10 +104,7 @@ public class SynchronizationBlockAdapter extends EObjectAdapter<SynchronizationB
     		setThread((org.gemoc.arduino.xdsml.arduinomt.arduino.Thread) null);
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT:
-    		setNext((InstructionBlock) null);
-    		return;
-    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS:
-    		setPrevious((InstructionBlock) null);
+    		setNext((ThreadInstructionBlock) null);
     		return;
     }
     

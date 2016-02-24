@@ -55,54 +55,8 @@ public class InstructionBlockItemProvider extends ThreadInstructionBlockItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNextPropertyDescriptor(object);
-			addPreviousPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Next feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InstructionBlock_next_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InstructionBlock_next_feature", "_UI_InstructionBlock_type"),
-				 ArduinoPackage.Literals.INSTRUCTION_BLOCK__NEXT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Previous feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPreviousPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InstructionBlock_previous_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InstructionBlock_previous_feature", "_UI_InstructionBlock_type"),
-				 ArduinoPackage.Literals.INSTRUCTION_BLOCK__PREVIOUS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

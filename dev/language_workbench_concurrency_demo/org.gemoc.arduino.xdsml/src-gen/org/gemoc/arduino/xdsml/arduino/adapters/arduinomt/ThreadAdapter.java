@@ -5,13 +5,14 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Channel;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Instruction;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock;
 
 @SuppressWarnings("all")
 public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Thread {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public ThreadAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

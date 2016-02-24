@@ -6,13 +6,14 @@ import fr.obeo.dsl.arduino.ArduinoBoard;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.AnalogPin;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.DigitalPin;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Project;
 
 @SuppressWarnings("all")
 public class ArduinoBoardAdapter extends EObjectAdapter<ArduinoBoard> implements org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoBoard {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public ArduinoBoardAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

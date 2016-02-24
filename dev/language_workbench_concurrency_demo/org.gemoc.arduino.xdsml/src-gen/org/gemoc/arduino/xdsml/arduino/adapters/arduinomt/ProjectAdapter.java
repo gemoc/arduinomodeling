@@ -8,13 +8,14 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Board;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Link;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Sketch;
 
 @SuppressWarnings("all")
 public class ProjectAdapter extends EObjectAdapter<Project> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Project {
-  private org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory adaptersFactory;
+  private ArduinoMTAdaptersFactory adaptersFactory;
   
   public ProjectAdapter() {
     super(org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory.getInstance()) ;

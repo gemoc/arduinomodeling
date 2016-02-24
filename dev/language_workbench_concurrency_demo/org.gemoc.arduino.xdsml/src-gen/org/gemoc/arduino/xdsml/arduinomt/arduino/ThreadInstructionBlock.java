@@ -12,6 +12,7 @@ package org.gemoc.arduino.xdsml.arduinomt.arduino;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}</li>
+ *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getNext <em>Next</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +48,32 @@ public interface ThreadInstructionBlock extends NamedElement {
 	 * @generated
 	 */
 	void setThread(org.gemoc.arduino.xdsml.arduinomt.arduino.Thread value);
+
+	/**
+	 * Returns the value of the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next</em>' reference.
+	 * @see #setNext(ThreadInstructionBlock)
+	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage#getThreadInstructionBlock_Next()
+	 * @model
+	 * @generated
+	 */
+	ThreadInstructionBlock getNext();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getNext <em>Next</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next</em>' reference.
+	 * @see #getNext()
+	 * @generated
+	 */
+	void setNext(ThreadInstructionBlock value);
 
 	/**
 	 * <!-- begin-user-doc -->

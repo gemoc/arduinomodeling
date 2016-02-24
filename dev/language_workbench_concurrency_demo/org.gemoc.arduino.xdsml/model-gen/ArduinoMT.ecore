@@ -327,20 +327,17 @@
     <eOperations name="execute">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="//InstructionBlock" eOpposite="//InstructionBlock/previous"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="//InstructionBlock" eOpposite="//InstructionBlock/next"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionBlock" eSuperTypes="//ThreadInstructionBlock">
     <eOperations name="execute">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true" eOpposite="//Instruction/ownedBlock"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="//SynchronizationBlock" eOpposite="//SynchronizationBlock/previous"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="//SynchronizationBlock" eOpposite="//SynchronizationBlock/next"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreadInstructionBlock" abstract="true" eSuperTypes="//NamedElement">
     <eOperations name="execute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="thread" eType="//Thread" eOpposite="//Thread/blocks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="//ThreadInstructionBlock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Object" instanceClassName="java.lang.Object"/>
 </ecore:EPackage>

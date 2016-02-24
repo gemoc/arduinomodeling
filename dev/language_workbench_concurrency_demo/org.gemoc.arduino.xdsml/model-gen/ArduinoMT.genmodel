@@ -536,12 +536,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//SynchronizationBlock"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//SynchronizationBlock/next"/>
-      </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//SynchronizationBlock/previous"/>
-      </genFeatures>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//SynchronizationBlock/execute"/>
       </genOperations>
@@ -551,12 +545,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//InstructionBlock/instructions"/>
       </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//InstructionBlock/next"/>
-      </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//InstructionBlock/previous"/>
-      </genFeatures>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//InstructionBlock/execute"/>
       </genOperations>
@@ -565,6 +553,9 @@
       <ecoreClass href="ArduinoMT.ecore#//ThreadInstructionBlock"/>
       <genFeatures property="None" notify="false" createChild="false">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//ThreadInstructionBlock/thread"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//ThreadInstructionBlock/next"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="ArduinoMT.ecore#//ThreadInstructionBlock/execute"/>
