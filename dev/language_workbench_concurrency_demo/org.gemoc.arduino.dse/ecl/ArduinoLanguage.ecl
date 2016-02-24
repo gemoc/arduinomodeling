@@ -20,14 +20,14 @@ context Thread
 	inv executeAllInstructions:
 		let instruExec : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
 		Relation Coincides(self.execute, instruExec)
-
+		
 	--inv executeAllInstructionsInv:
 		--let instruExec2 : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
 		--Relation Coincides(instruExec2, self.execute)
 	
-	--inv Thread_StartInstructionFirst:
+	inv Thread_StartInstructionFirst:
 		--let test : Event = Expression Inf(self.first.execInstruction,self.blocks.execInstruction) in
-	--	Relation Precedes(self.first.execInstruction, self.first.oclAsType(SynchronizationBlock).next.execInstruction)
+		Relation Precedes(self.first.execInstruction, self.first.next.execInstruction)
 		
 	-- Blocked cannot precess acce
 	--inv S_startInternalFirst:
@@ -74,8 +74,8 @@ context SynchronizationBlock
 	inv synchronize:
 		Relation Coincides(self.execInstruction, self.thread.synchronize)
 			
-	inv SyncStartFirst:
-		Relation Precedes (self.execInstruction, self.next.oclAsType(InstructionBlock).execInstruction)	
+	--inv SyncStartFirst:
+	--	Relation Precedes (self.execInstruction, self.next.oclAsType(InstructionBlock).execInstruction)	
 			
 context Channel	  
 		

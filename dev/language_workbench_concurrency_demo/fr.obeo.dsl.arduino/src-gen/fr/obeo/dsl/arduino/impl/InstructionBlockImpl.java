@@ -39,8 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.InstructionBlockImpl#getInstructions <em>Instructions</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.InstructionBlockImpl#getNext <em>Next</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.InstructionBlockImpl#getPrevious <em>Previous</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,26 +54,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 	 * @ordered
 	 */
 	protected EList<Instruction> instructions;
-
-	/**
-	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNext()
-	 * @generated
-	 * @ordered
-	 */
-	protected SynchronizationBlock next;
-
-	/**
-	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrevious()
-	 * @generated
-	 * @ordered
-	 */
-	protected SynchronizationBlock previous;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,140 +91,12 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SynchronizationBlock getNext() {
-		if (next != null && next.eIsProxy()) {
-			InternalEObject oldNext = (InternalEObject)next;
-			next = (SynchronizationBlock)eResolveProxy(oldNext);
-			if (next != oldNext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.INSTRUCTION_BLOCK__NEXT, oldNext, next));
-			}
-		}
-		return next;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationBlock basicGetNext() {
-		return next;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetNext(SynchronizationBlock newNext, NotificationChain msgs) {
-		SynchronizationBlock oldNext = next;
-		next = newNext;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.INSTRUCTION_BLOCK__NEXT, oldNext, newNext);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNext(SynchronizationBlock newNext) {
-		if (newNext != next) {
-			NotificationChain msgs = null;
-			if (next != null)
-				msgs = ((InternalEObject)next).eInverseRemove(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS, SynchronizationBlock.class, msgs);
-			if (newNext != null)
-				msgs = ((InternalEObject)newNext).eInverseAdd(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS, SynchronizationBlock.class, msgs);
-			msgs = basicSetNext(newNext, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.INSTRUCTION_BLOCK__NEXT, newNext, newNext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationBlock getPrevious() {
-		if (previous != null && previous.eIsProxy()) {
-			InternalEObject oldPrevious = (InternalEObject)previous;
-			previous = (SynchronizationBlock)eResolveProxy(oldPrevious);
-			if (previous != oldPrevious) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS, oldPrevious, previous));
-			}
-		}
-		return previous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationBlock basicGetPrevious() {
-		return previous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPrevious(SynchronizationBlock newPrevious, NotificationChain msgs) {
-		SynchronizationBlock oldPrevious = previous;
-		previous = newPrevious;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS, oldPrevious, newPrevious);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPrevious(SynchronizationBlock newPrevious) {
-		if (newPrevious != previous) {
-			NotificationChain msgs = null;
-			if (previous != null)
-				msgs = ((InternalEObject)previous).eInverseRemove(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT, SynchronizationBlock.class, msgs);
-			if (newPrevious != null)
-				msgs = ((InternalEObject)newPrevious).eInverseAdd(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT, SynchronizationBlock.class, msgs);
-			msgs = basicSetPrevious(newPrevious, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS, newPrevious, newPrevious));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ArduinoPackage.INSTRUCTION_BLOCK__INSTRUCTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInstructions()).basicAdd(otherEnd, msgs);
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				if (next != null)
-					msgs = ((InternalEObject)next).eInverseRemove(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__PREVIOUS, SynchronizationBlock.class, msgs);
-				return basicSetNext((SynchronizationBlock)otherEnd, msgs);
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				if (previous != null)
-					msgs = ((InternalEObject)previous).eInverseRemove(this, ArduinoPackage.SYNCHRONIZATION_BLOCK__NEXT, SynchronizationBlock.class, msgs);
-				return basicSetPrevious((SynchronizationBlock)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -261,10 +111,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 		switch (featureID) {
 			case ArduinoPackage.INSTRUCTION_BLOCK__INSTRUCTIONS:
 				return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				return basicSetNext(null, msgs);
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				return basicSetPrevious(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,12 +125,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 		switch (featureID) {
 			case ArduinoPackage.INSTRUCTION_BLOCK__INSTRUCTIONS:
 				return getInstructions();
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				if (resolve) return getNext();
-				return basicGetNext();
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				if (resolve) return getPrevious();
-				return basicGetPrevious();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,12 +142,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends Instruction>)newValue);
 				return;
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				setNext((SynchronizationBlock)newValue);
-				return;
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				setPrevious((SynchronizationBlock)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -323,12 +157,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 			case ArduinoPackage.INSTRUCTION_BLOCK__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				setNext((SynchronizationBlock)null);
-				return;
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				setPrevious((SynchronizationBlock)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -343,10 +171,6 @@ public class InstructionBlockImpl extends ThreadInstructionBlockImpl implements 
 		switch (featureID) {
 			case ArduinoPackage.INSTRUCTION_BLOCK__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
-			case ArduinoPackage.INSTRUCTION_BLOCK__NEXT:
-				return next != null;
-			case ArduinoPackage.INSTRUCTION_BLOCK__PREVIOUS:
-				return previous != null;
 		}
 		return super.eIsSet(featureID);
 	}

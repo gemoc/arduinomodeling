@@ -20,6 +20,7 @@ package fr.obeo.dsl.arduino;
  * The following features are supported:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getNext <em>Next</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +56,32 @@ public interface ThreadInstructionBlock extends NamedElement {
 	 * @generated
 	 */
 	void setThread(fr.obeo.dsl.arduino.Thread value);
+
+	/**
+	 * Returns the value of the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next</em>' reference.
+	 * @see #setNext(ThreadInstructionBlock)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getThreadInstructionBlock_Next()
+	 * @model
+	 * @generated
+	 */
+	ThreadInstructionBlock getNext();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getNext <em>Next</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next</em>' reference.
+	 * @see #getNext()
+	 * @generated
+	 */
+	void setNext(ThreadInstructionBlock value);
 
 	/**
 	 * <!-- begin-user-doc -->

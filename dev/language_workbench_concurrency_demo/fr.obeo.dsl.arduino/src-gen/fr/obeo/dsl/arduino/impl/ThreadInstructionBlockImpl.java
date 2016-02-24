@@ -31,12 +31,23 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadInstructionBlockImpl#getThread <em>Thread</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadInstructionBlockImpl#getNext <em>Next</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implements ThreadInstructionBlock {
+	/**
+	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNext()
+	 * @generated
+	 * @ordered
+	 */
+	protected ThreadInstructionBlock next;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,6 +106,44 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD, newThread, newThread));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadInstructionBlock getNext() {
+		if (next != null && next.eIsProxy()) {
+			InternalEObject oldNext = (InternalEObject)next;
+			next = (ThreadInstructionBlock)eResolveProxy(oldNext);
+			if (next != oldNext) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT, oldNext, next));
+			}
+		}
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadInstructionBlock basicGetNext() {
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNext(ThreadInstructionBlock newNext) {
+		ThreadInstructionBlock oldNext = next;
+		next = newNext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT, oldNext, next));
 	}
 
 	/**
@@ -162,6 +211,9 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 		switch (featureID) {
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
 				return getThread();
+			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+				if (resolve) return getNext();
+				return basicGetNext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,6 +228,9 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 		switch (featureID) {
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
 				setThread((fr.obeo.dsl.arduino.Thread)newValue);
+				return;
+			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+				setNext((ThreadInstructionBlock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,6 +247,9 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
 				setThread((fr.obeo.dsl.arduino.Thread)null);
 				return;
+			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+				setNext((ThreadInstructionBlock)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,6 +264,8 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 		switch (featureID) {
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
 				return getThread() != null;
+			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
+				return next != null;
 		}
 		return super.eIsSet(featureID);
 	}

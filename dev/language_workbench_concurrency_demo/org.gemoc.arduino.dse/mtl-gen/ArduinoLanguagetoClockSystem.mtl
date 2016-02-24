@@ -135,7 +135,7 @@ system addLibrary:moccmllibs asDictionary.
 "clocks for Thread [element.name/]" 
 	system addClocks: #(execute[element.name /] synchronize[element.name /] ).
 "internal clocks for arduino::Thread [element.name/]" 
-    system addInternalClocks: #(instruExec[element.name /] instruExec2[element.name /] s_firstInternalInstructionStart[element.name /] ).
+    system addInternalClocks: #(instruExec[element.name /] ).
 [/for]
 [for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
 "clocks for InstructionBlock [element.name/]" 
@@ -162,37 +162,35 @@ system addLibrary:moccmllibs asDictionary.
 [for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
 "expressions used by  Thread [element.name/]" 
 	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execInstruction[ne.name/] [/for]) named: #instruExec[element.name/]. 
-	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execInstruction[ne.name/] [/for]) named: #instruExec2[element.name/]. 
-	system allInf: #(execInstruction[element.first.name/]) named: #s_firstInternalInstructionStart[element.name/]. 
 "relations for Thread [element.name/]" 
 	"executeAllInstructions in Thread [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(execute[element.name/]  instruExec[element.name/]).
 
-	"executeAllInstructionsInv in Thread [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(instruExec2[element.name/]  execute[element.name/]).
-
-	"S_startInternalFirst in Thread [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(execute[element.name/]  s_firstInternalInstructionStart[element.name/]).
+	"Thread_StartInstructionFirst in Thread [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(execInstruction[element.first.name/]  execInstruction[element.first.next.name/]).
 
 [/for]
 [for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
 "relations for InstructionBlock [element.name/]" 
-	"I_OrderEnforcemenIbt in InstructionBlock [element.name/]"
+	"Instruction_OrderEnforcement in InstructionBlock [element.name/]"
 	system
 		library: #Arduino
 		relation: #ThreadFSM
-		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::SynchronizationBlock).name/])
+		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/])
 		constants: {}
 		variables: {}.
+
+	"InstructionStartFirst in InstructionBlock [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/]).
 
 [/for]
 [for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
 "relations for SynchronizationBlock [element.name/]" 
-	"I_OrderEnforcemenIbt in SynchronizationBlock [element.name/]"
+	"Sync_OrderEnforcement in SynchronizationBlock [element.name/]"
 	system
 		library: #Arduino
 		relation: #ThreadFSM
-		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::InstructionBlock).name/])
+		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/])
 		constants: {}
 		variables: {}.
 

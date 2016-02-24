@@ -2381,13 +2381,22 @@ public interface ArduinoPackage extends EPackage {
 	int THREAD_INSTRUCTION_BLOCK__THREAD = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INSTRUCTION_BLOCK__NEXT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Thread Instruction Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.SynchronizationBlockImpl <em>Synchronization Block</em>}' class.
@@ -2424,16 +2433,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_BLOCK__NEXT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_BLOCK__PREVIOUS = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 1;
+	int SYNCHRONIZATION_BLOCK__NEXT = THREAD_INSTRUCTION_BLOCK__NEXT;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Block</em>' class.
@@ -2442,7 +2442,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_BLOCK_FEATURE_COUNT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION_BLOCK_FEATURE_COUNT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.InstructionBlockImpl <em>Instruction Block</em>}' class.
@@ -2473,6 +2473,15 @@ public interface ArduinoPackage extends EPackage {
 	int INSTRUCTION_BLOCK__THREAD = THREAD_INSTRUCTION_BLOCK__THREAD;
 
 	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_BLOCK__NEXT = THREAD_INSTRUCTION_BLOCK__NEXT;
+
+	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2482,31 +2491,13 @@ public interface ArduinoPackage extends EPackage {
 	int INSTRUCTION_BLOCK__INSTRUCTIONS = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_BLOCK__NEXT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_BLOCK__PREVIOUS = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Instruction Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_BLOCK_FEATURE_COUNT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 3;
+	int INSTRUCTION_BLOCK_FEATURE_COUNT = THREAD_INSTRUCTION_BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.
@@ -3746,28 +3737,6 @@ public interface ArduinoPackage extends EPackage {
 	EClass getSynchronizationBlock();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.SynchronizationBlock#getNext <em>Next</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Next</em>'.
-	 * @see fr.obeo.dsl.arduino.SynchronizationBlock#getNext()
-	 * @see #getSynchronizationBlock()
-	 * @generated
-	 */
-	EReference getSynchronizationBlock_Next();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.SynchronizationBlock#getPrevious <em>Previous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Previous</em>'.
-	 * @see fr.obeo.dsl.arduino.SynchronizationBlock#getPrevious()
-	 * @see #getSynchronizationBlock()
-	 * @generated
-	 */
-	EReference getSynchronizationBlock_Previous();
-
-	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.InstructionBlock <em>Instruction Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3789,28 +3758,6 @@ public interface ArduinoPackage extends EPackage {
 	EReference getInstructionBlock_Instructions();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.InstructionBlock#getNext <em>Next</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Next</em>'.
-	 * @see fr.obeo.dsl.arduino.InstructionBlock#getNext()
-	 * @see #getInstructionBlock()
-	 * @generated
-	 */
-	EReference getInstructionBlock_Next();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.InstructionBlock#getPrevious <em>Previous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Previous</em>'.
-	 * @see fr.obeo.dsl.arduino.InstructionBlock#getPrevious()
-	 * @see #getInstructionBlock()
-	 * @generated
-	 */
-	EReference getInstructionBlock_Previous();
-
-	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock <em>Thread Instruction Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3830,6 +3777,17 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getThreadInstructionBlock_Thread();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getNext <em>Next</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Next</em>'.
+	 * @see fr.obeo.dsl.arduino.ThreadInstructionBlock#getNext()
+	 * @see #getThreadInstructionBlock()
+	 * @generated
+	 */
+	EReference getThreadInstructionBlock_Next();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}'.
@@ -4922,22 +4880,6 @@ public interface ArduinoPackage extends EPackage {
 		EClass SYNCHRONIZATION_BLOCK = eINSTANCE.getSynchronizationBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYNCHRONIZATION_BLOCK__NEXT = eINSTANCE.getSynchronizationBlock_Next();
-
-		/**
-		 * The meta object literal for the '<em><b>Previous</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYNCHRONIZATION_BLOCK__PREVIOUS = eINSTANCE.getSynchronizationBlock_Previous();
-
-		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.InstructionBlockImpl <em>Instruction Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4956,22 +4898,6 @@ public interface ArduinoPackage extends EPackage {
 		EReference INSTRUCTION_BLOCK__INSTRUCTIONS = eINSTANCE.getInstructionBlock_Instructions();
 
 		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INSTRUCTION_BLOCK__NEXT = eINSTANCE.getInstructionBlock_Next();
-
-		/**
-		 * The meta object literal for the '<em><b>Previous</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INSTRUCTION_BLOCK__PREVIOUS = eINSTANCE.getInstructionBlock_Previous();
-
-		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.ThreadInstructionBlockImpl <em>Thread Instruction Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4988,6 +4914,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference THREAD_INSTRUCTION_BLOCK__THREAD = eINSTANCE.getThreadInstructionBlock_Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THREAD_INSTRUCTION_BLOCK__NEXT = eINSTANCE.getThreadInstructionBlock_Next();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.Time <em>Time</em>}' enum.

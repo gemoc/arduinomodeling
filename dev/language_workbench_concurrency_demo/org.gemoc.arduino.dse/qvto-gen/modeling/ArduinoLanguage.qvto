@@ -124,10 +124,7 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map executeAllInstructions142executeAllInstructions();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map executeAllInstructionsInv142executeAllInstructionsInv();
-		
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map S_startInternalFirst102S_startInternalFirst();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map Thread_StartInstructionFirst12Thread_StartInstructionFirst();
 		
 		
 
@@ -135,7 +132,10 @@ main() {
 
 
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), InstructionBlock.oclAsType(EClass)).oclAsType(InstructionBlock)->map I_OrderEnforcemenIbt12I_OrderEnforcemenIbt();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), InstructionBlock.oclAsType(EClass)).oclAsType(InstructionBlock)->map Instruction_OrderEnforcement12Instruction_OrderEnforcement();
+		
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), InstructionBlock.oclAsType(EClass)).oclAsType(InstructionBlock)->map InstructionStartFirst12InstructionStartFirst();
 		
 		
 
@@ -143,7 +143,7 @@ main() {
 
 
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), SynchronizationBlock.oclAsType(EClass)).oclAsType(SynchronizationBlock)->map I_OrderEnforcemenIbt12I_OrderEnforcemenIbt();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), SynchronizationBlock.oclAsType(EClass)).oclAsType(SynchronizationBlock)->map Sync_OrderEnforcement12Sync_OrderEnforcement();
 		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), SynchronizationBlock.oclAsType(EClass)).oclAsType(SynchronizationBlock)->map synchronize12synchronize();
@@ -253,156 +253,6 @@ main() {
 			lastExpr := self.map intermediate_instruExec2Expression(sources->at(1),sources->at(2), 1);
 			while (i <= size){
 				newExpr := self.map intermediate_instruExec2Expression(lastExpr,sources->at(i), i);
-				lastExpr := newExpr;
-				i := i + 1;
-			};
-			result := lastExpr;
-		}
-		endif;
-		}
-		
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	
-	
-//Create an intermediate expression
-//create the expressions... 
-	mapping inMM1::Thread::intermediate_instruExec22Expression(an1 : ThreadInstructionBlock, an2 : ThreadInstructionBlock, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{ 
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_instruExec2'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-				 
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_execInstruction']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_execInstruction']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	mapping inMM1::Thread::intermediate_instruExec22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : ThreadInstructionBlock, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_instruExec2'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.expressions[name = expr.name]->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_execInstruction']->first();
-					
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-	
-	mapping inMM1::Thread::instruExec22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		init{
-		var sources : Sequence(ThreadInstructionBlock) := self.blocks.oclAsType(ThreadInstructionBlock)->asSequence();
-		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
-		var i : Integer := 3;
-		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
-		var size : Integer = sources->size(); 
-		if(size = 1)then{
-			result := self.map intermediate_instruExec22Expression(sources->at(1),sources->at(1), 1);
-		}else{
-			lastExpr := self.map intermediate_instruExec22Expression(sources->at(1),sources->at(2), 1);
-			while (i <= size){
-				newExpr := self.map intermediate_instruExec22Expression(lastExpr,sources->at(i), i);
-				lastExpr := newExpr;
-				i := i + 1;
-			};
-			result := lastExpr;
-		}
-		endif;
-		}
-		
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	
-	
-//Create an intermediate expression
-//create the expressions... 
-	mapping inMM1::Thread::intermediate_s_firstInternalInstructionStart2Expression(an1 : ThreadInstructionBlock, an2 : ThreadInstructionBlock, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{ 
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_s_firstInternalInstructionStart'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Inf")->first();
-				 
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_execInstruction']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Inf']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Inf).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_execInstruction']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Inf']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Inf).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	mapping inMM1::Thread::intermediate_s_firstInternalInstructionStart2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : ThreadInstructionBlock, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_s_firstInternalInstructionStart'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Inf")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.expressions[name = expr.name]->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Inf']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Inf).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_execInstruction']->first();
-					
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Inf']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Inf).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-	
-	mapping inMM1::Thread::s_firstInternalInstructionStart2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		init{
-		var sources : Sequence(ThreadInstructionBlock) := self.first->asSequence();
-		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
-		var i : Integer := 3;
-		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
-		var size : Integer = sources->size(); 
-		if(size = 1)then{
-			result := self.map intermediate_s_firstInternalInstructionStart2Expression(sources->at(1),sources->at(1), 1);
-		}else{
-			lastExpr := self.map intermediate_s_firstInternalInstructionStart2Expression(sources->at(1),sources->at(2), 1);
-			while (i <= size){
-				newExpr := self.map intermediate_s_firstInternalInstructionStart2Expression(lastExpr,sources->at(i), i);
 				lastExpr := newExpr;
 				i := i + 1;
 			};
@@ -573,33 +423,16 @@ main() {
 		}
 		
 	
-		mapping inMM1::Thread::executeAllInstructionsInv142executeAllInstructionsInv(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::Thread::Thread_StartInstructionFirst12Thread_StartInstructionFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_executeAllInstructionsInv";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-							bindable := self -> map instruExec22Expression()->asSequence()->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execute']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
-	
-		mapping inMM1::Thread::S_startInternalFirst102S_startInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_S_startInternalFirst";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_Thread_StartInstructionFirst";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execute']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.first.oclAsType(EObject))+'_execInstruction']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-							bindable := self -> map s_firstInternalInstructionStart2Expression()->asSequence()->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.first.next.oclAsType(EObject))+'_execInstruction']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
@@ -609,9 +442,9 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM1::InstructionBlock::I_OrderEnforcemenIbt12I_OrderEnforcemenIbt(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::InstructionBlock::Instruction_OrderEnforcement12Instruction_OrderEnforcement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_I_OrderEnforcemenIbt";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_Instruction_OrderEnforcement";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "ThreadDecl")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
@@ -625,12 +458,29 @@ main() {
 		theMainBlock.relations += result;
 		}
 		
+	
+		mapping inMM1::InstructionBlock::InstructionStartFirst12InstructionStartFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_InstructionStartFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.next.oclAsType(SynchronizationBlock).oclAsType(EObject))+'_execInstruction']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
 
 //relation stuff		
 	
-		mapping inMM1::SynchronizationBlock::I_OrderEnforcemenIbt12I_OrderEnforcemenIbt(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::SynchronizationBlock::Sync_OrderEnforcement12Sync_OrderEnforcement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_I_OrderEnforcemenIbt";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_Sync_OrderEnforcement";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "ThreadDecl")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
