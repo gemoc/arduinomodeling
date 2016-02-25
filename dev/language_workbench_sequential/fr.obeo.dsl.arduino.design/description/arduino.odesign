@@ -2,7 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="arduino" version="9.0.0">
   <ownedViewpoints name="Hardware Kit" modelFileExtension="arduino">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware Kit Definition" domainClass="arduino.Project">
-      <metamodel href="../../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HL_Module" domainClass="arduino.ArduinoModule">
           <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/digital_output.svg">
@@ -116,7 +116,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Extended Dashboard" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Dashboard">
-      <metamodel href="../../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <layers name="Hardware kit" activeByDefault="true">
         <nodeMappings name="Hardware kit" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentationExtensions[name='Extended%20Dashboard']/@layers[name='Hardware%20kit']/@toolSections.0/@ownedTools[name='Hardware%20kit']" domainClass="arduino.Project">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="0" sizeComputationExpression="20" workspacePath="/fr.obeo.dsl.arduino.design/images/hardwareKit.svg">
@@ -141,16 +141,16 @@
   </ownedViewpoints>
   <ownedViewpoints name="Arduino" modelFileExtension="arduino">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware" titleExpression="Hardware" initialisation="true" showOnStartup="true" domainClass="arduino.ArduinoBoard" enablePopupBars="true">
-      <metamodel href="../../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="HW_Board" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Platform']" domainClass="arduino.ArduinoBoard">
+        <nodeMappings name="HW_Board" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Platform']" domainClass="ArduinoBoard">
           <borderedNodeMappings name="HS_DigitalPin" semanticCandidatesExpression="feature:digitalPins" domainClass="arduino.DigitalPin">
-            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']">
+            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelSize="6" showIcon="false" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="HS_AnalogPin" semanticCandidatesExpression="feature:analogPins" domainClass="arduino.AnalogPin">
-            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Analog pin '+id/]" sizeComputationExpression="2" labelPosition="node">
+            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelSize="6" showIcon="false" tooltipExpression="['Analog pin '+id/]" sizeComputationExpression="2" labelPosition="node">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
@@ -160,18 +160,15 @@
           </style>
         </nodeMappings>
         <nodeMappings name="HW_LED" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.LED">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg"/>
-          <conditionnalStyles predicateExpression="[color = Color::white/]">
-            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg"/>
-          </conditionnalStyles>
-          <conditionnalStyles predicateExpression="[color = Color::red/]">
-            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg"/>
-          </conditionnalStyles>
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromWorkspace">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
         </nodeMappings>
         <nodeMappings name="HW_PushButton" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.PushButton">
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/push_button.jpg"/>
         </nodeMappings>
-        <nodeMappings name="HW_Buzzer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.Buzzer">
+        <nodeMappings name="HW_Buzzer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino..Buzzer">
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/buzzer.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_RotationSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.RotationSensor">
@@ -235,6 +232,12 @@
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="LED" referenceName="module"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Push_Button" precondition="[oclAsType(DigitalPin).module = null/]" icon="/fr.obeo.dsl.arduino.design/icons/Module.png">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="PushButton" referenceName="module"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Remove_Module" precondition="[oclAsType(DigitalPin).module &lt;> null/]">
@@ -329,10 +332,15 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']/@style" attributeName="workspacePath" value="service:getImage"/>
+          </vsmElementCustomizations>
+        </customization>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" domainClass="arduino.Sketch" enablePopupBars="true">
-      <metamodel href="../../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SK_Loop" semanticCandidatesExpression="var:self" domainClass="arduino.Sketch">
           <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.arduino.design/images/loop.svg">
@@ -364,10 +372,10 @@
         <nodeMappings name="SK_Constant" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.3/@ownedTools[name='SK_Edit_Constant']" semanticCandidatesExpression="feature:eContents" domainClass="arduino.Constant">
           <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['unknown'/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
           <conditionnalStyles predicateExpression="[self.oclIsKindOf(BooleanConstant)/]">
-            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['bool ' + self.oclAsType(BooleanConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['bool ' + self.oclAsType(BooleanConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclIsKindOf(IntegerConstant)/]">
-            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['int ' + self.oclAsType(IntegerConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']"/>
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['int ' + self.oclAsType(IntegerConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']"/>
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_Delay" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Edit_Delay']" semanticCandidatesExpression="feature:eContents" domainClass="arduino.Delay">
@@ -415,7 +423,7 @@
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_VariableRef" semanticCandidatesExpression="feature:eContents" domainClass="arduino.VariableRef">
-          <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST">
+          <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
           </style>
@@ -520,7 +528,7 @@
             <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="=" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="4" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']"/>
           </subNodeMappings>
           <subNodeMappings name="SK_VariableSubNode" domainClass="arduino.Variable">
-            <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="[self.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" resizeKind="EAST_WEST">
+            <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="[self.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             </style>

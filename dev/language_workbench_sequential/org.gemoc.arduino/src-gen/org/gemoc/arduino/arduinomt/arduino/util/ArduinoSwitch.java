@@ -84,12 +84,14 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				DigitalPin digitalPin = (DigitalPin)theEObject;
 				T result = caseDigitalPin(digitalPin);
 				if (result == null) result = casePin(digitalPin);
+				if (result == null) result = caseNamedElement(digitalPin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ArduinoPackage.PIN: {
 				Pin pin = (Pin)theEObject;
 				T result = casePin(pin);
+				if (result == null) result = caseNamedElement(pin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -97,6 +99,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				AnalogPin analogPin = (AnalogPin)theEObject;
 				T result = caseAnalogPin(analogPin);
 				if (result == null) result = casePin(analogPin);
+				if (result == null) result = caseNamedElement(analogPin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

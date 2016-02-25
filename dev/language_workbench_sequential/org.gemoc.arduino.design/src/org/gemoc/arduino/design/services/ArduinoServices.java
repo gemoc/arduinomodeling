@@ -79,6 +79,7 @@ import org.gemoc.arduino.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.execarduino.arduino.VariableDeclaration;
 import org.gemoc.arduino.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.execarduino.arduino.While;
+import org.gemoc.arduino.execarduino.aspects.ArduinoUtils;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -96,7 +97,7 @@ public class ArduinoServices {
 			// Create missing pins
 			for (int i = pinsTmp.size(); i < total; i++) {
 				DigitalPin pin = ArduinoFactory.eINSTANCE.createDigitalPin();
-				pin.setId(i);
+				pin.setName(""+i);
 				platform.getDigitalPins().add(pin);
 			}
 		} else {
@@ -121,7 +122,7 @@ public class ArduinoServices {
 			// Create missing pins
 			for (int i = pinsTmp.size(); i < total; i++) {
 				AnalogPin pin = ArduinoFactory.eINSTANCE.createAnalogPin();
-				pin.setId(i);
+				pin.setName(""+i);
 				platform.getAnalogPins().add(pin);
 			}
 		} else {
@@ -136,18 +137,18 @@ public class ArduinoServices {
 			}
 		}
 	}
-	
+
 	public List<AnalogPin> getAnalogPins(EObject obj) {
 		List<AnalogPin> result = new ArrayList<>();
-		for (int i=0;i<6;i++) {
+		for (int i = 0; i < 6; i++) {
 			result.add(ArduinoFactory.eINSTANCE.createAnalogPin());
 		}
 		return result;
 	}
-	
+
 	public List<DigitalPin> getDigitalPins(EObject obj) {
 		List<DigitalPin> result = new ArrayList<>();
-		for (int i=0;i<6;i++) {
+		for (int i = 0; i < 6; i++) {
 			result.add(ArduinoFactory.eINSTANCE.createDigitalPin());
 		}
 		return result;
@@ -163,13 +164,29 @@ public class ArduinoServices {
 		return res;
 	}
 
-	public String getImage(Module module) {
-//		String imageName = module.getImage();
-		return getImage("");
+//	public String getImage(Module module) {
+//		// String imageName = module.getImage();
+//		return getImage("");
+//	}
+
+	public String getImage(LED led) {
+		Integer level = ArduinoUtils.getPin(led).getLevel();
+		if (level != null && level > 0) {
+			switch (led.getColor()) {
+			case BLUE: return "/org.gemoc.arduino.design/images/dfrobot/blue_led_1023.jpg";
+			case RED: return "/org.gemoc.arduino.design/images/dfrobot/red_led_1023.jpg";
+			case WHITE: return "/org.gemoc.arduino.design/images/dfrobot/white_led_1023.jpg";
+			}
+		}
+		switch (led.getColor()) {
+		case BLUE: return "/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg";
+		case RED: return "/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg";
+		case WHITE: return "/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg";
+		}
+		return "";
 	}
 
 	public String getImage(ArduinoBoard platform) {
-//		String imageName = platform.getImage();
 		return getImage("");
 	}
 
@@ -185,8 +202,7 @@ public class ArduinoServices {
 		Session session = SessionManager.INSTANCE.getSession(object);
 
 		for (Resource resource : session.getSemanticResources()) {
-			for (Iterator<EObject> iterator = resource.getAllContents(); iterator
-					.hasNext();) {
+			for (Iterator<EObject> iterator = resource.getAllContents(); iterator.hasNext();) {
 				EObject content = iterator.next();
 				if (content instanceof Board) {
 					result.add((Board) content);
@@ -202,8 +218,7 @@ public class ArduinoServices {
 		Session session = SessionManager.INSTANCE.getSession(object);
 
 		for (Resource resource : session.getSemanticResources()) {
-			for (Iterator<EObject> iterator = resource.getAllContents(); iterator
-					.hasNext();) {
+			for (Iterator<EObject> iterator = resource.getAllContents(); iterator.hasNext();) {
 				EObject content = iterator.next();
 				if (content instanceof Module) {
 					result.add((Module) content);
@@ -248,14 +263,14 @@ public class ArduinoServices {
 	public String computeExpressionLabel(ModuleAssignment e) {
 		String label = e.getModule().getName();
 		if (e.getOperand() instanceof BooleanConstant) {
-			if (((BooleanConstant)e.getOperand()).isValue()){
+			if (((BooleanConstant) e.getOperand()).isValue()) {
 				label += " : on";
-			}else{
+			} else {
 				label += " : off";
 			}
 		}
 		if (e.getOperand() instanceof IntegerConstant) {
-			label += " : "+((IntegerConstant)e.getOperand()).getValue();
+			label += " : " + ((IntegerConstant) e.getOperand()).getValue();
 		}
 		return label;
 	}
@@ -264,19 +279,17 @@ public class ArduinoServices {
 		String label = e.getName();
 		return label;
 	}
-	
+
 	public String computeLinkLabel(DDiagramElement edgeLink) {
 		String label = "";
-		if (edgeLink instanceof DEdge
-				&& ((DEdge) edgeLink).getTargetNode() instanceof DSemanticDecorator) {
-			EObject target = ((DSemanticDecorator) ((DEdge) edgeLink)
-					.getTargetNode()).getTarget();
+		if (edgeLink instanceof DEdge && ((DEdge) edgeLink).getTargetNode() instanceof DSemanticDecorator) {
+			EObject target = ((DSemanticDecorator) ((DEdge) edgeLink).getTargetNode()).getTarget();
 			if (target instanceof ModuleAssignment) {
 				ModuleAssignment ms = (ModuleAssignment) target;
 				if (ms.getOperand() instanceof BooleanConstant) {
-					if (((BooleanConstant)ms.getOperand()).isValue()){
+					if (((BooleanConstant) ms.getOperand()).isValue()) {
 						label = "on";
-					}else{
+					} else {
 						label = "off";
 					}
 				}
@@ -285,7 +298,6 @@ public class ArduinoServices {
 
 		return label;
 	}
-
 
 	public String computeLabel(Expression Expression) {
 		if (Expression instanceof BooleanVariableRef) {
@@ -301,13 +313,13 @@ public class ArduinoServices {
 			return String.valueOf(((IntegerConstant) Expression).getValue());
 		}
 		if (Expression instanceof ModuleGet) {
-			return "get("+((ModuleGet) Expression).getModule().getName()+")";
+			return "get(" + ((ModuleGet) Expression).getModule().getName() + ")";
 		}
 		if (Expression instanceof BinaryBooleanExpression) {
 			String label = "";
-			label += computeLabel(((BinaryBooleanExpression)Expression).getLeft()) + " ";
-			label += getOperator(((BinaryBooleanExpression)Expression).getOperator());
-			label += " " + computeLabel(((BinaryBooleanExpression)Expression).getRight());
+			label += computeLabel(((BinaryBooleanExpression) Expression).getLeft()) + " ";
+			label += getOperator(((BinaryBooleanExpression) Expression).getOperator());
+			label += " " + computeLabel(((BinaryBooleanExpression) Expression).getRight());
 			return label;
 		}
 		if (Expression instanceof BinaryIntegerExpression) {
@@ -316,7 +328,7 @@ public class ArduinoServices {
 			label += getOperator(((BinaryIntegerExpression) Expression).getOperator());
 			label += computeLabel(((BinaryExpression) Expression).getRight());
 			label += ")";
-			return label; 
+			return label;
 		}
 		if (Expression instanceof BinaryBooleanExpression) {
 			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
@@ -324,43 +336,42 @@ public class ArduinoServices {
 					+ computeLabel(((BinaryExpression) Expression).getRight()) + ")";
 		}
 
-
 		return "null";
 	}
 
-
 	public String computeLabel(While instruction) {
 		String label = "While ";
-		if (instruction.getCondition() == null){
-			label+= "null condition";
+		if (instruction.getCondition() == null) {
+			label += "null condition";
 			return label;
 		}
 		Expression cond = instruction.getCondition();
-		if (cond instanceof BinaryBooleanExpression 
-				&& ((BinaryBooleanExpression)instruction.getCondition()).getLeft() != null
-				&& ((BinaryBooleanExpression)instruction.getCondition()).getRight() != null) {
-			label += computeLabel(((BinaryBooleanExpression)cond).getLeft()) + " ";
-			label += getOperator(((BinaryBooleanExpression)cond).getOperator());
-			label += " " + computeLabel(((BinaryBooleanExpression)cond).getRight());
+		if (cond instanceof BinaryBooleanExpression
+				&& ((BinaryBooleanExpression) instruction.getCondition()).getLeft() != null
+				&& ((BinaryBooleanExpression) instruction.getCondition()).getRight() != null) {
+			label += computeLabel(((BinaryBooleanExpression) cond).getLeft()) + " ";
+			label += getOperator(((BinaryBooleanExpression) cond).getOperator());
+			label += " " + computeLabel(((BinaryBooleanExpression) cond).getRight());
 		}
-		if (cond instanceof BooleanModuleGet 
-				&& 
-			((BooleanModuleGet)cond).getModule() != null) {
+		if (cond instanceof BooleanModuleGet && ((BooleanModuleGet) cond).getModule() != null) {
 			label += computeLabel(cond);
 		}
-		
+
 		return label;
 	}
 
 	public String computeLabelOperator(BinaryIntegerOperatorKind operator) {
 		return getOperator(operator);
 	}
+
 	public String computeLabelOperator(BinaryBooleanOperatorKind operator) {
 		return getOperator(operator);
 	}
+
 	public String computeLabelOperator(UnaryIntegerOperatorKind operator) {
 		return getOperator(operator);
 	}
+
 	public String computeLabelOperator(UnaryBooleanOperatorKind operator) {
 		return getOperator(operator);
 	}
@@ -368,22 +379,27 @@ public class ArduinoServices {
 	public String computeLabelOperator(BinaryIntegerExpression operator) {
 		return getOperator(operator.getOperator());
 	}
+
 	public String computeLabelOperator(BinaryBooleanExpression operator) {
 		return getOperator(operator.getOperator());
 	}
+
 	public String computeLabelOperator(UnaryIntegerExpression operator) {
 		return getOperator(operator.getOperator());
 	}
+
 	public String computeLabelOperator(UnaryBooleanExpression operator) {
 		return getOperator(operator.getOperator());
 	}
-	
+
 	public String computeLabel(ModuleGet instruction) {
 		return instruction.getModule().getName();
 	}
+
 	public String computeLabel(IntegerModuleGet instruction) {
 		return instruction.getModule().getName();
 	}
+
 	public String computeLabel(BooleanModuleGet instruction) {
 		return instruction.getModule().getName();
 	}
@@ -399,12 +415,11 @@ public class ArduinoServices {
 	public String computeLabel(VariableAssignment set) {
 		String label = "Set ";
 		if (set.getVariable() != null && set.getOperand() != null) {
-			label += set.getVariable().getName() + " = "
-					+ computeLabel(set.getOperand());
+			label += set.getVariable().getName() + " = " + computeLabel(set.getOperand());
 		}
 		return label;
 	}
-	
+
 	public String computeLabel(VariableRef ref) {
 		if (ref instanceof IntegerVariableRef) {
 			IntegerVariable var = ((IntegerVariableRef) ref).getVariable();
@@ -416,7 +431,7 @@ public class ArduinoServices {
 			if (var != null) {
 				return var.getName();
 			}
-		}		
+		}
 		return "";
 	}
 
@@ -427,6 +442,7 @@ public class ArduinoServices {
 	public String getOperator(Enumerator operator) {
 		return "operator not supported";
 	}
+
 	public String getOperator(BinaryIntegerOperatorKind operator) {
 		switch (operator) {
 		case DIV:
@@ -446,7 +462,7 @@ public class ArduinoServices {
 		}
 		return null;
 	}
-	
+
 	public String getOperator(UnaryIntegerOperatorKind operator) {
 		switch (operator) {
 		case MINUS:
@@ -456,7 +472,7 @@ public class ArduinoServices {
 		}
 		return null;
 	}
-	
+
 	public String getOperator(UnaryBooleanOperatorKind operator) {
 		switch (operator) {
 		case NOT:
@@ -464,7 +480,7 @@ public class ArduinoServices {
 		}
 		return null;
 	}
-	
+
 	public String getOperator(BinaryBooleanOperatorKind operator) {
 		switch (operator) {
 		case AND:
@@ -488,7 +504,7 @@ public class ArduinoServices {
 	}
 
 	public Enumerator getOperator(String operator) {
-		
+
 		if (operator.equals("/") || operator.equals("div")) {
 			return BinaryIntegerOperatorKind.DIV;
 		}
@@ -510,7 +526,7 @@ public class ArduinoServices {
 		if (operator.equals("%") || operator.equals("pourcent")) {
 			return BinaryIntegerOperatorKind.POURCENT;
 		}
-		
+
 		if (operator.equals("&") || operator.equals("and")) {
 			return BinaryBooleanOperatorKind.AND;
 		}
@@ -538,14 +554,13 @@ public class ArduinoServices {
 		if (operator.equals("not")) {
 			return UnaryBooleanOperatorKind.NOT;
 		}
-	
+
 		return null;
 	}
 
 	public Expression getExpression(Sketch sketch, String expression) {
 		if (isInteger(expression)) {
-			IntegerConstant constant = ArduinoFactory.eINSTANCE
-					.createIntegerConstant();
+			IntegerConstant constant = ArduinoFactory.eINSTANCE.createIntegerConstant();
 			constant.setValue(Integer.parseInt(expression));
 			return constant;
 		}
@@ -553,7 +568,7 @@ public class ArduinoServices {
 		IntegerVariableRef varRef = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
 		var.setName(expression);
 		varRef.setVariable(var);
-//		var.setExpression("0");
+		// var.setExpression("0");
 		return varRef;
 	}
 
@@ -566,35 +581,35 @@ public class ArduinoServices {
 		return true;
 	}
 
-//	public void editLabel(While instruction, Sketch sketch, String left,
-//			String operator, String right) {
-//		BooleanExpression condition = ((BooleanExpression)instruction.getCondition());
-//		if (condition == null) {
-//			condition = ArduinoFactory.eINSTANCE.createBooleanExpression();
-//			sketch.getInstructions().add(condition);
-//			instruction.setCondition(condition);
-//		}
-//
-//		Expression oldLeft = condition.getLeft();
-//		Expression oldRight = condition.getRight();
-//
-//		condition.setLeft(getExpression(sketch, left));
-//		condition.setOperator(getOperator(operator));
-//		condition.setRight(getExpression(sketch, right));
-//
-//		deleteUnusedExpression(sketch, oldLeft);
-//		deleteUnusedExpression(sketch, oldRight);
-//	}
+	// public void editLabel(While instruction, Sketch sketch, String left,
+	// String operator, String right) {
+	// BooleanExpression condition =
+	// ((BooleanExpression)instruction.getCondition());
+	// if (condition == null) {
+	// condition = ArduinoFactory.eINSTANCE.createBooleanExpression();
+	// sketch.getInstructions().add(condition);
+	// instruction.setCondition(condition);
+	// }
+	//
+	// Expression oldLeft = condition.getLeft();
+	// Expression oldRight = condition.getRight();
+	//
+	// condition.setLeft(getExpression(sketch, left));
+	// condition.setOperator(getOperator(operator));
+	// condition.setRight(getExpression(sketch, right));
+	//
+	// deleteUnusedExpression(sketch, oldLeft);
+	// deleteUnusedExpression(sketch, oldRight);
+	// }
 
-	public void editLabel(VariableAssignment instruction, Sketch sketch, String variable,
-			String Expression) {
-//		Expression oldVariable = instruction.getVariable();
+	public void editLabel(VariableAssignment instruction, Sketch sketch, String variable, String Expression) {
+		// Expression oldVariable = instruction.getVariable();
 		Expression oldExpression = instruction.getOperand();
 		instruction.setVariable((Variable) getExpression(sketch, variable));
 		instruction.setOperand(getExpression(sketch, Expression));
 
 		// Clean unused Expressions
-//		deleteUnusedExpression(sketch, oldVariable);
+		// deleteUnusedExpression(sketch, oldVariable);
 		deleteUnusedExpression(sketch, oldExpression);
 	}
 
@@ -628,31 +643,31 @@ public class ArduinoServices {
 	public List<VariableDeclaration> getVariableDeclarations(EObject container) {
 		List<VariableDeclaration> variableDeclarations = Lists.newArrayList();
 		TreeIterator<EObject> it = container.eAllContents();
-		while(it.hasNext()){
+		while (it.hasNext()) {
 			EObject eo = it.next();
-			if (eo instanceof VariableDeclaration){
+			if (eo instanceof VariableDeclaration) {
 				variableDeclarations.add((VariableDeclaration) eo);
 			}
 		}
 		return variableDeclarations;
 	}
-	
+
 	public EObject getConnectedPin(EObject module) {
 		return module.eContainer();
 	}
-	
+
 	public Instruction getLastInstruction(Block block) {
 		List<Instruction> instructions = block.getInstructions();
 		if (!instructions.isEmpty()) {
-			return instructions.get(instructions.size()-1);
+			return instructions.get(instructions.size() - 1);
 		}
 		return null;
 	}
-	
+
 	public EObject getNextInstruction(EObject current) {
 		EObject res = null;
 		if (current instanceof Instruction) {
-			Block block = (Block)current.eContainer();
+			Block block = (Block) current.eContainer();
 			List<Instruction> instructions = block.getInstructions();
 			int index = instructions.indexOf(current);
 			if (index != -1) {
@@ -664,7 +679,7 @@ public class ArduinoServices {
 				}
 			}
 		} else if (current instanceof Sketch) {
-			List<Instruction> instructions = ((Sketch)current).getBlock().getInstructions();
+			List<Instruction> instructions = ((Sketch) current).getBlock().getInstructions();
 			res = instructions.isEmpty() ? null : instructions.get(0);
 		}
 		return res;
@@ -693,14 +708,12 @@ public class ArduinoServices {
 	public List<ModuleGet> getModuleGets(EObject container) {
 		List<ModuleGet> moduleGetters = Lists.newArrayList();
 		if (container instanceof Sketch) {
-			List<Instruction> instructions = ((Sketch) container).getBlock()
-					.getInstructions();
+			List<Instruction> instructions = ((Sketch) container).getBlock().getInstructions();
 			for (Instruction instruction : instructions) {
 				if (instruction instanceof ModuleGet) {
 					if (
-//							instruction.getNext() == null ||
-							isNotUsedAnymore((Sketch) container,
-									(ModuleGet) instruction)) {
+					// instruction.getNext() == null ||
+					isNotUsedAnymore((Sketch) container, (ModuleGet) instruction)) {
 						moduleGetters.add((ModuleGet) instruction);
 					}
 				}
@@ -721,9 +734,9 @@ public class ArduinoServices {
 	public List<BooleanExpression> getBooleanExpressions(EObject container) {
 		List<BooleanExpression> booleanExpressions = Lists.newArrayList();
 		Iterator<EObject> it = container.eContents().iterator();
-		while(it.hasNext()){
+		while (it.hasNext()) {
 			EObject eo = it.next();
-			if (eo instanceof BooleanExpression){
+			if (eo instanceof BooleanExpression) {
 				booleanExpressions.add((BooleanExpression) eo);
 			}
 		}
@@ -737,12 +750,12 @@ public class ArduinoServices {
 			if (Expression instanceof Constant) {
 				constants.add((Constant) Expression);
 			}
-		}else if (container instanceof UnaryExpression) {
+		} else if (container instanceof UnaryExpression) {
 			Expression Expression = ((UnaryExpression) container).getOperand();
 			if (Expression instanceof Constant) {
 				constants.add((Constant) Expression);
 			}
-		}  else if (container instanceof BinaryExpression) {
+		} else if (container instanceof BinaryExpression) {
 			Expression left = ((BinaryExpression) container).getLeft();
 			Expression right = ((BinaryExpression) container).getRight();
 			if (left instanceof Constant) {
@@ -756,8 +769,7 @@ public class ArduinoServices {
 	}
 
 	public IntegerConstant createConstant(Sketch sketch, int expression) {
-		for (Iterator<EObject> iterator = sketch.eAllContents(); iterator
-				.hasNext();) {
+		for (Iterator<EObject> iterator = sketch.eAllContents(); iterator.hasNext();) {
 			EObject object = iterator.next();
 			if (object instanceof IntegerConstant) {
 				if (((IntegerConstant) object).getValue() == expression) {
@@ -808,25 +820,22 @@ public class ArduinoServices {
 		if (project == null) {
 			return false;
 		}
-		Sketch sketch = project.getSketch();
-		if (sketch == null) {
-			return false;
-		}
-		return true;
+		List<Sketch> sketches = project.getSketches();
+		return !sketches.isEmpty();
 	}
-	
+
 	public boolean isValidConnector(Module module, Pin pin) {
 		boolean result = false;
 		if (pin instanceof AnalogPin) {
 			result = module instanceof ArduinoAnalogModule;
-		} else if (pin instanceof DigitalPin){
+		} else if (pin instanceof DigitalPin) {
 			result = module instanceof ArduinoDigitalModule;
 		}
 		return result;
 	}
 
 	public boolean isValidHardware(Project project) {
-		return project.getBoard() != null;
+		return !project.getBoards().isEmpty();
 	}
 
 	public boolean isUploadable(Project project) {
@@ -835,33 +844,33 @@ public class ArduinoServices {
 
 	public String getImage(ModuleInstruction instruction) {
 		return "/fr.obeo.dsl.arduino.design/images/default.svg";
-//		return "/fr.obeo.dsl.arduino.design/images/"
-//				+ instruction.getModule().getImage();
+		// return "/fr.obeo.dsl.arduino.design/images/"
+		// + instruction.getModule().getImage();
 	}
 
 	public String getImage(ModuleGet instruction) {
-//		if (instruction instanceof LED) {
-//			switch (((LED)instruction).getColor()) {
-//			case BLUE:
-//				return 
-//			
-//			
-//			}
-//		}
+		// if (instruction instanceof LED) {
+		// switch (((LED)instruction).getColor()) {
+		// case BLUE:
+		// return
+		//
+		//
+		// }
+		// }
 		return "/fr.obeo.dsl.arduino.design/images/default.svg";
-//		return "/fr.obeo.dsl.arduino.design/images/"
-//				+ instruction.getModule().getImage();
+		// return "/fr.obeo.dsl.arduino.design/images/"
+		// + instruction.getModule().getImage();
 	}
-	
+
 	public void addVariable(Instruction container, Variable variable) {
 		if (container instanceof BinaryExpression) {
 			if (variable instanceof IntegerVariable) {
 				IntegerVariableRef ref = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
-				ref.setVariable((IntegerVariable)variable);
+				ref.setVariable((IntegerVariable) variable);
 				addMathOperatorExpression((BinaryExpression) container, ref);
 			} else {
 				IntegerVariableRef ref = ArduinoFactory.eINSTANCE.createIntegerVariableRef();
-				ref.setVariable((IntegerVariable)variable);
+				ref.setVariable((IntegerVariable) variable);
 				addMathOperatorExpression((BinaryExpression) container, ref);
 			}
 		} else if (container instanceof VariableAssignment) {
@@ -895,8 +904,7 @@ public class ArduinoServices {
 		deleteUnusedExpressions(getSketch(Expression));
 	}
 
-	public void updateExpression(Instruction container, Expression newExpression,
-			Expression oldExpression) {
+	public void updateExpression(Instruction container, Expression newExpression, Expression oldExpression) {
 		if (container instanceof VariableAssignment) {
 			if (newExpression instanceof Variable) {
 				((VariableAssignment) container).setVariable((Variable) newExpression);
@@ -919,24 +927,19 @@ public class ArduinoServices {
 	public void openHardwareDiagram(Board hardware) {
 		Session session = SessionManager.INSTANCE.getSession(hardware);
 		DRepresentation hardwareDiagram = getBoardDiagram(hardware);
-		DialectUIManager.INSTANCE.openEditor(session, hardwareDiagram,
-				new NullProgressMonitor());
+		DialectUIManager.INSTANCE.openEditor(session, hardwareDiagram, new NullProgressMonitor());
 	}
 
 	public void openSketchDiagram(Sketch sketch) {
 		Session session = SessionManager.INSTANCE.getSession(sketch);
 		DRepresentation sketchDiagram = getSketchDiagram(sketch);
-		DialectUIManager.INSTANCE.openEditor(session, sketchDiagram,
-				new NullProgressMonitor());
+		DialectUIManager.INSTANCE.openEditor(session, sketchDiagram, new NullProgressMonitor());
 	}
 
-	private RepresentationDescription getDiagramDescription(Session session,
-			String diagramDescriptionName) {
+	private RepresentationDescription getDiagramDescription(Session session, String diagramDescriptionName) {
 		for (Viewpoint vp : session.getSelectedViewpoints(false)) {
-			for (RepresentationDescription representationDescription : vp
-					.getOwnedRepresentations()) {
-				if (representationDescription.getName().equals(
-						diagramDescriptionName)) {
+			for (RepresentationDescription representationDescription : vp.getOwnedRepresentations()) {
+				if (representationDescription.getName().equals(diagramDescriptionName)) {
 					return representationDescription;
 				}
 			}
@@ -951,10 +954,9 @@ public class ArduinoServices {
 	private DRepresentation getSketchDiagram(Sketch sketch) {
 		return getDiagram(sketch, "Sketch", "Sketch");
 	}
-	
+
 	public DRepresentation getDiagram(Session session, String diagramName) {
-		Collection<DRepresentation> representations = DialectManager.INSTANCE
-				.getAllRepresentations(session);
+		Collection<DRepresentation> representations = DialectManager.INSTANCE.getAllRepresentations(session);
 		DRepresentation diagram = null;
 		for (DRepresentation representation : representations) {
 			if (diagramName.equals(representation.getName())) {
@@ -969,10 +971,8 @@ public class ArduinoServices {
 		DRepresentation diagram = getDiagram(session, diagramName);
 		// Create representation if does not exist
 		if (diagram == null) {
-			diagram = (DDiagram) DialectManager.INSTANCE.createRepresentation(
-					diagramName, semantic,
-					getDiagramDescription(session, diagramDescriptionName),
-					session, new NullProgressMonitor());
+			diagram = (DDiagram) DialectManager.INSTANCE.createRepresentation(diagramName, semantic,
+					getDiagramDescription(session, diagramDescriptionName), session, new NullProgressMonitor());
 		}
 
 		return diagram;

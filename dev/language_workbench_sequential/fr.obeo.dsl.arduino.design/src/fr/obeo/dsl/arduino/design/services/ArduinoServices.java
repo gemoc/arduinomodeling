@@ -95,7 +95,7 @@ public class ArduinoServices {
 			// Create missing pins
 			for (int i = pinsTmp.size(); i < total; i++) {
 				DigitalPin pin = ArduinoFactory.eINSTANCE.createDigitalPin();
-				pin.setId(i);
+				pin.setName(""+i);
 				platform.getDigitalPins().add(pin);
 			}
 		} else {
@@ -120,7 +120,7 @@ public class ArduinoServices {
 			// Create missing pins
 			for (int i = pinsTmp.size(); i < total; i++) {
 				AnalogPin pin = ArduinoFactory.eINSTANCE.createAnalogPin();
-				pin.setId(i);
+				pin.setName(""+i);
 				platform.getAnalogPins().add(pin);
 			}
 		} else {
@@ -199,7 +199,7 @@ public class ArduinoServices {
 	public List<Module> getActuators(Sketch sketch) {
 		List<Module> result = new ArrayList<>();
 		List<Module> modules = ImmutableList
-				.copyOf(getConnectedModules(sketch.getProject().getBoard()));
+				.copyOf(getConnectedModules(sketch.getProject().getBoards()));
 
 		for (Module module : modules) {
 			if (module instanceof Actuator) {
@@ -212,22 +212,10 @@ public class ArduinoServices {
 	public List<Module> getSensors(Sketch sketch) {
 		List<Module> result = new ArrayList<>();
 		List<Module> modules = ImmutableList
-				.copyOf(getConnectedModules(sketch.getProject().getBoard()));
+				.copyOf(getConnectedModules(sketch.getProject().getBoards()));
 
 		for (Module module : modules) {
 			if (module instanceof Sensor) {
-				result.add(module);
-			}
-		}
-		return result;
-	}
-
-	public List<Module> getLevelModules(Sketch sketch) {
-		List<Module> result = new ArrayList<Module>();
-		List<Module> modules = ImmutableList.copyOf(getActuators(sketch));
-
-		for (Module module : modules) {
-			if (module.isLevel()) {
 				result.add(module);
 			}
 		}
@@ -246,20 +234,22 @@ public class ArduinoServices {
 		return (Sketch) eObject;
 	}
 
-	private List<Module> getConnectedModules(Board board) {
+	private List<Module> getConnectedModules(List<Board> boards) {
 		List<Module> result = new ArrayList<>();
-		if (board instanceof ArduinoBoard) {
-			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
-			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+		for (Board board : boards) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
-			}
-			for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
 			}
 		}
@@ -804,12 +794,13 @@ public class ArduinoServices {
 	}
 
 	public boolean isValidSketch(Project project) {
-		Sketch sketch = project.getSketch();
-		if (sketch == null) {
-			return false;
-		}
+		List<Sketch> sketches = project.getSketches();
 		fr.obeo.dsl.arduino.utils.ArduinoServices service = new fr.obeo.dsl.arduino.utils.ArduinoServices();
-		return service.isValidSketch(sketch);
+		boolean result = true;
+		for (Sketch sketch : sketches) {
+			result = result && service.isValidSketch(sketch); 
+		}
+		return result;
 	}
 	
 	public boolean isValidConnector(Module module, Pin pin) {
@@ -823,7 +814,7 @@ public class ArduinoServices {
 	}
 
 	public boolean isValidHardware(Project project) {
-		return project.getBoard() != null;
+		return !project.getBoards().isEmpty();
 	}
 
 	public boolean isUploadable(Project project) {

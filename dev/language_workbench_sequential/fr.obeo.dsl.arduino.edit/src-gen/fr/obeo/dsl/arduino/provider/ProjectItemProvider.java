@@ -85,8 +85,8 @@ public class ProjectItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__BOARD);
-			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__SKETCH);
+			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__BOARDS);
+			childrenFeatures.add(ArduinoPackage.Literals.PROJECT__SKETCHES);
 		}
 		return childrenFeatures;
 	}
@@ -139,8 +139,8 @@ public class ProjectItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Project.class)) {
-			case ArduinoPackage.PROJECT__BOARD:
-			case ArduinoPackage.PROJECT__SKETCH:
+			case ArduinoPackage.PROJECT__BOARDS:
+			case ArduinoPackage.PROJECT__SKETCHES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -160,12 +160,12 @@ public class ProjectItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__BOARD,
+				(ArduinoPackage.Literals.PROJECT__BOARDS,
 				 ArduinoFactory.eINSTANCE.createArduinoBoard()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ArduinoPackage.Literals.PROJECT__SKETCH,
+				(ArduinoPackage.Literals.PROJECT__SKETCHES,
 				 ArduinoFactory.eINSTANCE.createSketch()));
 	}
 

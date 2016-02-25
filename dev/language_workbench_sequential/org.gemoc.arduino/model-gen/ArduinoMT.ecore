@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://arduinomt/" nsPrefix="arduino">
   <eClassifiers xsi:type="ecore:EClass" name="Board" abstract="true" eSuperTypes="//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/board"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/boards"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" interface="true" eSuperTypes="//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eStructuralFeatures>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" interface="true" eSuperTypes="//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DigitalPin" eSuperTypes="//Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//ArduinoDigitalModule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="//Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//ArduinoAnalogModule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sketch" eSuperTypes="//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/sketch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/sketches"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="board" eType="//Board"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Project">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="board" eType="//Board" containment="true" eOpposite="//Board/project"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sketch" eType="//Sketch" containment="true" eOpposite="//Sketch/project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boards" upperBound="-1" eType="//Board" containment="true" eOpposite="//Board/project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sketches" upperBound="-1" eType="//Sketch" containment="true" eOpposite="//Sketch/project"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleAssignment" eSuperTypes="//ModuleInstruction //Assignment"/>

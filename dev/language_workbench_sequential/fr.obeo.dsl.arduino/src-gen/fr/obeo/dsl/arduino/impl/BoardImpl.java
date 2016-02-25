@@ -87,7 +87,7 @@ public abstract class BoardImpl extends NamedElementImpl implements Board {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProject != null)
-				msgs = ((InternalEObject)newProject).eInverseAdd(this, ArduinoPackage.PROJECT__BOARD, Project.class, msgs);
+				msgs = ((InternalEObject)newProject).eInverseAdd(this, ArduinoPackage.PROJECT__BOARDS, Project.class, msgs);
 			msgs = basicSetProject(newProject, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -134,7 +134,7 @@ public abstract class BoardImpl extends NamedElementImpl implements Board {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ArduinoPackage.BOARD__PROJECT:
-				return eInternalContainer().eInverseRemove(this, ArduinoPackage.PROJECT__BOARD, Project.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ArduinoPackage.PROJECT__BOARDS, Project.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

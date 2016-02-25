@@ -26,25 +26,31 @@ public final class ArduinoUtils {
 	 * @return the {@link Pin} {@link Connector connected} to the given
 	 *         {@link Module} if any, <code>null</code> otherwise
 	 */
-	public static Pin getPin(Project project, Module module) {
+	public static Pin getPin(Module module) {
 		Pin res = null;
+		
+		Project project = getContainingProject(module);
 
-		final Board board = project.getBoard();
-		if (board != null && board instanceof ArduinoBoard) {
-			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
-			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
-				if (pin.getModule() == module) {
-					res = pin;
-					break;
-				}
-			}
-			if (res == null) {
-				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+		for (Board board : project.getBoards()) {
+			if (board != null && board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
 					if (pin.getModule() == module) {
 						res = pin;
 						break;
 					}
 				}
+				if (res == null) {
+					for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+						if (pin.getModule() == module) {
+							res = pin;
+							break;
+						}
+					}
+				}
+			}
+			if (res != null) {
+				break;
 			}
 		}
 

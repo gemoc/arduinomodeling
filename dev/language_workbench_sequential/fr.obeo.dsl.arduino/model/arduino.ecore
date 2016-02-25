@@ -17,19 +17,14 @@
         name="project"
         lowerBound="1"
         eType="#//Project"
-        eOpposite="#//Project/board"/>
+        eOpposite="#//Project/boards"/>
   </eClassifiers>
   <eClassifiers
       xsi:type="ecore:EClass"
       name="Module"
       abstract="true"
       interface="true"
-      eSuperTypes="#//NamedElement">
-    <eStructuralFeatures
-        xsi:type="ecore:EAttribute"
-        name="level"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
+      eSuperTypes="#//NamedElement"/>
   <eClassifiers
       xsi:type="ecore:EClass"
       name="DigitalPin"
@@ -43,12 +38,8 @@
   <eClassifiers
       xsi:type="ecore:EClass"
       name="Pin"
-      abstract="true">
-    <eStructuralFeatures
-        xsi:type="ecore:EAttribute"
-        name="id"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+      abstract="true"
+      eSuperTypes="#//NamedElement"/>
   <eClassifiers
       xsi:type="ecore:EClass"
       name="AnalogPin"
@@ -68,25 +59,31 @@
         name="project"
         lowerBound="1"
         eType="#//Project"
-        eOpposite="#//Project/sketch"/>
+        eOpposite="#//Project/sketches"/>
     <eStructuralFeatures
         xsi:type="ecore:EReference"
         name="block"
         eType="#//Block"
         containment="true"/>
+    <eStructuralFeatures
+        xsi:type="ecore:EReference"
+        name="board"
+        eType="#//Board"/>
   </eClassifiers>
   <eClassifiers
       xsi:type="ecore:EClass"
       name="Project">
     <eStructuralFeatures
         xsi:type="ecore:EReference"
-        name="board"
+        name="boards"
+        upperBound="-1"
         eType="#//Board"
         containment="true"
         eOpposite="#//Board/project"/>
     <eStructuralFeatures
         xsi:type="ecore:EReference"
-        name="sketch"
+        name="sketches"
+        upperBound="-1"
         eType="#//Sketch"
         containment="true"
         eOpposite="#//Sketch/project"/>

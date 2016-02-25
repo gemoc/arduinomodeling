@@ -107,8 +107,10 @@ public class DigitalPinItemProvider extends PinItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		DigitalPin digitalPin = (DigitalPin)object;
-		return getString("_UI_DigitalPin_type") + " " + digitalPin.getId();
+		String label = ((DigitalPin)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DigitalPin_type") :
+			getString("_UI_DigitalPin_type") + " " + label;
 	}
 	
 

@@ -15,14 +15,18 @@ import fr.obeo.dsl.arduino.Board;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +35,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fr.obeo.dsl.arduino.impl.ProjectImpl#getBoard <em>Board</em>}</li>
- *   <li>{@link fr.obeo.dsl.arduino.impl.ProjectImpl#getSketch <em>Sketch</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ProjectImpl#getBoards <em>Boards</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ProjectImpl#getSketches <em>Sketches</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,24 +44,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class ProjectImpl extends EObjectImpl implements Project {
 	/**
-	 * The cached value of the '{@link #getBoard() <em>Board</em>}' containment reference.
+	 * The cached value of the '{@link #getBoards() <em>Boards</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBoard()
+	 * @see #getBoards()
 	 * @generated
 	 * @ordered
 	 */
-	protected Board board;
+	protected EList<Board> boards;
 
 	/**
-	 * The cached value of the '{@link #getSketch() <em>Sketch</em>}' containment reference.
+	 * The cached value of the '{@link #getSketches() <em>Sketches</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSketch()
+	 * @see #getSketches()
 	 * @generated
 	 * @ordered
 	 */
-	protected Sketch sketch;
+	protected EList<Sketch> sketches;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,23 +87,11 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Board getBoard() {
-		return board;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBoard(Board newBoard, NotificationChain msgs) {
-		Board oldBoard = board;
-		board = newBoard;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.PROJECT__BOARD, oldBoard, newBoard);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Board> getBoards() {
+		if (boards == null) {
+			boards = new EObjectContainmentWithInverseEList<Board>(Board.class, this, ArduinoPackage.PROJECT__BOARDS, ArduinoPackage.BOARD__PROJECT);
 		}
-		return msgs;
+		return boards;
 	}
 
 	/**
@@ -107,18 +99,11 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBoard(Board newBoard) {
-		if (newBoard != board) {
-			NotificationChain msgs = null;
-			if (board != null)
-				msgs = ((InternalEObject)board).eInverseRemove(this, ArduinoPackage.BOARD__PROJECT, Board.class, msgs);
-			if (newBoard != null)
-				msgs = ((InternalEObject)newBoard).eInverseAdd(this, ArduinoPackage.BOARD__PROJECT, Board.class, msgs);
-			msgs = basicSetBoard(newBoard, msgs);
-			if (msgs != null) msgs.dispatch();
+	public EList<Sketch> getSketches() {
+		if (sketches == null) {
+			sketches = new EObjectContainmentWithInverseEList<Sketch>(Sketch.class, this, ArduinoPackage.PROJECT__SKETCHES, ArduinoPackage.SKETCH__PROJECT);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.PROJECT__BOARD, newBoard, newBoard));
+		return sketches;
 	}
 
 	/**
@@ -126,60 +111,14 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sketch getSketch() {
-		return sketch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSketch(Sketch newSketch, NotificationChain msgs) {
-		Sketch oldSketch = sketch;
-		sketch = newSketch;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.PROJECT__SKETCH, oldSketch, newSketch);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSketch(Sketch newSketch) {
-		if (newSketch != sketch) {
-			NotificationChain msgs = null;
-			if (sketch != null)
-				msgs = ((InternalEObject)sketch).eInverseRemove(this, ArduinoPackage.SKETCH__PROJECT, Sketch.class, msgs);
-			if (newSketch != null)
-				msgs = ((InternalEObject)newSketch).eInverseAdd(this, ArduinoPackage.SKETCH__PROJECT, Sketch.class, msgs);
-			msgs = basicSetSketch(newSketch, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.PROJECT__SKETCH, newSketch, newSketch));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				if (board != null)
-					msgs = ((InternalEObject)board).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.PROJECT__BOARD, null, msgs);
-				return basicSetBoard((Board)otherEnd, msgs);
-			case ArduinoPackage.PROJECT__SKETCH:
-				if (sketch != null)
-					msgs = ((InternalEObject)sketch).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.PROJECT__SKETCH, null, msgs);
-				return basicSetSketch((Sketch)otherEnd, msgs);
+			case ArduinoPackage.PROJECT__BOARDS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBoards()).basicAdd(otherEnd, msgs);
+			case ArduinoPackage.PROJECT__SKETCHES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSketches()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -192,10 +131,10 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				return basicSetBoard(null, msgs);
-			case ArduinoPackage.PROJECT__SKETCH:
-				return basicSetSketch(null, msgs);
+			case ArduinoPackage.PROJECT__BOARDS:
+				return ((InternalEList<?>)getBoards()).basicRemove(otherEnd, msgs);
+			case ArduinoPackage.PROJECT__SKETCHES:
+				return ((InternalEList<?>)getSketches()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,10 +147,10 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				return getBoard();
-			case ArduinoPackage.PROJECT__SKETCH:
-				return getSketch();
+			case ArduinoPackage.PROJECT__BOARDS:
+				return getBoards();
+			case ArduinoPackage.PROJECT__SKETCHES:
+				return getSketches();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,14 +160,17 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				setBoard((Board)newValue);
+			case ArduinoPackage.PROJECT__BOARDS:
+				getBoards().clear();
+				getBoards().addAll((Collection<? extends Board>)newValue);
 				return;
-			case ArduinoPackage.PROJECT__SKETCH:
-				setSketch((Sketch)newValue);
+			case ArduinoPackage.PROJECT__SKETCHES:
+				getSketches().clear();
+				getSketches().addAll((Collection<? extends Sketch>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -242,11 +184,11 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				setBoard((Board)null);
+			case ArduinoPackage.PROJECT__BOARDS:
+				getBoards().clear();
 				return;
-			case ArduinoPackage.PROJECT__SKETCH:
-				setSketch((Sketch)null);
+			case ArduinoPackage.PROJECT__SKETCHES:
+				getSketches().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,10 +202,10 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.PROJECT__BOARD:
-				return board != null;
-			case ArduinoPackage.PROJECT__SKETCH:
-				return sketch != null;
+			case ArduinoPackage.PROJECT__BOARDS:
+				return boards != null && !boards.isEmpty();
+			case ArduinoPackage.PROJECT__SKETCHES:
+				return sketches != null && !sketches.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,9 +16,9 @@
               <children xmi:type="notation:Node" xmi:id="__2IAY9cBEeWqG4ihsdJK7A" type="5001">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="__2IAZNcBEeWqG4ihsdJK7A" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_jt_bkNcCEeWwXLAYyP_t0w" type="3003" element="__9xggNcBEeWqG4ihsdJK7A">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_jt_bkdcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jt_bktcCEeWwXLAYyP_t0w"/>
+              <children xmi:type="notation:Node" xmi:id="_FIKpENo0EeWYHeEbTsctug" type="3003" element="_FG4PoNo0EeWYHeEbTsctug">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FIKpEdo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIKpEto0EeWYHeEbTsctug"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="__2IAYdcBEeWqG4ihsdJK7A" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2IAYtcBEeWqG4ihsdJK7A" x="192" y="36" width="20" height="20"/>
@@ -27,9 +27,9 @@
               <children xmi:type="notation:Node" xmi:id="__2Inc9cBEeWqG4ihsdJK7A" type="5001">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="__2IndNcBEeWqG4ihsdJK7A" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_juBQwNcCEeWwXLAYyP_t0w" type="3003" element="__9yuoNcBEeWqG4ihsdJK7A">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_juBQwdcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juBQwtcCEeWwXLAYyP_t0w"/>
+              <children xmi:type="notation:Node" xmi:id="_FIMeQNo0EeWYHeEbTsctug" type="3003" element="_FG5dwNo0EeWYHeEbTsctug">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FIMeQdo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIMeQto0EeWYHeEbTsctug"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="__2IncdcBEeWqG4ihsdJK7A" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2InctcBEeWqG4ihsdJK7A" x="192" y="60" width="20" height="20"/>
@@ -38,161 +38,161 @@
               <children xmi:type="notation:Node" xmi:id="__2JOg9cBEeWqG4ihsdJK7A" type="5001">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="__2JOhNcBEeWqG4ihsdJK7A" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_juDF8NcCEeWwXLAYyP_t0w" type="3003" element="__9zVsdcBEeWqG4ihsdJK7A">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_juDF8dcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juDF8tcCEeWwXLAYyP_t0w"/>
+              <children xmi:type="notation:Node" xmi:id="_FINsYNo0EeWYHeEbTsctug" type="3003" element="_FG7S8No0EeWYHeEbTsctug">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FINsYdo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FINsYto0EeWYHeEbTsctug"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="__2JOgdcBEeWqG4ihsdJK7A" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2JOgtcBEeWqG4ihsdJK7A" x="192" y="84" width="20" height="20"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jtyAMNcCEeWwXLAYyP_t0w" type="3005" element="__6BB5dcBEeWqG4ihsdJK7A">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_jtyAMdcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jtyAMtcCEeWwXLAYyP_t0w"/>
+            <children xmi:type="notation:Node" xmi:id="_FID7YNo0EeWYHeEbTsctug" type="3005" element="_E8dvYNo0EeWYHeEbTsctug">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FID7Ydo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FID7Yto0EeWYHeEbTsctug"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="__2EWAdcBEeWqG4ihsdJK7A" fontColor="13750737" fontName="Ubuntu" fontHeight="8" bold="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2EWAtcBEeWqG4ihsdJK7A" x="84" y="13" width="200" height="200"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__2FkINcBEeWqG4ihsdJK7A" type="2001" element="__1-2hNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="__2GLMNcBEeWqG4ihsdJK7A" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="__2GLMdcBEeWqG4ihsdJK7A" y="-21"/>
+          <children xmi:type="notation:Node" xmi:id="_K0nkoNorEeW9o-HFviI_qA" type="2001" element="_K0BHsNorEeW9o-HFviI_qA">
+            <children xmi:type="notation:Node" xmi:id="_K0nko9orEeW9o-HFviI_qA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_K0nkpNorEeW9o-HFviI_qA" y="-21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_juEUENcCEeWwXLAYyP_t0w" type="3005" element="__98foNcBEeWqG4ihsdJK7A">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_juEUEdcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juEUEtcCEeWwXLAYyP_t0w"/>
+            <children xmi:type="notation:Node" xmi:id="_FIPhkNo0EeWYHeEbTsctug" type="3005" element="_FHJ8cNo0EeWYHeEbTsctug">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FIPhkdo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIPhkto0EeWYHeEbTsctug"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="__2FkIdcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2FkItcBEeWqG4ihsdJK7A" x="432" y="12" width="80" height="57"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_K0nkodorEeW9o-HFviI_qA" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0nkotorEeW9o-HFviI_qA" x="456" y="24" width="101" height="72"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__2GLMtcBEeWqG4ihsdJK7A" type="2001" element="__1-2iNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="__2GyQNcBEeWqG4ihsdJK7A" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="__2GyQdcBEeWqG4ihsdJK7A" y="-21"/>
+          <children xmi:type="notation:Node" xmi:id="_K0nkpdorEeW9o-HFviI_qA" type="2001" element="_K0K4sNorEeW9o-HFviI_qA">
+            <children xmi:type="notation:Node" xmi:id="_K0oLsNorEeW9o-HFviI_qA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_K0oLsdorEeW9o-HFviI_qA" y="-21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_juFiMNcCEeWwXLAYyP_t0w" type="3005" element="__-FplNcBEeWqG4ihsdJK7A">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_juFiMdcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juFiMtcCEeWwXLAYyP_t0w"/>
+            <children xmi:type="notation:Node" xmi:id="_FIRWwNo0EeWYHeEbTsctug" type="3005" element="_FHKjgdo0EeWYHeEbTsctug">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FIRWwdo0EeWYHeEbTsctug" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIRWwto0EeWYHeEbTsctug"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="__2GLM9cBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2GLNNcBEeWqG4ihsdJK7A" x="432" y="84" width="80" height="57"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_K0nkptorEeW9o-HFviI_qA" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0nkp9orEeW9o-HFviI_qA" x="456" y="120" width="101" height="72"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__2GyQtcBEeWqG4ihsdJK7A" type="2001" element="__1-2jNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="__2HZUNcBEeWqG4ihsdJK7A" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="__2HZUdcBEeWqG4ihsdJK7A" y="-21"/>
+          <children xmi:type="notation:Node" xmi:id="_K0oLstorEeW9o-HFviI_qA" type="2001" element="_K0b-cNorEeW9o-HFviI_qA">
+            <children xmi:type="notation:Node" xmi:id="_K0oLtdorEeW9o-HFviI_qA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_K0oLttorEeW9o-HFviI_qA" y="-21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_juMP4NcCEeWwXLAYyP_t0w" type="3005" element="__-G3tNcBEeWqG4ihsdJK7A">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_juMP4dcCEeWwXLAYyP_t0w" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juMP4tcCEeWwXLAYyP_t0w"/>
+            <children xmi:type="notation:Node" xmi:id="_FISk4No0EeWYHeEbTsctug" type="3005" element="_FHLxodo0EeWYHeEbTsctug">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FISk4do0EeWYHeEbTsctug" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FISk4to0EeWYHeEbTsctug"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="__2GyQ9cBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2GyRNcBEeWqG4ihsdJK7A" x="432" y="156" width="80" height="57"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_K0oLs9orEeW9o-HFviI_qA" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0oLtNorEeW9o-HFviI_qA" x="456" y="216" width="101" height="72"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="__2Du8tcBEeWqG4ihsdJK7A"/>
-          <edges xmi:type="notation:Edge" xmi:id="_juiOINcCEeWwXLAYyP_t0w" type="4001" element="__-JT8NcBEeWqG4ihsdJK7A" source="__2FkINcBEeWqG4ihsdJK7A" target="__2IAYNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="_jur_INcCEeWwXLAYyP_t0w" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jur_IdcCEeWwXLAYyP_t0w" y="-10"/>
+          <edges xmi:type="notation:Edge" xmi:id="_K0rPBtorEeW9o-HFviI_qA" type="4001" element="_K0easNorEeW9o-HFviI_qA" source="_K0nkoNorEeW9o-HFviI_qA" target="__2IAYNcBEeWqG4ihsdJK7A">
+            <children xmi:type="notation:Node" xmi:id="_K0r2ENorEeW9o-HFviI_qA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0r2EdorEeW9o-HFviI_qA" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jutNQNcCEeWwXLAYyP_t0w" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jutNQdcCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0r2EtorEeW9o-HFviI_qA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0r2E9orEeW9o-HFviI_qA" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_juubYNcCEeWwXLAYyP_t0w" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_juvCcNcCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0r2FNorEeW9o-HFviI_qA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0r2FdorEeW9o-HFviI_qA" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_juiOIdcCEeWwXLAYyP_t0w"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_juiOItcCEeWwXLAYyP_t0w" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_juiOI9cCEeWwXLAYyP_t0w" points="[-40, 6, 146, -13]$[-176, 18, 10, -1]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvAvQNcCEeWwXLAYyP_t0w" id="(0.5,0.49122807017543857)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvAvQdcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_K0rPB9orEeW9o-HFviI_qA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_K0rPCNorEeW9o-HFviI_qA" fontName="Ubuntu" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K0rPCdorEeW9o-HFviI_qA" points="[-40, 1, 170, -6]$[-200, 6, 10, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0r2FtorEeW9o-HFviI_qA" id="(0.5,0.49122807017543857)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0sdINorEeW9o-HFviI_qA" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_jvBWUNcCEeWwXLAYyP_t0w" type="4001" element="__-KiENcBEeWqG4ihsdJK7A" source="__2GLMtcBEeWqG4ihsdJK7A" target="__2IncNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="_jvCkcNcCEeWwXLAYyP_t0w" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvCkcdcCEeWwXLAYyP_t0w" y="-10"/>
+          <edges xmi:type="notation:Edge" xmi:id="_K0sdIdorEeW9o-HFviI_qA" type="4001" element="_K0fBxNorEeW9o-HFviI_qA" source="_K0nkpdorEeW9o-HFviI_qA" target="__2IncNcBEeWqG4ihsdJK7A">
+            <children xmi:type="notation:Node" xmi:id="_K0sdJdorEeW9o-HFviI_qA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0sdJtorEeW9o-HFviI_qA" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jvCkctcCEeWwXLAYyP_t0w" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvCkc9cCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0sdJ9orEeW9o-HFviI_qA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0sdKNorEeW9o-HFviI_qA" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jvCkdNcCEeWwXLAYyP_t0w" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvCkddcCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0sdKdorEeW9o-HFviI_qA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0sdKtorEeW9o-HFviI_qA" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_jvBWUdcCEeWwXLAYyP_t0w"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_jvBWUtcCEeWwXLAYyP_t0w" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jvBWU9cCEeWwXLAYyP_t0w" points="[-40, -9, 146, 20]$[-176, -28, 10, 1]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvFAsNcCEeWwXLAYyP_t0w" id="(0.5,0.49122807017543857)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvFAsdcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_K0sdItorEeW9o-HFviI_qA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_K0sdI9orEeW9o-HFviI_qA" fontName="Ubuntu" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K0sdJNorEeW9o-HFviI_qA" points="[-50, -17, 170, 55]$[-210, -70, 10, 2]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0sdK9orEeW9o-HFviI_qA" id="(0.5,0.49122807017543857)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0sdLNorEeW9o-HFviI_qA" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_jvHc8NcCEeWwXLAYyP_t0w" type="4001" element="__-LwMNcBEeWqG4ihsdJK7A" source="__2GyQtcBEeWqG4ihsdJK7A" target="__2JOgNcBEeWqG4ihsdJK7A">
-            <children xmi:type="notation:Node" xmi:id="_jvJSINcCEeWwXLAYyP_t0w" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvJSIdcCEeWwXLAYyP_t0w" y="-10"/>
+          <edges xmi:type="notation:Edge" xmi:id="_K0tEMNorEeW9o-HFviI_qA" type="4001" element="_K0fo2NorEeW9o-HFviI_qA" source="_K0oLstorEeW9o-HFviI_qA" target="__2JOgNcBEeWqG4ihsdJK7A">
+            <children xmi:type="notation:Node" xmi:id="_K0tENNorEeW9o-HFviI_qA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0tENdorEeW9o-HFviI_qA" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jvLHUNcCEeWwXLAYyP_t0w" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvLHUdcCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0tENtorEeW9o-HFviI_qA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0tEN9orEeW9o-HFviI_qA" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_jvLuYNcCEeWwXLAYyP_t0w" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvLuYdcCEeWwXLAYyP_t0w" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_K0tEONorEeW9o-HFviI_qA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0tEOdorEeW9o-HFviI_qA" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_jvHc8dcCEeWwXLAYyP_t0w"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_jvHc8tcCEeWwXLAYyP_t0w" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jvHc89cCEeWwXLAYyP_t0w" points="[-40, -19, 146, 58]$[-176, -74, 10, 3]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvMVcNcCEeWwXLAYyP_t0w" id="(0.5,0.49122807017543857)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jvMVcdcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_K0tEMdorEeW9o-HFviI_qA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_K0tEMtorEeW9o-HFviI_qA" fontName="Ubuntu" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K0tEM9orEeW9o-HFviI_qA" points="[-50, -33, 170, 111]$[-210, -138, 10, 6]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0tEOtorEeW9o-HFviI_qA" id="(0.5,0.49122807017543857)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K0tEO9orEeW9o-HFviI_qA" id="(0.5,0.5)"/>
           </edges>
         </data>
       </ownedAnnotationEntries>
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="__6Aa0NcBEeWqG4ihsdJK7A" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="__6Aa0dcBEeWqG4ihsdJK7A">
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="__6BB49cBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/dfrduino_uno.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_K0eastorEeW9o-HFviI_qA" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_K0eas9orEeW9o-HFviI_qA">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_K0fo0dorEeW9o-HFviI_qA" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_K0fo0torEeW9o-HFviI_qA">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_K0gP4dorEeW9o-HFviI_qA" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_K0gP4torEeW9o-HFviI_qA">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_E8asENo0EeWYHeEbTsctug" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/dfrduino_uno.jpg">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="__6CQA9cBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_E8fkkNo0EeWYHeEbTsctug" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="__9yHktcBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_FG42sNo0EeWYHeEbTsctug" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="__9yuptcBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_FG6r4No0EeWYHeEbTsctug" borderSizeComputationExpression="1" labelSize="6" showIcon="false" labelExpression="feature:id" tooltipExpression="['Digital pin '+id/]" sizeComputationExpression="2" labelPosition="node">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20green']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="__974k9cBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <labelColor xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']"/>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_FHJVYNo0EeWYHeEbTsctug" borderSizeComputationExpression="1" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="__-FpktcBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <labelColor xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']"/>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_FHKjgNo0EeWYHeEbTsctug" borderSizeComputationExpression="1" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="__-G3stcBEeWqG4ihsdJK7A" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <labelColor xmi:type="description:UserFixedColor" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="__-JT9NcBEeWqG4ihsdJK7A" sizeComputationExpression="2">
-            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="__-JT9dcBEeWqG4ihsdJK7A">
-              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="__-LJItcBEeWqG4ihsdJK7A" sizeComputationExpression="2">
-            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="__-LJI9cBEeWqG4ihsdJK7A">
-              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="__-LwM9cBEeWqG4ihsdJK7A" sizeComputationExpression="2">
-            <strokeColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.design/description/simulator.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intencity']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="__-LwNNcBEeWqG4ihsdJK7A">
-              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_FHLxoNo0EeWYHeEbTsctug" borderSizeComputationExpression="1" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="__6BB4NcBEeWqG4ihsdJK7A">
             <key xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__6BB4dcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__6BB4tcBEeWqG4ihsdJK7A" key="__1-2cdcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__6BB5NcBEeWqG4ihsdJK7A" value="__6BB49cBEeWqG4ihsdJK7A">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__6BB5NcBEeWqG4ihsdJK7A" value="_E8asENo0EeWYHeEbTsctug">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
@@ -203,7 +203,7 @@
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__6CQAdcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.0"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__6CQAtcBEeWqG4ihsdJK7A" key="__1-2ctcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__6CQBNcBEeWqG4ihsdJK7A" value="__6CQA9cBEeWqG4ihsdJK7A">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__6CQBNcBEeWqG4ihsdJK7A" value="_E8fkkNo0EeWYHeEbTsctug">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
@@ -211,7 +211,7 @@
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__9yHkNcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.1"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__9yHkdcBEeWqG4ihsdJK7A" key="__1-2d9cBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__9yHk9cBEeWqG4ihsdJK7A" value="__9yHktcBEeWqG4ihsdJK7A">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__9yHk9cBEeWqG4ihsdJK7A" value="_FG42sNo0EeWYHeEbTsctug">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
@@ -219,34 +219,7 @@
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__9yupNcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.2"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__9yupdcBEeWqG4ihsdJK7A" key="__1-2fNcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__9zVsNcBEeWqG4ihsdJK7A" value="__9yuptcBEeWqG4ihsdJK7A">
-                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
-                </value>
-              </value>
-            </value>
-          </cache>
-          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="__974kNcBEeWqG4ihsdJK7A">
-            <key xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']"/>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__974kdcBEeWqG4ihsdJK7A">
-              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__974ktcBEeWqG4ihsdJK7A" key="__1-2hNcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__974lNcBEeWqG4ihsdJK7A" value="__974k9cBEeWqG4ihsdJK7A">
-                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__-FpkNcBEeWqG4ihsdJK7A">
-              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__-FpkdcBEeWqG4ihsdJK7A" key="__1-2iNcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__-Fpk9cBEeWqG4ihsdJK7A" value="__-FpktcBEeWqG4ihsdJK7A">
-                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__-G3sNcBEeWqG4ihsdJK7A">
-              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__-G3sdcBEeWqG4ihsdJK7A" key="__1-2jNcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__-G3s9cBEeWqG4ihsdJK7A" value="__-G3stcBEeWqG4ihsdJK7A">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__9zVsNcBEeWqG4ihsdJK7A" value="_FG6r4No0EeWYHeEbTsctug">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
@@ -256,24 +229,51 @@
             <key xmi:type="description_1:EdgeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__-JT8tcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__-JT89cBEeWqG4ihsdJK7A" key="__-JT8NcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__-JT9tcBEeWqG4ihsdJK7A" value="__-JT9NcBEeWqG4ihsdJK7A">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0easdorEeW9o-HFviI_qA" key="_K0easNorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0eatNorEeW9o-HFviI_qA" value="_K0eastorEeW9o-HFviI_qA">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__-LJINcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__-LJIdcBEeWqG4ihsdJK7A" key="__-KiENcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__-LJJNcBEeWqG4ihsdJK7A" value="__-LJItcBEeWqG4ihsdJK7A">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0fo0NorEeW9o-HFviI_qA" key="_K0fBxNorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0fo09orEeW9o-HFviI_qA" value="_K0fo0dorEeW9o-HFviI_qA">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="__-LwMdcBEeWqG4ihsdJK7A">
               <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="__-LwMtcBEeWqG4ihsdJK7A" key="__-LwMNcBEeWqG4ihsdJK7A">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="__-LwNdcBEeWqG4ihsdJK7A" value="__-LwM9cBEeWqG4ihsdJK7A">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0gP4NorEeW9o-HFviI_qA" key="_K0fo2NorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0gP49orEeW9o-HFviI_qA" value="_K0gP4dorEeW9o-HFviI_qA">
+                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
+                </value>
+              </value>
+            </value>
+          </cache>
+          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_K0KRoNorEeW9o-HFviI_qA">
+            <key xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']"/>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_K0KRodorEeW9o-HFviI_qA">
+              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0KRotorEeW9o-HFviI_qA" key="_K0BHsNorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0KRpNorEeW9o-HFviI_qA" value="_FHJVYNo0EeWYHeEbTsctug">
+                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_K0bXYNorEeW9o-HFviI_qA">
+              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0bXYdorEeW9o-HFviI_qA" key="_K0K4sNorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0bXY9orEeW9o-HFviI_qA" value="_FHKjgNo0EeWYHeEbTsctug">
+                  <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_K0b-cdorEeW9o-HFviI_qA">
+              <key xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_K0b-ctorEeW9o-HFviI_qA" key="_K0b-cNorEeW9o-HFviI_qA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_K0b-dNorEeW9o-HFviI_qA" value="_FHLxoNo0EeWYHeEbTsctug">
                   <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
                 </value>
               </value>
@@ -284,116 +284,109 @@
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__1-2cdcBEeWqG4ihsdJK7A" name="DFRduino UNO R3" width="20" height="20" resizeKind="NSEW">
         <target xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
         <semanticElements xmi:type="arduino:ArduinoBoard" href="model.arduino#//@board"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2ctcBEeWqG4ihsdJK7A" name="0" tooltipText="Digital pin 0" incomingEdges="__-JT8NcBEeWqG4ihsdJK7A" width="2" height="2">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2ctcBEeWqG4ihsdJK7A" name="0" tooltipText="Digital pin 0" incomingEdges="_K0easNorEeW9o-HFviI_qA" width="2" height="2">
           <target xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.0"/>
           <semanticElements xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="__9xggNcBEeWqG4ihsdJK7A" labelSize="6" showIcon="false" description="__6CQA9cBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__9xggdcBEeWqG4ihsdJK7A"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__9xggtcBEeWqG4ihsdJK7A"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="__9xgg9cBEeWqG4ihsdJK7A" red="235" green="242" blue="187"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_FG4PoNo0EeWYHeEbTsctug" labelSize="6" showIcon="false" description="_E8fkkNo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FG4Podo0EeWYHeEbTsctug"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_FG4Poto0EeWYHeEbTsctug" red="235" green="242" blue="187"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2d9cBEeWqG4ihsdJK7A" name="1" tooltipText="Digital pin 1" incomingEdges="__-KiENcBEeWqG4ihsdJK7A" width="2" height="2">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2d9cBEeWqG4ihsdJK7A" name="1" tooltipText="Digital pin 1" incomingEdges="_K0fBxNorEeW9o-HFviI_qA" width="2" height="2">
           <target xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.1"/>
           <semanticElements xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="__9yuoNcBEeWqG4ihsdJK7A" labelSize="6" showIcon="false" description="__9yHktcBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__9yuodcBEeWqG4ihsdJK7A"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__9yuotcBEeWqG4ihsdJK7A"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="__9yuo9cBEeWqG4ihsdJK7A" red="235" green="242" blue="187"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_FG5dwNo0EeWYHeEbTsctug" labelSize="6" showIcon="false" description="_FG42sNo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FG5dwdo0EeWYHeEbTsctug"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_FG5dwto0EeWYHeEbTsctug" red="235" green="242" blue="187"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2fNcBEeWqG4ihsdJK7A" name="2" tooltipText="Digital pin 2" incomingEdges="__-LwMNcBEeWqG4ihsdJK7A" width="2" height="2">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="__1-2fNcBEeWqG4ihsdJK7A" name="2" tooltipText="Digital pin 2" incomingEdges="_K0fo2NorEeW9o-HFviI_qA" width="2" height="2">
           <target xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.2"/>
           <semanticElements xmi:type="arduino:DigitalPin" href="model.arduino#//@board/@digitalPins.2"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="__9zVsdcBEeWqG4ihsdJK7A" labelSize="6" showIcon="false" description="__9yuptcBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__9zVstcBEeWqG4ihsdJK7A"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__9zVs9cBEeWqG4ihsdJK7A"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="__9zVtNcBEeWqG4ihsdJK7A" red="235" green="242" blue="187"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_FG7S8No0EeWYHeEbTsctug" labelSize="6" showIcon="false" description="_FG6r4No0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FG7S8do0EeWYHeEbTsctug"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_FG7S8to0EeWYHeEbTsctug" red="235" green="242" blue="187"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']"/>
         </ownedBorderedNodes>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__6BB5dcBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" description="__6BB49cBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/dfrduino_uno.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__6Bo8NcBEeWqG4ihsdJK7A" red="209" green="209" blue="209"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__6Bo8dcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_E8dvYNo0EeWYHeEbTsctug" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" description="_E8asENo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/dfrduino_uno.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E8dvYdo0EeWYHeEbTsctug" red="209" green="209" blue="209"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__1-2hNcBEeWqG4ihsdJK7A" name="White LED" outgoingEdges="__-JT8NcBEeWqG4ihsdJK7A" width="8" height="8">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_K0BHsNorEeW9o-HFviI_qA" name="White LED" outgoingEdges="_K0easNorEeW9o-HFviI_qA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
         <semanticElements xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__98foNcBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" description="__974k9cBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__98fodcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__98fotcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FHJ8cNo0EeWYHeEbTsctug" description="_FHJVYNo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FHJ8cdo0EeWYHeEbTsctug"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__1-2iNcBEeWqG4ihsdJK7A" name="Blue LED" outgoingEdges="__-KiENcBEeWqG4ihsdJK7A" width="8" height="8">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_K0K4sNorEeW9o-HFviI_qA" name="Blue LED" outgoingEdges="_K0fBxNorEeW9o-HFviI_qA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
         <semanticElements xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__-FplNcBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" description="__-FpktcBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__-FpldcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__-FpltcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FHKjgdo0EeWYHeEbTsctug" description="_FHKjgNo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FHKjgto0EeWYHeEbTsctug"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__1-2jNcBEeWqG4ihsdJK7A" name="Red LED" outgoingEdges="__-LwMNcBEeWqG4ihsdJK7A" width="8" height="8">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_K0b-cNorEeW9o-HFviI_qA" name="Red LED" outgoingEdges="_K0fo2NorEeW9o-HFviI_qA" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
         <semanticElements xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__-G3tNcBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" description="__-G3stcBEeWqG4ihsdJK7A" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__-G3tdcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__-G3ttcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FHLxodo0EeWYHeEbTsctug" description="_FHLxoNo0EeWYHeEbTsctug" borderSize="1" borderSizeComputationExpression="1" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FHLxoto0EeWYHeEbTsctug"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__-JT8NcBEeWqG4ihsdJK7A" sourceNode="__1-2hNcBEeWqG4ihsdJK7A" targetNode="__1-2ctcBEeWqG4ihsdJK7A">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_K0easNorEeW9o-HFviI_qA" sourceNode="_K0BHsNorEeW9o-HFviI_qA" targetNode="__1-2ctcBEeWqG4ihsdJK7A">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.0/@module"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__-JT99cBEeWqG4ihsdJK7A" description="__-JT9NcBEeWqG4ihsdJK7A" size="2">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="__-J7ANcBEeWqG4ihsdJK7A"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__-J7AdcBEeWqG4ihsdJK7A">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__-J7AtcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_K0fBwNorEeW9o-HFviI_qA" description="_K0eastorEeW9o-HFviI_qA" size="2">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_K0fBwdorEeW9o-HFviI_qA"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_K0fBwtorEeW9o-HFviI_qA">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_K0fBw9orEeW9o-HFviI_qA"/>
           </centerLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__-KiENcBEeWqG4ihsdJK7A" sourceNode="__1-2iNcBEeWqG4ihsdJK7A" targetNode="__1-2d9cBEeWqG4ihsdJK7A">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_K0fBxNorEeW9o-HFviI_qA" sourceNode="_K0K4sNorEeW9o-HFviI_qA" targetNode="__1-2d9cBEeWqG4ihsdJK7A">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.1/@module"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__-LJJdcBEeWqG4ihsdJK7A" description="__-LJItcBEeWqG4ihsdJK7A" size="2">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="__-LJJtcBEeWqG4ihsdJK7A"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__-LJJ9cBEeWqG4ihsdJK7A">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__-LJKNcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_K0fo1NorEeW9o-HFviI_qA" description="_K0fo0dorEeW9o-HFviI_qA" size="2">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_K0fo1dorEeW9o-HFviI_qA"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_K0fo1torEeW9o-HFviI_qA">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_K0fo19orEeW9o-HFviI_qA"/>
           </centerLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__-LwMNcBEeWqG4ihsdJK7A" sourceNode="__1-2jNcBEeWqG4ihsdJK7A" targetNode="__1-2fNcBEeWqG4ihsdJK7A">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_K0fo2NorEeW9o-HFviI_qA" sourceNode="_K0b-cNorEeW9o-HFviI_qA" targetNode="__1-2fNcBEeWqG4ihsdJK7A">
         <target xmi:type="arduino:LED" href="model.arduino#//@board/@digitalPins.2/@module"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__-LwNtcBEeWqG4ihsdJK7A" description="__-LwM9cBEeWqG4ihsdJK7A" size="2">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="__-LwN9cBEeWqG4ihsdJK7A"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__-LwONcBEeWqG4ihsdJK7A">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__-LwOdcBEeWqG4ihsdJK7A"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_K0gP5NorEeW9o-HFviI_qA" description="_K0gP4dorEeW9o-HFviI_qA" size="2">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_K0gP5dorEeW9o-HFviI_qA"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_K0gP5torEeW9o-HFviI_qA">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_K0gP59orEeW9o-HFviI_qA"/>
           </centerLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']"/>
@@ -652,7 +645,7 @@
                               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5BjZNcBEeWqG4ihsdJK7A"/>
                             </children>
                             <styles xmi:type="notation:ShapeStyle" xmi:id="__5A8UdcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5A8UtcBEeWqG4ihsdJK7A" x="30" y="30" width="40" height="40"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5A8UtcBEeWqG4ihsdJK7A" x="42" y="46" width="40" height="40"/>
                           </children>
                           <children xmi:type="notation:Node" xmi:id="__5A8VdcBEeWqG4ihsdJK7A" type="3007" element="__4A22tcBEeWqG4ihsdJK7A">
                             <children xmi:type="notation:Node" xmi:id="__5BjYNcBEeWqG4ihsdJK7A" type="5003">
@@ -663,7 +656,7 @@
                               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5CKctcBEeWqG4ihsdJK7A"/>
                             </children>
                             <styles xmi:type="notation:ShapeStyle" xmi:id="__5A8VtcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5A8V9cBEeWqG4ihsdJK7A" x="100" y="30" width="30" height="30"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5A8V9cBEeWqG4ihsdJK7A" x="6" y="51" width="30" height="30"/>
                           </children>
                           <children xmi:type="notation:Node" xmi:id="_lacWUNcCEeWwXLAYyP_t0w" type="3008" element="___3yQNcBEeWqG4ihsdJK7A">
                             <children xmi:type="notation:Node" xmi:id="_lac9YNcCEeWwXLAYyP_t0w" type="5005"/>
@@ -677,7 +670,7 @@
                                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lalgQtcCEeWwXLAYyP_t0w"/>
                                 </children>
                                 <styles xmi:type="notation:ShapeStyle" xmi:id="_laeykdcCEeWwXLAYyP_t0w" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_laeyktcCEeWwXLAYyP_t0w" x="30" y="30" width="40" height="40"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_laeyktcCEeWwXLAYyP_t0w" x="43" y="20" width="40" height="40"/>
                               </children>
                               <children xmi:type="notation:Node" xmi:id="_lahO0NcCEeWwXLAYyP_t0w" type="3007" element="_AACKUNcCEeWqG4ihsdJK7A">
                                 <children xmi:type="notation:Node" xmi:id="_lahO09cCEeWwXLAYyP_t0w" type="5003">
@@ -688,7 +681,7 @@
                                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lamHUtcCEeWwXLAYyP_t0w"/>
                                 </children>
                                 <styles xmi:type="notation:ShapeStyle" xmi:id="_lahO0dcCEeWwXLAYyP_t0w" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lahO0tcCEeWwXLAYyP_t0w" x="100" y="30" width="30" height="30"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lahO0tcCEeWwXLAYyP_t0w" x="91" y="25" width="30" height="30"/>
                               </children>
                               <children xmi:type="notation:Node" xmi:id="_lakSINcCEeWwXLAYyP_t0w" type="3007" element="_AAYIkNcCEeWqG4ihsdJK7A">
                                 <children xmi:type="notation:Node" xmi:id="_lak5MNcCEeWwXLAYyP_t0w" type="5003">
@@ -699,31 +692,31 @@
                                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lamuYtcCEeWwXLAYyP_t0w"/>
                                 </children>
                                 <styles xmi:type="notation:ShapeStyle" xmi:id="_lakSIdcCEeWwXLAYyP_t0w" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lakSItcCEeWwXLAYyP_t0w" x="190" y="30" width="30" height="30"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lakSItcCEeWwXLAYyP_t0w" x="7" y="25" width="30" height="30"/>
                               </children>
                               <styles xmi:type="notation:SortingStyle" xmi:id="_ladkcdcCEeWwXLAYyP_t0w"/>
                               <styles xmi:type="notation:FilteringStyle" xmi:id="_ladkctcCEeWwXLAYyP_t0w"/>
                             </children>
                             <styles xmi:type="notation:ShapeStyle" xmi:id="_lacWUdcCEeWwXLAYyP_t0w" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true" italic="true"/>
-                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lacWUtcCEeWwXLAYyP_t0w" x="190" y="30"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lacWUtcCEeWwXLAYyP_t0w" x="90" y="30" width="147"/>
                           </children>
                           <styles xmi:type="notation:SortingStyle" xmi:id="__4xrwtcBEeWqG4ihsdJK7A"/>
                           <styles xmi:type="notation:FilteringStyle" xmi:id="__4xrw9cBEeWqG4ihsdJK7A"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="__4xEtdcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true" italic="true"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4xEttcBEeWqG4ihsdJK7A" x="152" y="198"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4xEttcBEeWqG4ihsdJK7A" x="247" y="198" width="254"/>
                       </children>
                       <styles xmi:type="notation:SortingStyle" xmi:id="__4vPhdcBEeWqG4ihsdJK7A"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="__4vPhtcBEeWqG4ihsdJK7A"/>
                     </children>
                     <styles xmi:type="notation:ShapeStyle" xmi:id="__4vPgdcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true" italic="true"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4vPgtcBEeWqG4ihsdJK7A" x="30" y="30" width="748"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4vPgtcBEeWqG4ihsdJK7A" x="7" y="30" width="748"/>
                   </children>
                   <styles xmi:type="notation:SortingStyle" xmi:id="__4uoctcBEeWqG4ihsdJK7A"/>
                   <styles xmi:type="notation:FilteringStyle" xmi:id="__4uoc9cBEeWqG4ihsdJK7A"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="__4uBZ9cBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true" italic="true"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4uBaNcBEeWqG4ihsdJK7A" x="7" y="54" width="795"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4uBaNcBEeWqG4ihsdJK7A" x="7" y="54" width="771"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="__4uodNcBEeWqG4ihsdJK7A" type="3007" element="__4A239cBEeWqG4ihsdJK7A">
                 <children xmi:type="notation:Node" xmi:id="__4uod9cBEeWqG4ihsdJK7A" type="5003">
@@ -740,7 +733,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="__4uBYtcBEeWqG4ihsdJK7A"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="__4szQdcBEeWqG4ihsdJK7A" fontColor="7434616" fontName="Ubuntu" fontHeight="8" bold="true" italic="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4szQtcBEeWqG4ihsdJK7A" x="60" width="819"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__4szQtcBEeWqG4ihsdJK7A" x="60" width="795"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="__4CE4tcBEeWqG4ihsdJK7A"/>
           <edges xmi:type="notation:Edge" xmi:id="_lan8gNcCEeWwXLAYyP_t0w" type="4001" element="_AAzmYNcCEeWqG4ihsdJK7A" source="__4CE49cBEeWqG4ihsdJK7A" target="__4uodNcBEeWqG4ihsdJK7A">
@@ -803,7 +796,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_las1A9cCEeWwXLAYyP_t0w"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_las1BNcCEeWwXLAYyP_t0w" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_las1BdcCEeWwXLAYyP_t0w" points="[8, 91, 248, -74]$[8, 165, 248, 0]$[-19, 165, 221, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_las1BdcCEeWwXLAYyP_t0w" points="[-7, 91, 232, -69]$[-7, 162, 232, 2]$[-113, 161, 126, 1]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_latcEtcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_latcE9cCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
           </edges>
@@ -819,7 +812,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_latcFdcCEeWwXLAYyP_t0w"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_latcFtcCEeWwXLAYyP_t0w" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_latcF9cCEeWwXLAYyP_t0w" points="[-15, 4, -14, -226]$[-102, 33, -101, -197]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_latcF9cCEeWwXLAYyP_t0w" points="[-1, 15, 11, -205]$[-2, 33, 10, -187]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lauDJtcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lauqMNcCEeWwXLAYyP_t0w" id="(0.5,0.5)"/>
           </edges>
@@ -870,6 +863,9 @@
           <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="__4APwtcBEeWqG4ihsdJK7A">
             <target xmi:type="arduino:Block" href="model.arduino#//@sketch/@block/@instructions.1/@block"/>
             <semanticElements xmi:type="arduino:Block" href="model.arduino#//@sketch/@block/@instructions.1/@block"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
             <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="__4APw9cBEeWqG4ihsdJK7A" labelFormat="bold_italic" showIcon="false" backgroundStyle="Liquid">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__4APxNcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
               <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Block']/@style"/>
@@ -1192,6 +1188,9 @@
               <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__4A21dcBEeWqG4ihsdJK7A" name="=" width="4" height="4">
                 <target xmi:type="arduino:VariableAssignment" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3"/>
                 <semanticElements xmi:type="arduino:VariableAssignment" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3"/>
+                <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
                 <ownedStyle xmi:type="diagram:Ellipse" xmi:id="__4A21tcBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
                   <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__4A219cBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
                   <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment']/@subNodeMappings[name='Equal']/@style"/>
@@ -1203,8 +1202,11 @@
               <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__4A22tcBEeWqG4ihsdJK7A" name="n" width="3" height="3" resizeKind="EAST_WEST">
                 <target xmi:type="arduino:IntegerVariable" href="model.arduino#//@sketch/@block/@instructions.0/@variable"/>
                 <semanticElements xmi:type="arduino:IntegerVariable" href="model.arduino#//@sketch/@block/@instructions.0/@variable"/>
-                <ownedStyle xmi:type="diagram:Lozenge" xmi:id="__4A229cBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false">
-                  <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__4A23NcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
+                <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+                <ownedStyle xmi:type="diagram:Lozenge" xmi:id="__4A229cBEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" labelPosition="node">
+                  <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dVOU4NoyEeWMC8agj4Gy4Q" red="240" green="242" blue="220"/>
                   <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment']/@subNodeMappings[name='SK_VariableSubNode']/@style"/>
                   <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__4A23dcBEeWqG4ihsdJK7A" red="214" green="197" blue="66"/>
                   <color xmi:type="viewpoint:RGBValues" xmi:id="__4A23tcBEeWqG4ihsdJK7A" red="114" green="73" blue="110"/>
@@ -1214,6 +1216,9 @@
               <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="___3yQNcBEeWqG4ihsdJK7A" name="(n+1)">
                 <target xmi:type="arduino:BinaryIntegerExpression" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand"/>
                 <semanticElements xmi:type="arduino:BinaryIntegerExpression" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand"/>
+                <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
                 <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="___3yQdcBEeWqG4ihsdJK7A" labelFormat="bold_italic" showIcon="false" backgroundStyle="Liquid">
                   <labelColor xmi:type="viewpoint:RGBValues" xmi:id="___3yQtcBEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
                   <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']/@style"/>
@@ -1225,6 +1230,9 @@
                 <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="___5AYNcBEeWqG4ihsdJK7A" name="+" width="4" height="4">
                   <target xmi:type="arduino:BinaryIntegerExpression" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand"/>
                   <semanticElements xmi:type="arduino:BinaryIntegerExpression" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand"/>
+                  <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                  <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                  <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
                   <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_AABjQNcCEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
                     <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_AABjQdcCEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
                     <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']/@subNodeMappings[name='Operator']/@style"/>
@@ -1236,7 +1244,10 @@
                 <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_AACKUNcCEeWqG4ihsdJK7A" name="int 1" width="3" height="3">
                   <target xmi:type="arduino:IntegerConstant" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand/@right"/>
                   <semanticElements xmi:type="arduino:IntegerConstant" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand/@right"/>
-                  <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_AAXhgNcCEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false">
+                  <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                  <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                  <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+                  <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_AAXhgNcCEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" labelPosition="node">
                     <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_AAXhgdcCEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
                     <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant']/@conditionnalStyles.1/@style"/>
                     <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_AAXhgtcCEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
@@ -1247,8 +1258,11 @@
                 <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_AAYIkNcCEeWqG4ihsdJK7A" name="n" width="3" height="3" resizeKind="EAST_WEST">
                   <target xmi:type="arduino:IntegerVariableRef" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand/@left"/>
                   <semanticElements xmi:type="arduino:IntegerVariableRef" href="model.arduino#//@sketch/@block/@instructions.1/@block/@instructions.3/@operand/@left"/>
-                  <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_AAYIkdcCEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false">
-                    <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_AAYIktcCEeWqG4ihsdJK7A" red="120" green="113" blue="113"/>
+                  <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+                  <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+                  <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+                  <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_AAYIkdcCEeWqG4ihsdJK7A" labelFormat="bold" showIcon="false" labelPosition="node">
+                    <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dU3vkNoyEeWMC8agj4Gy4Q" red="240" green="242" blue="220"/>
                     <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/fr.obeo.dsl.arduino.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableRef']/@style"/>
                     <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_AAYIk9cCEeWqG4ihsdJK7A" red="214" green="197" blue="66"/>
                     <color xmi:type="viewpoint:RGBValues" xmi:id="_AAYIlNcCEeWqG4ihsdJK7A" red="114" green="73" blue="110"/>

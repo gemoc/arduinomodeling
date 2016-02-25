@@ -107,8 +107,10 @@ public class AnalogPinItemProvider extends PinItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		AnalogPin analogPin = (AnalogPin)object;
-		return getString("_UI_AnalogPin_type") + " " + analogPin.getId();
+		String label = ((AnalogPin)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AnalogPin_type") :
+			getString("_UI_AnalogPin_type") + " " + label;
 	}
 	
 

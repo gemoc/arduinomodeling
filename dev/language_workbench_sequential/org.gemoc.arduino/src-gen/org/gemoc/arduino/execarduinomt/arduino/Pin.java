@@ -2,7 +2,6 @@
  */
 package org.gemoc.arduino.execarduinomt.arduino;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.gemoc.arduino.execarduinomt.arduino.Pin#getId <em>Id</em>}</li>
  *   <li>{@link org.gemoc.arduino.execarduinomt.arduino.Pin#getLevel <em>Level</em>}</li>
  * </ul>
  * </p>
@@ -21,33 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Pin extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(int)
-	 * @see org.gemoc.arduino.execarduinomt.arduino.ArduinoPackage#getPin_Id()
-	 * @model
-	 * @generated
-	 */
-	int getId();
-
-	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.execarduinomt.arduino.Pin#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(int value);
-
+public interface Pin extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->

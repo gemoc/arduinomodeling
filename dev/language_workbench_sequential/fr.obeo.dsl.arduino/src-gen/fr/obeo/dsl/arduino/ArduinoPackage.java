@@ -149,22 +149,13 @@ public interface ArduinoPackage extends EPackage {
 	int MODULE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODULE__LEVEL = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.PinImpl <em>Pin</em>}' class.
@@ -177,13 +168,13 @@ public interface ArduinoPackage extends EPackage {
 	int PIN = 3;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__ID = 0;
+	int PIN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Pin</em>' class.
@@ -192,7 +183,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_FEATURE_COUNT = 1;
+	int PIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.DigitalPinImpl <em>Digital Pin</em>}' class.
@@ -205,13 +196,13 @@ public interface ArduinoPackage extends EPackage {
 	int DIGITAL_PIN = 2;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIGITAL_PIN__ID = PIN__ID;
+	int DIGITAL_PIN__NAME = PIN__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -242,13 +233,13 @@ public interface ArduinoPackage extends EPackage {
 	int ANALOG_PIN = 4;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALOG_PIN__ID = PIN__ID;
+	int ANALOG_PIN__NAME = PIN__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -306,13 +297,22 @@ public interface ArduinoPackage extends EPackage {
 	int SKETCH__BLOCK = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Board</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKETCH__BOARD = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Sketch</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKETCH_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SKETCH_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ProjectImpl <em>Project</em>}' class.
@@ -325,22 +325,22 @@ public interface ArduinoPackage extends EPackage {
 	int PROJECT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Board</b></em>' containment reference.
+	 * The feature id for the '<em><b>Boards</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__BOARD = 0;
+	int PROJECT__BOARDS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sketch</b></em>' containment reference.
+	 * The feature id for the '<em><b>Sketches</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__SKETCH = 1;
+	int PROJECT__SKETCHES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Project</em>' class.
@@ -1448,15 +1448,6 @@ public interface ArduinoPackage extends EPackage {
 	int ARDUINO_MODULE__NAME = MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARDUINO_MODULE__LEVEL = MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1505,15 +1496,6 @@ public interface ArduinoPackage extends EPackage {
 	int ARDUINO_DIGITAL_MODULE__NAME = ARDUINO_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARDUINO_DIGITAL_MODULE__LEVEL = ARDUINO_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Digital Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1530,15 +1512,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int LED__NAME = ARDUINO_DIGITAL_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LED__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -1568,15 +1541,6 @@ public interface ArduinoPackage extends EPackage {
 	int PUSH_BUTTON__NAME = ARDUINO_DIGITAL_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH_BUTTON__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Push Button</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1593,15 +1557,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int BUZZER__NAME = ARDUINO_DIGITAL_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUZZER__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Buzzer</em>' class.
@@ -1632,15 +1587,6 @@ public interface ArduinoPackage extends EPackage {
 	int ARDUINO_ANALOG_MODULE__NAME = ARDUINO_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARDUINO_ANALOG_MODULE__LEVEL = ARDUINO_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Analog Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1657,15 +1603,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROTATION_SENSOR__NAME = ARDUINO_ANALOG_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROTATION_SENSOR__LEVEL = ARDUINO_ANALOG_MODULE__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Rotation Sensor</em>' class.
@@ -1686,15 +1623,6 @@ public interface ArduinoPackage extends EPackage {
 	int MICRO_SERVO__NAME = ARDUINO_DIGITAL_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MICRO_SERVO__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Micro Servo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1711,15 +1639,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int INFRA_RED_SENSOR__NAME = ARDUINO_DIGITAL_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFRA_RED_SENSOR__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Infra Red Sensor</em>' class.
@@ -1740,15 +1659,6 @@ public interface ArduinoPackage extends EPackage {
 	int AMBIENT_LIGHT_SENSOR__NAME = ARDUINO_ANALOG_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMBIENT_LIGHT_SENSOR__LEVEL = ARDUINO_ANALOG_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Ambient Light Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1765,15 +1675,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOUND_SENSOR__NAME = ARDUINO_ANALOG_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUND_SENSOR__LEVEL = ARDUINO_ANALOG_MODULE__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Sound Sensor</em>' class.
@@ -1794,15 +1695,6 @@ public interface ArduinoPackage extends EPackage {
 	int FAN__NAME = ARDUINO_DIGITAL_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FAN__LEVEL = ARDUINO_DIGITAL_MODULE__LEVEL;
-
-	/**
 	 * The number of structural features of the '<em>Fan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1819,15 +1711,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MUSIC_PLAYER__NAME = ARDUINO_ANALOG_MODULE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MUSIC_PLAYER__LEVEL = ARDUINO_ANALOG_MODULE__LEVEL;
 
 	/**
 	 * The number of structural features of the '<em>Music Player</em>' class.
@@ -2023,17 +1906,6 @@ public interface ArduinoPackage extends EPackage {
 	EClass getModule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Module#isLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see fr.obeo.dsl.arduino.Module#isLevel()
-	 * @see #getModule()
-	 * @generated
-	 */
-	EAttribute getModule_Level();
-
-	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.DigitalPin <em>Digital Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2063,17 +1935,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Pin#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see fr.obeo.dsl.arduino.Pin#getId()
-	 * @see #getPin()
-	 * @generated
-	 */
-	EAttribute getPin_Id();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.AnalogPin <em>Analog Pin</em>}'.
@@ -2129,6 +1990,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getSketch_Block();
 
 	/**
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.Sketch#getBoard <em>Board</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Board</em>'.
+	 * @see fr.obeo.dsl.arduino.Sketch#getBoard()
+	 * @see #getSketch()
+	 * @generated
+	 */
+	EReference getSketch_Board();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2139,26 +2011,26 @@ public interface ArduinoPackage extends EPackage {
 	EClass getProject();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.obeo.dsl.arduino.Project#getBoard <em>Board</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.obeo.dsl.arduino.Project#getBoards <em>Boards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Board</em>'.
-	 * @see fr.obeo.dsl.arduino.Project#getBoard()
+	 * @return the meta object for the containment reference list '<em>Boards</em>'.
+	 * @see fr.obeo.dsl.arduino.Project#getBoards()
 	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getProject_Board();
+	EReference getProject_Boards();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.obeo.dsl.arduino.Project#getSketch <em>Sketch</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.obeo.dsl.arduino.Project#getSketches <em>Sketches</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Sketch</em>'.
-	 * @see fr.obeo.dsl.arduino.Project#getSketch()
+	 * @return the meta object for the containment reference list '<em>Sketches</em>'.
+	 * @see fr.obeo.dsl.arduino.Project#getSketches()
 	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getProject_Sketch();
+	EReference getProject_Sketches();
 
 	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Instruction <em>Instruction</em>}'.
@@ -3091,14 +2963,6 @@ public interface ArduinoPackage extends EPackage {
 		EClass MODULE = eINSTANCE.getModule();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODULE__LEVEL = eINSTANCE.getModule_Level();
-
-		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.DigitalPinImpl <em>Digital Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3125,14 +2989,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PIN = eINSTANCE.getPin();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PIN__ID = eINSTANCE.getPin_Id();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.AnalogPinImpl <em>Analog Pin</em>}' class.
@@ -3179,6 +3035,14 @@ public interface ArduinoPackage extends EPackage {
 		EReference SKETCH__BLOCK = eINSTANCE.getSketch_Block();
 
 		/**
+		 * The meta object literal for the '<em><b>Board</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SKETCH__BOARD = eINSTANCE.getSketch_Board();
+
+		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.ProjectImpl <em>Project</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3189,20 +3053,20 @@ public interface ArduinoPackage extends EPackage {
 		EClass PROJECT = eINSTANCE.getProject();
 
 		/**
-		 * The meta object literal for the '<em><b>Board</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Boards</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROJECT__BOARD = eINSTANCE.getProject_Board();
+		EReference PROJECT__BOARDS = eINSTANCE.getProject_Boards();
 
 		/**
-		 * The meta object literal for the '<em><b>Sketch</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Sketches</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROJECT__SKETCH = eINSTANCE.getProject_Sketch();
+		EReference PROJECT__SKETCHES = eINSTANCE.getProject_Sketches();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.InstructionImpl <em>Instruction</em>}' class.

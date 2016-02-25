@@ -2,6 +2,8 @@
  */
 package org.gemoc.arduino.arduinomt.arduino;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Project#getBoard <em>Board</em>}</li>
- *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Project#getSketch <em>Sketch</em>}</li>
+ *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Project#getBoards <em>Boards</em>}</li>
+ *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Project#getSketches <em>Sketches</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,59 +25,39 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Project extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Board</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Boards</b></em>' containment reference list.
+	 * The list contents are of type {@link org.gemoc.arduino.arduinomt.arduino.Board}.
 	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.arduinomt.arduino.Board#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Board</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Boards</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Board</em>' containment reference.
-	 * @see #setBoard(Board)
-	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getProject_Board()
+	 * @return the value of the '<em>Boards</em>' containment reference list.
+	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getProject_Boards()
 	 * @see org.gemoc.arduino.arduinomt.arduino.Board#getProject
 	 * @model opposite="project" containment="true"
 	 * @generated
 	 */
-	Board getBoard();
+	EList<Board> getBoards();
 
 	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.arduinomt.arduino.Project#getBoard <em>Board</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Board</em>' containment reference.
-	 * @see #getBoard()
-	 * @generated
-	 */
-	void setBoard(Board value);
-
-	/**
-	 * Returns the value of the '<em><b>Sketch</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Sketches</b></em>' containment reference list.
+	 * The list contents are of type {@link org.gemoc.arduino.arduinomt.arduino.Sketch}.
 	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.arduinomt.arduino.Sketch#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sketch</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Sketches</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sketch</em>' containment reference.
-	 * @see #setSketch(Sketch)
-	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getProject_Sketch()
+	 * @return the value of the '<em>Sketches</em>' containment reference list.
+	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getProject_Sketches()
 	 * @see org.gemoc.arduino.arduinomt.arduino.Sketch#getProject
 	 * @model opposite="project" containment="true"
 	 * @generated
 	 */
-	Sketch getSketch();
-
-	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.arduinomt.arduino.Project#getSketch <em>Sketch</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sketch</em>' containment reference.
-	 * @see #getSketch()
-	 * @generated
-	 */
-	void setSketch(Sketch value);
+	EList<Sketch> getSketches();
 
 } // Project

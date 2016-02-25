@@ -15,6 +15,7 @@
 <booleanAttribute key="Open Multidimentional Timeline view" value="true"/>
 <stringAttribute key="Resource" value="/ifdemo/model.arduino"/>
 <booleanAttribute key="VCD visualization" value="false"/>
+<booleanAttribute key="activitydiagram MultiDimensional Trace" value="false"/>
 <booleanAttribute key="activitydiagramTrace Addon" value="false"/>
 <stringAttribute key="airdResource" value="/ifdemo/model.aird"/>
 <booleanAttribute key="arduino MultiDimensional Trace" value="true"/>

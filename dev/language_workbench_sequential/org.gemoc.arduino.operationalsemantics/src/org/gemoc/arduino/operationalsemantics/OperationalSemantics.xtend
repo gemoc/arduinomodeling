@@ -60,9 +60,9 @@ class Instruction_ExecutableAspect {
 @Aspect(className=Project)
 class Project_ExecutableAspect {
 	def void execute() {
-		val sketch = _self.sketch
+		val sketches = _self.sketches
 		while(true) {
-			sketch.block.execute
+			sketches.forEach[s|s.block.execute]
 		}
 	}
 	
@@ -128,7 +128,7 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
-		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
+		val pin = ArduinoUtils.getPin(_self.module)
 		if (_self.operand instanceof IntegerExpression){
 			pin.level = _self.operand.evaluate as Integer
 		}
@@ -329,7 +329,7 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 //			println(res);
 //			return res;
 //		}
-		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
+		val pin = ArduinoUtils.getPin(_self.module)
 		if (pin.level == 0){
 			return false
 		}
@@ -357,7 +357,7 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
-		val pin = ArduinoUtils.getPin(ArduinoUtils.getContainingProject(_self),_self.module)
+		val pin = ArduinoUtils.getPin(_self.module)
 		return pin.level	
 	}
 }

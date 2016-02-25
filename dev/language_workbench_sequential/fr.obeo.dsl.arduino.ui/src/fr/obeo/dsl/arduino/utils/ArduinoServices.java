@@ -119,7 +119,7 @@ public class ArduinoServices {
 
 					String arduinoSdk = preferences.getArduinoSdk();
 					String serialPort = preferences.getArduinoSerialPort();
-					String boardTag = sketch.getProject().getBoard().getName();
+					String boardTag = sketch.getBoard().getName();
 					String workingDirectory = genFolder.toString();
 					ArduinoBuilder builder = new ArduinoBuilder(arduinoSdk,
 							boardTag, workingDirectory, serialPort);
@@ -221,15 +221,19 @@ public class ArduinoServices {
 		if (project == null) {
 			return false;
 		}
-		Sketch sketch = project.getSketch();
-		if (sketch == null) {
+		List<Sketch> sketches = project.getSketches(); 
+		if (sketches.isEmpty()) {
 			return false;
 		}
-		return isValidSketch(sketch);
+		boolean result = true;
+		for (Sketch sketch : sketches) {
+			result = result && isValidSketch(sketch);
+		}
+		return result;
 	}
 
 	public boolean isValidHardware() {
 		Project project = getArduinoProject();
-		return !(project == null || project.getBoard() == null);
+		return !(project == null || project.getBoards().isEmpty());
 	}
 }

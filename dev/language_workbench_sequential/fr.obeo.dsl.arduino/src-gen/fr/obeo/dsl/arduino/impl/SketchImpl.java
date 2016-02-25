@@ -12,6 +12,7 @@ package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Block;
+import fr.obeo.dsl.arduino.Board;
 import fr.obeo.dsl.arduino.Instruction;
 import fr.obeo.dsl.arduino.Project;
 import fr.obeo.dsl.arduino.Sketch;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getProject <em>Project</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getBlock <em>Block</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.SketchImpl#getBoard <em>Board</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,15 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * @ordered
 	 */
 	protected Block block;
+	/**
+	 * The cached value of the '{@link #getBoard() <em>Board</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBoard()
+	 * @generated
+	 * @ordered
+	 */
+	protected Board board;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,7 +118,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProject != null)
-				msgs = ((InternalEObject)newProject).eInverseAdd(this, ArduinoPackage.PROJECT__SKETCH, Project.class, msgs);
+				msgs = ((InternalEObject)newProject).eInverseAdd(this, ArduinoPackage.PROJECT__SKETCHES, Project.class, msgs);
 			msgs = basicSetProject(newProject, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -163,6 +174,44 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Board getBoard() {
+		if (board != null && board.eIsProxy()) {
+			InternalEObject oldBoard = (InternalEObject)board;
+			board = (Board)eResolveProxy(oldBoard);
+			if (board != oldBoard) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.SKETCH__BOARD, oldBoard, board));
+			}
+		}
+		return board;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Board basicGetBoard() {
+		return board;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBoard(Board newBoard) {
+		Board oldBoard = board;
+		board = newBoard;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SKETCH__BOARD, oldBoard, board));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -199,7 +248,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ArduinoPackage.SKETCH__PROJECT:
-				return eInternalContainer().eInverseRemove(this, ArduinoPackage.PROJECT__SKETCH, Project.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ArduinoPackage.PROJECT__SKETCHES, Project.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -216,6 +265,9 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 				return getProject();
 			case ArduinoPackage.SKETCH__BLOCK:
 				return getBlock();
+			case ArduinoPackage.SKETCH__BOARD:
+				if (resolve) return getBoard();
+				return basicGetBoard();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,6 +287,9 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 			case ArduinoPackage.SKETCH__BLOCK:
 				setBlock((Block)newValue);
 				return;
+			case ArduinoPackage.SKETCH__BOARD:
+				setBoard((Board)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -253,6 +308,9 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 			case ArduinoPackage.SKETCH__BLOCK:
 				setBlock((Block)null);
 				return;
+			case ArduinoPackage.SKETCH__BOARD:
+				setBoard((Board)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,6 +327,8 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 				return getProject() != null;
 			case ArduinoPackage.SKETCH__BLOCK:
 				return block != null;
+			case ArduinoPackage.SKETCH__BOARD:
+				return board != null;
 		}
 		return super.eIsSet(featureID);
 	}

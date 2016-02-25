@@ -13,6 +13,7 @@ package org.gemoc.arduino.arduinomt.arduino;
  * <ul>
  *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Sketch#getProject <em>Project</em>}</li>
  *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Sketch#getBlock <em>Block</em>}</li>
+ *   <li>{@link org.gemoc.arduino.arduinomt.arduino.Sketch#getBoard <em>Board</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,7 +24,7 @@ package org.gemoc.arduino.arduinomt.arduino;
 public interface Sketch extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Project</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.arduinomt.arduino.Project#getSketch <em>Sketch</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.arduinomt.arduino.Project#getSketches <em>Sketches</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Project</em>' container reference isn't clear,
@@ -33,8 +34,8 @@ public interface Sketch extends NamedElement {
 	 * @return the value of the '<em>Project</em>' container reference.
 	 * @see #setProject(Project)
 	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getSketch_Project()
-	 * @see org.gemoc.arduino.arduinomt.arduino.Project#getSketch
-	 * @model opposite="sketch" required="true" transient="false"
+	 * @see org.gemoc.arduino.arduinomt.arduino.Project#getSketches
+	 * @model opposite="sketches" required="true" transient="false"
 	 * @generated
 	 */
 	Project getProject();
@@ -74,5 +75,31 @@ public interface Sketch extends NamedElement {
 	 * @generated
 	 */
 	void setBlock(Block value);
+
+	/**
+	 * Returns the value of the '<em><b>Board</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Board</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Board</em>' reference.
+	 * @see #setBoard(Board)
+	 * @see org.gemoc.arduino.arduinomt.arduino.ArduinoPackage#getSketch_Board()
+	 * @model
+	 * @generated
+	 */
+	Board getBoard();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.arduino.arduinomt.arduino.Sketch#getBoard <em>Board</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Board</em>' reference.
+	 * @see #getBoard()
+	 * @generated
+	 */
+	void setBoard(Board value);
 
 } // Sketch

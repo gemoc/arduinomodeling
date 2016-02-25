@@ -34,9 +34,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 
 	public Integer getLevel(Module module) {
-		final Project project = getUserRootProject(module);
-		
-		return getLevel(ArduinoUtils.getPin(project,module));
+		return ArduinoUtils.getPin(module).getLevel();
 	}
 
 	protected Project getUserRootProject(EObject obj){
@@ -51,6 +49,10 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	
 	public Integer getLevel(Board platform) {
 		return 0;
+	}
+	
+	public boolean isModuleOn(Module module) {
+		return ArduinoUtils.getPin(module).getLevel() > 0;
 	}
 	
 	public String getSimulatingImage(Module module) {

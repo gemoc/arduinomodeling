@@ -22,7 +22,7 @@ package org.gemoc.arduino.execarduinomt.arduino;
 public interface Board extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Project</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.execarduinomt.arduino.Project#getBoard <em>Board</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.execarduinomt.arduino.Project#getBoards <em>Boards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Project</em>' container reference isn't clear,
@@ -32,8 +32,8 @@ public interface Board extends NamedElement {
 	 * @return the value of the '<em>Project</em>' container reference.
 	 * @see #setProject(Project)
 	 * @see org.gemoc.arduino.execarduinomt.arduino.ArduinoPackage#getBoard_Project()
-	 * @see org.gemoc.arduino.execarduinomt.arduino.Project#getBoard
-	 * @model opposite="board" required="true" transient="false"
+	 * @see org.gemoc.arduino.execarduinomt.arduino.Project#getBoards
+	 * @model opposite="boards" required="true" transient="false"
 	 * @generated
 	 */
 	Project getProject();
