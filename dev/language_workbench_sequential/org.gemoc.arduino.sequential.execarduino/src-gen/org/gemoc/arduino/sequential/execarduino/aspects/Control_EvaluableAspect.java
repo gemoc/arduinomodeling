@@ -11,10 +11,10 @@ public class Control_EvaluableAspect extends Instruction_ExecutableAspect {
   public static Boolean evaluate(final Control _self) {
     org.gemoc.arduino.sequential.execarduino.aspects.Control_EvaluableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.execarduino.aspects.Control_EvaluableAspectControlAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.While){
-    result = org.gemoc.arduino.sequential.execarduino.aspects.While_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.execarduino.arduino.While)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.If){
+     if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.If){
     result = org.gemoc.arduino.sequential.execarduino.aspects.If_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.execarduino.arduino.If)_self);
+    } else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.While){
+    result = org.gemoc.arduino.sequential.execarduino.aspects.While_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.execarduino.arduino.While)_self);
     } else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.Repeat){
     result = org.gemoc.arduino.sequential.execarduino.aspects.Repeat_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.execarduino.arduino.Repeat)_self);
     } else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.Control){

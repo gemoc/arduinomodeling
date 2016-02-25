@@ -93,14 +93,14 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="//Control">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eOperations name="evaluate">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     </eOperations>
     <eOperations name="finalize">
-      <eAnnotations source="aspect"/>
-    </eOperations>
-    <eOperations name="execute">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iteration" defaultValueLiteral="5">
@@ -167,12 +167,12 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="//Control">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eOperations name="evaluate">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
-    </eOperations>
-    <eOperations name="execute">
-      <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//BooleanExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="//Block" containment="true"/>
