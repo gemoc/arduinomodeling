@@ -1,11 +1,10 @@
-package org.gemoc.arduino.design;
+package org.gemoc.arduino.sequential.design;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.gemoc.arduino.sequential.execarduino.arduino.Project;
-
 
 /**
  * Utility for arduino designer.

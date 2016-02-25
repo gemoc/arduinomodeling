@@ -15,10 +15,10 @@ Contributors:
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>fr.obeo.dsl.arduino</groupId>
+    <groupId>org.gemoc.arduino.sequential</groupId>
     <artifactId>parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../releng/fr.obeo.dsl.arduino.parent</relativePath>
+    <relativePath>../../releng/org.gemoc.arduino.sequential.parent</relativePath>
   </parent>
 
   <artifactId>org.gemoc.arduino.design</artifactId>

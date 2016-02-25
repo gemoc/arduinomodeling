@@ -35,58 +35,58 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
-import org.gemoc.arduino.execarduino.arduino.AnalogPin;
-import org.gemoc.arduino.execarduino.arduino.ArduinoAnalogModule;
-import org.gemoc.arduino.execarduino.arduino.ArduinoBoard;
-import org.gemoc.arduino.execarduino.arduino.ArduinoDigitalModule;
-import org.gemoc.arduino.execarduino.arduino.ArduinoFactory;
-import org.gemoc.arduino.execarduino.arduino.BinaryBooleanExpression;
-import org.gemoc.arduino.execarduino.arduino.BinaryBooleanOperatorKind;
-import org.gemoc.arduino.execarduino.arduino.BinaryExpression;
-import org.gemoc.arduino.execarduino.arduino.BinaryIntegerExpression;
-import org.gemoc.arduino.execarduino.arduino.BinaryIntegerOperatorKind;
-import org.gemoc.arduino.execarduino.arduino.Block;
-import org.gemoc.arduino.execarduino.arduino.Board;
-import org.gemoc.arduino.execarduino.arduino.BooleanConstant;
-import org.gemoc.arduino.execarduino.arduino.BooleanExpression;
-import org.gemoc.arduino.execarduino.arduino.BooleanModuleGet;
-import org.gemoc.arduino.execarduino.arduino.BooleanVariable;
-import org.gemoc.arduino.execarduino.arduino.BooleanVariableRef;
-import org.gemoc.arduino.execarduino.arduino.Constant;
-import org.gemoc.arduino.execarduino.arduino.DigitalPin;
-import org.gemoc.arduino.execarduino.arduino.Expression;
-import org.gemoc.arduino.execarduino.arduino.If;
-import org.gemoc.arduino.execarduino.arduino.Instruction;
-import org.gemoc.arduino.execarduino.arduino.IntegerConstant;
-import org.gemoc.arduino.execarduino.arduino.IntegerModuleGet;
-import org.gemoc.arduino.execarduino.arduino.IntegerVariable;
-import org.gemoc.arduino.execarduino.arduino.IntegerVariableRef;
-import org.gemoc.arduino.execarduino.arduino.LED;
-import org.gemoc.arduino.execarduino.arduino.Module;
-import org.gemoc.arduino.execarduino.arduino.ModuleAssignment;
-import org.gemoc.arduino.execarduino.arduino.ModuleGet;
-import org.gemoc.arduino.execarduino.arduino.ModuleInstruction;
-import org.gemoc.arduino.execarduino.arduino.Pin;
-import org.gemoc.arduino.execarduino.arduino.Project;
-import org.gemoc.arduino.execarduino.arduino.Sketch;
-import org.gemoc.arduino.execarduino.arduino.UnaryBooleanExpression;
-import org.gemoc.arduino.execarduino.arduino.UnaryBooleanOperatorKind;
-import org.gemoc.arduino.execarduino.arduino.UnaryExpression;
-import org.gemoc.arduino.execarduino.arduino.UnaryIntegerExpression;
-import org.gemoc.arduino.execarduino.arduino.UnaryIntegerOperatorKind;
-import org.gemoc.arduino.execarduino.arduino.Variable;
-import org.gemoc.arduino.execarduino.arduino.VariableAssignment;
-import org.gemoc.arduino.execarduino.arduino.VariableDeclaration;
-import org.gemoc.arduino.execarduino.arduino.VariableRef;
-import org.gemoc.arduino.execarduino.arduino.While;
-import org.gemoc.arduino.execarduino.aspects.ArduinoUtils;
+import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
+import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
+import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
+import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoDigitalModule;
+import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoFactory;
+import org.gemoc.arduino.sequential.execarduino.arduino.BinaryBooleanExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.BinaryBooleanOperatorKind;
+import org.gemoc.arduino.sequential.execarduino.arduino.BinaryExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerOperatorKind;
+import org.gemoc.arduino.sequential.execarduino.arduino.Block;
+import org.gemoc.arduino.sequential.execarduino.arduino.Board;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanConstant;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanModuleGet;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariableRef;
+import org.gemoc.arduino.sequential.execarduino.arduino.Constant;
+import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
+import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
+import org.gemoc.arduino.sequential.execarduino.arduino.If;
+import org.gemoc.arduino.sequential.execarduino.arduino.Instruction;
+import org.gemoc.arduino.sequential.execarduino.arduino.IntegerConstant;
+import org.gemoc.arduino.sequential.execarduino.arduino.IntegerModuleGet;
+import org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable;
+import org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariableRef;
+import org.gemoc.arduino.sequential.execarduino.arduino.LED;
+import org.gemoc.arduino.sequential.execarduino.arduino.Module;
+import org.gemoc.arduino.sequential.execarduino.arduino.ModuleAssignment;
+import org.gemoc.arduino.sequential.execarduino.arduino.ModuleGet;
+import org.gemoc.arduino.sequential.execarduino.arduino.ModuleInstruction;
+import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
+import org.gemoc.arduino.sequential.execarduino.arduino.Project;
+import org.gemoc.arduino.sequential.execarduino.arduino.Sketch;
+import org.gemoc.arduino.sequential.execarduino.arduino.UnaryBooleanExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.UnaryBooleanOperatorKind;
+import org.gemoc.arduino.sequential.execarduino.arduino.UnaryExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.UnaryIntegerExpression;
+import org.gemoc.arduino.sequential.execarduino.arduino.UnaryIntegerOperatorKind;
+import org.gemoc.arduino.sequential.execarduino.arduino.Variable;
+import org.gemoc.arduino.sequential.execarduino.arduino.VariableAssignment;
+import org.gemoc.arduino.sequential.execarduino.arduino.VariableDeclaration;
+import org.gemoc.arduino.sequential.execarduino.arduino.VariableRef;
+import org.gemoc.arduino.sequential.execarduino.arduino.While;
+import org.gemoc.arduino.sequential.execarduino.aspects.ArduinoUtils;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 public class ArduinoServices {
 
-	private static final String IMAGES_PATH = "/fr.obeo.dsl.arduino.design/images/";
+	private static final String IMAGES_PATH = "/org.gemoc.arduino.sequential.design/images/";
 
 	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
@@ -179,9 +179,9 @@ public class ArduinoServices {
 			}
 		}
 		switch (led.getColor()) {
-		case BLUE: return "/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg";
-		case RED: return "/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg";
-		case WHITE: return "/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg";
+		case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg";
+		case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
+		case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
 		}
 		return "";
 	}
@@ -843,8 +843,8 @@ public class ArduinoServices {
 	}
 
 	public String getImage(ModuleInstruction instruction) {
-		return "/fr.obeo.dsl.arduino.design/images/default.svg";
-		// return "/fr.obeo.dsl.arduino.design/images/"
+		return "/org.gemoc.arduino.sequential.design/images/default.svg";
+		// return "/org.gemoc.arduino.sequential.design/images/"
 		// + instruction.getModule().getImage();
 	}
 
@@ -857,8 +857,8 @@ public class ArduinoServices {
 		//
 		// }
 		// }
-		return "/fr.obeo.dsl.arduino.design/images/default.svg";
-		// return "/fr.obeo.dsl.arduino.design/images/"
+		return "/org.gemoc.arduino.sequential.design/images/default.svg";
+		// return "/org.gemoc.arduino.sequential.design/images/"
 		// + instruction.getModule().getImage();
 	}
 

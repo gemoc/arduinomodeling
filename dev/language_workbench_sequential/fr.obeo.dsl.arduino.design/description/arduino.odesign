@@ -5,12 +5,12 @@
       <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HL_Module" domainClass="arduino.ArduinoModule">
-          <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/digital_output.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/digital_output.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="[oclIsKindOf(ArduinoAnalogModule)/]">
-            <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/analog_output.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/analog_output.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -18,20 +18,20 @@
         </nodeMappings>
         <containerMappings name="HL_Board" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Named%20Element']" domainClass="arduino.ArduinoBoard" childrenPresentation="List">
           <subNodeMappings name="HD_DigitalPins" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Digital%20Pin']" semanticCandidatesExpression="var:self" domainClass="arduino.ArduinoBoard">
-            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[digitalPins->size()/]" iconPath="/fr.obeo.dsl.arduino.design/images/digital.png" tooltipExpression="Number of digital pins" sizeComputationExpression="1" labelPosition="node">
+            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[digitalPins->size()/]" iconPath="/org.gemoc.arduino.sequential.design/images/digital.png" tooltipExpression="Number of digital pins" sizeComputationExpression="1" labelPosition="node">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="HD_AnalogPins" deletionDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete']" labelDirectEdit="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Analog%20Pin']" semanticCandidatesExpression="var:self" domainClass="arduino.ArduinoBoard">
-            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[analogPins->size()/]" iconPath="/fr.obeo.dsl.arduino.design/images/analog.png" tooltipExpression="Number of analog pins" labelPosition="node">
+            <style xsi:type="style:SquareDescription" labelFormat="bold" labelExpression="[analogPins->size()/]" iconPath="/org.gemoc.arduino.sequential.design/images/analog.png" tooltipExpression="Number of analog pins" labelPosition="node">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelFormat="bold" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" roundedCorner="true" backgroundStyle="Liquid">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelFormat="bold" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" roundedCorner="true" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
@@ -39,7 +39,7 @@
           </style>
         </containerMappings>
         <toolSections name="Create">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Platform" label="Platform" containerMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@containerMappings[name='HL_Board']" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Platform" label="Platform" containerMappings="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentations[name='Hardware%20Kit%20Definition']/@defaultLayer/@containerMappings[name='HL_Board']" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -70,7 +70,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[updateDigitalPins(arg0)/]"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Digital Module" label="Digital Output" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']" iconPath="/fr.obeo.dsl.arduino.design/images/digital_output.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Digital Module" label="Digital Output" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']" iconPath="/org.gemoc.arduino.sequential.design/images/digital_output.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -82,7 +82,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Input Module" label="Analog Input" iconPath="/fr.obeo.dsl.arduino.design/images/analog_input.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Input Module" label="Analog Input" iconPath="/org.gemoc.arduino.sequential.design/images/analog_input.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -94,7 +94,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Output Module" label="Analog Output" iconPath="/fr.obeo.dsl.arduino.design/images/analog_output.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Analog Output Module" label="Analog Output" iconPath="/org.gemoc.arduino.sequential.design/images/analog_output.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -115,11 +115,11 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Extended Dashboard" viewpointURI="viewpoint:/fr.obeo.dsl.arduino.design/Arduino" representationName="Dashboard">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Extended Dashboard" viewpointURI="viewpoint:/org.gemoc.arduino.sequential.design/Arduino" representationName="Dashboard">
       <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <layers name="Hardware kit" activeByDefault="true">
         <nodeMappings name="Hardware kit" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentationExtensions[name='Extended%20Dashboard']/@layers[name='Hardware%20kit']/@toolSections.0/@ownedTools[name='Hardware%20kit']" domainClass="arduino.Project">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="0" sizeComputationExpression="20" workspacePath="/fr.obeo.dsl.arduino.design/images/hardwareKit.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="0" sizeComputationExpression="20" workspacePath="/org.gemoc.arduino.sequential.design/images/hardwareKit.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -155,7 +155,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" iconPath="/fr.obeo.dsl.arduino.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/dfrduino_uno.jpg">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
@@ -166,31 +166,31 @@
           </style>
         </nodeMappings>
         <nodeMappings name="HW_PushButton" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.PushButton">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/push_button.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/push_button.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_Buzzer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino..Buzzer">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/buzzer.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/buzzer.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_RotationSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.RotationSensor">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/rotation_sensor_v1.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/rotation_sensor_v1.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_MicroServo" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.MicroServo">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/servo.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/servo.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_InfraRedSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.InfraRedSensor">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/infrared.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/infrared.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_AmbientLightSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.AmbientLightSensor">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/ambient_light.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/ambient_light.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_SoundSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.SoundSensor">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/sound_sensor.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/sound_sensor.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_Fan" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.Fan">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/fan.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/fan.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_MusicPlayer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.MusicPlayer">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/fr.obeo.dsl.arduino.design/images/music_player.jpg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/music_player.jpg"/>
         </nodeMappings>
         <edgeMappings name="HW_Wire" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_AmbientLightSensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Buzzer'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Fan'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_InfraRedSensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_MicroServo'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_MusicPlayer'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_PushButton'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_RotationSensor'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_SoundSensor']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_AnalogPin'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']" targetFinderExpression="service:getConnectedPin">
           <style sizeComputationExpression="2">
@@ -201,7 +201,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Tool">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Platform" label="Platform" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getPlatforms" message="Select an hardware platform" iconPath="/fr.obeo.dsl.arduino.design/icons/Platform.png" windowTitle="Create an Arduino platform" windowImagePath="/fr.obeo.dsl.arduino.design/icons/Platform.png">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Platform" label="Platform" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getPlatforms" message="Select an hardware platform" iconPath="/org.gemoc.arduino.sequential.design/icons/Platform.png" windowTitle="Create an Arduino platform" windowImagePath="/org.gemoc.arduino.sequential.design/icons/Platform.png">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
@@ -214,13 +214,13 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="HW_Arduino_Board_Menu" label="Arduino Board" precondition="[oclIsTypeOf(ArduinoBoard)/]">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Analog_Pin" label="Add Analog Pin" icon="/fr.obeo.dsl.arduino.design/icons/Module.png">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Analog_Pin" label="Add Analog Pin" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.AnalogPin" referenceName="analogPins"/>
               </initialOperation>
             </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Digital_Pin" label="Add Digital Pin" icon="/fr.obeo.dsl.arduino.design/icons/Module.png">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Digital_Pin" label="Add Digital Pin" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="DigitalPin" referenceName="digitalPins"/>
@@ -228,13 +228,13 @@
             </menuItemDescription>
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="HW_Digital_Pin_Menu" label="Digital Pin" precondition="[oclIsTypeOf(DigitalPin)/]">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_LED" precondition="[oclAsType(DigitalPin).module = null/]" icon="/fr.obeo.dsl.arduino.design/icons/Module.png">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_LED" precondition="[oclAsType(DigitalPin).module = null/]" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="LED" referenceName="module"/>
               </initialOperation>
             </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Push_Button" precondition="[oclAsType(DigitalPin).module = null/]" icon="/fr.obeo.dsl.arduino.design/icons/Module.png">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Push_Button" precondition="[oclAsType(DigitalPin).module = null/]" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="PushButton" referenceName="module"/>
@@ -247,7 +247,7 @@
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Module" label="Module" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getModules" multiple="true" message="Select an hardware module" iconPath="/fr.obeo.dsl.arduino.design/icons/Module.png" windowTitle="Select an hardware module" windowImagePath="/fr.obeo.dsl.arduino.design/icons/Module.png">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Module" label="Module" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getModules" multiple="true" message="Select an hardware module" iconPath="/org.gemoc.arduino.sequential.design/icons/Module.png" windowTitle="Select an hardware module" windowImagePath="/org.gemoc.arduino.sequential.design/icons/Module.png">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
@@ -297,7 +297,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wire" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']" iconPath="/fr.obeo.dsl.arduino.design/icons/Wire.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wire" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@edgeMappings[name='HW_Wire']" iconPath="/org.gemoc.arduino.sequential.design/icons/Wire.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -332,9 +332,22 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Debug">
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Simulation">
+            <menuItemDescription xsi:type="tool_1:OperationAction">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="Debug" icon="/org.gemoc.sample.sigpml.model.design/icons/debug_exc.gif" id="org.gemoc.gemoc_modeling_workbench.ui.debug.sirius.action.gemocDebugAs"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']/@style" attributeName="workspacePath" value="service:getImage"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="strokeColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="borderColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true" attributeName="borderSizeComputationExpression" value="1"/>
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>
@@ -343,12 +356,12 @@
       <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SK_Loop" semanticCandidatesExpression="var:self" domainClass="arduino.Sketch">
-          <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.arduino.design/images/loop.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/org.gemoc.arduino.sequential.design/images/loop.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="service:isInvalidSketch">
-            <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.arduino.design/images/loop_invalid.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/org.gemoc.arduino.sequential.design/images/loop_invalid.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -379,7 +392,7 @@
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_Delay" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.0/@ownedTools[name='SK_Edit_Delay']" semanticCandidatesExpression="feature:eContents" domainClass="arduino.Delay">
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="feature:value" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" tooltipExpression="['Wait '+value+' '+unit/]" workspacePath="/fr.obeo.dsl.arduino.design/images/delay.svg"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="feature:value" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" tooltipExpression="['Wait '+value+' '+unit/]" workspacePath="/org.gemoc.arduino.sequential.design/images/delay.svg"/>
         </nodeMappings>
         <nodeMappings name="SK_ModuleAssignment" semanticCandidatesExpression="feature:eContents" domainClass="arduino.ModuleAssignment">
           <borderedNodeMappings name="linkedOperand" semanticCandidatesExpression="[self.operand/]" domainClass="arduino.Expression" reusedBorderedNodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableRef']">
@@ -413,13 +426,13 @@
             </conditionnalStyles>
           </borderedNodeMappings>
           <conditionnalStyles predicateExpression="[module.oclAsType(LED).color = Color::blue/]">
-            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/blue_led.jpg"/>
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg"/>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[module.oclAsType(LED).color = Color::red/]">
-            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/red_led.jpg"/>
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg"/>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[module.oclAsType(LED).color = Color::white/]">
-            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="50" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.arduino.design/images/dfrobot/white_led.jpg"/>
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="50" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg"/>
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_VariableRef" semanticCandidatesExpression="feature:eContents" domainClass="arduino.VariableRef">
@@ -543,7 +556,7 @@
           </style>
         </containerMappings>
         <toolSections name="Utilities">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_Delay" label="Delay" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay']" iconPath="/fr.obeo.dsl.arduino.design/icons/Delay.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_Delay" label="Delay" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay']" iconPath="/org.gemoc.arduino.sequential.design/icons/Delay.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -554,7 +567,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SK_Create_Flow" label="Flow" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_Link']" iconPath="/fr.obeo.dsl.arduino.design/icons/Flow.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SK_Create_Flow" label="Flow" edgeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@edgeMappings[name='SK_Link']" iconPath="/org.gemoc.arduino.sequential.design/icons/Flow.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -657,7 +670,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Hardware">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Status" label="On/Off" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Status.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Status" label="On/Off" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/org.gemoc.arduino.sequential.design/icons/Status.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="moduleVar" candidatesExpression="[container.getConnectedModules()/]" message="Select an hardware module"/>
             </variable>
@@ -670,7 +683,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleAssignment" label="ModuleAssignment" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Level.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleAssignment" label="ModuleAssignment" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/org.gemoc.arduino.sequential.design/icons/Level.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="modules" candidatesExpression="[container.getConnectedModules()/]" message="Select an hardware module"/>
             </variable>
@@ -687,7 +700,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleGet" label="ModuleGet" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet']" iconPath="/fr.obeo.dsl.arduino.design/icons/Sensor.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleGet" label="ModuleGet" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet']" iconPath="/org.gemoc.arduino.sequential.design/icons/Sensor.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="selectedModule" candidatesExpression="[container.getConnectedModules()/]" message="Select sensors"/>
             </variable>
@@ -797,7 +810,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Controls">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sk_Create_Repeat" label="Repeat" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat']" iconPath="/fr.obeo.dsl.arduino.design/icons/Repeat.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sk_Create_Repeat" label="Repeat" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat']" iconPath="/org.gemoc.arduino.sequential.design/icons/Repeat.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -814,7 +827,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_While" label="While" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']" iconPath="/fr.obeo.dsl.arduino.design/icons/While.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_While" label="While" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']" iconPath="/org.gemoc.arduino.sequential.design/icons/While.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -841,7 +854,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_If" label="If" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']" iconPath="/fr.obeo.dsl.arduino.design/icons/If.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_If" label="If" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If']" iconPath="/org.gemoc.arduino.sequential.design/icons/If.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -867,7 +880,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_IntegerVariableDeclaration" label="Integer Variable" precondition="[container.oclIsKindOf(arduino::Sketch) or container.oclIsKindOf(arduino::Control)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration']" iconPath="/fr.obeo.dsl.arduino.design/icons/Variable.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_IntegerVariableDeclaration" label="Integer Variable" precondition="[container.oclIsKindOf(arduino::Sketch) or container.oclIsKindOf(arduino::Control)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration']" iconPath="/org.gemoc.arduino.sequential.design/icons/Variable.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -879,7 +892,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_IntegerConstant" label="Integer Constant" precondition="[container.oclIsKindOf(arduino::VariableAssignment) or container.oclIsKindOf(arduino::BinaryExpression) or container.oclIsKindOf(arduino::ModuleAssignment)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']/@borderedNodeMappings[name='linkedOperand']" iconPath="/fr.obeo.dsl.arduino.design/icons/Constant.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_IntegerConstant" label="Integer Constant" precondition="[container.oclIsKindOf(arduino::VariableAssignment) or container.oclIsKindOf(arduino::BinaryExpression) or container.oclIsKindOf(arduino::ModuleAssignment)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']/@borderedNodeMappings[name='linkedOperand']" iconPath="/org.gemoc.arduino.sequential.design/icons/Constant.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -928,7 +941,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_VariableAssignment" label="VariableAssignment" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment']" iconPath="/fr.obeo.dsl.arduino.design/icons/Set.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_VariableAssignment" label="VariableAssignment" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment']" iconPath="/org.gemoc.arduino.sequential.design/icons/Set.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="theVariable" candidatesExpression="[container.getSketch().eAllContents()->select(e | e.oclIsKindOf(Variable))/]" message="select the Variable to set"/>
             </variable>
@@ -951,7 +964,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_BooleanVariableDeclaration" label="Boolean Variable" precondition="[container.oclIsKindOf(arduino::Sketch) or container.oclIsKindOf(arduino::Control)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration']" iconPath="/fr.obeo.dsl.arduino.design/icons/Variable.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_BooleanVariableDeclaration" label="Boolean Variable" precondition="[container.oclIsKindOf(arduino::Sketch) or container.oclIsKindOf(arduino::Control)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration']" iconPath="/org.gemoc.arduino.sequential.design/icons/Variable.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -963,7 +976,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_BooleanConstant" label="Boolean Constant" precondition="[container.oclIsKindOf(arduino::VariableAssignment) or container.oclIsKindOf(arduino::BinaryExpression) or container.oclIsKindOf(arduino::ModuleAssignment)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']/@borderedNodeMappings[name='linkedOperand']" iconPath="/fr.obeo.dsl.arduino.design/icons/Constant.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_Create_BooleanConstant" label="Boolean Constant" precondition="[container.oclIsKindOf(arduino::VariableAssignment) or container.oclIsKindOf(arduino::BinaryExpression) or container.oclIsKindOf(arduino::ModuleAssignment)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Constant'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']/@borderedNodeMappings[name='linkedOperand']" iconPath="/org.gemoc.arduino.sequential.design/icons/Constant.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -986,7 +999,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Expressions">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Equal" label="=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Equal" label="=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1032,7 +1045,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Minus" label="-" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Minus.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Minus" label="-" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Minus.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1077,7 +1090,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_VariableRef" label="Variable Ref" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableRef']" iconPath="/fr.obeo.dsl.arduino.design/icons/Sensor.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_VariableRef" label="Variable Ref" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableRef']" iconPath="/org.gemoc.arduino.sequential.design/icons/Sensor.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="selectedVariable" candidatesExpression="[container.eAllContents()->select(oclIsKindOf(arduino::Variable))/]" message="Select variable to reference"/>
             </variable>
@@ -1129,7 +1142,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Sup" label=">" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Sup" label=">" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1175,7 +1188,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_SupOrEqual" label=">=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_SupOrEqual" label=">=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1221,7 +1234,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Lower" label="&lt;" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Lower" label="&lt;" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1267,7 +1280,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_LowerOrEqual" label="&lt;=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_LowerOrEqual" label="&lt;=" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryBooleanExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1313,7 +1326,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Plus" label="+" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Plus" label="+" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1359,7 +1372,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Minus" label="-" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/fr.obeo.dsl.arduino.design/icons/Equal.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Minus" label="-" precondition="[container.oclIsKindOf(arduino::While) or container.oclIsKindOf(arduino::If)or container.oclIsKindOf(arduino::BooleanExpression)/]" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']" iconPath="/org.gemoc.arduino.sequential.design/icons/Equal.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1415,10 +1428,14 @@
               <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </featureCustomizations>
           </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.hasBeenActivated">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true" attributeName="borderSizeComputationExpression" value="2"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="borderColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='current%20instruction']"/>
+          </vsmElementCustomizations>
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="org.gemoc.arduino.design.services.ArduinoServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.arduino.sequential.design.services.ArduinoServices"/>
   </ownedViewpoints>
   <userColorsPalettes name="Arduino Palette">
     <entries xsi:type="description:UserFixedColor" red="231" green="191" blue="188" name="Arduino red"/>
@@ -1431,5 +1448,14 @@
     <entries xsi:type="description:UserFixedColor" red="135" green="121" blue="111" name="Arduino gray"/>
     <entries xsi:type="description:UserFixedColor" red="120" green="113" blue="113" name="Arduino dark gray"/>
     <entries xsi:type="description:UserFixedColor" red="149" green="186" blue="192" name="Arduino dark blue"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="0" blue="0" name="current instruction"/>
+    <entries xsi:type="description:InterpolatedColor" name="level intensity">
+      <colorSteps associatedValue="0">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+      </colorSteps>
+      <colorSteps associatedValue="1023">
+        <associatedColor href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+      </colorSteps>
+    </entries>
   </userColorsPalettes>
 </description:Group>

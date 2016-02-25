@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  */
-package org.gemoc.arduino.design;
+package org.gemoc.arduino.sequential.design;
 
 import java.util.HashSet;
 import java.util.Set;

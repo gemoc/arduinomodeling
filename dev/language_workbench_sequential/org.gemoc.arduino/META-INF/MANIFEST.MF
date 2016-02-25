@@ -1,5 +1,5 @@
-Bundle-SymbolicName: org.gemoc.arduino;singleton:=true
-Export-Package: org.gemoc.arduino
+Bundle-SymbolicName: org.gemoc.arduino.sequential;singleton:=true
+Export-Package: org.gemoc.arduino.sequential
 Bundle-Name: Arduino
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
@@ -14,11 +14,7 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  org.eclipse.emf.common;bundle-version="2.8.0";visibility:="reexport",
  
- fr.obeo.dsl.arduino;bundle-version="0.0.0";visibility:="reexport",
- 
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
- 
- fr.obeo.dsl.arduino.design;bundle-version="0.0.0";visibility:="reexport",
  
  org.gemoc.arduino.operationalsemantics;bundle-version="0.0.0";visibility:="reexport",
  
@@ -36,6 +32,10 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  fr.inria.diverse.melange.resource;bundle-version="0.1.0",
  
- org.gemoc.arduino.execarduino
+ org.gemoc.arduino.sequential.model;bundle-version="0.0.0";visibility:="reexport",
+ 
+ org.gemoc.arduino.sequential.design;bundle-version="1.0.0",
+ 
+ org.gemoc.arduino.sequential.execarduino
 Bundle-ManifestVersion: 2
 Manifest-Version: 1.0
