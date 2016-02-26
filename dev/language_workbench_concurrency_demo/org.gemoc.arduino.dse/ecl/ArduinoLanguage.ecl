@@ -1,5 +1,5 @@
-import 'platform:/resource/fr.obeo.dsl.arduino/model/arduino.ecore'
---import 'arduino.ecore'
+--import 'platform:/resource/fr.obeo.dsl.arduino/model/arduino.ecore'
+import 'arduino.ecore'
 ECLimport "platform:/resource/org.gemoc.arduino.mocc/mocc/Arduino.moccml"
 --ECLimport "Arduino.moccml"
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
@@ -9,13 +9,12 @@ ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibr
 package arduino	
 	
 context ThreadInstructionBlock
-	def:execInstruction: Event = self.execute()  
-		
-	
+	def:execInstruction: Event = self.execute()
+
 context Thread
 
-	def:execute: Event = self.execute()  
-	def:synchronize: Event = self.synchronize()       
+	def:execute: Event = self  
+	def:synchronize: Event = self      
 	
 	inv executeAllInstructions:
 		let instruExec : Event = Expression Union(self.blocks.oclAsType(ThreadInstructionBlock).execInstruction) in
@@ -34,8 +33,6 @@ context Thread
 	--	let s_firstInternalInstructionStart : Event = Expression Inf(self.first.execInstruction) in
 	--	Relation Precedes(self.execute, s_firstInternalInstructionStart)	
 		
-	
-
 	-- only one instruction at time
 	--inv oneInstructionAtATime:
 	--	Relation Exclusion(self.block.oclAsType(Block).instructions.oclAsType(Instruction).execInstruction)
@@ -74,13 +71,10 @@ context SynchronizationBlock
 	inv synchronize:
 		Relation Coincides(self.execInstruction, self.thread.synchronize)
 			
-	--inv SyncStartFirst:
-	--	Relation Precedes (self.execInstruction, self.next.oclAsType(InstructionBlock).execInstruction)	
-			
 context Channel	  
 		
-	def : write :Event = self.write() 
-	def : read :Event = self.read()
+	def : push :Event = self 
+	def : pop :Event = self
 
 	inv ChannelSDF: 
 		let capacity : Integer = self.oclAsType(Channel).capacity in
@@ -89,41 +83,59 @@ context Channel
 		let currentSize : Integer = self.oclAsType(Channel).currentSize in
 		
 		 Relation ChannelDecl (
-			self.write,
-			self.read,
+			self.push,
+			self.pop,
 			capacity,
 			inRate,
 			outRate,
 			currentSize		  
 		)    
 			          
-	inv write_push:
-		Relation Coincides(self.source.oclAsType(Thread).synchronize, self.write)
+	inv Channel_push:
+		Relation Coincides(self.source.oclAsType(Thread).synchronize, self.push)
 	
-	inv read_pop:
-		Relation Coincides(self.read,self.target.oclAsType(Thread).synchronize)
+	inv Channel_pop:
+		Relation Coincides(self.pop,self.target.oclAsType(Thread).synchronize)
 	       
 context Board
-		def : execBoard : Event = self
-		def : idleBoard: Event = self       
+	def : execBoard : Event = self
+	def : idleBoard: Event = self       
 		--def : allThreadsExecutions : Event = Expression Union(self.threads.oclAsType(Thread).execute)
 	
-		inv ThreadCanExecuteIfBoardExecute:
-			let allThreadsExecutions : Event = Expression Union(self.threads.oclAsType(Thread).execute) in
-			Relation Coincides(self.execBoard, allThreadsExecutions)
+	inv ThreadCanExecuteIfBoardExecute:
+		let allThreadsExecutions : Event = Expression Union(self.threads.oclAsType(Thread).execute) in
+		Relation Coincides(self.execBoard, allThreadsExecutions)
 			
-		inv ExecutingXorIdle:
-			Relation BoardDecl (
-				self.execBoard,
-				self.idleBoard	  
-			)   
+	inv ExecutingXorIdle:
+		Relation BoardDecl (
+			self.execBoard,
+			self.idleBoard	  
+		)   
 		
-		inv oneThreadAtATime:
-			Relation Exclusion(self.threads.oclAsType(Thread).execute)
+	inv oneThreadAtATime:
+		Relation Exclusion(self.threads.oclAsType(Thread).execute)
+
+context Link	  
 		
-	--	inv ExecutesItsAllocatedThreads:
-	--		let allThreadsExecutions : Event = Expression Union(self.threads.oclAsType(Thread).execute()) in
-	--		Relation Coincides(execute, allThreadsExecutions)
+	def : writeLink :Event = self
+	def : readLink :Event = self
+    
+    inv ChannelsWritingCoincidesWithLinkWriting:
+		let allChannelsWriting : Event = Expression Union(self.channels.oclAsType(Channel).push) in
+		Relation Coincides(self.writeLink, allChannelsWriting)
+    
+    inv ChannelsReadingCoincidesWithLinkReading:
+		let allChannelsReading: Event = Expression Union(self.channels.oclAsType(Channel).pop) in
+		Relation Coincides(self.readLink, allChannelsReading)
+    
+	--inv writeLinkInv:
+	--	Relation Coincides(self.outBoard.execBoard, self.writeLink)
+
+	--inv writeLinkInv:
+		--Relation Coincides(self.inBoard.execBoard, self.readLink)
+		
+	--inv write_read_LinkInv:
+	--	Relation Coincides(self.writeLink, self.readLink)
 
 
 --context SharedVariableAccess

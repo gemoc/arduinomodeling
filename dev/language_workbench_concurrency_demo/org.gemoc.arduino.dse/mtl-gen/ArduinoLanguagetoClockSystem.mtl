@@ -147,13 +147,19 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Channel| aProject.eAllContents(arduino::Channel))]
 "clocks for Channel [element.name/]" 
-	system addClocks: #(write[element.name /] read[element.name /] ).
+	system addClocks: #(push[element.name /] pop[element.name /] ).
 [/for]
 [for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
 "clocks for Board [element.name/]" 
 	system addClocks: #(execBoard[element.name /] idleBoard[element.name /] ).
 "internal clocks for arduino::Board [element.name/]" 
     system addInternalClocks: #(allThreadsExecutions[element.name /] ).
+[/for]
+[for (element : arduino::Link| aProject.eAllContents(arduino::Link))]
+"clocks for Link [element.name/]" 
+	system addClocks: #(writeLink[element.name /] readLink[element.name /] ).
+"internal clocks for arduino::Link [element.name/]" 
+    system addInternalClocks: #(allChannelsWriting[element.name /] allChannelsReading[element.name /] ).
 [/for]
 
 [for (element : arduino::ThreadInstructionBlock| aProject.eAllContents(arduino::ThreadInstructionBlock))]
@@ -204,15 +210,15 @@ system addLibrary:moccmllibs asDictionary.
 	system
 		library: #Arduino
 		relation: #ChannelFsm
-		clocks: #(write[element.name/]  read[element.name/]    )
+		clocks: #(push[element.name/]  pop[element.name/]    )
 		constants: {[element.oclAsType(arduino::Channel).capacity/]. [element.oclAsType(arduino::Channel).inRate/]. [element.oclAsType(arduino::Channel).outRate/]. [element.oclAsType(arduino::Channel).currentSize/]}
 		variables: {0. 0. 1. 2. 0. 0}.
 
-	"write_push in Channel [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(synchronize[element.source.oclAsType(arduino::Thread).name/]  write[element.name/]).
+	"Channel_push in Channel [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(synchronize[element.source.oclAsType(arduino::Thread).name/]  push[element.name/]).
 
-	"read_pop in Channel [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(read[element.name/]  synchronize[element.target.oclAsType(arduino::Thread).name/]).
+	"Channel_pop in Channel [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(pop[element.name/]  synchronize[element.target.oclAsType(arduino::Thread).name/]).
 
 [/for]
 [for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
@@ -232,6 +238,18 @@ system addLibrary:moccmllibs asDictionary.
 
 	"oneThreadAtATime in Board [element.name/]"
 		system library: #Kernel relation: #Exclusion clocks: #([for (ne : arduino::Thread | element.threads.oclAsType(arduino::Thread))]execute[ne.name/] [/for]).
+
+[/for]
+[for (element : arduino::Link| aProject.eAllContents(arduino::Link))]
+"expressions used by  Link [element.name/]" 
+	system allUnion: #([for (ne : arduino::Channel | element.channels.oclAsType(arduino::Channel))]push[ne.name/] [/for]) named: #allChannelsWriting[element.name/]. 
+	system allUnion: #([for (ne : arduino::Channel | element.channels.oclAsType(arduino::Channel))]pop[ne.name/] [/for]) named: #allChannelsReading[element.name/]. 
+"relations for Link [element.name/]" 
+	"ChannelsWritingCoincidesWithLinkWriting in Link [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(writeLink[element.name/]  allChannelsWriting[element.name/]).
+
+	"ChannelsReadingCoincidesWithLinkReading in Link [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(readLink[element.name/]  allChannelsReading[element.name/]).
 
 [/for]
 [/file]

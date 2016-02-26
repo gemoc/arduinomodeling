@@ -151,9 +151,9 @@ main() {
 		
 
 		////[ Channel ]
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map write2Clock();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map push2Clock();
 		////[ Channel ]
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map read2Clock();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map pop2Clock();
 		
 
 
@@ -161,10 +161,10 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map ChannelSDF412ChannelSDF();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map write_push12write_push();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map Channel_push12Channel_push();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map read_pop12read_pop();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map Channel_pop12Channel_pop();
 		
 		
 
@@ -183,6 +183,21 @@ main() {
 		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map oneThreadAtATime12oneThreadAtATime();
+		
+		
+
+		////[ Link ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map writeLink2Clock();
+		////[ Link ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map readLink2Clock();
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map ChannelsWritingCoincidesWithLinkWriting142ChannelsWritingCoincidesWithLinkWriting();
+		
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map ChannelsReadingCoincidesWithLinkReading142ChannelsReadingCoincidesWithLinkReading();
 		
 	}
 
@@ -341,6 +356,156 @@ main() {
 		}
 	}
 
+	
+	
+//Create an intermediate expression
+//create the expressions... 
+	mapping inMM1::Link::intermediate_allChannelsWriting2Expression(an1 : Channel, an2 : Channel, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{ 
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allChannelsWriting'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				 
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_push']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_push']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	mapping inMM1::Link::intermediate_allChannelsWriting2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : Channel, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allChannelsWriting'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.expressions[name = expr.name]->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_push']->first();
+					
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+	
+	mapping inMM1::Link::allChannelsWriting2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		init{
+		var sources : Sequence(Channel) := self.channels.oclAsType(Channel)->asSequence();
+		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
+		var i : Integer := 3;
+		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
+		var size : Integer = sources->size(); 
+		if(size = 1)then{
+			result := self.map intermediate_allChannelsWriting2Expression(sources->at(1),sources->at(1), 1);
+		}else{
+			lastExpr := self.map intermediate_allChannelsWriting2Expression(sources->at(1),sources->at(2), 1);
+			while (i <= size){
+				newExpr := self.map intermediate_allChannelsWriting2Expression(lastExpr,sources->at(i), i);
+				lastExpr := newExpr;
+				i := i + 1;
+			};
+			result := lastExpr;
+		}
+		endif;
+		}
+		
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	
+	
+//Create an intermediate expression
+//create the expressions... 
+	mapping inMM1::Link::intermediate_allChannelsReading2Expression(an1 : Channel, an2 : Channel, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{ 
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allChannelsReading'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				 
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_pop']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_pop']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	mapping inMM1::Link::intermediate_allChannelsReading2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : Channel, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allChannelsReading'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.expressions[name = expr.name]->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_pop']->first();
+					
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+	
+	mapping inMM1::Link::allChannelsReading2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		init{
+		var sources : Sequence(Channel) := self.channels.oclAsType(Channel)->asSequence();
+		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
+		var i : Integer := 3;
+		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
+		var size : Integer = sources->size(); 
+		if(size = 1)then{
+			result := self.map intermediate_allChannelsReading2Expression(sources->at(1),sources->at(1), 1);
+		}else{
+			lastExpr := self.map intermediate_allChannelsReading2Expression(sources->at(1),sources->at(2), 1);
+			while (i <= size){
+				newExpr := self.map intermediate_allChannelsReading2Expression(lastExpr,sources->at(i), i);
+				lastExpr := newExpr;
+				i := i + 1;
+			};
+			result := lastExpr;
+		}
+		endif;
+		}
+		
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
 
 
 
@@ -371,8 +536,6 @@ main() {
 			name:= getNameOrUID(self.oclAsType(EObject))+'_execute';
 			tickingEvent := object TimeModel::Event{
  				referencedObjectRefs += self.oclAsType(EObject);
-				//referencedObjectRefs += self.oclAsType(EObject);
-				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "execute")->first().oclAsType(EObject);
 			
 				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_execute';
 			kind :=TimeModel::EventKind::undefined;
@@ -390,8 +553,6 @@ main() {
 			name:= getNameOrUID(self.oclAsType(EObject))+'_synchronize';
 			tickingEvent := object TimeModel::Event{
  				referencedObjectRefs += self.oclAsType(EObject);
-				//referencedObjectRefs += self.oclAsType(EObject);
-				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "synchronize")->first().oclAsType(EObject);
 			
 				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_synchronize';
 			kind :=TimeModel::EventKind::undefined;
@@ -511,16 +672,14 @@ main() {
 		theMainBlock.relations += result;
 		}
 		
-	 	mapping inMM1::Channel::write2Clock() :TimeModel::Clock 
+	 	mapping inMM1::Channel::push2Clock() :TimeModel::Clock 
 			when {  }
 		{
-			name:= getNameOrUID(self.oclAsType(EObject))+'_write';
+			name:= getNameOrUID(self.oclAsType(EObject))+'_push';
 			tickingEvent := object TimeModel::Event{
  				referencedObjectRefs += self.oclAsType(EObject);
-				//referencedObjectRefs += self.oclAsType(EObject);
-				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "write")->first().oclAsType(EObject);
 			
-				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_write';
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_push';
 			kind :=TimeModel::EventKind::undefined;
 						
 			};
@@ -530,16 +689,14 @@ main() {
 				theMainBlock.elements += result;
 			}
 		}
-	 	mapping inMM1::Channel::read2Clock() :TimeModel::Clock 
+	 	mapping inMM1::Channel::pop2Clock() :TimeModel::Clock 
 			when {  }
 		{
-			name:= getNameOrUID(self.oclAsType(EObject))+'_read';
+			name:= getNameOrUID(self.oclAsType(EObject))+'_pop';
 			tickingEvent := object TimeModel::Event{
  				referencedObjectRefs += self.oclAsType(EObject);
-				//referencedObjectRefs += self.oclAsType(EObject);
-				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "read")->first().oclAsType(EObject);
 			
-				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_read';
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_pop';
 			kind :=TimeModel::EventKind::undefined;
 						
 			};
@@ -561,11 +718,11 @@ main() {
 					var outRate : Integer := self.oclAsType(Channel).outRate;
 					var currentSize : Integer := self.oclAsType(Channel).currentSize;
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_write']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_push']->first();
 					_abstract := seqOfAbstractEntity[name = 'ChannelSDF_push']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_read']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_pop']->first();
 					_abstract := seqOfAbstractEntity[name = 'ChannelSDF_pop']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
@@ -589,16 +746,16 @@ main() {
 		}
 		
 	
-		mapping inMM1::Channel::write_push12write_push(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::Channel::Channel_push12Channel_push(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_write_push";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_Channel_push";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.source.oclAsType(Thread).oclAsType(EObject))+'_synchronize']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_write']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_push']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
@@ -606,12 +763,12 @@ main() {
 		}
 		
 	
-		mapping inMM1::Channel::read_pop12read_pop(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::Channel::Channel_pop12Channel_pop(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_read_pop";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_Channel_pop";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_read']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_pop']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
@@ -732,6 +889,76 @@ main() {
 	}
 
 		
+	 	mapping inMM1::Link::writeLink2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_writeLink';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_writeLink';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+	 	mapping inMM1::Link::readLink2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_readLink';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_readLink';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+
+//relation stuff		
+	
+		mapping inMM1::Link::ChannelsWritingCoincidesWithLinkWriting142ChannelsWritingCoincidesWithLinkWriting(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_ChannelsWritingCoincidesWithLinkWriting";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_writeLink']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self -> map allChannelsWriting2Expression()->asSequence()->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+	
+		mapping inMM1::Link::ChannelsReadingCoincidesWithLinkReading142ChannelsReadingCoincidesWithLinkReading(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_ChannelsReadingCoincidesWithLinkReading";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_readLink']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self -> map allChannelsReading2Expression()->asSequence()->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
 
 
 
@@ -787,8 +1014,8 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 		
 
-	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map write2MSE();
-	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map read2MSE();
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map push2MSE();
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Channel.oclAsType(EClass)).oclAsType(Channel)->map pop2MSE();
 
 
 
@@ -797,6 +1024,14 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map execBoard2MSE();
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map idleBoard2MSE();
+
+
+
+
+		
+
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map writeLink2MSE();
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Link.oclAsType(EClass)).oclAsType(Link)->map readLink2MSE();
 
 
 
@@ -823,8 +1058,6 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 			when {  }
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_execute';
-				caller := self.oclAsType(EObject);
-				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "execute")->first();
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_execute')->first().oclAsType(EObject);
 				
 			end{
@@ -836,8 +1069,6 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 			when {  }
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_synchronize';
-				caller := self.oclAsType(EObject);
-				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "synchronize")->first();
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_synchronize')->first().oclAsType(EObject);
 				
 			end{
@@ -845,26 +1076,22 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 				seqOfMSE += result
 			}
 		}
-	 	mapping inMM1::Channel::write2MSE() :FeedBack::ModelSpecificEvent 
+	 	mapping inMM1::Channel::push2MSE() :FeedBack::ModelSpecificEvent 
 			when {  }
 		{
-			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_write';
-				caller := self.oclAsType(EObject);
-				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "write")->first();
-				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_write')->first().oclAsType(EObject);
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_push';
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_push')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;
 				seqOfMSE += result
 			}
 		}
-	 	mapping inMM1::Channel::read2MSE() :FeedBack::ModelSpecificEvent 
+	 	mapping inMM1::Channel::pop2MSE() :FeedBack::ModelSpecificEvent 
 			when {  }
 		{
-			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_read';
-				caller := self.oclAsType(EObject);
-				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "read")->first();
-				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_read')->first().oclAsType(EObject);
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_pop';
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_pop')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;
@@ -887,6 +1114,28 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_idleBoard';
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_idleBoard')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::Link::writeLink2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_writeLink';
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_writeLink')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::Link::readLink2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_readLink';
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_readLink')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;
