@@ -15,6 +15,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gemoc.arduino.sequential.model;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gemoc.arduino.operationalsemantics
+Export-Package: org.gemoc.arduino.sequential.operationalsemantics
 Import-Package: org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher,
  org.gemoc.executionframework.engine.ui.launcher
