@@ -53,8 +53,8 @@
 								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.model.edit.zip">
 									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.model.edit/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.operationalsemantics.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.operationalsemantics/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.operationalsemantics.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.operationalsemantics/" />
 								</zip>
 								<!-- Arduino Modeling Workbench  -->
 								
