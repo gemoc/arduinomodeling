@@ -35,35 +35,23 @@
 								
 								<!-- Arduino Sequential Language Workbench  -->
 								
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential/" />
 								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.build.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.build/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.design.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.design/" />
 								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.design.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.design/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.execarduino.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.execarduino/" />
 								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.edit.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.edit/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.execarduino.trace.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.execarduino.trace/" />
 								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.gen.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.gen/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.model.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.model/" />
 								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.gen.ui.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.gen.ui/" />
-								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.preferences.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.preferences/" />
-								</zip>
-								<zip destfile="${basedir}/zips/fr.obeo.dsl.arduino.ui.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/fr.obeo.dsl.arduino.ui/" />
-								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino/" />
-								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.design.zip">
-									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.design/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.model.edit.zip">
+									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.sequential.model.edit/" />
 								</zip>
 								<zip destfile="${basedir}/zips/org.gemoc.arduino.operationalsemantics.zip">
 									<fileset dir="${gemoc_sequential_lw_root}/org.gemoc.arduino.operationalsemantics/" />

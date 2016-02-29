@@ -28,17 +28,13 @@ public class ArduinoModelingSequentialLanguageExampleWizard
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
 		
 		// sequential projects
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.zip", "fr.obeo.dsl.arduino"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.build.zip", "fr.obeo.dsl.arduino.build"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.design.zip", "fr.obeo.dsl.arduino.design"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.edit.zip", "fr.obeo.dsl.arduino.edit"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.gen.zip", "fr.obeo.dsl.arduino.gen"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.gen.ui.zip", "fr.obeo.dsl.arduino.gen.ui"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.preferences.zip", "fr.obeo.dsl.arduino.preferences"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/fr.obeo.dsl.arduino.ui.zip", "fr.obeo.dsl.arduino.ui"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.zip", "org.gemoc.arduino"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.design.zip", "org.gemoc.arduino.design"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.operationalsemantics.zip", "org.gemoc.arduino.operationalsemantics"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential", 				"org.gemoc.arduino.sequential"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.design.zip", 	"org.gemoc.arduino.sequential.design"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.execarduino.zip", "org.gemoc.arduino.sequential.execarduino"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.execarduino.trace.zip", "org.gemoc.arduino.sequential.execarduino.trace"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.model.zip", 		"org.gemoc.arduino.sequential.model"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.model.edit.zip", "org.gemoc.arduino.sequential.model.edit"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.operationalsemantics.zip", 	"org.gemoc.arduino.operationalsemantics"));
 
 		return projects;
 	}
