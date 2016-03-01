@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.Enumerator;
@@ -35,6 +36,7 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
@@ -52,6 +54,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanModuleGet;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariableRef;
+import org.gemoc.arduino.sequential.execarduino.arduino.Color;
 import org.gemoc.arduino.sequential.execarduino.arduino.Constant;
 import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
@@ -79,7 +82,6 @@ import org.gemoc.arduino.sequential.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableDeclaration;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.While;
-import org.gemoc.arduino.sequential.execarduino.aspects.ArduinoUtils;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -137,6 +139,14 @@ public class ArduinoServices {
 			}
 		}
 	}
+	
+	public String getAnalogPinName(ArduinoBoard board) {
+			return board.getAnalogPins().size()+"";
+	}
+	
+	public String getDigitalPinName(ArduinoBoard board) {
+			return board.getDigitalPins().size()+"";
+	}
 
 	public List<AnalogPin> getAnalogPins(EObject obj) {
 		List<AnalogPin> result = new ArrayList<>();
@@ -145,13 +155,29 @@ public class ArduinoServices {
 		}
 		return result;
 	}
+	
+	public List<ArduinoBoard> getArduinoBoards(Project project) {
+		return project.getBoards().stream()
+				.filter(b->b instanceof ArduinoBoard)
+				.map(b->(ArduinoBoard) b)
+				.collect(Collectors.toList());
+	}
+	
+	public boolean isDigitalPinUnavailable(ArduinoBoard board) {
+		return getAvailableDigitalPin(board) == null;
+	}
+	
+	public boolean isDigitalPinAvailable(ArduinoBoard board) {
+		return getAvailableDigitalPin(board) != null;
+	}
 
-	public List<DigitalPin> getDigitalPins(EObject obj) {
-		List<DigitalPin> result = new ArrayList<>();
-		for (int i = 0; i < 6; i++) {
-			result.add(ArduinoFactory.eINSTANCE.createDigitalPin());
+	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
+		DigitalPin result = null;
+		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
+		if (pins.isEmpty()) {
+			return result;
 		}
-		return result;
+		return pins.get(0);
 	}
 
 	public Module getModule(Pin pin) {
@@ -163,14 +189,18 @@ public class ArduinoServices {
 		}
 		return res;
 	}
-
-//	public String getImage(Module module) {
-//		// String imageName = module.getImage();
-//		return getImage("");
-//	}
+	
+	public Color changeLEDColor(LED led) {
+		switch (led.getColor()) {
+		case BLUE: return Color.RED;
+		case RED: return Color.WHITE;
+		case WHITE: return Color.BLUE;
+		}
+		return null;
+	}
 
 	public String getImage(LED led) {
-		Integer level = ArduinoUtils.getPin(led).getLevel();
+		Integer level = ArduinoDesignerUtils.getPin(led).getLevel();
 		if (level != null && level > 0) {
 			switch (led.getColor()) {
 			case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led_1023.jpg";

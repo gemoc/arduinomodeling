@@ -2,7 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="arduino" version="9.0.0">
   <ownedViewpoints name="Hardware Kit" modelFileExtension="arduino">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware Kit Definition" domainClass="arduino.Project">
-      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HL_Module" domainClass="arduino.ArduinoModule">
           <style xsi:type="style:WorkspaceImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="6" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/digital_output.svg">
@@ -116,7 +116,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Extended Dashboard" viewpointURI="viewpoint:/org.gemoc.arduino.sequential.design/Arduino" representationName="Dashboard">
-      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+      <metamodel href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#/"/>
       <layers name="Hardware kit" activeByDefault="true">
         <nodeMappings name="Hardware kit" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='Hardware%20Kit']/@ownedRepresentationExtensions[name='Extended%20Dashboard']/@layers[name='Hardware%20kit']/@toolSections.0/@ownedTools[name='Hardware%20kit']" domainClass="arduino.Project">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="0" sizeComputationExpression="20" workspacePath="/org.gemoc.arduino.sequential.design/images/hardwareKit.svg">
@@ -140,8 +140,8 @@
     <ownedJavaExtensions qualifiedClassName="org.gemoc.arduino.design.services.ArduinoServices"/>
   </ownedViewpoints>
   <ownedViewpoints name="Arduino" modelFileExtension="arduino">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware" titleExpression="Hardware" initialisation="true" showOnStartup="true" domainClass="arduino.ArduinoBoard" enablePopupBars="true">
-      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Hardware" titleExpression="Hardware" initialisation="true" showOnStartup="true" domainClass="arduino.Project" enablePopupBars="true">
+      <metamodel href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HW_Board" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Platform']" domainClass="ArduinoBoard">
           <borderedNodeMappings name="HS_DigitalPin" semanticCandidatesExpression="feature:digitalPins" domainClass="arduino.DigitalPin">
@@ -159,7 +159,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="HW_LED" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.LED">
+        <nodeMappings name="HW_LED" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_LED_DoubleClick']" domainClass="arduino.LED">
           <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="imageFromWorkspace">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -168,7 +168,7 @@
         <nodeMappings name="HW_PushButton" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.PushButton">
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/push_button.jpg"/>
         </nodeMappings>
-        <nodeMappings name="HW_Buzzer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino..Buzzer">
+        <nodeMappings name="HW_Buzzer" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.Buzzer">
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/buzzer.jpg"/>
         </nodeMappings>
         <nodeMappings name="HW_RotationSensor" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Module']" domainClass="arduino.RotationSensor">
@@ -201,66 +201,6 @@
           </style>
         </edgeMappings>
         <toolSections name="Tool">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Platform" label="Platform" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getPlatforms" message="Select an hardware platform" iconPath="/org.gemoc.arduino.sequential.design/icons/Platform.png" windowTitle="Create an Arduino platform" windowImagePath="/org.gemoc.arduino.sequential.design/icons/Platform.png">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Unset" featureName="board" elementExpression="[container.oclAsType(Project).board/]">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="board" valueExpression="var:element"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:PopupMenu" name="HW_Arduino_Board_Menu" label="Arduino Board" precondition="[oclIsTypeOf(ArduinoBoard)/]">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Analog_Pin" label="Add Analog Pin" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.AnalogPin" referenceName="analogPins"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Digital_Pin" label="Add Digital Pin" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="DigitalPin" referenceName="digitalPins"/>
-              </initialOperation>
-            </menuItemDescription>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:PopupMenu" name="HW_Digital_Pin_Menu" label="Digital Pin" precondition="[oclIsTypeOf(DigitalPin)/]">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_LED" precondition="[oclAsType(DigitalPin).module = null/]" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="LED" referenceName="module"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Create_Push_Button" precondition="[oclAsType(DigitalPin).module = null/]" icon="/org.gemoc.arduino.sequential.design/icons/Module.png">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="PushButton" referenceName="module"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="HW_Remove_Module" precondition="[oclAsType(DigitalPin).module &lt;> null/]">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:Unset" featureName="module"/>
-              </initialOperation>
-            </menuItemDescription>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_Module" label="Module" precondition="[oclIsKindOf(arduino::ArduinoBoard)/]" candidatesExpression="service:getModules" multiple="true" message="Select an hardware module" iconPath="/org.gemoc.arduino.sequential.design/icons/Module.png" windowTitle="Select an hardware module" windowImagePath="/org.gemoc.arduino.sequential.design/icons/Module.png">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:For" expression="var:element">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="modules" valueExpression="var:i"/>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:DeleteElementDescription" name="HW_Delete_Wire">
             <element name="element"/>
             <elementView name="elementView"/>
@@ -331,6 +271,71 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="HW_Create_Board" label="Board" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.ArduinoBoard" referenceName="boards" variableName="board">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="project" valueExpression="var:container"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="HW_Create_Analog_Pin" label="Analog Pin" precondition="[container.oclIsTypeOf(ArduinoBoard)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_AnalogPin']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.AnalogPin" referenceName="analogPins" variableName="pin">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:container.getAnalogPinName"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="HW_Create_Digital_Pin" label="Digital Pin" precondition="[container.oclIsTypeOf(ArduinoBoard)/]" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']/@borderedNodeMappings[name='HS_DigitalPin']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.DigitalPin" referenceName="digitalPins" variableName="pin">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:container.getDigitalPinName"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_PushButton" label="Push Button" candidatesExpression="service:getArduinoBoards" windowTitle="To which pin should I plug the module to?">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:isDigitalPinAvailable">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getAvailableDigitalPin">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.PushButton" referenceName="module"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:isDigitalPinUnavailable">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.DigitalPin" referenceName="digitalPins">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="HW_Create_LED" label="LED" candidatesExpression="service:getAvailableDigitalPins" windowTitle="To which pin should I plug the module to?">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.LED" referenceName="module"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="HW_LED_DoubleClick" label="LED Color Change" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_LED']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="color" valueExpression="service:changeLEDColor"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Debug">
           <ownedTools xsi:type="tool_1:PopupMenu" name="Simulation">
@@ -352,8 +357,8 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" domainClass="arduino.Sketch" enablePopupBars="true">
-      <metamodel href="viewpoint:/../org.gemoc.arduino.execarduino/model/ExecArduino.ecore#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" domainClass="arduino.Project" enablePopupBars="true">
+      <metamodel href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SK_Loop" semanticCandidatesExpression="var:self" domainClass="arduino.Sketch">
           <style xsi:type="style:WorkspaceImageDescription" labelFormat="italic" showIcon="false" labelExpression="Loop" hideLabelByDefault="true" workspacePath="/org.gemoc.arduino.sequential.design/images/loop.svg">
@@ -425,6 +430,11 @@
               </style>
             </conditionnalStyles>
           </borderedNodeMappings>
+          <style xsi:type="style:BundledImageDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
           <conditionnalStyles predicateExpression="[module.oclAsType(LED).color = Color::blue/]">
             <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg"/>
           </conditionnalStyles>
@@ -552,6 +562,11 @@
         </containerMappings>
         <containerMappings name="SK_If" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.2/@ownedTools[name='SK_Delete_While_and_If']" semanticCandidatesExpression="feature:eContents" domainClass="arduino.If" reusedContainerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Block']">
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']">
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SK_Sketch" domainClass="arduino.Sketch">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="name" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']" foregroundColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']">
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
           </style>
         </containerMappings>
@@ -861,6 +876,13 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.If" referenceName="instructions"/>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="SK_Create_Sketch" label="Sketch" containerMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Sketch']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

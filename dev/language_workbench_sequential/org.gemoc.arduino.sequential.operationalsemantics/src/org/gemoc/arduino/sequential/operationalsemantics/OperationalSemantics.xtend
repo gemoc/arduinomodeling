@@ -6,7 +6,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.Main
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import java.util.List
-import org.gemoc.arduino.sequential.model.ArduinoUtils
 import org.gemoc.arduino.sequential.model.arduino.BinaryBooleanExpression
 import org.gemoc.arduino.sequential.model.arduino.BinaryIntegerExpression
 import org.gemoc.arduino.sequential.model.arduino.Block
@@ -37,6 +36,8 @@ import org.gemoc.arduino.sequential.model.arduino.VariableAssignment
 import org.gemoc.arduino.sequential.model.arduino.VariableDeclaration
 import org.gemoc.arduino.sequential.model.arduino.VariableRef
 import org.gemoc.arduino.sequential.model.arduino.While
+import org.gemoc.arduino.sequential.model.arduino.Module
+import org.gemoc.arduino.sequential.model.arduino.ArduinoBoard
 
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Block_ExecutableAspect.*
@@ -47,7 +48,49 @@ import static extension org.gemoc.arduino.sequential.operationalsemantics.Boolea
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
 
 @Aspect(className=Instruction)
-class Instruction_ExecutableAspect {
+class Instruction_UtilitesAspect {
+	private def Project getProject(Module module) {
+		var Project project = null
+
+		var current = _self.eContainer()
+		while (current != null) {
+			if (current instanceof Project) {
+				project = current as Project
+				return project
+			}
+			current = current.eContainer()
+		}
+		
+		return project
+	}
+	
+	def protected Pin getPin(Module module) {
+		var Pin pin = null
+		
+		val project = _self.getProject(module)
+
+		for (board : project.boards) {
+			if (board != null && board instanceof ArduinoBoard) {
+				var ArduinoBoard arduinoBoard = board as ArduinoBoard
+				for (analogPin : arduinoBoard.analogPins) {
+					if (analogPin.module == module) {
+						return analogPin
+					}
+				}
+				for (digitalPin : arduinoBoard.digitalPins) {
+					if (digitalPin.module == module) {
+						return digitalPin
+					}
+				}
+			}
+		}
+		
+		return pin
+	}
+}
+
+@Aspect(className=Instruction)
+class Instruction_ExecutableAspect extends Instruction_UtilitesAspect{
 	def void execute() {
 	}
 	
@@ -57,6 +100,7 @@ class Instruction_ExecutableAspect {
 
 @Aspect(className=Project)
 class Project_ExecutableAspect {
+		
 	def void execute() {
 		val sketches = _self.sketches
 		while(true) {
@@ -126,7 +170,7 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.getPin(_self.module)
 		if (_self.operand instanceof IntegerExpression){
 			pin.level = _self.operand.evaluate as Integer
 		}
@@ -173,13 +217,6 @@ class If_EvaluableAspect extends Control_EvaluableAspect {
 		if (_self.condition instanceof BooleanExpression){
 			resCond = _self.condition.evaluate as Boolean
 		}
-		//FIXME
-//		if (_self.condition instanceof ModuleGet){
-//			var Module m = (_self.condition as ModuleGet).module
-//			if (m instanceof Sensor){
-//				resCond = m.level
-//			}
-//		}
 		return resCond
 	}
 }
@@ -327,7 +364,7 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 //			println(res);
 //			return res;
 //		}
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.instruction.getPin(_self.module)
 		if (pin.level == 0){
 			return false
 		}
@@ -355,7 +392,7 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.instruction.getPin(_self.module)
 		return pin.level	
 	}
 }
@@ -494,5 +531,21 @@ class VariableRef_EvaluableAspect extends Expression_EvaluableAspect{
 
 @Aspect(className=Expression)
 abstract class Expression_EvaluableAspect {
+	
+	def protected Instruction getInstruction() {
+		var Instruction instruction = null
+
+		var current = _self.eContainer()
+		while (current != null) {
+			if (current instanceof Instruction) {
+				instruction = current as Instruction
+				return instruction
+			}
+			current = current.eContainer()
+		}
+		
+		return instruction
+	}
+	
 	def abstract Object evaluate()
 }

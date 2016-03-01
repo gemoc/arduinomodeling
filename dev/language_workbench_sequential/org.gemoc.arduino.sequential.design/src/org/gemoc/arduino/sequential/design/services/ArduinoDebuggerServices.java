@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
 import org.gemoc.arduino.sequential.execarduino.arduino.Board;
 import org.gemoc.arduino.sequential.execarduino.arduino.Module;
 import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
 import org.gemoc.arduino.sequential.execarduino.arduino.Project;
-import org.gemoc.arduino.sequential.execarduino.aspects.ArduinoUtils;
 import org.gemoc.executionframework.engine.ui.launcher.AbstractGemocLauncher;
 import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 
@@ -32,7 +32,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 
 	public Integer getLevel(Module module) {
-		return ArduinoUtils.getPin(module).getLevel();
+		return ArduinoDesignerUtils.getPin(module).getLevel();
 	}
 
 	protected Project getUserRootProject(EObject obj){
@@ -50,7 +50,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 	
 	public boolean isModuleOn(Module module) {
-		return ArduinoUtils.getPin(module).getLevel() > 0;
+		return ArduinoDesignerUtils.getPin(module).getLevel() > 0;
 	}
 	
 	public String getModelIdentifier() {
