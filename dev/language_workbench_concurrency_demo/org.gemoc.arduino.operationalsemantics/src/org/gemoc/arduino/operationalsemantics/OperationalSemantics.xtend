@@ -30,8 +30,8 @@ import fr.obeo.dsl.arduino.ModuleInstruction
 import fr.obeo.dsl.arduino.Pin
 import fr.obeo.dsl.arduino.Project
 import fr.obeo.dsl.arduino.Repeat
-import fr.obeo.dsl.arduino.SynchronizationBlock
 import fr.obeo.dsl.arduino.Thread
+import fr.obeo.dsl.arduino.ThreadInstructionBlock
 import fr.obeo.dsl.arduino.Utilities
 import fr.obeo.dsl.arduino.VariableAssignment
 import fr.obeo.dsl.arduino.VariableDeclaration
@@ -40,6 +40,7 @@ import fr.obeo.dsl.arduino.While
 import java.util.List
 
 import static org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect.*
+import fr.obeo.dsl.arduino.Link
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -120,29 +121,13 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 
 @Aspect(className=Thread)
 class Thread_ExecutableAspect {
-	
+	@Step
 	def void execute() {
 		System.out.println("Thread " + _self.name + " execute");
-		//while(true) {
-		/*if(_self.currentInstruction instanceof InstructionBlock){
-			var instB = _self.block as InstructionBlock
-			Instruction_ExecutableAspect.execute(inst);
-		}else{
-			_self.currentInstruction.execute;
-		}*/
-		//}
-		/*for(block : _self.blocks){
-			if(_self.currentInstruction instanceof InstructionBlock){
-				var instB = _self.block as InstructionBlock
-				Instruction_ExecutableAspect.execute(inst);
-			}else{
-				_self.currentInstruction.execute;
-			}
-		}*/
 	}
-	
-	def void fire() {
-		System.out.println("Thread " + _self.name +" fire");
+
+	def void synchronize() {
+		System.out.println("Thread " + _self.name +" synchronize");
 	}
 	
 }
@@ -150,10 +135,11 @@ class Thread_ExecutableAspect {
 
 @Aspect(className=Board)
 class Board_ExecutableAspect {
+	@Step
 	def void execute() {
 		System.out.println("Board " + _self.name + " execute");
 	}
-	
+	@Step
 	def void idle() {
 		System.out.println("Board " + _self.name + " idle");
 	}
@@ -510,22 +496,37 @@ abstract class Expression_EvaluableAspect {
 @Aspect(className=Channel)
 class Channel_ExecutableAspect {
 
+	@Step
 	def void read() {
 		System.out.println("Channel " + _self.name + " read");
-		
 	}
 	
+	@Step
 	def void write() {
-		System.out.println("Channel " + _self.name + " write");
-		
+		System.out.println("Channel " + _self.name + " write");	
 	}
 }
 
-@Aspect(className=SynchronizationBlock)
-class SynchronizationBlock_ExecutableAspect{
 
-	
+@Aspect(className=ThreadInstructionBlock)
+class ThreadInstructionBlock_ExecutableAspect{
+
+	@Step
 	def void execute() {
-		//_self.ownedBlock.thread.fire
+		System.out.println("ThreadInstructionBlock " + _self.name + " execute");
 	}
 }
+
+@Aspect(className=Link)
+class Link_ExecutableAspect {
+	@Step
+	def void read() {
+		System.out.println("Link " + _self.name + " read");
+	}
+
+	@Step
+	def void write() {
+		System.out.println("Link " + _self.name + " write");	
+	}
+}
+
