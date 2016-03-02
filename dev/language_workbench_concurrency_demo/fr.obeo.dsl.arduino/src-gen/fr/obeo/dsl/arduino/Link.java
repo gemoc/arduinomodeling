@@ -10,6 +10,8 @@
  */
 package fr.obeo.dsl.arduino;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +23,7 @@ package fr.obeo.dsl.arduino;
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.Link#getInBoard <em>In Board</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.Link#getOutBoard <em>Out Board</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Link#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,5 +83,21 @@ public interface Link extends NamedElement {
 	 * @generated
 	 */
 	void setOutBoard(Board value);
+
+	/**
+	 * Returns the value of the '<em><b>Channels</b></em>' reference list.
+	 * The list contents are of type {@link fr.obeo.dsl.arduino.Channel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Channels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Channels</em>' reference list.
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getLink_Channels()
+	 * @model
+	 * @generated
+	 */
+	EList<Channel> getChannels();
 
 } // Link

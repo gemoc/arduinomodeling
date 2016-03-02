@@ -30,28 +30,26 @@ package fr.obeo.dsl.arduino;
  */
 public interface ThreadInstructionBlock extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Thread</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link fr.obeo.dsl.arduino.Thread#getBlocks <em>Blocks</em>}'.
+	 * Returns the value of the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Thread</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thread</em>' container reference.
+	 * @return the value of the '<em>Thread</em>' reference.
 	 * @see #setThread(fr.obeo.dsl.arduino.Thread)
 	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getThreadInstructionBlock_Thread()
-	 * @see fr.obeo.dsl.arduino.Thread#getBlocks
-	 * @model opposite="blocks" transient="false"
+	 * @model
 	 * @generated
 	 */
 	fr.obeo.dsl.arduino.Thread getThread();
 
 	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}' container reference.
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thread</em>' container reference.
+	 * @param value the new value of the '<em>Thread</em>' reference.
 	 * @see #getThread()
 	 * @generated
 	 */

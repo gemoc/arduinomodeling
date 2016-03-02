@@ -2,8 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://www.obeo.fr/arduino" nsPrefix="arduino">
   <eClassifiers xsi:type="ecore:EClass" name="Board" abstract="true" eSuperTypes="#//NamedElement">
-    <eOperations name="execute"/>
-    <eOperations name="idle"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
         eType="#//Project" eOpposite="#//Project/boards"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threads" upperBound="-1"
@@ -204,19 +202,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoAnalogModule" abstract="true"
       eSuperTypes="#//ArduinoModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Thread" eSuperTypes="#//NamedElement">
-    <eOperations name="execute"/>
-    <eOperations name="synchronize"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1"
-        eType="#//ThreadInstructionBlock" containment="true" eOpposite="#//ThreadInstructionBlock/thread"/>
+        eType="#//ThreadInstructionBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
         eType="#//Channel" eOpposite="#//Channel/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentInstruction" eType="#//Instruction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//ThreadInstructionBlock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//ThreadInstructionBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbCycle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Channel" eSuperTypes="#//NamedElement">
-    <eOperations name="read"/>
-    <eOperations name="write"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Thread" eOpposite="#//Thread/channels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
@@ -231,6 +226,8 @@
         eType="#//Board"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outBoard" lowerBound="1"
         eType="#//Board"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
+        eType="#//Channel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SynchronizationBlock" eSuperTypes="#//ThreadInstructionBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionBlock" eSuperTypes="#//ThreadInstructionBlock">
@@ -240,8 +237,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ThreadInstructionBlock" abstract="true"
       eSuperTypes="#//NamedElement">
     <eOperations name="execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="thread" eType="#//Thread"
-        eOpposite="#//Thread/blocks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thread" eType="#//Thread"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//ThreadInstructionBlock"/>
   </eClassifiers>
 </ecore:EPackage>

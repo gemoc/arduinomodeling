@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -44,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getCurrentInstruction <em>Current Instruction</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getFirst <em>First</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getLast <em>Last</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.ThreadImpl#getNbCycle <em>Nb Cycle</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,6 +103,26 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	protected ThreadInstructionBlock last;
 
 	/**
+	 * The default value of the '{@link #getNbCycle() <em>Nb Cycle</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbCycle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_CYCLE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNbCycle() <em>Nb Cycle</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbCycle()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbCycle = NB_CYCLE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +148,7 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	 */
 	public EList<ThreadInstructionBlock> getBlocks() {
 		if (blocks == null) {
-			blocks = new EObjectContainmentWithInverseEList<ThreadInstructionBlock>(ThreadInstructionBlock.class, this, ArduinoPackage.THREAD__BLOCKS, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD);
+			blocks = new EObjectContainmentEList<ThreadInstructionBlock>(ThreadInstructionBlock.class, this, ArduinoPackage.THREAD__BLOCKS);
 		}
 		return blocks;
 	}
@@ -262,10 +284,8 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void execute() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public int getNbCycle() {
+		return nbCycle;
 	}
 
 	/**
@@ -273,10 +293,11 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void synchronize() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setNbCycle(int newNbCycle) {
+		int oldNbCycle = nbCycle;
+		nbCycle = newNbCycle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD__NB_CYCLE, oldNbCycle, nbCycle));
 	}
 
 	/**
@@ -288,8 +309,6 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ArduinoPackage.THREAD__BLOCKS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBlocks()).basicAdd(otherEnd, msgs);
 			case ArduinoPackage.THREAD__CHANNELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChannels()).basicAdd(otherEnd, msgs);
 		}
@@ -333,6 +352,8 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 			case ArduinoPackage.THREAD__LAST:
 				if (resolve) return getLast();
 				return basicGetLast();
+			case ArduinoPackage.THREAD__NB_CYCLE:
+				return getNbCycle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +384,9 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 			case ArduinoPackage.THREAD__LAST:
 				setLast((ThreadInstructionBlock)newValue);
 				return;
+			case ArduinoPackage.THREAD__NB_CYCLE:
+				setNbCycle((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -390,6 +414,9 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 			case ArduinoPackage.THREAD__LAST:
 				setLast((ThreadInstructionBlock)null);
 				return;
+			case ArduinoPackage.THREAD__NB_CYCLE:
+				setNbCycle(NB_CYCLE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -412,8 +439,26 @@ public class ThreadImpl extends NamedElementImpl implements fr.obeo.dsl.arduino.
 				return first != null;
 			case ArduinoPackage.THREAD__LAST:
 				return last != null;
+			case ArduinoPackage.THREAD__NB_CYCLE:
+				return nbCycle != NB_CYCLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nbCycle: ");
+		result.append(nbCycle);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ThreadImpl

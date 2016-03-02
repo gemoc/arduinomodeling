@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.obeo.dsl.arduino.Thread#getCurrentInstruction <em>Current Instruction</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.Thread#getFirst <em>First</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.Thread#getLast <em>Last</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.Thread#getNbCycle <em>Nb Cycle</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +37,6 @@ public interface Thread extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Blocks</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.obeo.dsl.arduino.ThreadInstructionBlock}.
-	 * It is bidirectional and its opposite is '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Blocks</em>' containment reference list isn't clear,
@@ -45,8 +45,7 @@ public interface Thread extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Blocks</em>' containment reference list.
 	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getThread_Blocks()
-	 * @see fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread
-	 * @model opposite="thread" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ThreadInstructionBlock> getBlocks();
@@ -148,19 +147,29 @@ public interface Thread extends NamedElement {
 	void setLast(ThreadInstructionBlock value);
 
 	/**
+	 * Returns the value of the '<em><b>Nb Cycle</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nb Cycle</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Cycle</em>' attribute.
+	 * @see #setNbCycle(int)
+	 * @see fr.obeo.dsl.arduino.ArduinoPackage#getThread_NbCycle()
 	 * @model
 	 * @generated
 	 */
-	void execute();
+	int getNbCycle();
 
 	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.arduino.Thread#getNbCycle <em>Nb Cycle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @param value the new value of the '<em>Nb Cycle</em>' attribute.
+	 * @see #getNbCycle()
 	 * @generated
 	 */
-	void synchronize();
+	void setNbCycle(int value);
 
 } // Thread

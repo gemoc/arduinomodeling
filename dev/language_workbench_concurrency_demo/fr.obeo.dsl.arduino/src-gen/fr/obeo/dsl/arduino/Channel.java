@@ -191,20 +191,4 @@ public interface Channel extends NamedElement {
 	 */
 	void setCurrentSize(int value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void read();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void write();
-
 } // Channel

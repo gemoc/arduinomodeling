@@ -12,14 +12,18 @@ package fr.obeo.dsl.arduino.impl;
 
 import fr.obeo.dsl.arduino.ArduinoPackage;
 import fr.obeo.dsl.arduino.Board;
+import fr.obeo.dsl.arduino.Channel;
 import fr.obeo.dsl.arduino.Link;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link fr.obeo.dsl.arduino.impl.LinkImpl#getInBoard <em>In Board</em>}</li>
  *   <li>{@link fr.obeo.dsl.arduino.impl.LinkImpl#getOutBoard <em>Out Board</em>}</li>
+ *   <li>{@link fr.obeo.dsl.arduino.impl.LinkImpl#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +60,16 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @ordered
 	 */
 	protected Board outBoard;
+
+	/**
+	 * The cached value of the '{@link #getChannels() <em>Channels</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Channel> channels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,6 +171,18 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Channel> getChannels() {
+		if (channels == null) {
+			channels = new EObjectResolvingEList<Channel>(Channel.class, this, ArduinoPackage.LINK__CHANNELS);
+		}
+		return channels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -165,6 +192,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 			case ArduinoPackage.LINK__OUT_BOARD:
 				if (resolve) return getOutBoard();
 				return basicGetOutBoard();
+			case ArduinoPackage.LINK__CHANNELS:
+				return getChannels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,6 +203,7 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -182,6 +212,10 @@ public class LinkImpl extends NamedElementImpl implements Link {
 				return;
 			case ArduinoPackage.LINK__OUT_BOARD:
 				setOutBoard((Board)newValue);
+				return;
+			case ArduinoPackage.LINK__CHANNELS:
+				getChannels().clear();
+				getChannels().addAll((Collection<? extends Channel>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,6 +235,9 @@ public class LinkImpl extends NamedElementImpl implements Link {
 			case ArduinoPackage.LINK__OUT_BOARD:
 				setOutBoard((Board)null);
 				return;
+			case ArduinoPackage.LINK__CHANNELS:
+				getChannels().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,6 +254,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 				return inBoard != null;
 			case ArduinoPackage.LINK__OUT_BOARD:
 				return outBoard != null;
+			case ArduinoPackage.LINK__CHANNELS:
+				return channels != null && !channels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -75,20 +75,4 @@ public interface Board extends NamedElement {
 	 */
 	EList<fr.obeo.dsl.arduino.Thread> getThreads();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void idle();
-
 } // Board

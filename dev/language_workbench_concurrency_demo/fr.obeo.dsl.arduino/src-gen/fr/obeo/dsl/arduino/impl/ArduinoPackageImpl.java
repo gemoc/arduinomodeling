@@ -1526,6 +1526,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getThread_NbCycle() {
+		return (EAttribute)threadEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getChannel() {
 		return channelEClass;
 	}
@@ -1609,6 +1618,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EReference getLink_OutBoard() {
 		return (EReference)linkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLink_Channels() {
+		return (EReference)linkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1893,6 +1911,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(threadEClass, THREAD__CURRENT_INSTRUCTION);
 		createEReference(threadEClass, THREAD__FIRST);
 		createEReference(threadEClass, THREAD__LAST);
+		createEAttribute(threadEClass, THREAD__NB_CYCLE);
 
 		channelEClass = createEClass(CHANNEL);
 		createEReference(channelEClass, CHANNEL__SOURCE);
@@ -1905,6 +1924,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__IN_BOARD);
 		createEReference(linkEClass, LINK__OUT_BOARD);
+		createEReference(linkEClass, LINK__CHANNELS);
 
 		synchronizationBlockEClass = createEClass(SYNCHRONIZATION_BLOCK);
 
@@ -2025,10 +2045,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBoard_Project(), this.getProject(), this.getProject_Boards(), "project", null, 1, 1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBoard_Threads(), this.getThread(), null, "threads", null, 0, -1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(boardEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(boardEClass, null, "idle", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModule_Level(), ecorePackage.getEBoolean(), "level", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2178,15 +2194,12 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(arduinoAnalogModuleEClass, ArduinoAnalogModule.class, "ArduinoAnalogModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(threadEClass, fr.obeo.dsl.arduino.Thread.class, "Thread", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThread_Blocks(), this.getThreadInstructionBlock(), this.getThreadInstructionBlock_Thread(), "blocks", null, 0, -1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThread_Blocks(), this.getThreadInstructionBlock(), null, "blocks", null, 0, -1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_Channels(), this.getChannel(), this.getChannel_Source(), "channels", null, 0, -1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_CurrentInstruction(), this.getInstruction(), null, "currentInstruction", null, 0, 1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_First(), this.getThreadInstructionBlock(), null, "first", null, 0, 1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_Last(), this.getThreadInstructionBlock(), null, "last", null, 0, 1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(threadEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(threadEClass, null, "synchronize", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getThread_NbCycle(), ecorePackage.getEInt(), "nbCycle", null, 0, 1, fr.obeo.dsl.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChannel_Source(), this.getThread(), this.getThread_Channels(), "source", null, 1, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2196,13 +2209,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEAttribute(getChannel_Capacity(), ecorePackage.getEInt(), "capacity", null, 0, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChannel_CurrentSize(), ecorePackage.getEInt(), "currentSize", null, 0, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(channelEClass, null, "read", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(channelEClass, null, "write", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_InBoard(), this.getBoard(), null, "inBoard", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLink_OutBoard(), this.getBoard(), null, "outBoard", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_Channels(), this.getChannel(), null, "channels", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationBlockEClass, SynchronizationBlock.class, "SynchronizationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2210,7 +2220,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getInstructionBlock_Instructions(), this.getInstruction(), this.getInstruction_OwnedBlock(), "instructions", null, 0, -1, InstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(threadInstructionBlockEClass, ThreadInstructionBlock.class, "ThreadInstructionBlock", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreadInstructionBlock_Thread(), this.getThread(), this.getThread_Blocks(), "thread", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThreadInstructionBlock_Thread(), this.getThread(), null, "thread", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreadInstructionBlock_Next(), this.getThreadInstructionBlock(), null, "next", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(threadInstructionBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);

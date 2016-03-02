@@ -2216,13 +2216,22 @@ public interface ArduinoPackage extends EPackage {
 	int THREAD__LAST = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Nb Cycle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD__NB_CYCLE = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Thread</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int THREAD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ChannelImpl <em>Channel</em>}' class.
@@ -2344,13 +2353,22 @@ public interface ArduinoPackage extends EPackage {
 	int LINK__OUT_BOARD = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Channels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__CHANNELS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.obeo.dsl.arduino.impl.ThreadInstructionBlockImpl <em>Thread Instruction Block</em>}' class.
@@ -2372,7 +2390,7 @@ public interface ArduinoPackage extends EPackage {
 	int THREAD_INSTRUCTION_BLOCK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2418,7 +2436,7 @@ public interface ArduinoPackage extends EPackage {
 	int SYNCHRONIZATION_BLOCK__NAME = THREAD_INSTRUCTION_BLOCK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2464,7 +2482,7 @@ public interface ArduinoPackage extends EPackage {
 	int INSTRUCTION_BLOCK__NAME = THREAD_INSTRUCTION_BLOCK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3619,6 +3637,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getThread_Last();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.arduino.Thread#getNbCycle <em>Nb Cycle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Cycle</em>'.
+	 * @see fr.obeo.dsl.arduino.Thread#getNbCycle()
+	 * @see #getThread()
+	 * @generated
+	 */
+	EAttribute getThread_NbCycle();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.Channel <em>Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3727,6 +3756,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getLink_OutBoard();
 
 	/**
+	 * Returns the meta object for the reference list '{@link fr.obeo.dsl.arduino.Link#getChannels <em>Channels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Channels</em>'.
+	 * @see fr.obeo.dsl.arduino.Link#getChannels()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_Channels();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.arduino.SynchronizationBlock <em>Synchronization Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3768,10 +3808,10 @@ public interface ArduinoPackage extends EPackage {
 	EClass getThreadInstructionBlock();
 
 	/**
-	 * Returns the meta object for the container reference '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
+	 * Returns the meta object for the reference '{@link fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Thread</em>'.
+	 * @return the meta object for the reference '<em>Thread</em>'.
 	 * @see fr.obeo.dsl.arduino.ThreadInstructionBlock#getThread()
 	 * @see #getThreadInstructionBlock()
 	 * @generated
@@ -4786,6 +4826,14 @@ public interface ArduinoPackage extends EPackage {
 		EReference THREAD__LAST = eINSTANCE.getThread_Last();
 
 		/**
+		 * The meta object literal for the '<em><b>Nb Cycle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD__NB_CYCLE = eINSTANCE.getThread_NbCycle();
+
+		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.ChannelImpl <em>Channel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4870,6 +4918,14 @@ public interface ArduinoPackage extends EPackage {
 		EReference LINK__OUT_BOARD = eINSTANCE.getLink_OutBoard();
 
 		/**
+		 * The meta object literal for the '<em><b>Channels</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__CHANNELS = eINSTANCE.getLink_Channels();
+
+		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.arduino.impl.SynchronizationBlockImpl <em>Synchronization Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4908,7 +4964,7 @@ public interface ArduinoPackage extends EPackage {
 		EClass THREAD_INSTRUCTION_BLOCK = eINSTANCE.getThreadInstructionBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Thread</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Thread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

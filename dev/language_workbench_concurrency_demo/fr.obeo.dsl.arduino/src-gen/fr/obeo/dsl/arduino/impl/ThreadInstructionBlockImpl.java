@@ -39,6 +39,15 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implements ThreadInstructionBlock {
 	/**
+	 * The cached value of the '{@link #getThread() <em>Thread</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThread()
+	 * @generated
+	 * @ordered
+	 */
+	protected fr.obeo.dsl.arduino.Thread thread;
+	/**
 	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,8 +82,15 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 	 * @generated
 	 */
 	public fr.obeo.dsl.arduino.Thread getThread() {
-		if (eContainerFeatureID() != ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD) return null;
-		return (fr.obeo.dsl.arduino.Thread)eInternalContainer();
+		if (thread != null && thread.eIsProxy()) {
+			InternalEObject oldThread = (InternalEObject)thread;
+			thread = (fr.obeo.dsl.arduino.Thread)eResolveProxy(oldThread);
+			if (thread != oldThread) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD, oldThread, thread));
+			}
+		}
+		return thread;
 	}
 
 	/**
@@ -82,9 +98,8 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetThread(fr.obeo.dsl.arduino.Thread newThread, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newThread, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD, msgs);
-		return msgs;
+	public fr.obeo.dsl.arduino.Thread basicGetThread() {
+		return thread;
 	}
 
 	/**
@@ -93,19 +108,10 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 	 * @generated
 	 */
 	public void setThread(fr.obeo.dsl.arduino.Thread newThread) {
-		if (newThread != eInternalContainer() || (eContainerFeatureID() != ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD && newThread != null)) {
-			if (EcoreUtil.isAncestor(this, newThread))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newThread != null)
-				msgs = ((InternalEObject)newThread).eInverseAdd(this, ArduinoPackage.THREAD__BLOCKS, fr.obeo.dsl.arduino.Thread.class, msgs);
-			msgs = basicSetThread(newThread, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD, newThread, newThread));
+		fr.obeo.dsl.arduino.Thread oldThread = thread;
+		thread = newThread;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD, oldThread, thread));
 	}
 
 	/**
@@ -163,54 +169,11 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetThread((fr.obeo.dsl.arduino.Thread)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
-				return basicSetThread(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
-				return eInternalContainer().eInverseRemove(this, ArduinoPackage.THREAD__BLOCKS, fr.obeo.dsl.arduino.Thread.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
-				return getThread();
+				if (resolve) return getThread();
+				return basicGetThread();
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
 				if (resolve) return getNext();
 				return basicGetNext();
@@ -263,7 +226,7 @@ public abstract class ThreadInstructionBlockImpl extends NamedElementImpl implem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__THREAD:
-				return getThread() != null;
+				return thread != null;
 			case ArduinoPackage.THREAD_INSTRUCTION_BLOCK__NEXT:
 				return next != null;
 		}
