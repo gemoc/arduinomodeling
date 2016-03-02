@@ -92,9 +92,6 @@ Defining the Functions for : ThreadInstructionBlock
 Defining the Functions for : Thread
 **********************************************************************/
 /*********************************************************************
-Defining the Functions for : InstructionBlock
-**********************************************************************/
-/*********************************************************************
 Defining the Functions for : SynchronizationBlock
 **********************************************************************/
 /*********************************************************************
@@ -115,11 +112,10 @@ process p[element.name/] ['['/][element.name/]_execInstruction:in none[']'/](&gl
 [/for]
 process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
 [element.name/]_execInstruction:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute:out none,[element.name/]_synchronize:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
-[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+[element.name/]_execute:out none,[element.name/]_synchronize:out none,[element.name/]_startEv:out none,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 [/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_push:out none,[element.name/]_pop:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
-[element.name/]_execBoard:out none,[element.name/]_idleBoard:out none,[/for][for (element : Link| aProject.eAllContents(Link))]
+[element.name/]_execBoard:out none,[/for][for (element : Link| aProject.eAllContents(Link))]
 [element.name/]_writeLink:out none,[element.name/]_readLink:out none,[/for][']'/] is
 	states s0
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
@@ -129,9 +125,7 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 [for (element : Thread| aProject.eAllContents(Thread))]
     from s0  [element.name/]_execute;  to s0
     from s0  [element.name/]_synchronize;  to s0
-
-[/for]
-[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+    from s0  [element.name/]_startEv;  to s0
 
 [/for]
 [for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
@@ -144,7 +138,6 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 [/for]
 [for (element : Board| aProject.eAllContents(Board))]
     from s0  [element.name/]_execBoard;  to s0
-    from s0  [element.name/]_idleBoard;  to s0
 
 [/for]
 [for (element : Link| aProject.eAllContents(Link))]
@@ -156,11 +149,10 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 [file ('pUnConstrainedSemantics.fcr', false, 'UTF-8')]
 process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
 [element.name/]_execInstruction:out none,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute:out none,[element.name/]_synchronize:out none,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
-[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+[element.name/]_execute:out none,[element.name/]_synchronize:out none,[element.name/]_startEv:out none,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 [/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_push:out none,[element.name/]_pop:out none,[/for][for (element : Board| aProject.eAllContents(Board))]
-[element.name/]_execBoard:out none,[element.name/]_idleBoard:out none,[/for][for (element : Link| aProject.eAllContents(Link))]
+[element.name/]_execBoard:out none,[/for][for (element : Link| aProject.eAllContents(Link))]
 [element.name/]_writeLink:out none,[element.name/]_readLink:out none,[/for][']'/] is
 	
 	states s0
@@ -171,9 +163,7 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 [for (element : Thread| aProject.eAllContents(Thread))]
     from s0  [element.name/]_execute;  to s0
     from s0  [element.name/]_synchronize;  to s0
-
-[/for]
-[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
+    from s0  [element.name/]_startEv;  to s0
 
 [/for]
 [for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
@@ -186,7 +176,6 @@ process pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aPr
 [/for]
 [for (element : Board| aProject.eAllContents(Board))]
     from s0  [element.name/]_execBoard;  to s0
-    from s0  [element.name/]_idleBoard;  to s0
 
 [/for]
 [for (element : Link| aProject.eAllContents(Link))]
@@ -206,16 +195,15 @@ var
 port
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
 [element.name/]_execInstruction: none,
-[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute: none,[element.name/]_synchronize: none,
-[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
 
+[/for][for (element : Thread| aProject.eAllContents(Thread))]
+[element.name/]_execute: none,[element.name/]_synchronize: none,[element.name/]_startEv: none,
 [/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 
 [/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_push: none,[element.name/]_pop: none,
 [/for][for (element : Board| aProject.eAllContents(Board))]
-[element.name/]_execBoard: none,[element.name/]_idleBoard: none,
+[element.name/]_execBoard: none,
 [/for][for (element : Link| aProject.eAllContents(Link))]
 [element.name/]_writeLink: none,[element.name/]_readLink: none,
 [/for]
@@ -224,20 +212,16 @@ par
 
 pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
 [element.name/]_execInstruction,[/for][for (element : Thread| aProject.eAllContents(Thread))]
-[element.name/]_execute,[element.name/]_synchronize,[/for][for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
-,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
+[element.name/]_execute,[element.name/]_synchronize,[element.name/]_startEv,[/for][for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 ,[/for][for (element : Channel| aProject.eAllContents(Channel))]
 [element.name/]_push,[element.name/]_pop,[/for][for (element : Board| aProject.eAllContents(Board))]
-[element.name/]_execBoard,[element.name/]_idleBoard,[/for][for (element : Link| aProject.eAllContents(Link))]
+[element.name/]_execBoard,[/for][for (element : Link| aProject.eAllContents(Link))]
 [element.name/]_writeLink,[element.name/]_readLink,[/for][']'/]
 [for (element : ThreadInstructionBlock| aProject.eAllContents(ThreadInstructionBlock))]
 || p[element.name/] ['['/][element.name/]_execInstruction[']'/] (&global, ID)
 [/for]
 [for (element : Thread| aProject.eAllContents(Thread))]
-|| p[element.name/] ['['/][element.name/]_execute,[element.name/]_synchronize[']'/] (&global, ID)
-[/for]
-[for (element : InstructionBlock| aProject.eAllContents(InstructionBlock))]
-|| p[element.name/] ['['/][']'/] (&global, ID)
+|| p[element.name/] ['['/][element.name/]_execute,[element.name/]_synchronize,[element.name/]_startEv[']'/] (&global, ID)
 [/for]
 [for (element : SynchronizationBlock| aProject.eAllContents(SynchronizationBlock))]
 || p[element.name/] ['['/][']'/] (&global, ID)
@@ -246,7 +230,7 @@ pUnConstrainedSemantics['['/][for (element : ThreadInstructionBlock| aProject.eA
 || p[element.name/] ['['/][element.name/]_push,[element.name/]_pop[']'/] (&global, ID)
 [/for]
 [for (element : Board| aProject.eAllContents(Board))]
-|| p[element.name/] ['['/][element.name/]_execBoard,[element.name/]_idleBoard[']'/] (&global, ID)
+|| p[element.name/] ['['/][element.name/]_execBoard[']'/] (&global, ID)
 [/for]
 [for (element : Link| aProject.eAllContents(Link))]
 || p[element.name/] ['['/][element.name/]_writeLink,[element.name/]_readLink[']'/] (&global, ID)

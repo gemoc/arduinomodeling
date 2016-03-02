@@ -117,6 +117,8 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map execute2Clock();
 		////[ Thread ]
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map synchronize2Clock();
+		////[ Thread ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map startEv2Clock();
 		
 
 
@@ -124,27 +126,18 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map executeAllInstructions142executeAllInstructions();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map Thread_StartInstructionFirst12Thread_StartInstructionFirst();
+
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ThreadInstructionBlock.oclAsType(EClass)).oclAsType(ThreadInstructionBlock)->map ThreadInstructionBlock_OrderEnforcement132ThreadInstructionBlock_OrderEnforcement();
 		
 		
 
 		
 
 
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), InstructionBlock.oclAsType(EClass)).oclAsType(InstructionBlock)->map Instruction_OrderEnforcement12Instruction_OrderEnforcement();
-		
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), InstructionBlock.oclAsType(EClass)).oclAsType(InstructionBlock)->map InstructionStartFirst12InstructionStartFirst();
-		
-		
-
-		
-
-
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), SynchronizationBlock.oclAsType(EClass)).oclAsType(SynchronizationBlock)->map Sync_OrderEnforcement12Sync_OrderEnforcement();
-		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), SynchronizationBlock.oclAsType(EClass)).oclAsType(SynchronizationBlock)->map synchronize12synchronize();
 		
@@ -170,19 +163,11 @@ main() {
 
 		////[ Board ]
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map execBoard2Clock();
-		////[ Board ]
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map idleBoard2Clock();
 		
 
 
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map ThreadCanExecuteIfBoardExecute142ThreadCanExecuteIfBoardExecute();
-		
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map ExecutingXorIdle12ExecutingXorIdle();
-		
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map oneThreadAtATime12oneThreadAtATime();
 		
 		
 
@@ -564,6 +549,23 @@ main() {
 				theMainBlock.elements += result;
 			}
 		}
+	 	mapping inMM1::Thread::startEv2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_startEv';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_startEv';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
 
 //relation stuff		
 	
@@ -583,18 +585,29 @@ main() {
 		theMainBlock.relations += result;
 		}
 		
+
+//relation stuff		
 	
-		mapping inMM1::Thread::Thread_StartInstructionFirst12Thread_StartInstructionFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::ThreadInstructionBlock::ThreadInstructionBlock_OrderEnforcement132ThreadInstructionBlock_OrderEnforcement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_Thread_StartInstructionFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_ThreadInstructionBlock_OrderEnforcement";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "ThreadDecl")->first();
+					var nbCycle : Integer := self.thread.oclAsType(Thread).nbCycle;
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.first.oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
+					_abstract := seqOfAbstractEntity[name = 'Thread_currentInstruction']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.first.next.oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					bindable := theMainBlock.elements[name = getNameOrUID(self.next.oclAsType(EObject))+'_execInstruction']->first();
+					_abstract := seqOfAbstractEntity[name = 'Thread_nextInstruction']->first();
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.thread.oclAsType(Thread).oclAsType(EObject))+'_startEv']->first();
+					_abstract := seqOfAbstractEntity[name = 'Thread_start']->first();
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self.thread.oclAsType(Thread).nbCycle -> map Real2Integer(getNameOrUID(self.oclAsType(EObject))+getNameOrUID(self.thread.oclAsType(Thread).oclAsType(EObject))+"_nbCycle")->asSequence()->first();
+					_abstract := seqOfAbstractEntity[name = 'Thread_nbCycle']->first();
 				};
 		
 		theMainBlock.relations += result;
@@ -602,59 +615,6 @@ main() {
 		
 
 //relation stuff		
-	
-		mapping inMM1::InstructionBlock::Instruction_OrderEnforcement12Instruction_OrderEnforcement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_Instruction_OrderEnforcement";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "ThreadDecl")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfAbstractEntity[name = 'Thread_instruction']->first();
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.next.oclAsType(SynchronizationBlock).oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfAbstractEntity[name = 'Thread_synchro']->first();
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
-	
-		mapping inMM1::InstructionBlock::InstructionStartFirst12InstructionStartFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_InstructionStartFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.next.oclAsType(SynchronizationBlock).oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
-
-//relation stuff		
-	
-		mapping inMM1::SynchronizationBlock::Sync_OrderEnforcement12Sync_OrderEnforcement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"ThreadDecl_Sync_OrderEnforcement";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "ThreadDecl")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfAbstractEntity[name = 'Thread_instruction']->first();
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.next.oclAsType(InstructionBlock).oclAsType(EObject))+'_execInstruction']->first();
-					_abstract := seqOfAbstractEntity[name = 'Thread_synchro']->first();
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
 	
 		mapping inMM1::SynchronizationBlock::synchronize12synchronize(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
@@ -796,23 +756,6 @@ main() {
 				theMainBlock.elements += result;
 			}
 		}
-	 	mapping inMM1::Board::idleBoard2Clock() :TimeModel::Clock 
-			when {  }
-		{
-			name:= getNameOrUID(self.oclAsType(EObject))+'_idleBoard';
-			tickingEvent := object TimeModel::Event{
- 				referencedObjectRefs += self.oclAsType(EObject);
-			
-				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_idleBoard';
-			kind :=TimeModel::EventKind::undefined;
-						
-			};
-			type:= Kernel_Clock_Type;
-
-			end{
-				theMainBlock.elements += result;
-			}
-		}
 
 //relation stuff		
 	
@@ -831,63 +774,6 @@ main() {
 		
 		theMainBlock.relations += result;
 		}
-		
-	
-		mapping inMM1::Board::ExecutingXorIdle12ExecutingXorIdle(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"BoardDecl_ExecutingXorIdle";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "BoardDecl")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_execBoard']->first();
-					_abstract := seqOfAbstractEntity[name = 'BoardSDF_execute']->first();
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_idleBoard']->first();
-					_abstract := seqOfAbstractEntity[name = 'BoardSDF_idle']->first();
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
-	
-
-//Create an intermediate relation
-	mapping inMM1::Board::intermediate_oneThreadAtATime12oneThreadAtATime(an1 : Thread, an2 : Thread, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_oneThreadAtATime'+nbi.toString()+"_"+nbj.toString();
-		var seqAbstract : Sequence(Stdlib::Element) := seqOfRelationDeclaration[name = 'Exclusion']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::Exclusion).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence();
-		type := seqOfRelationDeclaration->select(rd | rd.name = "Exclusion")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_execute']->first();
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_execute']->first();
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.relations += result;
-		}
-	}
-	
-	mapping inMM1::Board::oneThreadAtATime12oneThreadAtATime()
-	{
-		init{
-			var sources : Sequence(Thread) := self.threads.oclAsType(Thread)->asSequence();
-			var i : Integer := 1;
-			var j : Integer := 1;
-			var size : Integer = sources->size(); 
-			while (i <= size){
-				j := i+1;
-				while (j <= size){
-					theMainBlock.relations +=  self.map intermediate_oneThreadAtATime12oneThreadAtATime(sources->at(i),sources->at(j), i, j);
-					j := j + 1;
-				};
-				i := i + 1;
-			};
-		}
-	}
-
 		
 	 	mapping inMM1::Link::writeLink2Clock() :TimeModel::Clock 
 			when {  }
@@ -996,6 +882,7 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map execute2MSE();
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map synchronize2MSE();
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Thread.oclAsType(EClass)).oclAsType(Thread)->map startEv2MSE();
 
 
 
@@ -1023,7 +910,6 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 		
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map execBoard2MSE();
-	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Board.oclAsType(EClass)).oclAsType(Board)->map idleBoard2MSE();
 
 
 
@@ -1076,6 +962,17 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 				seqOfMSE += result
 			}
 		}
+	 	mapping inMM1::Thread::startEv2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_startEv';
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_startEv')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
 	 	mapping inMM1::Channel::push2MSE() :FeedBack::ModelSpecificEvent 
 			when {  }
 		{
@@ -1103,17 +1000,6 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_execBoard';
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_execBoard')->first().oclAsType(EObject);
-				
-			end{
-				theFeedBackSpec.events += result;
-				seqOfMSE += result
-			}
-		}
-	 	mapping inMM1::Board::idleBoard2MSE() :FeedBack::ModelSpecificEvent 
-			when {  }
-		{
-			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_idleBoard';
-				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_idleBoard')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;

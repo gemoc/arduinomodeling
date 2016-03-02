@@ -65,48 +65,62 @@ moccmllibs:={ #Arduino -> {
  
 			[']'/]. "end #ChannelFsm"
 
-		#BoardFsm -> ['['/]:s   :BoardSDF_execute :BoardSDF_idle|
+		#ThreadFSM -> ['['/]:s :currentCycle :nbCycle :unVal :Thread_nbCycle :Thread_currentInstruction :Thread_nextInstruction :Thread_start|
 	
 				s caseOf: {
-							['['/]0[']'/] -> ['['/]{
-								0 -> 1 when: {} 
-							}[']'/].
-							['['/]1[']'/] -> ['['/]{
-								1 -> 2 when: {BoardSDF_execute} 
-							}
+							['['/]0[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							true ifTrue: ['['/]
+									transitions add: (0 -> 1  do: ['['/]:configuration |
+										|nbCycle_ | 
+										nbCycle_ := configuration at: 3.
+										configuration at: 3 put: (Thread_nbCycle).
+
+									[']'/]
+									) [']'/].							
+									transitions asArray.
 							[']'/].
-
-							['['/]2[']'/] -> ['['/]{
-								2 -> 1 when: {BoardSDF_idle}. 
-								2 -> 2 when: {BoardSDF_execute} 
-							}
-							[']'/].
-
-					
-					} "end caseof"
- 
-			[']'/]. "end #BoardFsm"
-
-		#ThreadFSM -> ['['/]:s   :Thread_instruction :Thread_synchro|
+							['['/]2[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							(currentCycle <= nbCycle) ifTrue:['['/]
+									transitions add: (2 -> 3  when:{Thread_currentInstruction}  do: ['['/]:configuration |
+										|currentCycle_ |
+										currentCycle_ := configuration at: 2.
+										configuration at: 2 put: (currentCycle + unVal).
 	
-				s caseOf: {
-							['['/]0[']'/] -> ['['/]{
-								0 -> 1 when: {} 
-							}[']'/].
-							['['/]2[']'/] -> ['['/]{
-								2 -> 3 when: {Thread_synchro} 
-							}
+									[']'/]
+									) [']'/].
+
+							['['/]
+									transitions add: (2 -> 2  when:{Thread_nextInstruction} 
+									) [']'/].
+
+
+									transitions asArray.
 							[']'/].
 
-							['['/]3[']'/] -> ['['/]{
-								3 -> 2 when: {Thread_instruction} 
-							}
+							['['/]1[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							['['/]
+									transitions add: (1 -> 2  when:{Thread_start} 
+									) [']'/].
+
+							['['/]
+									transitions add: (1 -> 3  when:{Thread_start. Thread_currentInstruction} 
+									) [']'/].
+
+
+									transitions asArray.
 							[']'/].
 
-							['['/]1[']'/] -> ['['/]{
-								1 -> 2 when: {Thread_instruction}. 
-								1 -> 3 when: {Thread_synchro} 
-							}
+							['['/]3[']'/] -> ['['/]|transitions|
+							transitions := OrderedCollection new.
+							['['/]
+									transitions add: (3 -> 2  when:{Thread_nextInstruction} 
+									) [']'/].
+
+
+									transitions asArray.
 							[']'/].
 
 					
@@ -133,17 +147,13 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
 "clocks for Thread [element.name/]" 
-	system addClocks: #(execute[element.name /] synchronize[element.name /] ).
+	system addClocks: #(execute[element.name /] synchronize[element.name /] startEv[element.name /] ).
 "internal clocks for arduino::Thread [element.name/]" 
-    system addInternalClocks: #(instruExec[element.name /] ).
-[/for]
-[for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
-"clocks for InstructionBlock [element.name/]" 
-	system addClocks: #().
+	[if ( element.blocks.oclAsType(arduino::ThreadInstructionBlock)->size()>1) ]system addInternalClocks: #(instruExec[element.name/]).[/if]
+
 [/for]
 [for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
 "clocks for SynchronizationBlock [element.name/]" 
-	system addClocks: #().
 [/for]
 [for (element : arduino::Channel| aProject.eAllContents(arduino::Channel))]
 "clocks for Channel [element.name/]" 
@@ -151,55 +161,40 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
 "clocks for Board [element.name/]" 
-	system addClocks: #(execBoard[element.name /] idleBoard[element.name /] ).
+	system addClocks: #(execBoard[element.name /] ).
 "internal clocks for arduino::Board [element.name/]" 
-    system addInternalClocks: #(allThreadsExecutions[element.name /] ).
+	[if ( element.threads.oclAsType(arduino::Thread)->size()>1) ]system addInternalClocks: #(allThreadsExecutions[element.name/]).[/if]
+
 [/for]
 [for (element : arduino::Link| aProject.eAllContents(arduino::Link))]
 "clocks for Link [element.name/]" 
 	system addClocks: #(writeLink[element.name /] readLink[element.name /] ).
 "internal clocks for arduino::Link [element.name/]" 
-    system addInternalClocks: #(allChannelsWriting[element.name /] allChannelsReading[element.name /] ).
+	[if ( element.channels.oclAsType(arduino::Channel)->size()>1) ]system addInternalClocks: #(allChannelsWriting[element.name/]).[/if]
+[if ( element.channels.oclAsType(arduino::Channel)->size()>1) ]system addInternalClocks: #(allChannelsReading[element.name/]).[/if]
+
 [/for]
 
 [for (element : arduino::ThreadInstructionBlock| aProject.eAllContents(arduino::ThreadInstructionBlock))]
 "relations for ThreadInstructionBlock [element.name/]" 
-[/for]
-[for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
-"expressions used by  Thread [element.name/]" 
-	system allUnion: #([for (ne : arduino::ThreadInstructionBlock | element.blocks.oclAsType(arduino::ThreadInstructionBlock))]execInstruction[ne.name/] [/for]) named: #instruExec[element.name/]. 
-"relations for Thread [element.name/]" 
-	"executeAllInstructions in Thread [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(execute[element.name/]  instruExec[element.name/]).
-
-	"Thread_StartInstructionFirst in Thread [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(execInstruction[element.first.name/]  execInstruction[element.first.next.name/]).
-
-[/for]
-[for (element : arduino::InstructionBlock| aProject.eAllContents(arduino::InstructionBlock))]
-"relations for InstructionBlock [element.name/]" 
-	"Instruction_OrderEnforcement in InstructionBlock [element.name/]"
+	"ThreadInstructionBlock_OrderEnforcement in ThreadInstructionBlock [element.name/]"
 	system
 		library: #Arduino
 		relation: #ThreadFSM
-		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/])
-		constants: {}
-		variables: {}.
+		clocks: #(execInstruction[element.name/]  execInstruction[element.next.name/]  startEv[element.thread.oclAsType(arduino::Thread).name/] )
+		constants: {[element.thread.oclAsType(arduino::Thread).nbCycle/]}
+		variables: {0. 0. 1}.
 
-	"InstructionStartFirst in InstructionBlock [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/]).
+[/for]
+[for (element : arduino::Thread| aProject.eAllContents(arduino::Thread))]
+"expressions used by  Thread [element.name/]" 
+"relations for Thread [element.name/]" 
+	"executeAllInstructions in Thread [element.name/]"
+		system library: #Kernel relation: #Coincides clocks: #(execute[element.name/]  [if ( element.blocks.oclAsType(arduino::ThreadInstructionBlock)->size()<2) ]#execInstruction[element.blocks.oclAsType(arduino::ThreadInstructionBlock)->first().name/][/if][if ( element.blocks.oclAsType(arduino::ThreadInstructionBlock)->size()>1) ]#instruExec[element.name/][/if]).
 
 [/for]
 [for (element : arduino::SynchronizationBlock| aProject.eAllContents(arduino::SynchronizationBlock))]
 "relations for SynchronizationBlock [element.name/]" 
-	"Sync_OrderEnforcement in SynchronizationBlock [element.name/]"
-	system
-		library: #Arduino
-		relation: #ThreadFSM
-		clocks: #(execInstruction[element.name/]  execInstruction[element.next.oclAsType(arduino::ThreadInstructionBlock).name/])
-		constants: {}
-		variables: {}.
-
 	"synchronize in SynchronizationBlock [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(execInstruction[element.name/]  synchronize[element.thread.name/]).
 
@@ -223,33 +218,19 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Board| aProject.eAllContents(arduino::Board))]
 "expressions used by  Board [element.name/]" 
-	system allUnion: #([for (ne : arduino::Thread | element.threads.oclAsType(arduino::Thread))]execute[ne.name/] [/for]) named: #allThreadsExecutions[element.name/]. 
 "relations for Board [element.name/]" 
 	"ThreadCanExecuteIfBoardExecute in Board [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(execBoard[element.name/]  allThreadsExecutions[element.name/]).
-
-	"ExecutingXorIdle in Board [element.name/]"
-	system
-		library: #Arduino
-		relation: #BoardFsm
-		clocks: #(execBoard[element.name/]  idleBoard[element.name/])
-		constants: {}
-		variables: {}.
-
-	"oneThreadAtATime in Board [element.name/]"
-		system library: #Kernel relation: #Exclusion clocks: #([for (ne : arduino::Thread | element.threads.oclAsType(arduino::Thread))]execute[ne.name/] [/for]).
+		system library: #Kernel relation: #Coincides clocks: #(execBoard[element.name/]  [if ( element.threads.oclAsType(arduino::Thread)->size()<2) ]#execute[element.threads.oclAsType(arduino::Thread)->first().name/][/if][if ( element.threads.oclAsType(arduino::Thread)->size()>1) ]#allThreadsExecutions[element.name/][/if]).
 
 [/for]
 [for (element : arduino::Link| aProject.eAllContents(arduino::Link))]
 "expressions used by  Link [element.name/]" 
-	system allUnion: #([for (ne : arduino::Channel | element.channels.oclAsType(arduino::Channel))]push[ne.name/] [/for]) named: #allChannelsWriting[element.name/]. 
-	system allUnion: #([for (ne : arduino::Channel | element.channels.oclAsType(arduino::Channel))]pop[ne.name/] [/for]) named: #allChannelsReading[element.name/]. 
 "relations for Link [element.name/]" 
 	"ChannelsWritingCoincidesWithLinkWriting in Link [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(writeLink[element.name/]  allChannelsWriting[element.name/]).
+		system library: #Kernel relation: #Coincides clocks: #(writeLink[element.name/]  [if ( element.channels.oclAsType(arduino::Channel)->size()<2) ]#push[element.channels.oclAsType(arduino::Channel)->first().name/][/if][if ( element.channels.oclAsType(arduino::Channel)->size()>1) ]#allChannelsWriting[element.name/][/if]).
 
 	"ChannelsReadingCoincidesWithLinkReading in Link [element.name/]"
-		system library: #Kernel relation: #Coincides clocks: #(readLink[element.name/]  allChannelsReading[element.name/]).
+		system library: #Kernel relation: #Coincides clocks: #(readLink[element.name/]  [if ( element.channels.oclAsType(arduino::Channel)->size()<2) ]#pop[element.channels.oclAsType(arduino::Channel)->first().name/][/if][if ( element.channels.oclAsType(arduino::Channel)->size()>1) ]#allChannelsReading[element.name/][/if]).
 
 [/for]
 [/file]
