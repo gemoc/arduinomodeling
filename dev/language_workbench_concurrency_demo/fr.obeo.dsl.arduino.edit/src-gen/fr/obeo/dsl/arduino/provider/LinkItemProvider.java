@@ -53,6 +53,7 @@ public class LinkItemProvider extends NamedElementItemProvider {
 
 			addInBoardPropertyDescriptor(object);
 			addOutBoardPropertyDescriptor(object);
+			addChannelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,6 +94,28 @@ public class LinkItemProvider extends NamedElementItemProvider {
 				 getString("_UI_Link_outBoard_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Link_outBoard_feature", "_UI_Link_type"),
 				 ArduinoPackage.Literals.LINK__OUT_BOARD,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Channels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChannelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Link_channels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Link_channels_feature", "_UI_Link_type"),
+				 ArduinoPackage.Literals.LINK__CHANNELS,
 				 true,
 				 false,
 				 true,

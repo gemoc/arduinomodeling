@@ -59,6 +59,7 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 			addCurrentInstructionPropertyDescriptor(object);
 			addFirstPropertyDescriptor(object);
 			addLastPropertyDescriptor(object);
+			addNbCyclePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -152,6 +153,28 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Nb Cycle feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNbCyclePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Thread_nbCycle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Thread_nbCycle_feature", "_UI_Thread_type"),
+				 ArduinoPackage.Literals.THREAD__NB_CYCLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -219,6 +242,9 @@ public class ThreadItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(fr.obeo.dsl.arduino.Thread.class)) {
+			case ArduinoPackage.THREAD__NB_CYCLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ArduinoPackage.THREAD__BLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
