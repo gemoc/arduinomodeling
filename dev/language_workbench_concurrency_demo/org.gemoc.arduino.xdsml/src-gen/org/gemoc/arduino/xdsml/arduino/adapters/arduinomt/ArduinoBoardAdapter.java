@@ -73,12 +73,12 @@ public class ArduinoBoardAdapter extends EObjectAdapter<ArduinoBoard> implements
   
   @Override
   public void execute() {
-    adaptee.execute() ;
+    org.gemoc.arduino.operationalsemantics.Board_ExecutableAspect.execute(adaptee) ;
   }
   
   @Override
   public void idle() {
-    adaptee.idle() ;
+    org.gemoc.arduino.operationalsemantics.Board_ExecutableAspect.idle(adaptee) ;
   }
   
   @Override

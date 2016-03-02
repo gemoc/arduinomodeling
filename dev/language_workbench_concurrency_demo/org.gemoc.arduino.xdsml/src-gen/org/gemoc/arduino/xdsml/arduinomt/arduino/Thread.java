@@ -28,7 +28,6 @@ public interface Thread extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Blocks</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock}.
-	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Blocks</em>' containment reference list isn't clear,
@@ -37,8 +36,7 @@ public interface Thread extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Blocks</em>' containment reference list.
 	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage#getThread_Blocks()
-	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread
-	 * @model opposite="thread" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ThreadInstructionBlock> getBlocks();
@@ -154,13 +152,5 @@ public interface Thread extends NamedElement {
 	 * @generated
 	 */
 	void synchronize();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void fire();
 
 } // Thread

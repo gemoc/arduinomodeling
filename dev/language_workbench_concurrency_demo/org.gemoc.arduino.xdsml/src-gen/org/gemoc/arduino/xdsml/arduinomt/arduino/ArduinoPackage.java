@@ -2337,13 +2337,22 @@ public interface ArduinoPackage extends EPackage {
 	int LINK__OUT_BOARD = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Channels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__CHANNELS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.impl.ThreadInstructionBlockImpl <em>Thread Instruction Block</em>}' class.
@@ -2365,7 +2374,7 @@ public interface ArduinoPackage extends EPackage {
 	int THREAD_INSTRUCTION_BLOCK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2411,7 +2420,7 @@ public interface ArduinoPackage extends EPackage {
 	int SYNCHRONIZATION_BLOCK__NAME = THREAD_INSTRUCTION_BLOCK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2457,7 +2466,7 @@ public interface ArduinoPackage extends EPackage {
 	int INSTRUCTION_BLOCK__NAME = THREAD_INSTRUCTION_BLOCK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Thread</b></em>' container reference.
+	 * The feature id for the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3730,6 +3739,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getLink_OutBoard();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Link#getChannels <em>Channels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Channels</em>'.
+	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.Link#getChannels()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_Channels();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.SynchronizationBlock <em>Synchronization Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3771,10 +3791,10 @@ public interface ArduinoPackage extends EPackage {
 	EClass getThreadInstructionBlock();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
+	 * Returns the meta object for the reference '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Thread</em>'.
+	 * @return the meta object for the reference '<em>Thread</em>'.
 	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread()
 	 * @see #getThreadInstructionBlock()
 	 * @generated
@@ -4884,6 +4904,14 @@ public interface ArduinoPackage extends EPackage {
 		EReference LINK__OUT_BOARD = eINSTANCE.getLink_OutBoard();
 
 		/**
+		 * The meta object literal for the '<em><b>Channels</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__CHANNELS = eINSTANCE.getLink_Channels();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.impl.SynchronizationBlockImpl <em>Synchronization Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4922,7 +4950,7 @@ public interface ArduinoPackage extends EPackage {
 		EClass THREAD_INSTRUCTION_BLOCK = eINSTANCE.getThreadInstructionBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Thread</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Thread</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

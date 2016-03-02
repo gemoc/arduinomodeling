@@ -94,12 +94,12 @@ public class ChannelAdapter extends EObjectAdapter<Channel> implements org.gemoc
   
   @Override
   public void read() {
-    adaptee.read() ;
+    org.gemoc.arduino.operationalsemantics.Channel_ExecutableAspect.read(adaptee) ;
   }
   
   @Override
   public void write() {
-    adaptee.write() ;
+    org.gemoc.arduino.operationalsemantics.Channel_ExecutableAspect.write(adaptee) ;
   }
   
   @Override

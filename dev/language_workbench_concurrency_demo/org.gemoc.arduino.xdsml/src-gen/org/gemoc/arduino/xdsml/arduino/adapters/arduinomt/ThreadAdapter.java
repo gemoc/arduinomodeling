@@ -91,17 +91,12 @@ public class ThreadAdapter extends EObjectAdapter<fr.obeo.dsl.arduino.Thread> im
   
   @Override
   public void execute() {
-    adaptee.execute() ;
+    org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect.execute(adaptee) ;
   }
   
   @Override
   public void synchronize() {
-    adaptee.synchronize() ;
-  }
-  
-  @Override
-  public void fire() {
-    org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect.fire(adaptee) ;
+    org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect.synchronize(adaptee) ;
   }
   
   @Override

@@ -25,7 +25,6 @@ import org.gemoc.arduino.operationalsemantics.Pin_EvaluableAspect
 import org.gemoc.arduino.operationalsemantics.Project_ExecutableAspect
 import org.gemoc.arduino.operationalsemantics.Repeat_EvaluableAspect
 import org.gemoc.arduino.operationalsemantics.Repeat_ExecutableAspect
-import org.gemoc.arduino.operationalsemantics.SynchronizationBlock_ExecutableAspect
 import org.gemoc.arduino.operationalsemantics.Thread_ExecutableAspect
 import org.gemoc.arduino.operationalsemantics.Utilities_ExecutableAspect
 import org.gemoc.arduino.operationalsemantics.VariableAssignment_ExecutableAspect
@@ -69,7 +68,6 @@ language Arduino {
 	with Thread_ExecutableAspect
 	with Channel_ExecutableAspect
 	with Board_ExecutableAspect
-	with SynchronizationBlock_ExecutableAspect
 
 	ecl "/org.gemoc.arduino.dse/ecl/ArduinoLanguage.ecl"
 	

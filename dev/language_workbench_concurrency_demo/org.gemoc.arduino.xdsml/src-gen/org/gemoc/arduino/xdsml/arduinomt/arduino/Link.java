@@ -2,6 +2,7 @@
  */
 package org.gemoc.arduino.xdsml.arduinomt.arduino;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package org.gemoc.arduino.xdsml.arduinomt.arduino;
  * <ul>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Link#getInBoard <em>In Board</em>}</li>
  *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Link#getOutBoard <em>Out Board</em>}</li>
+ *   <li>{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Link#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +74,21 @@ public interface Link extends NamedElement {
 	 * @generated
 	 */
 	void setOutBoard(Board value);
+
+	/**
+	 * Returns the value of the '<em><b>Channels</b></em>' reference list.
+	 * The list contents are of type {@link org.gemoc.arduino.xdsml.arduinomt.arduino.Channel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Channels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Channels</em>' reference list.
+	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage#getLink_Channels()
+	 * @model
+	 * @generated
+	 */
+	EList<Channel> getChannels();
 
 } // Link

@@ -14,12 +14,4 @@ package org.gemoc.arduino.xdsml.arduinomt.arduino;
  * @generated
  */
 public interface SynchronizationBlock extends ThreadInstructionBlock {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // SynchronizationBlock

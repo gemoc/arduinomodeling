@@ -1,10 +1,14 @@
 package org.gemoc.arduino.xdsml.arduino.adapters.arduinomt;
 
+import fr.inria.diverse.melange.adapters.EListAdapter;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import fr.obeo.dsl.arduino.Link;
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gemoc.arduino.xdsml.arduino.adapters.arduinomt.ArduinoMTAdaptersFactory;
 import org.gemoc.arduino.xdsml.arduinomt.arduino.Board;
+import org.gemoc.arduino.xdsml.arduinomt.arduino.Channel;
 
 @SuppressWarnings("all")
 public class LinkAdapter extends EObjectAdapter<Link> implements org.gemoc.arduino.xdsml.arduinomt.arduino.Link {
@@ -53,6 +57,15 @@ public class LinkAdapter extends EObjectAdapter<Link> implements org.gemoc.ardui
     else adaptee.setOutBoard(null) ;
   }
   
+  private EList<Channel> channels;
+  
+  @Override
+  public EList<Channel> getChannels() {
+    if (channels == null)
+    	channels = EListAdapter.newInstance(adaptee.getChannels(), adaptersFactory) ;
+    return channels;
+  }
+  
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.eINSTANCE.getLink();
@@ -67,6 +80,8 @@ public class LinkAdapter extends EObjectAdapter<Link> implements org.gemoc.ardui
     		return getInBoard();
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__OUT_BOARD:
     		return getOutBoard();
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__CHANNELS:
+    		return getChannels();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -84,6 +99,10 @@ public class LinkAdapter extends EObjectAdapter<Link> implements org.gemoc.ardui
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__OUT_BOARD:
     		setOutBoard((Board) newValue);
     		return;
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__CHANNELS:
+    		getChannels().clear();
+    		getChannels().addAll((Collection<? extends Channel>) newValue);
+    		return;
     }
     
     super.eSet(featureID, newValue);
@@ -100,6 +119,9 @@ public class LinkAdapter extends EObjectAdapter<Link> implements org.gemoc.ardui
     		return;
     	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__OUT_BOARD:
     		setOutBoard((Board) null);
+    		return;
+    	case org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage.LINK__CHANNELS:
+    		getChannels().clear();
     		return;
     }
     

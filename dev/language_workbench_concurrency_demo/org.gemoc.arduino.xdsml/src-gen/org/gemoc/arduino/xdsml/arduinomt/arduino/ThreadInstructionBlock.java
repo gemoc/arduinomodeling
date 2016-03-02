@@ -22,28 +22,26 @@ package org.gemoc.arduino.xdsml.arduinomt.arduino;
  */
 public interface ThreadInstructionBlock extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Thread</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getBlocks <em>Blocks</em>}'.
+	 * Returns the value of the '<em><b>Thread</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Thread</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Thread</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thread</em>' container reference.
+	 * @return the value of the '<em>Thread</em>' reference.
 	 * @see #setThread(org.gemoc.arduino.xdsml.arduinomt.arduino.Thread)
 	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.ArduinoPackage#getThreadInstructionBlock_Thread()
-	 * @see org.gemoc.arduino.xdsml.arduinomt.arduino.Thread#getBlocks
-	 * @model opposite="blocks" transient="false"
+	 * @model
 	 * @generated
 	 */
 	org.gemoc.arduino.xdsml.arduinomt.arduino.Thread getThread();
 
 	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}' container reference.
+	 * Sets the value of the '{@link org.gemoc.arduino.xdsml.arduinomt.arduino.ThreadInstructionBlock#getThread <em>Thread</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thread</em>' container reference.
+	 * @param value the new value of the '<em>Thread</em>' reference.
 	 * @see #getThread()
 	 * @generated
 	 */

@@ -1613,6 +1613,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLink_Channels() {
+		return (EReference)linkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSynchronizationBlock() {
 		return synchronizationBlockEClass;
 	}
@@ -1911,6 +1920,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__IN_BOARD);
 		createEReference(linkEClass, LINK__OUT_BOARD);
+		createEReference(linkEClass, LINK__CHANNELS);
 
 		synchronizationBlockEClass = createEClass(SYNCHRONIZATION_BLOCK);
 
@@ -2248,7 +2258,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(arduinoAnalogModuleEClass, ArduinoAnalogModule.class, "ArduinoAnalogModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(threadEClass, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, "Thread", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThread_Blocks(), this.getThreadInstructionBlock(), this.getThreadInstructionBlock_Thread(), "blocks", null, 0, -1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThread_Blocks(), this.getThreadInstructionBlock(), null, "blocks", null, 0, -1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_Channels(), this.getChannel(), this.getChannel_Source(), "channels", null, 0, -1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_CurrentInstruction(), this.getInstruction(), null, "currentInstruction", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThread_First(), this.getThreadInstructionBlock(), null, "first", null, 0, 1, org.gemoc.arduino.xdsml.arduinomt.arduino.Thread.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2257,8 +2267,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		addEOperation(threadEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(threadEClass, null, "synchronize", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(threadEClass, null, "fire", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChannel_Source(), this.getThread(), this.getThread_Channels(), "source", null, 1, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2275,10 +2283,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_InBoard(), this.getBoard(), null, "inBoard", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLink_OutBoard(), this.getBoard(), null, "outBoard", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_Channels(), this.getChannel(), null, "channels", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationBlockEClass, SynchronizationBlock.class, "SynchronizationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(synchronizationBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instructionBlockEClass, InstructionBlock.class, "InstructionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionBlock_Instructions(), this.getInstruction(), this.getInstruction_OwnedBlock(), "instructions", null, 0, -1, InstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2286,7 +2293,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		addEOperation(instructionBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threadInstructionBlockEClass, ThreadInstructionBlock.class, "ThreadInstructionBlock", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreadInstructionBlock_Thread(), this.getThread(), this.getThread_Blocks(), "thread", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThreadInstructionBlock_Thread(), this.getThread(), null, "thread", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreadInstructionBlock_Next(), this.getThreadInstructionBlock(), null, "next", null, 0, 1, ThreadInstructionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(threadInstructionBlockEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2329,35 +2336,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// dynamic
-		createDynamicAnnotations();
 		// aspect
 		createAspectAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>dynamic</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDynamicAnnotations() {
-		String source = "dynamic";	
-		addAnnotation
-		  (getPin_Level(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getIntegerVariable_Value(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getBooleanVariable_Value(), 
-		   source, 
-		   new String[] {
-		   });
+		// dynamic
+		createDynamicAnnotations();
 	}
 
 	/**
@@ -2368,6 +2350,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	protected void createAspectAnnotations() {
 		String source = "aspect";	
+		addAnnotation
+		  (boardEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (boardEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
 		addAnnotation
 		  (projectEClass.getEOperations().get(0), 
 		   source, 
@@ -2519,17 +2511,52 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (threadEClass.getEOperations().get(2), 
+		  (threadEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (synchronizationBlockEClass.getEOperations().get(0), 
+		  (threadEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (channelEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (channelEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (instructionBlockEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>dynamic</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDynamicAnnotations() {
+		String source = "dynamic";	
+		addAnnotation
+		  (getPin_Level(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getIntegerVariable_Value(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBooleanVariable_Value(), 
 		   source, 
 		   new String[] {
 		   });
