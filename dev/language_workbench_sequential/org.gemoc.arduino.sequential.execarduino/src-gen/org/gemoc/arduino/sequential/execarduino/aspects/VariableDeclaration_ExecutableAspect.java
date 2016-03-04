@@ -1,5 +1,6 @@
 package org.gemoc.arduino.sequential.execarduino.aspects;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
@@ -46,7 +47,7 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
     Variable _variable = _self.getVariable();
     boolean _matched = false;
     if (!_matched) {
-      if (_variable instanceof IntegerVariable) {
+      if (Objects.equal(_variable, IntegerVariable.class)) {
         _matched=true;
         Variable _variable_1 = _self.getVariable();
         Variable _variable_2 = _self.getVariable();
@@ -55,12 +56,12 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
       }
     }
     if (!_matched) {
-      if (_variable instanceof BooleanVariable) {
+      if (Objects.equal(_variable, BooleanVariable.class)) {
         _matched=true;
-        Variable _variable_1 = _self.getVariable();
-        Variable _variable_2 = _self.getVariable();
-        boolean _isInitialValue = ((BooleanVariable) _variable_2).isInitialValue();
-        BooleanVariable_EvaluableAspect.value(((BooleanVariable) _variable_1), Boolean.valueOf(_isInitialValue));
+        Variable _variable_3 = _self.getVariable();
+        Variable _variable_4 = _self.getVariable();
+        boolean _isInitialValue = ((BooleanVariable) _variable_4).isInitialValue();
+        BooleanVariable_EvaluableAspect.value(((BooleanVariable) _variable_3), Boolean.valueOf(_isInitialValue));
       }
     }
   }

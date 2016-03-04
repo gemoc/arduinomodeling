@@ -190,8 +190,8 @@ class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect 
 	@OverrideAspectMethod
 	def void execute() {
 		switch (_self.variable){
-			IntegerVariable : (_self.variable as IntegerVariable).value = (_self.variable as IntegerVariable).initialValue	
-			BooleanVariable : (_self.variable as BooleanVariable).value = (_self.variable as BooleanVariable).initialValue
+			case IntegerVariable : (_self.variable as IntegerVariable).value = (_self.variable as IntegerVariable).initialValue	
+			case BooleanVariable : (_self.variable as BooleanVariable).value = (_self.variable as BooleanVariable).initialValue
 		}
 	}
 }
