@@ -765,7 +765,7 @@
               <firstModelOperations xsi:type="tool_1:CreateInstance"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="SK_Edit_Condition">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
