@@ -10,7 +10,6 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Project;
-import org.gemoc.executionframework.engine.ui.launcher.AbstractGemocLauncher;
 import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 
 
@@ -54,6 +53,6 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 	
 	public String getModelIdentifier() {
-		return AbstractGemocLauncher.MODEL_ID;
+		return org.gemoc.execution.concurrent.ccsljavaengine.ui.Activator.PLUGIN_ID+".debugModel";
 	}
 }
