@@ -24,6 +24,10 @@ def : doEvaluate : Event = self.evaluate() [res] switch case self.res = true for
 def : evaluatedToTrue : Event = self
 def : evaluatedToFalse : Event = self
 
+context ArduinoCommunicationModule
+def : send : Event = self.push()
+def : receive : Event = self
+
 context Sketch 
 	inv S_nonReentrant:
 		Relation Alternates(self.start, self.stop)
@@ -117,6 +121,21 @@ context Repeat
 	inv R_stopwhenEvaluatedFalse:
 		Relation Coincides(self.evaluatedToFalse, self.stop)	
 
+
+context ModuleGet
+	inv waitreceptionBeforeGetOnCom:
+		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
+		(Relation Precedes(self.module.oclAsType(ArduinoCommunicationModule).receive, self.start))
+
+context ModuleAssignment
+	inv sendAfterAssignement:
+		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
+		(Relation Precedes(self.start, self.module.oclAsType(ArduinoCommunicationModule).send))
+		
+context BluetoothTransceiver
+	inv sendBeforeReceive:
+		(self.connectedTransceiver <> null) implies
+		(Relation Precedes(self.send, self.receive))
 endpackage
 
 

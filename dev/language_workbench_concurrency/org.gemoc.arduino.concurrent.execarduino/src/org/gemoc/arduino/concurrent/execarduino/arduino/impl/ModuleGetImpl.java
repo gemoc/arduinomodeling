@@ -10,8 +10,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoPackage;
+import org.gemoc.arduino.concurrent.execarduino.arduino.Instruction;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleGet;
+import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleInstruction;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,6 +101,28 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void execute() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void finalize() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -151,6 +175,48 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 				return module != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Instruction.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ModuleInstruction.class) {
+			switch (derivedFeatureID) {
+				case ArduinoPackage.MODULE_GET__MODULE: return ArduinoPackage.MODULE_INSTRUCTION__MODULE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Instruction.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ModuleInstruction.class) {
+			switch (baseFeatureID) {
+				case ArduinoPackage.MODULE_INSTRUCTION__MODULE: return ArduinoPackage.MODULE_GET__MODULE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ModuleGetImpl

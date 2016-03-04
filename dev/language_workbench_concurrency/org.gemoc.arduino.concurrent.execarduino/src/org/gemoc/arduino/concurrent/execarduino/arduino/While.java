@@ -52,14 +52,6 @@ public interface While extends Control {
 	 * @model
 	 * @generated
 	 */
-	Boolean evaluate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void execute();
 
 } // While

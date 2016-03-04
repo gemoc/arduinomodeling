@@ -74,12 +74,4 @@ public interface IntegerVariable extends Variable {
 	 */
 	void setValue(Integer value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.gemoc.arduino.concurrent.execarduino.arduino.Object"
-	 * @generated
-	 */
-	Object evaluate();
-
 } // IntegerVariable

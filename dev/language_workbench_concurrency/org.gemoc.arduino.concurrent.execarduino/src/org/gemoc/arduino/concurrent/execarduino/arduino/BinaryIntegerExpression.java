@@ -49,12 +49,4 @@ public interface BinaryIntegerExpression extends BinaryExpression, IntegerExpres
 	 */
 	void setOperator(BinaryIntegerOperatorKind value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.gemoc.arduino.concurrent.execarduino.arduino.Object"
-	 * @generated
-	 */
-	Object evaluate();
-
 } // BinaryIntegerExpression

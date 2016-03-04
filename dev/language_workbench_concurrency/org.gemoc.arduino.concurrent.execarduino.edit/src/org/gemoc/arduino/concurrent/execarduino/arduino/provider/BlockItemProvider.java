@@ -181,6 +181,16 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createBooleanModuleGet()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
+				 ArduinoFactory.eINSTANCE.createIntegerModuleGet()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.BLOCK__INSTRUCTIONS,
 				 ArduinoFactory.eINSTANCE.createVariableDeclaration()));
 	}
 

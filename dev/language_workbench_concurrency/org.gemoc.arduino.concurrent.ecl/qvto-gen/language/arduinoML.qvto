@@ -131,6 +131,15 @@ main() {
 
 		
 
+		////[ ArduinoCommunicationModule ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map send2Clock();
+		////[ ArduinoCommunicationModule ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map receive2Clock();
+		
+
+
+		
+
 		
 
 
@@ -232,6 +241,30 @@ main() {
 		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Repeat.oclAsType(EClass)).oclAsType(Repeat)->map R_stopwhenEvaluatedFalse12R_stopwhenEvaluatedFalse();
+		
+		
+
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ModuleGet.oclAsType(EClass)).oclAsType(ModuleGet)->map waitreceptionBeforeGetOnCom122waitreceptionBeforeGetOnCom();
+		
+		
+
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ModuleAssignment.oclAsType(EClass)).oclAsType(ModuleAssignment)->map sendAfterAssignement122sendAfterAssignement();
+		
+		
+
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), BluetoothTransceiver.oclAsType(EClass)).oclAsType(BluetoothTransceiver)->map sendBeforeReceive102sendBeforeReceive();
 		
 	}
 
@@ -495,6 +528,44 @@ main() {
  				referencedObjectRefs += self.oclAsType(EObject);
 			
 				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+
+//relation stuff		
+	 	mapping inMM1::ArduinoCommunicationModule::send2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_send';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+				//referencedObjectRefs += self.oclAsType(EObject);
+				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "push")->first().oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_send';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+	 	mapping inMM1::ArduinoCommunicationModule::receive2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_receive';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_receive';
 			kind :=TimeModel::EventKind::undefined;
 						
 			};
@@ -921,6 +992,75 @@ main() {
 		}
 		
 
+//relation stuff		
+	
+		mapping inMM1::ModuleGet::waitreceptionBeforeGetOnCom122waitreceptionBeforeGetOnCom(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.module.oclIsKindOf(ArduinoCommunicationModule)) 
+				
+}
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_waitreceptionBeforeGetOnCom";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.module.oclAsType(ArduinoCommunicationModule).oclAsType(EObject))+'_receive']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+
+//relation stuff		
+	
+		mapping inMM1::ModuleAssignment::sendAfterAssignement122sendAfterAssignement(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.module.oclIsKindOf(ArduinoCommunicationModule)) 
+				
+}
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_sendAfterAssignement";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.module.oclAsType(ArduinoCommunicationModule).oclAsType(EObject))+'_send']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+
+//relation stuff		
+	
+		mapping inMM1::BluetoothTransceiver::sendBeforeReceive102sendBeforeReceive(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.connectedTransceiver <> null) 
+				
+}
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_sendBeforeReceive";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_send']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_receive']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+
 
 
 
@@ -970,6 +1110,32 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Control.oclAsType(EClass)).oclAsType(Control)->map doEvaluate12ActionFeedBack();
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Control.oclAsType(EClass)).oclAsType(Control)->map doEvaluate22ActionFeedBack();
+
+
+
+		
+
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map send2MSE();
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map receive2MSE();
+
+
+
+
+		
+
+
+
+
+
+		
+
+
+
+
+
+		
+
+
 
 
 
@@ -1097,6 +1263,30 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse';
 				solverEvent := theMainBlock.elements[TimeModel::Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::ArduinoCommunicationModule::send2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_send';
+				caller := self.oclAsType(EObject);
+				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "push")->first();
+				solverEvent := theMainBlock.elements[TimeModel::Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_send')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::ArduinoCommunicationModule::receive2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_receive';
+				solverEvent := theMainBlock.elements[TimeModel::Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_receive')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;
