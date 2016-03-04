@@ -10,19 +10,39 @@
  */
 package org.gemoc.arduino.sequential.design.services;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
@@ -36,7 +56,18 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.texteditor.AbstractTextEditor;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
 import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
+import org.gemoc.arduino.sequential.execarduino.ArduinoDSLStandaloneSetupGenerated;
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
@@ -54,8 +85,10 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanModuleGet;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariableRef;
+import org.gemoc.arduino.sequential.execarduino.arduino.Buzzer;
 import org.gemoc.arduino.sequential.execarduino.arduino.Color;
 import org.gemoc.arduino.sequential.execarduino.arduino.Constant;
+import org.gemoc.arduino.sequential.execarduino.arduino.Control;
 import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
 import org.gemoc.arduino.sequential.execarduino.arduino.If;
@@ -89,6 +122,48 @@ import com.google.common.collect.Lists;
 public class ArduinoServices {
 
 	private static final String IMAGES_PATH = "/org.gemoc.arduino.sequential.design/images/";
+	
+	public EObject openTextEditor(EObject any) {
+		if (any != null) {
+			Resource r = any.eResource();
+				
+			ResourceSet resourceSet = new ResourceSetImpl();
+			Resource resource = resourceSet.createResource(URI.createURI("resource/testeditor/tmp.arduino"));
+			resource.getContents().add(getRoot(any));
+			try {
+		      resource.save(Collections.EMPTY_MAP);
+		    } catch (IOException e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+			
+			if (resource instanceof XtextResource) {
+				URI uri = any.eResource().getURI();
+				if (uri != null) {
+					String fileURI = any.eResource().getURI().toPlatformString(true);
+					IFile workspaceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(fileURI));
+					if (workspaceFile != null) {
+						IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+						try {
+							IEditorPart openEditor = IDE.openEditor(page, workspaceFile, "org.gemoc.arduino.sequential.execarduino.ArduinoDSL", true);
+							if (openEditor instanceof AbstractTextEditor) {
+								ICompositeNode node = NodeModelUtils.findActualNodeFor(any);
+								if (node != null) {
+									int offset = node.getOffset();
+									int length = node.getTotalEndOffset() - offset;
+									((AbstractTextEditor) openEditor).selectAndReveal(offset, length);
+								}
+							}
+							// editorInput.
+						} catch (PartInitException e) {
+							// Put your exception handler here if you wish to.
+						}
+					}
+				}
+			}
+		}
+		return any;
+	}
 
 	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
@@ -140,12 +215,77 @@ public class ArduinoServices {
 		}
 	}
 	
+	public List<EObject> getProjectBlocks(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			if (eObject.eContainer() instanceof Project) {
+				Project p = (Project) eObject.eContainer();
+ 				p.getSketches().stream().forEach(s->res.add(s.getBlock()));
+			}
+		} else {
+			res.addAll(eObject.eContents());
+		}
+		return res;
+	}
+	
+	public EObject getRoot(EObject eObject) {
+		EObject root = eObject;
+		while (root != null && !(root instanceof Project)) {
+			root = root.eContainer();
+		}
+		return root;
+	}
+	
+	public List<EObject> getSketches(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			if (eObject.eContainer() instanceof Project) {
+				res.addAll(((Project) eObject.eContainer()).getSketches());
+			}
+		} else {
+			res.addAll(eObject.eContents());
+		}
+		return res;
+	}
+	
+	public List<EObject> getBlocks(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			res.add(((Sketch)eObject).getBlock());
+			return res;
+		}
+		if (eObject instanceof Control) {
+			res.add(((Control)eObject).getBlock());
+			if (eObject instanceof If) {
+				If ifElt = (If)eObject;
+				if (ifElt.getElseBlock() != null) {
+					res.add(ifElt.getElseBlock());
+				}
+			}
+			return res;
+		}
+		return res;
+	}
+	
+	public Integer getLevel(EObject eObject) {
+		if (eObject instanceof Pin) {
+			return ((Pin)eObject).getLevel();
+		}
+		if (eObject instanceof Module) {
+			if (eObject.eContainer() instanceof Pin) {
+				return ((Pin)(eObject.eContainer())).getLevel();
+			}
+		}
+		return 0;
+	}
+	
 	public String getAnalogPinName(ArduinoBoard board) {
 			return board.getAnalogPins().size()+"";
 	}
 	
 	public String getDigitalPinName(ArduinoBoard board) {
-			return board.getDigitalPins().size()+"";
+		int nb = board.getDigitalPins().size()-1;
+		return nb+"";
 	}
 
 	public List<AnalogPin> getAnalogPins(EObject obj) {
@@ -167,15 +307,24 @@ public class ArduinoServices {
 		return getAvailableDigitalPin(board) == null;
 	}
 	
+	public boolean isPinAvailable(Pin pin) {
+		if (pin instanceof AnalogPin) {
+			return ((AnalogPin)pin).getModule() == null;
+		}
+		if (pin instanceof DigitalPin) {
+			return ((DigitalPin)pin).getModule() == null;
+		}
+		return false;
+	}
+	
 	public boolean isDigitalPinAvailable(ArduinoBoard board) {
 		return getAvailableDigitalPin(board) != null;
 	}
 
 	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
-		DigitalPin result = null;
 		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
 		if (pins.isEmpty()) {
-			return result;
+			return null;
 		}
 		return pins.get(0);
 	}
@@ -270,20 +419,24 @@ public class ArduinoServices {
 		return (Sketch) eObject;
 	}
 
-	public List<EObject> getConnectedModules(EObject board) {
+	public List<EObject> getConnectedModules(EObject eObject) {
+		Project project = (Project) getRoot(eObject);
+		List<Board> boards = project.getBoards();
 		List<EObject> result = new ArrayList<>();
-		if (board instanceof ArduinoBoard) {
-			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
-			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+		for (Board board : boards) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
-			}
-			for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
 			}
 		}
@@ -693,6 +846,28 @@ public class ArduinoServices {
 		}
 		return null;
 	}
+	
+	public Sketch getNextSketch(Sketch current) {
+		if (current.eContainer() instanceof Project) {
+			List<Sketch> sketches = ((Project) current.eContainer()).getSketches();
+			int idx = sketches.indexOf(current);
+			if (idx != -1 && idx < sketches.size()-1) {
+				return sketches.get(idx+1);
+			}
+		}
+		return null;
+	}
+	
+	public Instruction getInstructionsToMove(Instruction instruction) {
+		List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+		int idx = instructions.indexOf(instruction);
+		if (idx == 0) {
+			return null;
+		} else if (idx > 0) {
+			return instructions.get(idx-1);
+		}
+		return null;
+	}
 
 	public EObject getNextInstruction(EObject current) {
 		EObject res = null;
@@ -708,9 +883,6 @@ public class ArduinoServices {
 					res = instructions.get(index);
 				}
 			}
-		} else if (current instanceof Sketch) {
-			List<Instruction> instructions = ((Sketch) current).getBlock().getInstructions();
-			res = instructions.isEmpty() ? null : instructions.get(0);
 		}
 		return res;
 	}
@@ -873,9 +1045,19 @@ public class ArduinoServices {
 	}
 
 	public String getImage(ModuleInstruction instruction) {
+		Module module = instruction.getModule();
+		if (module instanceof LED) {
+			switch (((LED)module).getColor()) {
+			case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg";
+			case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
+			case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
+			}
+			return getImage((LED)module);
+		}
+		if (module instanceof Buzzer) {
+			return "/org.gemoc.arduino.sequential.design/images/buzzer.jpg";
+		}
 		return "/org.gemoc.arduino.sequential.design/images/default.svg";
-		// return "/org.gemoc.arduino.sequential.design/images/"
-		// + instruction.getModule().getImage();
 	}
 
 	public String getImage(ModuleGet instruction) {

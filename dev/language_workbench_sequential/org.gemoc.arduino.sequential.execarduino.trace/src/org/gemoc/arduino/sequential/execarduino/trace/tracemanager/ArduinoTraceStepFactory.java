@@ -41,9 +41,8 @@ public class ArduinoTraceStepFactory implements IStepFactory {
 			mseocc = arduinoTrace.Steps.StepsFactory.eINSTANCE.createArduino_VariableDeclaration_Execute();
 		}
 
-		else {
+		else
 			mseocc = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE.createMSEOccurrence();
-		}
 
 		if (mseocc != null) {
 			mseocc.setMse(mse);

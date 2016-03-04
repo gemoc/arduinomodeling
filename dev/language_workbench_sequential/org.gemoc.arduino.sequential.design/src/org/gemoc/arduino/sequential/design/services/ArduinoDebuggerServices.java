@@ -54,6 +54,6 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 	
 	public String getModelIdentifier() {
-		return AbstractGemocLauncher.MODEL_ID;
+		return org.gemoc.execution.sequential.javaengine.ui.Activator.PLUGIN_ID+".debugModel";
 	}
 }
