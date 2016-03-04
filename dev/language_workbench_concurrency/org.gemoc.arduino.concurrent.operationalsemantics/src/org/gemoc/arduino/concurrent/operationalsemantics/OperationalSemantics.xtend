@@ -562,27 +562,26 @@ class VariableRef_EvaluableAspect extends Expression_EvaluableAspect{
 
 @Aspect(className=Expression)
 abstract class Expression_EvaluableAspect {
-	def Object evaluate(){
-	}
+	abstract def Object evaluate()
 }
 
 @Aspect(className=BooleanExpression)
 abstract class BooleanExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
 }
 
 @Aspect(className=IntegerExpression)
 abstract class IntegerExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
 }
 
 @Aspect(className=BinaryExpression)
 abstract class BinaryExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
-}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
+} 
