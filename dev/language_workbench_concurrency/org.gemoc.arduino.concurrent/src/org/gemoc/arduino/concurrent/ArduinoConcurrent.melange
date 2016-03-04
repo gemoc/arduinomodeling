@@ -1,0 +1,12 @@
+package org.gemoc.arduino.concurrent
+
+language ArduinoConcurrent { 
+	syntax "platform:/resource//org.gemoc.arduino.concurrent.execarduino/model/ExecArduino.ecore"
+	
+	with org.gemoc.arduino.concurrent.operationalsemantics.*
+
+	ecl "/org.gemoc.arduino.concurrent.ecl/ecl/arduinoML.ecl"
+	
+	exactType ArduinoConcurrentMT
+}
+
