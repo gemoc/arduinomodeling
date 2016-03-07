@@ -292,6 +292,14 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createBooleanVariableRefAdapter();
 			}
 			@Override
+			public Adapter caseArduinoCommunicationModule(ArduinoCommunicationModule object) {
+				return createArduinoCommunicationModuleAdapter();
+			}
+			@Override
+			public Adapter caseBluetoothTransceiver(BluetoothTransceiver object) {
+				return createBluetoothTransceiverAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1092,6 +1100,34 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBooleanVariableRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule <em>Communication Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule
+	 * @generated
+	 */
+	public Adapter createArduinoCommunicationModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver <em>Bluetooth Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver
+	 * @generated
+	 */
+	public Adapter createBluetoothTransceiverAdapter() {
 		return null;
 	}
 

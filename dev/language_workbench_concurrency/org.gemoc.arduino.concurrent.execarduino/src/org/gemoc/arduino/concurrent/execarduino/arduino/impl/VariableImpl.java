@@ -36,15 +36,4 @@ public abstract class VariableImpl extends NamedElementImpl implements Variable 
 		return ArduinoPackage.Literals.VARIABLE;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object evaluate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 } //VariableImpl

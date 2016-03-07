@@ -14,12 +14,4 @@ package org.gemoc.arduino.concurrent.execarduino.arduino;
  * @generated
  */
 public interface IntegerModuleGet extends ModuleGet, IntegerExpression {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.gemoc.arduino.concurrent.execarduino.arduino.Object"
-	 * @generated
-	 */
-	Object evaluate();
-
 } // IntegerModuleGet

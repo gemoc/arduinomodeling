@@ -58,9 +58,9 @@ public class ModuleGetItemProvider extends ExpressionItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModuleGet_module_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModuleGet_module_feature", "_UI_ModuleGet_type"),
-				 ArduinoPackage.Literals.MODULE_GET__MODULE,
+				 getString("_UI_ModuleInstruction_module_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModuleInstruction_module_feature", "_UI_ModuleInstruction_type"),
+				 ArduinoPackage.Literals.MODULE_INSTRUCTION__MODULE,
 				 true,
 				 false,
 				 true,

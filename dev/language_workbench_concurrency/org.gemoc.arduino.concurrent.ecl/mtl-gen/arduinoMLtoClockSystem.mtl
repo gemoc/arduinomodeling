@@ -37,6 +37,10 @@ system addLibrary:moccmllibs asDictionary.
 "clocks for Control [element.name/]" 
 	system addClocks: #(doEvaluate[element.name /] evaluatedToTrue[element.name /] evaluatedToFalse[element.name /] ).
 [/for]
+[for (element : arduino::ArduinoCommunicationModule| aProject.eAllContents(arduino::ArduinoCommunicationModule))]
+"clocks for ArduinoCommunicationModule [element.name/]" 
+	system addClocks: #(send[element.name /] receive[element.name /] ).
+[/for]
 [for (element : arduino::Delay| aProject.eAllContents(arduino::Delay))]
 "clocks for Delay [element.name/]" 
 	system addClocks: #().
@@ -58,6 +62,18 @@ system addLibrary:moccmllibs asDictionary.
 	system addClocks: #().
 "internal clocks for arduino::Repeat [element.name/]" 
     system addInternalClocks: #(r_startOrEndLoop[element.name /] r_trueOrFalse[element.name /] ).
+[/for]
+[for (element : arduino::ModuleGet| aProject.eAllContents(arduino::ModuleGet))]
+"clocks for ModuleGet [element.name/]" 
+	system addClocks: #().
+[/for]
+[for (element : arduino::ModuleAssignment| aProject.eAllContents(arduino::ModuleAssignment))]
+"clocks for ModuleAssignment [element.name/]" 
+	system addClocks: #().
+[/for]
+[for (element : arduino::BluetoothTransceiver| aProject.eAllContents(arduino::BluetoothTransceiver))]
+"clocks for BluetoothTransceiver [element.name/]" 
+	system addClocks: #().
 [/for]
 
 [for (element : arduino::Instruction| aProject.eAllContents(arduino::Instruction))]
@@ -83,6 +99,9 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::Control| aProject.eAllContents(arduino::Control))]
 "relations for Control [element.name/]" 
+[/for]
+[for (element : arduino::ArduinoCommunicationModule| aProject.eAllContents(arduino::ArduinoCommunicationModule))]
+"relations for ArduinoCommunicationModule [element.name/]" 
 [/for]
 [for (element : arduino::Delay| aProject.eAllContents(arduino::Delay))]
 "relations for Delay [element.name/]" 
@@ -157,6 +176,24 @@ system addLibrary:moccmllibs asDictionary.
 
 	"R_stopwhenEvaluatedFalse in Repeat [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(evaluatedToFalse[element.name/]  stop[element.name/]).
+
+[/for]
+[for (element : arduino::ModuleGet| aProject.eAllContents(arduino::ModuleGet))]
+"relations for ModuleGet [element.name/]" 
+	"waitreceptionBeforeGetOnCom in ModuleGet [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(receive[element.module.oclAsType(arduino::Module).name/]  start[element.name/]).
+
+[/for]
+[for (element : arduino::ModuleAssignment| aProject.eAllContents(arduino::ModuleAssignment))]
+"relations for ModuleAssignment [element.name/]" 
+	"sendAfterAssignement in ModuleAssignment [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(start[element.name/]  send[element.module.oclAsType(arduino::Module).name/]).
+
+[/for]
+[for (element : arduino::BluetoothTransceiver| aProject.eAllContents(arduino::BluetoothTransceiver))]
+"relations for BluetoothTransceiver [element.name/]" 
+	"sendBeforeReceive in BluetoothTransceiver [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(send[element.name/]  receive[element.name/]).
 
 [/for]
 [/file]

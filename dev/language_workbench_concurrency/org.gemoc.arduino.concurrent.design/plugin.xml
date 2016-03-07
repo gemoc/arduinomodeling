@@ -3,8 +3,8 @@
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
     <component class="org.gemoc.arduino.concurrent.design.ArduinoDesignerPlugin"
-               id="org.gemoc.arduino.sequential.design"
-	       name="arduino">
+               id="org.gemoc.arduino.concurrent.design"
+	       name="arduinoConcurrent">
     </component>
   </extension>
 </plugin>

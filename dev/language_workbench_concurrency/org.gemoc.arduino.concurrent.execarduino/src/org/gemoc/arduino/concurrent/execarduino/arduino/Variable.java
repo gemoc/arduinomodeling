@@ -14,12 +14,4 @@ package org.gemoc.arduino.concurrent.execarduino.arduino;
  * @generated
  */
 public interface Variable extends NamedElement {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.gemoc.arduino.concurrent.execarduino.arduino.Object"
-	 * @generated
-	 */
-	Object evaluate();
-
 } // Variable

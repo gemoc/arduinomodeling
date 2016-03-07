@@ -310,7 +310,7 @@ class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
 	}
 }
 
-@Aspect(className=BinaryIntegerExpression)
+@Aspect(className=BinaryIntegerExpression, with = #[BinaryExpression_EvaluableAspect])
 class BinaryIntegerExpression_EvaluableAspect extends /*IntegerExpression_EvaluableAspect */  BinaryExpression_EvaluableAspect {
 	@OverrideAspectMethod
 	def Object evaluate() {
@@ -409,7 +409,7 @@ class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	}
 }
 
-@Aspect(className=BinaryBooleanExpression)
+@Aspect(className=BinaryBooleanExpression, with = #[BooleanExpression_EvaluableAspect])
 class BinaryBooleanExpression_EvaluableAspect extends BooleanExpression_EvaluableAspect {
 	@OverrideAspectMethod
 	def Object evaluate() {
@@ -562,27 +562,26 @@ class VariableRef_EvaluableAspect extends Expression_EvaluableAspect{
 
 @Aspect(className=Expression)
 abstract class Expression_EvaluableAspect {
-	def Object evaluate(){
-	}
+	abstract def Object evaluate()
 }
 
 @Aspect(className=BooleanExpression)
 abstract class BooleanExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
 }
 
 @Aspect(className=IntegerExpression)
 abstract class IntegerExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
 }
 
 @Aspect(className=BinaryExpression)
 abstract class BinaryExpression_EvaluableAspect extends Expression_EvaluableAspect{
-	@OverrideAspectMethod
-	def Object evaluate(){
-	}
-}
+//	@OverrideAspectMethod
+//	def Object evaluate(){
+//	}
+} 

@@ -69,12 +69,16 @@ const NUMBER_ArduinoDigitalModules : int is [aProject.eAllContents(ArduinoDigita
 const NUMBER_ArduinoAnalogModules : int is [aProject.eAllContents(ArduinoAnalogModule)->size()/]
 const NUMBER_BooleanVariableRefs : int is [aProject.eAllContents(BooleanVariableRef)->size()/]
 const NUMBER_Objects : int is [aProject.eAllContents(Object)->size()/]
+const NUMBER_ArduinoCommunicationModules : int is [aProject.eAllContents(ArduinoCommunicationModule)->size()/]
+const NUMBER_BluetoothTransceivers : int is [aProject.eAllContents(BluetoothTransceiver)->size()/]
 
 type Board_boardsArray is array [Project.eContents(Board)->size()/] of int
 type Sketch_sketchesArray is array [Project.eContents(Sketch)->size()/] of int
 type Instruction_instructionsArray is array [Block.eContents(Instruction)->size()/] of int
 type DigitalPin_digitalPinsArray is array [ArduinoBoard.eContents(DigitalPin)->size()/] of int
 type AnalogPin_analogPinsArray is array [ArduinoBoard.eContents(AnalogPin)->size()/] of int
+type EInt_dataToSendArray is array [BluetoothTransceiver.eContents(EInt)->size()/] of int
+type EInt_dataReceivedArray is array [BluetoothTransceiver.eContents(EInt)->size()/] of int
 
 
 /*********************************************************************
@@ -87,6 +91,9 @@ Defining the Functions for : Sketch
 Defining the Functions for : Control
 **********************************************************************/
 /*********************************************************************
+Defining the Functions for : ArduinoCommunicationModule
+**********************************************************************/
+/*********************************************************************
 Defining the Functions for : Delay
 **********************************************************************/
 /*********************************************************************
@@ -97,6 +104,15 @@ Defining the Functions for : While
 **********************************************************************/
 /*********************************************************************
 Defining the Functions for : Repeat
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : ModuleGet
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : ModuleAssignment
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : BluetoothTransceiver
 **********************************************************************/
 /************************* Instruction Process Instances***************************/
 [for (element : Instruction| aProject.eAllContents(Instruction))]
@@ -115,13 +131,25 @@ process p[element.name/] ['['/][element.name/]_doEvaluate:in none,[element.name/
     from s0  [element.name/]_evaluatedToTrue;  to s0
     from s0  [element.name/]_evaluatedToFalse;  to s0
 [/for]
+/************************* ArduinoCommunicationModule Process Instances***************************/
+[for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+process p[element.name/] ['['/][element.name/]_send:in none,[element.name/]_receive:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:ArduinoCommunicationModule
+    from s0  [element.name/]_send; global:=ArduinoCommunicationModule_push( global , global.refToElement_id) ;  to s0
+    from s0  [element.name/]_receive;  to s0
+[/for]
 process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(Instruction))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Control| aProject.eAllContents(Control))]
-[element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 [/for][for (element : If| aProject.eAllContents(If))]
 [/for][for (element : While| aProject.eAllContents(While))]
 [/for][for (element : Repeat| aProject.eAllContents(Repeat))]
+[/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+[/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+[/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 [/for][']'/] is
 	states s0
 [for (element : Instruction| aProject.eAllContents(Instruction))]
@@ -140,6 +168,11 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
     from s0  [element.name/]_evaluatedToFalse;  to s0
 
 [/for]
+[for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+    from s0  [element.name/]_send;  to s0
+    from s0  [element.name/]_receive;  to s0
+
+[/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
 
 [/for]
@@ -152,15 +185,28 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [for (element : Repeat| aProject.eAllContents(Repeat))]
 
 [/for]
+[for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+
+[/for]
+[for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+
+[/for]
+[for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+
+[/for]
 
 [file ('pUnConstrainedSemantics.fcr', false, 'UTF-8')]
 process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(Instruction))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Control| aProject.eAllContents(Control))]
-[element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 [/for][for (element : If| aProject.eAllContents(If))]
 [/for][for (element : While| aProject.eAllContents(While))]
 [/for][for (element : Repeat| aProject.eAllContents(Repeat))]
+[/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+[/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+[/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 [/for][']'/] is
 	
 	states s0
@@ -180,6 +226,11 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
     from s0  [element.name/]_evaluatedToFalse;  to s0
 
 [/for]
+[for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+    from s0  [element.name/]_send;  to s0
+    from s0  [element.name/]_receive;  to s0
+
+[/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
 
 [/for]
@@ -190,6 +241,15 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 
 [/for]
 [for (element : Repeat| aProject.eAllContents(Repeat))]
+
+[/for]
+[for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+
+[/for]
+[for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+
+[/for]
+[for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 
 [/for]
 [/file]
@@ -211,6 +271,8 @@ port
 
 [/for][for (element : Control| aProject.eAllContents(Control))]
 [element.name/]_doEvaluate: none,[element.name/]_evaluatedToTrue: none,[element.name/]_evaluatedToFalse: none,
+[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+[element.name/]_send: none,[element.name/]_receive: none,
 [/for][for (element : Delay| aProject.eAllContents(Delay))]
 
 [/for][for (element : If| aProject.eAllContents(If))]
@@ -219,6 +281,12 @@ port
 
 [/for][for (element : Repeat| aProject.eAllContents(Repeat))]
 
+[/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+
+[/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+
+[/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+
 [/for]
 
 par
@@ -226,10 +294,14 @@ par
 pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(Instruction))]
 [element.name/]_start,[element.name/]_stop,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start,[element.name/]_stop,[/for][for (element : Control| aProject.eAllContents(Control))]
-[element.name/]_doEvaluate,[element.name/]_evaluatedToTrue,[element.name/]_evaluatedToFalse,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_doEvaluate,[element.name/]_evaluatedToTrue,[element.name/]_evaluatedToFalse,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+[element.name/]_send,[element.name/]_receive,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 ,[/for][for (element : If| aProject.eAllContents(If))]
 ,[/for][for (element : While| aProject.eAllContents(While))]
 ,[/for][for (element : Repeat| aProject.eAllContents(Repeat))]
+,[/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+,[/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+,[/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 ,[/for][']'/]
 [for (element : Instruction| aProject.eAllContents(Instruction))]
 || p[element.name/] ['['/][element.name/]_start,[element.name/]_stop[']'/] (&global, ID)
@@ -239,6 +311,9 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 [/for]
 [for (element : Control| aProject.eAllContents(Control))]
 || p[element.name/] ['['/][element.name/]_doEvaluate,[element.name/]_evaluatedToTrue,[element.name/]_evaluatedToFalse[']'/] (&global, ID)
+[/for]
+[for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
+|| p[element.name/] ['['/][element.name/]_send,[element.name/]_receive[']'/] (&global, ID)
 [/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
 || p[element.name/] ['['/][']'/] (&global, ID)
@@ -250,6 +325,15 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 || p[element.name/] ['['/][']'/] (&global, ID)
 [/for]
 [for (element : Repeat| aProject.eAllContents(Repeat))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 || p[element.name/] ['['/][']'/] (&global, ID)
 [/for]
 end par

@@ -178,6 +178,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				ModuleGet moduleGet = (ModuleGet)theEObject;
 				T result = caseModuleGet(moduleGet);
 				if (result == null) result = caseExpression(moduleGet);
+				if (result == null) result = caseModuleInstruction(moduleGet);
+				if (result == null) result = caseInstruction(moduleGet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,6 +313,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = caseModuleGet(booleanModuleGet);
 				if (result == null) result = caseBooleanExpression(booleanModuleGet);
 				if (result == null) result = caseExpression(booleanModuleGet);
+				if (result == null) result = caseModuleInstruction(booleanModuleGet);
+				if (result == null) result = caseInstruction(booleanModuleGet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -320,6 +324,8 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = caseModuleGet(integerModuleGet);
 				if (result == null) result = caseIntegerExpression(integerModuleGet);
 				if (result == null) result = caseExpression(integerModuleGet);
+				if (result == null) result = caseModuleInstruction(integerModuleGet);
+				if (result == null) result = caseInstruction(integerModuleGet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -517,6 +523,27 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = caseVariableRef(booleanVariableRef);
 				if (result == null) result = caseBooleanExpression(booleanVariableRef);
 				if (result == null) result = caseExpression(booleanVariableRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.ARDUINO_COMMUNICATION_MODULE: {
+				ArduinoCommunicationModule arduinoCommunicationModule = (ArduinoCommunicationModule)theEObject;
+				T result = caseArduinoCommunicationModule(arduinoCommunicationModule);
+				if (result == null) result = caseArduinoDigitalModule(arduinoCommunicationModule);
+				if (result == null) result = caseArduinoModule(arduinoCommunicationModule);
+				if (result == null) result = caseModule(arduinoCommunicationModule);
+				if (result == null) result = caseNamedElement(arduinoCommunicationModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.BLUETOOTH_TRANSCEIVER: {
+				BluetoothTransceiver bluetoothTransceiver = (BluetoothTransceiver)theEObject;
+				T result = caseBluetoothTransceiver(bluetoothTransceiver);
+				if (result == null) result = caseArduinoCommunicationModule(bluetoothTransceiver);
+				if (result == null) result = caseArduinoDigitalModule(bluetoothTransceiver);
+				if (result == null) result = caseArduinoModule(bluetoothTransceiver);
+				if (result == null) result = caseModule(bluetoothTransceiver);
+				if (result == null) result = caseNamedElement(bluetoothTransceiver);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1361,6 +1388,36 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBooleanVariableRef(BooleanVariableRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Communication Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Communication Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduinoCommunicationModule(ArduinoCommunicationModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bluetooth Transceiver</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bluetooth Transceiver</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBluetoothTransceiver(BluetoothTransceiver object) {
 		return null;
 	}
 

@@ -81,12 +81,4 @@ public interface If extends Control {
 	 */
 	void execute();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	Boolean evaluate();
-
 } // If

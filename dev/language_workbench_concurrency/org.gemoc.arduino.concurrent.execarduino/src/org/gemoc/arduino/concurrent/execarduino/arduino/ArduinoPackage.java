@@ -1851,6 +1851,89 @@ public interface ArduinoPackage extends EPackage {
 	int BOOLEAN_VARIABLE_REF_FEATURE_COUNT = VARIABLE_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoCommunicationModuleImpl <em>Communication Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoCommunicationModuleImpl
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getArduinoCommunicationModule()
+	 * @generated
+	 */
+	int ARDUINO_COMMUNICATION_MODULE = 56;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_COMMUNICATION_MODULE__NAME = ARDUINO_DIGITAL_MODULE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Communication Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.BluetoothTransceiverImpl <em>Bluetooth Transceiver</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.BluetoothTransceiverImpl
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getBluetoothTransceiver()
+	 * @generated
+	 */
+	int BLUETOOTH_TRANSCEIVER = 57;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_COMMUNICATION_MODULE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Data To Send</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Data Received</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Bluetooth Transceiver</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.Time <em>Time</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1858,7 +1941,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 56;
+	int TIME = 58;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BinaryIntegerOperatorKind <em>Binary Integer Operator Kind</em>}' enum.
@@ -1868,7 +1951,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getBinaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int BINARY_INTEGER_OPERATOR_KIND = 57;
+	int BINARY_INTEGER_OPERATOR_KIND = 59;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BinaryBooleanOperatorKind <em>Binary Boolean Operator Kind</em>}' enum.
@@ -1878,7 +1961,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getBinaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int BINARY_BOOLEAN_OPERATOR_KIND = 58;
+	int BINARY_BOOLEAN_OPERATOR_KIND = 60;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.UnaryIntegerOperatorKind <em>Unary Integer Operator Kind</em>}' enum.
@@ -1888,7 +1971,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getUnaryIntegerOperatorKind()
 	 * @generated
 	 */
-	int UNARY_INTEGER_OPERATOR_KIND = 59;
+	int UNARY_INTEGER_OPERATOR_KIND = 61;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.UnaryBooleanOperatorKind <em>Unary Boolean Operator Kind</em>}' enum.
@@ -1898,7 +1981,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getUnaryBooleanOperatorKind()
 	 * @generated
 	 */
-	int UNARY_BOOLEAN_OPERATOR_KIND = 60;
+	int UNARY_BOOLEAN_OPERATOR_KIND = 62;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.Color <em>Color</em>}' enum.
@@ -1908,7 +1991,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 61;
+	int COLOR = 63;
 
 	/**
 	 * The meta object id for the '<em>Object</em>' data type.
@@ -1918,7 +2001,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 62;
+	int OBJECT = 64;
 
 
 	/**
@@ -2245,17 +2328,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getModuleGet();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.arduino.concurrent.execarduino.arduino.ModuleGet#getModule <em>Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Module</em>'.
-	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.ModuleGet#getModule()
-	 * @see #getModuleGet()
-	 * @generated
-	 */
-	EReference getModuleGet_Module();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.While <em>While</em>}'.
@@ -2933,6 +3005,59 @@ public interface ArduinoPackage extends EPackage {
 	EReference getBooleanVariableRef_Variable();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule <em>Communication Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Communication Module</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule
+	 * @generated
+	 */
+	EClass getArduinoCommunicationModule();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver <em>Bluetooth Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bluetooth Transceiver</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver
+	 * @generated
+	 */
+	EClass getBluetoothTransceiver();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getDataToSend <em>Data To Send</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Data To Send</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getDataToSend()
+	 * @see #getBluetoothTransceiver()
+	 * @generated
+	 */
+	EAttribute getBluetoothTransceiver_DataToSend();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getDataReceived <em>Data Received</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Data Received</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getDataReceived()
+	 * @see #getBluetoothTransceiver()
+	 * @generated
+	 */
+	EAttribute getBluetoothTransceiver_DataReceived();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connected Transceiver</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver()
+	 * @see #getBluetoothTransceiver()
+	 * @generated
+	 */
+	EReference getBluetoothTransceiver_ConnectedTransceiver();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.arduino.concurrent.execarduino.arduino.Time <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3304,14 +3429,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MODULE_GET = eINSTANCE.getModuleGet();
-
-		/**
-		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODULE_GET__MODULE = eINSTANCE.getModuleGet_Module();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.WhileImpl <em>While</em>}' class.
@@ -3912,6 +4029,50 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOLEAN_VARIABLE_REF__VARIABLE = eINSTANCE.getBooleanVariableRef_Variable();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoCommunicationModuleImpl <em>Communication Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoCommunicationModuleImpl
+		 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getArduinoCommunicationModule()
+		 * @generated
+		 */
+		EClass ARDUINO_COMMUNICATION_MODULE = eINSTANCE.getArduinoCommunicationModule();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.BluetoothTransceiverImpl <em>Bluetooth Transceiver</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.BluetoothTransceiverImpl
+		 * @see org.gemoc.arduino.concurrent.execarduino.arduino.impl.ArduinoPackageImpl#getBluetoothTransceiver()
+		 * @generated
+		 */
+		EClass BLUETOOTH_TRANSCEIVER = eINSTANCE.getBluetoothTransceiver();
+
+		/**
+		 * The meta object literal for the '<em><b>Data To Send</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = eINSTANCE.getBluetoothTransceiver_DataToSend();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Received</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = eINSTANCE.getBluetoothTransceiver_DataReceived();
+
+		/**
+		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = eINSTANCE.getBluetoothTransceiver_ConnectedTransceiver();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.Time <em>Time</em>}' enum.
