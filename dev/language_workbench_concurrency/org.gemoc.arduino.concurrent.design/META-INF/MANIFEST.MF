@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram;bundle-version="2.0.0",
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.1.0",
  org.gemoc.executionframework.engine.ui;bundle-version="0.1.0",
- org.gemoc.arduino.concurrent.execarduino;bundle-version="0.1.0"
+ org.gemoc.arduino.concurrent.execarduino;bundle-version="0.1.0",
+ org.gemoc.execution.concurrent.ccsljavaengine.ui;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: com.google.common.collect

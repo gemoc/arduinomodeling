@@ -10,39 +10,19 @@
  */
 package org.gemoc.arduino.sequential.design.services;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.URIConverter;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
@@ -56,18 +36,7 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.ide.IDE;
-import org.eclipse.ui.texteditor.AbstractTextEditor;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
-import org.gemoc.arduino.sequential.execarduino.ArduinoDSLStandaloneSetupGenerated;
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
@@ -123,48 +92,6 @@ public class ArduinoServices {
 
 	private static final String IMAGES_PATH = "/org.gemoc.arduino.sequential.design/images/";
 	
-	public EObject openTextEditor(EObject any) {
-		if (any != null) {
-			Resource r = any.eResource();
-				
-			ResourceSet resourceSet = new ResourceSetImpl();
-			Resource resource = resourceSet.createResource(URI.createURI("resource/testeditor/tmp.arduino"));
-			resource.getContents().add(getRoot(any));
-			try {
-		      resource.save(Collections.EMPTY_MAP);
-		    } catch (IOException e) {
-		      // TODO Auto-generated catch block
-		      e.printStackTrace();
-		    }
-			
-			if (resource instanceof XtextResource) {
-				URI uri = any.eResource().getURI();
-				if (uri != null) {
-					String fileURI = any.eResource().getURI().toPlatformString(true);
-					IFile workspaceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(fileURI));
-					if (workspaceFile != null) {
-						IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-						try {
-							IEditorPart openEditor = IDE.openEditor(page, workspaceFile, "org.gemoc.arduino.sequential.execarduino.ArduinoDSL", true);
-							if (openEditor instanceof AbstractTextEditor) {
-								ICompositeNode node = NodeModelUtils.findActualNodeFor(any);
-								if (node != null) {
-									int offset = node.getOffset();
-									int length = node.getTotalEndOffset() - offset;
-									((AbstractTextEditor) openEditor).selectAndReveal(offset, length);
-								}
-							}
-							// editorInput.
-						} catch (PartInitException e) {
-							// Put your exception handler here if you wish to.
-						}
-					}
-				}
-			}
-		}
-		return any;
-	}
-
 	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
 		pinsTmp.addAll(platform.getDigitalPins());
