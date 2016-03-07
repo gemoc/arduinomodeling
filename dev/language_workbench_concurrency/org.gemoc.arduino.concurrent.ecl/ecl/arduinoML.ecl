@@ -11,8 +11,8 @@ package arduino
 -- 
 
 context Instruction
- def : start : Event = self.execute() 
- def : stop  : Event = self.finalize()
+ def if (not ((self).oclIsKindOf(ModuleGet))) : start : Event = self.execute() 
+ def if (not ((self).oclIsKindOf(ModuleGet))) : stop  : Event = self.finalize()
  
 context Sketch
  def : start : Event = self
@@ -34,10 +34,10 @@ context Sketch
 		Relation Alternates(self.start, self.stop)
 		
 	inv S_startInternalFirst:
-		Relation Precedes(self.start, self.block.instructions->first().start)		
+		Relation Coincides(self.start, self.block.instructions->first().start)		
 
 	inv S_stopInternalFirst:
-		Relation Precedes(self.block.instructions->last().stop, self.stop)	
+		Relation Coincides(self.block.instructions->last().stop, self.stop)	
 
 context Instruction
 	inv I_OrderEnforcement:
@@ -46,8 +46,8 @@ context Instruction
 		(Relation Precedes(self.stop, self.oclAsType(ecore::EObject).eContainer().oclAsType(Block).instructions->at(indexOfNextInstruction).start))	
 
 context Instruction
-	inv I_atomicbutDelayAndControl:
-		((not (self.oclIsKindOf(Delay))) and (not (self.oclIsKindOf(Control)))) implies
+	inv I_atomicbutDelayAndControlAndModuleGet:
+		((not (self.oclIsKindOf(Delay))) and (not (self.oclIsKindOf(Control))) and (not (self.oclIsKindOf(ModuleGet)))) implies
 		(Relation Coincides(self.start, self.stop))
 
 context Delay
@@ -76,7 +76,7 @@ context If
 
 	inv I_stopInternalFirst:
 		let i_lastInstructionfromthenOrElse : Event = Expression Union(self.block.instructions->last().stop, self.elseBlock.instructions->last().stop) in
-		Relation Precedes(i_lastInstructionfromthenOrElse, self.stop)		
+		Relation Coincides(i_lastInstructionfromthenOrElse, self.stop)		
 
 
 context While
@@ -93,7 +93,7 @@ context While
 		Relation Exclusion(self.evaluatedToFalse, self.evaluatedToTrue)	
 	
 	inv W_startInternalFirst:
-		Relation Precedes(self.evaluatedToTrue, self.block.instructions->first().start)		
+		Relation Coincides(self.evaluatedToTrue, self.block.instructions->first().start)		
 		
 	inv W_stopwhenEvaluatedFalse:
 		Relation Coincides(self.evaluatedToFalse, self.stop)	
@@ -112,7 +112,7 @@ context Repeat
 		Relation Exclusion(self.evaluatedToFalse, self.evaluatedToTrue)	
 	
 	inv R_startInternalFirst:
-		Relation Precedes(self.evaluatedToTrue, self.block.instructions->first().start)		
+		Relation Coincides(self.evaluatedToTrue, self.block.instructions->first().start)		
 		
 --	inv R_lastInternalInstructionTriggerStartAgain:
 --		let r_lastInternalInstructionStop : Event = Expression Sup(self.instructions.stop) in
@@ -124,9 +124,9 @@ context Repeat
 
 
 context ModuleGet
-	inv waitreceptionBeforeGetOnCom:
-		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
-		(Relation Precedes(self.module.oclAsType(ArduinoCommunicationModule).receive, self.start))
+--	inv waitreceptionBeforeGetOnCom:
+--		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
+--		(Relation Coincides(self.module.oclAsType(ArduinoCommunicationModule).receive, self.start))
 		
 	inv waitIfInVariableAssignment:
 		(self.module.oclIsKindOf(ArduinoCommunicationModule)
@@ -138,7 +138,7 @@ context ModuleGet
 context ModuleAssignment
 	inv sendAfterAssignement:
 		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
-		(Relation Precedes(self.start, self.module.oclAsType(ArduinoCommunicationModule).send))
+		(Relation Alternates(self.start, self.module.oclAsType(ArduinoCommunicationModule).send))
 		
 context BluetoothTransceiver
 	inv sendBeforeReceive:
@@ -148,13 +148,13 @@ context BluetoothTransceiver
 		and
 		((self.connectedTransceiver.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allInstances(ModuleGet)->select(ma|(ma).oclAsType(ModuleGet).module = self.connectedTransceiver))->size() >0)
 		implies
-		(Relation Alternates(self.send, self.connectedTransceiver.receive))
+		(Relation Coincides(self.send, self.connectedTransceiver.receive))
 		
 context VariableAssignment
 	inv getDataIfModuleGetCom:
 		(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->size() > 0)
 		implies
-		(Relation Precedes(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(ModuleGet).module.oclAsType(BluetoothTransceiver).receive, self.start))
+		(Relation Alternates(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(ModuleGet).module.oclAsType(BluetoothTransceiver).receive, self.start))
 endpackage
 
 

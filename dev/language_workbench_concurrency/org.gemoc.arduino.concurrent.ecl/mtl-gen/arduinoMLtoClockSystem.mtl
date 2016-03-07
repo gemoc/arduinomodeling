@@ -85,7 +85,7 @@ system addLibrary:moccmllibs asDictionary.
 	"I_OrderEnforcement in Instruction [element.name/]"
 		system library: #Kernel relation: #Precedes clocks: #(stop[element.name/]  start[element.oclAsType(arduino::Instruction).eContainer().oclAsType(ecore::EObject).instructions->at(OrderedSet(arduino::Instruction)).name/]).
 
-	"I_atomicbutDelayAndControl in Instruction [element.name/]"
+	"I_atomicbutDelayAndControlAndModuleGet in Instruction [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(start[element.name/]  stop[element.name/]).
 
 [/for]
@@ -95,10 +95,10 @@ system addLibrary:moccmllibs asDictionary.
 		system library: #Kernel relation: #Alternates clocks: #(start[element.name/]  stop[element.name/]).
 
 	"S_startInternalFirst in Sketch [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(start[element.name/]  start[element.block.instructions->first().name/]).
+		system library: #Kernel relation: #Coincides clocks: #(start[element.name/]  start[element.block.instructions->first().name/]).
 
 	"S_stopInternalFirst in Sketch [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(stop[element.block.instructions->last().name/]  stop[element.name/]).
+		system library: #Kernel relation: #Coincides clocks: #(stop[element.block.instructions->last().name/]  stop[element.name/]).
 
 [/for]
 [for (element : arduino::Control| aProject.eAllContents(arduino::Control))]
@@ -137,7 +137,7 @@ system addLibrary:moccmllibs asDictionary.
 		system library: #Kernel relation: #Coincides clocks: #(evaluatedToFalse[element.name/]  start[element.elseBlock.instructions->first().name/]).
 
 	"I_stopInternalFirst in If [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(i_lastInstructionfromthenOrElse[element.name/]  stop[element.name/]).
+		system library: #Kernel relation: #Coincides clocks: #(i_lastInstructionfromthenOrElse[element.name/]  stop[element.name/]).
 
 [/for]
 [for (element : arduino::While| aProject.eAllContents(arduino::While))]
@@ -155,7 +155,7 @@ system addLibrary:moccmllibs asDictionary.
 		system library: #Kernel relation: #Exclusion clocks: #(evaluatedToFalse[element.name/]  evaluatedToTrue[element.name/]).
 
 	"W_startInternalFirst in While [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(evaluatedToTrue[element.name/]  start[element.block.instructions->first().name/]).
+		system library: #Kernel relation: #Coincides clocks: #(evaluatedToTrue[element.name/]  start[element.block.instructions->first().name/]).
 
 	"W_stopwhenEvaluatedFalse in While [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(evaluatedToFalse[element.name/]  stop[element.name/]).
@@ -176,7 +176,7 @@ system addLibrary:moccmllibs asDictionary.
 		system library: #Kernel relation: #Exclusion clocks: #(evaluatedToFalse[element.name/]  evaluatedToTrue[element.name/]).
 
 	"R_startInternalFirst in Repeat [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(evaluatedToTrue[element.name/]  start[element.block.instructions->first().name/]).
+		system library: #Kernel relation: #Coincides clocks: #(evaluatedToTrue[element.name/]  start[element.block.instructions->first().name/]).
 
 	"R_stopwhenEvaluatedFalse in Repeat [element.name/]"
 		system library: #Kernel relation: #Coincides clocks: #(evaluatedToFalse[element.name/]  stop[element.name/]).
@@ -184,9 +184,6 @@ system addLibrary:moccmllibs asDictionary.
 [/for]
 [for (element : arduino::ModuleGet| aProject.eAllContents(arduino::ModuleGet))]
 "relations for ModuleGet [element.name/]" 
-	"waitreceptionBeforeGetOnCom in ModuleGet [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(receive[element.module.oclAsType(arduino::Module).name/]  start[element.name/]).
-
 	"waitIfInVariableAssignment in ModuleGet [element.name/]"
 		system library: #Kernel relation: #Precedes clocks: #(receive[element.module.oclAsType(arduino::Module).name/]  start[element.module.oclAsType(arduino::Module).eContainer().oclAsType(ecore::EObject).name/]).
 
@@ -194,7 +191,7 @@ system addLibrary:moccmllibs asDictionary.
 [for (element : arduino::ModuleAssignment| aProject.eAllContents(arduino::ModuleAssignment))]
 "relations for ModuleAssignment [element.name/]" 
 	"sendAfterAssignement in ModuleAssignment [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(start[element.name/]  send[element.module.oclAsType(arduino::Module).name/]).
+		system library: #Kernel relation: #Alternates clocks: #(start[element.name/]  send[element.module.oclAsType(arduino::Module).name/]).
 
 [/for]
 [for (element : arduino::BluetoothTransceiver| aProject.eAllContents(arduino::BluetoothTransceiver))]
@@ -211,7 +208,7 @@ system addLibrary:moccmllibs asDictionary.
 [for (element : arduino::VariableAssignment| aProject.eAllContents(arduino::VariableAssignment))]
 "relations for VariableAssignment [element.name/]" 
 	"getDataIfModuleGetCom in VariableAssignment [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(receive[element.allInstances(arduino::VariableAssignment)->select(Set(OclInvalid) | (Set(OclInvalid)).oclAsType(OclInvalid).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(OclInvalid).module.oclAsType(arduino::Module).name/]  start[element.name/]).
+		system library: #Kernel relation: #Alternates clocks: #(receive[element.allInstances(arduino::VariableAssignment)->select(Set(OclInvalid) | (Set(OclInvalid)).oclAsType(OclInvalid).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(OclInvalid).module.oclAsType(arduino::Module).name/]  start[element.name/]).
 
 [/for]
 [/file]

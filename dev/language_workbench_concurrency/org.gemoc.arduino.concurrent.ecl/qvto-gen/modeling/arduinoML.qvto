@@ -166,7 +166,7 @@ main() {
 
 
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Instruction.oclAsType(EClass)).oclAsType(Instruction)->map I_atomicbutDelayAndControl262I_atomicbutDelayAndControl();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Instruction.oclAsType(EClass)).oclAsType(Instruction)->map I_atomicbutDelayAndControlAndModuleGet372I_atomicbutDelayAndControlAndModuleGet();
 		
 		
 
@@ -247,9 +247,6 @@ main() {
 		
 
 
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ModuleGet.oclAsType(EClass)).oclAsType(ModuleGet)->map waitreceptionBeforeGetOnCom122waitreceptionBeforeGetOnCom();
-		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ModuleGet.oclAsType(EClass)).oclAsType(ModuleGet)->map waitIfInVariableAssignment272waitIfInVariableAssignment();
 		
@@ -420,7 +417,7 @@ main() {
 
 
 	 	mapping inMM1::Instruction::start2Clock() :TimeModel::Clock 
-			when {  }
+			when { (not ((self).oclIsKindOf(ModuleGet))) }
 		{
 			name:= getNameOrUID(self.oclAsType(EObject))+'_start';
 			tickingEvent := object TimeModel::Event{
@@ -439,7 +436,7 @@ main() {
 			}
 		}
 	 	mapping inMM1::Instruction::stop2Clock() :TimeModel::Clock 
-			when {  }
+			when { (not ((self).oclIsKindOf(ModuleGet))) }
 		{
 			name:= getNameOrUID(self.oclAsType(EObject))+'_stop';
 			tickingEvent := object TimeModel::Event{
@@ -610,15 +607,15 @@ main() {
 	
 		mapping inMM1::Sketch::S_startInternalFirst12S_startInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_S_startInternalFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_S_startInternalFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->first().oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -627,15 +624,15 @@ main() {
 	
 		mapping inMM1::Sketch::S_stopInternalFirst12S_stopInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_S_stopInternalFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_S_stopInternalFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->last().oclAsType(EObject))+'_stop']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_stop']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -668,13 +665,13 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM1::Instruction::I_atomicbutDelayAndControl262I_atomicbutDelayAndControl(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::Instruction::I_atomicbutDelayAndControlAndModuleGet372I_atomicbutDelayAndControlAndModuleGet(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 			when { 
-				((not (self.oclIsKindOf(Delay))) and (not (self.oclIsKindOf(Control)))) 
+				((not (self.oclIsKindOf(Delay))) and (not (self.oclIsKindOf(Control))) and (not (self.oclIsKindOf(ModuleGet)))) 
 				
 }
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_atomicbutDelayAndControl";
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_atomicbutDelayAndControlAndModuleGet";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
@@ -814,15 +811,15 @@ main() {
 	
 		mapping inMM1::If::I_stopInternalFirst262I_stopInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_I_stopInternalFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_stopInternalFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 							bindable := self -> map i_lastInstructionfromthenOrElse2Expression()->asSequence()->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_stop']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -884,15 +881,15 @@ main() {
 	
 		mapping inMM1::While::W_startInternalFirst12W_startInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_W_startInternalFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_W_startInternalFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToTrue']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->first().oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -971,15 +968,15 @@ main() {
 	
 		mapping inMM1::Repeat::R_startInternalFirst12R_startInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_R_startInternalFirst";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_R_startInternalFirst";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToTrue']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->first().oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -1004,27 +1001,6 @@ main() {
 		
 
 //relation stuff		
-	
-		mapping inMM1::ModuleGet::waitreceptionBeforeGetOnCom122waitreceptionBeforeGetOnCom(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-			when { 
-				(self.module.oclIsKindOf(ArduinoCommunicationModule)) 
-				
-}
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_waitreceptionBeforeGetOnCom";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.module.oclAsType(ArduinoCommunicationModule).oclAsType(EObject))+'_receive']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
 	
 		mapping inMM1::ModuleGet::waitIfInVariableAssignment272waitIfInVariableAssignment(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 			when { 
@@ -1058,15 +1034,15 @@ main() {
 				
 }
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_sendAfterAssignement";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_sendAfterAssignement";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfAbstractEntity[name = 'AlternatesLeftClock']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.module.oclAsType(ArduinoCommunicationModule).oclAsType(EObject))+'_send']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfAbstractEntity[name = 'AlternatesRightClock']->first();
 				};
 		
 		theMainBlock.relations += result;
@@ -1081,15 +1057,15 @@ main() {
 				
 }
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_sendBeforeReceive";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_sendBeforeReceive";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_send']->first();
-					_abstract := seqOfAbstractEntity[name = 'AlternatesLeftClock']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.connectedTransceiver.oclAsType(EObject))+'_receive']->first();
-					_abstract := seqOfAbstractEntity[name = 'AlternatesRightClock']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
@@ -1104,15 +1080,15 @@ main() {
 				
 }
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_getDataIfModuleGetCom";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_getDataIfModuleGetCom";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(ModuleGet).module.oclAsType(BluetoothTransceiver).oclAsType(EObject))+'_receive']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfAbstractEntity[name = 'AlternatesLeftClock']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfAbstractEntity[name = 'AlternatesRightClock']->first();
 				};
 		
 		theMainBlock.relations += result;
@@ -1251,7 +1227,7 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 
 	 	mapping inMM1::Instruction::start2MSE() :FeedBack::ModelSpecificEvent 
-			when {  }
+			when { (not ((self).oclIsKindOf(ModuleGet))) }
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_start';
 				caller := self.oclAsType(EObject);
@@ -1264,7 +1240,7 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 			}
 		}
 	 	mapping inMM1::Instruction::stop2MSE() :FeedBack::ModelSpecificEvent 
-			when {  }
+			when { (not ((self).oclIsKindOf(ModuleGet))) }
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_stop';
 				caller := self.oclAsType(EObject);
