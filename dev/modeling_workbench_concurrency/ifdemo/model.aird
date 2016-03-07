@@ -4034,7 +4034,7 @@
                   </ownedStyle>
                   <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.arduino.concurrent.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_BinaryIntegerExpression']/@subNodeMappings[name='Operator']"/>
                 </ownedDiagramElements>
-                <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_J1KNteIKEeWGEN2OdrLLHw" name="int 1" tooltipText="" width="3" height="3">
+                <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_J1KNteIKEeWGEN2OdrLLHw" name="1" tooltipText="" width="3" height="3">
                   <target xmi:type="arduino:IntegerConstant" href="model.arduino#//@sketches.1/@block/@instructions.1/@block/@instructions.3/@operand/@right"/>
                   <semanticElements xmi:type="arduino:IntegerConstant" href="model.arduino#//@sketches.1/@block/@instructions.1/@block/@instructions.3/@operand/@right"/>
                   <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
