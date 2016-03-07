@@ -114,6 +114,9 @@ Defining the Functions for : ModuleAssignment
 /*********************************************************************
 Defining the Functions for : BluetoothTransceiver
 **********************************************************************/
+/*********************************************************************
+Defining the Functions for : VariableAssignment
+**********************************************************************/
 /************************* Instruction Process Instances***************************/
 [for (element : Instruction| aProject.eAllContents(Instruction))]
 process p[element.name/] ['['/][element.name/]_start:in none,[element.name/]_stop:in none[']'/](&global : SystemDataRoot, id : read int) is
@@ -150,6 +153,7 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
 [/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
 [/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+[/for][for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
 [/for][']'/] is
 	states s0
 [for (element : Instruction| aProject.eAllContents(Instruction))]
@@ -194,6 +198,9 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 
 [/for]
+[for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
+
+[/for]
 
 [file ('pUnConstrainedSemantics.fcr', false, 'UTF-8')]
 process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(Instruction))]
@@ -207,6 +214,7 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
 [/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
 [/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+[/for][for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
 [/for][']'/] is
 	
 	states s0
@@ -252,6 +260,9 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 
 [/for]
+[for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
+
+[/for]
 [/file]
 /******************** Process Parallelization for Project******************/
 component sys is
@@ -287,6 +298,8 @@ port
 
 [/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
 
+[/for][for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
+
 [/for]
 
 par
@@ -302,6 +315,7 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 ,[/for][for (element : ModuleGet| aProject.eAllContents(ModuleGet))]
 ,[/for][for (element : ModuleAssignment| aProject.eAllContents(ModuleAssignment))]
 ,[/for][for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+,[/for][for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
 ,[/for][']'/]
 [for (element : Instruction| aProject.eAllContents(Instruction))]
 || p[element.name/] ['['/][element.name/]_start,[element.name/]_stop[']'/] (&global, ID)
@@ -334,6 +348,9 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 || p[element.name/] ['['/][']'/] (&global, ID)
 [/for]
 [for (element : BluetoothTransceiver| aProject.eAllContents(BluetoothTransceiver))]
+|| p[element.name/] ['['/][']'/] (&global, ID)
+[/for]
+[for (element : VariableAssignment| aProject.eAllContents(VariableAssignment))]
 || p[element.name/] ['['/][']'/] (&global, ID)
 [/for]
 end par

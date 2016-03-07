@@ -75,6 +75,10 @@ system addLibrary:moccmllibs asDictionary.
 "clocks for BluetoothTransceiver [element.name/]" 
 	system addClocks: #().
 [/for]
+[for (element : arduino::VariableAssignment| aProject.eAllContents(arduino::VariableAssignment))]
+"clocks for VariableAssignment [element.name/]" 
+	system addClocks: #().
+[/for]
 
 [for (element : arduino::Instruction| aProject.eAllContents(arduino::Instruction))]
 "relations for Instruction [element.name/]" 
@@ -183,6 +187,9 @@ system addLibrary:moccmllibs asDictionary.
 	"waitreceptionBeforeGetOnCom in ModuleGet [element.name/]"
 		system library: #Kernel relation: #Precedes clocks: #(receive[element.module.oclAsType(arduino::Module).name/]  start[element.name/]).
 
+	"waitIfInVariableAssignment in ModuleGet [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(receive[element.module.oclAsType(arduino::Module).name/]  start[element.module.oclAsType(arduino::Module).eContainer().oclAsType(ecore::EObject).name/]).
+
 [/for]
 [for (element : arduino::ModuleAssignment| aProject.eAllContents(arduino::ModuleAssignment))]
 "relations for ModuleAssignment [element.name/]" 
@@ -193,7 +200,18 @@ system addLibrary:moccmllibs asDictionary.
 [for (element : arduino::BluetoothTransceiver| aProject.eAllContents(arduino::BluetoothTransceiver))]
 "relations for BluetoothTransceiver [element.name/]" 
 	"sendBeforeReceive in BluetoothTransceiver [element.name/]"
-		system library: #Kernel relation: #Precedes clocks: #(send[element.name/]  receive[element.name/]).
+	system
+		library: #TODO: complete EclServices.java, ConstraintCS.getLibraryName() for expression type InfixExpCS
+		relation: #TODO: complete EclServices.java, ConstraintCS.getRelationName() for expression type InfixExpCS
+		clocks: #(TODO: complete EclServices.java, ConstraintCS.getClockNamesListedAndSepBySep())
+		constants: {}
+		variables: {TODO: complete EclServices.java, ConstraintCS.getVariablesListedAndSepByDot() for expression type InfixExpCS}.
+
+[/for]
+[for (element : arduino::VariableAssignment| aProject.eAllContents(arduino::VariableAssignment))]
+"relations for VariableAssignment [element.name/]" 
+	"getDataIfModuleGetCom in VariableAssignment [element.name/]"
+		system library: #Kernel relation: #Precedes clocks: #(receive[element.allInstances(arduino::VariableAssignment)->select(Set(OclInvalid) | (Set(OclInvalid)).oclAsType(OclInvalid).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(OclInvalid).module.oclAsType(arduino::Module).name/]  start[element.name/]).
 
 [/for]
 [/file]

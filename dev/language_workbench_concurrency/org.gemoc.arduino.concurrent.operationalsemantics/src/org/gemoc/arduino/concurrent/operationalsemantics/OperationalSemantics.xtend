@@ -38,6 +38,8 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.VariableAssignment
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableDeclaration
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableRef
 import org.gemoc.arduino.concurrent.execarduino.arduino.While
+import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule
+import org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver
 
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerVariable_EvaluableAspect.*
@@ -53,6 +55,9 @@ import static extension org.gemoc.arduino.concurrent.operationalsemantics.Intege
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.BooleanConstant_ExecutableAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerModuleGet_ExecutableAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.ModuleAssignment_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.operationalsemantics.ArduinoCommunicationModule_PushAspect.*
+import static extension org.gemoc.arduino.concurrent.operationalsemantics.BluetoothTransceiver_PushAspect.*
+
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -114,9 +119,11 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 			BinaryIntegerExpression: value  = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.operand) as Integer
 			IntegerVariableRef: value  = VariableRef_EvaluableAspect.evaluate(_self.operand) as Integer
 			IntegerConstant: value  = IntegerConstant_ExecutableAspect.evaluate(_self.operand) as Integer
+			IntegerModuleGet: value  = IntegerModuleGet_ExecutableAspect.evaluate(_self.operand) as Integer
 			BinaryBooleanExpression: value  = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.operand) as Boolean
 			BooleanVariableRef: value  = VariableRef_EvaluableAspect.evaluate(_self.operand) as Boolean
 			BooleanConstant: value  = BooleanConstant_ExecutableAspect.evaluate(_self.operand) as Boolean
+			BooleanModuleGet: value  = BooleanModuleGet_ExecutableAspect.evaluate(_self.operand) as Boolean
 		}
 		if (variable instanceof IntegerVariable){
 			variable.value = value as Integer
@@ -151,21 +158,33 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 		val pin = ArduinoUtils.getPin(_self.module)
 		var Object value = null
 		switch (_self.operand){
-			BinaryIntegerExpression: pin.level  = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.operand) as Integer
-			IntegerVariableRef: pin.level  = VariableRef_EvaluableAspect.evaluate(_self.operand) as Integer
-			IntegerConstant: pin.level  = IntegerConstant_ExecutableAspect.evaluate(_self.operand) as Integer
+			BinaryIntegerExpression: value  = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.operand) as Integer
+			IntegerVariableRef: value  = VariableRef_EvaluableAspect.evaluate(_self.operand) as Integer
+			IntegerConstant: value  = IntegerConstant_ExecutableAspect.evaluate(_self.operand) as Integer
+			IntegerModuleGet: value  = IntegerModuleGet_ExecutableAspect.evaluate(_self.operand) as Integer
 			BinaryBooleanExpression: value  = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.operand) as Boolean
 			BooleanVariableRef: value  = VariableRef_EvaluableAspect.evaluate(_self.operand) as Boolean
 			BooleanConstant: value  = BooleanConstant_ExecutableAspect.evaluate(_self.operand) as Boolean
+			BooleanModuleGet: value  = BooleanModuleGet_ExecutableAspect.evaluate(_self.operand) as Boolean
 		}
-		if (value == null){
-			return
+		
+		if(value instanceof Integer){
+			pin.level = value
 		}
-		if (value as Boolean){
-			pin.level = HIGH
-		}else{
-			pin.level = LOW
+		if (value instanceof Boolean){
+			if (value as Boolean){
+				pin.level = HIGH
+			}else{
+				pin.level = LOW
+			}
 		}
+		
+		//warning. Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			(_self.module as BluetoothTransceiver).dataToSend.add(value as Integer)
+		}
+		
+		
 	}
 }
 
@@ -272,6 +291,7 @@ class While_EvaluableAspect extends Control_EvaluableAspect {
 			BinaryBooleanExpression: resCond  = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.condition) as Boolean
 			BooleanVariableRef: resCond  = VariableRef_EvaluableAspect.evaluate(_self.condition) as Boolean
 			BooleanConstant: resCond  = BooleanConstant_ExecutableAspect.evaluate(_self.condition) as Boolean
+			BooleanModuleGet: resCond  = BooleanModuleGet_ExecutableAspect.evaluate(_self.condition) as Boolean
 		}
 		return resCond
 	}
@@ -321,9 +341,11 @@ class BinaryIntegerExpression_EvaluableAspect extends /*IntegerExpression_Evalua
 			BinaryBooleanExpression: bLeft = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.left) as Boolean
 			BinaryIntegerExpression: iLeft = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.left) as Integer
 			IntegerVariableRef: iLeft = VariableRef_EvaluableAspect.evaluate(_self.left) as Integer
+			IntegerModuleGet: iLeft  = IntegerModuleGet_ExecutableAspect.evaluate(_self.left) as Integer
 			BooleanVariableRef: bLeft = VariableRef_EvaluableAspect.evaluate(_self.left) as Boolean
 			IntegerConstant: iLeft = IntegerConstant_ExecutableAspect.evaluate(_self.left) as Integer
 			BooleanConstant: bLeft = BooleanConstant_ExecutableAspect.evaluate(_self.left) as Boolean
+			BooleanModuleGet: bLeft  = BooleanModuleGet_ExecutableAspect.evaluate(_self.left) as Boolean
 		}
 		var bRight = false;
 		var iRight = 0;
@@ -331,9 +353,11 @@ class BinaryIntegerExpression_EvaluableAspect extends /*IntegerExpression_Evalua
 			BinaryBooleanExpression: bRight = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.right) as Boolean
 			BinaryIntegerExpression: iRight = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.right) as Integer
 			IntegerVariableRef: iRight = VariableRef_EvaluableAspect.evaluate(_self.right) as Integer
+			IntegerModuleGet: iRight  = IntegerModuleGet_ExecutableAspect.evaluate(_self.right) as Integer
 			BooleanVariableRef: bRight = VariableRef_EvaluableAspect.evaluate(_self.right) as Boolean
 			IntegerConstant: iRight = IntegerConstant_ExecutableAspect.evaluate(_self.right) as Integer
 			BooleanConstant: bRight = BooleanConstant_ExecutableAspect.evaluate(_self.right) as Boolean
+			BooleanModuleGet: bRight  = BooleanModuleGet_ExecutableAspect.evaluate(_self.right) as Boolean
 		}
 		switch (_self.operator) {
 			case DIV: {
@@ -404,6 +428,11 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
+		//warning. Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			return (_self.module as BluetoothTransceiver).dataReceived.head
+		}
+		
 		val pin = ArduinoUtils.getPin(_self.module)
 		return pin.level	
 	}
@@ -427,8 +456,12 @@ class BinaryBooleanExpression_EvaluableAspect extends BooleanExpression_Evaluabl
 			BooleanVariableRef: {bLeft = VariableRef_EvaluableAspect.evaluate(_self.left) as Boolean 
 								leftIsBoolean = true
 			}
-			IntegerConstant: iLeft = IntegerConstant_ExecutableAspect.evaluate(_self.right) as Integer
-			BooleanConstant: {bLeft = BooleanConstant_ExecutableAspect.evaluate(_self.right) as Boolean								
+			IntegerConstant: iLeft = IntegerConstant_ExecutableAspect.evaluate(_self.left) as Integer
+			BooleanConstant: {bLeft = BooleanConstant_ExecutableAspect.evaluate(_self.left) as Boolean								
+				leftIsBoolean = true
+			}
+			IntegerModuleGet: iLeft  = IntegerModuleGet_ExecutableAspect.evaluate(_self.left) as Integer
+			BooleanModuleGet: {bLeft  = BooleanModuleGet_ExecutableAspect.evaluate(_self.left) as Boolean
 				leftIsBoolean = true
 			}
 //			BooleanExpression:  {
@@ -450,6 +483,10 @@ class BinaryBooleanExpression_EvaluableAspect extends BooleanExpression_Evaluabl
 			}
 			IntegerConstant: iRight = IntegerConstant_ExecutableAspect.evaluate(_self.right) as Integer
 			BooleanConstant: {bRight = BooleanConstant_ExecutableAspect.evaluate(_self.right) as Boolean
+				rightIsBoolean = true
+			}
+			IntegerModuleGet: iRight  = IntegerModuleGet_ExecutableAspect.evaluate(_self.right) as Integer
+			BooleanModuleGet: {bRight  = BooleanModuleGet_ExecutableAspect.evaluate(_self.right) as Boolean
 				rightIsBoolean = true
 			}
 		}
@@ -584,4 +621,21 @@ abstract class BinaryExpression_EvaluableAspect extends Expression_EvaluableAspe
 //	@OverrideAspectMethod
 //	def Object evaluate(){
 //	}
+} 
+
+
+
+
+@Aspect(className=ArduinoCommunicationModule)
+abstract class ArduinoCommunicationModule_PushAspect {
+	abstract def void push()
+} 
+
+@Aspect(className=BluetoothTransceiver)
+abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+	@OverrideAspectMethod
+	def void push(){
+		var temp = _self.dataToSend.head;
+		_self.connectedTransceiver.dataReceived.add(temp)
+	}
 } 

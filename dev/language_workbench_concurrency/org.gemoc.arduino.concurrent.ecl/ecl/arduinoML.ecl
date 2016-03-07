@@ -25,8 +25,9 @@ def : evaluatedToTrue : Event = self
 def : evaluatedToFalse : Event = self
 
 context ArduinoCommunicationModule
-def : send : Event = self.push()
-def : receive : Event = self
+def if (self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allSubobjectsOfKind(ModuleAssignment)->select(ma|(ma).oclAsType(ModuleAssignment).module = self))->size() >0 : send : Event = self.push()
+--def : send : Event = self.push()
+def if (self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allSubobjectsOfKind(ModuleGet)->select(ma|(ma).oclAsType(ModuleGet).module = self))->size() >0  : receive : Event = self
 
 context Sketch 
 	inv S_nonReentrant:
@@ -126,6 +127,13 @@ context ModuleGet
 	inv waitreceptionBeforeGetOnCom:
 		(self.module.oclIsKindOf(ArduinoCommunicationModule)) implies
 		(Relation Precedes(self.module.oclAsType(ArduinoCommunicationModule).receive, self.start))
+		
+	inv waitIfInVariableAssignment:
+		(self.module.oclIsKindOf(ArduinoCommunicationModule)
+			and
+		self.module.oclAsType(ecore::EObject).eContainer().oclIsKindOf(VariableAssignment)
+		) implies
+		(Relation Precedes(self.module.oclAsType(ArduinoCommunicationModule).receive, self.module.oclAsType(ecore::EObject).eContainer().oclAsType(VariableAssignment).start))
 
 context ModuleAssignment
 	inv sendAfterAssignement:
@@ -134,8 +142,19 @@ context ModuleAssignment
 		
 context BluetoothTransceiver
 	inv sendBeforeReceive:
-		(self.connectedTransceiver <> null) implies
-		(Relation Precedes(self.send, self.receive))
+		((self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allInstances(ModuleAssignment)->select(ma|(ma).oclAsType(ModuleAssignment).module = self))->size() >0)
+		and
+		(self.connectedTransceiver <> null) 
+		and
+		((self.connectedTransceiver.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allInstances(ModuleGet)->select(ma|(ma).oclAsType(ModuleGet).module = self.connectedTransceiver))->size() >0)
+		implies
+		(Relation Alternates(self.send, self.connectedTransceiver.receive))
+		
+context VariableAssignment
+	inv getDataIfModuleGetCom:
+		(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->size() > 0)
+		implies
+		(Relation Precedes(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->asSequence()->first().oclAsType(ModuleGet).module.oclAsType(BluetoothTransceiver).receive, self.start))
 endpackage
 
 
