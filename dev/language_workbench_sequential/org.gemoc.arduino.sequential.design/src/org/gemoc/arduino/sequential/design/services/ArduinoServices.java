@@ -247,6 +247,58 @@ public class ArduinoServices {
 	public boolean isDigitalPinAvailable(ArduinoBoard board) {
 		return getAvailableDigitalPin(board) != null;
 	}
+	
+	public EObject getPreviousInstruction(EObject instruction) {
+		EObject res = null;
+		if (instruction.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+			int i = instructions.indexOf(instruction);
+			if (i > 0) {
+				res = instructions.get(i-1);
+			}
+		}
+		return res;
+	}
+	
+	public EObject getNextInstruction(EObject instruction) {
+		EObject res = null;
+		if (instruction.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+			int i = instructions.indexOf(instruction);
+			res = instructions.get(i+1);
+		}
+		return res;
+	}
+	
+	public EObject getElement(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
+	}
+	
+	public EObject getSource(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
+	}
+	
+	public EObject getTarget(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
+	}
 
 	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
 		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
@@ -266,11 +318,38 @@ public class ArduinoServices {
 		return res;
 	}
 	
-	public Color changeLEDColor(LED led) {
+	public Color cycleLEDColors(LED led) {
 		switch (led.getColor()) {
 		case BLUE: return Color.RED;
 		case RED: return Color.WHITE;
 		case WHITE: return Color.BLUE;
+		}
+		return null;
+	}
+	
+	public BinaryIntegerOperatorKind cycleArithmeticOperators(BinaryIntegerExpression expression) {
+		switch (expression.getOperator()) {
+		case PLUS: return BinaryIntegerOperatorKind.MINUS;
+		case MINUS: return BinaryIntegerOperatorKind.MUL;
+		case MUL: return BinaryIntegerOperatorKind.DIV;
+		case DIV: return BinaryIntegerOperatorKind.POURCENT;
+		case POURCENT: return BinaryIntegerOperatorKind.MIN;
+		case MIN: return BinaryIntegerOperatorKind.MAX;
+		case MAX: return BinaryIntegerOperatorKind.PLUS;
+		}
+		return null;
+	}
+	
+	public BinaryBooleanOperatorKind cycleComparisonOperators(BinaryBooleanExpression expression) {
+		switch (expression.getOperator()) {
+		case EQUAL: return BinaryBooleanOperatorKind.DIFFERENT;
+		case DIFFERENT: return BinaryBooleanOperatorKind.INF;
+		case INF: return BinaryBooleanOperatorKind.INF_OR_EQUAL;
+		case INF_OR_EQUAL: return BinaryBooleanOperatorKind.SUP;
+		case SUP: return BinaryBooleanOperatorKind.SUP_OR_EQUAL;
+		case SUP_OR_EQUAL: return BinaryBooleanOperatorKind.AND;
+		case AND: return BinaryBooleanOperatorKind.OR;
+		case OR: return BinaryBooleanOperatorKind.EQUAL;
 		}
 		return null;
 	}
@@ -425,20 +504,10 @@ public class ArduinoServices {
 		if (Expression instanceof ModuleGet) {
 			return "get(" + ((ModuleGet) Expression).getModule().getName() + ")";
 		}
-		if (Expression instanceof BinaryBooleanExpression) {
-			String label = "";
-			label += computeLabel(((BinaryBooleanExpression) Expression).getLeft()) + " ";
-			label += getOperator(((BinaryBooleanExpression) Expression).getOperator());
-			label += " " + computeLabel(((BinaryBooleanExpression) Expression).getRight());
-			return label;
-		}
 		if (Expression instanceof BinaryIntegerExpression) {
-			String label = "(";
-			label += computeLabel(((BinaryExpression) Expression).getLeft());
-			label += getOperator(((BinaryIntegerExpression) Expression).getOperator());
-			label += computeLabel(((BinaryExpression) Expression).getRight());
-			label += ")";
-			return label;
+			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
+					+ getOperator(((BinaryIntegerExpression) Expression).getOperator())
+					+ computeLabel(((BinaryExpression) Expression).getRight()) + ")";
 		}
 		if (Expression instanceof BinaryBooleanExpression) {
 			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
@@ -794,24 +863,6 @@ public class ArduinoServices {
 			return instructions.get(idx-1);
 		}
 		return null;
-	}
-
-	public EObject getNextInstruction(EObject current) {
-		EObject res = null;
-		if (current instanceof Instruction) {
-			Block block = (Block) current.eContainer();
-			List<Instruction> instructions = block.getInstructions();
-			int index = instructions.indexOf(current);
-			if (index != -1) {
-				index++;
-				if (index == instructions.size() && block instanceof Sketch) {
-					res = block;
-				} else if (index < instructions.size()) {
-					res = instructions.get(index);
-				}
-			}
-		}
-		return res;
 	}
 
 	public List<BinaryIntegerExpression> getNumericalExpressions(EObject container) {

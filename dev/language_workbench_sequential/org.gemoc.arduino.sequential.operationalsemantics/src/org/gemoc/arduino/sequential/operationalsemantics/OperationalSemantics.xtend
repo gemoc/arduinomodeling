@@ -46,6 +46,8 @@ import static extension org.gemoc.arduino.sequential.operationalsemantics.If_Eva
 import static extension org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
+import org.gemoc.arduino.sequential.model.arduino.ArduinoCommunicationModule
+import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -181,8 +183,27 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 				pin.level = LOW
 			}
 		}
+		
+		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			(_self.module as BluetoothTransceiver).dataToSend.add(_self.operand.evaluate as Integer)
+		}
 	}
 }
+
+@Aspect(className=ArduinoCommunicationModule)
+abstract class ArduinoCommunicationModule_PushAspect {
+	abstract def void push()
+} 
+
+@Aspect(className=BluetoothTransceiver)
+abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+	@OverrideAspectMethod
+	def void push(){
+		var temp = _self.dataToSend.head;
+		_self.connectedTransceiver.dataReceived.add(temp)
+	}
+} 
 
 @Aspect(className=VariableDeclaration)
 class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect {
@@ -392,6 +413,11 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
+		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			return (_self.module as BluetoothTransceiver).dataReceived.head
+		}
+		
 		val pin = _self.instruction.getPin(_self.module)
 		return pin.level	
 	}
