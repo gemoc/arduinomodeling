@@ -337,6 +337,15 @@ public interface ArduinoFactory extends EFactory {
 	BooleanVariableRef createBooleanVariableRef();
 
 	/**
+	 * Returns a new object of class '<em>Bluetooth Transceiver</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bluetooth Transceiver</em>'.
+	 * @generated
+	 */
+	BluetoothTransceiver createBluetoothTransceiver();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

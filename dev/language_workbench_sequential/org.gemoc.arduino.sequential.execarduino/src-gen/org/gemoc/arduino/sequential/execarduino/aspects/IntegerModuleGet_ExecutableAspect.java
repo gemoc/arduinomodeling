@@ -2,6 +2,9 @@ package org.gemoc.arduino.sequential.execarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.arduino.Instruction;
 import org.gemoc.arduino.sequential.execarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.sequential.execarduino.arduino.Module;
@@ -32,9 +35,15 @@ public class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspec
   }
   
   protected static Object _privk3_evaluate(final IntegerModuleGet_ExecutableAspectIntegerModuleGetAspectProperties _self_, final IntegerModuleGet _self) {
-    Instruction _instruction = Expression_EvaluableAspect.getInstruction(_self);
     Module _module = _self.getModule();
-    final Pin pin = Instruction_UtilitesAspect.getPin(_instruction, _module);
+    if ((_module instanceof BluetoothTransceiver)) {
+      Module _module_1 = _self.getModule();
+      EList<Integer> _dataReceived = ((BluetoothTransceiver) _module_1).getDataReceived();
+      return IterableExtensions.<Integer>head(_dataReceived);
+    }
+    Instruction _instruction = Expression_EvaluableAspect.getInstruction(_self);
+    Module _module_2 = _self.getModule();
+    final Pin pin = Instruction_UtilitesAspect.getPin(_instruction, _module_2);
     return Pin_EvaluableAspect.level(pin);
   }
 }

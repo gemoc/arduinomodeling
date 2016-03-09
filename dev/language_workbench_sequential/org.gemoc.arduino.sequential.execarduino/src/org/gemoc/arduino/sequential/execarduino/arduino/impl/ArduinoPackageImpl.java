@@ -16,6 +16,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.AmbientLightSensor;
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
+import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoCommunicationModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoDigitalModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoFactory;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoModule;
@@ -27,6 +28,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BinaryExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerOperatorKind;
 import org.gemoc.arduino.sequential.execarduino.arduino.Block;
+import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.arduino.Board;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
@@ -474,6 +476,20 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	private EClass booleanVariableRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduinoCommunicationModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bluetoothTransceiverEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1463,6 +1479,51 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getArduinoCommunicationModule() {
+		return arduinoCommunicationModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBluetoothTransceiver() {
+		return bluetoothTransceiverEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBluetoothTransceiver_DataToSend() {
+		return (EAttribute)bluetoothTransceiverEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBluetoothTransceiver_DataReceived() {
+		return (EAttribute)bluetoothTransceiverEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBluetoothTransceiver_ConnectedTransceiver() {
+		return (EReference)bluetoothTransceiverEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTime() {
 		return timeEEnum;
 	}
@@ -1702,6 +1763,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		booleanVariableRefEClass = createEClass(BOOLEAN_VARIABLE_REF);
 		createEReference(booleanVariableRefEClass, BOOLEAN_VARIABLE_REF__VARIABLE);
 
+		arduinoCommunicationModuleEClass = createEClass(ARDUINO_COMMUNICATION_MODULE);
+
+		bluetoothTransceiverEClass = createEClass(BLUETOOTH_TRANSCEIVER);
+		createEAttribute(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
+		createEAttribute(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
+		createEReference(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
+
 		// Create enums
 		timeEEnum = createEEnum(TIME);
 		binaryIntegerOperatorKindEEnum = createEEnum(BINARY_INTEGER_OPERATOR_KIND);
@@ -1805,6 +1873,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		arduinoAnalogModuleEClass.getESuperTypes().add(this.getArduinoModule());
 		booleanVariableRefEClass.getESuperTypes().add(this.getVariableRef());
 		booleanVariableRefEClass.getESuperTypes().add(this.getBooleanExpression());
+		arduinoCommunicationModuleEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		bluetoothTransceiverEClass.getESuperTypes().add(this.getArduinoCommunicationModule());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1928,9 +1998,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getIf_Condition(), this.getBooleanExpression(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIf_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(ifEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(ifEClass, ecorePackage.getEBooleanObject(), "evaluate", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(ifEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(integerConstantEClass, IntegerConstant.class, "IntegerConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegerConstant_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, IntegerConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2028,6 +2098,17 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(booleanVariableRefEClass, BooleanVariableRef.class, "BooleanVariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBooleanVariableRef_Variable(), this.getBooleanVariable(), null, "variable", null, 1, 1, BooleanVariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arduinoCommunicationModuleEClass, ArduinoCommunicationModule.class, "ArduinoCommunicationModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(arduinoCommunicationModuleEClass, null, "push", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(bluetoothTransceiverEClass, BluetoothTransceiver.class, "BluetoothTransceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBluetoothTransceiver_DataToSend(), ecorePackage.getEInt(), "dataToSend", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBluetoothTransceiver_DataReceived(), ecorePackage.getEInt(), "dataReceived", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_ConnectedTransceiver(), this.getBluetoothTransceiver(), null, "connectedTransceiver", null, 0, 1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(bluetoothTransceiverEClass, null, "push", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");
@@ -2266,6 +2347,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   });	
 		addAnnotation
 		  (blockEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (arduinoCommunicationModuleEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (bluetoothTransceiverEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });

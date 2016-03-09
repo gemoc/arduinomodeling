@@ -424,12 +424,10 @@ public class ArduinoServices {
 
 		return (Sketch) eObject;
 	}
-
-	public List<EObject> getConnectedModules(EObject eObject) {
-		Project project = (Project) getRoot(eObject);
-		List<Board> boards = project.getBoards();
+	
+	public List<EObject> getConnectedModules(Board board) {
 		List<EObject> result = new ArrayList<>();
-		for (Board board : boards) {
+		if (board != null) {
 			if (board instanceof ArduinoBoard) {
 				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
 				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
