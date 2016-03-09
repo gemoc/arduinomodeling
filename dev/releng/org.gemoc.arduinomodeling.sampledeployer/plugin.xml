@@ -13,15 +13,29 @@
       <wizard
             canFinishEarly="true"
             category="org.eclipse.ui.Examples/org.gemoc.gemoc_modeling_workbench.samples.category"
-            class="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingModelExampleWizard"
-            finalPerspective="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling"
+            class="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingModelSequentialExampleWizard"
+            finalPerspective="org.eclipse.sirius.ui.tools.perspective.modeling"
             hasPages="false"
             icon="icons/IconeGemocModel-16.png"
-            id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingModelExampleWizard"
+            id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingSequentialModelExampleWizard"
             name="GEMOC models for ArduinoModeling language (Sequential)"
-            preferredPerspectives="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling">
+            preferredPerspectives="org.eclipse.sirius.ui.tools.perspective.modeling">
          <description>
-            T⁮his project contains some ArduinoModeling models that can be executed if you have installed the one or both ArduinoModeling languages (Sequential).
+            T⁮his project contains some ArduinoModeling models that can be executed if you have installed the ArduinoModeling sequential language.
+         </description>
+      </wizard>
+      <wizard
+            canFinishEarly="true"
+            category="org.eclipse.ui.Examples/org.gemoc.gemoc_modeling_workbench.samples.category"
+            class="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingModelConcurrentExampleWizard"
+            finalPerspective="org.eclipse.sirius.ui.tools.perspective.modeling"
+            hasPages="false"
+            icon="icons/IconeGemocModel-16.png"
+            id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingConcurrentModelExampleWizard"
+            name="GEMOC models for ArduinoModeling language (Concurrent)"
+            preferredPerspectives="org.eclipse.sirius.ui.tools.perspective.modeling">
+         <description>
+            T⁮his project contains some ArduinoModeling models that can be executed if you have installed the ArduinoModeling concurrent language.
          </description>
       </wizard>
       <category
@@ -31,14 +45,31 @@
             canFinishEarly="true"
             category="org.eclipse.ui.Examples/org.gemoc.gemoc_language_workbench.samples.category"
             class="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingSequentialLanguageExampleWizard"
-            finalPerspective="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling"
+            finalPerspective="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective"
             hasPages="false"
             icon="icons/IconeGemocLanguage-16.png"
             id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingSequentialLanguageExampleWizard"
             name="GEMOC ArduinoModeling Language (Sequential)"
-            preferredPerspectives="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling,fr.obeo.dsl.viewpoint.ui.tools.perspective.design">
+            preferredPerspectives="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective">
          <description>
             T⁮his set of projects feature an ArduinoModeling sequential language which is made executable using Gemoc.
+         </description>
+      </wizard>
+      <category
+            id="org.gemoc.gemoc_language_workbench.samples.category"
+            name="GEMOC language workbench examples"
+            parentCategory="org.eclipse.ui.Examples"/><wizard
+            canFinishEarly="true"
+            category="org.eclipse.ui.Examples/org.gemoc.gemoc_language_workbench.samples.category"
+            class="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingConcurrentLanguageExampleWizard"
+            finalPerspective="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective"
+            hasPages="false"
+            icon="icons/IconeGemocLanguage-16.png"
+            id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingConcurrentLanguageExampleWizard"
+            name="GEMOC ArduinoModeling Language (Sequential)"
+            preferredPerspectives="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective">
+         <description>
+            T⁮his set of projects feature an ArduinoModeling concurrent language which is made executable using Gemoc.
          </description>
       </wizard>
    </extension>

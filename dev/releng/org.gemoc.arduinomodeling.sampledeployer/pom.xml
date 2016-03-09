@@ -6,6 +6,8 @@
         <sample_root>${basedir}/../..</sample_root>
         <gemoc_sequential_mw_root>${sample_root}/modeling_workbench_sequential</gemoc_sequential_mw_root>
         <gemoc_sequential_lw_root>${sample_root}/language_workbench_sequential</gemoc_sequential_lw_root>
+        <gemoc_concurrent_mw_root>${sample_root}/modeling_workbench_concurrency</gemoc_concurrent_mw_root>
+        <gemoc_concurrent_lw_root>${sample_root}/language_workbench_concurrency</gemoc_concurrent_lw_root>
     </properties>
     
 	<parent>
@@ -58,9 +60,39 @@
 								</zip>
 								<!-- Arduino Modeling Workbench  -->
 								
-								<zip destfile="${basedir}/zips/ifdemo.zip">
+								<zip destfile="${basedir}/zips/ifdemo.sequential.zip">
 									<fileset dir="${gemoc_sequential_mw_root}/ifdemo/" />
 								</zip>
+								
+								<!-- Arduino Concurrent Language Workbench  -->
+								
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.design.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.design/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.ecl.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.ecl/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.edit.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino.edit/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.editor.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino.editor/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.operationalsemantics.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.operationalsemantics/" />
+								</zip>
+								<!-- Arduino Modeling Workbench  -->
+								
+								<zip destfile="${basedir}/zips/ifdemo.concurrent.zip">
+									<fileset dir="${gemoc_concurrent_mw_root}/ifdemo/" />
+								</zip>
+								
 							</tasks>
 						</configuration>
 					</execution>
