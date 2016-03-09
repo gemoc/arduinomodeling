@@ -8,7 +8,7 @@
          point="org.eclipse.ui.newWizards">
       <category
             id="org.gemoc.gemoc_modeling_workbench.samples.category"
-            name="Gemoc modeling workbench examples"
+            name="GEMOC modeling workbench examples"
             parentCategory="org.eclipse.ui.Examples"/>
       <wizard
             canFinishEarly="true"
@@ -18,7 +18,7 @@
             hasPages="false"
             icon="icons/IconeGemocModel-16.png"
             id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingModelExampleWizard"
-            name="ArduinoModeling Model examples (sequential)"
+            name="GEMOC models for ArduinoModeling language (Sequential)"
             preferredPerspectives="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling">
          <description>
             T⁮his project contains some ArduinoModeling models that can be executed if you have installed the one or both ArduinoModeling languages (Sequential).
@@ -26,7 +26,7 @@
       </wizard>
       <category
             id="org.gemoc.gemoc_language_workbench.samples.category"
-            name="Gemoc language workbench examples"
+            name="GEMOC language workbench examples"
             parentCategory="org.eclipse.ui.Examples"/><wizard
             canFinishEarly="true"
             category="org.eclipse.ui.Examples/org.gemoc.gemoc_language_workbench.samples.category"
@@ -35,7 +35,7 @@
             hasPages="false"
             icon="icons/IconeGemocLanguage-16.png"
             id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingSequentialLanguageExampleWizard"
-            name="ArduinoModeling Sequential Language"
+            name="GEMOC ArduinoModeling Language (Sequential)"
             preferredPerspectives="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling,fr.obeo.dsl.viewpoint.ui.tools.perspective.design">
          <description>
             T⁮his set of projects feature an ArduinoModeling sequential language which is made executable using Gemoc.
