@@ -76,6 +76,8 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
       Expression _operand_4 = _self.getOperand();
       Object _evaluate_2 = Expression_EvaluableAspect.evaluate(_operand_4);
       _dataToSend.add(((Integer) _evaluate_2));
+      Module _module_3 = _self.getModule();
+      BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_3));
     }
   }
 }

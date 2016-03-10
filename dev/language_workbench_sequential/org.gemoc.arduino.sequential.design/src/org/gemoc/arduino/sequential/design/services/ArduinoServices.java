@@ -48,6 +48,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BinaryExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BinaryIntegerOperatorKind;
 import org.gemoc.arduino.sequential.execarduino.arduino.Block;
+import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.arduino.Board;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;

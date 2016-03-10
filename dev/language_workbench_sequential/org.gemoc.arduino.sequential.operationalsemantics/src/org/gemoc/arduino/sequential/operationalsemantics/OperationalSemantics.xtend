@@ -188,6 +188,8 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
 		if (_self.module instanceof BluetoothTransceiver){
 			(_self.module as BluetoothTransceiver).dataToSend.add(_self.operand.evaluate as Integer)
+			//FIXME temporary solution
+			(_self.module as BluetoothTransceiver).push
 		}
 	}
 }
@@ -205,8 +207,9 @@ abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModul
 	
 	@OverrideAspectMethod
 	def void push(){
-		var temp = _self.dataToSend.head;
-		_self.connectedTransceiver.dataReceived.add(temp)
+		val l = _self.connectedTransceiver.dataReceived;
+		_self.dataToSend.forEach[i|l.add(i)]
+		_self.dataToSend.clear
 	}
 } 
 
@@ -420,7 +423,14 @@ class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	def Object evaluate() {
 		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
 		if (_self.module instanceof BluetoothTransceiver){
-			return (_self.module as BluetoothTransceiver).dataReceived.head
+			val l = (_self.module as BluetoothTransceiver).dataReceived
+			val res = l.head
+			if (res != null) {
+				l.remove(0)
+				return res
+			} else {
+				return 0
+			}
 		}
 		
 		val pin = _self.instruction.getPin(_self.module)

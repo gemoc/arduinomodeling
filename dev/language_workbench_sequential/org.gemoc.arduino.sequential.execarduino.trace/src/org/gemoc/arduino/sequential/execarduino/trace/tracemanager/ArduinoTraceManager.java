@@ -325,55 +325,6 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 								.get(o_cast);
 
 						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getBluetoothTransceiver_DataToSend().getFeatureID()) {
-
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<arduinoTrace.States.BluetoothTransceiver_dataToSend_Value> valueSequence = tracedObject
-									.getDataToSendSequence();
-							arduinoTrace.States.BluetoothTransceiver_dataToSend_Value previousValue = null;
-							if (!valueSequence.isEmpty())
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-
-							boolean change = false;
-							if (previousValue != null) {
-
-								if (previousValue.getDataToSend().size() == o_cast.getDataToSend().size()) {
-
-									java.util.Iterator<java.lang.Integer> it = o_cast.getDataToSend().iterator();
-									for (java.lang.Integer aPreviousValue : previousValue.getDataToSend()) {
-										java.lang.Integer aCurrentValue = it.next();
-										if (!aPreviousValue.equals(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-
-							if (change) {
-								stateChanged = true;
-
-								// Rollback: we remove the last value of this field from the new state
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value lastValue = tracedObject
-										.getDataToSendSequence().get(tracedObject.getDataToSendSequence().size() - 1);
-								newState.getBluetoothTransceiver_dataToSend_Values().remove(lastValue);
-
-								// And we create a proper new value							
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-										.createBluetoothTransceiver_dataToSend_Value();
-								newValue.getDataToSend().addAll(
-										(Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
-								tracedObject.getDataToSendSequence().add(newValue);
-								newState.getBluetoothTransceiver_dataToSend_Values().add(newValue);
-							}
-						}
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
 								.getBluetoothTransceiver_DataReceived().getFeatureID()) {
 
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
@@ -420,6 +371,55 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 										(Collection<? extends java.lang.Integer>) o_cast.getDataReceived());
 								tracedObject.getDataReceivedSequence().add(newValue);
 								newState.getBluetoothTransceiver_dataReceived_Values().add(newValue);
+							}
+						}
+
+						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
+								.getBluetoothTransceiver_DataToSend().getFeatureID()) {
+
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<arduinoTrace.States.BluetoothTransceiver_dataToSend_Value> valueSequence = tracedObject
+									.getDataToSendSequence();
+							arduinoTrace.States.BluetoothTransceiver_dataToSend_Value previousValue = null;
+							if (!valueSequence.isEmpty())
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+
+							boolean change = false;
+							if (previousValue != null) {
+
+								if (previousValue.getDataToSend().size() == o_cast.getDataToSend().size()) {
+
+									java.util.Iterator<java.lang.Integer> it = o_cast.getDataToSend().iterator();
+									for (java.lang.Integer aPreviousValue : previousValue.getDataToSend()) {
+										java.lang.Integer aCurrentValue = it.next();
+										if (!aPreviousValue.equals(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+
+							if (change) {
+								stateChanged = true;
+
+								// Rollback: we remove the last value of this field from the new state
+								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value lastValue = tracedObject
+										.getDataToSendSequence().get(tracedObject.getDataToSendSequence().size() - 1);
+								newState.getBluetoothTransceiver_dataToSend_Values().remove(lastValue);
+
+								// And we create a proper new value							
+								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
+										.createBluetoothTransceiver_dataToSend_Value();
+								newValue.getDataToSend().addAll(
+										(Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
+								tracedObject.getDataToSendSequence().add(newValue);
+								newState.getBluetoothTransceiver_dataToSend_Values().add(newValue);
 							}
 						}
 					}
@@ -1006,8 +1006,7 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 					arduinoTrace.States.arduino.TracedBluetoothTransceiver parent_cast = (arduinoTrace.States.arduino.TracedBluetoothTransceiver) value
 							.getParent();
 					parent_cast.getOriginalObject().getDataReceived().clear();
-					parent_cast.getOriginalObject().getDataReceived()
-							.addAll((Collection<? extends java.lang.Integer>) getTracedToExe(value.getDataReceived()));
+					parent_cast.getOriginalObject().getDataReceived().addAll(value.getDataReceived());
 
 				}
 
@@ -1020,8 +1019,7 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 					arduinoTrace.States.arduino.TracedBluetoothTransceiver parent_cast = (arduinoTrace.States.arduino.TracedBluetoothTransceiver) value
 							.getParent();
 					parent_cast.getOriginalObject().getDataToSend().clear();
-					parent_cast.getOriginalObject().getDataToSend()
-							.addAll((Collection<? extends java.lang.Integer>) getTracedToExe(value.getDataToSend()));
+					parent_cast.getOriginalObject().getDataToSend().addAll(value.getDataToSend());
 
 				}
 

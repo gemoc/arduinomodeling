@@ -3,7 +3,7 @@ package org.gemoc.arduino.sequential.execarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.List;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import java.util.function.Consumer;
 import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.aspects.ArduinoCommunicationModule_PushAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties;
@@ -46,11 +46,15 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_push(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
-    List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
-    Integer temp = IterableExtensions.<Integer>head(_dataToSend);
     BluetoothTransceiver _connectedTransceiver = _self.getConnectedTransceiver();
-    List<Integer> _dataReceived = BluetoothTransceiver_PushAspect.dataReceived(_connectedTransceiver);
-    _dataReceived.add(temp);
+    final List<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(_connectedTransceiver);
+    List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
+    final Consumer<Integer> _function = (Integer i) -> {
+      l.add(i);
+    };
+    _dataToSend.forEach(_function);
+    List<Integer> _dataToSend_1 = BluetoothTransceiver_PushAspect.dataToSend(_self);
+    _dataToSend_1.clear();
   }
   
   protected static List<Integer> _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {

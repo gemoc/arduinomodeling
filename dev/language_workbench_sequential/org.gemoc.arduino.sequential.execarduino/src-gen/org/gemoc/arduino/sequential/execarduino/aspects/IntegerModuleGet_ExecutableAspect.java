@@ -1,5 +1,6 @@
 package org.gemoc.arduino.sequential.execarduino.aspects;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.List;
@@ -39,8 +40,15 @@ public class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspec
     Module _module = _self.getModule();
     if ((_module instanceof BluetoothTransceiver)) {
       Module _module_1 = _self.getModule();
-      List<Integer> _dataReceived = BluetoothTransceiver_PushAspect.dataReceived(((BluetoothTransceiver) _module_1));
-      return IterableExtensions.<Integer>head(_dataReceived);
+      final List<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(((BluetoothTransceiver) _module_1));
+      final Integer res = IterableExtensions.<Integer>head(l);
+      boolean _notEquals = (!Objects.equal(res, null));
+      if (_notEquals) {
+        l.remove(0);
+        return res;
+      } else {
+        return Integer.valueOf(0);
+      }
     }
     Instruction _instruction = Expression_EvaluableAspect.getInstruction(_self);
     Module _module_2 = _self.getModule();

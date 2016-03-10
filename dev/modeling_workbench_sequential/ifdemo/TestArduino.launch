@@ -10,7 +10,7 @@
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
 <booleanAttribute key="MultiBranch Reflective Tracing" value="false"/>
 <booleanAttribute key="MultiBranch Timeline" value="false"/>
-<booleanAttribute key="MultiDimensional Timeline" value="false"/>
+<booleanAttribute key="MultiDimensional Timeline" value="true"/>
 <booleanAttribute key="Open Event Scheduling Timeline view" value="false"/>
 <booleanAttribute key="Open Multidimentional Timeline view" value="true"/>
 <stringAttribute key="Resource" value="/ifdemo/model.arduino"/>

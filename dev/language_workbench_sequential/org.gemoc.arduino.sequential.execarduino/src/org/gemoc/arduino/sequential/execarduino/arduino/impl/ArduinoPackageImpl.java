@@ -1497,8 +1497,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBluetoothTransceiver_DataToSend() {
-		return (EAttribute)bluetoothTransceiverEClass.getEStructuralFeatures().get(0);
+	public EReference getBluetoothTransceiver_ConnectedTransceiver() {
+		return (EReference)bluetoothTransceiverEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1506,7 +1506,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBluetoothTransceiver_DataReceived() {
+	public EAttribute getBluetoothTransceiver_DataToSend() {
 		return (EAttribute)bluetoothTransceiverEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1515,8 +1515,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBluetoothTransceiver_ConnectedTransceiver() {
-		return (EReference)bluetoothTransceiverEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBluetoothTransceiver_DataReceived() {
+		return (EAttribute)bluetoothTransceiverEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1766,9 +1766,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		arduinoCommunicationModuleEClass = createEClass(ARDUINO_COMMUNICATION_MODULE);
 
 		bluetoothTransceiverEClass = createEClass(BLUETOOTH_TRANSCEIVER);
+		createEReference(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
 		createEAttribute(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
 		createEAttribute(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
-		createEReference(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
 
 		// Create enums
 		timeEEnum = createEEnum(TIME);
@@ -2104,9 +2104,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		addEOperation(arduinoCommunicationModuleEClass, null, "push", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(bluetoothTransceiverEClass, BluetoothTransceiver.class, "BluetoothTransceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBluetoothTransceiver_DataToSend(), ecorePackage.getEInt(), "dataToSend", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBluetoothTransceiver_DataReceived(), ecorePackage.getEInt(), "dataReceived", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBluetoothTransceiver_ConnectedTransceiver(), this.getBluetoothTransceiver(), null, "connectedTransceiver", null, 0, 1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBluetoothTransceiver_DataToSend(), ecorePackage.getEIntegerObject(), "dataToSend", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBluetoothTransceiver_DataReceived(), ecorePackage.getEIntegerObject(), "dataReceived", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(bluetoothTransceiverEClass, null, "push", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2357,6 +2357,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		   });	
 		addAnnotation
 		  (bluetoothTransceiverEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBluetoothTransceiver_DataToSend(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBluetoothTransceiver_DataReceived(), 
 		   source, 
 		   new String[] {
 		   });

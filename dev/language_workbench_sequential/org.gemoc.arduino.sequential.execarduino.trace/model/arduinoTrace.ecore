@@ -1,103 +1,137 @@
-<?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoTrace" nsURI="arduinoTrace" nsPrefix="arduinoTrace">
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoTrace" nsURI="arduinoTrace" nsPrefix="arduinoTrace">
   <eClassifiers xsi:type="ecore:EClass" name="Trace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Delay_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_Delay_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_If_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_If_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_ModuleAssignment_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_ModuleAssignment_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Project_Setup_Sequence" upperBound="-1" eType="//Steps/Arduino_Project_Setup"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Repeat_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_Repeat_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableAssignment_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_VariableAssignment_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableDeclaration_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_VariableDeclaration_Execute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedAnalogPins" ordered="false" upperBound="-1" eType="//States/arduino/TracedAnalogPin" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBluetoothTransceivers" ordered="false" upperBound="-1" eType="//States/arduino/TracedBluetoothTransceiver" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBooleanVariables" ordered="false" upperBound="-1" eType="//States/arduino/TracedBooleanVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedDigitalPins" ordered="false" upperBound="-1" eType="//States/arduino/TracedDigitalPin" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedIntegerVariables" ordered="false" upperBound="-1" eType="//States/arduino/TracedIntegerVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" upperBound="-1" eType="//Steps/Step" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statesTrace" upperBound="-1" eType="//States/State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Delay_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Delay_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_If_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_If_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_ModuleAssignment_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_ModuleAssignment_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Project_Setup_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Project_Setup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Repeat_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_Repeat_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableAssignment_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_VariableAssignment_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableDeclaration_Execute_Sequence"
+        upperBound="-1" eType="#//Steps/Arduino_VariableDeclaration_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedAnalogPins"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedAnalogPin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBluetoothTransceivers"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedBluetoothTransceiver"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBooleanVariables"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedBooleanVariable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedDigitalPins"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedDigitalPin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedIntegerVariables"
+        ordered="false" upperBound="-1" eType="#//States/arduino/TracedIntegerVariable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" upperBound="-1"
+        eType="#//Steps/Step" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statesTrace" upperBound="-1"
+        eType="#//States/State" containment="true"/>
   </eClassifiers>
   <eSubpackages name="Steps" nsURI="arduinoTrace_Steps" nsPrefix="events">
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute" eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Delay">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (Delay) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Delay"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_Delay_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_Delay_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute_ImplicitStep"
+        eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute" eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//If">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (If) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//If"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_If_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_If_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_If_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_If_Execute_ImplicitStep" eSuperTypes="#//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute"
+        eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//ModuleAssignment">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (ModuleAssignment) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//ModuleAssignment"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Project_Setup" eSuperTypes="//Steps/SmallStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_ModuleAssignment_Execute_ImplicitStep"
+        eSuperTypes="#//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Project_Setup" eSuperTypes="#//Steps/SmallStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Project">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (Project) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Project"/>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute" eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Repeat">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (Repeat) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//Repeat"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_Repeat_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_Repeat_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_Repeat_Execute_ImplicitStep"
+        eSuperTypes="#//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute"
+        eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//VariableAssignment">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (VariableAssignment) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//VariableAssignment"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
-      <eOperations name="getCaller" lowerBound="1">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableAssignment_Execute_ImplicitStep"
+        eSuperTypes="#//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute"
+        eSuperTypes="#//Steps/Arduino_Delay_Execute_AbstractSubStep #//Steps/Arduino_If_Execute_AbstractSubStep #//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep #//Steps/Arduino_Repeat_Execute_AbstractSubStep #//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep #//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//VariableDeclaration">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (VariableDeclaration) this.getMse().getCaller();&#xA;"/>
         </eAnnotations>
-        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//VariableDeclaration"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
+          eType="#//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute_AbstractSubStep" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute_ImplicitStep" eSuperTypes="//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BigStep" abstract="true" eSuperTypes="//Steps/Step"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RootImplicitStep" eSuperTypes="//Steps/SmallStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SmallStep" abstract="true" eSuperTypes="//Steps/Step"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true">
-      <eSuperTypes href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//MSEOccurrence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="endingState" eType="//States/State" eOpposite="//States/State/endedSteps"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="startingState" lowerBound="1" eType="//States/State" eOpposite="//States/State/startedSteps"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute_AbstractSubStep"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_VariableDeclaration_Execute_ImplicitStep"
+        eSuperTypes="#//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep #//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BigStep" abstract="true" eSuperTypes="#//Steps/Step"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RootImplicitStep" eSuperTypes="#//Steps/SmallStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SmallStep" abstract="true" eSuperTypes="#//Steps/Step"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true" eSuperTypes="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//MSEOccurrence">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endingState" eType="#//States/State"
+          eOpposite="#//States/State/endedSteps"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startingState" lowerBound="1"
+          eType="#//States/State" eOpposite="#//States/State/startedSteps"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="States" nsURI="arduinoTrace_States" nsPrefix="tracedclasses">
@@ -105,110 +139,129 @@
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
         <eAnnotations source="aspect"/>
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedBluetoothTransceiver" eOpposite="//States/arduino/TracedBluetoothTransceiver/dataReceivedSequence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/bluetoothTransceiver_dataReceived_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedBluetoothTransceiver" eOpposite="#//States/arduino/TracedBluetoothTransceiver/dataReceivedSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/bluetoothTransceiver_dataReceived_Values"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver_dataToSend_Value">
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
         <eAnnotations source="aspect"/>
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedBluetoothTransceiver" eOpposite="//States/arduino/TracedBluetoothTransceiver/dataToSendSequence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/bluetoothTransceiver_dataToSend_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedBluetoothTransceiver" eOpposite="#//States/arduino/TracedBluetoothTransceiver/dataToSendSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/bluetoothTransceiver_dataToSend_Values"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable_value_Value">
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedBooleanVariable" eOpposite="//States/arduino/TracedBooleanVariable/valueSequence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/booleanVariable_value_Values"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedBooleanVariable" eOpposite="#//States/arduino/TracedBooleanVariable/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/booleanVariable_value_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
         <eAnnotations source="aspect"/>
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable_value_Value">
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedIntegerVariable" eOpposite="//States/arduino/TracedIntegerVariable/valueSequence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/integerVariable_value_Values"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedIntegerVariable" eOpposite="#//States/arduino/TracedIntegerVariable/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/integerVariable_value_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
         <eAnnotations source="aspect"/>
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pin_level_Value">
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
         <eAnnotations source="aspect"/>
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedPin" eOpposite="//States/arduino/TracedPin/levelSequence"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/pin_level_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//States/arduino/TracedPin" eOpposite="#//States/arduino/TracedPin/levelSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+          upperBound="-1" eType="#//States/State" eOpposite="#//States/State/pin_level_Values"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="State">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataReceived_Values" ordered="false" upperBound="-1" eType="//States/BluetoothTransceiver_dataReceived_Value" eOpposite="//States/BluetoothTransceiver_dataReceived_Value/states"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataToSend_Values" ordered="false" upperBound="-1" eType="//States/BluetoothTransceiver_dataToSend_Value" eOpposite="//States/BluetoothTransceiver_dataToSend_Value/states"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="booleanVariable_value_Values" ordered="false" upperBound="-1" eType="//States/BooleanVariable_value_Value" eOpposite="//States/BooleanVariable_value_Value/states"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="endedSteps" upperBound="-1" eType="//Steps/Step" eOpposite="//Steps/Step/endingState"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="integerVariable_value_Values" ordered="false" upperBound="-1" eType="//States/IntegerVariable_value_Value" eOpposite="//States/IntegerVariable_value_Value/states"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pin_level_Values" ordered="false" upperBound="-1" eType="//States/Pin_level_Value" eOpposite="//States/Pin_level_Value/states"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="startedSteps" upperBound="-1" eType="//Steps/Step" eOpposite="//Steps/Step/startingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataReceived_Values"
+          ordered="false" upperBound="-1" eType="#//States/BluetoothTransceiver_dataReceived_Value"
+          eOpposite="#//States/BluetoothTransceiver_dataReceived_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataToSend_Values"
+          ordered="false" upperBound="-1" eType="#//States/BluetoothTransceiver_dataToSend_Value"
+          eOpposite="#//States/BluetoothTransceiver_dataToSend_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="booleanVariable_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/BooleanVariable_value_Value"
+          eOpposite="#//States/BooleanVariable_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endedSteps" upperBound="-1"
+          eType="#//Steps/Step" eOpposite="#//Steps/Step/endingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="integerVariable_value_Values"
+          ordered="false" upperBound="-1" eType="#//States/IntegerVariable_value_Value"
+          eOpposite="#//States/IntegerVariable_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pin_level_Values" ordered="false"
+          upperBound="-1" eType="#//States/Pin_level_Value" eOpposite="#//States/Pin_level_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startedSteps" upperBound="-1"
+          eType="#//Steps/Step" eOpposite="#//Steps/Step/startingState"/>
     </eClassifiers>
     <eSubpackages name="arduino" nsURI="arduinoTrace_arduino" nsPrefix="">
-      <eClassifiers xsi:type="ecore:EClass" name="TracedAnalogPin" eSuperTypes="//States/arduino/TracedPin">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="module">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//ArduinoAnalogModule"/>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//AnalogPin"/>
-        </eStructuralFeatures>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedAnalogPin" eSuperTypes="#//States/arduino/TracedPin">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//ArduinoAnalogModule"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//AnalogPin"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoCommunicationModule" abstract="true" eSuperTypes="//States/arduino/TracedArduinoDigitalModule"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoDigitalModule" abstract="true" eSuperTypes="//States/arduino/TracedArduinoModule"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoModule" abstract="true" eSuperTypes="//States/arduino/TracedModule"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedBluetoothTransceiver" eSuperTypes="//States/arduino/TracedArduinoCommunicationModule">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="//States/arduino/TracedBluetoothTransceiver"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="dataReceivedSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataReceived_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataReceived_Value/parent"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="dataToSendSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataToSend_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataToSend_Value/parent"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BluetoothTransceiver"/>
-        </eStructuralFeatures>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoCommunicationModule"
+          abstract="true" eSuperTypes="#//States/arduino/TracedArduinoDigitalModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoDigitalModule" abstract="true"
+          eSuperTypes="#//States/arduino/TracedArduinoModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoModule" abstract="true"
+          eSuperTypes="#//States/arduino/TracedModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedBluetoothTransceiver" eSuperTypes="#//States/arduino/TracedArduinoCommunicationModule">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver"
+            eType="#//States/arduino/TracedBluetoothTransceiver"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataReceivedSequence"
+            upperBound="-1" eType="#//States/BluetoothTransceiver_dataReceived_Value"
+            containment="true" eOpposite="#//States/BluetoothTransceiver_dataReceived_Value/parent"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataToSendSequence"
+            upperBound="-1" eType="#//States/BluetoothTransceiver_dataToSend_Value"
+            containment="true" eOpposite="#//States/BluetoothTransceiver_dataToSend_Value/parent"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BluetoothTransceiver"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedBooleanVariable" eSuperTypes="//States/arduino/TracedVariable">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BooleanVariable"/>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1" eType="//States/BooleanVariable_value_Value" containment="true" eOpposite="//States/BooleanVariable_value_Value/parent"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedBooleanVariable" eSuperTypes="#//States/arduino/TracedVariable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BooleanVariable"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/BooleanVariable_value_Value" containment="true" eOpposite="#//States/BooleanVariable_value_Value/parent"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedDigitalPin" eSuperTypes="//States/arduino/TracedPin">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//States/arduino/TracedArduinoDigitalModule"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//DigitalPin"/>
-        </eStructuralFeatures>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedDigitalPin" eSuperTypes="#//States/arduino/TracedPin">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//States/arduino/TracedArduinoDigitalModule"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//DigitalPin"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedIntegerVariable" eSuperTypes="//States/arduino/TracedVariable">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//IntegerVariable"/>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1" eType="//States/IntegerVariable_value_Value" containment="true" eOpposite="//States/IntegerVariable_value_Value/parent"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedIntegerVariable" eSuperTypes="#//States/arduino/TracedVariable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject" eType="ecore:EClass ../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//IntegerVariable"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1"
+            eType="#//States/IntegerVariable_value_Value" containment="true" eOpposite="#//States/IntegerVariable_value_Value/parent"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedModule" abstract="true" interface="true" eSuperTypes="//States/arduino/TracedNamedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedModule" abstract="true" interface="true"
+          eSuperTypes="#//States/arduino/TracedNamedElement"/>
       <eClassifiers xsi:type="ecore:EClass" name="TracedNamedElement" abstract="true"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedPin" abstract="true" eSuperTypes="//States/arduino/TracedNamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="levelSequence" upperBound="-1" eType="//States/Pin_level_Value" containment="true" eOpposite="//States/Pin_level_Value/parent"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedPin" abstract="true" eSuperTypes="#//States/arduino/TracedNamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="levelSequence" upperBound="-1"
+            eType="#//States/Pin_level_Value" containment="true" eOpposite="#//States/Pin_level_Value/parent"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TracedVariable" abstract="true" eSuperTypes="//States/arduino/TracedNamedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedVariable" abstract="true"
+          eSuperTypes="#//States/arduino/TracedNamedElement"/>
     </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

@@ -7114,12 +7114,6 @@
           <children xmi:type="notation:Node" xmi:id="_UrtCQORiEeWZ2Jidc3qg5A" type="2003" element="_Up5rcORiEeWZ2Jidc3qg5A">
             <children xmi:type="notation:Node" xmi:id="_UruQYORiEeWZ2Jidc3qg5A" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_Uru3cORiEeWZ2Jidc3qg5A" type="7004">
-              <children xmi:type="notation:Node" xmi:id="_UrxTsORiEeWZ2Jidc3qg5A" type="3010" element="_UqvY8ORiEeWZ2Jidc3qg5A">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_UrxTseRiEeWZ2Jidc3qg5A"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_Urx6wORiEeWZ2Jidc3qg5A" type="3010" element="_UqwABORiEeWZ2Jidc3qg5A">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_Urx6weRiEeWZ2Jidc3qg5A"/>
-              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_Uru3ceRiEeWZ2Jidc3qg5A"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_Uru3cuRiEeWZ2Jidc3qg5A"/>
             </children>
@@ -11596,28 +11590,6 @@
           <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Up7gpORiEeWZ2Jidc3qg5A" red="255" green="252" blue="216"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UqvY8ORiEeWZ2Jidc3qg5A" name="dataToSend : EInt" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataToSend"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataToSend"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UqwAAORiEeWZ2Jidc3qg5A" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UqwAAeRiEeWZ2Jidc3qg5A"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_UqwAAuRiEeWZ2Jidc3qg5A"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_UqwAA-RiEeWZ2Jidc3qg5A"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UqwABORiEeWZ2Jidc3qg5A" name="dataReceived : EInt" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataReceived"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataReceived"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UqwnEORiEeWZ2Jidc3qg5A" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UqwnEeRiEeWZ2Jidc3qg5A"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_UqwnEuRiEeWZ2Jidc3qg5A"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_UqwnE-RiEeWZ2Jidc3qg5A"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UrHMYORiEeWZ2Jidc3qg5A" name="[0..1] connectedTransceiver" sourceNode="_Up5rcORiEeWZ2Jidc3qg5A" targetNode="_Up5rcORiEeWZ2Jidc3qg5A">
         <target xmi:type="ecore:EReference" href="arduino.ecore#//BluetoothTransceiver/connectedTransceiver"/>
