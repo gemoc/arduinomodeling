@@ -5,15 +5,10 @@ package org.gemoc.arduino.sequential.model.arduino.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.gemoc.arduino.sequential.model.arduino.ArduinoPackage;
 import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver;
 
@@ -45,55 +40,9 @@ public class BluetoothTransceiverItemProvider extends ArduinoCommunicationModule
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataToSendPropertyDescriptor(object);
-			addDataReceivedPropertyDescriptor(object);
 			addConnectedTransceiverPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Data To Send feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataToSendPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BluetoothTransceiver_dataToSend_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BluetoothTransceiver_dataToSend_feature", "_UI_BluetoothTransceiver_type"),
-				 ArduinoPackage.Literals.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Received feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataReceivedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BluetoothTransceiver_dataReceived_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BluetoothTransceiver_dataReceived_feature", "_UI_BluetoothTransceiver_type"),
-				 ArduinoPackage.Literals.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -154,13 +103,6 @@ public class BluetoothTransceiverItemProvider extends ArduinoCommunicationModule
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(BluetoothTransceiver.class)) {
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND:
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

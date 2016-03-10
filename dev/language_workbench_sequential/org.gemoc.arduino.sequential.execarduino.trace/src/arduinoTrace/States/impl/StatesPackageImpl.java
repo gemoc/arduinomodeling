@@ -4,6 +4,8 @@ package arduinoTrace.States.impl;
 
 import arduinoTrace.ArduinoTracePackage;
 
+import arduinoTrace.States.BluetoothTransceiver_dataReceived_Value;
+import arduinoTrace.States.BluetoothTransceiver_dataToSend_Value;
 import arduinoTrace.States.BooleanVariable_value_Value;
 import arduinoTrace.States.IntegerVariable_value_Value;
 import arduinoTrace.States.Pin_level_Value;
@@ -37,6 +39,20 @@ import org.gemoc.executionframework.engine.mse.MsePackage;
  * @generated
  */
 public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bluetoothTransceiver_dataReceived_ValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bluetoothTransceiver_dataToSend_ValueEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +155,78 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StatesPackage.eNS_URI, theStatesPackage);
 		return theStatesPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBluetoothTransceiver_dataReceived_Value() {
+		return bluetoothTransceiver_dataReceived_ValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBluetoothTransceiver_dataReceived_Value_DataReceived() {
+		return (EAttribute)bluetoothTransceiver_dataReceived_ValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBluetoothTransceiver_dataReceived_Value_Parent() {
+		return (EReference)bluetoothTransceiver_dataReceived_ValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBluetoothTransceiver_dataReceived_Value_States() {
+		return (EReference)bluetoothTransceiver_dataReceived_ValueEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBluetoothTransceiver_dataToSend_Value() {
+		return bluetoothTransceiver_dataToSend_ValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBluetoothTransceiver_dataToSend_Value_DataToSend() {
+		return (EAttribute)bluetoothTransceiver_dataToSend_ValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBluetoothTransceiver_dataToSend_Value_Parent() {
+		return (EReference)bluetoothTransceiver_dataToSend_ValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBluetoothTransceiver_dataToSend_Value_States() {
+		return (EReference)bluetoothTransceiver_dataToSend_ValueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -263,7 +351,7 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_BooleanVariable_value_Values() {
+	public EReference getState_BluetoothTransceiver_dataReceived_Values() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -272,7 +360,7 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_EndedSteps() {
+	public EReference getState_BluetoothTransceiver_dataToSend_Values() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -281,7 +369,7 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_IntegerVariable_value_Values() {
+	public EReference getState_BooleanVariable_value_Values() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -290,7 +378,7 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Pin_level_Values() {
+	public EReference getState_EndedSteps() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -299,8 +387,26 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_StartedSteps() {
+	public EReference getState_IntegerVariable_value_Values() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_Pin_level_Values() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_StartedSteps() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -331,6 +437,16 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		bluetoothTransceiver_dataReceived_ValueEClass = createEClass(BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE);
+		createEAttribute(bluetoothTransceiver_dataReceived_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE__DATA_RECEIVED);
+		createEReference(bluetoothTransceiver_dataReceived_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE__PARENT);
+		createEReference(bluetoothTransceiver_dataReceived_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE__STATES);
+
+		bluetoothTransceiver_dataToSend_ValueEClass = createEClass(BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE);
+		createEAttribute(bluetoothTransceiver_dataToSend_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE__DATA_TO_SEND);
+		createEReference(bluetoothTransceiver_dataToSend_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE__PARENT);
+		createEReference(bluetoothTransceiver_dataToSend_ValueEClass, BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE__STATES);
+
 		booleanVariable_value_ValueEClass = createEClass(BOOLEAN_VARIABLE_VALUE_VALUE);
 		createEReference(booleanVariable_value_ValueEClass, BOOLEAN_VARIABLE_VALUE_VALUE__PARENT);
 		createEReference(booleanVariable_value_ValueEClass, BOOLEAN_VARIABLE_VALUE_VALUE__STATES);
@@ -347,6 +463,8 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		createEReference(pin_level_ValueEClass, PIN_LEVEL_VALUE__STATES);
 
 		stateEClass = createEClass(STATE);
+		createEReference(stateEClass, STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES);
+		createEReference(stateEClass, STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES);
 		createEReference(stateEClass, STATE__BOOLEAN_VARIABLE_VALUE_VALUES);
 		createEReference(stateEClass, STATE__ENDED_STEPS);
 		createEReference(stateEClass, STATE__INTEGER_VARIABLE_VALUE_VALUES);
@@ -391,6 +509,16 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(bluetoothTransceiver_dataReceived_ValueEClass, BluetoothTransceiver_dataReceived_Value.class, "BluetoothTransceiver_dataReceived_Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBluetoothTransceiver_dataReceived_Value_DataReceived(), ecorePackage.getEIntegerObject(), "dataReceived", null, 0, -1, BluetoothTransceiver_dataReceived_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_dataReceived_Value_Parent(), theArduinoPackage_1.getTracedBluetoothTransceiver(), theArduinoPackage_1.getTracedBluetoothTransceiver_DataReceivedSequence(), "parent", null, 1, 1, BluetoothTransceiver_dataReceived_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_dataReceived_Value_States(), this.getState(), this.getState_BluetoothTransceiver_dataReceived_Values(), "states", null, 1, -1, BluetoothTransceiver_dataReceived_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bluetoothTransceiver_dataToSend_ValueEClass, BluetoothTransceiver_dataToSend_Value.class, "BluetoothTransceiver_dataToSend_Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBluetoothTransceiver_dataToSend_Value_DataToSend(), ecorePackage.getEIntegerObject(), "dataToSend", null, 0, -1, BluetoothTransceiver_dataToSend_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_dataToSend_Value_Parent(), theArduinoPackage_1.getTracedBluetoothTransceiver(), theArduinoPackage_1.getTracedBluetoothTransceiver_DataToSendSequence(), "parent", null, 1, 1, BluetoothTransceiver_dataToSend_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_dataToSend_Value_States(), this.getState(), this.getState_BluetoothTransceiver_dataToSend_Values(), "states", null, 1, -1, BluetoothTransceiver_dataToSend_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(booleanVariable_value_ValueEClass, BooleanVariable_value_Value.class, "BooleanVariable_value_Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBooleanVariable_value_Value_Parent(), theArduinoPackage_1.getTracedBooleanVariable(), theArduinoPackage_1.getTracedBooleanVariable_ValueSequence(), "parent", null, 1, 1, BooleanVariable_value_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBooleanVariable_value_Value_States(), this.getState(), this.getState_BooleanVariable_value_Values(), "states", null, 1, -1, BooleanVariable_value_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -407,6 +535,8 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		initEReference(getPin_level_Value_States(), this.getState(), this.getState_Pin_level_Values(), "states", null, 1, -1, Pin_level_Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getState_BluetoothTransceiver_dataReceived_Values(), this.getBluetoothTransceiver_dataReceived_Value(), this.getBluetoothTransceiver_dataReceived_Value_States(), "bluetoothTransceiver_dataReceived_Values", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getState_BluetoothTransceiver_dataToSend_Values(), this.getBluetoothTransceiver_dataToSend_Value(), this.getBluetoothTransceiver_dataToSend_Value_States(), "bluetoothTransceiver_dataToSend_Values", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getState_BooleanVariable_value_Values(), this.getBooleanVariable_value_Value(), this.getBooleanVariable_value_Value_States(), "booleanVariable_value_Values", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getState_EndedSteps(), theStepsPackage.getStep(), theStepsPackage.getStep_EndingState(), "endedSteps", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_IntegerVariable_value_Values(), this.getIntegerVariable_value_Value(), this.getIntegerVariable_value_Value_States(), "integerVariable_value_Values", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -428,6 +558,18 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 */
 	protected void createXMOFAnnotations() {
 		String source = "http://www.modelexecution.org/trace/XMOF";	
+		addAnnotation
+		  (bluetoothTransceiver_dataReceived_ValueEClass, 
+		   source, 
+		   new String[] {
+			 "executionMetamodelElement", null
+		   });	
+		addAnnotation
+		  (bluetoothTransceiver_dataToSend_ValueEClass, 
+		   source, 
+		   new String[] {
+			 "executionMetamodelElement", null
+		   });	
 		addAnnotation
 		  (booleanVariable_value_ValueEClass, 
 		   source, 
@@ -456,6 +598,16 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 	 */
 	protected void createAspectAnnotations() {
 		String source = "aspect";	
+		addAnnotation
+		  (getBluetoothTransceiver_dataReceived_Value_DataReceived(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBluetoothTransceiver_dataToSend_Value_DataToSend(), 
+		   source, 
+		   new String[] {
+		   });	
 		addAnnotation
 		  (getBooleanVariable_value_Value_Value(), 
 		   source, 

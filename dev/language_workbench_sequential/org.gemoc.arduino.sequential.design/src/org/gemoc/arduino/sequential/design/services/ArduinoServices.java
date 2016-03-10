@@ -354,34 +354,6 @@ public class ArduinoServices {
 		return null;
 	}
 
-	public String getImage(LED led) {
-		Integer level = ArduinoDesignerUtils.getPin(led).getLevel();
-		if (level != null && level > 0) {
-			switch (led.getColor()) {
-			case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led_1023.jpg";
-			case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led_1023.jpg";
-			case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led_1023.jpg";
-			}
-		}
-		switch (led.getColor()) {
-		case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg";
-		case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
-		case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
-		}
-		return "";
-	}
-
-	public String getImage(ArduinoBoard platform) {
-		return getImage("");
-	}
-
-	private String getImage(String imageName) {
-		if (imageName != null && imageName.length() > 0) {
-			return IMAGES_PATH + imageName;
-		}
-		return IMAGES_PATH + "default.svg";
-	}
-
 	public List<Board> getPlatforms(EObject object) {
 		List<Board> result = Lists.newArrayList();
 		Session session = SessionManager.INSTANCE.getSession(object);
@@ -1019,16 +991,42 @@ public class ArduinoServices {
 	public boolean isUploadable(Project project) {
 		return isValidHardware(project) && isValidSketch(project);
 	}
+	
+	public String getImage(LED led) {
+		Integer level = ArduinoDesignerUtils.getPin(led).getLevel();
+		if (level != null && level > 0) {
+			switch (led.getColor()) {
+			case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led_1023.jpg";
+			case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led_1023.jpg";
+			case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led_1023.jpg";
+			}
+		}
+		switch (led.getColor()) {
+		case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg";
+		case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
+		case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
+		}
+		return "";
+	}
 
-	public String getImage(ModuleInstruction instruction) {
-		Module module = instruction.getModule();
+	public String getImage(ArduinoBoard platform) {
+		return getImage("");
+	}
+
+	private String getImage(String imageName) {
+		if (imageName != null && imageName.length() > 0) {
+			return IMAGES_PATH + imageName;
+		}
+		return IMAGES_PATH + "default.svg";
+	}
+	
+	public String getImage(Module module) {
 		if (module instanceof LED) {
 			switch (((LED)module).getColor()) {
 			case BLUE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/blue_led.jpg";
 			case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
 			case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
 			}
-			return getImage((LED)module);
 		}
 		if (module instanceof Buzzer) {
 			return "/org.gemoc.arduino.sequential.design/images/buzzer.jpg";
@@ -1036,18 +1034,14 @@ public class ArduinoServices {
 		return "/org.gemoc.arduino.sequential.design/images/default.svg";
 	}
 
+	public String getImage(ModuleInstruction instruction) {
+		Module module = instruction.getModule();
+		return getImage(module);
+	}
+
 	public String getImage(ModuleGet instruction) {
-		// if (instruction instanceof LED) {
-		// switch (((LED)instruction).getColor()) {
-		// case BLUE:
-		// return
-		//
-		//
-		// }
-		// }
-		return "/org.gemoc.arduino.sequential.design/images/default.svg";
-		// return "/org.gemoc.arduino.sequential.design/images/"
-		// + instruction.getModule().getImage();
+		Module module = instruction.getModule();
+		return getImage(module);
 	}
 
 	public void addVariable(Instruction container, Variable variable) {

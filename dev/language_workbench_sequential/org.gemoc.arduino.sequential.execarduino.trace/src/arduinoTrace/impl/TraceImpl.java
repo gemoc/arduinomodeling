@@ -7,6 +7,7 @@ import arduinoTrace.ArduinoTracePackage;
 import arduinoTrace.States.State;
 
 import arduinoTrace.States.arduino.TracedAnalogPin;
+import arduinoTrace.States.arduino.TracedBluetoothTransceiver;
 import arduinoTrace.States.arduino.TracedBooleanVariable;
 import arduinoTrace.States.arduino.TracedDigitalPin;
 import arduinoTrace.States.arduino.TracedIntegerVariable;
@@ -52,6 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_VariableAssignment_Execute_Sequence <em>Arduino Variable Assignment Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_VariableDeclaration_Execute_Sequence <em>Arduino Variable Declaration Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_tracedAnalogPins <em>Arduino traced Analog Pins</em>}</li>
+ *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_tracedBluetoothTransceivers <em>Arduino traced Bluetooth Transceivers</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_tracedBooleanVariables <em>Arduino traced Boolean Variables</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_tracedDigitalPins <em>Arduino traced Digital Pins</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_tracedIntegerVariables <em>Arduino traced Integer Variables</em>}</li>
@@ -142,6 +144,16 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	 * @ordered
 	 */
 	protected EList<TracedAnalogPin> arduino_tracedAnalogPins;
+
+	/**
+	 * The cached value of the '{@link #getArduino_tracedBluetoothTransceivers() <em>Arduino traced Bluetooth Transceivers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArduino_tracedBluetoothTransceivers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedBluetoothTransceiver> arduino_tracedBluetoothTransceivers;
 
 	/**
 	 * The cached value of the '{@link #getArduino_tracedBooleanVariables() <em>Arduino traced Boolean Variables</em>}' containment reference list.
@@ -313,6 +325,18 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TracedBluetoothTransceiver> getArduino_tracedBluetoothTransceivers() {
+		if (arduino_tracedBluetoothTransceivers == null) {
+			arduino_tracedBluetoothTransceivers = new EObjectContainmentEList<TracedBluetoothTransceiver>(TracedBluetoothTransceiver.class, this, ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS);
+		}
+		return arduino_tracedBluetoothTransceivers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<TracedBooleanVariable> getArduino_tracedBooleanVariables() {
 		if (arduino_tracedBooleanVariables == null) {
 			arduino_tracedBooleanVariables = new EObjectContainmentEList<TracedBooleanVariable>(TracedBooleanVariable.class, this, ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES);
@@ -378,6 +402,8 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 		switch (featureID) {
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_ANALOG_PINS:
 				return ((InternalEList<?>)getArduino_tracedAnalogPins()).basicRemove(otherEnd, msgs);
+			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS:
+				return ((InternalEList<?>)getArduino_tracedBluetoothTransceivers()).basicRemove(otherEnd, msgs);
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES:
 				return ((InternalEList<?>)getArduino_tracedBooleanVariables()).basicRemove(otherEnd, msgs);
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_DIGITAL_PINS:
@@ -416,6 +442,8 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 				return getArduino_VariableDeclaration_Execute_Sequence();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_ANALOG_PINS:
 				return getArduino_tracedAnalogPins();
+			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS:
+				return getArduino_tracedBluetoothTransceivers();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES:
 				return getArduino_tracedBooleanVariables();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_DIGITAL_PINS:
@@ -470,6 +498,10 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_ANALOG_PINS:
 				getArduino_tracedAnalogPins().clear();
 				getArduino_tracedAnalogPins().addAll((Collection<? extends TracedAnalogPin>)newValue);
+				return;
+			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS:
+				getArduino_tracedBluetoothTransceivers().clear();
+				getArduino_tracedBluetoothTransceivers().addAll((Collection<? extends TracedBluetoothTransceiver>)newValue);
 				return;
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES:
 				getArduino_tracedBooleanVariables().clear();
@@ -527,6 +559,9 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_ANALOG_PINS:
 				getArduino_tracedAnalogPins().clear();
 				return;
+			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS:
+				getArduino_tracedBluetoothTransceivers().clear();
+				return;
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES:
 				getArduino_tracedBooleanVariables().clear();
 				return;
@@ -570,6 +605,8 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 				return arduino_VariableDeclaration_Execute_Sequence != null && !arduino_VariableDeclaration_Execute_Sequence.isEmpty();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_ANALOG_PINS:
 				return arduino_tracedAnalogPins != null && !arduino_tracedAnalogPins.isEmpty();
+			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS:
+				return arduino_tracedBluetoothTransceivers != null && !arduino_tracedBluetoothTransceivers.isEmpty();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES:
 				return arduino_tracedBooleanVariables != null && !arduino_tracedBooleanVariables.isEmpty();
 			case ArduinoTracePackage.TRACE__ARDUINO_TRACED_DIGITAL_PINS:

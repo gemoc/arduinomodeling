@@ -3,7 +3,7 @@ package org.gemoc.arduino.sequential.execarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
@@ -11,6 +11,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.IntegerExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.Module;
 import org.gemoc.arduino.sequential.execarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
+import org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.Expression_EvaluableAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.Instruction_UtilitesAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties;
@@ -71,7 +72,7 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
     Module _module_1 = _self.getModule();
     if ((_module_1 instanceof BluetoothTransceiver)) {
       Module _module_2 = _self.getModule();
-      EList<Integer> _dataToSend = ((BluetoothTransceiver) _module_2).getDataToSend();
+      List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_2));
       Expression _operand_4 = _self.getOperand();
       Object _evaluate_2 = Expression_EvaluableAspect.evaluate(_operand_4);
       _dataToSend.add(((Integer) _evaluate_2));

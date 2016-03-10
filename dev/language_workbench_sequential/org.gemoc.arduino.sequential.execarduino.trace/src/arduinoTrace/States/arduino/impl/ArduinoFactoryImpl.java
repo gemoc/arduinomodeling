@@ -57,6 +57,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ArduinoPackage.TRACED_ANALOG_PIN: return createTracedAnalogPin();
+			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER: return createTracedBluetoothTransceiver();
 			case ArduinoPackage.TRACED_BOOLEAN_VARIABLE: return createTracedBooleanVariable();
 			case ArduinoPackage.TRACED_DIGITAL_PIN: return createTracedDigitalPin();
 			case ArduinoPackage.TRACED_INTEGER_VARIABLE: return createTracedIntegerVariable();
@@ -73,6 +74,16 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	public TracedAnalogPin createTracedAnalogPin() {
 		TracedAnalogPinImpl tracedAnalogPin = new TracedAnalogPinImpl();
 		return tracedAnalogPin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedBluetoothTransceiver createTracedBluetoothTransceiver() {
+		TracedBluetoothTransceiverImpl tracedBluetoothTransceiver = new TracedBluetoothTransceiverImpl();
+		return tracedBluetoothTransceiver;
 	}
 
 	/**

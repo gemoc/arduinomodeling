@@ -9,9 +9,14 @@ import arduinoTrace.States.StatesPackage;
 import arduinoTrace.States.arduino.ArduinoFactory;
 import arduinoTrace.States.arduino.ArduinoPackage;
 import arduinoTrace.States.arduino.TracedAnalogPin;
+import arduinoTrace.States.arduino.TracedArduinoCommunicationModule;
+import arduinoTrace.States.arduino.TracedArduinoDigitalModule;
+import arduinoTrace.States.arduino.TracedArduinoModule;
+import arduinoTrace.States.arduino.TracedBluetoothTransceiver;
 import arduinoTrace.States.arduino.TracedBooleanVariable;
 import arduinoTrace.States.arduino.TracedDigitalPin;
 import arduinoTrace.States.arduino.TracedIntegerVariable;
+import arduinoTrace.States.arduino.TracedModule;
 import arduinoTrace.States.arduino.TracedNamedElement;
 import arduinoTrace.States.arduino.TracedPin;
 import arduinoTrace.States.arduino.TracedVariable;
@@ -51,6 +56,34 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tracedArduinoCommunicationModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedArduinoDigitalModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedArduinoModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedBluetoothTransceiverEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass tracedBooleanVariableEClass = null;
 
 	/**
@@ -66,6 +99,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	private EClass tracedIntegerVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedModuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +236,78 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedArduinoCommunicationModule() {
+		return tracedArduinoCommunicationModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedArduinoDigitalModule() {
+		return tracedArduinoDigitalModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedArduinoModule() {
+		return tracedArduinoModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedBluetoothTransceiver() {
+		return tracedBluetoothTransceiverEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTracedBluetoothTransceiver_ConnectedTransceiver() {
+		return (EReference)tracedBluetoothTransceiverEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTracedBluetoothTransceiver_DataReceivedSequence() {
+		return (EReference)tracedBluetoothTransceiverEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTracedBluetoothTransceiver_DataToSendSequence() {
+		return (EReference)tracedBluetoothTransceiverEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTracedBluetoothTransceiver_OriginalObject() {
+		return (EReference)tracedBluetoothTransceiverEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedBooleanVariable() {
 		return tracedBooleanVariableEClass;
 	}
@@ -277,6 +389,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedModule() {
+		return tracedModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedNamedElement() {
 		return tracedNamedElementEClass;
 	}
@@ -340,6 +461,18 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(tracedAnalogPinEClass, TRACED_ANALOG_PIN__MODULE);
 		createEReference(tracedAnalogPinEClass, TRACED_ANALOG_PIN__ORIGINAL_OBJECT);
 
+		tracedArduinoCommunicationModuleEClass = createEClass(TRACED_ARDUINO_COMMUNICATION_MODULE);
+
+		tracedArduinoDigitalModuleEClass = createEClass(TRACED_ARDUINO_DIGITAL_MODULE);
+
+		tracedArduinoModuleEClass = createEClass(TRACED_ARDUINO_MODULE);
+
+		tracedBluetoothTransceiverEClass = createEClass(TRACED_BLUETOOTH_TRANSCEIVER);
+		createEReference(tracedBluetoothTransceiverEClass, TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
+		createEReference(tracedBluetoothTransceiverEClass, TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE);
+		createEReference(tracedBluetoothTransceiverEClass, TRACED_BLUETOOTH_TRANSCEIVER__DATA_TO_SEND_SEQUENCE);
+		createEReference(tracedBluetoothTransceiverEClass, TRACED_BLUETOOTH_TRANSCEIVER__ORIGINAL_OBJECT);
+
 		tracedBooleanVariableEClass = createEClass(TRACED_BOOLEAN_VARIABLE);
 		createEReference(tracedBooleanVariableEClass, TRACED_BOOLEAN_VARIABLE__ORIGINAL_OBJECT);
 		createEReference(tracedBooleanVariableEClass, TRACED_BOOLEAN_VARIABLE__VALUE_SEQUENCE);
@@ -351,6 +484,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		tracedIntegerVariableEClass = createEClass(TRACED_INTEGER_VARIABLE);
 		createEReference(tracedIntegerVariableEClass, TRACED_INTEGER_VARIABLE__ORIGINAL_OBJECT);
 		createEReference(tracedIntegerVariableEClass, TRACED_INTEGER_VARIABLE__VALUE_SEQUENCE);
+
+		tracedModuleEClass = createEClass(TRACED_MODULE);
 
 		tracedNamedElementEClass = createEClass(TRACED_NAMED_ELEMENT);
 
@@ -393,9 +528,14 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		// Add supertypes to classes
 		tracedAnalogPinEClass.getESuperTypes().add(this.getTracedPin());
+		tracedArduinoCommunicationModuleEClass.getESuperTypes().add(this.getTracedArduinoDigitalModule());
+		tracedArduinoDigitalModuleEClass.getESuperTypes().add(this.getTracedArduinoModule());
+		tracedArduinoModuleEClass.getESuperTypes().add(this.getTracedModule());
+		tracedBluetoothTransceiverEClass.getESuperTypes().add(this.getTracedArduinoCommunicationModule());
 		tracedBooleanVariableEClass.getESuperTypes().add(this.getTracedVariable());
 		tracedDigitalPinEClass.getESuperTypes().add(this.getTracedPin());
 		tracedIntegerVariableEClass.getESuperTypes().add(this.getTracedVariable());
+		tracedModuleEClass.getESuperTypes().add(this.getTracedNamedElement());
 		tracedPinEClass.getESuperTypes().add(this.getTracedNamedElement());
 		tracedVariableEClass.getESuperTypes().add(this.getTracedNamedElement());
 
@@ -404,17 +544,31 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getTracedAnalogPin_Module(), theArduinoPackage_1.getArduinoAnalogModule(), null, "module", null, 0, 1, TracedAnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedAnalogPin_OriginalObject(), theArduinoPackage_1.getAnalogPin(), null, "originalObject", null, 0, 1, TracedAnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(tracedArduinoCommunicationModuleEClass, TracedArduinoCommunicationModule.class, "TracedArduinoCommunicationModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tracedArduinoDigitalModuleEClass, TracedArduinoDigitalModule.class, "TracedArduinoDigitalModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tracedArduinoModuleEClass, TracedArduinoModule.class, "TracedArduinoModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tracedBluetoothTransceiverEClass, TracedBluetoothTransceiver.class, "TracedBluetoothTransceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTracedBluetoothTransceiver_ConnectedTransceiver(), this.getTracedBluetoothTransceiver(), null, "connectedTransceiver", null, 0, 1, TracedBluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedBluetoothTransceiver_DataReceivedSequence(), theStatesPackage.getBluetoothTransceiver_dataReceived_Value(), theStatesPackage.getBluetoothTransceiver_dataReceived_Value_Parent(), "dataReceivedSequence", null, 0, -1, TracedBluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedBluetoothTransceiver_DataToSendSequence(), theStatesPackage.getBluetoothTransceiver_dataToSend_Value(), theStatesPackage.getBluetoothTransceiver_dataToSend_Value_Parent(), "dataToSendSequence", null, 0, -1, TracedBluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedBluetoothTransceiver_OriginalObject(), theArduinoPackage_1.getBluetoothTransceiver(), null, "originalObject", null, 0, 1, TracedBluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(tracedBooleanVariableEClass, TracedBooleanVariable.class, "TracedBooleanVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTracedBooleanVariable_OriginalObject(), theArduinoPackage_1.getBooleanVariable(), null, "originalObject", null, 0, 1, TracedBooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedBooleanVariable_ValueSequence(), theStatesPackage.getBooleanVariable_value_Value(), theStatesPackage.getBooleanVariable_value_Value_Parent(), "valueSequence", null, 0, -1, TracedBooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tracedDigitalPinEClass, TracedDigitalPin.class, "TracedDigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedDigitalPin_Module(), theArduinoPackage_1.getArduinoDigitalModule(), null, "module", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedDigitalPin_Module(), this.getTracedArduinoDigitalModule(), null, "module", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedDigitalPin_OriginalObject(), theArduinoPackage_1.getDigitalPin(), null, "originalObject", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tracedIntegerVariableEClass, TracedIntegerVariable.class, "TracedIntegerVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTracedIntegerVariable_OriginalObject(), theArduinoPackage_1.getIntegerVariable(), null, "originalObject", null, 0, 1, TracedIntegerVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedIntegerVariable_ValueSequence(), theStatesPackage.getIntegerVariable_value_Value(), theStatesPackage.getIntegerVariable_value_Value_Parent(), "valueSequence", null, 0, -1, TracedIntegerVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tracedModuleEClass, TracedModule.class, "TracedModule", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(tracedNamedElementEClass, TracedNamedElement.class, "TracedNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

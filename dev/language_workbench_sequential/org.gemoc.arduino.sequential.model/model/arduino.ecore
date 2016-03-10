@@ -197,10 +197,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true"
       eSuperTypes="#//ArduinoDigitalModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="#//ArduinoCommunicationModule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="#//BluetoothTransceiver"/>
   </eClassifiers>
 </ecore:EPackage>

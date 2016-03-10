@@ -2,6 +2,8 @@
  */
 package arduinoTrace.States.impl;
 
+import arduinoTrace.States.BluetoothTransceiver_dataReceived_Value;
+import arduinoTrace.States.BluetoothTransceiver_dataToSend_Value;
 import arduinoTrace.States.BooleanVariable_value_Value;
 import arduinoTrace.States.IntegerVariable_value_Value;
 import arduinoTrace.States.Pin_level_Value;
@@ -32,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link arduinoTrace.States.impl.StateImpl#getBluetoothTransceiver_dataReceived_Values <em>Bluetooth Transceiver data Received Values</em>}</li>
+ *   <li>{@link arduinoTrace.States.impl.StateImpl#getBluetoothTransceiver_dataToSend_Values <em>Bluetooth Transceiver data To Send Values</em>}</li>
  *   <li>{@link arduinoTrace.States.impl.StateImpl#getBooleanVariable_value_Values <em>Boolean Variable value Values</em>}</li>
  *   <li>{@link arduinoTrace.States.impl.StateImpl#getEndedSteps <em>Ended Steps</em>}</li>
  *   <li>{@link arduinoTrace.States.impl.StateImpl#getIntegerVariable_value_Values <em>Integer Variable value Values</em>}</li>
@@ -43,6 +47,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class StateImpl extends MinimalEObjectImpl.Container implements State {
+	/**
+	 * The cached value of the '{@link #getBluetoothTransceiver_dataReceived_Values() <em>Bluetooth Transceiver data Received Values</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBluetoothTransceiver_dataReceived_Values()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BluetoothTransceiver_dataReceived_Value> bluetoothTransceiver_dataReceived_Values;
+
+	/**
+	 * The cached value of the '{@link #getBluetoothTransceiver_dataToSend_Values() <em>Bluetooth Transceiver data To Send Values</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBluetoothTransceiver_dataToSend_Values()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BluetoothTransceiver_dataToSend_Value> bluetoothTransceiver_dataToSend_Values;
+
 	/**
 	 * The cached value of the '{@link #getBooleanVariable_value_Values() <em>Boolean Variable value Values</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -117,6 +141,30 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<BluetoothTransceiver_dataReceived_Value> getBluetoothTransceiver_dataReceived_Values() {
+		if (bluetoothTransceiver_dataReceived_Values == null) {
+			bluetoothTransceiver_dataReceived_Values = new EObjectWithInverseResolvingEList.ManyInverse<BluetoothTransceiver_dataReceived_Value>(BluetoothTransceiver_dataReceived_Value.class, this, StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES, StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE__STATES);
+		}
+		return bluetoothTransceiver_dataReceived_Values;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<BluetoothTransceiver_dataToSend_Value> getBluetoothTransceiver_dataToSend_Values() {
+		if (bluetoothTransceiver_dataToSend_Values == null) {
+			bluetoothTransceiver_dataToSend_Values = new EObjectWithInverseResolvingEList.ManyInverse<BluetoothTransceiver_dataToSend_Value>(BluetoothTransceiver_dataToSend_Value.class, this, StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES, StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE__STATES);
+		}
+		return bluetoothTransceiver_dataToSend_Values;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<BooleanVariable_value_Value> getBooleanVariable_value_Values() {
 		if (booleanVariable_value_Values == null) {
 			booleanVariable_value_Values = new EObjectWithInverseResolvingEList.ManyInverse<BooleanVariable_value_Value>(BooleanVariable_value_Value.class, this, StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES, StatesPackage.BOOLEAN_VARIABLE_VALUE_VALUE__STATES);
@@ -181,6 +229,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBluetoothTransceiver_dataReceived_Values()).basicAdd(otherEnd, msgs);
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBluetoothTransceiver_dataToSend_Values()).basicAdd(otherEnd, msgs);
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooleanVariable_value_Values()).basicAdd(otherEnd, msgs);
 			case StatesPackage.STATE__ENDED_STEPS:
@@ -203,6 +255,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				return ((InternalEList<?>)getBluetoothTransceiver_dataReceived_Values()).basicRemove(otherEnd, msgs);
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				return ((InternalEList<?>)getBluetoothTransceiver_dataToSend_Values()).basicRemove(otherEnd, msgs);
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				return ((InternalEList<?>)getBooleanVariable_value_Values()).basicRemove(otherEnd, msgs);
 			case StatesPackage.STATE__ENDED_STEPS:
@@ -225,6 +281,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				return getBluetoothTransceiver_dataReceived_Values();
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				return getBluetoothTransceiver_dataToSend_Values();
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				return getBooleanVariable_value_Values();
 			case StatesPackage.STATE__ENDED_STEPS:
@@ -248,6 +308,14 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				getBluetoothTransceiver_dataReceived_Values().clear();
+				getBluetoothTransceiver_dataReceived_Values().addAll((Collection<? extends BluetoothTransceiver_dataReceived_Value>)newValue);
+				return;
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				getBluetoothTransceiver_dataToSend_Values().clear();
+				getBluetoothTransceiver_dataToSend_Values().addAll((Collection<? extends BluetoothTransceiver_dataToSend_Value>)newValue);
+				return;
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				getBooleanVariable_value_Values().clear();
 				getBooleanVariable_value_Values().addAll((Collection<? extends BooleanVariable_value_Value>)newValue);
@@ -280,6 +348,12 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				getBluetoothTransceiver_dataReceived_Values().clear();
+				return;
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				getBluetoothTransceiver_dataToSend_Values().clear();
+				return;
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				getBooleanVariable_value_Values().clear();
 				return;
@@ -307,6 +381,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUES:
+				return bluetoothTransceiver_dataReceived_Values != null && !bluetoothTransceiver_dataReceived_Values.isEmpty();
+			case StatesPackage.STATE__BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUES:
+				return bluetoothTransceiver_dataToSend_Values != null && !bluetoothTransceiver_dataToSend_Values.isEmpty();
 			case StatesPackage.STATE__BOOLEAN_VARIABLE_VALUE_VALUES:
 				return booleanVariable_value_Values != null && !booleanVariable_value_Values.isEmpty();
 			case StatesPackage.STATE__ENDED_STEPS:

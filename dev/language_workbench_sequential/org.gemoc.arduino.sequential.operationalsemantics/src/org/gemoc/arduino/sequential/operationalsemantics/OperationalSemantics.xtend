@@ -38,6 +38,8 @@ import org.gemoc.arduino.sequential.model.arduino.VariableRef
 import org.gemoc.arduino.sequential.model.arduino.While
 import org.gemoc.arduino.sequential.model.arduino.Module
 import org.gemoc.arduino.sequential.model.arduino.ArduinoBoard
+import org.gemoc.arduino.sequential.model.arduino.ArduinoCommunicationModule
+import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver
 
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Block_ExecutableAspect.*
@@ -46,8 +48,7 @@ import static extension org.gemoc.arduino.sequential.operationalsemantics.If_Eva
 import static extension org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
-import org.gemoc.arduino.sequential.model.arduino.ArduinoCommunicationModule
-import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver
+import static extension org.gemoc.arduino.sequential.operationalsemantics.BluetoothTransceiver_PushAspect.*
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -198,6 +199,10 @@ abstract class ArduinoCommunicationModule_PushAspect {
 
 @Aspect(className=BluetoothTransceiver)
 abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+	
+	public List<Integer> dataToSend;
+	public List<Integer> dataReceived;
+	
 	@OverrideAspectMethod
 	def void push(){
 		var temp = _self.dataToSend.head;

@@ -3,6 +3,7 @@
 package arduinoTrace.States.arduino.impl;
 
 import arduinoTrace.States.arduino.ArduinoPackage;
+import arduinoTrace.States.arduino.TracedArduinoDigitalModule;
 import arduinoTrace.States.arduino.TracedDigitalPin;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,7 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoDigitalModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
 
 /**
@@ -38,7 +38,7 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	 * @generated
 	 * @ordered
 	 */
-	protected ArduinoDigitalModule module;
+	protected TracedArduinoDigitalModule module;
 
 	/**
 	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
@@ -74,10 +74,10 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArduinoDigitalModule getModule() {
+	public TracedArduinoDigitalModule getModule() {
 		if (module != null && module.eIsProxy()) {
 			InternalEObject oldModule = (InternalEObject)module;
-			module = (ArduinoDigitalModule)eResolveProxy(oldModule);
+			module = (TracedArduinoDigitalModule)eResolveProxy(oldModule);
 			if (module != oldModule) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.TRACED_DIGITAL_PIN__MODULE, oldModule, module));
@@ -91,7 +91,7 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArduinoDigitalModule basicGetModule() {
+	public TracedArduinoDigitalModule basicGetModule() {
 		return module;
 	}
 
@@ -100,8 +100,8 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModule(ArduinoDigitalModule newModule) {
-		ArduinoDigitalModule oldModule = module;
+	public void setModule(TracedArduinoDigitalModule newModule) {
+		TracedArduinoDigitalModule oldModule = module;
 		module = newModule;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.TRACED_DIGITAL_PIN__MODULE, oldModule, module));
@@ -172,7 +172,7 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_DIGITAL_PIN__MODULE:
-				setModule((ArduinoDigitalModule)newValue);
+				setModule((TracedArduinoDigitalModule)newValue);
 				return;
 			case ArduinoPackage.TRACED_DIGITAL_PIN__ORIGINAL_OBJECT:
 				setOriginalObject((DigitalPin)newValue);
@@ -190,7 +190,7 @@ public class TracedDigitalPinImpl extends TracedPinImpl implements TracedDigital
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_DIGITAL_PIN__MODULE:
-				setModule((ArduinoDigitalModule)null);
+				setModule((TracedArduinoDigitalModule)null);
 				return;
 			case ArduinoPackage.TRACED_DIGITAL_PIN__ORIGINAL_OBJECT:
 				setOriginalObject((DigitalPin)null);

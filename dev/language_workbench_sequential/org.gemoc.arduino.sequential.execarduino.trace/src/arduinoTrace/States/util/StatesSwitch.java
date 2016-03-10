@@ -66,6 +66,18 @@ public class StatesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE: {
+				BluetoothTransceiver_dataReceived_Value bluetoothTransceiver_dataReceived_Value = (BluetoothTransceiver_dataReceived_Value)theEObject;
+				T result = caseBluetoothTransceiver_dataReceived_Value(bluetoothTransceiver_dataReceived_Value);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE: {
+				BluetoothTransceiver_dataToSend_Value bluetoothTransceiver_dataToSend_Value = (BluetoothTransceiver_dataToSend_Value)theEObject;
+				T result = caseBluetoothTransceiver_dataToSend_Value(bluetoothTransceiver_dataToSend_Value);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case StatesPackage.BOOLEAN_VARIABLE_VALUE_VALUE: {
 				BooleanVariable_value_Value booleanVariable_value_Value = (BooleanVariable_value_Value)theEObject;
 				T result = caseBooleanVariable_value_Value(booleanVariable_value_Value);
@@ -92,6 +104,36 @@ public class StatesSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bluetooth Transceiver data Received Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bluetooth Transceiver data Received Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBluetoothTransceiver_dataReceived_Value(BluetoothTransceiver_dataReceived_Value object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bluetooth Transceiver data To Send Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bluetooth Transceiver data To Send Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBluetoothTransceiver_dataToSend_Value(BluetoothTransceiver_dataToSend_Value object) {
+		return null;
 	}
 
 	/**

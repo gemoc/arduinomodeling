@@ -2,7 +2,6 @@
  */
 package arduinoTrace.States.arduino;
 
-import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoDigitalModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
 
 /**
@@ -32,12 +31,12 @@ public interface TracedDigitalPin extends TracedPin {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
-	 * @see #setModule(ArduinoDigitalModule)
+	 * @see #setModule(TracedArduinoDigitalModule)
 	 * @see arduinoTrace.States.arduino.ArduinoPackage#getTracedDigitalPin_Module()
 	 * @model
 	 * @generated
 	 */
-	ArduinoDigitalModule getModule();
+	TracedArduinoDigitalModule getModule();
 
 	/**
 	 * Sets the value of the '{@link arduinoTrace.States.arduino.TracedDigitalPin#getModule <em>Module</em>}' reference.
@@ -47,7 +46,7 @@ public interface TracedDigitalPin extends TracedPin {
 	 * @see #getModule()
 	 * @generated
 	 */
-	void setModule(ArduinoDigitalModule value);
+	void setModule(TracedArduinoDigitalModule value);
 
 	/**
 	 * Returns the value of the '<em><b>Original Object</b></em>' reference.

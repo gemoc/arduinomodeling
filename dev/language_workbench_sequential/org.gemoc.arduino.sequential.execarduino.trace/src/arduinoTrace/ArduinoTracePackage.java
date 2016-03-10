@@ -138,13 +138,22 @@ public interface ArduinoTracePackage extends EPackage {
 	int TRACE__ARDUINO_TRACED_ANALOG_PINS = 7;
 
 	/**
+	 * The feature id for the '<em><b>Arduino traced Bluetooth Transceivers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS = 8;
+
+	/**
 	 * The feature id for the '<em><b>Arduino traced Boolean Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES = 8;
+	int TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES = 9;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Digital Pins</b></em>' containment reference list.
@@ -153,7 +162,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_DIGITAL_PINS = 9;
+	int TRACE__ARDUINO_TRACED_DIGITAL_PINS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Integer Variables</b></em>' containment reference list.
@@ -162,7 +171,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_INTEGER_VARIABLES = 10;
+	int TRACE__ARDUINO_TRACED_INTEGER_VARIABLES = 11;
 
 	/**
 	 * The feature id for the '<em><b>Root Steps</b></em>' containment reference list.
@@ -171,7 +180,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ROOT_STEPS = 11;
+	int TRACE__ROOT_STEPS = 12;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -180,7 +189,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__STATES_TRACE = 12;
+	int TRACE__STATES_TRACE = 13;
 
 	/**
 	 * The number of structural features of the '<em>Trace</em>' class.
@@ -189,7 +198,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_FEATURE_COUNT = 13;
+	int TRACE_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Trace</em>' class.
@@ -298,6 +307,17 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTrace_Arduino_tracedAnalogPins();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduinoTrace.Trace#getArduino_tracedBluetoothTransceivers <em>Arduino traced Bluetooth Transceivers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Arduino traced Bluetooth Transceivers</em>'.
+	 * @see arduinoTrace.Trace#getArduino_tracedBluetoothTransceivers()
+	 * @see #getTrace()
+	 * @generated
+	 */
+	EReference getTrace_Arduino_tracedBluetoothTransceivers();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link arduinoTrace.Trace#getArduino_tracedBooleanVariables <em>Arduino traced Boolean Variables</em>}'.
@@ -450,6 +470,14 @@ public interface ArduinoTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACE__ARDUINO_TRACED_ANALOG_PINS = eINSTANCE.getTrace_Arduino_tracedAnalogPins();
+
+		/**
+		 * The meta object literal for the '<em><b>Arduino traced Bluetooth Transceivers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS = eINSTANCE.getTrace_Arduino_tracedBluetoothTransceivers();
 
 		/**
 		 * The meta object literal for the '<em><b>Arduino traced Boolean Variables</b></em>' containment reference list feature.

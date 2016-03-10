@@ -526,7 +526,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleAssignment" label="ModuleAssignment" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/org.gemoc.arduino.sequential.design/icons/Level.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleAssignment" label="Module Assignment" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']" iconPath="/org.gemoc.arduino.sequential.design/icons/Level.png">
             <variable name="container">
               <subVariables xsi:type="tool_1:SelectModelElementVariable" name="modules" candidatesExpression="[eContainer(Sketch).board.getConnectedModules()/]" message="Select an hardware module"/>
             </variable>
@@ -538,100 +538,6 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanConstant" referenceName="operand" variableName="aBooleanConstant">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="[true/]"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="operand" valueExpression="var:aBooleanConstant"/>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleGet" label="ModuleGet" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet']" iconPath="/org.gemoc.arduino.sequential.design/icons/Sensor.png">
-            <variable name="container">
-              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="selectedModule" candidatesExpression="[eContainer(Sketch).board.getConnectedModules()/]" message="Select sensors"/>
-            </variable>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(VariableAssignment)/]">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:Unset" featureName="operand" elementExpression="[self.oclAsType(VariableAssignment).operand/]">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="value" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="value" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(BinaryExpression)/]">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclAsType(BinaryExpression).left&lt;>null and self.oclAsType(BinaryExpression).right=null/]">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="right" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="right" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                    </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclAsType(BinaryExpression).left=null and self.oclAsType(BinaryExpression).right=null/]">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                    </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclAsType(BinaryExpression).left=null and self.oclAsType(BinaryExpression).right&lt;>null/]">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                    </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclAsType(BinaryExpression).left&lt;>null and self.oclAsType(BinaryExpression).right&lt;>null/]">
-                      <subModelOperations xsi:type="tool_1:Unset" featureName="left" elementExpression="[self.oclAsType(BinaryExpression).left/]"/>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="left" variableName="moduleGet">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                        </subModelOperations>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="[container.oclIsKindOf(While)/]">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:Unset" featureName="condition" elementExpression="[container.oclAsType(While).condition/]"/>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoDigitalModule)/]">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanModuleGet" referenceName="condition" variableName="moduleGet">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                      </subModelOperations>
-                    </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[selectedModule.oclIsKindOf(ArduinoAnalogModule)/]">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="condition" variableName="moduleGet">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
-                      </subModelOperations>
-                    </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -959,6 +865,60 @@
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.BooleanVariableRef" referenceName="condition" variableName="variableRef">
                       <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:variableRef">
                         <subModelOperations xsi:type="tool_1:SetValue" featureName="variable" valueExpression="var:selectedVariable"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SK_ModuleGet" label="Module Get" nodeMappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleGet'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment']/@borderedNodeMappings[name='SK_ModuleAssignment_Operand']" iconPath="/org.gemoc.arduino.sequential.design/icons/Sensor.png">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="selectedModule" candidatesExpression="[eContainer(Sketch).board.getConnectedModules()/]" message="Select sensors"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(Assignment)/]">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="operand">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="operand" variableName="moduleGet">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:moduleGet">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(BinaryExpression)/]">
+                  <subModelOperations xsi:type="tool_1:Switch">
+                    <cases conditionExpression="[oclAsType(BinaryExpression).left&lt;>null and oclAsType(BinaryExpression).right=null/]">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="right" variableName="moduleGet">
+                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:moduleGet">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </cases>
+                    <cases conditionExpression="[oclAsType(BinaryExpression).left&lt;>null and oclAsType(BinaryExpression).right&lt;>null/]">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="left"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="left" variableName="moduleGet">
+                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:moduleGet">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </cases>
+                    <default>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="left" variableName="moduleGet">
+                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:moduleGet">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </default>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[oclIsKindOf(UnaryExpression)/]">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="operand">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino.IntegerModuleGet" referenceName="operand" variableName="moduleGet">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:moduleGet">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="module" valueExpression="var:selectedModule"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>

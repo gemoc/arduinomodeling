@@ -2366,31 +2366,13 @@ public interface ArduinoPackage extends EPackage {
 	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_COMMUNICATION_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Data To Send</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data Received</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 2;
+	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bluetooth Transceiver</em>' class.
@@ -2399,7 +2381,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 3;
+	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bluetooth Transceiver</em>' class.
@@ -3470,28 +3452,6 @@ public interface ArduinoPackage extends EPackage {
 	EClass getBluetoothTransceiver();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getDataToSend <em>Data To Send</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data To Send</em>'.
-	 * @see org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getDataToSend()
-	 * @see #getBluetoothTransceiver()
-	 * @generated
-	 */
-	EAttribute getBluetoothTransceiver_DataToSend();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getDataReceived <em>Data Received</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Received</em>'.
-	 * @see org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getDataReceived()
-	 * @see #getBluetoothTransceiver()
-	 * @generated
-	 */
-	EAttribute getBluetoothTransceiver_DataReceived();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4468,22 +4428,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BLUETOOTH_TRANSCEIVER = eINSTANCE.getBluetoothTransceiver();
-
-		/**
-		 * The meta object literal for the '<em><b>Data To Send</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = eINSTANCE.getBluetoothTransceiver_DataToSend();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Received</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = eINSTANCE.getBluetoothTransceiver_DataReceived();
 
 		/**
 		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.

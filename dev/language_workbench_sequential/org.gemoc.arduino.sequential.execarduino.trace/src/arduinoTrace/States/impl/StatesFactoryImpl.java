@@ -56,6 +56,8 @@ public class StatesFactoryImpl extends EFactoryImpl implements StatesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_RECEIVED_VALUE: return createBluetoothTransceiver_dataReceived_Value();
+			case StatesPackage.BLUETOOTH_TRANSCEIVER_DATA_TO_SEND_VALUE: return createBluetoothTransceiver_dataToSend_Value();
 			case StatesPackage.BOOLEAN_VARIABLE_VALUE_VALUE: return createBooleanVariable_value_Value();
 			case StatesPackage.INTEGER_VARIABLE_VALUE_VALUE: return createIntegerVariable_value_Value();
 			case StatesPackage.PIN_LEVEL_VALUE: return createPin_level_Value();
@@ -63,6 +65,26 @@ public class StatesFactoryImpl extends EFactoryImpl implements StatesFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BluetoothTransceiver_dataReceived_Value createBluetoothTransceiver_dataReceived_Value() {
+		BluetoothTransceiver_dataReceived_ValueImpl bluetoothTransceiver_dataReceived_Value = new BluetoothTransceiver_dataReceived_ValueImpl();
+		return bluetoothTransceiver_dataReceived_Value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BluetoothTransceiver_dataToSend_Value createBluetoothTransceiver_dataToSend_Value() {
+		BluetoothTransceiver_dataToSend_ValueImpl bluetoothTransceiver_dataToSend_Value = new BluetoothTransceiver_dataToSend_ValueImpl();
+		return bluetoothTransceiver_dataToSend_Value;
 	}
 
 	/**

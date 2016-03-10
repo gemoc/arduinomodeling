@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link arduinoTrace.States.State#getBluetoothTransceiver_dataReceived_Values <em>Bluetooth Transceiver data Received Values</em>}</li>
+ *   <li>{@link arduinoTrace.States.State#getBluetoothTransceiver_dataToSend_Values <em>Bluetooth Transceiver data To Send Values</em>}</li>
  *   <li>{@link arduinoTrace.States.State#getBooleanVariable_value_Values <em>Boolean Variable value Values</em>}</li>
  *   <li>{@link arduinoTrace.States.State#getEndedSteps <em>Ended Steps</em>}</li>
  *   <li>{@link arduinoTrace.States.State#getIntegerVariable_value_Values <em>Integer Variable value Values</em>}</li>
@@ -29,6 +31,42 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface State extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Bluetooth Transceiver data Received Values</b></em>' reference list.
+	 * The list contents are of type {@link arduinoTrace.States.BluetoothTransceiver_dataReceived_Value}.
+	 * It is bidirectional and its opposite is '{@link arduinoTrace.States.BluetoothTransceiver_dataReceived_Value#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bluetooth Transceiver data Received Values</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bluetooth Transceiver data Received Values</em>' reference list.
+	 * @see arduinoTrace.States.StatesPackage#getState_BluetoothTransceiver_dataReceived_Values()
+	 * @see arduinoTrace.States.BluetoothTransceiver_dataReceived_Value#getStates
+	 * @model opposite="states" ordered="false"
+	 * @generated
+	 */
+	EList<BluetoothTransceiver_dataReceived_Value> getBluetoothTransceiver_dataReceived_Values();
+
+	/**
+	 * Returns the value of the '<em><b>Bluetooth Transceiver data To Send Values</b></em>' reference list.
+	 * The list contents are of type {@link arduinoTrace.States.BluetoothTransceiver_dataToSend_Value}.
+	 * It is bidirectional and its opposite is '{@link arduinoTrace.States.BluetoothTransceiver_dataToSend_Value#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bluetooth Transceiver data To Send Values</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bluetooth Transceiver data To Send Values</em>' reference list.
+	 * @see arduinoTrace.States.StatesPackage#getState_BluetoothTransceiver_dataToSend_Values()
+	 * @see arduinoTrace.States.BluetoothTransceiver_dataToSend_Value#getStates
+	 * @model opposite="states" ordered="false"
+	 * @generated
+	 */
+	EList<BluetoothTransceiver_dataToSend_Value> getBluetoothTransceiver_dataToSend_Values();
+
 	/**
 	 * Returns the value of the '<em><b>Boolean Variable value Values</b></em>' reference list.
 	 * The list contents are of type {@link arduinoTrace.States.BooleanVariable_value_Value}.
