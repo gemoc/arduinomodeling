@@ -1037,6 +1037,15 @@ public class ArduinoServices {
 		return isValidHardware(project) && isValidSketch(project);
 	}
 	
+	public String getModuleAssignmentIcon(ModuleAssignment moduleAssignment) {
+		if (moduleAssignment.getModule() instanceof ArduinoAnalogModule) {
+			return "/org.gemoc.arduino.sequential.design/icons/Level.png";
+		} else if (moduleAssignment.getModule() instanceof ArduinoDigitalModule) {
+			return "/org.gemoc.arduino.sequential.design/icons/Status.png";
+		}
+		return "/org.gemoc.arduino.sequential.design/images/default.svg";
+	}
+	
 	public String getImage(LED led) {
 		Integer level = ArduinoDesignerUtils.getPin(led).getLevel();
 		if (level != null && level > 0) {
@@ -1051,7 +1060,7 @@ public class ArduinoServices {
 		case RED: return "/org.gemoc.arduino.sequential.design/images/dfrobot/red_led.jpg";
 		case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
 		}
-		return "";
+		return "/org.gemoc.arduino.sequential.design/images/default.svg";
 	}
 	
 	public String getImage(BluetoothTransceiver bluetoothTransceiver) {
