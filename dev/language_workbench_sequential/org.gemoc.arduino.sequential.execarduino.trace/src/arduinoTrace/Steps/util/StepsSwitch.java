@@ -68,6 +68,38 @@ public class StepsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case StepsPackage.ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH: {
+				Arduino_BluetoothTransceiver_Push arduino_BluetoothTransceiver_Push = (Arduino_BluetoothTransceiver_Push)theEObject;
+				T result = caseArduino_BluetoothTransceiver_Push(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_BluetoothTransceiver_Push_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_Delay_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_If_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_ModuleAssignment_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_Repeat_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_VariableAssignment_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseArduino_VariableDeclaration_Execute_AbstractSubStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseBigStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseStep(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = caseMSEOccurrence(arduino_BluetoothTransceiver_Push);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP: {
+				Arduino_BluetoothTransceiver_Push_AbstractSubStep arduino_BluetoothTransceiver_Push_AbstractSubStep = (Arduino_BluetoothTransceiver_Push_AbstractSubStep)theEObject;
+				T result = caseArduino_BluetoothTransceiver_Push_AbstractSubStep(arduino_BluetoothTransceiver_Push_AbstractSubStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP: {
+				Arduino_BluetoothTransceiver_Push_ImplicitStep arduino_BluetoothTransceiver_Push_ImplicitStep = (Arduino_BluetoothTransceiver_Push_ImplicitStep)theEObject;
+				T result = caseArduino_BluetoothTransceiver_Push_ImplicitStep(arduino_BluetoothTransceiver_Push_ImplicitStep);
+				if (result == null) result = caseArduino_BluetoothTransceiver_Push_AbstractSubStep(arduino_BluetoothTransceiver_Push_ImplicitStep);
+				if (result == null) result = caseSmallStep(arduino_BluetoothTransceiver_Push_ImplicitStep);
+				if (result == null) result = caseStep(arduino_BluetoothTransceiver_Push_ImplicitStep);
+				if (result == null) result = caseMSEOccurrence(arduino_BluetoothTransceiver_Push_ImplicitStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case StepsPackage.ARDUINO_DELAY_EXECUTE: {
 				Arduino_Delay_Execute arduino_Delay_Execute = (Arduino_Delay_Execute)theEObject;
 				T result = caseArduino_Delay_Execute(arduino_Delay_Execute);
@@ -297,6 +329,51 @@ public class StepsSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduino_BluetoothTransceiver_Push(Arduino_BluetoothTransceiver_Push object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduino_BluetoothTransceiver_Push_AbstractSubStep(Arduino_BluetoothTransceiver_Push_AbstractSubStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArduino_BluetoothTransceiver_Push_ImplicitStep(Arduino_BluetoothTransceiver_Push_ImplicitStep object) {
+		return null;
 	}
 
 	/**

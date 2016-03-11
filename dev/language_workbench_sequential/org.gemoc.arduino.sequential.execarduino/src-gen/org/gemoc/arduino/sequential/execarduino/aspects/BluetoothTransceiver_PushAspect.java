@@ -2,6 +2,7 @@ package org.gemoc.arduino.sequential.execarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.List;
 import java.util.function.Consumer;
 import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
@@ -11,14 +12,26 @@ import org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_Pus
 @Aspect(className = BluetoothTransceiver.class)
 @SuppressWarnings("all")
 public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+  @Step
   @OverrideAspectMethod
   public static void push(final BluetoothTransceiver _self) {
-    org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver){
-     org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspect._privk3_push(_self_, (org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.ArduinoCommunicationModule){
-     org.gemoc.arduino.sequential.execarduino.aspects.ArduinoCommunicationModule_PushAspect.push((org.gemoc.arduino.sequential.execarduino.arduino.ArduinoCommunicationModule)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    	@Override
+    	public void execute() {
+    		org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
+    		 if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver){
+    		 org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspect._privk3_push(_self_, (org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver)_self);
+    		} else  if (_self instanceof org.gemoc.arduino.sequential.execarduino.arduino.ArduinoCommunicationModule){
+    		 org.gemoc.arduino.sequential.execarduino.aspects.ArduinoCommunicationModule_PushAspect.push((org.gemoc.arduino.sequential.execarduino.arduino.ArduinoCommunicationModule)_self);
+    		} else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    	}
+    };
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    if (manager != null) {
+    	manager.executeStep(_self,command,"BluetoothTransceiver","push");
+    } else {
+    	command.execute();
+    }
   }
   
   public static List<Integer> dataToSend(final BluetoothTransceiver _self) {

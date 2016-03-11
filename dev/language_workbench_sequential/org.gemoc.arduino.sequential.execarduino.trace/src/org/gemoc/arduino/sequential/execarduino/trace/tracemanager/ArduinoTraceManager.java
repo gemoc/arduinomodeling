@@ -40,407 +40,6 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 		this.traces = new ArrayList<IValueTrace>();
 	}
 
-	private void addInitialState() {
-		if (lastState == null) {
-			// Creation of the initial state
-			Set<Resource> allResources = getAllExecutedModelResources();
-			lastState = arduinoTrace.States.StatesFactory.eINSTANCE.createState();
-			for (Resource r : allResources) {
-				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
-					EObject o = i.next();
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) {
-						org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin) {
-						org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) {
-						org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver) {
-						org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin) {
-						org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin) o;
-						addNewObjectToState(o_cast, lastState);
-					}
-				}
-			}
-			this.traceRoot.getStatesTrace().add(lastState);
-		}
-	}
-
-	private void addNewObjectToState(org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable o_cast,
-			arduinoTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		arduinoTrace.States.arduino.TracedIntegerVariable traced = (arduinoTrace.States.arduino.TracedIntegerVariable) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field value
-		arduinoTrace.States.IntegerVariable_value_Value firstValue_value = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createIntegerVariable_value_Value();
-		firstValue_value.setValue(o_cast.getValue());
-		traced.getValueSequence().add(firstValue_value);
-		newState.getIntegerVariable_value_Values().add(firstValue_value);
-	}
-
-	private void addNewObjectToState(org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin o_cast,
-			arduinoTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		arduinoTrace.States.arduino.TracedDigitalPin traced = (arduinoTrace.States.arduino.TracedDigitalPin) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field level
-		arduinoTrace.States.Pin_level_Value firstValue_level = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createPin_level_Value();
-		firstValue_level.setLevel(o_cast.getLevel());
-		traced.getLevelSequence().add(firstValue_level);
-		newState.getPin_level_Values().add(firstValue_level);
-	}
-
-	private void addNewObjectToState(org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable o_cast,
-			arduinoTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		arduinoTrace.States.arduino.TracedBooleanVariable traced = (arduinoTrace.States.arduino.TracedBooleanVariable) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field value
-		arduinoTrace.States.BooleanVariable_value_Value firstValue_value = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createBooleanVariable_value_Value();
-		firstValue_value.setValue(o_cast.getValue());
-		traced.getValueSequence().add(firstValue_value);
-		newState.getBooleanVariable_value_Values().add(firstValue_value);
-	}
-
-	private void addNewObjectToState(org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver o_cast,
-			arduinoTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		arduinoTrace.States.arduino.TracedBluetoothTransceiver traced = (arduinoTrace.States.arduino.TracedBluetoothTransceiver) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field dataReceived
-		arduinoTrace.States.BluetoothTransceiver_dataReceived_Value firstValue_dataReceived = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createBluetoothTransceiver_dataReceived_Value();
-		firstValue_dataReceived.getDataReceived().addAll(
-				(Collection<? extends java.lang.Integer>) o_cast.getDataReceived());
-		traced.getDataReceivedSequence().add(firstValue_dataReceived);
-		newState.getBluetoothTransceiver_dataReceived_Values().add(firstValue_dataReceived);
-
-		// Creation of the first value of the field dataToSend
-		arduinoTrace.States.BluetoothTransceiver_dataToSend_Value firstValue_dataToSend = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createBluetoothTransceiver_dataToSend_Value();
-		firstValue_dataToSend.getDataToSend().addAll((Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
-		traced.getDataToSendSequence().add(firstValue_dataToSend);
-		newState.getBluetoothTransceiver_dataToSend_Values().add(firstValue_dataToSend);
-	}
-
-	private void addNewObjectToState(org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin o_cast,
-			arduinoTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		arduinoTrace.States.arduino.TracedAnalogPin traced = (arduinoTrace.States.arduino.TracedAnalogPin) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field level
-		arduinoTrace.States.Pin_level_Value firstValue_level = arduinoTrace.States.StatesFactory.eINSTANCE
-				.createPin_level_Value();
-		firstValue_level.setLevel(o_cast.getLevel());
-		traced.getLevelSequence().add(firstValue_level);
-		newState.getPin_level_Values().add(firstValue_level);
-	}
-
-	private arduinoTrace.States.State copyState(arduinoTrace.States.State oldState) {
-		arduinoTrace.States.State newState = arduinoTrace.States.StatesFactory.eINSTANCE.createState();
-		newState.getPin_level_Values().addAll(oldState.getPin_level_Values());
-		newState.getBluetoothTransceiver_dataReceived_Values().addAll(
-				oldState.getBluetoothTransceiver_dataReceived_Values());
-		newState.getBluetoothTransceiver_dataToSend_Values().addAll(
-				oldState.getBluetoothTransceiver_dataToSend_Values());
-		newState.getBooleanVariable_value_Values().addAll(oldState.getBooleanVariable_value_Values());
-		newState.getPin_level_Values().addAll(oldState.getPin_level_Values());
-		newState.getIntegerVariable_value_Values().addAll(oldState.getIntegerVariable_value_Values());
-		return newState;
-	}
-
-	@Override
-	@SuppressWarnings("unchecked")
-	public void addState(Set<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
-
-		if (lastState == null) {
-			addInitialState();
-		}
-
-		if (!changes.isEmpty()) {
-
-			boolean stateChanged = false;
-
-			// We start by a (shallow) copy of the last state
-			// But we will have to rollback a little by replacing values that changed
-			arduinoTrace.States.State newState = copyState(lastState);
-
-			for (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
-				EObject o = modelChange.getChangedObject();
-
-				// We only look at constructable objects that have mutable fields
-				// Here we have nothing to rollback, just a new object to add
-				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
-					stateChanged = true;
-
-				}
-
-				// We only look at constructable objects that have mutable fields
-				// Here we must rollback to remove the values of the removed object from the copied state
-				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
-					stateChanged = true;
-
-				}
-
-				// Here we must look at non-collection mutable fields
-				// We must rollback the last values from the copied state, and add new values as well
-				// ie. mix of remove and new
-				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
-					stateChanged = true;
-
-					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
-					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) {
-
-						org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) o;
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getIntegerVariable_Value().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedIntegerVariable traced = (arduinoTrace.States.arduino.TracedIntegerVariable) exeToTraced
-									.get(o);
-							arduinoTrace.States.IntegerVariable_value_Value lastValue = traced.getValueSequence().get(
-									traced.getValueSequence().size() - 1);
-							newState.getIntegerVariable_value_Values().remove(lastValue);
-
-							// And we create a proper new value
-							arduinoTrace.States.IntegerVariable_value_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createIntegerVariable_value_Value();
-							newValue.setValue(o_cast.getValue());
-							traced.getValueSequence().add(newValue);
-							newState.getIntegerVariable_value_Values().add(newValue);
-						}
-
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin) {
-
-						org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin) o;
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getPin_Level().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedDigitalPin traced = (arduinoTrace.States.arduino.TracedDigitalPin) exeToTraced
-									.get(o);
-							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence().get(
-									traced.getLevelSequence().size() - 1);
-							newState.getPin_level_Values().remove(lastValue);
-
-							// And we create a proper new value
-							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createPin_level_Value();
-							newValue.setLevel(o_cast.getLevel());
-							traced.getLevelSequence().add(newValue);
-							newState.getPin_level_Values().add(newValue);
-						}
-
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) {
-
-						org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) o;
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getBooleanVariable_Value().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedBooleanVariable traced = (arduinoTrace.States.arduino.TracedBooleanVariable) exeToTraced
-									.get(o);
-							arduinoTrace.States.BooleanVariable_value_Value lastValue = traced.getValueSequence().get(
-									traced.getValueSequence().size() - 1);
-							newState.getBooleanVariable_value_Values().remove(lastValue);
-
-							// And we create a proper new value
-							arduinoTrace.States.BooleanVariable_value_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createBooleanVariable_value_Value();
-							newValue.setValue(o_cast.getValue());
-							traced.getValueSequence().add(newValue);
-							newState.getBooleanVariable_value_Values().add(newValue);
-						}
-
-					} else
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin) {
-
-						org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin) o;
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getPin_Level().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedAnalogPin traced = (arduinoTrace.States.arduino.TracedAnalogPin) exeToTraced
-									.get(o);
-							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence().get(
-									traced.getLevelSequence().size() - 1);
-							newState.getPin_level_Values().remove(lastValue);
-
-							// And we create a proper new value
-							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createPin_level_Value();
-							newValue.setLevel(o_cast.getLevel());
-							traced.getLevelSequence().add(newValue);
-							newState.getPin_level_Values().add(newValue);
-						}
-
-					}
-
-				}
-
-				// Here we look at collection mutable fields
-				// We must first manually find out if the collection changed...
-				// If it changed we must rollback the last values from the copied state, and add new values as well
-				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) {
-					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) modelChange;
-
-					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
-
-					if (o instanceof org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver) {
-
-						org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver o_cast = (org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver) o;
-						arduinoTrace.States.arduino.TracedBluetoothTransceiver tracedObject = (arduinoTrace.States.arduino.TracedBluetoothTransceiver) exeToTraced
-								.get(o_cast);
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getBluetoothTransceiver_DataReceived().getFeatureID()) {
-
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<arduinoTrace.States.BluetoothTransceiver_dataReceived_Value> valueSequence = tracedObject
-									.getDataReceivedSequence();
-							arduinoTrace.States.BluetoothTransceiver_dataReceived_Value previousValue = null;
-							if (!valueSequence.isEmpty())
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-
-							boolean change = false;
-							if (previousValue != null) {
-
-								if (previousValue.getDataReceived().size() == o_cast.getDataReceived().size()) {
-
-									java.util.Iterator<java.lang.Integer> it = o_cast.getDataReceived().iterator();
-									for (java.lang.Integer aPreviousValue : previousValue.getDataReceived()) {
-										java.lang.Integer aCurrentValue = it.next();
-										if (!aPreviousValue.equals(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-
-							if (change) {
-								stateChanged = true;
-
-								// Rollback: we remove the last value of this field from the new state
-								arduinoTrace.States.BluetoothTransceiver_dataReceived_Value lastValue = tracedObject
-										.getDataReceivedSequence().get(
-												tracedObject.getDataReceivedSequence().size() - 1);
-								newState.getBluetoothTransceiver_dataReceived_Values().remove(lastValue);
-
-								// And we create a proper new value							
-								arduinoTrace.States.BluetoothTransceiver_dataReceived_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-										.createBluetoothTransceiver_dataReceived_Value();
-								newValue.getDataReceived().addAll(
-										(Collection<? extends java.lang.Integer>) o_cast.getDataReceived());
-								tracedObject.getDataReceivedSequence().add(newValue);
-								newState.getBluetoothTransceiver_dataReceived_Values().add(newValue);
-							}
-						}
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.execarduino.arduino.ArduinoPackage.eINSTANCE
-								.getBluetoothTransceiver_DataToSend().getFeatureID()) {
-
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<arduinoTrace.States.BluetoothTransceiver_dataToSend_Value> valueSequence = tracedObject
-									.getDataToSendSequence();
-							arduinoTrace.States.BluetoothTransceiver_dataToSend_Value previousValue = null;
-							if (!valueSequence.isEmpty())
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-
-							boolean change = false;
-							if (previousValue != null) {
-
-								if (previousValue.getDataToSend().size() == o_cast.getDataToSend().size()) {
-
-									java.util.Iterator<java.lang.Integer> it = o_cast.getDataToSend().iterator();
-									for (java.lang.Integer aPreviousValue : previousValue.getDataToSend()) {
-										java.lang.Integer aCurrentValue = it.next();
-										if (!aPreviousValue.equals(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-
-							if (change) {
-								stateChanged = true;
-
-								// Rollback: we remove the last value of this field from the new state
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value lastValue = tracedObject
-										.getDataToSendSequence().get(tracedObject.getDataToSendSequence().size() - 1);
-								newState.getBluetoothTransceiver_dataToSend_Values().remove(lastValue);
-
-								// And we create a proper new value							
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-										.createBluetoothTransceiver_dataToSend_Value();
-								newValue.getDataToSend().addAll(
-										(Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
-								tracedObject.getDataToSendSequence().add(newValue);
-								newState.getBluetoothTransceiver_dataToSend_Values().add(newValue);
-							}
-						}
-					}
-				}
-
-			}
-
-			if (stateChanged) {
-				final arduinoTrace.Steps.Step currentStep = context.peekFirst();
-				if (currentStep != null && currentStep instanceof arduinoTrace.Steps.BigStep) {
-					final arduinoTrace.States.State startingState = lastState;
-					final arduinoTrace.States.State endingState = newState;
-					addImplicitStep(currentStep, startingState, endingState);
-				}
-
-				lastState = newState;
-				traceRoot.getStatesTrace().add(lastState);
-			}
-		}
-	}
-
 	@Override
 	public boolean addStateIfChanged() {
 		return addState(true);
@@ -759,8 +358,8 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			newState.getBluetoothTransceiver_dataReceived_Values().clear();
 			newState.getBluetoothTransceiver_dataToSend_Values().clear();
 			newState.getPin_level_Values().clear();
-			newState.getBooleanVariable_value_Values().clear();
 			newState.getIntegerVariable_value_Values().clear();
+			newState.getBooleanVariable_value_Values().clear();
 		}
 
 		return createNewState;
@@ -779,6 +378,24 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 		if (stateIndex >= 0) {
 
 			arduinoTrace.States.State state = this.traceRoot.getStatesTrace().get(stateIndex);
+
+			if (stepRule.equalsIgnoreCase("arduino.BluetoothTransceiver.push")) {
+				// First we create the step
+				arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push arduino_BluetoothTransceiver_PushInstance = arduinoTrace.Steps.StepsFactory.eINSTANCE
+						.createArduino_BluetoothTransceiver_Push();
+				arduino_BluetoothTransceiver_PushInstance.setStartingState(state);
+
+				if (!context.isEmpty() && context.getFirst() != null) {
+					emfAdd(context.getFirst(), "subSteps", arduino_BluetoothTransceiver_PushInstance);
+				} else {
+					traceRoot.getRootSteps().add(arduino_BluetoothTransceiver_PushInstance);
+				}
+				toPush = arduino_BluetoothTransceiver_PushInstance;
+
+				// Then we add it to its trace
+				this.traceRoot.getArduino_BluetoothTransceiver_Push_Sequence().add(
+						arduino_BluetoothTransceiver_PushInstance);
+			} else
 
 			if (stepRule.equalsIgnoreCase("arduino.Delay.execute")) {
 				// First we create the step
@@ -912,7 +529,10 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			arduinoTrace.States.State endingState) {
 
 		arduinoTrace.Steps.Step implicitStep = null;
-		if (currentStep instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
+		if (currentStep instanceof arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push) {
+			implicitStep = arduinoTrace.Steps.StepsFactory.eINSTANCE
+					.createArduino_BluetoothTransceiver_Push_ImplicitStep();
+		} else if (currentStep instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
 			implicitStep = arduinoTrace.Steps.StepsFactory.eINSTANCE.createArduino_Delay_Execute_ImplicitStep();
 		} else if (currentStep instanceof arduinoTrace.Steps.Arduino_If_Execute) {
 			implicitStep = arduinoTrace.Steps.StepsFactory.eINSTANCE.createArduino_If_Execute_ImplicitStep();
@@ -954,7 +574,11 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			}
 
 			// Adding step in its dedicated sequence/dimension
-			if (step instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
+			if (step instanceof arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push) {
+				arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push arduino_BluetoothTransceiver_PushInstance = (arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push) step;
+				this.traceRoot.getArduino_BluetoothTransceiver_Push_Sequence().add(
+						arduino_BluetoothTransceiver_PushInstance);
+			} else if (step instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
 				arduinoTrace.Steps.Arduino_Delay_Execute arduino_Delay_ExecuteInstance = (arduinoTrace.Steps.Arduino_Delay_Execute) step;
 				this.traceRoot.getArduino_Delay_Execute_Sequence().add(arduino_Delay_ExecuteInstance);
 			} else if (step instanceof arduinoTrace.Steps.Arduino_If_Execute) {
@@ -1052,22 +676,6 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 
 			}
 
-			for (arduinoTrace.States.BooleanVariable_value_Value value : stateToGo.getBooleanVariable_value_Values()) {
-
-				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedBooleanVariable) {
-					arduinoTrace.States.arduino.TracedBooleanVariable parent_cast = (arduinoTrace.States.arduino.TracedBooleanVariable) value
-							.getParent();
-					java.lang.Boolean toset = value.getValue();
-					java.lang.Boolean current = ((org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) parent_cast
-							.getOriginalObject()).getValue();
-					if (current != toset)
-						((org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) parent_cast
-								.getOriginalObject()).setValue(toset);
-
-				}
-
-			}
-
 			for (arduinoTrace.States.IntegerVariable_value_Value value : stateToGo.getIntegerVariable_value_Values()) {
 
 				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedIntegerVariable) {
@@ -1078,6 +686,22 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 							.getOriginalObject()).getValue();
 					if (current != toset)
 						((org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) parent_cast
+								.getOriginalObject()).setValue(toset);
+
+				}
+
+			}
+
+			for (arduinoTrace.States.BooleanVariable_value_Value value : stateToGo.getBooleanVariable_value_Values()) {
+
+				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedBooleanVariable) {
+					arduinoTrace.States.arduino.TracedBooleanVariable parent_cast = (arduinoTrace.States.arduino.TracedBooleanVariable) value
+							.getParent();
+					java.lang.Boolean toset = value.getValue();
+					java.lang.Boolean current = ((org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) parent_cast
+							.getOriginalObject()).getValue();
+					if (current != toset)
+						((org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) parent_cast
 								.getOriginalObject()).setValue(toset);
 
 				}
@@ -1172,15 +796,15 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			result.append("\n\t" + currentState.getLevel());
 		}
 
-		if (!gs.getBooleanVariable_value_Values().isEmpty())
-			result.append("\nValue values:");
-		for (arduinoTrace.States.BooleanVariable_value_Value currentState : gs.getBooleanVariable_value_Values()) {
-			result.append("\n\t" + currentState.getValue());
-		}
-
 		if (!gs.getIntegerVariable_value_Values().isEmpty())
 			result.append("\nValue values:");
 		for (arduinoTrace.States.IntegerVariable_value_Value currentState : gs.getIntegerVariable_value_Values()) {
+			result.append("\n\t" + currentState.getValue());
+		}
+
+		if (!gs.getBooleanVariable_value_Values().isEmpty())
+			result.append("\nValue values:");
+		for (arduinoTrace.States.BooleanVariable_value_Value currentState : gs.getBooleanVariable_value_Values()) {
 			result.append("\n\t" + currentState.getValue());
 		}
 
@@ -1208,12 +832,12 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 					+ ((arduinoTrace.States.BluetoothTransceiver_dataToSend_Value) eObject).getDataToSend();
 		} else if (eObject instanceof arduinoTrace.States.Pin_level_Value) {
 			return "arduinoTrace.States.Pin_level_Value: " + ((arduinoTrace.States.Pin_level_Value) eObject).getLevel();
-		} else if (eObject instanceof arduinoTrace.States.BooleanVariable_value_Value) {
-			return "arduinoTrace.States.BooleanVariable_value_Value: "
-					+ ((arduinoTrace.States.BooleanVariable_value_Value) eObject).getValue();
 		} else if (eObject instanceof arduinoTrace.States.IntegerVariable_value_Value) {
 			return "arduinoTrace.States.IntegerVariable_value_Value: "
 					+ ((arduinoTrace.States.IntegerVariable_value_Value) eObject).getValue();
+		} else if (eObject instanceof arduinoTrace.States.BooleanVariable_value_Value) {
+			return "arduinoTrace.States.BooleanVariable_value_Value: "
+					+ ((arduinoTrace.States.BooleanVariable_value_Value) eObject).getValue();
 		} else
 			return "ERROR";
 	}
@@ -1374,8 +998,8 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			currentValues.addAll(currentState.getBluetoothTransceiver_dataReceived_Values());
 			currentValues.addAll(currentState.getBluetoothTransceiver_dataToSend_Values());
 			currentValues.addAll(currentState.getPin_level_Values());
-			currentValues.addAll(currentState.getBooleanVariable_value_Values());
 			currentValues.addAll(currentState.getIntegerVariable_value_Values());
+			currentValues.addAll(currentState.getBooleanVariable_value_Values());
 		}
 		return currentValues;
 	}
@@ -1603,7 +1227,18 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			parentStep = createGenericStep((arduinoTrace.Steps.Step) step.eContainer());
 		}
 
-		if (step instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
+		if (step instanceof arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push) {
+			arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push step_cast = (arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push) step;
+			int startIndex = this.traceRoot.getStatesTrace().indexOf(step.getStartingState());
+			int endIndex = this.traceRoot.getStatesTrace().indexOf(step.getEndingState());
+
+			result = new fr.inria.diverse.trace.api.impl.GenericStep(
+					"org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver", "push", startIndex,
+					endIndex, parentStep);
+			result.addParameter("caller", (step_cast.getCaller()));
+			result.addParameter("this", step);
+
+		} else if (step instanceof arduinoTrace.Steps.Arduino_Delay_Execute) {
 			arduinoTrace.Steps.Arduino_Delay_Execute step_cast = (arduinoTrace.Steps.Arduino_Delay_Execute) step;
 			int startIndex = this.traceRoot.getStatesTrace().indexOf(step.getStartingState());
 			int endIndex = this.traceRoot.getStatesTrace().indexOf(step.getEndingState());
@@ -1679,6 +1314,14 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			result.addParameter("caller", (step_cast.getCaller()));
 			result.addParameter("this", step);
 
+		} else if (step instanceof arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep) {
+			int startIndex = this.traceRoot.getStatesTrace().indexOf(step.getStartingState());
+			int endIndex = this.traceRoot.getStatesTrace().indexOf(step.getEndingState());
+
+			result = new fr.inria.diverse.trace.api.impl.GenericStep(
+					"org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver", "implicitStep",
+					startIndex, endIndex, parentStep);
+			result.addParameter("this", step);
 		} else if (step instanceof arduinoTrace.Steps.Arduino_Delay_Execute_ImplicitStep) {
 			int startIndex = this.traceRoot.getStatesTrace().indexOf(step.getStartingState());
 			int endIndex = this.traceRoot.getStatesTrace().indexOf(step.getEndingState());

@@ -41,13 +41,14 @@ public class BinaryBooleanExpression_EvaluableAspect extends Expression_Evaluabl
     if (!_matched) {
       if (_left instanceof BooleanExpression) {
         _matched=true;
-        boolean _xblockexpression = false;
+        Boolean _xblockexpression = null;
         {
+          leftIsBoolean = true;
           Expression _left_1 = _self.getLeft();
-          Expression_EvaluableAspect.evaluate(_left_1);
-          _xblockexpression = leftIsBoolean = true;
+          Object _evaluate = Expression_EvaluableAspect.evaluate(_left_1);
+          _xblockexpression = ((Boolean) _evaluate);
         }
-        bLeft = _xblockexpression;
+        bLeft = (_xblockexpression).booleanValue();
       }
     }
     if (!_matched) {
@@ -65,13 +66,14 @@ public class BinaryBooleanExpression_EvaluableAspect extends Expression_Evaluabl
     if (!_matched_1) {
       if (_right instanceof BooleanExpression) {
         _matched_1=true;
-        boolean _xblockexpression = false;
+        Boolean _xblockexpression = null;
         {
+          rightIsBoolean = true;
           Expression _right_1 = _self.getRight();
-          Expression_EvaluableAspect.evaluate(_right_1);
-          _xblockexpression = rightIsBoolean = true;
+          Object _evaluate = Expression_EvaluableAspect.evaluate(_right_1);
+          _xblockexpression = ((Boolean) _evaluate);
         }
-        bRight = _xblockexpression;
+        bRight = (_xblockexpression).booleanValue();
       }
     }
     if (!_matched_1) {

@@ -10,6 +10,7 @@ import arduinoTrace.States.arduino.TracedBooleanVariable;
 import arduinoTrace.States.arduino.TracedDigitalPin;
 import arduinoTrace.States.arduino.TracedIntegerVariable;
 
+import arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push;
 import arduinoTrace.Steps.Arduino_Delay_Execute;
 import arduinoTrace.Steps.Arduino_If_Execute;
 import arduinoTrace.Steps.Arduino_ModuleAssignment_Execute;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link arduinoTrace.Trace#getArduino_BluetoothTransceiver_Push_Sequence <em>Arduino Bluetooth Transceiver Push Sequence</em>}</li>
  *   <li>{@link arduinoTrace.Trace#getArduino_Delay_Execute_Sequence <em>Arduino Delay Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.Trace#getArduino_If_Execute_Sequence <em>Arduino If Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.Trace#getArduino_ModuleAssignment_Execute_Sequence <em>Arduino Module Assignment Execute Sequence</em>}</li>
@@ -53,6 +55,22 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Trace extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Arduino Bluetooth Transceiver Push Sequence</b></em>' reference list.
+	 * The list contents are of type {@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Arduino Bluetooth Transceiver Push Sequence</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arduino Bluetooth Transceiver Push Sequence</em>' reference list.
+	 * @see arduinoTrace.ArduinoTracePackage#getTrace_Arduino_BluetoothTransceiver_Push_Sequence()
+	 * @model
+	 * @generated
+	 */
+	EList<Arduino_BluetoothTransceiver_Push> getArduino_BluetoothTransceiver_Push_Sequence();
+
 	/**
 	 * Returns the value of the '<em><b>Arduino Delay Execute Sequence</b></em>' reference list.
 	 * The list contents are of type {@link arduinoTrace.Steps.Arduino_Delay_Execute}.

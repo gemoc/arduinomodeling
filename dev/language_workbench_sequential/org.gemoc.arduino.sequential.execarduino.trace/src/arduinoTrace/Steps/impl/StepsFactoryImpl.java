@@ -56,6 +56,8 @@ public class StepsFactoryImpl extends EFactoryImpl implements StepsFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case StepsPackage.ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH: return createArduino_BluetoothTransceiver_Push();
+			case StepsPackage.ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP: return createArduino_BluetoothTransceiver_Push_ImplicitStep();
 			case StepsPackage.ARDUINO_DELAY_EXECUTE: return createArduino_Delay_Execute();
 			case StepsPackage.ARDUINO_DELAY_EXECUTE_IMPLICIT_STEP: return createArduino_Delay_Execute_ImplicitStep();
 			case StepsPackage.ARDUINO_IF_EXECUTE: return createArduino_If_Execute();
@@ -73,6 +75,26 @@ public class StepsFactoryImpl extends EFactoryImpl implements StepsFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Arduino_BluetoothTransceiver_Push createArduino_BluetoothTransceiver_Push() {
+		Arduino_BluetoothTransceiver_PushImpl arduino_BluetoothTransceiver_Push = new Arduino_BluetoothTransceiver_PushImpl();
+		return arduino_BluetoothTransceiver_Push;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Arduino_BluetoothTransceiver_Push_ImplicitStep createArduino_BluetoothTransceiver_Push_ImplicitStep() {
+		Arduino_BluetoothTransceiver_Push_ImplicitStepImpl arduino_BluetoothTransceiver_Push_ImplicitStep = new Arduino_BluetoothTransceiver_Push_ImplicitStepImpl();
+		return arduino_BluetoothTransceiver_Push_ImplicitStep;
 	}
 
 	/**

@@ -22,6 +22,24 @@ public interface StepsFactory extends EFactory {
 	StepsFactory eINSTANCE = arduinoTrace.Steps.impl.StepsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Arduino Bluetooth Transceiver Push</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arduino Bluetooth Transceiver Push</em>'.
+	 * @generated
+	 */
+	Arduino_BluetoothTransceiver_Push createArduino_BluetoothTransceiver_Push();
+
+	/**
+	 * Returns a new object of class '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>'.
+	 * @generated
+	 */
+	Arduino_BluetoothTransceiver_Push_ImplicitStep createArduino_BluetoothTransceiver_Push_ImplicitStep();
+
+	/**
 	 * Returns a new object of class '<em>Arduino Delay Execute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

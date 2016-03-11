@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -37,6 +38,7 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
+import org.gemoc.arduino.sequential.execarduino.arduino.AmbientLightSensor;
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoBoard;
@@ -53,7 +55,6 @@ import org.gemoc.arduino.sequential.execarduino.arduino.Board;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanModuleGet;
-import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.Buzzer;
 import org.gemoc.arduino.sequential.execarduino.arduino.Color;
@@ -61,20 +62,26 @@ import org.gemoc.arduino.sequential.execarduino.arduino.Constant;
 import org.gemoc.arduino.sequential.execarduino.arduino.Control;
 import org.gemoc.arduino.sequential.execarduino.arduino.DigitalPin;
 import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
+import org.gemoc.arduino.sequential.execarduino.arduino.Fan;
 import org.gemoc.arduino.sequential.execarduino.arduino.If;
+import org.gemoc.arduino.sequential.execarduino.arduino.InfraRedSensor;
 import org.gemoc.arduino.sequential.execarduino.arduino.Instruction;
 import org.gemoc.arduino.sequential.execarduino.arduino.IntegerConstant;
-import org.gemoc.arduino.sequential.execarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.LED;
+import org.gemoc.arduino.sequential.execarduino.arduino.MicroServo;
 import org.gemoc.arduino.sequential.execarduino.arduino.Module;
 import org.gemoc.arduino.sequential.execarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.ModuleGet;
 import org.gemoc.arduino.sequential.execarduino.arduino.ModuleInstruction;
+import org.gemoc.arduino.sequential.execarduino.arduino.MusicPlayer;
 import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
 import org.gemoc.arduino.sequential.execarduino.arduino.Project;
+import org.gemoc.arduino.sequential.execarduino.arduino.PushButton;
+import org.gemoc.arduino.sequential.execarduino.arduino.RotationSensor;
 import org.gemoc.arduino.sequential.execarduino.arduino.Sketch;
+import org.gemoc.arduino.sequential.execarduino.arduino.SoundSensor;
 import org.gemoc.arduino.sequential.execarduino.arduino.UnaryBooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.UnaryBooleanOperatorKind;
 import org.gemoc.arduino.sequential.execarduino.arduino.UnaryExpression;
@@ -83,15 +90,12 @@ import org.gemoc.arduino.sequential.execarduino.arduino.UnaryIntegerOperatorKind
 import org.gemoc.arduino.sequential.execarduino.arduino.Variable;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableDeclaration;
-import org.gemoc.arduino.sequential.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.While;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 public class ArduinoServices {
-
-	private static final String IMAGES_PATH = "/org.gemoc.arduino.sequential.design/images/";
 	
 	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
@@ -231,10 +235,6 @@ public class ArduinoServices {
 				.collect(Collectors.toList());
 	}
 	
-	public boolean isDigitalPinUnavailable(ArduinoBoard board) {
-		return getAvailableDigitalPin(board) == null;
-	}
-	
 	public boolean isPinAvailable(Pin pin) {
 		if (pin instanceof AnalogPin) {
 			return ((AnalogPin)pin).getModule() == null;
@@ -244,9 +244,37 @@ public class ArduinoServices {
 		}
 		return false;
 	}
+
+	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
+		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
+		if (pins.isEmpty()) {
+			return null;
+		}
+		return pins.get(0);
+	}
+	
+	public boolean isDigitalPinUnavailable(ArduinoBoard board) {
+		return getAvailableDigitalPin(board) == null;
+	}
 	
 	public boolean isDigitalPinAvailable(ArduinoBoard board) {
 		return getAvailableDigitalPin(board) != null;
+	}
+	
+	public AnalogPin getAvailableAnalogPin(ArduinoBoard board) {
+		List<AnalogPin> pins = board.getAnalogPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
+		if (pins.isEmpty()) {
+			return null;
+		}
+		return pins.get(0);
+	}
+	
+	public boolean isAnalogPinUnavailable(ArduinoBoard board) {
+		return getAvailableAnalogPin(board) == null;
+	}
+	
+	public boolean isAnalogPinAvailable(ArduinoBoard board) {
+		return getAvailableAnalogPin(board) != null;
 	}
 	
 	public EObject getPreviousInstruction(EObject instruction) {
@@ -269,6 +297,25 @@ public class ArduinoServices {
 			res = instructions.get(i+1);
 		}
 		return res;
+	}
+
+	public EObject reorderInstructionsTarget(EObject newNext, EObject toMove) {
+		Block block = (Block)toMove.eContainer();
+		List<Instruction> instructions = block.getInstructions();
+		instructions.remove(toMove);
+		int i = instructions.indexOf(newNext);
+		instructions.add(i,(Instruction)toMove);
+		return null;
+	}
+	
+	public EObject reorderInstructionsSource(EObject newNext, EObject toMove) {
+		Block block = (Block)toMove.eContainer();
+		List<Instruction> instructions = block.getInstructions();
+		instructions.remove(toMove);
+		//FIXME Workaround the sirius bug in the variable initialization of the reconnect source tool.
+		int i = instructions.indexOf(newNext)+1;
+		instructions.add(i,(Instruction)toMove);
+		return null;
 	}
 	
 	public EObject getElement(EObject eObject) {
@@ -299,14 +346,6 @@ public class ArduinoServices {
 			}
 		}
 		return eObject;
-	}
-
-	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
-		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
-		if (pins.isEmpty()) {
-			return null;
-		}
-		return pins.get(0);
 	}
 
 	public Module getModule(Pin pin) {
@@ -419,19 +458,51 @@ public class ArduinoServices {
 		}
 		return result;
 	}
-
-	public String computeExpressionLabel(ModuleAssignment e) {
-		String label = e.getModule().getName();
-		if (e.getOperand() instanceof BooleanConstant) {
-			if (((BooleanConstant) e.getOperand()).isValue()) {
-				label += " : on";
-			} else {
-				label += " : off";
+	
+	public List<EObject> getConnectedAnalogModules(Board board) {
+		List<EObject> result = new ArrayList<>();
+		if (board != null) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
+				}
 			}
 		}
-		if (e.getOperand() instanceof IntegerConstant) {
-			label += " : " + ((IntegerConstant) e.getOperand()).getValue();
+		return result;
+	}
+	
+	public List<EObject> getConnectedDigitalModules(Board board) {
+		List<EObject> result = new ArrayList<>();
+		if (board != null) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
+				}
+			}
 		}
+		return result;
+	}
+
+	public String computeExpressionLabel(ModuleAssignment e) {
+		String label = e.getModule().getName() + " : " + computeLabel(e.getOperand());
+//		if (e.getOperand() instanceof BooleanConstant) {
+//			if (((BooleanConstant) e.getOperand()).isValue()) {
+//				label += " : on";
+//			} else {
+//				label += " : off";
+//			}
+//		}
+//		if (e.getOperand() instanceof IntegerConstant) {
+//			label += " : " + ((IntegerConstant) e.getOperand()).getValue();
+//		}
 		return label;
 	}
 
@@ -542,18 +613,6 @@ public class ArduinoServices {
 		return getOperator(operator.getOperator());
 	}
 
-	public String computeLabel(ModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
-	public String computeLabel(IntegerModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
-	public String computeLabel(BooleanModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
 	public String computeLabel(If instruction) {
 		String label = "If ";
 		if (instruction.getCondition() != null) {
@@ -568,21 +627,6 @@ public class ArduinoServices {
 			label += set.getVariable().getName() + " = " + computeLabel(set.getOperand());
 		}
 		return label;
-	}
-
-	public String computeLabel(VariableRef ref) {
-		if (ref instanceof IntegerVariableRef) {
-			IntegerVariable var = ((IntegerVariableRef) ref).getVariable();
-			if (var != null) {
-				return var.getName();
-			}
-		} else if (ref instanceof IntegerVariableRef) {
-			BooleanVariable var = ((BooleanVariableRef) ref).getVariable();
-			if (var != null) {
-				return var.getName();
-			}
-		}
-		return "";
 	}
 
 	public String computeLabel(String operator) {
@@ -1009,16 +1053,9 @@ public class ArduinoServices {
 		}
 		return "";
 	}
-
-	public String getImage(ArduinoBoard platform) {
-		return getImage("");
-	}
-
-	private String getImage(String imageName) {
-		if (imageName != null && imageName.length() > 0) {
-			return IMAGES_PATH + imageName;
-		}
-		return IMAGES_PATH + "default.svg";
+	
+	public String getImage(BluetoothTransceiver bluetoothTransceiver) {
+		return "/org.gemoc.arduino.sequential.design/images/bluetooth.png";
 	}
 	
 	public String getImage(Module module) {
@@ -1029,8 +1066,35 @@ public class ArduinoServices {
 			case WHITE: return "/org.gemoc.arduino.sequential.design/images/dfrobot/white_led.jpg";
 			}
 		}
-		if (module instanceof Buzzer) {
-			return "/org.gemoc.arduino.sequential.design/images/buzzer.jpg";
+		else if (module instanceof Buzzer) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/buzzer.jpg";
+		}
+		else if (module instanceof PushButton) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/push_button.jpg";
+		}
+		else if (module instanceof MicroServo) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/servo.jpg";
+		}
+		else if (module instanceof InfraRedSensor) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/infrared.jpg";
+		}
+		else if (module instanceof Fan) {
+			return "/org.gemoc.arduino.sequential.design/images/fan.jpg";
+		}
+		else if (module instanceof MusicPlayer) {
+			return "/org.gemoc.arduino.sequential.design/images/music_player.jpg";
+		}
+		else if (module instanceof AmbientLightSensor) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/ambient_light.jpg";
+		}
+		else if (module instanceof RotationSensor) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/rotation_sensor_v1.jpg";
+		}
+		else if (module instanceof SoundSensor) {
+			return "/org.gemoc.arduino.sequential.design/images/dfrobot/sound_sensor.jpg";
+		}
+		else if (module instanceof BluetoothTransceiver) {
+			return "/org.gemoc.arduino.sequential.design/images/bluetooth.png";
 		}
 		return "/org.gemoc.arduino.sequential.design/images/default.svg";
 	}

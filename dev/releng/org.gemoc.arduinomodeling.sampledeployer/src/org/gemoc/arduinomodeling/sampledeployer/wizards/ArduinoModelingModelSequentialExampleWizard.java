@@ -26,7 +26,7 @@ public class ArduinoModelingModelSequentialExampleWizard
 		// We need the statements example to be unzipped along with the
 		// EMF library example model, edit and editor examples
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/ifdemo.sequential.zip", "ifdemo.sequential"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.ifdemo.sequential.zip", "org.gemoc.arduino.sequential.ifdemo.sequential"));
 		//projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.sample.sigpml.simple_example_with_melange.zip", "org.gemoc.sample.sigpml.simple_example_with_melange"));
 		return projects;
 	}

@@ -66,13 +66,22 @@ public interface ArduinoTracePackage extends EPackage {
 	int TRACE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Arduino Bluetooth Transceiver Push Sequence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE = 0;
+
+	/**
 	 * The feature id for the '<em><b>Arduino Delay Execute Sequence</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE = 0;
+	int TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Arduino If Execute Sequence</b></em>' reference list.
@@ -81,7 +90,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_IF_EXECUTE_SEQUENCE = 1;
+	int TRACE__ARDUINO_IF_EXECUTE_SEQUENCE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Arduino Module Assignment Execute Sequence</b></em>' reference list.
@@ -90,7 +99,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_MODULE_ASSIGNMENT_EXECUTE_SEQUENCE = 2;
+	int TRACE__ARDUINO_MODULE_ASSIGNMENT_EXECUTE_SEQUENCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Arduino Project Setup Sequence</b></em>' reference list.
@@ -99,7 +108,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_PROJECT_SETUP_SEQUENCE = 3;
+	int TRACE__ARDUINO_PROJECT_SETUP_SEQUENCE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Arduino Repeat Execute Sequence</b></em>' reference list.
@@ -108,7 +117,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_REPEAT_EXECUTE_SEQUENCE = 4;
+	int TRACE__ARDUINO_REPEAT_EXECUTE_SEQUENCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Arduino Variable Assignment Execute Sequence</b></em>' reference list.
@@ -117,7 +126,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_SEQUENCE = 5;
+	int TRACE__ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_SEQUENCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Arduino Variable Declaration Execute Sequence</b></em>' reference list.
@@ -126,7 +135,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_VARIABLE_DECLARATION_EXECUTE_SEQUENCE = 6;
+	int TRACE__ARDUINO_VARIABLE_DECLARATION_EXECUTE_SEQUENCE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Analog Pins</b></em>' containment reference list.
@@ -135,7 +144,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_ANALOG_PINS = 7;
+	int TRACE__ARDUINO_TRACED_ANALOG_PINS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Bluetooth Transceivers</b></em>' containment reference list.
@@ -144,7 +153,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS = 8;
+	int TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Boolean Variables</b></em>' containment reference list.
@@ -153,7 +162,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES = 9;
+	int TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES = 10;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Digital Pins</b></em>' containment reference list.
@@ -162,7 +171,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_DIGITAL_PINS = 10;
+	int TRACE__ARDUINO_TRACED_DIGITAL_PINS = 11;
 
 	/**
 	 * The feature id for the '<em><b>Arduino traced Integer Variables</b></em>' containment reference list.
@@ -171,7 +180,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ARDUINO_TRACED_INTEGER_VARIABLES = 11;
+	int TRACE__ARDUINO_TRACED_INTEGER_VARIABLES = 12;
 
 	/**
 	 * The feature id for the '<em><b>Root Steps</b></em>' containment reference list.
@@ -180,7 +189,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__ROOT_STEPS = 12;
+	int TRACE__ROOT_STEPS = 13;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -189,7 +198,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__STATES_TRACE = 13;
+	int TRACE__STATES_TRACE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Trace</em>' class.
@@ -198,7 +207,7 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_FEATURE_COUNT = 14;
+	int TRACE_FEATURE_COUNT = 15;
 
 	/**
 	 * The number of operations of the '<em>Trace</em>' class.
@@ -219,6 +228,17 @@ public interface ArduinoTracePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTrace();
+
+	/**
+	 * Returns the meta object for the reference list '{@link arduinoTrace.Trace#getArduino_BluetoothTransceiver_Push_Sequence <em>Arduino Bluetooth Transceiver Push Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Arduino Bluetooth Transceiver Push Sequence</em>'.
+	 * @see arduinoTrace.Trace#getArduino_BluetoothTransceiver_Push_Sequence()
+	 * @see #getTrace()
+	 * @generated
+	 */
+	EReference getTrace_Arduino_BluetoothTransceiver_Push_Sequence();
 
 	/**
 	 * Returns the meta object for the reference list '{@link arduinoTrace.Trace#getArduino_Delay_Execute_Sequence <em>Arduino Delay Execute Sequence</em>}'.
@@ -406,6 +426,14 @@ public interface ArduinoTracePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRACE = eINSTANCE.getTrace();
+
+		/**
+		 * The meta object literal for the '<em><b>Arduino Bluetooth Transceiver Push Sequence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE = eINSTANCE.getTrace_Arduino_BluetoothTransceiver_Push_Sequence();
 
 		/**
 		 * The meta object literal for the '<em><b>Arduino Delay Execute Sequence</b></em>' reference list feature.

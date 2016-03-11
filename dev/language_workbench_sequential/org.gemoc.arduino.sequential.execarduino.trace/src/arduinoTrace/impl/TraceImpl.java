@@ -12,6 +12,7 @@ import arduinoTrace.States.arduino.TracedBooleanVariable;
 import arduinoTrace.States.arduino.TracedDigitalPin;
 import arduinoTrace.States.arduino.TracedIntegerVariable;
 
+import arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push;
 import arduinoTrace.Steps.Arduino_Delay_Execute;
 import arduinoTrace.Steps.Arduino_If_Execute;
 import arduinoTrace.Steps.Arduino_ModuleAssignment_Execute;
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_BluetoothTransceiver_Push_Sequence <em>Arduino Bluetooth Transceiver Push Sequence</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_Delay_Execute_Sequence <em>Arduino Delay Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_If_Execute_Sequence <em>Arduino If Execute Sequence</em>}</li>
  *   <li>{@link arduinoTrace.impl.TraceImpl#getArduino_ModuleAssignment_Execute_Sequence <em>Arduino Module Assignment Execute Sequence</em>}</li>
@@ -65,6 +67,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
+	/**
+	 * The cached value of the '{@link #getArduino_BluetoothTransceiver_Push_Sequence() <em>Arduino Bluetooth Transceiver Push Sequence</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArduino_BluetoothTransceiver_Push_Sequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Arduino_BluetoothTransceiver_Push> arduino_BluetoothTransceiver_Push_Sequence;
+
 	/**
 	 * The cached value of the '{@link #getArduino_Delay_Execute_Sequence() <em>Arduino Delay Execute Sequence</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -222,6 +234,18 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	@Override
 	protected EClass eStaticClass() {
 		return ArduinoTracePackage.Literals.TRACE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Arduino_BluetoothTransceiver_Push> getArduino_BluetoothTransceiver_Push_Sequence() {
+		if (arduino_BluetoothTransceiver_Push_Sequence == null) {
+			arduino_BluetoothTransceiver_Push_Sequence = new EObjectResolvingEList<Arduino_BluetoothTransceiver_Push>(Arduino_BluetoothTransceiver_Push.class, this, ArduinoTracePackage.TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE);
+		}
+		return arduino_BluetoothTransceiver_Push_Sequence;
 	}
 
 	/**
@@ -426,6 +450,8 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ArduinoTracePackage.TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE:
+				return getArduino_BluetoothTransceiver_Push_Sequence();
 			case ArduinoTracePackage.TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE:
 				return getArduino_Delay_Execute_Sequence();
 			case ArduinoTracePackage.TRACE__ARDUINO_IF_EXECUTE_SEQUENCE:
@@ -467,6 +493,10 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ArduinoTracePackage.TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE:
+				getArduino_BluetoothTransceiver_Push_Sequence().clear();
+				getArduino_BluetoothTransceiver_Push_Sequence().addAll((Collection<? extends Arduino_BluetoothTransceiver_Push>)newValue);
+				return;
 			case ArduinoTracePackage.TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE:
 				getArduino_Delay_Execute_Sequence().clear();
 				getArduino_Delay_Execute_Sequence().addAll((Collection<? extends Arduino_Delay_Execute>)newValue);
@@ -535,6 +565,9 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ArduinoTracePackage.TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE:
+				getArduino_BluetoothTransceiver_Push_Sequence().clear();
+				return;
 			case ArduinoTracePackage.TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE:
 				getArduino_Delay_Execute_Sequence().clear();
 				return;
@@ -589,6 +622,8 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ArduinoTracePackage.TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE:
+				return arduino_BluetoothTransceiver_Push_Sequence != null && !arduino_BluetoothTransceiver_Push_Sequence.isEmpty();
 			case ArduinoTracePackage.TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE:
 				return arduino_Delay_Execute_Sequence != null && !arduino_Delay_Execute_Sequence.isEmpty();
 			case ArduinoTracePackage.TRACE__ARDUINO_IF_EXECUTE_SEQUENCE:

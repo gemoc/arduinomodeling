@@ -73,9 +73,8 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
     if ((_module_1 instanceof BluetoothTransceiver)) {
       Module _module_2 = _self.getModule();
       List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_2));
-      Expression _operand_4 = _self.getOperand();
-      Object _evaluate_2 = Expression_EvaluableAspect.evaluate(_operand_4);
-      _dataToSend.add(((Integer) _evaluate_2));
+      Integer _level = Pin_EvaluableAspect.level(pin);
+      _dataToSend.add(_level);
       Module _module_3 = _self.getModule();
       BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_3));
     }

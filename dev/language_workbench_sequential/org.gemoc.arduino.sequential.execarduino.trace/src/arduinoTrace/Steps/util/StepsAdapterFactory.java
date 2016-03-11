@@ -70,6 +70,18 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	protected StepsSwitch<Adapter> modelSwitch =
 		new StepsSwitch<Adapter>() {
 			@Override
+			public Adapter caseArduino_BluetoothTransceiver_Push(Arduino_BluetoothTransceiver_Push object) {
+				return createArduino_BluetoothTransceiver_PushAdapter();
+			}
+			@Override
+			public Adapter caseArduino_BluetoothTransceiver_Push_AbstractSubStep(Arduino_BluetoothTransceiver_Push_AbstractSubStep object) {
+				return createArduino_BluetoothTransceiver_Push_AbstractSubStepAdapter();
+			}
+			@Override
+			public Adapter caseArduino_BluetoothTransceiver_Push_ImplicitStep(Arduino_BluetoothTransceiver_Push_ImplicitStep object) {
+				return createArduino_BluetoothTransceiver_Push_ImplicitStepAdapter();
+			}
+			@Override
 			public Adapter caseArduino_Delay_Execute(Arduino_Delay_Execute object) {
 				return createArduino_Delay_ExecuteAdapter();
 			}
@@ -184,6 +196,48 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push <em>Arduino Bluetooth Transceiver Push</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push
+	 * @generated
+	 */
+	public Adapter createArduino_BluetoothTransceiver_PushAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_AbstractSubStep <em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_AbstractSubStep
+	 * @generated
+	 */
+	public Adapter createArduino_BluetoothTransceiver_Push_AbstractSubStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep <em>Arduino Bluetooth Transceiver Push Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep
+	 * @generated
+	 */
+	public Adapter createArduino_BluetoothTransceiver_Push_ImplicitStepAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link arduinoTrace.Steps.Arduino_Delay_Execute <em>Arduino Delay Execute</em>}'.

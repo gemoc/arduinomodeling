@@ -60,8 +60,8 @@
 								</zip>
 								<!-- Arduino Modeling Workbench  -->
 								
-								<zip destfile="${basedir}/zips/ifdemo.sequential.zip">
-									<fileset dir="${gemoc_sequential_mw_root}/ifdemo/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.ifdemo.sequential.zip">
+									<fileset dir="${gemoc_sequential_mw_root}/org.gemoc.arduino.sequential.ifdemo/" />
 								</zip>
 								
 								<!-- Arduino Concurrent Language Workbench  -->
