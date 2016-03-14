@@ -41,6 +41,7 @@ public class ArduinoTests extends TestSuite {
 		suite.addTestSuite(BooleanModuleGetTest.class);
 		suite.addTestSuite(IntegerModuleGetTest.class);
 		suite.addTestSuite(VariableDeclarationTest.class);
+		suite.addTestSuite(PushButtonTest.class);
 		suite.addTestSuite(BlockTest.class);
 		suite.addTestSuite(BluetoothTransceiverTest.class);
 		return suite;

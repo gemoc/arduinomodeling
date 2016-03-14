@@ -57,7 +57,9 @@ import static extension org.gemoc.arduino.concurrent.operationalsemantics.Intege
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.ModuleAssignment_ExecutableAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.ArduinoCommunicationModule_PushAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.BluetoothTransceiver_PushAspect.*
-
+import static extension org.gemoc.arduino.concurrent.operationalsemantics.PushButton_ToggleAspect.*
+import static extension org.gemoc.arduino.concurrent.operationalsemantics.Project_ExecutableAspect.*
+import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -90,7 +92,24 @@ class Project_ExecutableAspect {
 //	}
 	
 //	@Step
-	def void setup() {
+//	@Override
+//	def void setup() {
+//		_self.eAllContents().forEach[o|{
+//			if (o instanceof IntegerVariable) {
+//				o.value = o.initialValue
+//			} else if (o instanceof BooleanVariable) {
+//				o.value = o.initialValue
+//			} else if (o instanceof Pin) {
+//				(o as Pin).level = 0;
+//			}
+//			else if (o instanceof PushButton) {
+//				(o as PushButton).isPushed = false;
+//			}
+//		}];
+//	}
+	
+	@InitializeModel
+	def public void initializeModel(List<String> args){
 		_self.eAllContents().forEach[o|{
 			if (o instanceof IntegerVariable) {
 				o.value = o.initialValue
@@ -99,12 +118,10 @@ class Project_ExecutableAspect {
 			} else if (o instanceof Pin) {
 				(o as Pin).level = 0;
 			}
+			else if (o instanceof PushButton) {
+				(o as PushButton).isPushed = false;
+			}
 		}];
-	}
-	
-	@InitializeModel
-	def public void initializeModel(List<String> args){
-		_self.setup
 	}
 }
 
@@ -430,7 +447,9 @@ class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	def Object evaluate() {
 		//warning. Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
 		if (_self.module instanceof BluetoothTransceiver){
-			return (_self.module as BluetoothTransceiver).dataReceived.head
+			val temp = (_self.module as BluetoothTransceiver).dataReceived.head()
+			(_self.module as BluetoothTransceiver).dataReceived.remove(temp)
+			return temp
 		}
 		
 		val pin = ArduinoUtils.getPin(_self.module)
@@ -635,7 +654,22 @@ abstract class ArduinoCommunicationModule_PushAspect {
 abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
 	@OverrideAspectMethod
 	def void push(){
-		var temp = _self.dataToSend.head;
-		_self.connectedTransceiver.dataReceived.add(temp)
+		val temp = _self.dataToSend.head;
+		_self.dataToSend.remove(temp)
+		_self.connectedTransceiver.forEach[dataReceived.add(temp)]
+	}
+} 
+
+@Aspect(className=PushButton)
+abstract class PushButton_ToggleAspect {
+	@Override
+	def void toggle(){
+		_self.isPushed = !_self.isPushed
+		val pin = ArduinoUtils.getPin(_self)
+		if(_self.isPushed){
+			pin.level = HIGH
+		}else{
+			pin.level = LOW
+		}
 	}
 } 

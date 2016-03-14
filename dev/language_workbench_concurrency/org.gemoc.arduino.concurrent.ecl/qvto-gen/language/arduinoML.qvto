@@ -140,6 +140,13 @@ main() {
 
 		
 
+		////[ PushButton ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), PushButton.oclAsType(EClass)).oclAsType(PushButton)->map toggleIt2Clock();
+		
+
+
+		
+
 		
 
 
@@ -197,10 +204,13 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_startInternalofThen12I_startInternalofThen();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_startInternalofElse12I_startInternalofElse();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_startInternalofElse102I_startInternalofElse();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_stopInternalFirst262I_stopInternalFirst();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_startInternalofElseEmpty102I_startInternalofElseEmpty();
+		
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), If.oclAsType(EClass)).oclAsType(If)->map I_stopInternalFirst342I_stopInternalFirst();
 		
 		
 
@@ -265,6 +275,9 @@ main() {
 
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), BluetoothTransceiver.oclAsType(EClass)).oclAsType(BluetoothTransceiver)->map sendBeforeReceive982sendBeforeReceive();
+		
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), BluetoothTransceiver.oclAsType(EClass)).oclAsType(BluetoothTransceiver)->map allReceiveTogether132allReceiveTogether();
 		
 		
 
@@ -585,6 +598,27 @@ main() {
 		}
 
 //relation stuff		
+	 	mapping inMM1::PushButton::toggleIt2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= getNameOrUID(self.oclAsType(EObject))+'_toggleIt';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+				//referencedObjectRefs += self.oclAsType(EObject);
+				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "toggle")->first().oclAsType(EObject);
+			
+				name := 'evt_'+getNameOrUID(self.oclAsType(EObject))+'_toggleIt';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+
+//relation stuff		
 
 //relation stuff		
 	
@@ -792,7 +826,11 @@ main() {
 		}
 		
 	
-		mapping inMM1::If::I_startInternalofElse12I_startInternalofElse(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::If::I_startInternalofElse102I_startInternalofElse(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.elseBlock <> null) 
+				
+}
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_startInternalofElse";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
@@ -809,7 +847,32 @@ main() {
 		}
 		
 	
-		mapping inMM1::If::I_stopInternalFirst262I_stopInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM1::If::I_startInternalofElseEmpty102I_startInternalofElseEmpty(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.elseBlock = null) 
+				
+}
+		{
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_startInternalofElseEmpty";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_stop']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+	
+		mapping inMM1::If::I_stopInternalFirst342I_stopInternalFirst(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+			when { 
+				(self.elseBlock <> null) 
+				
+}
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_I_stopInternalFirst";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
@@ -1064,12 +1127,54 @@ main() {
 					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(self.connectedTransceiver.oclAsType(EObject))+'_receive']->first();
+					bindable := theMainBlock.elements[name = getNameOrUID(self.connectedTransceiver->first().oclAsType(EObject))+'_receive']->first();
 					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;
 		}
+		
+	
+
+//Create an intermediate relation
+	mapping inMM1::BluetoothTransceiver::intermediate_allReceiveTogether132allReceiveTogether(an1 : BluetoothTransceiver, an2 : BluetoothTransceiver, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+	{
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allReceiveTogether'+nbi.toString()+"_"+nbj.toString();
+		var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::Coincidence).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+		seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+		type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_receive']->first();
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_receive']->first();
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.relations += result;
+		}
+	}
+	
+	mapping inMM1::BluetoothTransceiver::allReceiveTogether132allReceiveTogether()
+			when { (self.connectedTransceiver->size() > 1) }
+	{
+		init{
+			var sources : Sequence(BluetoothTransceiver) := self.connectedTransceiver->asSequence();
+			var i : Integer := 1;
+			var j : Integer := 1;
+			var size : Integer = sources->size(); 
+			while (i <= size){
+				j := i+1;
+				while (j <= size){
+					theMainBlock.relations +=  self.map intermediate_allReceiveTogether132allReceiveTogether(sources->at(i),sources->at(j), i, j);
+					j := j + 1;
+				};
+				i := i + 1;
+			};
+		}
+	}
+
 		
 
 //relation stuff		
@@ -1151,6 +1256,13 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map send2MSE();
 	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), ArduinoCommunicationModule.oclAsType(EClass)).oclAsType(ArduinoCommunicationModule)->map receive2MSE();
+
+
+
+
+		
+
+	getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), PushButton.oclAsType(EClass)).oclAsType(PushButton)->map toggleIt2MSE();
 
 
 
@@ -1327,6 +1439,19 @@ mapping inMM1::Project::arduino2FeedBack() : FeedBack::ActionModel {
 		{
 			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_receive';
 				solverEvent := theMainBlock.elements[TimeModel::Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_receive')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::PushButton::toggleIt2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+getNameOrUID(self.oclAsType(EObject))+'_toggleIt';
+				caller := self.oclAsType(EObject);
+				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "toggle")->first();
+				solverEvent := theMainBlock.elements[TimeModel::Clock]->select(c|c.name=getNameOrUID(self.oclAsType(EObject))+'_toggleIt')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;

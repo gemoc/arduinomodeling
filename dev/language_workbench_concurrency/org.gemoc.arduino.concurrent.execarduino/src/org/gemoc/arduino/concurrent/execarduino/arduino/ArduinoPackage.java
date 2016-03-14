@@ -1479,13 +1479,22 @@ public interface ArduinoPackage extends EPackage {
 	int PUSH_BUTTON__NAME = ARDUINO_DIGITAL_MODULE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is Pushed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_BUTTON__IS_PUSHED = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Push Button</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUSH_BUTTON_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+	int PUSH_BUTTON_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
@@ -1916,7 +1925,7 @@ public interface ArduinoPackage extends EPackage {
 	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
+	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2821,6 +2830,17 @@ public interface ArduinoPackage extends EPackage {
 	EClass getPushButton();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.concurrent.execarduino.arduino.PushButton#getIsPushed <em>Is Pushed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Pushed</em>'.
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.PushButton#getIsPushed()
+	 * @see #getPushButton()
+	 * @generated
+	 */
+	EAttribute getPushButton_IsPushed();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.execarduino.arduino.Buzzer <em>Buzzer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3047,10 +3067,10 @@ public interface ArduinoPackage extends EPackage {
 	EAttribute getBluetoothTransceiver_DataReceived();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connected Transceiver</em>'.
+	 * @return the meta object for the reference list '<em>Connected Transceiver</em>'.
 	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver()
 	 * @see #getBluetoothTransceiver()
 	 * @generated
@@ -3859,6 +3879,14 @@ public interface ArduinoPackage extends EPackage {
 		EClass PUSH_BUTTON = eINSTANCE.getPushButton();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Pushed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PUSH_BUTTON__IS_PUSHED = eINSTANCE.getPushButton_IsPushed();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4067,7 +4095,7 @@ public interface ArduinoPackage extends EPackage {
 		EAttribute BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = eINSTANCE.getBluetoothTransceiver_DataReceived();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

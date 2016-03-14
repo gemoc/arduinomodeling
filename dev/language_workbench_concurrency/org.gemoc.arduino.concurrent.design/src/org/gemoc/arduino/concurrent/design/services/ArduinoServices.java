@@ -10,15 +10,17 @@
  */
 package org.gemoc.arduino.concurrent.design.services;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -35,7 +37,8 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
-import org.gemoc.arduino.concurrent.execarduino.ArduinoUtils;
+import org.gemoc.arduino.concurrent.design.ArduinoDesignerUtils;
+import org.gemoc.arduino.concurrent.execarduino.arduino.AmbientLightSensor;
 import org.gemoc.arduino.concurrent.execarduino.arduino.AnalogPin;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoAnalogModule;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoBoard;
@@ -47,29 +50,38 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryExpression;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryIntegerExpression;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryIntegerOperatorKind;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Block;
+import org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanModuleGet;
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariableRef;
+import org.gemoc.arduino.concurrent.execarduino.arduino.Buzzer;
+import org.gemoc.arduino.concurrent.execarduino.arduino.Color;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Constant;
+import org.gemoc.arduino.concurrent.execarduino.arduino.Control;
 import org.gemoc.arduino.concurrent.execarduino.arduino.DigitalPin;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Expression;
+import org.gemoc.arduino.concurrent.execarduino.arduino.Fan;
 import org.gemoc.arduino.concurrent.execarduino.arduino.If;
+import org.gemoc.arduino.concurrent.execarduino.arduino.InfraRedSensor;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Instruction;
 import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerConstant;
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.concurrent.execarduino.arduino.LED;
+import org.gemoc.arduino.concurrent.execarduino.arduino.MicroServo;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleGet;
 import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleInstruction;
+import org.gemoc.arduino.concurrent.execarduino.arduino.MusicPlayer;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Project;
+import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton;
+import org.gemoc.arduino.concurrent.execarduino.arduino.RotationSensor;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Sketch;
+import org.gemoc.arduino.concurrent.execarduino.arduino.SoundSensor;
 import org.gemoc.arduino.concurrent.execarduino.arduino.UnaryBooleanExpression;
 import org.gemoc.arduino.concurrent.execarduino.arduino.UnaryBooleanOperatorKind;
 import org.gemoc.arduino.concurrent.execarduino.arduino.UnaryExpression;
@@ -78,16 +90,13 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.UnaryIntegerOperatorKind
 import org.gemoc.arduino.concurrent.execarduino.arduino.Variable;
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableDeclaration;
-import org.gemoc.arduino.concurrent.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.concurrent.execarduino.arduino.While;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 public class ArduinoServices {
-
-	private static final String IMAGES_PATH = "/org.gemoc.arduino.concurrent.design/images/";
-
+	
 	public void updateDigitalPins(ArduinoBoard platform, String totalOfPins) {
 		List<DigitalPin> pinsTmp = new ArrayList<DigitalPin>();
 		pinsTmp.addAll(platform.getDigitalPins());
@@ -137,6 +146,79 @@ public class ArduinoServices {
 			}
 		}
 	}
+	
+	public List<EObject> getProjectBlocks(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			if (eObject.eContainer() instanceof Project) {
+				Project p = (Project) eObject.eContainer();
+ 				p.getSketches().stream().forEach(s->res.add(s.getBlock()));
+			}
+		} else {
+			res.addAll(eObject.eContents());
+		}
+		return res;
+	}
+	
+	public EObject getRoot(EObject eObject) {
+		EObject root = eObject;
+		while (root != null && !(root instanceof Project)) {
+			root = root.eContainer();
+		}
+		return root;
+	}
+	
+	public List<EObject> getSketches(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			if (eObject.eContainer() instanceof Project) {
+				res.addAll(((Project) eObject.eContainer()).getSketches());
+			}
+		} else {
+			res.addAll(eObject.eContents());
+		}
+		return res;
+	}
+	
+	public List<EObject> getBlocks(EObject eObject) {
+		List<EObject> res = new ArrayList<>();
+		if (eObject instanceof Sketch) {
+			res.add(((Sketch)eObject).getBlock());
+			return res;
+		}
+		if (eObject instanceof Control) {
+			res.add(((Control)eObject).getBlock());
+			if (eObject instanceof If) {
+				If ifElt = (If)eObject;
+				if (ifElt.getElseBlock() != null) {
+					res.add(ifElt.getElseBlock());
+				}
+			}
+			return res;
+		}
+		return res;
+	}
+	
+	public Integer getLevel(EObject eObject) {
+		if (eObject instanceof Pin) {
+			return ((Pin)eObject).getLevel();
+		}
+		if (eObject instanceof Module) {
+			if (eObject.eContainer() instanceof Pin) {
+				return ((Pin)(eObject.eContainer())).getLevel();
+			}
+		}
+		return 0;
+	}
+	
+	public String getAnalogPinName(ArduinoBoard board) {
+			return board.getAnalogPins().size()+"";
+	}
+	
+	public String getDigitalPinName(ArduinoBoard board) {
+		int nb = board.getDigitalPins().size()-1;
+		return nb+"";
+	}
 
 	public List<AnalogPin> getAnalogPins(EObject obj) {
 		List<AnalogPin> result = new ArrayList<>();
@@ -145,13 +227,125 @@ public class ArduinoServices {
 		}
 		return result;
 	}
-
-	public List<DigitalPin> getDigitalPins(EObject obj) {
-		List<DigitalPin> result = new ArrayList<>();
-		for (int i = 0; i < 6; i++) {
-			result.add(ArduinoFactory.eINSTANCE.createDigitalPin());
+	
+	public List<ArduinoBoard> getArduinoBoards(Project project) {
+		return project.getBoards().stream()
+				.filter(b->b instanceof ArduinoBoard)
+				.map(b->(ArduinoBoard) b)
+				.collect(Collectors.toList());
+	}
+	
+	public boolean isPinAvailable(Pin pin) {
+		if (pin instanceof AnalogPin) {
+			return ((AnalogPin)pin).getModule() == null;
 		}
-		return result;
+		if (pin instanceof DigitalPin) {
+			return ((DigitalPin)pin).getModule() == null;
+		}
+		return false;
+	}
+
+	public DigitalPin getAvailableDigitalPin(ArduinoBoard board) {
+		List<DigitalPin> pins = board.getDigitalPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
+		if (pins.isEmpty()) {
+			return null;
+		}
+		return pins.get(0);
+	}
+	
+	public boolean isDigitalPinUnavailable(ArduinoBoard board) {
+		return getAvailableDigitalPin(board) == null;
+	}
+	
+	public boolean isDigitalPinAvailable(ArduinoBoard board) {
+		return getAvailableDigitalPin(board) != null;
+	}
+	
+	public AnalogPin getAvailableAnalogPin(ArduinoBoard board) {
+		List<AnalogPin> pins = board.getAnalogPins().stream().filter(p->p.getModule() == null).collect(Collectors.toList());
+		if (pins.isEmpty()) {
+			return null;
+		}
+		return pins.get(0);
+	}
+	
+	public boolean isAnalogPinUnavailable(ArduinoBoard board) {
+		return getAvailableAnalogPin(board) == null;
+	}
+	
+	public boolean isAnalogPinAvailable(ArduinoBoard board) {
+		return getAvailableAnalogPin(board) != null;
+	}
+	
+	public EObject getPreviousInstruction(EObject instruction) {
+		EObject res = null;
+		if (instruction.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+			int i = instructions.indexOf(instruction);
+			if (i > 0) {
+				res = instructions.get(i-1);
+			}
+		}
+		return res;
+	}
+	
+	public EObject getNextInstruction(EObject instruction) {
+		EObject res = null;
+		if (instruction.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+			int i = instructions.indexOf(instruction);
+			res = instructions.get(i+1);
+		}
+		return res;
+	}
+
+	public EObject reorderInstructionsTarget(EObject newNext, EObject toMove) {
+		Block block = (Block)toMove.eContainer();
+		List<Instruction> instructions = block.getInstructions();
+		instructions.remove(toMove);
+		int i = instructions.indexOf(newNext);
+		instructions.add(i,(Instruction)toMove);
+		return null;
+	}
+	
+	public EObject reorderInstructionsSource(EObject newNext, EObject toMove) {
+		Block block = (Block)toMove.eContainer();
+		List<Instruction> instructions = block.getInstructions();
+		instructions.remove(toMove);
+		//FIXME Workaround the sirius bug in the variable initialization of the reconnect source tool.
+		int i = instructions.indexOf(newNext)+1;
+		instructions.add(i,(Instruction)toMove);
+		return null;
+	}
+	
+	public EObject getElement(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
+	}
+	
+	public EObject getSource(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
+	}
+	
+	public EObject getTarget(EObject eObject) {
+		if (eObject.eContainer() instanceof Block) {
+			List<Instruction> instructions = ((Block) eObject.eContainer()).getInstructions();
+			if (!instructions.isEmpty()) {
+				return eObject;
+			}
+		}
+		return eObject;
 	}
 
 	public Module getModule(Pin pin) {
@@ -163,38 +357,41 @@ public class ArduinoServices {
 		}
 		return res;
 	}
-
-//	public String getImage(Module module) {
-//		// String imageName = module.getImage();
-//		return getImage("");
-//	}
-
-	public String getImage(LED led) {
-		Integer level = ArduinoUtils.getPin(led).getLevel();
-		if (level != null && level > 0) {
-			switch (led.getColor()) {
-			case BLUE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/blue_led_1023.jpg";
-			case RED: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/red_led_1023.jpg";
-			case WHITE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/white_led_1023.jpg";
-			}
-		}
+	
+	public Color cycleLEDColors(LED led) {
 		switch (led.getColor()) {
-		case BLUE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/blue_led.jpg";
-		case RED: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/red_led.jpg";
-		case WHITE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/white_led.jpg";
+		case BLUE: return Color.RED;
+		case RED: return Color.WHITE;
+		case WHITE: return Color.BLUE;
 		}
-		return "";
+		return null;
 	}
-
-	public String getImage(ArduinoBoard platform) {
-		return getImage("");
-	}
-
-	private String getImage(String imageName) {
-		if (imageName != null && imageName.length() > 0) {
-			return IMAGES_PATH + imageName;
+	
+	public BinaryIntegerOperatorKind cycleArithmeticOperators(BinaryIntegerExpression expression) {
+		switch (expression.getOperator()) {
+		case PLUS: return BinaryIntegerOperatorKind.MINUS;
+		case MINUS: return BinaryIntegerOperatorKind.MUL;
+		case MUL: return BinaryIntegerOperatorKind.DIV;
+		case DIV: return BinaryIntegerOperatorKind.POURCENT;
+		case POURCENT: return BinaryIntegerOperatorKind.MIN;
+		case MIN: return BinaryIntegerOperatorKind.MAX;
+		case MAX: return BinaryIntegerOperatorKind.PLUS;
 		}
-		return IMAGES_PATH + "default.svg";
+		return null;
+	}
+	
+	public BinaryBooleanOperatorKind cycleComparisonOperators(BinaryBooleanExpression expression) {
+		switch (expression.getOperator()) {
+		case EQUAL: return BinaryBooleanOperatorKind.DIFFERENT;
+		case DIFFERENT: return BinaryBooleanOperatorKind.INF;
+		case INF: return BinaryBooleanOperatorKind.INF_OR_EQUAL;
+		case INF_OR_EQUAL: return BinaryBooleanOperatorKind.SUP;
+		case SUP: return BinaryBooleanOperatorKind.SUP_OR_EQUAL;
+		case SUP_OR_EQUAL: return BinaryBooleanOperatorKind.AND;
+		case AND: return BinaryBooleanOperatorKind.OR;
+		case OR: return BinaryBooleanOperatorKind.EQUAL;
+		}
+		return null;
 	}
 
 	public List<Board> getPlatforms(EObject object) {
@@ -239,21 +436,55 @@ public class ArduinoServices {
 
 		return (Sketch) eObject;
 	}
-
-	public List<EObject> getConnectedModules(EObject board) {
+	
+	public List<EObject> getConnectedModules(Board board) {
 		List<EObject> result = new ArrayList<>();
-		if (board instanceof ArduinoBoard) {
-			ArduinoBoard arduinoBoard = (ArduinoBoard) board;
-			for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+		if (board != null) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
+				}
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
 			}
-			for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
-				final Module module = pin.getModule();
-				if (module != null) {
-					result.add(module);
+		}
+		return result;
+	}
+	
+	public List<EObject> getConnectedAnalogModules(Board board) {
+		List<EObject> result = new ArrayList<>();
+		if (board != null) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (AnalogPin pin : arduinoBoard.getAnalogPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
+				}
+			}
+		}
+		return result;
+	}
+	
+	public List<EObject> getConnectedDigitalModules(Board board) {
+		List<EObject> result = new ArrayList<>();
+		if (board != null) {
+			if (board instanceof ArduinoBoard) {
+				ArduinoBoard arduinoBoard = (ArduinoBoard) board;
+				for (DigitalPin pin : arduinoBoard.getDigitalPins()) {
+					final Module module = pin.getModule();
+					if (module != null) {
+						result.add(module);
+					}
 				}
 			}
 		}
@@ -261,17 +492,17 @@ public class ArduinoServices {
 	}
 
 	public String computeExpressionLabel(ModuleAssignment e) {
-		String label = e.getModule().getName();
-		if (e.getOperand() instanceof BooleanConstant) {
-			if (((BooleanConstant) e.getOperand()).isValue()) {
-				label += " : on";
-			} else {
-				label += " : off";
-			}
-		}
-		if (e.getOperand() instanceof IntegerConstant) {
-			label += " : " + ((IntegerConstant) e.getOperand()).getValue();
-		}
+		String label = e.getModule().getName() + " : " + computeLabel(e.getOperand());
+//		if (e.getOperand() instanceof BooleanConstant) {
+//			if (((BooleanConstant) e.getOperand()).isValue()) {
+//				label += " : on";
+//			} else {
+//				label += " : off";
+//			}
+//		}
+//		if (e.getOperand() instanceof IntegerConstant) {
+//			label += " : " + ((IntegerConstant) e.getOperand()).getValue();
+//		}
 		return label;
 	}
 
@@ -315,20 +546,10 @@ public class ArduinoServices {
 		if (Expression instanceof ModuleGet) {
 			return "get(" + ((ModuleGet) Expression).getModule().getName() + ")";
 		}
-		if (Expression instanceof BinaryBooleanExpression) {
-			String label = "";
-			label += computeLabel(((BinaryBooleanExpression) Expression).getLeft()) + " ";
-			label += getOperator(((BinaryBooleanExpression) Expression).getOperator());
-			label += " " + computeLabel(((BinaryBooleanExpression) Expression).getRight());
-			return label;
-		}
 		if (Expression instanceof BinaryIntegerExpression) {
-			String label = "(";
-			label += computeLabel(((BinaryExpression) Expression).getLeft());
-			label += getOperator(((BinaryIntegerExpression) Expression).getOperator());
-			label += computeLabel(((BinaryExpression) Expression).getRight());
-			label += ")";
-			return label;
+			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
+					+ getOperator(((BinaryIntegerExpression) Expression).getOperator())
+					+ computeLabel(((BinaryExpression) Expression).getRight()) + ")";
 		}
 		if (Expression instanceof BinaryBooleanExpression) {
 			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
@@ -392,18 +613,6 @@ public class ArduinoServices {
 		return getOperator(operator.getOperator());
 	}
 
-	public String computeLabel(ModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
-	public String computeLabel(IntegerModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
-	public String computeLabel(BooleanModuleGet instruction) {
-		return instruction.getModule().getName();
-	}
-
 	public String computeLabel(If instruction) {
 		String label = "If ";
 		if (instruction.getCondition() != null) {
@@ -418,21 +627,6 @@ public class ArduinoServices {
 			label += set.getVariable().getName() + " = " + computeLabel(set.getOperand());
 		}
 		return label;
-	}
-
-	public String computeLabel(VariableRef ref) {
-		if (ref instanceof IntegerVariableRef) {
-			IntegerVariable var = ((IntegerVariableRef) ref).getVariable();
-			if (var != null) {
-				return var.getName();
-			}
-		} else if (ref instanceof IntegerVariableRef) {
-			BooleanVariable var = ((BooleanVariableRef) ref).getVariable();
-			if (var != null) {
-				return var.getName();
-			}
-		}
-		return "";
 	}
 
 	public String computeLabel(String operator) {
@@ -663,26 +857,27 @@ public class ArduinoServices {
 		}
 		return null;
 	}
-
-	public EObject getNextInstruction(EObject current) {
-		EObject res = null;
-		if (current instanceof Instruction) {
-			Block block = (Block) current.eContainer();
-			List<Instruction> instructions = block.getInstructions();
-			int index = instructions.indexOf(current);
-			if (index != -1) {
-				index++;
-				if (index == instructions.size() && block instanceof Sketch) {
-					res = block;
-				} else if (index < instructions.size()) {
-					res = instructions.get(index);
-				}
+	
+	public Sketch getNextSketch(Sketch current) {
+		if (current.eContainer() instanceof Project) {
+			List<Sketch> sketches = ((Project) current.eContainer()).getSketches();
+			int idx = sketches.indexOf(current);
+			if (idx != -1 && idx < sketches.size()-1) {
+				return sketches.get(idx+1);
 			}
-		} else if (current instanceof Sketch) {
-			List<Instruction> instructions = ((Sketch) current).getBlock().getInstructions();
-			res = instructions.isEmpty() ? null : instructions.get(0);
 		}
-		return res;
+		return null;
+	}
+	
+	public Instruction getInstructionsToMove(Instruction instruction) {
+		List<Instruction> instructions = ((Block)instruction.eContainer()).getInstructions();
+		int idx = instructions.indexOf(instruction);
+		if (idx == 0) {
+			return null;
+		} else if (idx > 0) {
+			return instructions.get(idx-1);
+		}
+		return null;
 	}
 
 	public List<BinaryIntegerExpression> getNumericalExpressions(EObject container) {
@@ -841,25 +1036,86 @@ public class ArduinoServices {
 	public boolean isUploadable(Project project) {
 		return isValidHardware(project) && isValidSketch(project);
 	}
+	
+	public String getModuleAssignmentIcon(ModuleAssignment moduleAssignment) {
+		if (moduleAssignment.getModule() instanceof ArduinoAnalogModule) {
+			return "/org.gemoc.arduino.concurrent.design/icons/Level.png";
+		} else if (moduleAssignment.getModule() instanceof ArduinoDigitalModule) {
+			return "/org.gemoc.arduino.concurrent.design/icons/Status.png";
+		}
+		return "/org.gemoc.arduino.concurrent.design/images/default.svg";
+	}
+	
+	public String getImage(LED led) {
+		Integer level = ArduinoDesignerUtils.getPin(led).getLevel();
+		if (level != null && level > 0) {
+			switch (led.getColor()) {
+			case BLUE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/blue_led_1023.jpg";
+			case RED: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/red_led_1023.jpg";
+			case WHITE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/white_led_1023.jpg";
+			}
+		}
+		switch (led.getColor()) {
+		case BLUE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/blue_led.jpg";
+		case RED: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/red_led.jpg";
+		case WHITE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/white_led.jpg";
+		}
+		return "/org.gemoc.arduino.concurrent.design/images/default.svg";
+	}
+	
+	public String getImage(BluetoothTransceiver bluetoothTransceiver) {
+		return "/org.gemoc.arduino.concurrent.design/images/bluetooth.png";
+	}
+	
+	public String getImage(Module module) {
+		if (module instanceof LED) {
+			switch (((LED)module).getColor()) {
+			case BLUE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/blue_led.jpg";
+			case RED: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/red_led.jpg";
+			case WHITE: return "/org.gemoc.arduino.concurrent.design/images/dfrobot/white_led.jpg";
+			}
+		}
+		else if (module instanceof Buzzer) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/buzzer.jpg";
+		}
+		else if (module instanceof PushButton) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/push_button.jpg";
+		}
+		else if (module instanceof MicroServo) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/servo.jpg";
+		}
+		else if (module instanceof InfraRedSensor) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/infrared.jpg";
+		}
+		else if (module instanceof Fan) {
+			return "/org.gemoc.arduino.concurrent.design/images/fan.jpg";
+		}
+		else if (module instanceof MusicPlayer) {
+			return "/org.gemoc.arduino.concurrent.design/images/music_player.jpg";
+		}
+		else if (module instanceof AmbientLightSensor) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/ambient_light.jpg";
+		}
+		else if (module instanceof RotationSensor) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/rotation_sensor_v1.jpg";
+		}
+		else if (module instanceof SoundSensor) {
+			return "/org.gemoc.arduino.concurrent.design/images/dfrobot/sound_sensor.jpg";
+		}
+		else if (module instanceof BluetoothTransceiver) {
+			return "/org.gemoc.arduino.concurrent.design/images/bluetooth.png";
+		}
+		return "/org.gemoc.arduino.concurrent.design/images/default.svg";
+	}
 
 	public String getImage(ModuleInstruction instruction) {
-		return "/org.gemoc.arduino.concurrent.design/images/default.svg";
-		// return "/org.gemoc.arduino.concurrent.design/images/"
-		// + instruction.getModule().getImage();
+		Module module = instruction.getModule();
+		return getImage(module);
 	}
 
 	public String getImage(ModuleGet instruction) {
-		// if (instruction instanceof LED) {
-		// switch (((LED)instruction).getColor()) {
-		// case BLUE:
-		// return
-		//
-		//
-		// }
-		// }
-		return "/org.gemoc.arduino.concurrent.design/images/default.svg";
-		// return "/org.gemoc.arduino.concurrent.design/images/"
-		// + instruction.getModule().getImage();
+		Module module = instruction.getModule();
+		return getImage(module);
 	}
 
 	public void addVariable(Instruction container, Variable variable) {

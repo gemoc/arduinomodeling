@@ -383,6 +383,12 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="ExecArduino.ecore#//PushButton"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExecArduino.ecore#//PushButton/isPushed"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ExecArduino.ecore#//PushButton/toggle"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ExecArduino.ecore#//Buzzer"/>

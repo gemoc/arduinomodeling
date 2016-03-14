@@ -66,7 +66,6 @@ const NUMBER_ArduinoModules : int is [aProject.eAllContents(ArduinoModule)->size
 const NUMBER_Blocks : int is [aProject.eAllContents(Block)->size()/]
 const NUMBER_ArduinoBoards : int is [aProject.eAllContents(ArduinoBoard)->size()/]
 const NUMBER_ArduinoDigitalModules : int is [aProject.eAllContents(ArduinoDigitalModule)->size()/]
-const NUMBER_AtomicBlocks : int is [aProject.eAllContents(AtomicBlock)->size()/]
 const NUMBER_ArduinoAnalogModules : int is [aProject.eAllContents(ArduinoAnalogModule)->size()/]
 const NUMBER_BooleanVariableRefs : int is [aProject.eAllContents(BooleanVariableRef)->size()/]
 const NUMBER_Objects : int is [aProject.eAllContents(Object)->size()/]
@@ -80,6 +79,7 @@ type DigitalPin_digitalPinsArray is array [ArduinoBoard.eContents(DigitalPin)->s
 type AnalogPin_analogPinsArray is array [ArduinoBoard.eContents(AnalogPin)->size()/] of int
 type EInt_dataToSendArray is array [BluetoothTransceiver.eContents(EInt)->size()/] of int
 type EInt_dataReceivedArray is array [BluetoothTransceiver.eContents(EInt)->size()/] of int
+type BluetoothTransceiver_connectedTransceiverArray is array [BluetoothTransceiver.eContents(BluetoothTransceiver)->size()/] of int
 
 
 /*********************************************************************
@@ -93,6 +93,9 @@ Defining the Functions for : Control
 **********************************************************************/
 /*********************************************************************
 Defining the Functions for : ArduinoCommunicationModule
+**********************************************************************/
+/*********************************************************************
+Defining the Functions for : PushButton
 **********************************************************************/
 /*********************************************************************
 Defining the Functions for : Delay
@@ -143,11 +146,19 @@ process p[element.name/] ['['/][element.name/]_send:in none,[element.name/]_rece
     from s0  [element.name/]_send; global:=ArduinoCommunicationModule_push( global , global.refToElement_id) ;  to s0
     from s0  [element.name/]_receive;  to s0
 [/for]
+/************************* PushButton Process Instances***************************/
+[for (element : PushButton| aProject.eAllContents(PushButton))]
+process p[element.name/] ['['/][element.name/]_toggleIt:in none[']'/](&global : SystemDataRoot, id : read int) is
+	states s0
+	var _self:PushButton
+    from s0  [element.name/]_toggleIt; global:=PushButton_toggle( global , global.refToElement_id) ;  to s0
+[/for]
 process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(Instruction))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Control| aProject.eAllContents(Control))]
 [element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
-[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : PushButton| aProject.eAllContents(PushButton))]
+[element.name/]_toggleIt:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 [/for][for (element : If| aProject.eAllContents(If))]
 [/for][for (element : While| aProject.eAllContents(While))]
 [/for][for (element : Repeat| aProject.eAllContents(Repeat))]
@@ -176,6 +187,10 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
     from s0  [element.name/]_send;  to s0
     from s0  [element.name/]_receive;  to s0
+
+[/for]
+[for (element : PushButton| aProject.eAllContents(PushButton))]
+    from s0  [element.name/]_toggleIt;  to s0
 
 [/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
@@ -208,7 +223,8 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start:out none,[element.name/]_stop:out none,[/for][for (element : Control| aProject.eAllContents(Control))]
 [element.name/]_doEvaluate:out none,[element.name/]_evaluatedToTrue:out none,[element.name/]_evaluatedToFalse:out none,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
-[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_send:out none,[element.name/]_receive:out none,[/for][for (element : PushButton| aProject.eAllContents(PushButton))]
+[element.name/]_toggleIt:out none,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 [/for][for (element : If| aProject.eAllContents(If))]
 [/for][for (element : While| aProject.eAllContents(While))]
 [/for][for (element : Repeat| aProject.eAllContents(Repeat))]
@@ -238,6 +254,10 @@ process pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllC
 [for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
     from s0  [element.name/]_send;  to s0
     from s0  [element.name/]_receive;  to s0
+
+[/for]
+[for (element : PushButton| aProject.eAllContents(PushButton))]
+    from s0  [element.name/]_toggleIt;  to s0
 
 [/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
@@ -285,6 +305,8 @@ port
 [element.name/]_doEvaluate: none,[element.name/]_evaluatedToTrue: none,[element.name/]_evaluatedToFalse: none,
 [/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
 [element.name/]_send: none,[element.name/]_receive: none,
+[/for][for (element : PushButton| aProject.eAllContents(PushButton))]
+[element.name/]_toggleIt: none,
 [/for][for (element : Delay| aProject.eAllContents(Delay))]
 
 [/for][for (element : If| aProject.eAllContents(If))]
@@ -309,7 +331,8 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 [element.name/]_start,[element.name/]_stop,[/for][for (element : Sketch| aProject.eAllContents(Sketch))]
 [element.name/]_start,[element.name/]_stop,[/for][for (element : Control| aProject.eAllContents(Control))]
 [element.name/]_doEvaluate,[element.name/]_evaluatedToTrue,[element.name/]_evaluatedToFalse,[/for][for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
-[element.name/]_send,[element.name/]_receive,[/for][for (element : Delay| aProject.eAllContents(Delay))]
+[element.name/]_send,[element.name/]_receive,[/for][for (element : PushButton| aProject.eAllContents(PushButton))]
+[element.name/]_toggleIt,[/for][for (element : Delay| aProject.eAllContents(Delay))]
 ,[/for][for (element : If| aProject.eAllContents(If))]
 ,[/for][for (element : While| aProject.eAllContents(While))]
 ,[/for][for (element : Repeat| aProject.eAllContents(Repeat))]
@@ -329,6 +352,9 @@ pUnConstrainedSemantics['['/][for (element : Instruction| aProject.eAllContents(
 [/for]
 [for (element : ArduinoCommunicationModule| aProject.eAllContents(ArduinoCommunicationModule))]
 || p[element.name/] ['['/][element.name/]_send,[element.name/]_receive[']'/] (&global, ID)
+[/for]
+[for (element : PushButton| aProject.eAllContents(PushButton))]
+|| p[element.name/] ['['/][element.name/]_toggleIt[']'/] (&global, ID)
 [/for]
 [for (element : Delay| aProject.eAllContents(Delay))]
 || p[element.name/] ['['/][']'/] (&global, ID)

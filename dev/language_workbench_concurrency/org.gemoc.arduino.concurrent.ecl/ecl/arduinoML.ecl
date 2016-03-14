@@ -29,6 +29,9 @@ def if (self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().al
 --def : send : Event = self.push()
 def if (self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allSubobjectsOfKind(ModuleGet)->select(ma|(ma).oclAsType(ModuleGet).module = self))->size() >0  : receive : Event = self
 
+context PushButton
+ def : toggleIt : Event = self.toggle()
+ 
 context Sketch 
 	inv S_nonReentrant:
 		Relation Alternates(self.start, self.stop)
@@ -72,9 +75,15 @@ context If
 		Relation Coincides(self.evaluatedToTrue, self.block.instructions->first().start)		
 		
 	inv I_startInternalofElse:
-		Relation Coincides(self.evaluatedToFalse, self.elseBlock.instructions->first().start)	
+		(self.elseBlock <> null) implies
+		(Relation Coincides(self.evaluatedToFalse, self.elseBlock.instructions->first().start))
+		
+	inv I_startInternalofElseEmpty:
+		(self.elseBlock = null) implies
+		(Relation Coincides(self.evaluatedToFalse, self.stop))		
 
 	inv I_stopInternalFirst:
+		(self.elseBlock <> null) implies
 		let i_lastInstructionfromthenOrElse : Event = Expression Union(self.block.instructions->last().stop, self.elseBlock.instructions->last().stop) in
 		Relation Coincides(i_lastInstructionfromthenOrElse, self.stop)		
 
@@ -148,8 +157,13 @@ context BluetoothTransceiver
 		and
 		((self.connectedTransceiver.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().allInstances(ModuleGet)->select(ma|(ma).oclAsType(ModuleGet).module = self.connectedTransceiver))->size() >0)
 		implies
-		(Relation Coincides(self.send, self.connectedTransceiver.receive))
-		
+		(Relation Coincides(self.send, self.connectedTransceiver->first().receive))
+	
+	inv allReceiveTogether:
+		(self.connectedTransceiver->size() > 1)
+		implies
+		(Relation Coincides(self.connectedTransceiver.receive))
+	
 context VariableAssignment
 	inv getDataIfModuleGetCom:
 		(self.allInstances(ModuleGet)->select(mg | (mg).oclAsType(ModuleGet).module.oclIsKindOf(BluetoothTransceiver))->size() > 0)

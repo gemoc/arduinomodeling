@@ -11,6 +11,12 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Push Button</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.gemoc.arduino.concurrent.execarduino.arduino.PushButton#toggle() <em>Toggle</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class PushButtonTest extends ArduinoDigitalModuleTest {
@@ -65,6 +71,19 @@ public class PushButtonTest extends ArduinoDigitalModuleTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.PushButton#toggle() <em>Toggle</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.arduino.concurrent.execarduino.arduino.PushButton#toggle()
+	 * @generated
+	 */
+	public void testToggle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //PushButtonTest
