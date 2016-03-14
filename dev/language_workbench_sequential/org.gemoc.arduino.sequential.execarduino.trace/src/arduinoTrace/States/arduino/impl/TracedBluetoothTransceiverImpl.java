@@ -42,7 +42,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
  *
  * @generated
  */
-public class TracedBluetoothTransceiverImpl extends TracedArduinoCommunicationModuleImpl implements TracedBluetoothTransceiver {
+public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImpl implements TracedBluetoothTransceiver {
 	/**
 	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference.
 	 * <!-- begin-user-doc -->

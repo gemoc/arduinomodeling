@@ -1874,7 +1874,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		arduinoAnalogModuleEClass.getESuperTypes().add(this.getArduinoModule());
 		booleanVariableRefEClass.getESuperTypes().add(this.getVariableRef());
 		booleanVariableRefEClass.getESuperTypes().add(this.getBooleanExpression());
-		arduinoCommunicationModuleEClass.getESuperTypes().add(this.getArduinoDigitalModule());
+		arduinoCommunicationModuleEClass.getESuperTypes().add(this.getArduinoAnalogModule());
 		bluetoothTransceiverEClass.getESuperTypes().add(this.getArduinoCommunicationModule());
 
 		// Initialize classes and features; add operations and parameters

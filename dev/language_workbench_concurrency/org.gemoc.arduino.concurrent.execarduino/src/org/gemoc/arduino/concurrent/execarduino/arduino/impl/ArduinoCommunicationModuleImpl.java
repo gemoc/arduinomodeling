@@ -16,7 +16,7 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoPackage;
  *
  * @generated
  */
-public abstract class ArduinoCommunicationModuleImpl extends ArduinoDigitalModuleImpl implements ArduinoCommunicationModule {
+public abstract class ArduinoCommunicationModuleImpl extends ArduinoAnalogModuleImpl implements ArduinoCommunicationModule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

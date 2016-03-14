@@ -310,7 +310,7 @@
       <eAnnotations source="aspect"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="//ArduinoCommunicationModule">
+  <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="//ArduinoAnalogModule">
     <eOperations name="push">
       <eAnnotations source="aspect"/>
     </eOperations>

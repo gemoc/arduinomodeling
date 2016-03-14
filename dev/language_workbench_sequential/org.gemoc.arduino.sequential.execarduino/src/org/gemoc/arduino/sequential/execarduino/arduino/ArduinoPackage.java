@@ -1895,7 +1895,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_COMMUNICATION_MODULE__NAME;
+	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_ANALOG_MODULE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
@@ -1904,7 +1904,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
+	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Data To Send</b></em>' attribute list.
@@ -1913,7 +1913,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
+	int BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Data Received</b></em>' attribute list.
@@ -1922,7 +1922,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 2;
+	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Bluetooth Transceiver</em>' class.
@@ -1931,7 +1931,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 3;
+	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.sequential.execarduino.arduino.Time <em>Time</em>}' enum.

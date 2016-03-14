@@ -33,7 +33,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
  *
  * @generated
  */
-public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl implements BluetoothTransceiver {
+public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements BluetoothTransceiver {
 	/**
 	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -143,6 +143,17 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 			dataReceived = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
 		}
 		return dataReceived;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void push() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -165,11 +165,6 @@ public class DigitalPinItemProvider extends PinItemProvider {
 			(createChildParameter
 				(ArduinoPackage.Literals.DIGITAL_PIN__MODULE,
 				 ArduinoFactory.eINSTANCE.createFan()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ArduinoPackage.Literals.DIGITAL_PIN__MODULE,
-				 ArduinoFactory.eINSTANCE.createBluetoothTransceiver()));
 	}
 
 }

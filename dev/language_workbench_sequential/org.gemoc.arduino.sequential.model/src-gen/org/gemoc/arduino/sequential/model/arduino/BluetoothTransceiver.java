@@ -19,7 +19,7 @@ package org.gemoc.arduino.sequential.model.arduino;
  * @model
  * @generated
  */
-public interface BluetoothTransceiver extends ArduinoCommunicationModule {
+public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	/**
 	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference.
 	 * <!-- begin-user-doc -->

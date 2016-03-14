@@ -2363,7 +2363,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_COMMUNICATION_MODULE__NAME;
+	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_ANALOG_MODULE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
@@ -2372,7 +2372,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
+	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bluetooth Transceiver</em>' class.
@@ -2381,7 +2381,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
+	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bluetooth Transceiver</em>' class.
@@ -2390,7 +2390,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER_OPERATION_COUNT = ARDUINO_COMMUNICATION_MODULE_OPERATION_COUNT + 0;
+	int BLUETOOTH_TRANSCEIVER_OPERATION_COUNT = ARDUINO_ANALOG_MODULE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.sequential.model.arduino.Time <em>Time</em>}' enum.

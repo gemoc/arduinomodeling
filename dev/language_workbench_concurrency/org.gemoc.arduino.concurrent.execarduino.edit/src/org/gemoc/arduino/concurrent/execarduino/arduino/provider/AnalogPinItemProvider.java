@@ -155,6 +155,11 @@ public class AnalogPinItemProvider extends PinItemProvider {
 			(createChildParameter
 				(ArduinoPackage.Literals.ANALOG_PIN__MODULE,
 				 ArduinoFactory.eINSTANCE.createMusicPlayer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArduinoPackage.Literals.ANALOG_PIN__MODULE,
+				 ArduinoFactory.eINSTANCE.createBluetoothTransceiver()));
 	}
 
 }

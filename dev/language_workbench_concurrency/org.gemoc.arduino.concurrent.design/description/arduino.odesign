@@ -67,14 +67,6 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="HW_wireless" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_BluetoothTransceiver']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_BluetoothTransceiver']" targetFinderExpression="[self.connectedTransceiver/]">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="6" showIcon="false" labelExpression="wireless">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <toolSections name="HW_Platforms_Section" label="Platforms">
           <ownedTools xsi:type="tool:DeleteElementDescription" name="HW_Delete_Wire" label="Delete Wire">
             <element name="element"/>
@@ -500,7 +492,7 @@
         </customization>
       </additionalLayers>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" showOnStartup="true" domainClass="arduino.Project" rootExpression="service:getRoot" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Sketch" titleExpression="Sketch" initialisation="true" showOnStartup="true" domainClass="arduino.Sketch" rootExpression="service:getRoot" enablePopupBars="true">
       <metamodel href="../../org.gemoc.arduino.concurrent.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SK_DigitalModuleGet" semanticCandidatesExpression="feature:eContents" domainClass="arduino.BooleanModuleGet">
@@ -527,10 +519,10 @@
         <nodeMappings name="SK_Constant" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.5/@ownedTools[name='SK_Edit_IntegerConstant']" semanticCandidatesExpression="feature:eContents" doubleClickDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.5/@ownedTools[name='SK_Edit_BooleanConstant']" domainClass="arduino.Constant">
           <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['unknown'/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
           <conditionnalStyles predicateExpression="[self.oclIsKindOf(BooleanConstant)/]">
-            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['bool ' + self.oclAsType(BooleanConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="5" labelPosition="node" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['bool ' + self.oclAsType(BooleanConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20red']"/>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclIsKindOf(IntegerConstant)/]">
-            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['int ' + self.oclAsType(IntegerConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="5" labelPosition="node" resizeKind="EAST_WEST" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']"/>
+            <style xsi:type="style:LozengeNodeDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="['int ' + self.oclAsType(IntegerConstant).value/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20blue']"/>
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SK_Delay" labelDirectEdit="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@toolSections.1/@ownedTools[name='SK_Edit_Delay']" semanticCandidatesExpression="feature:eContents" domainClass="arduino.Delay">
@@ -552,7 +544,7 @@
           <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="moduleAssignmentImageFromWorkspace"/>
         </nodeMappings>
         <nodeMappings name="SK_VariableRef" semanticCandidatesExpression="feature:eContents" domainClass="arduino.VariableRef">
-          <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" sizeComputationExpression="5" labelPosition="node" resizeKind="EAST_WEST">
+          <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
           </style>
@@ -614,7 +606,7 @@
           <subNodeMappings name="Equal" semanticCandidatesExpression="var:self" domainClass="arduino.VariableAssignment">
             <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="=" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="4" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']"/>
           </subNodeMappings>
-          <subNodeMappings name="SK_VariableSubNode" semanticCandidatesExpression="[self.variable/]" domainClass="arduino.Variable">
+          <subNodeMappings name="SK_VariableSubNode" domainClass="arduino.Variable">
             <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="[self.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
@@ -1412,14 +1404,14 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="Toggle breakpoint" icon="/org.gemoc.gemoc_modeling_workbench.ui/icons/debug_exc.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="Toggle Gemoc breakpoint" icon="/org.gemoc.executionframework.extensions.sirius/icons/breakpoint.gif" id="org.gemoc.execution.concurrent.javaengine.ui.debug.sirius.action.GemocconcurrentToggleBreakpointAction"/>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="Toggle Gemoc breakpoint" icon="/org.gemoc.arduino.concurrent.design/icons/breakpoint.gif" id="org.gemoc.execution.concurrent.ccsljavaengine.ui.debug.sirius.action.GemocConcurrentToggleBreakpointAction"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" decoratorPath="/org.gemoc.executionframework.extensions.sirius/icons/breakpoint_enabled.gif" preconditionExpression="service:self.hasEnabledBreakpoint" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']"/>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" decoratorPath="/org.gemoc.executionframework.extensions.sirius/icons/breakpoint_disabled.gif" preconditionExpression="service:self.hasDisabledBreakpoint" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" decoratorPath="org.gemoc.arduino.concurrent.design/icons/breakpoint_enabled.gif" preconditionExpression="service:self.hasEnabledBreakpoint" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" decoratorPath="org.gemoc.arduino.concurrent.design/icons/breakpoint_disabled.gif" preconditionExpression="service:self.hasDisabledBreakpoint" mappings="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_Delay'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_If'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_ModuleAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_Repeat'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_VariableAssignment'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@nodeMappings[name='SK_VariableDeclaration'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Sketch']/@defaultLayer/@containerMappings[name='SK_While']"/>
         </decorationDescriptionsSet>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.hasBeenActivated">
