@@ -19,7 +19,7 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModu
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArduinoCommunicationModuleItemProvider extends ArduinoDigitalModuleItemProvider {
+public class ArduinoCommunicationModuleItemProvider extends ArduinoAnalogModuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

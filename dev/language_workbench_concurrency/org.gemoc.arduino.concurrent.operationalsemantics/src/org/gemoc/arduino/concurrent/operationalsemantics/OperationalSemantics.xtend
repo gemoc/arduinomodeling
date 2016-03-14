@@ -424,7 +424,7 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 	}
 }	
 
-@Aspect(className=IntegerModuleGet) 
+@Aspect(className=IntegerModuleGet)
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {

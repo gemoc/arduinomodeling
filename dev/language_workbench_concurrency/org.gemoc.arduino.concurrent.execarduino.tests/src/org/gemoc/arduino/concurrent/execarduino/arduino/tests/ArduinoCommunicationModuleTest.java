@@ -16,7 +16,7 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModu
  * </p>
  * @generated
  */
-public abstract class ArduinoCommunicationModuleTest extends ArduinoDigitalModuleTest {
+public abstract class ArduinoCommunicationModuleTest extends ArduinoAnalogModuleTest {
 
 	/**
 	 * Constructs a new Communication Module test case with the given name.

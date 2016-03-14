@@ -22,7 +22,7 @@ import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver;
  *
  * @generated
  */
-public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl implements BluetoothTransceiver {
+public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements BluetoothTransceiver {
 	/**
 	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -13,7 +13,7 @@ package org.gemoc.arduino.concurrent.execarduino.arduino;
  * @model abstract="true"
  * @generated
  */
-public interface ArduinoCommunicationModule extends ArduinoDigitalModule {
+public interface ArduinoCommunicationModule extends ArduinoAnalogModule {
 
 	/**
 	 * <!-- begin-user-doc -->

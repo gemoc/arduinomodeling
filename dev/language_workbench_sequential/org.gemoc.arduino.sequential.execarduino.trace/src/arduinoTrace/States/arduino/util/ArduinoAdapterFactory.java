@@ -72,12 +72,8 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createTracedAnalogPinAdapter();
 			}
 			@Override
-			public Adapter caseTracedArduinoCommunicationModule(TracedArduinoCommunicationModule object) {
-				return createTracedArduinoCommunicationModuleAdapter();
-			}
-			@Override
-			public Adapter caseTracedArduinoDigitalModule(TracedArduinoDigitalModule object) {
-				return createTracedArduinoDigitalModuleAdapter();
+			public Adapter caseTracedArduinoAnalogModule(TracedArduinoAnalogModule object) {
+				return createTracedArduinoAnalogModuleAdapter();
 			}
 			@Override
 			public Adapter caseTracedArduinoModule(TracedArduinoModule object) {
@@ -150,30 +146,16 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoCommunicationModule <em>Traced Arduino Communication Module</em>}'.
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoAnalogModule <em>Traced Arduino Analog Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see arduinoTrace.States.arduino.TracedArduinoCommunicationModule
+	 * @see arduinoTrace.States.arduino.TracedArduinoAnalogModule
 	 * @generated
 	 */
-	public Adapter createTracedArduinoCommunicationModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoDigitalModule <em>Traced Arduino Digital Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see arduinoTrace.States.arduino.TracedArduinoDigitalModule
-	 * @generated
-	 */
-	public Adapter createTracedArduinoDigitalModuleAdapter() {
+	public Adapter createTracedArduinoAnalogModuleAdapter() {
 		return null;
 	}
 

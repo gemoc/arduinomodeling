@@ -180,7 +180,7 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 		if (_self.operand instanceof BooleanExpression){
 			if (_self.operand.evaluate as Boolean){
 				pin.level = HIGH
-			}else{
+			} else {
 				pin.level = LOW
 			}
 		}
@@ -389,19 +389,6 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
 		
-		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
-		if (_self.module instanceof BluetoothTransceiver){
-			val l = (_self.module as BluetoothTransceiver).dataReceived
-			val res = l.head
-			if (res != null) {
-				l.remove(0)
-				return res != 0
-			} else {
-				// TODO Thread.sleep?
-				return false
-			}
-		}
-
 		val pin = _self.instruction.getPin(_self.module)
 		if (pin.level == 0){
 			return false
@@ -430,8 +417,21 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
+		
+		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			val l = (_self.module as BluetoothTransceiver).dataReceived
+			val res = l.head
+			if (res != null) {
+				l.remove(0)
+				return res
+			} else {
+				return 0
+			}
+		}
+		
 		val pin = _self.instruction.getPin(_self.module)
-		return pin.level	
+		return pin.level
 	}
 }
 
@@ -445,18 +445,18 @@ class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect
 		var bLeft = false
 		var iLeft = 0
 		switch (_self.left){
-			BooleanExpression: bLeft = {
+			BooleanExpression: {
+				bLeft = _self.left.evaluate as Boolean
 				leftIsBoolean = true
-				_self.left.evaluate as Boolean
 			}
 			IntegerExpression: iLeft = _self.left.evaluate as Integer
 		}
 		var bRight = false
 		var iRight = 0
 		switch (_self.right){
-			BooleanExpression: bRight = {
+			BooleanExpression: {
+				bRight = _self.right.evaluate as Boolean 
 				rightIsBoolean = true
-				_self.right.evaluate as Boolean
 			}
 			IntegerExpression: iRight = _self.right.evaluate as Integer
 		}

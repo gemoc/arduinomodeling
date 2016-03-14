@@ -529,7 +529,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 			case ArduinoPackage.ARDUINO_COMMUNICATION_MODULE: {
 				ArduinoCommunicationModule arduinoCommunicationModule = (ArduinoCommunicationModule)theEObject;
 				T result = caseArduinoCommunicationModule(arduinoCommunicationModule);
-				if (result == null) result = caseArduinoDigitalModule(arduinoCommunicationModule);
+				if (result == null) result = caseArduinoAnalogModule(arduinoCommunicationModule);
 				if (result == null) result = caseArduinoModule(arduinoCommunicationModule);
 				if (result == null) result = caseModule(arduinoCommunicationModule);
 				if (result == null) result = caseNamedElement(arduinoCommunicationModule);
@@ -540,7 +540,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				BluetoothTransceiver bluetoothTransceiver = (BluetoothTransceiver)theEObject;
 				T result = caseBluetoothTransceiver(bluetoothTransceiver);
 				if (result == null) result = caseArduinoCommunicationModule(bluetoothTransceiver);
-				if (result == null) result = caseArduinoDigitalModule(bluetoothTransceiver);
+				if (result == null) result = caseArduinoAnalogModule(bluetoothTransceiver);
 				if (result == null) result = caseArduinoModule(bluetoothTransceiver);
 				if (result == null) result = caseModule(bluetoothTransceiver);
 				if (result == null) result = caseNamedElement(bluetoothTransceiver);

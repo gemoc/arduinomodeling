@@ -4,6 +4,7 @@ package arduinoTrace.States.arduino.impl;
 
 import arduinoTrace.States.arduino.ArduinoPackage;
 import arduinoTrace.States.arduino.TracedAnalogPin;
+import arduinoTrace.States.arduino.TracedArduinoAnalogModule;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
-import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	 * @generated
 	 * @ordered
 	 */
-	protected ArduinoAnalogModule module;
+	protected TracedArduinoAnalogModule module;
 
 	/**
 	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
@@ -74,10 +74,10 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArduinoAnalogModule getModule() {
+	public TracedArduinoAnalogModule getModule() {
 		if (module != null && module.eIsProxy()) {
 			InternalEObject oldModule = (InternalEObject)module;
-			module = (ArduinoAnalogModule)eResolveProxy(oldModule);
+			module = (TracedArduinoAnalogModule)eResolveProxy(oldModule);
 			if (module != oldModule) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.TRACED_ANALOG_PIN__MODULE, oldModule, module));
@@ -91,7 +91,7 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArduinoAnalogModule basicGetModule() {
+	public TracedArduinoAnalogModule basicGetModule() {
 		return module;
 	}
 
@@ -100,8 +100,8 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModule(ArduinoAnalogModule newModule) {
-		ArduinoAnalogModule oldModule = module;
+	public void setModule(TracedArduinoAnalogModule newModule) {
+		TracedArduinoAnalogModule oldModule = module;
 		module = newModule;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.TRACED_ANALOG_PIN__MODULE, oldModule, module));
@@ -172,7 +172,7 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_ANALOG_PIN__MODULE:
-				setModule((ArduinoAnalogModule)newValue);
+				setModule((TracedArduinoAnalogModule)newValue);
 				return;
 			case ArduinoPackage.TRACED_ANALOG_PIN__ORIGINAL_OBJECT:
 				setOriginalObject((AnalogPin)newValue);
@@ -190,7 +190,7 @@ public class TracedAnalogPinImpl extends TracedPinImpl implements TracedAnalogPi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_ANALOG_PIN__MODULE:
-				setModule((ArduinoAnalogModule)null);
+				setModule((TracedArduinoAnalogModule)null);
 				return;
 			case ArduinoPackage.TRACED_ANALOG_PIN__ORIGINAL_OBJECT:
 				setOriginalObject((AnalogPin)null);

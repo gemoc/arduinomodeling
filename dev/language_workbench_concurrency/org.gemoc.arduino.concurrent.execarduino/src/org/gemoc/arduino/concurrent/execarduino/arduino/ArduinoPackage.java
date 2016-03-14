@@ -1867,7 +1867,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARDUINO_COMMUNICATION_MODULE__NAME = ARDUINO_DIGITAL_MODULE__NAME;
+	int ARDUINO_COMMUNICATION_MODULE__NAME = ARDUINO_ANALOG_MODULE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Communication Module</em>' class.
@@ -1876,7 +1876,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+	int ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT = ARDUINO_ANALOG_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.execarduino.arduino.impl.BluetoothTransceiverImpl <em>Bluetooth Transceiver</em>}' class.

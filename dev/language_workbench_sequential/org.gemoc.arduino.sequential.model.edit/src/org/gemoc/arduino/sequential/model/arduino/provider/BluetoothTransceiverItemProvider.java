@@ -18,7 +18,7 @@ import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BluetoothTransceiverItemProvider extends ArduinoCommunicationModuleItemProvider {
+public class BluetoothTransceiverItemProvider extends ArduinoAnalogModuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

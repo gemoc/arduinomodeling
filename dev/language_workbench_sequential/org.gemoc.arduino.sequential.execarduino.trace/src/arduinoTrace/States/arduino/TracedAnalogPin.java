@@ -3,7 +3,6 @@
 package arduinoTrace.States.arduino;
 
 import org.gemoc.arduino.sequential.execarduino.arduino.AnalogPin;
-import org.gemoc.arduino.sequential.execarduino.arduino.ArduinoAnalogModule;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,12 +31,12 @@ public interface TracedAnalogPin extends TracedPin {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
-	 * @see #setModule(ArduinoAnalogModule)
+	 * @see #setModule(TracedArduinoAnalogModule)
 	 * @see arduinoTrace.States.arduino.ArduinoPackage#getTracedAnalogPin_Module()
 	 * @model
 	 * @generated
 	 */
-	ArduinoAnalogModule getModule();
+	TracedArduinoAnalogModule getModule();
 
 	/**
 	 * Sets the value of the '{@link arduinoTrace.States.arduino.TracedAnalogPin#getModule <em>Module</em>}' reference.
@@ -47,7 +46,7 @@ public interface TracedAnalogPin extends TracedPin {
 	 * @see #getModule()
 	 * @generated
 	 */
-	void setModule(ArduinoAnalogModule value);
+	void setModule(TracedArduinoAnalogModule value);
 
 	/**
 	 * Returns the value of the '<em><b>Original Object</b></em>' reference.

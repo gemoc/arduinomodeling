@@ -250,7 +250,7 @@
     <eLiterals name="white" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Object" instanceClassName="java.lang.Object"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true" eSuperTypes="//ArduinoDigitalModule">
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true" eSuperTypes="//ArduinoAnalogModule">
     <eOperations name="push"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="//ArduinoCommunicationModule">

@@ -9,8 +9,7 @@ import arduinoTrace.States.StatesPackage;
 import arduinoTrace.States.arduino.ArduinoFactory;
 import arduinoTrace.States.arduino.ArduinoPackage;
 import arduinoTrace.States.arduino.TracedAnalogPin;
-import arduinoTrace.States.arduino.TracedArduinoCommunicationModule;
-import arduinoTrace.States.arduino.TracedArduinoDigitalModule;
+import arduinoTrace.States.arduino.TracedArduinoAnalogModule;
 import arduinoTrace.States.arduino.TracedArduinoModule;
 import arduinoTrace.States.arduino.TracedBluetoothTransceiver;
 import arduinoTrace.States.arduino.TracedBooleanVariable;
@@ -56,14 +55,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tracedArduinoCommunicationModuleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tracedArduinoDigitalModuleEClass = null;
+	private EClass tracedArduinoAnalogModuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,17 +228,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTracedArduinoCommunicationModule() {
-		return tracedArduinoCommunicationModuleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTracedArduinoDigitalModule() {
-		return tracedArduinoDigitalModuleEClass;
+	public EClass getTracedArduinoAnalogModule() {
+		return tracedArduinoAnalogModuleEClass;
 	}
 
 	/**
@@ -461,9 +444,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(tracedAnalogPinEClass, TRACED_ANALOG_PIN__MODULE);
 		createEReference(tracedAnalogPinEClass, TRACED_ANALOG_PIN__ORIGINAL_OBJECT);
 
-		tracedArduinoCommunicationModuleEClass = createEClass(TRACED_ARDUINO_COMMUNICATION_MODULE);
-
-		tracedArduinoDigitalModuleEClass = createEClass(TRACED_ARDUINO_DIGITAL_MODULE);
+		tracedArduinoAnalogModuleEClass = createEClass(TRACED_ARDUINO_ANALOG_MODULE);
 
 		tracedArduinoModuleEClass = createEClass(TRACED_ARDUINO_MODULE);
 
@@ -528,10 +509,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		// Add supertypes to classes
 		tracedAnalogPinEClass.getESuperTypes().add(this.getTracedPin());
-		tracedArduinoCommunicationModuleEClass.getESuperTypes().add(this.getTracedArduinoDigitalModule());
-		tracedArduinoDigitalModuleEClass.getESuperTypes().add(this.getTracedArduinoModule());
+		tracedArduinoAnalogModuleEClass.getESuperTypes().add(this.getTracedArduinoModule());
 		tracedArduinoModuleEClass.getESuperTypes().add(this.getTracedModule());
-		tracedBluetoothTransceiverEClass.getESuperTypes().add(this.getTracedArduinoCommunicationModule());
+		tracedBluetoothTransceiverEClass.getESuperTypes().add(this.getTracedArduinoAnalogModule());
 		tracedBooleanVariableEClass.getESuperTypes().add(this.getTracedVariable());
 		tracedDigitalPinEClass.getESuperTypes().add(this.getTracedPin());
 		tracedIntegerVariableEClass.getESuperTypes().add(this.getTracedVariable());
@@ -541,12 +521,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tracedAnalogPinEClass, TracedAnalogPin.class, "TracedAnalogPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedAnalogPin_Module(), theArduinoPackage_1.getArduinoAnalogModule(), null, "module", null, 0, 1, TracedAnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedAnalogPin_Module(), this.getTracedArduinoAnalogModule(), null, "module", null, 0, 1, TracedAnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedAnalogPin_OriginalObject(), theArduinoPackage_1.getAnalogPin(), null, "originalObject", null, 0, 1, TracedAnalogPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tracedArduinoCommunicationModuleEClass, TracedArduinoCommunicationModule.class, "TracedArduinoCommunicationModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedArduinoDigitalModuleEClass, TracedArduinoDigitalModule.class, "TracedArduinoDigitalModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(tracedArduinoAnalogModuleEClass, TracedArduinoAnalogModule.class, "TracedArduinoAnalogModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(tracedArduinoModuleEClass, TracedArduinoModule.class, "TracedArduinoModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -561,7 +539,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getTracedBooleanVariable_ValueSequence(), theStatesPackage.getBooleanVariable_value_Value(), theStatesPackage.getBooleanVariable_value_Value_Parent(), "valueSequence", null, 0, -1, TracedBooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tracedDigitalPinEClass, TracedDigitalPin.class, "TracedDigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedDigitalPin_Module(), this.getTracedArduinoDigitalModule(), null, "module", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTracedDigitalPin_Module(), theArduinoPackage_1.getArduinoDigitalModule(), null, "module", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTracedDigitalPin_OriginalObject(), theArduinoPackage_1.getDigitalPin(), null, "originalObject", null, 0, 1, TracedDigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tracedIntegerVariableEClass, TracedIntegerVariable.class, "TracedIntegerVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
