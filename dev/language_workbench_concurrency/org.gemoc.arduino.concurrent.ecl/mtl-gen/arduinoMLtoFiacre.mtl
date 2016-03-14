@@ -66,6 +66,7 @@ const NUMBER_ArduinoModules : int is [aProject.eAllContents(ArduinoModule)->size
 const NUMBER_Blocks : int is [aProject.eAllContents(Block)->size()/]
 const NUMBER_ArduinoBoards : int is [aProject.eAllContents(ArduinoBoard)->size()/]
 const NUMBER_ArduinoDigitalModules : int is [aProject.eAllContents(ArduinoDigitalModule)->size()/]
+const NUMBER_AtomicBlocks : int is [aProject.eAllContents(AtomicBlock)->size()/]
 const NUMBER_ArduinoAnalogModules : int is [aProject.eAllContents(ArduinoAnalogModule)->size()/]
 const NUMBER_BooleanVariableRefs : int is [aProject.eAllContents(BooleanVariableRef)->size()/]
 const NUMBER_Objects : int is [aProject.eAllContents(Object)->size()/]
