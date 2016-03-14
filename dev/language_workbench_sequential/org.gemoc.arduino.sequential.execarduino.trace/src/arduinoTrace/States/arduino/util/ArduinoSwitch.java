@@ -74,6 +74,44 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ArduinoPackage.TRACED_ARDUINO_COMMUNICATION_MODULE: {
+				TracedArduinoCommunicationModule tracedArduinoCommunicationModule = (TracedArduinoCommunicationModule)theEObject;
+				T result = caseTracedArduinoCommunicationModule(tracedArduinoCommunicationModule);
+				if (result == null) result = caseTracedArduinoDigitalModule(tracedArduinoCommunicationModule);
+				if (result == null) result = caseTracedArduinoModule(tracedArduinoCommunicationModule);
+				if (result == null) result = caseTracedModule(tracedArduinoCommunicationModule);
+				if (result == null) result = caseTracedNamedElement(tracedArduinoCommunicationModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.TRACED_ARDUINO_DIGITAL_MODULE: {
+				TracedArduinoDigitalModule tracedArduinoDigitalModule = (TracedArduinoDigitalModule)theEObject;
+				T result = caseTracedArduinoDigitalModule(tracedArduinoDigitalModule);
+				if (result == null) result = caseTracedArduinoModule(tracedArduinoDigitalModule);
+				if (result == null) result = caseTracedModule(tracedArduinoDigitalModule);
+				if (result == null) result = caseTracedNamedElement(tracedArduinoDigitalModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.TRACED_ARDUINO_MODULE: {
+				TracedArduinoModule tracedArduinoModule = (TracedArduinoModule)theEObject;
+				T result = caseTracedArduinoModule(tracedArduinoModule);
+				if (result == null) result = caseTracedModule(tracedArduinoModule);
+				if (result == null) result = caseTracedNamedElement(tracedArduinoModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER: {
+				TracedBluetoothTransceiver tracedBluetoothTransceiver = (TracedBluetoothTransceiver)theEObject;
+				T result = caseTracedBluetoothTransceiver(tracedBluetoothTransceiver);
+				if (result == null) result = caseTracedArduinoCommunicationModule(tracedBluetoothTransceiver);
+				if (result == null) result = caseTracedArduinoDigitalModule(tracedBluetoothTransceiver);
+				if (result == null) result = caseTracedArduinoModule(tracedBluetoothTransceiver);
+				if (result == null) result = caseTracedModule(tracedBluetoothTransceiver);
+				if (result == null) result = caseTracedNamedElement(tracedBluetoothTransceiver);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ArduinoPackage.TRACED_BOOLEAN_VARIABLE: {
 				TracedBooleanVariable tracedBooleanVariable = (TracedBooleanVariable)theEObject;
 				T result = caseTracedBooleanVariable(tracedBooleanVariable);
@@ -95,6 +133,13 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				T result = caseTracedIntegerVariable(tracedIntegerVariable);
 				if (result == null) result = caseTracedVariable(tracedIntegerVariable);
 				if (result == null) result = caseTracedNamedElement(tracedIntegerVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ArduinoPackage.TRACED_MODULE: {
+				TracedModule tracedModule = (TracedModule)theEObject;
+				T result = caseTracedModule(tracedModule);
+				if (result == null) result = caseTracedNamedElement(tracedModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +179,66 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTracedAnalogPin(TracedAnalogPin object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Arduino Communication Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Arduino Communication Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedArduinoCommunicationModule(TracedArduinoCommunicationModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Arduino Digital Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Arduino Digital Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedArduinoDigitalModule(TracedArduinoDigitalModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Arduino Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Arduino Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedArduinoModule(TracedArduinoModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Bluetooth Transceiver</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Bluetooth Transceiver</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedBluetoothTransceiver(TracedBluetoothTransceiver object) {
 		return null;
 	}
 
@@ -179,6 +284,21 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTracedIntegerVariable(TracedIntegerVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedModule(TracedModule object) {
 		return null;
 	}
 

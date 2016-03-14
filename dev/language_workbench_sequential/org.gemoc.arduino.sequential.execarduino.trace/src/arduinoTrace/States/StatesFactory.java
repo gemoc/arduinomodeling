@@ -22,6 +22,24 @@ public interface StatesFactory extends EFactory {
 	StatesFactory eINSTANCE = arduinoTrace.States.impl.StatesFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Bluetooth Transceiver data Received Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bluetooth Transceiver data Received Value</em>'.
+	 * @generated
+	 */
+	BluetoothTransceiver_dataReceived_Value createBluetoothTransceiver_dataReceived_Value();
+
+	/**
+	 * Returns a new object of class '<em>Bluetooth Transceiver data To Send Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bluetooth Transceiver data To Send Value</em>'.
+	 * @generated
+	 */
+	BluetoothTransceiver_dataToSend_Value createBluetoothTransceiver_dataToSend_Value();
+
+	/**
 	 * Returns a new object of class '<em>Boolean Variable value Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

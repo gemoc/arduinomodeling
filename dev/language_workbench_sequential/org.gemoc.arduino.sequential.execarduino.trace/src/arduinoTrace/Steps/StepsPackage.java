@@ -59,6 +59,216 @@ public interface StepsPackage extends EPackage {
 	StepsPackage eINSTANCE = arduinoTrace.Steps.impl.StepsPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_AbstractSubStepImpl <em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_AbstractSubStepImpl
+	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push_AbstractSubStep()
+	 * @generated
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP = 1;
+
+	/**
+	 * The number of structural features of the '<em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_PushImpl <em>Arduino Bluetooth Transceiver Push</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_PushImpl
+	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push()
+	 * @generated
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Mse</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__MSE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__PARAMETERS = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__RESULT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Logical Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__LOGICAL_STEP = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__ENDING_STATE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__STARTING_STATE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Sub Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__SUB_STEPS = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Arduino Bluetooth Transceiver Push</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_FEATURE_COUNT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Get Caller</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH___GET_CALLER = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Arduino Bluetooth Transceiver Push</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_OPERATION_COUNT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_ImplicitStepImpl <em>Arduino Bluetooth Transceiver Push Implicit Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_ImplicitStepImpl
+	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push_ImplicitStep()
+	 * @generated
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mse</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__MSE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__PARAMETERS = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__RESULT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Logical Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__LOGICAL_STEP = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__ENDING_STATE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP__STARTING_STATE = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP_FEATURE_COUNT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP_OPERATION_COUNT = ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link arduinoTrace.Steps.impl.Arduino_Delay_Execute_AbstractSubStepImpl <em>Arduino Delay Execute Abstract Sub Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +276,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Delay_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_DELAY_EXECUTE_ABSTRACT_SUB_STEP = 1;
+	int ARDUINO_DELAY_EXECUTE_ABSTRACT_SUB_STEP = 4;
 
 	/**
 	 * The number of structural features of the '<em>Arduino Delay Execute Abstract Sub Step</em>' class.
@@ -94,7 +304,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Delay_Execute()
 	 * @generated
 	 */
-	int ARDUINO_DELAY_EXECUTE = 0;
+	int ARDUINO_DELAY_EXECUTE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -194,7 +404,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Delay_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_DELAY_EXECUTE_IMPLICIT_STEP = 2;
+	int ARDUINO_DELAY_EXECUTE_IMPLICIT_STEP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -276,7 +486,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_If_Execute()
 	 * @generated
 	 */
-	int ARDUINO_IF_EXECUTE = 3;
+	int ARDUINO_IF_EXECUTE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -376,7 +586,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_If_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_IF_EXECUTE_ABSTRACT_SUB_STEP = 4;
+	int ARDUINO_IF_EXECUTE_ABSTRACT_SUB_STEP = 7;
 
 	/**
 	 * The number of structural features of the '<em>Arduino If Execute Abstract Sub Step</em>' class.
@@ -404,7 +614,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_If_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_IF_EXECUTE_IMPLICIT_STEP = 5;
+	int ARDUINO_IF_EXECUTE_IMPLICIT_STEP = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -486,7 +696,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_ModuleAssignment_Execute()
 	 * @generated
 	 */
-	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE = 6;
+	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -586,7 +796,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_ModuleAssignment_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE_ABSTRACT_SUB_STEP = 7;
+	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE_ABSTRACT_SUB_STEP = 10;
 
 	/**
 	 * The number of structural features of the '<em>Arduino Module Assignment Execute Abstract Sub Step</em>' class.
@@ -614,7 +824,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_ModuleAssignment_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE_IMPLICIT_STEP = 8;
+	int ARDUINO_MODULE_ASSIGNMENT_EXECUTE_IMPLICIT_STEP = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -696,7 +906,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getStep()
 	 * @generated
 	 */
-	int STEP = 22;
+	int STEP = 25;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -778,7 +988,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getSmallStep()
 	 * @generated
 	 */
-	int SMALL_STEP = 21;
+	int SMALL_STEP = 24;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -860,7 +1070,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Project_Setup()
 	 * @generated
 	 */
-	int ARDUINO_PROJECT_SETUP = 9;
+	int ARDUINO_PROJECT_SETUP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -951,7 +1161,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Repeat_Execute()
 	 * @generated
 	 */
-	int ARDUINO_REPEAT_EXECUTE = 10;
+	int ARDUINO_REPEAT_EXECUTE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1051,7 +1261,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Repeat_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_REPEAT_EXECUTE_ABSTRACT_SUB_STEP = 11;
+	int ARDUINO_REPEAT_EXECUTE_ABSTRACT_SUB_STEP = 14;
 
 	/**
 	 * The number of structural features of the '<em>Arduino Repeat Execute Abstract Sub Step</em>' class.
@@ -1079,7 +1289,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_Repeat_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_REPEAT_EXECUTE_IMPLICIT_STEP = 12;
+	int ARDUINO_REPEAT_EXECUTE_IMPLICIT_STEP = 15;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1161,7 +1371,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableAssignment_Execute()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE = 13;
+	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1261,7 +1471,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableAssignment_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_ABSTRACT_SUB_STEP = 14;
+	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_ABSTRACT_SUB_STEP = 17;
 
 	/**
 	 * The number of structural features of the '<em>Arduino Variable Assignment Execute Abstract Sub Step</em>' class.
@@ -1289,7 +1499,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableAssignment_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_IMPLICIT_STEP = 15;
+	int ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_IMPLICIT_STEP = 18;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1371,7 +1581,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableDeclaration_Execute()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_DECLARATION_EXECUTE = 16;
+	int ARDUINO_VARIABLE_DECLARATION_EXECUTE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1471,7 +1681,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableDeclaration_Execute_AbstractSubStep()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_DECLARATION_EXECUTE_ABSTRACT_SUB_STEP = 17;
+	int ARDUINO_VARIABLE_DECLARATION_EXECUTE_ABSTRACT_SUB_STEP = 20;
 
 	/**
 	 * The number of structural features of the '<em>Arduino Variable Declaration Execute Abstract Sub Step</em>' class.
@@ -1499,7 +1709,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_VariableDeclaration_Execute_ImplicitStep()
 	 * @generated
 	 */
-	int ARDUINO_VARIABLE_DECLARATION_EXECUTE_IMPLICIT_STEP = 18;
+	int ARDUINO_VARIABLE_DECLARATION_EXECUTE_IMPLICIT_STEP = 21;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1581,7 +1791,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getBigStep()
 	 * @generated
 	 */
-	int BIG_STEP = 19;
+	int BIG_STEP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1663,7 +1873,7 @@ public interface StepsPackage extends EPackage {
 	 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getRootImplicitStep()
 	 * @generated
 	 */
-	int ROOT_IMPLICIT_STEP = 20;
+	int ROOT_IMPLICIT_STEP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Mse</b></em>' reference.
@@ -1737,6 +1947,57 @@ public interface StepsPackage extends EPackage {
 	 */
 	int ROOT_IMPLICIT_STEP_OPERATION_COUNT = SMALL_STEP_OPERATION_COUNT + 0;
 
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push <em>Arduino Bluetooth Transceiver Push</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arduino Bluetooth Transceiver Push</em>'.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push
+	 * @generated
+	 */
+	EClass getArduino_BluetoothTransceiver_Push();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push#getSubSteps <em>Sub Steps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Steps</em>'.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push#getSubSteps()
+	 * @see #getArduino_BluetoothTransceiver_Push()
+	 * @generated
+	 */
+	EReference getArduino_BluetoothTransceiver_Push_SubSteps();
+
+	/**
+	 * Returns the meta object for the '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push#getCaller() <em>Get Caller</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Caller</em>' operation.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push#getCaller()
+	 * @generated
+	 */
+	EOperation getArduino_BluetoothTransceiver_Push__GetCaller();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_AbstractSubStep <em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>'.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_AbstractSubStep
+	 * @generated
+	 */
+	EClass getArduino_BluetoothTransceiver_Push_AbstractSubStep();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep <em>Arduino Bluetooth Transceiver Push Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arduino Bluetooth Transceiver Push Implicit Step</em>'.
+	 * @see arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep
+	 * @generated
+	 */
+	EClass getArduino_BluetoothTransceiver_Push_ImplicitStep();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoTrace.Steps.Arduino_Delay_Execute <em>Arduino Delay Execute</em>}'.
@@ -2149,6 +2410,52 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_PushImpl <em>Arduino Bluetooth Transceiver Push</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_PushImpl
+		 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push()
+		 * @generated
+		 */
+		EClass ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH = eINSTANCE.getArduino_BluetoothTransceiver_Push();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Steps</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__SUB_STEPS = eINSTANCE.getArduino_BluetoothTransceiver_Push_SubSteps();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Caller</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH___GET_CALLER = eINSTANCE.getArduino_BluetoothTransceiver_Push__GetCaller();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_AbstractSubStepImpl <em>Arduino Bluetooth Transceiver Push Abstract Sub Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_AbstractSubStepImpl
+		 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push_AbstractSubStep()
+		 * @generated
+		 */
+		EClass ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP = eINSTANCE.getArduino_BluetoothTransceiver_Push_AbstractSubStep();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_ImplicitStepImpl <em>Arduino Bluetooth Transceiver Push Implicit Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.Steps.impl.Arduino_BluetoothTransceiver_Push_ImplicitStepImpl
+		 * @see arduinoTrace.Steps.impl.StepsPackageImpl#getArduino_BluetoothTransceiver_Push_ImplicitStep()
+		 * @generated
+		 */
+		EClass ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP = eINSTANCE.getArduino_BluetoothTransceiver_Push_ImplicitStep();
+
 		/**
 		 * The meta object literal for the '{@link arduinoTrace.Steps.impl.Arduino_Delay_ExecuteImpl <em>Arduino Delay Execute</em>}' class.
 		 * <!-- begin-user-doc -->

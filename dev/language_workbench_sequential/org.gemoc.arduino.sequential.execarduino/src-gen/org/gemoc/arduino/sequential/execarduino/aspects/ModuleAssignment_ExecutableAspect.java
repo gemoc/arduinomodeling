@@ -3,12 +3,15 @@ package org.gemoc.arduino.sequential.execarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import java.util.List;
+import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.Expression;
 import org.gemoc.arduino.sequential.execarduino.arduino.IntegerExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.Module;
 import org.gemoc.arduino.sequential.execarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
+import org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.Expression_EvaluableAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.Instruction_UtilitesAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties;
@@ -65,6 +68,15 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
       } else {
         Pin_EvaluableAspect.level(pin, Pin_EvaluableAspect.LOW);
       }
+    }
+    Module _module_1 = _self.getModule();
+    if ((_module_1 instanceof BluetoothTransceiver)) {
+      Module _module_2 = _self.getModule();
+      List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_2));
+      Integer _level = Pin_EvaluableAspect.level(pin);
+      _dataToSend.add(_level);
+      Module _module_3 = _self.getModule();
+      BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_3));
     }
   }
 }

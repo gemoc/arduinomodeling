@@ -63,7 +63,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedNamedElement()
 	 * @generated
 	 */
-	int TRACED_NAMED_ELEMENT = 4;
+	int TRACED_NAMED_ELEMENT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Traced Named Element</em>' class.
@@ -91,7 +91,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedPin()
 	 * @generated
 	 */
-	int TRACED_PIN = 5;
+	int TRACED_PIN = 10;
 
 	/**
 	 * The feature id for the '<em><b>Level Sequence</b></em>' containment reference list.
@@ -176,6 +176,182 @@ public interface ArduinoPackage extends EPackage {
 	int TRACED_ANALOG_PIN_OPERATION_COUNT = TRACED_PIN_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link arduinoTrace.States.arduino.TracedModule <em>Traced Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.States.arduino.TracedModule
+	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedModule()
+	 * @generated
+	 */
+	int TRACED_MODULE = 8;
+
+	/**
+	 * The number of structural features of the '<em>Traced Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MODULE_FEATURE_COUNT = TRACED_NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MODULE_OPERATION_COUNT = TRACED_NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoModuleImpl <em>Traced Arduino Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.States.arduino.impl.TracedArduinoModuleImpl
+	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoModule()
+	 * @generated
+	 */
+	int TRACED_ARDUINO_MODULE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Traced Arduino Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_MODULE_FEATURE_COUNT = TRACED_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Arduino Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_MODULE_OPERATION_COUNT = TRACED_MODULE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoDigitalModuleImpl <em>Traced Arduino Digital Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.States.arduino.impl.TracedArduinoDigitalModuleImpl
+	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoDigitalModule()
+	 * @generated
+	 */
+	int TRACED_ARDUINO_DIGITAL_MODULE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Traced Arduino Digital Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_DIGITAL_MODULE_FEATURE_COUNT = TRACED_ARDUINO_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Arduino Digital Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_DIGITAL_MODULE_OPERATION_COUNT = TRACED_ARDUINO_MODULE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoCommunicationModuleImpl <em>Traced Arduino Communication Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.States.arduino.impl.TracedArduinoCommunicationModuleImpl
+	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoCommunicationModule()
+	 * @generated
+	 */
+	int TRACED_ARDUINO_COMMUNICATION_MODULE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Traced Arduino Communication Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT = TRACED_ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Arduino Communication Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ARDUINO_COMMUNICATION_MODULE_OPERATION_COUNT = TRACED_ARDUINO_DIGITAL_MODULE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoTrace.States.arduino.impl.TracedBluetoothTransceiverImpl <em>Traced Bluetooth Transceiver</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoTrace.States.arduino.impl.TracedBluetoothTransceiverImpl
+	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedBluetoothTransceiver()
+	 * @generated
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Data Received Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE = TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Data To Send Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER__DATA_TO_SEND_SEQUENCE = TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Original Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER__ORIGINAL_OBJECT = TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Traced Bluetooth Transceiver</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = TRACED_ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Traced Bluetooth Transceiver</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_BLUETOOTH_TRANSCEIVER_OPERATION_COUNT = TRACED_ARDUINO_COMMUNICATION_MODULE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link arduinoTrace.States.arduino.impl.TracedVariableImpl <em>Traced Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,7 +359,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedVariable()
 	 * @generated
 	 */
-	int TRACED_VARIABLE = 6;
+	int TRACED_VARIABLE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Traced Variable</em>' class.
@@ -211,7 +387,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedBooleanVariable()
 	 * @generated
 	 */
-	int TRACED_BOOLEAN_VARIABLE = 1;
+	int TRACED_BOOLEAN_VARIABLE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Original Object</b></em>' reference.
@@ -257,7 +433,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedDigitalPin()
 	 * @generated
 	 */
-	int TRACED_DIGITAL_PIN = 2;
+	int TRACED_DIGITAL_PIN = 6;
 
 	/**
 	 * The feature id for the '<em><b>Level Sequence</b></em>' containment reference list.
@@ -312,7 +488,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedIntegerVariable()
 	 * @generated
 	 */
-	int TRACED_INTEGER_VARIABLE = 3;
+	int TRACED_INTEGER_VARIABLE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Original Object</b></em>' reference.
@@ -382,6 +558,90 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedAnalogPin_OriginalObject();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedArduinoCommunicationModule <em>Traced Arduino Communication Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Arduino Communication Module</em>'.
+	 * @see arduinoTrace.States.arduino.TracedArduinoCommunicationModule
+	 * @generated
+	 */
+	EClass getTracedArduinoCommunicationModule();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedArduinoDigitalModule <em>Traced Arduino Digital Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Arduino Digital Module</em>'.
+	 * @see arduinoTrace.States.arduino.TracedArduinoDigitalModule
+	 * @generated
+	 */
+	EClass getTracedArduinoDigitalModule();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedArduinoModule <em>Traced Arduino Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Arduino Module</em>'.
+	 * @see arduinoTrace.States.arduino.TracedArduinoModule
+	 * @generated
+	 */
+	EClass getTracedArduinoModule();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver <em>Traced Bluetooth Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Bluetooth Transceiver</em>'.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver
+	 * @generated
+	 */
+	EClass getTracedBluetoothTransceiver();
+
+	/**
+	 * Returns the meta object for the reference '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connected Transceiver</em>'.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver()
+	 * @see #getTracedBluetoothTransceiver()
+	 * @generated
+	 */
+	EReference getTracedBluetoothTransceiver_ConnectedTransceiver();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getDataReceivedSequence <em>Data Received Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data Received Sequence</em>'.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver#getDataReceivedSequence()
+	 * @see #getTracedBluetoothTransceiver()
+	 * @generated
+	 */
+	EReference getTracedBluetoothTransceiver_DataReceivedSequence();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getDataToSendSequence <em>Data To Send Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data To Send Sequence</em>'.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver#getDataToSendSequence()
+	 * @see #getTracedBluetoothTransceiver()
+	 * @generated
+	 */
+	EReference getTracedBluetoothTransceiver_DataToSendSequence();
+
+	/**
+	 * Returns the meta object for the reference '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getOriginalObject <em>Original Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Original Object</em>'.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver#getOriginalObject()
+	 * @see #getTracedBluetoothTransceiver()
+	 * @generated
+	 */
+	EReference getTracedBluetoothTransceiver_OriginalObject();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedBooleanVariable <em>Traced Boolean Variable</em>}'.
@@ -480,6 +740,16 @@ public interface ArduinoPackage extends EPackage {
 	EReference getTracedIntegerVariable_ValueSequence();
 
 	/**
+	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedModule <em>Traced Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Module</em>'.
+	 * @see arduinoTrace.States.arduino.TracedModule
+	 * @generated
+	 */
+	EClass getTracedModule();
+
+	/**
 	 * Returns the meta object for class '{@link arduinoTrace.States.arduino.TracedNamedElement <em>Traced Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -570,6 +840,78 @@ public interface ArduinoPackage extends EPackage {
 		EReference TRACED_ANALOG_PIN__ORIGINAL_OBJECT = eINSTANCE.getTracedAnalogPin_OriginalObject();
 
 		/**
+		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoCommunicationModuleImpl <em>Traced Arduino Communication Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.States.arduino.impl.TracedArduinoCommunicationModuleImpl
+		 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoCommunicationModule()
+		 * @generated
+		 */
+		EClass TRACED_ARDUINO_COMMUNICATION_MODULE = eINSTANCE.getTracedArduinoCommunicationModule();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoDigitalModuleImpl <em>Traced Arduino Digital Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.States.arduino.impl.TracedArduinoDigitalModuleImpl
+		 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoDigitalModule()
+		 * @generated
+		 */
+		EClass TRACED_ARDUINO_DIGITAL_MODULE = eINSTANCE.getTracedArduinoDigitalModule();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedArduinoModuleImpl <em>Traced Arduino Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.States.arduino.impl.TracedArduinoModuleImpl
+		 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedArduinoModule()
+		 * @generated
+		 */
+		EClass TRACED_ARDUINO_MODULE = eINSTANCE.getTracedArduinoModule();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedBluetoothTransceiverImpl <em>Traced Bluetooth Transceiver</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.States.arduino.impl.TracedBluetoothTransceiverImpl
+		 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedBluetoothTransceiver()
+		 * @generated
+		 */
+		EClass TRACED_BLUETOOTH_TRANSCEIVER = eINSTANCE.getTracedBluetoothTransceiver();
+
+		/**
+		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = eINSTANCE.getTracedBluetoothTransceiver_ConnectedTransceiver();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Received Sequence</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE = eINSTANCE.getTracedBluetoothTransceiver_DataReceivedSequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Data To Send Sequence</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACED_BLUETOOTH_TRANSCEIVER__DATA_TO_SEND_SEQUENCE = eINSTANCE.getTracedBluetoothTransceiver_DataToSendSequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACED_BLUETOOTH_TRANSCEIVER__ORIGINAL_OBJECT = eINSTANCE.getTracedBluetoothTransceiver_OriginalObject();
+
+		/**
 		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedBooleanVariableImpl <em>Traced Boolean Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -646,6 +988,16 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_INTEGER_VARIABLE__VALUE_SEQUENCE = eINSTANCE.getTracedIntegerVariable_ValueSequence();
+
+		/**
+		 * The meta object literal for the '{@link arduinoTrace.States.arduino.TracedModule <em>Traced Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoTrace.States.arduino.TracedModule
+		 * @see arduinoTrace.States.arduino.impl.ArduinoPackageImpl#getTracedModule()
+		 * @generated
+		 */
+		EClass TRACED_MODULE = eINSTANCE.getTracedModule();
 
 		/**
 		 * The meta object literal for the '{@link arduinoTrace.States.arduino.impl.TracedNamedElementImpl <em>Traced Named Element</em>}' class.

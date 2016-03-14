@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoTrace" nsURI="arduinoTrace" nsPrefix="arduinoTrace">
   <eClassifiers xsi:type="ecore:EClass" name="Trace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_BluetoothTransceiver_Push_Sequence" upperBound="-1" eType="//Steps/Arduino_BluetoothTransceiver_Push"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_Delay_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_Delay_Execute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_If_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_If_Execute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_ModuleAssignment_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_ModuleAssignment_Execute"/>
@@ -9,6 +10,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableAssignment_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_VariableAssignment_Execute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Arduino_VariableDeclaration_Execute_Sequence" upperBound="-1" eType="//Steps/Arduino_VariableDeclaration_Execute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedAnalogPins" ordered="false" upperBound="-1" eType="//States/arduino/TracedAnalogPin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBluetoothTransceivers" ordered="false" upperBound="-1" eType="//States/arduino/TracedBluetoothTransceiver" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedBooleanVariables" ordered="false" upperBound="-1" eType="//States/arduino/TracedBooleanVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedDigitalPins" ordered="false" upperBound="-1" eType="//States/arduino/TracedDigitalPin" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arduino_tracedIntegerVariables" ordered="false" upperBound="-1" eType="//States/arduino/TracedIntegerVariable" containment="true"/>
@@ -16,6 +18,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="statesTrace" upperBound="-1" eType="//States/State" containment="true"/>
   </eClassifiers>
   <eSubpackages name="Steps" nsURI="arduinoTrace_Steps" nsPrefix="events">
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_BluetoothTransceiver_Push" eSuperTypes="//Steps/Arduino_BluetoothTransceiver_Push_AbstractSubStep //Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
+      <eOperations name="getCaller" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (BluetoothTransceiver) this.getMse().getCaller();&#xA;"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BluetoothTransceiver"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1" eType="//Steps/Arduino_BluetoothTransceiver_Push_AbstractSubStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_BluetoothTransceiver_Push_AbstractSubStep" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Arduino_BluetoothTransceiver_Push_ImplicitStep" eSuperTypes="//Steps/Arduino_BluetoothTransceiver_Push_AbstractSubStep //Steps/SmallStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="Arduino_Delay_Execute" eSuperTypes="//Steps/Arduino_Delay_Execute_AbstractSubStep //Steps/Arduino_If_Execute_AbstractSubStep //Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep //Steps/Arduino_Repeat_Execute_AbstractSubStep //Steps/Arduino_VariableAssignment_Execute_AbstractSubStep //Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep //Steps/BigStep">
       <eOperations name="getCaller" lowerBound="1">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -100,6 +113,28 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="States" nsURI="arduinoTrace_States" nsPrefix="tracedclasses">
+    <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver_dataReceived_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1">
+        <eAnnotations source="aspect"/>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedBluetoothTransceiver" eOpposite="//States/arduino/TracedBluetoothTransceiver/dataReceivedSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/bluetoothTransceiver_dataReceived_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver_dataToSend_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
+        <eAnnotations source="aspect"/>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/arduino/TracedBluetoothTransceiver" eOpposite="//States/arduino/TracedBluetoothTransceiver/dataToSendSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/bluetoothTransceiver_dataToSend_Values"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable_value_Value">
       <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
         <details key="executionMetamodelElement"/>
@@ -134,6 +169,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/pin_level_Values"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="State">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataReceived_Values" ordered="false" upperBound="-1" eType="//States/BluetoothTransceiver_dataReceived_Value" eOpposite="//States/BluetoothTransceiver_dataReceived_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bluetoothTransceiver_dataToSend_Values" ordered="false" upperBound="-1" eType="//States/BluetoothTransceiver_dataToSend_Value" eOpposite="//States/BluetoothTransceiver_dataToSend_Value/states"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="booleanVariable_value_Values" ordered="false" upperBound="-1" eType="//States/BooleanVariable_value_Value" eOpposite="//States/BooleanVariable_value_Value/states"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="endedSteps" upperBound="-1" eType="//Steps/Step" eOpposite="//Steps/Step/endingState"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="integerVariable_value_Values" ordered="false" upperBound="-1" eType="//States/IntegerVariable_value_Value" eOpposite="//States/IntegerVariable_value_Value/states"/>
@@ -149,6 +186,17 @@
           <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//AnalogPin"/>
         </eStructuralFeatures>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoCommunicationModule" abstract="true" eSuperTypes="//States/arduino/TracedArduinoDigitalModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoDigitalModule" abstract="true" eSuperTypes="//States/arduino/TracedArduinoModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoModule" abstract="true" eSuperTypes="//States/arduino/TracedModule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedBluetoothTransceiver" eSuperTypes="//States/arduino/TracedArduinoCommunicationModule">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="//States/arduino/TracedBluetoothTransceiver"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataReceivedSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataReceived_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataReceived_Value/parent"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataToSendSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataToSend_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataToSend_Value/parent"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BluetoothTransceiver"/>
+        </eStructuralFeatures>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="TracedBooleanVariable" eSuperTypes="//States/arduino/TracedVariable">
         <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
           <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//BooleanVariable"/>
@@ -156,9 +204,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1" eType="//States/BooleanVariable_value_Value" containment="true" eOpposite="//States/BooleanVariable_value_Value/parent"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="TracedDigitalPin" eSuperTypes="//States/arduino/TracedPin">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="module">
-          <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//ArduinoDigitalModule"/>
-        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//States/arduino/TracedArduinoDigitalModule"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
           <eType xsi:type="ecore:EClass" href="../../org.gemoc.arduino.sequential.execarduino/model/ExecArduino.ecore#//DigitalPin"/>
         </eStructuralFeatures>
@@ -169,6 +215,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1" eType="//States/IntegerVariable_value_Value" containment="true" eOpposite="//States/IntegerVariable_value_Value/parent"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedModule" abstract="true" interface="true" eSuperTypes="//States/arduino/TracedNamedElement"/>
       <eClassifiers xsi:type="ecore:EClass" name="TracedNamedElement" abstract="true"/>
       <eClassifiers xsi:type="ecore:EClass" name="TracedPin" abstract="true" eSuperTypes="//States/arduino/TracedNamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="levelSequence" upperBound="-1" eType="//States/Pin_level_Value" containment="true" eOpposite="//States/Pin_level_Value/parent"/>

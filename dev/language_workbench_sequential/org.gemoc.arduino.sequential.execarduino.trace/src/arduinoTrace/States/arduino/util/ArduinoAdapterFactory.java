@@ -72,6 +72,22 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createTracedAnalogPinAdapter();
 			}
 			@Override
+			public Adapter caseTracedArduinoCommunicationModule(TracedArduinoCommunicationModule object) {
+				return createTracedArduinoCommunicationModuleAdapter();
+			}
+			@Override
+			public Adapter caseTracedArduinoDigitalModule(TracedArduinoDigitalModule object) {
+				return createTracedArduinoDigitalModuleAdapter();
+			}
+			@Override
+			public Adapter caseTracedArduinoModule(TracedArduinoModule object) {
+				return createTracedArduinoModuleAdapter();
+			}
+			@Override
+			public Adapter caseTracedBluetoothTransceiver(TracedBluetoothTransceiver object) {
+				return createTracedBluetoothTransceiverAdapter();
+			}
+			@Override
 			public Adapter caseTracedBooleanVariable(TracedBooleanVariable object) {
 				return createTracedBooleanVariableAdapter();
 			}
@@ -82,6 +98,10 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTracedIntegerVariable(TracedIntegerVariable object) {
 				return createTracedIntegerVariableAdapter();
+			}
+			@Override
+			public Adapter caseTracedModule(TracedModule object) {
+				return createTracedModuleAdapter();
 			}
 			@Override
 			public Adapter caseTracedNamedElement(TracedNamedElement object) {
@@ -130,6 +150,62 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoCommunicationModule <em>Traced Arduino Communication Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.arduino.TracedArduinoCommunicationModule
+	 * @generated
+	 */
+	public Adapter createTracedArduinoCommunicationModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoDigitalModule <em>Traced Arduino Digital Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.arduino.TracedArduinoDigitalModule
+	 * @generated
+	 */
+	public Adapter createTracedArduinoDigitalModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedArduinoModule <em>Traced Arduino Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.arduino.TracedArduinoModule
+	 * @generated
+	 */
+	public Adapter createTracedArduinoModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver <em>Traced Bluetooth Transceiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver
+	 * @generated
+	 */
+	public Adapter createTracedBluetoothTransceiverAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedBooleanVariable <em>Traced Boolean Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -168,6 +244,20 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTracedIntegerVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.arduino.TracedModule <em>Traced Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.arduino.TracedModule
+	 * @generated
+	 */
+	public Adapter createTracedModuleAdapter() {
 		return null;
 	}
 

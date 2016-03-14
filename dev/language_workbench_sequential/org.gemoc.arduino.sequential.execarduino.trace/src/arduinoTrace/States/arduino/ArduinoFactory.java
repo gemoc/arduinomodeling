@@ -31,6 +31,15 @@ public interface ArduinoFactory extends EFactory {
 	TracedAnalogPin createTracedAnalogPin();
 
 	/**
+	 * Returns a new object of class '<em>Traced Bluetooth Transceiver</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Bluetooth Transceiver</em>'.
+	 * @generated
+	 */
+	TracedBluetoothTransceiver createTracedBluetoothTransceiver();
+
+	/**
 	 * Returns a new object of class '<em>Traced Boolean Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

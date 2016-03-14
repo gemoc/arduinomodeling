@@ -13,6 +13,10 @@ public class ArduinoTraceStepFactory implements IStepFactory {
 				+ mse.getAction().getName();
 		org.gemoc.executionframework.engine.mse.MSEOccurrence mseocc = null;
 
+		if (stepRule.equalsIgnoreCase("arduino.BluetoothTransceiver.push")) {
+			mseocc = arduinoTrace.Steps.StepsFactory.eINSTANCE.createArduino_BluetoothTransceiver_Push();
+		} else
+
 		if (stepRule.equalsIgnoreCase("arduino.Delay.execute")) {
 			mseocc = arduinoTrace.Steps.StepsFactory.eINSTANCE.createArduino_Delay_Execute();
 		} else

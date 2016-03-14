@@ -38,6 +38,8 @@ import org.gemoc.arduino.sequential.model.arduino.VariableRef
 import org.gemoc.arduino.sequential.model.arduino.While
 import org.gemoc.arduino.sequential.model.arduino.Module
 import org.gemoc.arduino.sequential.model.arduino.ArduinoBoard
+import org.gemoc.arduino.sequential.model.arduino.ArduinoCommunicationModule
+import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver
 
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Block_ExecutableAspect.*
@@ -46,6 +48,7 @@ import static extension org.gemoc.arduino.sequential.operationalsemantics.If_Eva
 import static extension org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.BluetoothTransceiver_PushAspect.*
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -124,9 +127,9 @@ class Project_ExecutableAspect {
 			} else if (o instanceof BooleanVariable) {
 				o.value = o.initialValue
 			} else if (o instanceof Pin) {
-				(o as Pin).level = 0;
+				(o as Pin).level = 0
 			}
-		}];
+		}]
 	}
 	
 	@InitializeModel
@@ -181,8 +184,35 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 				pin.level = LOW
 			}
 		}
+		
+		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			(_self.module as BluetoothTransceiver).dataToSend.add(pin.level)
+			//FIXME temporary solution
+			(_self.module as BluetoothTransceiver).push
+		}
 	}
 }
+
+@Aspect(className=ArduinoCommunicationModule)
+abstract class ArduinoCommunicationModule_PushAspect {
+	abstract def void push()
+} 
+
+@Aspect(className=BluetoothTransceiver)
+abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+	
+	public List<Integer> dataToSend
+	public List<Integer> dataReceived
+	
+	@Step
+	@OverrideAspectMethod
+	def void push(){
+		val l = _self.connectedTransceiver.dataReceived
+		_self.dataToSend.forEach[i|l.add(i)]
+		_self.dataToSend.clear
+	}
+} 
 
 @Aspect(className=VariableDeclaration)
 class VariableDeclaration_ExecutableAspect extends Instruction_ExecutableAspect {
@@ -238,20 +268,20 @@ class If_ExecutableAspect extends Control_ExecutableAspect {
 
 @Aspect(className=Repeat)
 class Repeat_EvaluableAspect extends Control_EvaluableAspect {
-	var Integer i = 0;
+	var Integer i = 0
 
 	@OverrideAspectMethod
 	def Boolean evaluate() {
 		var Boolean resCond = false
 		resCond = (_self.i  < _self.iteration)
 		_self.i = _self.i+1
-		return resCond;
+		return resCond
 	}
 
 	@OverrideAspectMethod
 	def void finalize() {
 		_self.i = 0
-		return;
+		return
 	}
 }
 
@@ -311,21 +341,21 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 	@OverrideAspectMethod
 	def Object evaluate() {
 		var Integer res
-		var bLeft = false;
-		var iLeft = 0;
+		var bLeft = false
+		var iLeft = 0
 		switch (_self.left){
 			BooleanExpression: bLeft = _self.left.evaluate as Boolean
 			IntegerExpression: iLeft = _self.left.evaluate as Integer
 		}
-		var bRight = false;
-		var iRight = 0;
+		var bRight = false
+		var iRight = 0
 		switch (_self.right){
 			BooleanExpression: bRight = _self.right.evaluate as Boolean
 			IntegerExpression: iRight = _self.right.evaluate as Integer
 		}
 		switch (_self.operator) {
 			case DIV: {
-				res = iLeft / iRight		
+				res = iLeft / iRight
 			}
 			case MAX: {
 				res = Math.max(iLeft, iRight)
@@ -358,12 +388,20 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 	@OverrideAspectMethod
 	def Object evaluate() {
-		// dirty tricks to make the model more usable
-//		if (_self.module.name.contains("button")){
-//			var boolean res = Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK);
-//			println(res);
-//			return res;
-//		}
+		
+		//FIXME Here it is dirty but I think we should 'transmit' the value in the module itself as the wire should do in true life
+		if (_self.module instanceof BluetoothTransceiver){
+			val l = (_self.module as BluetoothTransceiver).dataReceived
+			val res = l.head
+			if (res != null) {
+				l.remove(0)
+				return res != 0
+			} else {
+				// TODO Thread.sleep?
+				return false
+			}
+		}
+
 		val pin = _self.instruction.getPin(_self.module)
 		if (pin.level == 0){
 			return false
@@ -404,21 +442,21 @@ class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect
 		var leftIsBoolean = false
 		var rightIsBoolean = false
 		var Boolean res
-		var bLeft = false;
-		var iLeft = 0;
+		var bLeft = false
+		var iLeft = 0
 		switch (_self.left){
 			BooleanExpression: bLeft = {
-				_self.left.evaluate as Boolean
 				leftIsBoolean = true
+				_self.left.evaluate as Boolean
 			}
 			IntegerExpression: iLeft = _self.left.evaluate as Integer
 		}
-		var bRight = false;
-		var iRight = 0;
+		var bRight = false
+		var iRight = 0
 		switch (_self.right){
 			BooleanExpression: bRight = {
-				_self.right.evaluate as Boolean
 				rightIsBoolean = true
+				_self.right.evaluate as Boolean
 			}
 			IntegerExpression: iRight = _self.right.evaluate as Integer
 		}

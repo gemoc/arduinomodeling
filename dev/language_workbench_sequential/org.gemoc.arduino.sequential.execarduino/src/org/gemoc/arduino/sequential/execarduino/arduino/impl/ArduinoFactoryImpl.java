@@ -92,6 +92,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			case ArduinoPackage.BLOCK: return createBlock();
 			case ArduinoPackage.ARDUINO_BOARD: return createArduinoBoard();
 			case ArduinoPackage.BOOLEAN_VARIABLE_REF: return createBooleanVariableRef();
+			case ArduinoPackage.BLUETOOTH_TRANSCEIVER: return createBluetoothTransceiver();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -499,6 +500,16 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	public BooleanVariableRef createBooleanVariableRef() {
 		BooleanVariableRefImpl booleanVariableRef = new BooleanVariableRefImpl();
 		return booleanVariableRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BluetoothTransceiver createBluetoothTransceiver() {
+		BluetoothTransceiverImpl bluetoothTransceiver = new BluetoothTransceiverImpl();
+		return bluetoothTransceiver;
 	}
 
 	/**

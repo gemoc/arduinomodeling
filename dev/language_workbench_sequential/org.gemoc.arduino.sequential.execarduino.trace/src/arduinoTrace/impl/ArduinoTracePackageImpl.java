@@ -131,7 +131,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_Delay_Execute_Sequence() {
+	public EReference getTrace_Arduino_BluetoothTransceiver_Push_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -140,7 +140,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_If_Execute_Sequence() {
+	public EReference getTrace_Arduino_Delay_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -149,7 +149,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_ModuleAssignment_Execute_Sequence() {
+	public EReference getTrace_Arduino_If_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -158,7 +158,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_Project_Setup_Sequence() {
+	public EReference getTrace_Arduino_ModuleAssignment_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -167,7 +167,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_Repeat_Execute_Sequence() {
+	public EReference getTrace_Arduino_Project_Setup_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -176,7 +176,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_VariableAssignment_Execute_Sequence() {
+	public EReference getTrace_Arduino_Repeat_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -185,7 +185,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_VariableDeclaration_Execute_Sequence() {
+	public EReference getTrace_Arduino_VariableAssignment_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -194,7 +194,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_tracedAnalogPins() {
+	public EReference getTrace_Arduino_VariableDeclaration_Execute_Sequence() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -203,7 +203,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_tracedBooleanVariables() {
+	public EReference getTrace_Arduino_tracedAnalogPins() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -212,7 +212,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_tracedDigitalPins() {
+	public EReference getTrace_Arduino_tracedBluetoothTransceivers() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -221,7 +221,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_Arduino_tracedIntegerVariables() {
+	public EReference getTrace_Arduino_tracedBooleanVariables() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -230,7 +230,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_RootSteps() {
+	public EReference getTrace_Arduino_tracedDigitalPins() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -239,8 +239,26 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTrace_StatesTrace() {
+	public EReference getTrace_Arduino_tracedIntegerVariables() {
 		return (EReference)traceEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTrace_RootSteps() {
+		return (EReference)traceEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTrace_StatesTrace() {
+		return (EReference)traceEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -272,6 +290,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 
 		// Create classes and their features
 		traceEClass = createEClass(TRACE);
+		createEReference(traceEClass, TRACE__ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_SEQUENCE);
 		createEReference(traceEClass, TRACE__ARDUINO_DELAY_EXECUTE_SEQUENCE);
 		createEReference(traceEClass, TRACE__ARDUINO_IF_EXECUTE_SEQUENCE);
 		createEReference(traceEClass, TRACE__ARDUINO_MODULE_ASSIGNMENT_EXECUTE_SEQUENCE);
@@ -280,6 +299,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 		createEReference(traceEClass, TRACE__ARDUINO_VARIABLE_ASSIGNMENT_EXECUTE_SEQUENCE);
 		createEReference(traceEClass, TRACE__ARDUINO_VARIABLE_DECLARATION_EXECUTE_SEQUENCE);
 		createEReference(traceEClass, TRACE__ARDUINO_TRACED_ANALOG_PINS);
+		createEReference(traceEClass, TRACE__ARDUINO_TRACED_BLUETOOTH_TRANSCEIVERS);
 		createEReference(traceEClass, TRACE__ARDUINO_TRACED_BOOLEAN_VARIABLES);
 		createEReference(traceEClass, TRACE__ARDUINO_TRACED_DIGITAL_PINS);
 		createEReference(traceEClass, TRACE__ARDUINO_TRACED_INTEGER_VARIABLES);
@@ -327,6 +347,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(traceEClass, Trace.class, "Trace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrace_Arduino_BluetoothTransceiver_Push_Sequence(), theStepsPackage.getArduino_BluetoothTransceiver_Push(), null, "Arduino_BluetoothTransceiver_Push_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrace_Arduino_Delay_Execute_Sequence(), theStepsPackage.getArduino_Delay_Execute(), null, "Arduino_Delay_Execute_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrace_Arduino_If_Execute_Sequence(), theStepsPackage.getArduino_If_Execute(), null, "Arduino_If_Execute_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrace_Arduino_ModuleAssignment_Execute_Sequence(), theStepsPackage.getArduino_ModuleAssignment_Execute(), null, "Arduino_ModuleAssignment_Execute_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -335,6 +356,7 @@ public class ArduinoTracePackageImpl extends EPackageImpl implements ArduinoTrac
 		initEReference(getTrace_Arduino_VariableAssignment_Execute_Sequence(), theStepsPackage.getArduino_VariableAssignment_Execute(), null, "Arduino_VariableAssignment_Execute_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrace_Arduino_VariableDeclaration_Execute_Sequence(), theStepsPackage.getArduino_VariableDeclaration_Execute(), null, "Arduino_VariableDeclaration_Execute_Sequence", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrace_Arduino_tracedAnalogPins(), theArduinoPackage_1.getTracedAnalogPin(), null, "arduino_tracedAnalogPins", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTrace_Arduino_tracedBluetoothTransceivers(), theArduinoPackage_1.getTracedBluetoothTransceiver(), null, "arduino_tracedBluetoothTransceivers", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTrace_Arduino_tracedBooleanVariables(), theArduinoPackage_1.getTracedBooleanVariable(), null, "arduino_tracedBooleanVariables", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTrace_Arduino_tracedDigitalPins(), theArduinoPackage_1.getTracedDigitalPin(), null, "arduino_tracedDigitalPins", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTrace_Arduino_tracedIntegerVariables(), theArduinoPackage_1.getTracedIntegerVariable(), null, "arduino_tracedIntegerVariables", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

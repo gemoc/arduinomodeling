@@ -167,12 +167,12 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="//Control">
-    <eOperations name="execute">
-      <eAnnotations source="aspect"/>
-    </eOperations>
     <eOperations name="evaluate">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eOperations>
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//BooleanExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="//Block" containment="true"/>
@@ -304,6 +304,25 @@
     <eLiterals name="blue"/>
     <eLiterals name="red" value="1"/>
     <eLiterals name="white" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true" eSuperTypes="//ArduinoDigitalModule">
+    <eOperations name="push">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="//ArduinoCommunicationModule">
+    <eOperations name="push">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="//BluetoothTransceiver"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Object" instanceClassName="java.lang.Object"/>
 </ecore:EPackage>

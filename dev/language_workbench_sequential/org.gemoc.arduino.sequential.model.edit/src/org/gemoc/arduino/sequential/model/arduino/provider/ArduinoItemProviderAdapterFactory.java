@@ -877,6 +877,29 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BluetoothTransceiverItemProvider bluetoothTransceiverItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBluetoothTransceiverAdapter() {
+		if (bluetoothTransceiverItemProvider == null) {
+			bluetoothTransceiverItemProvider = new BluetoothTransceiverItemProvider(this);
+		}
+
+		return bluetoothTransceiverItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,6 +1033,7 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (blockItemProvider != null) blockItemProvider.dispose();
 		if (arduinoBoardItemProvider != null) arduinoBoardItemProvider.dispose();
 		if (booleanVariableRefItemProvider != null) booleanVariableRefItemProvider.dispose();
+		if (bluetoothTransceiverItemProvider != null) bluetoothTransceiverItemProvider.dispose();
 	}
 
 }

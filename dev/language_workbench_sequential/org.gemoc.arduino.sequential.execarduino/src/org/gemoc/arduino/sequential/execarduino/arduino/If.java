@@ -79,7 +79,7 @@ public interface If extends Control {
 	 * @model
 	 * @generated
 	 */
-	void execute();
+	Boolean evaluate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,6 +87,6 @@ public interface If extends Control {
 	 * @model
 	 * @generated
 	 */
-	Boolean evaluate();
+	void execute();
 
 } // If

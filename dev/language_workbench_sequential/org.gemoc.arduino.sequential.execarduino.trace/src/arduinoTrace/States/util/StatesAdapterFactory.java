@@ -68,6 +68,14 @@ public class StatesAdapterFactory extends AdapterFactoryImpl {
 	protected StatesSwitch<Adapter> modelSwitch =
 		new StatesSwitch<Adapter>() {
 			@Override
+			public Adapter caseBluetoothTransceiver_dataReceived_Value(BluetoothTransceiver_dataReceived_Value object) {
+				return createBluetoothTransceiver_dataReceived_ValueAdapter();
+			}
+			@Override
+			public Adapter caseBluetoothTransceiver_dataToSend_Value(BluetoothTransceiver_dataToSend_Value object) {
+				return createBluetoothTransceiver_dataToSend_ValueAdapter();
+			}
+			@Override
 			public Adapter caseBooleanVariable_value_Value(BooleanVariable_value_Value object) {
 				return createBooleanVariable_value_ValueAdapter();
 			}
@@ -102,6 +110,34 @@ public class StatesAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.BluetoothTransceiver_dataReceived_Value <em>Bluetooth Transceiver data Received Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.BluetoothTransceiver_dataReceived_Value
+	 * @generated
+	 */
+	public Adapter createBluetoothTransceiver_dataReceived_ValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.BluetoothTransceiver_dataToSend_Value <em>Bluetooth Transceiver data To Send Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoTrace.States.BluetoothTransceiver_dataToSend_Value
+	 * @generated
+	 */
+	public Adapter createBluetoothTransceiver_dataToSend_ValueAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link arduinoTrace.States.BooleanVariable_value_Value <em>Boolean Variable value Value</em>}'.

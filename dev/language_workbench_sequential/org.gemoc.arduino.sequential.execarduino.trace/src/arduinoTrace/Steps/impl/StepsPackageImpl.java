@@ -10,6 +10,9 @@ import arduinoTrace.States.arduino.impl.ArduinoPackageImpl;
 
 import arduinoTrace.States.impl.StatesPackageImpl;
 
+import arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push;
+import arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_AbstractSubStep;
+import arduinoTrace.Steps.Arduino_BluetoothTransceiver_Push_ImplicitStep;
 import arduinoTrace.Steps.Arduino_Delay_Execute;
 import arduinoTrace.Steps.Arduino_Delay_Execute_AbstractSubStep;
 import arduinoTrace.Steps.Arduino_Delay_Execute_ImplicitStep;
@@ -56,6 +59,27 @@ import org.gemoc.executionframework.engine.mse.MsePackage;
  * @generated
  */
 public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduino_BluetoothTransceiver_PushEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduino_BluetoothTransceiver_Push_AbstractSubStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arduino_BluetoothTransceiver_Push_ImplicitStepEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,6 +315,51 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StepsPackage.eNS_URI, theStepsPackage);
 		return theStepsPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduino_BluetoothTransceiver_Push() {
+		return arduino_BluetoothTransceiver_PushEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArduino_BluetoothTransceiver_Push_SubSteps() {
+		return (EReference)arduino_BluetoothTransceiver_PushEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getArduino_BluetoothTransceiver_Push__GetCaller() {
+		return arduino_BluetoothTransceiver_PushEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduino_BluetoothTransceiver_Push_AbstractSubStep() {
+		return arduino_BluetoothTransceiver_Push_AbstractSubStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArduino_BluetoothTransceiver_Push_ImplicitStep() {
+		return arduino_BluetoothTransceiver_Push_ImplicitStepEClass;
 	}
 
 	/**
@@ -663,6 +732,14 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		arduino_BluetoothTransceiver_PushEClass = createEClass(ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH);
+		createEReference(arduino_BluetoothTransceiver_PushEClass, ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH__SUB_STEPS);
+		createEOperation(arduino_BluetoothTransceiver_PushEClass, ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH___GET_CALLER);
+
+		arduino_BluetoothTransceiver_Push_AbstractSubStepEClass = createEClass(ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_ABSTRACT_SUB_STEP);
+
+		arduino_BluetoothTransceiver_Push_ImplicitStepEClass = createEClass(ARDUINO_BLUETOOTH_TRANSCEIVER_PUSH_IMPLICIT_STEP);
+
 		arduino_Delay_ExecuteEClass = createEClass(ARDUINO_DELAY_EXECUTE);
 		createEReference(arduino_Delay_ExecuteEClass, ARDUINO_DELAY_EXECUTE__SUB_STEPS);
 		createEOperation(arduino_Delay_ExecuteEClass, ARDUINO_DELAY_EXECUTE___GET_CALLER);
@@ -758,6 +835,16 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_BluetoothTransceiver_Push_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_Delay_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_If_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_ModuleAssignment_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_Repeat_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_VariableAssignment_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getArduino_VariableDeclaration_Execute_AbstractSubStep());
+		arduino_BluetoothTransceiver_PushEClass.getESuperTypes().add(this.getBigStep());
+		arduino_BluetoothTransceiver_Push_ImplicitStepEClass.getESuperTypes().add(this.getArduino_BluetoothTransceiver_Push_AbstractSubStep());
+		arduino_BluetoothTransceiver_Push_ImplicitStepEClass.getESuperTypes().add(this.getSmallStep());
 		arduino_Delay_ExecuteEClass.getESuperTypes().add(this.getArduino_Delay_Execute_AbstractSubStep());
 		arduino_Delay_ExecuteEClass.getESuperTypes().add(this.getArduino_If_Execute_AbstractSubStep());
 		arduino_Delay_ExecuteEClass.getESuperTypes().add(this.getArduino_ModuleAssignment_Execute_AbstractSubStep());
@@ -819,6 +906,15 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		stepEClass.getESuperTypes().add(theMsePackage.getMSEOccurrence());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(arduino_BluetoothTransceiver_PushEClass, Arduino_BluetoothTransceiver_Push.class, "Arduino_BluetoothTransceiver_Push", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArduino_BluetoothTransceiver_Push_SubSteps(), this.getArduino_BluetoothTransceiver_Push_AbstractSubStep(), null, "subSteps", null, 0, -1, Arduino_BluetoothTransceiver_Push.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getArduino_BluetoothTransceiver_Push__GetCaller(), theArduinoPackage.getBluetoothTransceiver(), "getCaller", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(arduino_BluetoothTransceiver_Push_AbstractSubStepEClass, Arduino_BluetoothTransceiver_Push_AbstractSubStep.class, "Arduino_BluetoothTransceiver_Push_AbstractSubStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(arduino_BluetoothTransceiver_Push_ImplicitStepEClass, Arduino_BluetoothTransceiver_Push_ImplicitStep.class, "Arduino_BluetoothTransceiver_Push_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(arduino_Delay_ExecuteEClass, Arduino_Delay_Execute.class, "Arduino_Delay_Execute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArduino_Delay_Execute_SubSteps(), this.getArduino_Delay_Execute_AbstractSubStep(), null, "subSteps", null, 0, -1, Arduino_Delay_Execute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

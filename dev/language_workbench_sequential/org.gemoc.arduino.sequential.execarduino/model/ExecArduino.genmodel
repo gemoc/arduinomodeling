@@ -312,10 +312,10 @@
         <ecoreFeature xsi:type="ecore:EReference" href="ExecArduino.ecore#//If/elseBlock"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="ExecArduino.ecore#//If/execute"/>
+        <ecoreOperation href="ExecArduino.ecore#//If/evaluate"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="ExecArduino.ecore#//If/evaluate"/>
+        <ecoreOperation href="ExecArduino.ecore#//If/execute"/>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -488,6 +488,27 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ExecArduino.ecore#//BooleanVariableRef/variable"/>
       </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="ExecArduino.ecore#//ArduinoCommunicationModule"/>
+      <genOperations>
+        <ecoreOperation href="ExecArduino.ecore#//ArduinoCommunicationModule/push"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExecArduino.ecore#//BluetoothTransceiver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ExecArduino.ecore#//BluetoothTransceiver/connectedTransceiver"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExecArduino.ecore#//BluetoothTransceiver/dataToSend"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExecArduino.ecore#//BluetoothTransceiver/dataReceived"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ExecArduino.ecore#//BluetoothTransceiver/push"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
