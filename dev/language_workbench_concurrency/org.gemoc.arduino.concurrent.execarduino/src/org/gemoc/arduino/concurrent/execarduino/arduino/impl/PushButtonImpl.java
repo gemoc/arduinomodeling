@@ -89,12 +89,13 @@ public class PushButtonImpl extends ArduinoDigitalModuleImpl implements PushButt
 	 * @generated NOT
 	 */
 	public void toggle() {
+		System.out.println("Java toggle() call");
 		this.isPushed = ! this.isPushed;
 		Pin pin = ArduinoUtils.getPin(this);
 		if(this.isPushed){
 			pin.setLevel(1023);
 		}else{
-			pin.setLevel(1023);
+			pin.setLevel(0);
 		}
 	}
 

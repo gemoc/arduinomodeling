@@ -80,12 +80,13 @@ context If
 		
 	inv I_startInternalofElseEmpty:
 		(self.elseBlock = null) implies
-		(Relation Coincides(self.evaluatedToFalse, self.stop))		
+		let i_lastInstructionfromthenOrFalse : Event = Expression Union(self.block.instructions->last().stop, self.evaluatedToFalse) in
+		(Relation Precedes(i_lastInstructionfromthenOrFalse, self.stop))		
 
-	inv I_stopInternalFirst:
+	inv I_stopInternalFirst: 
 		(self.elseBlock <> null) implies
 		let i_lastInstructionfromthenOrElse : Event = Expression Union(self.block.instructions->last().stop, self.elseBlock.instructions->last().stop) in
-		Relation Coincides(i_lastInstructionfromthenOrElse, self.stop)		
+		Relation Precedes(i_lastInstructionfromthenOrElse, self.stop)		
 
 
 context While

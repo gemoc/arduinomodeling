@@ -60,6 +60,7 @@ import static extension org.gemoc.arduino.concurrent.operationalsemantics.Blueto
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.PushButton_ToggleAspect.*
 import static extension org.gemoc.arduino.concurrent.operationalsemantics.Project_ExecutableAspect.*
 import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton
+import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -647,6 +648,7 @@ abstract class BinaryExpression_EvaluableAspect extends Expression_EvaluableAspe
 
 @Aspect(className=ArduinoCommunicationModule)
 abstract class ArduinoCommunicationModule_PushAspect {
+	@ReplaceAspectMethod
 	abstract def void push()
 } 
 
@@ -662,8 +664,9 @@ abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModul
 
 @Aspect(className=PushButton)
 abstract class PushButton_ToggleAspect {
-	@Override
+	@ReplaceAspectMethod
 	def void toggle(){
+		println('xtend toggle() call !!!')
 		_self.isPushed = !_self.isPushed
 		val pin = ArduinoUtils.getPin(_self)
 		if(_self.isPushed){

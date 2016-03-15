@@ -62,6 +62,7 @@ system addClocks: #(toggleIt[element.name/]).
 "clocks for If [element.name/]" 
 "internal clocks for arduino::If [element.name/]" 
 	system addInternalClocks: #(i_trueOrFalse[element.name/]).
+system addInternalClocks: #(i_lastInstructionfromthenOrFalse[element.name/]).
 system addInternalClocks: #(i_lastInstructionfromthenOrElse[element.name/]).
 
 [/for]
@@ -143,6 +144,11 @@ system addInternalClocks: #(r_trueOrFalse[element.name/]).
  
 
 	[if ( true) ]
+	system allUnion: #(stop[element.block.instructions->last().name/] evaluatedToFalse[element.name/]) named: #i_lastInstructionfromthenOrFalse[element.name/]. 
+	[/if]
+ 
+
+	[if ( true) ]
 	system allUnion: #(stop[element.block.instructions->last().name/] stop[element.elseBlock.instructions->last().name/]) named: #i_lastInstructionfromthenOrElse[element.name/]. 
 	[/if]
  
@@ -173,11 +179,11 @@ system addInternalClocks: #(r_trueOrFalse[element.name/]).
 		[/if]
 	"I_startInternalofElseEmpty in If [element.name/]"
 		[if ( ( self.elseBlock = null) ) ]
-	system library: #Kernel relation: #Coincides clocks: #(evaluatedToFalse[element.name/]  stop[element.name/]) .
+	system library: #Kernel relation: #Precedes clocks: #(i_lastInstructionfromthenOrFalse[element.name/]  stop[element.name/])  constants:{-1} .
 		[/if]
 	"I_stopInternalFirst in If [element.name/]"
 		[if ( ( self.elseBlock <> null) ) ]
-	system library: #Kernel relation: #Coincides clocks: #(i_lastInstructionfromthenOrElse[element.name/]  stop[element.name/]) .
+	system library: #Kernel relation: #Precedes clocks: #(i_lastInstructionfromthenOrElse[element.name/]  stop[element.name/])  constants:{-1} .
 		[/if]
 [/for]
 [for (element : arduino::While| aProject.eAllContents(arduino::While))]
