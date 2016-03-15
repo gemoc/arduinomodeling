@@ -504,7 +504,7 @@
       <metamodel href="../../org.gemoc.arduino.concurrent.execarduino/model/ExecArduino.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SK_DigitalModuleGet" semanticCandidatesExpression="feature:eContents" domainClass="arduino.BooleanModuleGet">
-          <style xsi:type="style:WorkspaceImageDescription" labelExpression="service:computeLabel" iconPath="/org.gemoc.arduino.concurrent.design/icons/Sensor.png" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="digitalModuleGetImageFromWorkspace">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:computeLabel" iconPath="/org.gemoc.arduino.concurrent.design/icons/Sensor.png" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="digitalModuleGetImageFromWorkspace">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -615,7 +615,7 @@
             <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold" showIcon="false" labelExpression="=" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="4" labelPosition="node" color="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20light%20blue']"/>
           </subNodeMappings>
           <subNodeMappings name="SK_VariableSubNode" semanticCandidatesExpression="[self.variable/]" domainClass="arduino.Variable">
-            <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="[self.name/]" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
+            <style xsi:type="style:SquareDescription" labelFormat="bold" showIcon="false" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             </style>
