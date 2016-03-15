@@ -2,7 +2,17 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.gemoc.gemoc_language_workbench.concurrent.xdsml">
-    <XDSML_Definition codeExecutor_class="arduinoconcurrent.xdsml.api.impl.ArduinoConcurrentCodeExecutor" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.concurrent.ArduinoConcurrent" solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.ecl/qvto-gen/modeling/arduinoML.qvto" xdsmlFilePath="/org.gemoc.arduino.concurrent/src/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange" />
+    <XDSML_Definition
+          codeExecutor_class="arduinoconcurrent.xdsml.api.impl.ArduinoConcurrentCodeExecutor"
+          modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader"
+          name="org.gemoc.arduino.concurrent.ArduinoConcurrent"
+          solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver"
+          toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.ecl/qvto-gen/modeling/arduinoML.qvto"
+          xdsmlFilePath="/org.gemoc.arduino.concurrent/bin/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange">
+       <XDSML_Definition_Customization
+             fileExtensions="arduino">
+       </XDSML_Definition_Customization>
+    </XDSML_Definition>
   </extension>
   <!--
   <extension point="fr.inria.diverse.melange.modeltype">
