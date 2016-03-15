@@ -1,4 +1,3 @@
-Manifest-Version: 1.0
 Bundle-SymbolicName: org.gemoc.arduino.sequential;singleton:=true
 Export-Package: org.gemoc.arduino.sequential
 Bundle-Name: Arduino
@@ -22,4 +21,4 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  org.gemoc.arduino.sequential.design;bundle-version="1.0.0",
  org.gemoc.arduino.sequential.execarduino
 Bundle-ManifestVersion: 2
-
+Manifest-Version: 1.0
