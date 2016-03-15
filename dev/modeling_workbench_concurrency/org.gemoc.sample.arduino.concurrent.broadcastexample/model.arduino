@@ -10,9 +10,9 @@
     <digitalPins name="2">
       <module xsi:type="arduino:LED" name="Red LED" color="red"/>
     </digitalPins>
-    <digitalPins name="3">
-      <module xsi:type="arduino:BluetoothTransceiver" name="bluetooth_1"/>
-    </digitalPins>
+    <analogPins name="3">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_1"/>
+    </analogPins>
   </boards>
   <boards xsi:type="arduino:ArduinoBoard" name="slave2">
     <digitalPins name="a">
@@ -24,9 +24,9 @@
     <digitalPins name="c">
       <module xsi:type="arduino:LED" name="LED rouge" color="red"/>
     </digitalPins>
-    <digitalPins name="d">
-      <module xsi:type="arduino:BluetoothTransceiver" name="bluetooth_A"/>
-    </digitalPins>
+    <analogPins name="d">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_A"/>
+    </analogPins>
   </boards>
   <boards xsi:type="arduino:ArduinoBoard" name="master">
     <digitalPins name="0">
@@ -38,9 +38,9 @@
     <digitalPins name="2">
       <module xsi:type="arduino:PushButton" name="button3"/>
     </digitalPins>
-    <digitalPins name="3">
-      <module xsi:type="arduino:BluetoothTransceiver" name="bluetooth_Master" connectedTransceiver="//@boards.1/@digitalPins.3/@module //@boards.0/@digitalPins.3/@module"/>
-    </digitalPins>
+    <analogPins name="3">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_master" connectedTransceiver="//@boards.0/@analogPins.0/@module //@boards.1/@analogPins.0/@module"/>
+    </analogPins>
   </boards>
   <sketches name="masterAlgorithm" board="//@boards.2">
     <block>
@@ -109,7 +109,7 @@
               <right xsi:type="arduino:BooleanConstant" value="true"/>
             </condition>
           </instructions>
-          <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.2/@digitalPins.3/@module">
+          <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.2/@analogPins.0/@module">
             <operand xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.3/@variable"/>
           </instructions>
         </block>
@@ -127,7 +127,7 @@
       <instructions xsi:type="arduino:Repeat" iteration="8">
         <block>
           <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
-            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@digitalPins.3/@module"/>
+            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@analogPins.0/@module"/>
           </instructions>
           <instructions xsi:type="arduino:If">
             <block>
@@ -219,7 +219,7 @@
       <instructions xsi:type="arduino:Repeat" iteration="8">
         <block>
           <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
-            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.1/@digitalPins.3/@module"/>
+            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.1/@analogPins.0/@module"/>
           </instructions>
           <instructions xsi:type="arduino:If">
             <block>
