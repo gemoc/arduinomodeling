@@ -67,6 +67,14 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="HW_Wireless" deletionDescription="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Delete_Wire']" sourceMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_BluetoothTransceiver']" targetMapping="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_BluetoothTransceiver']" targetFinderExpression="[self.connectedTransceiver/]" reconnections="//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Reconnect_Wire_Target'] //@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@toolSections.0/@ownedTools[name='HW_Reconnect_Wire_Source']">
+          <style lineStyle="dot" sourceArrow="OutputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="6" showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <toolSections name="HW_Platforms_Section" label="Platforms">
           <ownedTools xsi:type="tool:DeleteElementDescription" name="HW_Delete_Wire" label="Delete Wire">
             <element name="element"/>
@@ -502,7 +510,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="SK_AnalogModuleGet" semanticCandidatesExpression="feature:eContents" domainClass="arduino.IntegerModuleGet">
-          <style xsi:type="style:WorkspaceImageDescription" labelExpression="service:computeLabel" iconPath="/org.gemoc.arduino.concurrent.design/icons/Sensor.png" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="analogModuleGetImageFromWorkspace">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:computeLabel" iconPath="/org.gemoc.arduino.concurrent.design/icons/Sensor.png" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="analogModuleGetImageFromWorkspace">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -541,7 +549,7 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="moduleAssignmentImageFromWorkspace"/>
+          <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" labelFormat="bold_italic" showIcon="false" labelExpression="service:computeExpressionLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20dark%20gray']" sizeComputationExpression="8" resizeKind="NSEW" workspacePath="moduleAssignmentImageFromWorkspace"/>
         </nodeMappings>
         <nodeMappings name="SK_VariableRef" semanticCandidatesExpression="feature:eContents" domainClass="arduino.VariableRef">
           <style xsi:type="style:LozengeNodeDescription" labelFormat="bold" showIcon="false" labelExpression="service:computeLabel" labelColor="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='Arduino%20white']" labelPosition="node" resizeKind="EAST_WEST">
