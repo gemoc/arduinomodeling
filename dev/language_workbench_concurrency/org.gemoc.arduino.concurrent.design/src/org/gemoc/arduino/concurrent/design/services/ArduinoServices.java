@@ -10,7 +10,7 @@
  */
 package org.gemoc.arduino.concurrent.design.services;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -20,7 +20,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -55,6 +54,7 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanModuleGet;
+import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariableRef;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Buzzer;
 import org.gemoc.arduino.concurrent.execarduino.arduino.Color;
@@ -90,6 +90,7 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.UnaryIntegerOperatorKind
 import org.gemoc.arduino.concurrent.execarduino.arduino.Variable;
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.concurrent.execarduino.arduino.VariableDeclaration;
+import org.gemoc.arduino.concurrent.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.concurrent.execarduino.arduino.While;
 
 import com.google.common.collect.ImmutableList;
@@ -528,6 +529,24 @@ public class ArduinoServices {
 		}
 
 		return label;
+	}
+	
+	public String computeDynamicLabel(VariableRef variableRef) {
+		if (variableRef instanceof BooleanVariableRef) {
+			BooleanVariable variable = ((BooleanVariableRef) variableRef).getVariable();
+			if (variable.getValue() != null) {
+				return variable.getName() + "(=" + variable.getValue() + ")";
+			}
+			return variable.getName();
+		}
+		if (variableRef instanceof IntegerVariableRef) {
+			IntegerVariable variable = ((IntegerVariableRef) variableRef).getVariable(); 
+			if (variable.getValue() != null) {
+				return variable.getName() + "(=" + variable.getValue() + ")";
+			}
+			return variable.getName();
+		}
+		return "";
 	}
 
 	public String computeLabel(Expression Expression) {

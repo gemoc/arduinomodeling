@@ -54,6 +54,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.Board;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanModuleGet;
+import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.Buzzer;
 import org.gemoc.arduino.sequential.execarduino.arduino.Color;
@@ -89,6 +90,7 @@ import org.gemoc.arduino.sequential.execarduino.arduino.UnaryIntegerOperatorKind
 import org.gemoc.arduino.sequential.execarduino.arduino.Variable;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableAssignment;
 import org.gemoc.arduino.sequential.execarduino.arduino.VariableDeclaration;
+import org.gemoc.arduino.sequential.execarduino.arduino.VariableRef;
 import org.gemoc.arduino.sequential.execarduino.arduino.While;
 
 import com.google.common.collect.ImmutableList;
@@ -528,32 +530,50 @@ public class ArduinoServices {
 
 		return label;
 	}
+	
+	public String computeDynamicLabel(VariableRef variableRef) {
+		if (variableRef instanceof BooleanVariableRef) {
+			BooleanVariable variable = ((BooleanVariableRef) variableRef).getVariable();
+			if (variable.getValue() != null) {
+				return variable.getName() + "(=" + variable.getValue() + ")";
+			}
+			return variable.getName();
+		}
+		if (variableRef instanceof IntegerVariableRef) {
+			IntegerVariable variable = ((IntegerVariableRef) variableRef).getVariable(); 
+			if (variable.getValue() != null) {
+				return variable.getName() + "(=" + variable.getValue() + ")";
+			}
+			return variable.getName();
+		}
+		return "";
+	}
 
-	public String computeLabel(Expression Expression) {
-		if (Expression instanceof BooleanVariableRef) {
-			return ((BooleanVariableRef) Expression).getVariable().getName();
+	public String computeLabel(Expression expression) {
+		if (expression instanceof BooleanVariableRef) {
+			return ((BooleanVariableRef) expression).getVariable().getName();
 		}
-		if (Expression instanceof IntegerVariableRef) {
-			return ((IntegerVariableRef) Expression).getVariable().getName();
+		if (expression instanceof IntegerVariableRef) {
+			return ((IntegerVariableRef) expression).getVariable().getName();
 		}
-		if (Expression instanceof BooleanConstant) {
-			return String.valueOf(((BooleanConstant) Expression).isValue());
+		if (expression instanceof BooleanConstant) {
+			return String.valueOf(((BooleanConstant) expression).isValue());
 		}
-		if (Expression instanceof IntegerConstant) {
-			return String.valueOf(((IntegerConstant) Expression).getValue());
+		if (expression instanceof IntegerConstant) {
+			return String.valueOf(((IntegerConstant) expression).getValue());
 		}
-		if (Expression instanceof ModuleGet) {
-			return "get(" + ((ModuleGet) Expression).getModule().getName() + ")";
+		if (expression instanceof ModuleGet) {
+			return "get(" + ((ModuleGet) expression).getModule().getName() + ")";
 		}
-		if (Expression instanceof BinaryIntegerExpression) {
-			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
-					+ getOperator(((BinaryIntegerExpression) Expression).getOperator())
-					+ computeLabel(((BinaryExpression) Expression).getRight()) + ")";
+		if (expression instanceof BinaryIntegerExpression) {
+			return "(" + computeLabel(((BinaryExpression) expression).getLeft())
+					+ getOperator(((BinaryIntegerExpression) expression).getOperator())
+					+ computeLabel(((BinaryExpression) expression).getRight()) + ")";
 		}
-		if (Expression instanceof BinaryBooleanExpression) {
-			return "(" + computeLabel(((BinaryExpression) Expression).getLeft())
-					+ getOperator(((BinaryBooleanExpression) Expression).getOperator())
-					+ computeLabel(((BinaryExpression) Expression).getRight()) + ")";
+		if (expression instanceof BinaryBooleanExpression) {
+			return "(" + computeLabel(((BinaryExpression) expression).getLeft())
+					+ getOperator(((BinaryBooleanExpression) expression).getOperator())
+					+ computeLabel(((BinaryExpression) expression).getRight()) + ")";
 		}
 
 		return "null";
