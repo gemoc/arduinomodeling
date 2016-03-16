@@ -2,6 +2,8 @@
  */
 package org.gemoc.arduino.sequential.model.arduino;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,29 +23,19 @@ package org.gemoc.arduino.sequential.model.arduino;
  */
 public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	/**
-	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference.
+	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference list.
+	 * The list contents are of type {@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connected Transceiver</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connected Transceiver</em>' reference.
-	 * @see #setConnectedTransceiver(BluetoothTransceiver)
+	 * @return the value of the '<em>Connected Transceiver</em>' reference list.
 	 * @see org.gemoc.arduino.sequential.model.arduino.ArduinoPackage#getBluetoothTransceiver_ConnectedTransceiver()
 	 * @model
 	 * @generated
 	 */
-	BluetoothTransceiver getConnectedTransceiver();
-
-	/**
-	 * Sets the value of the '{@link org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connected Transceiver</em>' reference.
-	 * @see #getConnectedTransceiver()
-	 * @generated
-	 */
-	void setConnectedTransceiver(BluetoothTransceiver value);
+	EList<BluetoothTransceiver> getConnectedTransceiver();
 
 } // BluetoothTransceiver

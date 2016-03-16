@@ -208,8 +208,10 @@ abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModul
 	@Step
 	@OverrideAspectMethod
 	def void push(){
-		val l = _self.connectedTransceiver.dataReceived
-		_self.dataToSend.forEach[i|l.add(i)]
+		_self.connectedTransceiver.forEach[t|
+			val l = t.dataReceived
+			_self.dataToSend.forEach[i|l.add(i)]
+		]
 		_self.dataToSend.clear
 	}
 } 

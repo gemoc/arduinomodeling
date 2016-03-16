@@ -1959,7 +1959,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(arduinoCommunicationModuleEClass, ArduinoCommunicationModule.class, "ArduinoCommunicationModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bluetoothTransceiverEClass, BluetoothTransceiver.class, "BluetoothTransceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBluetoothTransceiver_ConnectedTransceiver(), this.getBluetoothTransceiver(), null, "connectedTransceiver", null, 0, 1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBluetoothTransceiver_ConnectedTransceiver(), this.getBluetoothTransceiver(), null, "connectedTransceiver", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");

@@ -5,6 +5,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.List;
 import java.util.function.Consumer;
+import org.eclipse.emf.common.util.EList;
 import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.execarduino.aspects.ArduinoCommunicationModule_PushAspect;
 import org.gemoc.arduino.sequential.execarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties;
@@ -59,15 +60,18 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_push(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
-    BluetoothTransceiver _connectedTransceiver = _self.getConnectedTransceiver();
-    final List<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(_connectedTransceiver);
-    List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
-    final Consumer<Integer> _function = (Integer i) -> {
-      l.add(i);
+    EList<BluetoothTransceiver> _connectedTransceiver = _self.getConnectedTransceiver();
+    final Consumer<BluetoothTransceiver> _function = (BluetoothTransceiver t) -> {
+      final List<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(t);
+      List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
+      final Consumer<Integer> _function_1 = (Integer i) -> {
+        l.add(i);
+      };
+      _dataToSend.forEach(_function_1);
     };
-    _dataToSend.forEach(_function);
-    List<Integer> _dataToSend_1 = BluetoothTransceiver_PushAspect.dataToSend(_self);
-    _dataToSend_1.clear();
+    _connectedTransceiver.forEach(_function);
+    List<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
+    _dataToSend.clear();
   }
   
   protected static List<Integer> _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {

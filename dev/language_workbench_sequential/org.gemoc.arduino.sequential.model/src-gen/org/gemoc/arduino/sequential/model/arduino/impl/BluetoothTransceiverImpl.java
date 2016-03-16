@@ -2,10 +2,10 @@
  */
 package org.gemoc.arduino.sequential.model.arduino.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.gemoc.arduino.sequential.model.arduino.ArduinoPackage;
 import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver;
 
@@ -24,14 +24,14 @@ import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver;
  */
 public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements BluetoothTransceiver {
 	/**
-	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference.
+	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConnectedTransceiver()
 	 * @generated
 	 * @ordered
 	 */
-	protected BluetoothTransceiver connectedTransceiver;
+	protected EList<BluetoothTransceiver> connectedTransceiver;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,37 +57,11 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BluetoothTransceiver getConnectedTransceiver() {
-		if (connectedTransceiver != null && connectedTransceiver.eIsProxy()) {
-			InternalEObject oldConnectedTransceiver = (InternalEObject)connectedTransceiver;
-			connectedTransceiver = (BluetoothTransceiver)eResolveProxy(oldConnectedTransceiver);
-			if (connectedTransceiver != oldConnectedTransceiver) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER, oldConnectedTransceiver, connectedTransceiver));
-			}
+	public EList<BluetoothTransceiver> getConnectedTransceiver() {
+		if (connectedTransceiver == null) {
+			connectedTransceiver = new EObjectResolvingEList<BluetoothTransceiver>(BluetoothTransceiver.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
 		}
 		return connectedTransceiver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BluetoothTransceiver basicGetConnectedTransceiver() {
-		return connectedTransceiver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnectedTransceiver(BluetoothTransceiver newConnectedTransceiver) {
-		BluetoothTransceiver oldConnectedTransceiver = connectedTransceiver;
-		connectedTransceiver = newConnectedTransceiver;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER, oldConnectedTransceiver, connectedTransceiver));
 	}
 
 	/**
@@ -99,8 +73,7 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				if (resolve) return getConnectedTransceiver();
-				return basicGetConnectedTransceiver();
+				return getConnectedTransceiver();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,7 +88,8 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				setConnectedTransceiver((BluetoothTransceiver)newValue);
+				getConnectedTransceiver().clear();
+				getConnectedTransceiver().addAll((Collection<? extends BluetoothTransceiver>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +104,7 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				setConnectedTransceiver((BluetoothTransceiver)null);
+				getConnectedTransceiver().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,7 +119,7 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				return connectedTransceiver != null;
+				return connectedTransceiver != null && !connectedTransceiver.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

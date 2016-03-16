@@ -314,7 +314,7 @@
     <eOperations name="push">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="//BluetoothTransceiver"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" upperBound="-1" eType="//BluetoothTransceiver"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>

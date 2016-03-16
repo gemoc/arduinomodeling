@@ -1898,7 +1898,7 @@ public interface ArduinoPackage extends EPackage {
 	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_ANALOG_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
+	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3036,10 +3036,10 @@ public interface ArduinoPackage extends EPackage {
 	EClass getBluetoothTransceiver();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connected Transceiver</em>'.
+	 * @return the meta object for the reference list '<em>Connected Transceiver</em>'.
 	 * @see org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver#getConnectedTransceiver()
 	 * @see #getBluetoothTransceiver()
 	 * @generated
@@ -4070,7 +4070,7 @@ public interface ArduinoPackage extends EPackage {
 		EClass BLUETOOTH_TRANSCEIVER = eINSTANCE.getBluetoothTransceiver();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
