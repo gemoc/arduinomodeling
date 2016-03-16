@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
@@ -44,14 +45,14 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
  */
 public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImpl implements TracedBluetoothTransceiver {
 	/**
-	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference.
+	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConnectedTransceiver()
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedBluetoothTransceiver connectedTransceiver;
+	protected EList<TracedBluetoothTransceiver> connectedTransceiver;
 
 	/**
 	 * The cached value of the '{@link #getDataReceivedSequence() <em>Data Received Sequence</em>}' containment reference list.
@@ -107,37 +108,11 @@ public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedBluetoothTransceiver getConnectedTransceiver() {
-		if (connectedTransceiver != null && connectedTransceiver.eIsProxy()) {
-			InternalEObject oldConnectedTransceiver = (InternalEObject)connectedTransceiver;
-			connectedTransceiver = (TracedBluetoothTransceiver)eResolveProxy(oldConnectedTransceiver);
-			if (connectedTransceiver != oldConnectedTransceiver) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER, oldConnectedTransceiver, connectedTransceiver));
-			}
+	public EList<TracedBluetoothTransceiver> getConnectedTransceiver() {
+		if (connectedTransceiver == null) {
+			connectedTransceiver = new EObjectResolvingEList<TracedBluetoothTransceiver>(TracedBluetoothTransceiver.class, this, ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
 		}
 		return connectedTransceiver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TracedBluetoothTransceiver basicGetConnectedTransceiver() {
-		return connectedTransceiver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnectedTransceiver(TracedBluetoothTransceiver newConnectedTransceiver) {
-		TracedBluetoothTransceiver oldConnectedTransceiver = connectedTransceiver;
-		connectedTransceiver = newConnectedTransceiver;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER, oldConnectedTransceiver, connectedTransceiver));
 	}
 
 	/**
@@ -244,8 +219,7 @@ public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				if (resolve) return getConnectedTransceiver();
-				return basicGetConnectedTransceiver();
+				return getConnectedTransceiver();
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE:
 				return getDataReceivedSequence();
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_TO_SEND_SEQUENCE:
@@ -267,7 +241,8 @@ public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				setConnectedTransceiver((TracedBluetoothTransceiver)newValue);
+				getConnectedTransceiver().clear();
+				getConnectedTransceiver().addAll((Collection<? extends TracedBluetoothTransceiver>)newValue);
 				return;
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE:
 				getDataReceivedSequence().clear();
@@ -293,7 +268,7 @@ public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				setConnectedTransceiver((TracedBluetoothTransceiver)null);
+				getConnectedTransceiver().clear();
 				return;
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE:
 				getDataReceivedSequence().clear();
@@ -317,7 +292,7 @@ public class TracedBluetoothTransceiverImpl extends TracedArduinoAnalogModuleImp
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
-				return connectedTransceiver != null;
+				return connectedTransceiver != null && !connectedTransceiver.isEmpty();
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_RECEIVED_SEQUENCE:
 				return dataReceivedSequence != null && !dataReceivedSequence.isEmpty();
 			case ArduinoPackage.TRACED_BLUETOOTH_TRANSCEIVER__DATA_TO_SEND_SEQUENCE:

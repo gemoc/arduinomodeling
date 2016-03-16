@@ -270,7 +270,7 @@ public interface ArduinoPackage extends EPackage {
 	int TRACED_BLUETOOTH_TRANSCEIVER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference.
+	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -562,10 +562,10 @@ public interface ArduinoPackage extends EPackage {
 	EClass getTracedBluetoothTransceiver();
 
 	/**
-	 * Returns the meta object for the reference '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
+	 * Returns the meta object for the reference list '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connected Transceiver</em>'.
+	 * @return the meta object for the reference list '<em>Connected Transceiver</em>'.
 	 * @see arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver()
 	 * @see #getTracedBluetoothTransceiver()
 	 * @generated
@@ -832,7 +832,7 @@ public interface ArduinoPackage extends EPackage {
 		EClass TRACED_BLUETOOTH_TRANSCEIVER = eINSTANCE.getTracedBluetoothTransceiver();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -30,30 +30,20 @@ import org.gemoc.arduino.sequential.execarduino.arduino.BluetoothTransceiver;
  */
 public interface TracedBluetoothTransceiver extends TracedArduinoAnalogModule {
 	/**
-	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference.
+	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference list.
+	 * The list contents are of type {@link arduinoTrace.States.arduino.TracedBluetoothTransceiver}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Connected Transceiver</em>' reference isn't clear,
+	 * If the meaning of the '<em>Connected Transceiver</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connected Transceiver</em>' reference.
-	 * @see #setConnectedTransceiver(TracedBluetoothTransceiver)
+	 * @return the value of the '<em>Connected Transceiver</em>' reference list.
 	 * @see arduinoTrace.States.arduino.ArduinoPackage#getTracedBluetoothTransceiver_ConnectedTransceiver()
 	 * @model
 	 * @generated
 	 */
-	TracedBluetoothTransceiver getConnectedTransceiver();
-
-	/**
-	 * Sets the value of the '{@link arduinoTrace.States.arduino.TracedBluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connected Transceiver</em>' reference.
-	 * @see #getConnectedTransceiver()
-	 * @generated
-	 */
-	void setConnectedTransceiver(TracedBluetoothTransceiver value);
+	EList<TracedBluetoothTransceiver> getConnectedTransceiver();
 
 	/**
 	 * Returns the value of the '<em><b>Data Received Sequence</b></em>' containment reference list.

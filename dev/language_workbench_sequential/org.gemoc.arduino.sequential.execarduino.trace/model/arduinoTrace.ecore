@@ -187,7 +187,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoAnalogModule" abstract="true" eSuperTypes="//States/arduino/TracedArduinoModule"/>
       <eClassifiers xsi:type="ecore:EClass" name="TracedArduinoModule" abstract="true" eSuperTypes="//States/arduino/TracedModule"/>
       <eClassifiers xsi:type="ecore:EClass" name="TracedBluetoothTransceiver" eSuperTypes="//States/arduino/TracedArduinoAnalogModule">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" eType="//States/arduino/TracedBluetoothTransceiver"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" upperBound="-1" eType="//States/arduino/TracedBluetoothTransceiver"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataReceivedSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataReceived_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataReceived_Value/parent"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataToSendSequence" upperBound="-1" eType="//States/BluetoothTransceiver_dataToSend_Value" containment="true" eOpposite="//States/BluetoothTransceiver_dataToSend_Value/parent"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">

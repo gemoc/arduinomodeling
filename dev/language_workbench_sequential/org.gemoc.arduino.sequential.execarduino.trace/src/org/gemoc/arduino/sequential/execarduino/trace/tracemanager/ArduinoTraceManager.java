@@ -358,8 +358,8 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			newState.getBluetoothTransceiver_dataReceived_Values().clear();
 			newState.getBluetoothTransceiver_dataToSend_Values().clear();
 			newState.getPin_level_Values().clear();
-			newState.getIntegerVariable_value_Values().clear();
 			newState.getBooleanVariable_value_Values().clear();
+			newState.getIntegerVariable_value_Values().clear();
 		}
 
 		return createNewState;
@@ -676,22 +676,6 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 
 			}
 
-			for (arduinoTrace.States.IntegerVariable_value_Value value : stateToGo.getIntegerVariable_value_Values()) {
-
-				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedIntegerVariable) {
-					arduinoTrace.States.arduino.TracedIntegerVariable parent_cast = (arduinoTrace.States.arduino.TracedIntegerVariable) value
-							.getParent();
-					java.lang.Integer toset = value.getValue();
-					java.lang.Integer current = ((org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) parent_cast
-							.getOriginalObject()).getValue();
-					if (current != toset)
-						((org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) parent_cast
-								.getOriginalObject()).setValue(toset);
-
-				}
-
-			}
-
 			for (arduinoTrace.States.BooleanVariable_value_Value value : stateToGo.getBooleanVariable_value_Values()) {
 
 				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedBooleanVariable) {
@@ -702,6 +686,22 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 							.getOriginalObject()).getValue();
 					if (current != toset)
 						((org.gemoc.arduino.sequential.execarduino.arduino.BooleanVariable) parent_cast
+								.getOriginalObject()).setValue(toset);
+
+				}
+
+			}
+
+			for (arduinoTrace.States.IntegerVariable_value_Value value : stateToGo.getIntegerVariable_value_Values()) {
+
+				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedIntegerVariable) {
+					arduinoTrace.States.arduino.TracedIntegerVariable parent_cast = (arduinoTrace.States.arduino.TracedIntegerVariable) value
+							.getParent();
+					java.lang.Integer toset = value.getValue();
+					java.lang.Integer current = ((org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) parent_cast
+							.getOriginalObject()).getValue();
+					if (current != toset)
+						((org.gemoc.arduino.sequential.execarduino.arduino.IntegerVariable) parent_cast
 								.getOriginalObject()).setValue(toset);
 
 				}
@@ -796,15 +796,15 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			result.append("\n\t" + currentState.getLevel());
 		}
 
-		if (!gs.getIntegerVariable_value_Values().isEmpty())
-			result.append("\nValue values:");
-		for (arduinoTrace.States.IntegerVariable_value_Value currentState : gs.getIntegerVariable_value_Values()) {
-			result.append("\n\t" + currentState.getValue());
-		}
-
 		if (!gs.getBooleanVariable_value_Values().isEmpty())
 			result.append("\nValue values:");
 		for (arduinoTrace.States.BooleanVariable_value_Value currentState : gs.getBooleanVariable_value_Values()) {
+			result.append("\n\t" + currentState.getValue());
+		}
+
+		if (!gs.getIntegerVariable_value_Values().isEmpty())
+			result.append("\nValue values:");
+		for (arduinoTrace.States.IntegerVariable_value_Value currentState : gs.getIntegerVariable_value_Values()) {
 			result.append("\n\t" + currentState.getValue());
 		}
 
@@ -832,12 +832,12 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 					+ ((arduinoTrace.States.BluetoothTransceiver_dataToSend_Value) value).getDataToSend();
 		} else if (value instanceof arduinoTrace.States.Pin_level_Value) {
 			return "arduinoTrace.States.Pin_level_Value: " + ((arduinoTrace.States.Pin_level_Value) value).getLevel();
-		} else if (value instanceof arduinoTrace.States.IntegerVariable_value_Value) {
-			return "arduinoTrace.States.IntegerVariable_value_Value: "
-					+ ((arduinoTrace.States.IntegerVariable_value_Value) value).getValue();
 		} else if (value instanceof arduinoTrace.States.BooleanVariable_value_Value) {
 			return "arduinoTrace.States.BooleanVariable_value_Value: "
 					+ ((arduinoTrace.States.BooleanVariable_value_Value) value).getValue();
+		} else if (value instanceof arduinoTrace.States.IntegerVariable_value_Value) {
+			return "arduinoTrace.States.IntegerVariable_value_Value: "
+					+ ((arduinoTrace.States.IntegerVariable_value_Value) value).getValue();
 		} else
 			return "ERROR";
 	}
@@ -850,10 +850,10 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			return ((arduinoTrace.States.BluetoothTransceiver_dataToSend_Value) value).getDataToSend();
 		} else if (value instanceof arduinoTrace.States.Pin_level_Value) {
 			return ((arduinoTrace.States.Pin_level_Value) value).getLevel();
-		} else if (value instanceof arduinoTrace.States.IntegerVariable_value_Value) {
-			return ((arduinoTrace.States.IntegerVariable_value_Value) value).getValue();
 		} else if (value instanceof arduinoTrace.States.BooleanVariable_value_Value) {
 			return ((arduinoTrace.States.BooleanVariable_value_Value) value).getValue();
+		} else if (value instanceof arduinoTrace.States.IntegerVariable_value_Value) {
+			return ((arduinoTrace.States.IntegerVariable_value_Value) value).getValue();
 		} else
 			return null;
 	}
@@ -1014,8 +1014,8 @@ public class ArduinoTraceManager implements fr.inria.diverse.trace.gemoc.api.IGe
 			currentValues.addAll(currentState.getBluetoothTransceiver_dataReceived_Values());
 			currentValues.addAll(currentState.getBluetoothTransceiver_dataToSend_Values());
 			currentValues.addAll(currentState.getPin_level_Values());
-			currentValues.addAll(currentState.getIntegerVariable_value_Values());
 			currentValues.addAll(currentState.getBooleanVariable_value_Values());
+			currentValues.addAll(currentState.getIntegerVariable_value_Values());
 		}
 		return currentValues;
 	}
