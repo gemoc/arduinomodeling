@@ -28,7 +28,7 @@ public class ArduinoModelingSequentialLanguageExampleWizard
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
 		
 		// sequential projects
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential", 						"org.gemoc.arduino.sequential"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.zip", 					"org.gemoc.arduino.sequential"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.design.zip", 			"org.gemoc.arduino.sequential.design"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.execarduino.zip", 		"org.gemoc.arduino.sequential.execarduino"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.execarduino.trace.zip", 	"org.gemoc.arduino.sequential.execarduino.trace"));
