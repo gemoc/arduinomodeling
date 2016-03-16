@@ -66,7 +66,7 @@
             hasPages="false"
             icon="icons/IconeGemocLanguage-16.png"
             id="org.gemoc.arduinomodeling.sampledeployer.wizards.ArduinoModelingConcurrentLanguageExampleWizard"
-            name="GEMOC ArduinoModeling Language (Sequential)"
+            name="GEMOC ArduinoModeling Language (Concurrent)"
             preferredPerspectives="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective">
          <description>
             T⁮his set of projects feature an ArduinoModeling concurrent language which is made executable using Gemoc.
