@@ -39,7 +39,7 @@
       <module xsi:type="arduino:PushButton" name="button3"/>
     </digitalPins>
     <analogPins name="3">
-      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_master" connectedTransceiver="//@boards.1/@analogPins.0/@module"/>
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_master" connectedTransceiver="//@boards.1/@analogPins.0/@module //@boards.0/@analogPins.0/@module"/>
     </analogPins>
   </boards>
   <sketches name="masterAlgorithm" board="//@boards.2">
