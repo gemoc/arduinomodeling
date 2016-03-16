@@ -56,7 +56,7 @@
       <instructions xsi:type="arduino:VariableDeclaration">
         <variable xsi:type="arduino:IntegerVariable" name="InputValue"/>
       </instructions>
-      <instructions xsi:type="arduino:Repeat" iteration="8">
+      <instructions xsi:type="arduino:Repeat" iteration="2">
         <block>
           <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.0/@variable">
             <operand xsi:type="arduino:BooleanModuleGet" module="//@boards.2/@digitalPins.0/@module"/>
@@ -124,7 +124,7 @@
       <instructions xsi:type="arduino:VariableDeclaration">
         <variable xsi:type="arduino:IntegerVariable" name="temp"/>
       </instructions>
-      <instructions xsi:type="arduino:Repeat" iteration="8">
+      <instructions xsi:type="arduino:Repeat" iteration="2">
         <block>
           <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
             <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@analogPins.0/@module"/>
@@ -216,7 +216,7 @@
       <instructions xsi:type="arduino:VariableDeclaration">
         <variable xsi:type="arduino:IntegerVariable" name="temp"/>
       </instructions>
-      <instructions xsi:type="arduino:Repeat" iteration="8">
+      <instructions xsi:type="arduino:Repeat" iteration="2">
         <block>
           <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
             <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.1/@analogPins.0/@module"/>
