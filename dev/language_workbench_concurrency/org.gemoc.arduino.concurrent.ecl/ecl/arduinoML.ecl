@@ -17,7 +17,7 @@ context Instruction
  
 context Sketch
  def : start : Event = self
- def : stop  : Event = self
+ def : stop  : Event = self 
 
 context Control
 def : doEvaluate : Event = self.evaluate() [res] switch case self.res = true force evaluatedToTrue;
