@@ -5,18 +5,6 @@
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_FctWIOrREeWTBPbJjvGCzg" name="Hardware">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Fct9MOrREeWTBPbJjvGCzg" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_Fct9MerREeWTBPbJjvGCzg">
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_Fct9MurREeWTBPbJjvGCzg" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_Fct9M-rREeWTBPbJjvGCzg" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_Fct9NOrREeWTBPbJjvGCzg" borderSizeComputationExpression="1" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </computedStyleDescriptions>
           <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_Fct9NerREeWTBPbJjvGCzg" borderSizeComputationExpression="1" labelSize="6" showIcon="false" tooltipExpression="['Digital pin '+name/]" sizeComputationExpression="2" labelPosition="node">
             <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -209,12 +197,24 @@
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_nL9akOt3EeWEbuotzlcsQQ" borderSizeComputationExpression="1" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_nMPHYOt3EeWEbuotzlcsQQ" borderSizeComputationExpression="1" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:WorkspaceImageDescription" xmi:id="_nMPuc-t3EeWEbuotzlcsQQ" borderSizeComputationExpression="1" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+            <borderColor xmi:type="description:InterpolatedColor" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </computedStyleDescriptions>
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_Fct9Z-rREeWTBPbJjvGCzg">
             <key xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_Fct9aOrREeWTBPbJjvGCzg">
               <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@boards.0"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_Fct9aerREeWTBPbJjvGCzg" key="_Fct95-rREeWTBPbJjvGCzg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9aurREeWTBPbJjvGCzg" value="_Fct9MurREeWTBPbJjvGCzg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9aurREeWTBPbJjvGCzg" value="_nL9akOt3EeWEbuotzlcsQQ">
                   <key xmi:type="arduino:Project" href="model.arduino#/"/>
                 </value>
               </value>
@@ -222,7 +222,7 @@
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_Fct9a-rREeWTBPbJjvGCzg">
               <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@boards.1"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_Fct9bOrREeWTBPbJjvGCzg" key="_FcukTerREeWTBPbJjvGCzg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9berREeWTBPbJjvGCzg" value="_Fct9M-rREeWTBPbJjvGCzg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9berREeWTBPbJjvGCzg" value="_nMPHYOt3EeWEbuotzlcsQQ">
                   <key xmi:type="arduino:Project" href="model.arduino#/"/>
                 </value>
               </value>
@@ -230,7 +230,7 @@
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_Fct9burREeWTBPbJjvGCzg">
               <key xmi:type="arduino:ArduinoBoard" href="model.arduino#//@boards.2"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_Fct9b-rREeWTBPbJjvGCzg" key="_FcukZerREeWTBPbJjvGCzg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9cOrREeWTBPbJjvGCzg" value="_Fct9NOrREeWTBPbJjvGCzg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Fct9cOrREeWTBPbJjvGCzg" value="_nMPuc-t3EeWEbuotzlcsQQ">
                   <key xmi:type="arduino:Project" href="model.arduino#/"/>
                 </value>
               </value>
@@ -610,9 +610,9 @@
               <styles xmi:type="notation:ShapeStyle" xmi:id="_Fe35UerREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fe35UurREeWTBPbJjvGCzg" x="192" y="8" width="20" height="20"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_Fe5HcOrREeWTBPbJjvGCzg" type="3005" element="_FcukSurREeWTBPbJjvGCzg">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_Fe5HcerREeWTBPbJjvGCzg" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fe5HcurREeWTBPbJjvGCzg"/>
+            <children xmi:type="notation:Node" xmi:id="_nWpAkOt3EeWEbuotzlcsQQ" type="3005" element="_nMAd4Ot3EeWEbuotzlcsQQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_nWpAket3EeWEbuotzlcsQQ" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nWpAkut3EeWEbuotzlcsQQ"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_FdjqserREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="8" bold="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FdjqsurREeWTBPbJjvGCzg" x="72" y="288" width="200" height="200"/>
@@ -665,9 +665,9 @@
               <styles xmi:type="notation:ShapeStyle" xmi:id="_Fe_OEerREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fe_OEurREeWTBPbJjvGCzg" x="192" y="12" width="20" height="20"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FfAcMOrREeWTBPbJjvGCzg" type="3005" element="_FcukYurREeWTBPbJjvGCzg">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_FfAcMerREeWTBPbJjvGCzg" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FfAcMurREeWTBPbJjvGCzg"/>
+            <children xmi:type="notation:Node" xmi:id="_nWsD4Ot3EeWEbuotzlcsQQ" type="3005" element="_nMPucOt3EeWEbuotzlcsQQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_nWsD4et3EeWEbuotzlcsQQ" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nWsD4ut3EeWEbuotzlcsQQ"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_FeWU4erREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="8" bold="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeWU4urREeWTBPbJjvGCzg" x="72" y="540" width="200" height="200"/>
@@ -720,9 +720,9 @@
               <styles xmi:type="notation:ShapeStyle" xmi:id="_FfF7werREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="6"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FfF7wurREeWTBPbJjvGCzg" x="192" y="12" width="20" height="20"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FfHJ4OrREeWTBPbJjvGCzg" type="3005" element="_FcukeurREeWTBPbJjvGCzg">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_FfHJ4erREeWTBPbJjvGCzg" fontName="Ubuntu"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FfHJ4urREeWTBPbJjvGCzg"/>
+            <children xmi:type="notation:Node" xmi:id="_nWsq8Ot3EeWEbuotzlcsQQ" type="3005" element="_nMQVgOt3EeWEbuotzlcsQQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_nWsq8et3EeWEbuotzlcsQQ" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nWsq8ut3EeWEbuotzlcsQQ"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_FeXjAerREeWTBPbJjvGCzg" fontColor="13750737" fontName="Ubuntu" fontHeight="8" bold="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeXjAurREeWTBPbJjvGCzg" x="72" y="36" width="200" height="200"/>
@@ -1141,9 +1141,9 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FcukSurREeWTBPbJjvGCzg" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_Fct9MurREeWTBPbJjvGCzg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FcukS-rREeWTBPbJjvGCzg" red="209" green="209" blue="209"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_FcukTOrREeWTBPbJjvGCzg"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_nMAd4Ot3EeWEbuotzlcsQQ" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_nL9akOt3EeWEbuotzlcsQQ" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_nMAd4et3EeWEbuotzlcsQQ" red="255" green="255" blue="255"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_nMAd4ut3EeWEbuotzlcsQQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
       </ownedDiagramElements>
@@ -1205,9 +1205,9 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FcukYurREeWTBPbJjvGCzg" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_Fct9M-rREeWTBPbJjvGCzg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FcukY-rREeWTBPbJjvGCzg" red="209" green="209" blue="209"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_FcukZOrREeWTBPbJjvGCzg"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_nMPucOt3EeWEbuotzlcsQQ" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_nMPHYOt3EeWEbuotzlcsQQ" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_nMPucet3EeWEbuotzlcsQQ" red="255" green="255" blue="255"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_nMPucut3EeWEbuotzlcsQQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
       </ownedDiagramElements>
@@ -1269,9 +1269,9 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_FcukeurREeWTBPbJjvGCzg" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_Fct9NOrREeWTBPbJjvGCzg" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Fcuke-rREeWTBPbJjvGCzg" red="209" green="209" blue="209"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_FcukfOrREeWTBPbJjvGCzg"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_nMQVgOt3EeWEbuotzlcsQQ" labelSize="16" labelFormat="bold" showIcon="false" iconPath="/org.gemoc.arduino.sequential.design/images/platform.png" description="_nMPuc-t3EeWEbuotzlcsQQ" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" workspacePath="/org.gemoc.arduino.sequential.design/images/dfrobot/dfrduino_uno.jpg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_nMQVget3EeWEbuotzlcsQQ" red="255" green="255" blue="255"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_nMQVgut3EeWEbuotzlcsQQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.arduino.sequential.design/description/arduino.odesign#//@ownedViewpoints[name='Arduino']/@ownedRepresentations[name='Hardware']/@defaultLayer/@nodeMappings[name='HW_Board']"/>
       </ownedDiagramElements>
