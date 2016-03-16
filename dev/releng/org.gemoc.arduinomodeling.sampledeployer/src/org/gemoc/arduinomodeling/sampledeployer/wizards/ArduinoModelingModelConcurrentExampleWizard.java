@@ -27,7 +27,7 @@ public class ArduinoModelingModelConcurrentExampleWizard
 		// EMF library example model, edit and editor examples
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/ifdemo.concurrent.zip", "ifdemo.concurrent"));
-		//projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.sample.sigpml.simple_example_with_melange.zip", "org.gemoc.sample.sigpml.simple_example_with_melange"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.sample.arduino.concurrent.broadcastexample.zip", "org.gemoc.sample.arduino.concurrent.broadcastexample"));
 		return projects;
 	}
 

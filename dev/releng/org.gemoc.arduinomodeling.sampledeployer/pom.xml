@@ -63,6 +63,9 @@
 								<zip destfile="${basedir}/zips/org.gemoc.arduino.sequential.ifdemo.sequential.zip">
 									<fileset dir="${gemoc_sequential_mw_root}/org.gemoc.arduino.sequential.ifdemo/" />
 								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.sample.arduino.sequential.broadcastexample.zip">
+									<fileset dir="${gemoc_sequential_mw_root}/org.gemoc.sample.arduino.sequential.broadcastexample/" />
+								</zip>
 								
 								<!-- Arduino Concurrent Language Workbench  -->
 								
@@ -91,6 +94,9 @@
 								
 								<zip destfile="${basedir}/zips/ifdemo.concurrent.zip">
 									<fileset dir="${gemoc_concurrent_mw_root}/ifdemo/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.sample.arduino.concurrent.broadcastexample.zip">
+									<fileset dir="${gemoc_concurrent_mw_root}/org.gemoc.sample.arduino.concurrent.broadcastexample/" />
 								</zip>
 								
 							</tasks>
