@@ -28,7 +28,7 @@ public class ArduinoModelingConcurrentLanguageExampleWizard
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
 		
 		// sequential projects
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent", 						"org.gemoc.arduino.concurrent"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.zip", 						"org.gemoc.arduino.concurrent"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.design.zip", 			"org.gemoc.arduino.concurrent.design"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.ecl.zip", 				"org.gemoc.arduino.concurrent.ecl"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.execarduino.zip", 		"org.gemoc.arduino.concurrent.execarduino"));
