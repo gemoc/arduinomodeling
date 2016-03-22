@@ -641,7 +641,7 @@ public class ArduinoServices {
 	}
 
 	public String computeLabel(VariableAssignment set) {
-		String label = "Set ";
+		String label ="";// "Set ";
 		if (set.getVariable() != null && set.getOperand() != null) {
 			label += set.getVariable().getName() + " = " + computeLabel(set.getOperand());
 		}

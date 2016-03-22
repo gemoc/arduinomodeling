@@ -211,10 +211,10 @@
   <sketches name="slave2Algorithm" board="//@boards.1">
     <block>
       <instructions xsi:type="arduino:VariableDeclaration">
-        <variable xsi:type="arduino:IntegerVariable" name="consign"/>
+        <variable xsi:type="arduino:IntegerVariable" name="consign2"/>
       </instructions>
       <instructions xsi:type="arduino:VariableDeclaration">
-        <variable xsi:type="arduino:IntegerVariable" name="temp"/>
+        <variable xsi:type="arduino:IntegerVariable" name="temp2"/>
       </instructions>
       <instructions xsi:type="arduino:Repeat" iteration="8">
         <block>
