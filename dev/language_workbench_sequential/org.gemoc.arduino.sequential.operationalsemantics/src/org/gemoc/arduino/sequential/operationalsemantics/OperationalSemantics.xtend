@@ -5,50 +5,52 @@ import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 import fr.inria.diverse.k3.al.annotationprocessor.Main
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
-import java.util.List
-import org.gemoc.arduino.sequential.model.arduino.BinaryBooleanExpression
-import org.gemoc.arduino.sequential.model.arduino.BinaryIntegerExpression
-import org.gemoc.arduino.sequential.model.arduino.Block
-import org.gemoc.arduino.sequential.model.arduino.BooleanConstant
-import org.gemoc.arduino.sequential.model.arduino.BooleanExpression
-import org.gemoc.arduino.sequential.model.arduino.BooleanModuleGet
-import org.gemoc.arduino.sequential.model.arduino.BooleanVariable
-import org.gemoc.arduino.sequential.model.arduino.BooleanVariableRef
-import org.gemoc.arduino.sequential.model.arduino.Constant
-import org.gemoc.arduino.sequential.model.arduino.Control
-import org.gemoc.arduino.sequential.model.arduino.Delay
-import org.gemoc.arduino.sequential.model.arduino.Expression
-import org.gemoc.arduino.sequential.model.arduino.If
-import org.gemoc.arduino.sequential.model.arduino.Instruction
-import org.gemoc.arduino.sequential.model.arduino.IntegerConstant
-import org.gemoc.arduino.sequential.model.arduino.IntegerExpression
-import org.gemoc.arduino.sequential.model.arduino.IntegerModuleGet
-import org.gemoc.arduino.sequential.model.arduino.IntegerVariable
-import org.gemoc.arduino.sequential.model.arduino.IntegerVariableRef
-import org.gemoc.arduino.sequential.model.arduino.ModuleAssignment
-import org.gemoc.arduino.sequential.model.arduino.ModuleInstruction
-import org.gemoc.arduino.sequential.model.arduino.Pin
-import org.gemoc.arduino.sequential.model.arduino.Project
-import org.gemoc.arduino.sequential.model.arduino.Repeat
-import org.gemoc.arduino.sequential.model.arduino.Utilities
-import org.gemoc.arduino.sequential.model.arduino.Variable
-import org.gemoc.arduino.sequential.model.arduino.VariableAssignment
-import org.gemoc.arduino.sequential.model.arduino.VariableDeclaration
-import org.gemoc.arduino.sequential.model.arduino.VariableRef
-import org.gemoc.arduino.sequential.model.arduino.While
-import org.gemoc.arduino.sequential.model.arduino.Module
-import org.gemoc.arduino.sequential.model.arduino.ArduinoBoard
-import org.gemoc.arduino.sequential.model.arduino.ArduinoCommunicationModule
-import org.gemoc.arduino.sequential.model.arduino.BluetoothTransceiver
+import org.eclipse.emf.common.util.EList
+import org.gemoc.sequential.model.arduino.ArduinoBoard
+import org.gemoc.sequential.model.arduino.ArduinoCommunicationModule
+import org.gemoc.sequential.model.arduino.BinaryBooleanExpression
+import org.gemoc.sequential.model.arduino.BinaryIntegerExpression
+import org.gemoc.sequential.model.arduino.Block
+import org.gemoc.sequential.model.arduino.BluetoothTransceiver
+import org.gemoc.sequential.model.arduino.BooleanConstant
+import org.gemoc.sequential.model.arduino.BooleanExpression
+import org.gemoc.sequential.model.arduino.BooleanModuleGet
+import org.gemoc.sequential.model.arduino.BooleanVariable
+import org.gemoc.sequential.model.arduino.BooleanVariableRef
+import org.gemoc.sequential.model.arduino.Constant
+import org.gemoc.sequential.model.arduino.Control
+import org.gemoc.sequential.model.arduino.Delay
+import org.gemoc.sequential.model.arduino.Expression
+import org.gemoc.sequential.model.arduino.If
+import org.gemoc.sequential.model.arduino.Instruction
+import org.gemoc.sequential.model.arduino.IntegerConstant
+import org.gemoc.sequential.model.arduino.IntegerExpression
+import org.gemoc.sequential.model.arduino.IntegerModuleGet
+import org.gemoc.sequential.model.arduino.IntegerVariable
+import org.gemoc.sequential.model.arduino.IntegerVariableRef
+import org.gemoc.sequential.model.arduino.Module
+import org.gemoc.sequential.model.arduino.ModuleAssignment
+import org.gemoc.sequential.model.arduino.ModuleInstruction
+import org.gemoc.sequential.model.arduino.Pin
+import org.gemoc.sequential.model.arduino.Project
+import org.gemoc.sequential.model.arduino.Repeat
+import org.gemoc.sequential.model.arduino.Utilities
+import org.gemoc.sequential.model.arduino.Variable
+import org.gemoc.sequential.model.arduino.VariableAssignment
+import org.gemoc.sequential.model.arduino.VariableDeclaration
+import org.gemoc.sequential.model.arduino.VariableRef
+import org.gemoc.sequential.model.arduino.While
 
-import static extension org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.Block_ExecutableAspect.*
-import static extension org.gemoc.arduino.sequential.operationalsemantics.Instruction_ExecutableAspect.*
-import static extension org.gemoc.arduino.sequential.operationalsemantics.If_EvaluableAspect.*
-import static extension org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect.*
-import static extension org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect.*
-import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.operationalsemantics.BluetoothTransceiver_PushAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.Control_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.If_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.Instruction_ExecutableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.Instruction_UtilitesAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect.*
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -133,7 +135,7 @@ class Project_ExecutableAspect {
 	}
 	
 	@InitializeModel
-	def public void initializeModel(List<String> args){
+	def public void initializeModel(EList<String> args){
 		_self.setup
 	}
 }
@@ -157,7 +159,10 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 @Aspect(className=Block)
 class Block_ExecutableAspect {
 	def void execute() {
-		_self.instructions.forEach[i|i.execute]
+		for (Instruction i : _self.instructions) {
+			i.execute
+		}
+//		_self.instructions.forEach[i|i.execute]
 	}
 }
 
@@ -202,8 +207,8 @@ abstract class ArduinoCommunicationModule_PushAspect {
 @Aspect(className=BluetoothTransceiver)
 abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
 	
-	public List<Integer> dataToSend
-	public List<Integer> dataReceived
+	public EList<Integer> dataToSend
+	public EList<Integer> dataReceived
 	
 	@Step
 	@OverrideAspectMethod
@@ -325,18 +330,7 @@ class Utilities_ExecutableAspect extends Instruction_ExecutableAspect {
 	}
 }
 
-@Aspect(className=Delay)
-class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
-	@Step
-	@OverrideAspectMethod
-	def void execute() {
-		try {
-			Thread.sleep(_self.value)
-		} catch (InterruptedException e) {
-			e.printStackTrace()
-		}
-	}
-}
+
 
 @Aspect(className=BinaryIntegerExpression)
 class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect {
@@ -520,6 +514,19 @@ class Constant_EvaluableAspect extends Expression_EvaluableAspect {
 			BooleanConstant: return (_self as BooleanConstant).value
 			IntegerConstant: return (_self as IntegerConstant).value
 			default: throw new ClassCastException("type not expected: "+_self.eClass.name)
+		}
+	}
+}
+
+@Aspect(className=Delay)
+class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
+	@Step
+	@OverrideAspectMethod
+	def void execute() {
+		try {
+			Thread.sleep(_self.value)
+		} catch (InterruptedException e) {
+			e.printStackTrace()
 		}
 	}
 }
