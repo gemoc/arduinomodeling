@@ -21,9 +21,6 @@
 <stringAttribute key="airdResource" value="/org.gemoc.sample.arduino.sequential.ifdemo/model.aird"/>
 <booleanAttribute key="arduino MultiDimensional Trace" value="true"/>
 <booleanAttribute key="arduinoTrace Addon" value="true"/>
-<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
-<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
-</listAttribute>
 <booleanAttribute key="tfsm_plaink3 MultiDimensional Trace" value="false"/>
 <booleanAttribute key="tfsm_plaink3Trace Addon" value="false"/>
 </launchConfiguration>
