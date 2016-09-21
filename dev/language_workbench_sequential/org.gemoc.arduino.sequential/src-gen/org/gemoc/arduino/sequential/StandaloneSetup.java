@@ -17,8 +17,8 @@ public class StandaloneSetup {
   
   public void doEMFRegistration() {
     EPackage.Registry.INSTANCE.put(
-    	org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eNS_URI,
-    	org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
+    	org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage.eNS_URI,
+    	org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage.eINSTANCE
     );
     
     Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
@@ -32,20 +32,20 @@ public class StandaloneSetup {
   }
   
   public void doAdaptersRegistration() {
-    MelangeRegistry.LanguageDescriptor arduino = new MelangeRegistryImpl.LanguageDescriptorImpl(
-    	"org.gemoc.arduino.sequential.Arduino", "", "http://arduino/arduino/", "org.gemoc.arduino.sequential.ArduinoMT"
+    MelangeRegistry.LanguageDescriptor xArduino = new MelangeRegistryImpl.LanguageDescriptorImpl(
+    	"org.gemoc.arduino.sequential.XArduino", "", "http://xarduino/arduino/", "org.gemoc.arduino.sequential.XArduinoMT"
     );
-    arduino.addAdapter("org.gemoc.arduino.sequential.ArduinoMT", org.gemoc.arduino.sequential.arduino.adapters.arduinomt.ArduinoAdapter.class);
+    xArduino.addAdapter("org.gemoc.arduino.sequential.XArduinoMT", org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoAdapter.class);
     MelangeRegistry.INSTANCE.getLanguageMap().put(
-    	"org.gemoc.arduino.sequential.Arduino",
-    	arduino
+    	"org.gemoc.arduino.sequential.XArduino",
+    	xArduino
     );
-    MelangeRegistry.ModelTypeDescriptor arduinoMT = new MelangeRegistryImpl.ModelTypeDescriptorImpl(
-    	"org.gemoc.arduino.sequential.ArduinoMT", "", "http://arduinomt/"
+    MelangeRegistry.ModelTypeDescriptor xArduinoMT = new MelangeRegistryImpl.ModelTypeDescriptorImpl(
+    	"org.gemoc.arduino.sequential.XArduinoMT", "", "http://xarduinomt/"
     );
     MelangeRegistry.INSTANCE.getModelTypeMap().put(
-    	"org.gemoc.arduino.sequential.ArduinoMT",
-    	arduinoMT
+    	"org.gemoc.arduino.sequential.XArduinoMT",
+    	xArduinoMT
     );
   }
 }

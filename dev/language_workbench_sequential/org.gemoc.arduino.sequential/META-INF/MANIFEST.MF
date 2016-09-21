@@ -32,10 +32,8 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  org.gemoc.arduino.sequential.model;bundle-version="0.0.0";visibility:="reexport",
  
- org.gemoc.arduino.sequential.design;bundle-version="1.0.0",
+ org.gemoc.arduino.sequential.k3dsa;bundle-version="0.0.0";visibility:="reexport",
  
- org.gemoc.arduino.sequential.operationalsemantics;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.arduino.sequential.arduino
+ org.gemoc.arduino.sequential.xarduino
 Bundle-ManifestVersion: 2
 Manifest-Version: 1.0
