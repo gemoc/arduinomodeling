@@ -95,19 +95,19 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.xarduino.arduino.ArduinoAnalogModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.AmbientLightSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.AmbientLightSensor) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.RotationSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.RotationSensor) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.MusicPlayer) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.MusicPlayer) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver) o_cast,
 					newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.SoundSensor) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.SoundSensor) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.MusicPlayer) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.MusicPlayer) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.RotationSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.RotationSensor) o_cast,
-					newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.AmbientLightSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.AmbientLightSensor) o_cast,
-					newState);
 		}
 
 		return added;
@@ -131,17 +131,17 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.xarduino.arduino.ArduinoDigitalModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Fan) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Buzzer) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Buzzer) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.InfraRedSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.InfraRedSensor) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Fan) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Fan) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.MicroServo) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.MicroServo) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.LED) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.LED) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Buzzer) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Buzzer) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.InfraRedSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.InfraRedSensor) o_cast,
-					newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.PushButton) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.PushButton) o_cast, newState);
 		}
@@ -152,11 +152,11 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.xarduino.arduino.ArduinoModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.ArduinoAnalogModule) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.ArduinoAnalogModule) o_cast,
-					newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.ArduinoDigitalModule) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.ArduinoDigitalModule) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.ArduinoDigitalModule) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.ArduinoAnalogModule) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.ArduinoAnalogModule) o_cast,
 					newState);
 		}
 
@@ -380,9 +380,7 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.xarduino.arduino.NamedElement o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Sketch) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Sketch) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Variable) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Variable) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Variable) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Module) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Module) o_cast, newState);
@@ -390,6 +388,8 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Board) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Pin) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Pin) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.xarduino.arduino.Sketch) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.xarduino.arduino.Sketch) o_cast, newState);
 		}
 
 		return added;
@@ -544,32 +544,6 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 						}
 					}
 
-					if (o instanceof org.gemoc.arduino.sequential.xarduino.arduino.Pin) {
-						org.gemoc.arduino.sequential.xarduino.arduino.Pin o_cast = (org.gemoc.arduino.sequential.xarduino.arduino.Pin) o;
-
-						if (p.getFeatureID() == org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage.eINSTANCE
-								.getPin_Level().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedPin traced = (arduinoTrace.States.arduino.TracedPin) exeToTraced
-									.get(o);
-							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence()
-									.get(traced.getLevelSequence().size() - 1);
-							newState.getPin_level_Values().remove(lastValue);
-
-							// And we create a proper new value
-							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createPin_level_Value();
-
-							java.lang.Integer value = o_cast.getLevel();
-
-							newValue.setLevel((java.lang.Integer) value);
-
-							traced.getLevelSequence().add(newValue);
-							newState.getPin_level_Values().add(newValue);
-						}
-					}
-
 					if (o instanceof org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable) {
 						org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable o_cast = (org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable) o;
 
@@ -593,6 +567,32 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 
 							traced.getValueSequence().add(newValue);
 							newState.getBooleanVariable_value_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof org.gemoc.arduino.sequential.xarduino.arduino.Pin) {
+						org.gemoc.arduino.sequential.xarduino.arduino.Pin o_cast = (org.gemoc.arduino.sequential.xarduino.arduino.Pin) o;
+
+						if (p.getFeatureID() == org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage.eINSTANCE
+								.getPin_Level().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							arduinoTrace.States.arduino.TracedPin traced = (arduinoTrace.States.arduino.TracedPin) exeToTraced
+									.get(o);
+							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence()
+									.get(traced.getLevelSequence().size() - 1);
+							newState.getPin_level_Values().remove(lastValue);
+
+							// And we create a proper new value
+							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
+									.createPin_level_Value();
+
+							java.lang.Integer value = o_cast.getLevel();
+
+							newValue.setLevel((java.lang.Integer) value);
+
+							traced.getLevelSequence().add(newValue);
+							newState.getPin_level_Values().add(newValue);
 						}
 					}
 				}
