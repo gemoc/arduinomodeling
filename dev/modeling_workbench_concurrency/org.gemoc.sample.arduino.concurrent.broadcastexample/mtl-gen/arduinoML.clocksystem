@@ -1,0 +1,10 @@
+
+"Some global constants"
+|system moccmllibs ccsllibs|
+"MoCCML librairies specifications" 
+
+	"CCSL librairies specifications"
+
+system := ClockSystem named: 'aProject_withMoC-'.
+system addLibrary:moccmllibs asDictionary.
+

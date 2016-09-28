@@ -298,6 +298,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_i_trueOrFalse';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -320,6 +321,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_i_lastInstructionfromthenOrFalse';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->last().oclAsType(EObject))+'_stop']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -342,6 +344,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_i_lastInstructionfromthenOrElse';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.block.instructions->last().oclAsType(EObject))+'_stop']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -364,6 +367,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_w_startOrEndLoop';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -386,6 +390,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_w_trueOrFalse';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -408,6 +413,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_r_startOrEndLoop';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_start']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
@@ -430,6 +436,7 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_Union_r_trueOrFalse';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_evaluatedToFalse']->first();
 				//	var size : Integer = seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->size()+1;
