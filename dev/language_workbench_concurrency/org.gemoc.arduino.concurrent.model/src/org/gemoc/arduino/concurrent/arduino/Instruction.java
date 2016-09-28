@@ -15,20 +15,5 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Instruction extends EObject {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void finalize();
 
 } // Instruction

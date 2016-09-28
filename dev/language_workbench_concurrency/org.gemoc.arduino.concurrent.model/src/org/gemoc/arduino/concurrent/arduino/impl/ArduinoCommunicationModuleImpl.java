@@ -34,15 +34,4 @@ public abstract class ArduinoCommunicationModuleImpl extends ArduinoAnalogModule
 		return ArduinoPackage.Literals.ARDUINO_COMMUNICATION_MODULE;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void push() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 } //ArduinoCommunicationModuleImpl

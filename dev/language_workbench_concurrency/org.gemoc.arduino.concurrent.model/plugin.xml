@@ -6,7 +6,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated arduino -->
       <package
-            uri="http://execarduino/"
+            uri="http://org.gemoc.arduino.concurrent/arduino"
             class="org.gemoc.arduino.concurrent.arduino.ArduinoPackage"
             genModel="model/arduino.genmodel"/>
    </extension>

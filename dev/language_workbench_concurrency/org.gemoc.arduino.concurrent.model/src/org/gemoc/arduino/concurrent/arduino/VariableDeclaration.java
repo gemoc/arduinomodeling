@@ -46,12 +46,4 @@ public interface VariableDeclaration extends Instruction {
 	 */
 	void setVariable(Variable value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // VariableDeclaration

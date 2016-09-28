@@ -22,34 +22,12 @@ import org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.arduino.concurrent.arduino.impl.BluetoothTransceiverImpl#getDataToSend <em>Data To Send</em>}</li>
- *   <li>{@link org.gemoc.arduino.concurrent.arduino.impl.BluetoothTransceiverImpl#getDataReceived <em>Data Received</em>}</li>
  *   <li>{@link org.gemoc.arduino.concurrent.arduino.impl.BluetoothTransceiverImpl#getConnectedTransceiver <em>Connected Transceiver</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl implements BluetoothTransceiver {
-	/**
-	 * The cached value of the '{@link #getDataToSend() <em>Data To Send</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataToSend()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Integer> dataToSend;
-
-	/**
-	 * The cached value of the '{@link #getDataReceived() <em>Data Received</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataReceived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Integer> dataReceived;
-
 	/**
 	 * The cached value of the '{@link #getConnectedTransceiver() <em>Connected Transceiver</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -84,30 +62,6 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getDataToSend() {
-		if (dataToSend == null) {
-			dataToSend = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
-		}
-		return dataToSend;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Integer> getDataReceived() {
-		if (dataReceived == null) {
-			dataReceived = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
-		}
-		return dataReceived;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<BluetoothTransceiver> getConnectedTransceiver() {
 		if (connectedTransceiver == null) {
 			connectedTransceiver = new EObjectResolvingEList<BluetoothTransceiver>(BluetoothTransceiver.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
@@ -123,10 +77,6 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND:
-				return getDataToSend();
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED:
-				return getDataReceived();
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
 				return getConnectedTransceiver();
 		}
@@ -142,14 +92,6 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND:
-				getDataToSend().clear();
-				getDataToSend().addAll((Collection<? extends Integer>)newValue);
-				return;
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED:
-				getDataReceived().clear();
-				getDataReceived().addAll((Collection<? extends Integer>)newValue);
-				return;
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
 				getConnectedTransceiver().clear();
 				getConnectedTransceiver().addAll((Collection<? extends BluetoothTransceiver>)newValue);
@@ -166,12 +108,6 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND:
-				getDataToSend().clear();
-				return;
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED:
-				getDataReceived().clear();
-				return;
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
 				getConnectedTransceiver().clear();
 				return;
@@ -187,32 +123,10 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND:
-				return dataToSend != null && !dataToSend.isEmpty();
-			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED:
-				return dataReceived != null && !dataReceived.isEmpty();
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER:
 				return connectedTransceiver != null && !connectedTransceiver.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (dataToSend: ");
-		result.append(dataToSend);
-		result.append(", dataReceived: ");
-		result.append(dataReceived);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BluetoothTransceiverImpl

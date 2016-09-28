@@ -76,12 +76,4 @@ public interface Delay extends Utilities {
 	 */
 	void setValue(int value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // Delay

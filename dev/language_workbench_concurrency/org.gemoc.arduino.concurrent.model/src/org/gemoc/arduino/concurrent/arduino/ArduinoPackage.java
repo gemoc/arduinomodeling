@@ -39,7 +39,7 @@ public interface ArduinoPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://execarduino/";
+	String eNS_URI = "http://org.gemoc.arduino.concurrent/arduino";
 
 	/**
 	 * The package namespace name.
@@ -170,22 +170,13 @@ public interface ArduinoPackage extends EPackage {
 	int PIN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__LEVEL = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.arduino.impl.DigitalPinImpl <em>Digital Pin</em>}' class.
@@ -205,15 +196,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIGITAL_PIN__NAME = PIN__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIGITAL_PIN__LEVEL = PIN__LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -251,15 +233,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALOG_PIN__NAME = PIN__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALOG_PIN__LEVEL = PIN__LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -1070,22 +1043,13 @@ public interface ArduinoPackage extends EPackage {
 	int INTEGER_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_VARIABLE__VALUE = VARIABLE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Integer Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
+	int INTEGER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
@@ -1116,22 +1080,13 @@ public interface ArduinoPackage extends EPackage {
 	int BOOLEAN_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_VARIABLE__VALUE = VARIABLE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Boolean Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
+	int BOOLEAN_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BooleanModuleGetImpl <em>Boolean Module Get</em>}' class.
@@ -1479,22 +1434,13 @@ public interface ArduinoPackage extends EPackage {
 	int PUSH_BUTTON__NAME = ARDUINO_DIGITAL_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Pushed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH_BUTTON__IS_PUSHED = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Push Button</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUSH_BUTTON_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 1;
+	int PUSH_BUTTON_FEATURE_COUNT = ARDUINO_DIGITAL_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
@@ -1907,31 +1853,13 @@ public interface ArduinoPackage extends EPackage {
 	int BLUETOOTH_TRANSCEIVER__NAME = ARDUINO_COMMUNICATION_MODULE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Data To Send</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data Received</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Connected Transceiver</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 2;
+	int BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bluetooth Transceiver</em>' class.
@@ -1940,7 +1868,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 3;
+	int BLUETOOTH_TRANSCEIVER_FEATURE_COUNT = ARDUINO_COMMUNICATION_MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.concurrent.arduino.Time <em>Time</em>}' enum.
@@ -2074,17 +2002,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.concurrent.arduino.Pin#getLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.Pin#getLevel()
-	 * @see #getPin()
-	 * @generated
-	 */
-	EAttribute getPin_Level();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.arduino.AnalogPin <em>Analog Pin</em>}'.
@@ -2621,17 +2538,6 @@ public interface ArduinoPackage extends EPackage {
 	EAttribute getIntegerVariable_InitialValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.concurrent.arduino.IntegerVariable#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.IntegerVariable#getValue()
-	 * @see #getIntegerVariable()
-	 * @generated
-	 */
-	EAttribute getIntegerVariable_Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.arduino.BooleanVariable <em>Boolean Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2651,17 +2557,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBooleanVariable_InitialValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.concurrent.arduino.BooleanVariable#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.BooleanVariable#getValue()
-	 * @see #getBooleanVariable()
-	 * @generated
-	 */
-	EAttribute getBooleanVariable_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.arduino.BooleanModuleGet <em>Boolean Module Get</em>}'.
@@ -2828,17 +2723,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPushButton();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.arduino.concurrent.arduino.PushButton#getIsPushed <em>Is Pushed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Pushed</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.PushButton#getIsPushed()
-	 * @see #getPushButton()
-	 * @generated
-	 */
-	EAttribute getPushButton_IsPushed();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.concurrent.arduino.Buzzer <em>Buzzer</em>}'.
@@ -3045,28 +2929,6 @@ public interface ArduinoPackage extends EPackage {
 	EClass getBluetoothTransceiver();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver#getDataToSend <em>Data To Send</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data To Send</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver#getDataToSend()
-	 * @see #getBluetoothTransceiver()
-	 * @generated
-	 */
-	EAttribute getBluetoothTransceiver_DataToSend();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver#getDataReceived <em>Data Received</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Received</em>'.
-	 * @see org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver#getDataReceived()
-	 * @see #getBluetoothTransceiver()
-	 * @generated
-	 */
-	EAttribute getBluetoothTransceiver_DataReceived();
-
-	/**
 	 * Returns the meta object for the reference list '{@link org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver#getConnectedTransceiver <em>Connected Transceiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3225,14 +3087,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PIN = eINSTANCE.getPin();
-
-		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PIN__LEVEL = eINSTANCE.getPin_Level();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.arduino.impl.AnalogPinImpl <em>Analog Pin</em>}' class.
@@ -3697,14 +3551,6 @@ public interface ArduinoPackage extends EPackage {
 		EAttribute INTEGER_VARIABLE__INITIAL_VALUE = eINSTANCE.getIntegerVariable_InitialValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTEGER_VARIABLE__VALUE = eINSTANCE.getIntegerVariable_Value();
-
-		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3721,14 +3567,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOLEAN_VARIABLE__INITIAL_VALUE = eINSTANCE.getBooleanVariable_InitialValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOLEAN_VARIABLE__VALUE = eINSTANCE.getBooleanVariable_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BooleanModuleGetImpl <em>Boolean Module Get</em>}' class.
@@ -3877,14 +3715,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PUSH_BUTTON = eINSTANCE.getPushButton();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Pushed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PUSH_BUTTON__IS_PUSHED = eINSTANCE.getPushButton_IsPushed();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.concurrent.arduino.impl.BuzzerImpl <em>Buzzer</em>}' class.
@@ -4077,22 +3907,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BLUETOOTH_TRANSCEIVER = eINSTANCE.getBluetoothTransceiver();
-
-		/**
-		 * The meta object literal for the '<em><b>Data To Send</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BLUETOOTH_TRANSCEIVER__DATA_TO_SEND = eINSTANCE.getBluetoothTransceiver_DataToSend();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Received</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BLUETOOTH_TRANSCEIVER__DATA_RECEIVED = eINSTANCE.getBluetoothTransceiver_DataReceived();
 
 		/**
 		 * The meta object literal for the '<em><b>Connected Transceiver</b></em>' reference list feature.

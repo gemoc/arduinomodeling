@@ -46,12 +46,4 @@ public interface While extends Control {
 	 */
 	void setCondition(BooleanExpression value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // While

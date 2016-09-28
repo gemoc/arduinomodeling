@@ -14,12 +14,5 @@ package org.gemoc.arduino.concurrent.arduino;
  * @generated
  */
 public interface ArduinoCommunicationModule extends ArduinoAnalogModule {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void push();
 
 } // ArduinoCommunicationModule

@@ -73,12 +73,4 @@ public interface If extends Control {
 	 */
 	void setElseBlock(Block value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // If

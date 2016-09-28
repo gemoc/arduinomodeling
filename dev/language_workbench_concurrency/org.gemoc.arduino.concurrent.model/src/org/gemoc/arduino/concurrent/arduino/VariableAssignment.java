@@ -46,12 +46,4 @@ public interface VariableAssignment extends Instruction, Assignment {
 	 */
 	void setVariable(Variable value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // VariableAssignment

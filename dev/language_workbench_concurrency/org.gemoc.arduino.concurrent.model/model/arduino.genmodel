@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.arduino.concurrent.model/src/" editDirectory="/org.gemoc.arduino.concurrent.model.edit/src" modelPluginID="org.gemoc.arduino.concurrent.model" redirection="" modelName="arduino" editPluginClass="org.gemoc.arduino.concurrent.model.arduino.provider.arduinoEditPlugin" editorPluginClass="org.gemoc.arduino.concurrent.model.arduino.presentation.arduinoEditorPlugin" testSuiteClass="org.gemoc.arduino.concurrent.model.arduino.tests.arduinoAllTests" importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false" editPluginID="org.gemoc.arduino.concurrent.model.edit">
   <foreignModel>arduino.ecore</foreignModel>
-  <genPackages prefix="Arduino" basePackage="org.gemoc.arduino.concurrent" disposableProviderFactory="true" fileExtensions="execarduino">
+  <genPackages prefix="Arduino" basePackage="org.gemoc.arduino.concurrent" disposableProviderFactory="true" fileExtensions="arduino">
     <ecorePackage href="arduino.ecore#/"/>
     <genEnums typeSafeEnumCompatible="false">
       <ecoreEnum href="arduino.ecore#//Time"/>
@@ -110,9 +110,6 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//Pin"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//Pin/level"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//AnalogPin"/>
@@ -140,63 +137,27 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//Project/sketches"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Project/execute"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Project/main"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Project/setup"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Project/initializeModel"/>
-        <genParameters>
-          <ecoreParameter href="arduino.ecore#//Project/initializeModel/args"/>
-        </genParameters>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//Instruction"/>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Instruction/execute"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Instruction/finalize"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//ModuleAssignment"/>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//ModuleAssignment/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//ModuleInstruction"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//ModuleInstruction/module"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//ModuleInstruction/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//Control"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//Control/block"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Control/evaluate"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Control/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//Utilities"/>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Utilities/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//Delay"/>
@@ -206,9 +167,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//Delay/value"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Delay/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//NamedElement"/>
@@ -221,12 +179,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//Repeat/iteration"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Repeat/execute"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Repeat/finalize"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//ModuleGet"/>
@@ -236,9 +188,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//While/condition"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//While/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//BinaryExpression"/>
@@ -257,9 +206,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//VariableAssignment/variable"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//VariableAssignment/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//BinaryIntegerExpression"/>
@@ -287,9 +233,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//If/elseBlock"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//If/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//IntegerConstant"/>
@@ -320,17 +263,11 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//IntegerVariable/initialValue"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//IntegerVariable/value"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//BooleanVariable"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//BooleanVariable/initialValue"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//BooleanVariable/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -362,9 +299,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//VariableDeclaration/variable"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//VariableDeclaration/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//VariableRef"/>
@@ -383,12 +317,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//PushButton"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//PushButton/isPushed"/>
-      </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//PushButton/toggle"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//Buzzer"/>
@@ -422,9 +350,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//Block/instructions"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//Block/execute"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//ArduinoBoard"/>
@@ -449,18 +374,9 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="arduino.ecore#//ArduinoCommunicationModule"/>
-      <genOperations>
-        <ecoreOperation href="arduino.ecore#//ArduinoCommunicationModule/push"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="arduino.ecore#//BluetoothTransceiver"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataToSend"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//BluetoothTransceiver/dataReceived"/>
-      </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//BluetoothTransceiver/connectedTransceiver"/>
       </genFeatures>

@@ -14,12 +14,5 @@ package org.gemoc.arduino.concurrent.arduino;
  * @generated
  */
 public interface Utilities extends Instruction {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
 
 } // Utilities

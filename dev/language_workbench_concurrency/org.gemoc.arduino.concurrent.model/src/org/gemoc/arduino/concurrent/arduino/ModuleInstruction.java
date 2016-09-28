@@ -46,12 +46,4 @@ public interface ModuleInstruction extends Instruction {
 	 */
 	void setModule(Module value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
-
 } // ModuleInstruction
