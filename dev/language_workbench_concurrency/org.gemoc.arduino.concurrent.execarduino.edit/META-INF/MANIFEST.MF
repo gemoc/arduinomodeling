@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.gemoc.arduino.concurrent.execarduino.edit;singleton:=true
+Bundle-SymbolicName: org.gemoc.arduino.concurrent.xarduino.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.gemoc.arduino.concurrent.execarduino.arduino.provider.ExecArduinoEditPlugin$Implementation
@@ -10,6 +10,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.gemoc.arduino.concurrent.execarduino.arduino.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.gemoc.arduino.concurrent.execarduino;visibility:=reexport,
+ org.gemoc.arduino.concurrent.xarduino;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

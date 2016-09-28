@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.gemoc.arduino.concurrent.execarduino;singleton:=true
+Bundle-SymbolicName: org.gemoc.arduino.concurrent.xarduino;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName

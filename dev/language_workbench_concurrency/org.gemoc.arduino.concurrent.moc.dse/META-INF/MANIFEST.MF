@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: arduino.concurrent.moc.dse
+Bundle-SymbolicName: org.gemoc.arduino.concurrent.moc.dse
+Bundle-Version: 1.0.0.qualifier

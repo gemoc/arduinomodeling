@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Operationalsemantics
+Bundle-Name: arduino.concurrent.k3dsa
 Bundle-SymbolicName: org.gemoc.arduino.concurrent.k3dsa
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
@@ -12,11 +12,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;bundle-version="3.9.1",
  org.eclipse.jdt.core;bundle-version="3.10.0",
  fr.inria.diverse.k3.ui;bundle-version="3.2.0",
- org.gemoc.arduino.concurrent.execarduino;bundle-version="0.1.0",
+ org.gemoc.arduino.concurrent.xarduino;bundle-version="0.1.0",
  org.aspectj.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gemoc.arduino.concurrent.execarduino.arduino,
- org.gemoc.arduino.concurrent.operationalsemantics
+ org.gemoc.arduino.concurrent.k3dsa
 Import-Package: org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher,
  org.gemoc.executionframework.engine.ui.launcher

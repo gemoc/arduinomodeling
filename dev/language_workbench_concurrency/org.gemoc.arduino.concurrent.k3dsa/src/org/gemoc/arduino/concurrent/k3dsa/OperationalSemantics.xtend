@@ -1,4 +1,4 @@
-package org.gemoc.arduino.concurrent.operationalsemantics
+package org.gemoc.arduino.concurrent.k3dsa
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
@@ -41,24 +41,24 @@ import org.gemoc.arduino.concurrent.execarduino.arduino.While
 import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule
 import org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver
 
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.Pin_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerVariable_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BooleanVariable_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.Expression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BinaryBooleanExpression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BinaryIntegerExpression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BooleanExpression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerExpression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BinaryExpression_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.VariableRef_EvaluableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerConstant_ExecutableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BooleanConstant_ExecutableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.IntegerModuleGet_ExecutableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.ModuleAssignment_ExecutableAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.ArduinoCommunicationModule_PushAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.BluetoothTransceiver_PushAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.PushButton_ToggleAspect.*
-import static extension org.gemoc.arduino.concurrent.operationalsemantics.Project_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.Pin_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.IntegerVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BooleanVariable_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BinaryBooleanExpression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BinaryIntegerExpression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BooleanExpression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.IntegerExpression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BinaryExpression_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.VariableRef_EvaluableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.IntegerConstant_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BooleanConstant_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.IntegerModuleGet_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.ArduinoCommunicationModule_PushAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.PushButton_ToggleAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.Project_ExecutableAspect.*
 import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton
 import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
 

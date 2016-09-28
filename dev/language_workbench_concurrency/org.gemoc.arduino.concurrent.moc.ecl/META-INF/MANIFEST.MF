@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: arduino.concurrent.moc.ecl
-Bundle-SymbolicName: org.gemoc.arduino.concurrent.moc.ecl
-Bundle-Version: 1.0.0.qualifier
