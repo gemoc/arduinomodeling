@@ -5,41 +5,41 @@ import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import java.util.List
-import org.gemoc.arduino.concurrent.execarduino.ArduinoUtils
-import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryBooleanExpression
-import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryExpression
-import org.gemoc.arduino.concurrent.execarduino.arduino.BinaryIntegerExpression
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanConstant
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanExpression
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanModuleGet
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariable
-import org.gemoc.arduino.concurrent.execarduino.arduino.BooleanVariableRef
-import org.gemoc.arduino.concurrent.execarduino.arduino.Constant
-import org.gemoc.arduino.concurrent.execarduino.arduino.Control
-import org.gemoc.arduino.concurrent.execarduino.arduino.Delay
-import org.gemoc.arduino.concurrent.execarduino.arduino.Expression
-import org.gemoc.arduino.concurrent.execarduino.arduino.If
-import org.gemoc.arduino.concurrent.execarduino.arduino.Instruction
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerConstant
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerExpression
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerModuleGet
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerVariable
-import org.gemoc.arduino.concurrent.execarduino.arduino.IntegerVariableRef
-import org.gemoc.arduino.concurrent.execarduino.arduino.Module
-import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleAssignment
-import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleGet
-import org.gemoc.arduino.concurrent.execarduino.arduino.ModuleInstruction
-import org.gemoc.arduino.concurrent.execarduino.arduino.Pin
-import org.gemoc.arduino.concurrent.execarduino.arduino.Project
-import org.gemoc.arduino.concurrent.execarduino.arduino.Repeat
-import org.gemoc.arduino.concurrent.execarduino.arduino.Utilities
-import org.gemoc.arduino.concurrent.execarduino.arduino.Variable
-import org.gemoc.arduino.concurrent.execarduino.arduino.VariableAssignment
-import org.gemoc.arduino.concurrent.execarduino.arduino.VariableDeclaration
-import org.gemoc.arduino.concurrent.execarduino.arduino.VariableRef
-import org.gemoc.arduino.concurrent.execarduino.arduino.While
-import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoCommunicationModule
-import org.gemoc.arduino.concurrent.execarduino.arduino.BluetoothTransceiver
+import org.gemoc.arduino.concurrent.model.ArduinoUtils
+import org.gemoc.arduino.concurrent.arduino.BinaryBooleanExpression
+import org.gemoc.arduino.concurrent.arduino.BinaryExpression
+import org.gemoc.arduino.concurrent.arduino.BinaryIntegerExpression
+import org.gemoc.arduino.concurrent.arduino.BooleanConstant
+import org.gemoc.arduino.concurrent.arduino.BooleanExpression
+import org.gemoc.arduino.concurrent.arduino.BooleanModuleGet
+import org.gemoc.arduino.concurrent.arduino.BooleanVariable
+import org.gemoc.arduino.concurrent.arduino.BooleanVariableRef
+import org.gemoc.arduino.concurrent.arduino.Constant
+import org.gemoc.arduino.concurrent.arduino.Control
+import org.gemoc.arduino.concurrent.arduino.Delay
+import org.gemoc.arduino.concurrent.arduino.Expression
+import org.gemoc.arduino.concurrent.arduino.If
+import org.gemoc.arduino.concurrent.arduino.Instruction
+import org.gemoc.arduino.concurrent.arduino.IntegerConstant
+import org.gemoc.arduino.concurrent.arduino.IntegerExpression
+import org.gemoc.arduino.concurrent.arduino.IntegerModuleGet
+import org.gemoc.arduino.concurrent.arduino.IntegerVariable
+import org.gemoc.arduino.concurrent.arduino.IntegerVariableRef
+import org.gemoc.arduino.concurrent.arduino.Module
+import org.gemoc.arduino.concurrent.arduino.ModuleAssignment
+import org.gemoc.arduino.concurrent.arduino.ModuleGet
+import org.gemoc.arduino.concurrent.arduino.ModuleInstruction
+import org.gemoc.arduino.concurrent.arduino.Pin
+import org.gemoc.arduino.concurrent.arduino.Project
+import org.gemoc.arduino.concurrent.arduino.Repeat
+import org.gemoc.arduino.concurrent.arduino.Utilities
+import org.gemoc.arduino.concurrent.arduino.Variable
+import org.gemoc.arduino.concurrent.arduino.VariableAssignment
+import org.gemoc.arduino.concurrent.arduino.VariableDeclaration
+import org.gemoc.arduino.concurrent.arduino.VariableRef
+import org.gemoc.arduino.concurrent.arduino.While
+import org.gemoc.arduino.concurrent.arduino.ArduinoCommunicationModule
+import org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver
 
 import static extension org.gemoc.arduino.concurrent.k3dsa.Pin_EvaluableAspect.*
 import static extension org.gemoc.arduino.concurrent.k3dsa.IntegerVariable_EvaluableAspect.*
@@ -59,8 +59,9 @@ import static extension org.gemoc.arduino.concurrent.k3dsa.ArduinoCommunicationM
 import static extension org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect.*
 import static extension org.gemoc.arduino.concurrent.k3dsa.PushButton_ToggleAspect.*
 import static extension org.gemoc.arduino.concurrent.k3dsa.Project_ExecutableAspect.*
-import org.gemoc.arduino.concurrent.execarduino.arduino.PushButton
+import org.gemoc.arduino.concurrent.arduino.PushButton
 import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
+import org.eclipse.emf.common.util.EList
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -110,7 +111,7 @@ class Project_ExecutableAspect {
 //	}
 	
 	@InitializeModel
-	def public void initializeModel(List<String> args){
+	def public void initializeModel(EList<String> args){
 		_self.eAllContents().forEach[o|{
 			if (o instanceof IntegerVariable) {
 				o.value = o.initialValue
@@ -268,7 +269,7 @@ class If_EvaluableAspect extends Control_EvaluableAspect {
 
 @Aspect(className=Repeat)
 class Repeat_EvaluableAspect extends Control_EvaluableAspect {
-	var Integer i = 0;
+	public var Integer i = 0;
 
 	@OverrideAspectMethod
 	def Boolean evaluate() {
@@ -654,6 +655,9 @@ abstract class ArduinoCommunicationModule_PushAspect {
 
 @Aspect(className=BluetoothTransceiver)
 abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModule_PushAspect {
+	public EList<Integer> dataToSend
+	public EList<Integer> dataReceived
+	
 	@OverrideAspectMethod
 	def void push(){
 		val temp = _self.dataToSend.head;
@@ -664,6 +668,8 @@ abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModul
 
 @Aspect(className=PushButton)
 abstract class PushButton_ToggleAspect {
+	public boolean isPushed
+	
 	@ReplaceAspectMethod
 	def void toggle(){
 		println('xtend toggle() call !!!')
