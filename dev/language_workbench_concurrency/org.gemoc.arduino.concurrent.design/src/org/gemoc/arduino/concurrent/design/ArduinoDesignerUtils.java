@@ -4,13 +4,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
-import org.gemoc.arduino.concurrent.execarduino.arduino.AnalogPin;
-import org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoBoard;
-import org.gemoc.arduino.concurrent.execarduino.arduino.Board;
-import org.gemoc.arduino.concurrent.execarduino.arduino.DigitalPin;
-import org.gemoc.arduino.concurrent.execarduino.arduino.Module;
-import org.gemoc.arduino.concurrent.execarduino.arduino.Pin;
-import org.gemoc.arduino.concurrent.execarduino.arduino.Project;
+import org.gemoc.arduino.concurrent.xarduino.arduino.AnalogPin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoBoard;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Board;
+import org.gemoc.arduino.concurrent.xarduino.arduino.DigitalPin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Module;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
 
 /**
  * Utility for arduino designer.

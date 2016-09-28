@@ -5,11 +5,11 @@
 
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated ExecArduino -->
+      <!-- @generated XArduino -->
       <package
-            uri="http://execarduino/"
-            class="org.gemoc.arduino.concurrent.execarduino.arduino.ArduinoPackage"
-            genModel="model/ExecArduino.genmodel"/>
+            uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/"
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage"
+            genModel="model/XArduino.genmodel"/>
    </extension>
 
 </plugin>

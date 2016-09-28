@@ -10,7 +10,7 @@
       <!-- @generated ExecArduino -->
       <factory
             uri="http://execarduino/"
-            class="org.gemoc.arduino.concurrent.execarduino.arduino.provider.ArduinoItemProviderAdapterFactory"
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.provider.ArduinoItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -19,4 +19,5 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+null
 </plugin>

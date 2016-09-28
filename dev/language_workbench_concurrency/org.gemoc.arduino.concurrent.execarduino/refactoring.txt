@@ -1,3 +1,0 @@
-ModuleGet is now a ModuleInstruction
-add an abstract ArduinoCommunicationModule (which is an ArduinoDigitalModule
-add a BluetoothTransceiver with: two FIFO of Int (dataToSend and DataReceived) and a reference to one (for now) connected BluetoothTransceiver

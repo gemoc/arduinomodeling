@@ -1,63 +1,39 @@
+Manifest-Version: 1.0
 Bundle-SymbolicName: org.gemoc.arduino.concurrent;singleton:=true
 Export-Package: org.gemoc.arduino.concurrent,
- xarduino.xdsml.api.impl,
- xarduino2.xdsml.api.impl
+ xarduino.xdsml.api.impl
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: org.gemoc.arduino.concurrent
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi;bundle-version="2.8.0";visibility:="reexport",
- 
  fr.inria.aoste.timesquare.ccslkernel.solver;bundle-version="1.0.0",
- 
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.2.0",
- 
  org.gemoc.execution.concurrent.ccsljavaengine.extensions.k3;bundle-version="0.0.0";visibility:="reexport",
- 
  org.eclipse.ui,
- 
  org.eclipse.ui.workbench,
- 
+ org.gemoc.arduino.concurrent.model;bundle-version="0.0.0";visibility:="reexport",
  org.gemoc.arduino.concurrent.k3dsa;bundle-version="0.0.0";visibility:="reexport",
- 
  fr.inria.diverse.commons.eclipse.messagingsystem.api;bundle-version="1.0.0",
- 
  fr.inria.diverse.commons.eclipse.messagingsystem.ui;bundle-version="1.0.0",
- 
  org.eclipse.core.runtime;bundle-version="3.9.100",
- 
  org.gemoc.commons.eclipse,
- 
  org.gemoc.commons.eclipse.ui,
- 
  fr.inria.aoste.timesquare.ecl.feedback.model,
- 
  org.gemoc.execution.concurrent.ccsljavaengine.ui,
- 
  org.gemoc.arduino.concurrent.design;bundle-version="0.0.0";visibility:="reexport",
- 
  org.gemoc.arduino.concurrent.moc.dse;bundle-version="0.0.0";visibility:="reexport",
- 
  org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.execution.concurrent.ccsljavaxdsml.api;bundle-version="[2.2.0,
- 2.3.0)",
- 
- org.gemoc.execution.concurrent.ccsljavaengine;bundle-version="[2.2.0,
- 2.3.0)",
- 
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api;bundle-version="[2.2.0,2.3.0)",
+ org.gemoc.execution.concurrent.ccsljavaengine;bundle-version="[2.2.0,2.3.0)",
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
- 
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
- 
  fr.inria.diverse.melange.lib;bundle-version="0.2.0",
- 
  fr.inria.diverse.melange.resource;bundle-version="0.2.0",
- 
  fr.inria.diverse.trace.commons.model;bundle-version="0.1.0",
- 
- org.gemoc.executionframework.engine;bundle-version="0.1.0"
+ org.gemoc.executionframework.engine;bundle-version="0.1.0",
+ org.gemoc.arduino.concurrent.xarduino
 Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.gemoc.sample.sigpml.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Manifest-Version: 1.0
+

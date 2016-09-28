@@ -1,8 +1,9 @@
 package org.gemoc.arduino.concurrent
 
 language XArduino { 
-	syntax "platform:/resource/org.gemoc.arduino.concurrent.model/model/Arduino.ecore"
+	syntax "platform:/resource/org.gemoc.arduino.concurrent.model/model/arduino.ecore"
 	with org.gemoc.arduino.concurrent.k3dsa.*
-	ecl "/org.gemoc.arduino.concurrent.moc.ecl/ecl/arduinoML.ecl"
+	
+	ecl "/org.gemoc.arduino.concurrent.moc.dse/ecl/arduinoML.ecl"
 }
 

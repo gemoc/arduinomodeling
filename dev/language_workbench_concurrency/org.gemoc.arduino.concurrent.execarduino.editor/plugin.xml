@@ -14,7 +14,7 @@
       <wizard
             id="org.gemoc.arduino.concurrent.execarduino.arduino.presentation.ArduinoModelWizardID"
             name="%_UI_ArduinoModelWizard_label"
-            class="org.gemoc.arduino.concurrent.execarduino.arduino.presentation.ArduinoModelWizard"
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ArduinoModelFile.gif">
          <description>%_UI_ArduinoModelWizard_description</description>
@@ -29,9 +29,36 @@
             name="%_UI_ArduinoEditor_label"
             icon="icons/full/obj16/ArduinoModelFile.gif"
             extensions="execarduino"
-            class="org.gemoc.arduino.concurrent.execarduino.arduino.presentation.ArduinoEditor"
-            contributorClass="org.gemoc.arduino.concurrent.execarduino.arduino.presentation.ArduinoActionBarContributor">
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoEditor"
+            contributorClass="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoActionBarContributor">
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XArduino -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoModelWizardID"
+            name="%_UI_ArduinoModelWizard_label"
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArduinoModelFile.gif">
+         <description>%_UI_ArduinoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XArduino -->
+      <editor
+            id="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoEditorID"
+            name="%_UI_ArduinoEditor_label"
+            icon="icons/full/obj16/ArduinoModelFile.gif"
+            extensions="xarduino"
+            class="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoEditor"
+            contributorClass="org.gemoc.arduino.concurrent.xarduino.arduino.presentation.ArduinoActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

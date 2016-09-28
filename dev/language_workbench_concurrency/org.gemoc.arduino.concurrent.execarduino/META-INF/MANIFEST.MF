@@ -11,9 +11,9 @@ Require-Bundle: org.eclipse.core.runtime,
  fr.inria.diverse.k3.al.annotationprocessor.plugin,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gemoc.arduino.concurrent.execarduino,
- org.gemoc.arduino.concurrent.execarduino.arduino,
- org.gemoc.arduino.concurrent.execarduino.arduino.impl,
- org.gemoc.arduino.concurrent.execarduino.arduino.util
+Export-Package: org.gemoc.arduino.concurrent.xarduino.aspects,
+ org.gemoc.arduino.concurrent.xarduino.arduino,
+ org.gemoc.arduino.concurrent.xarduino.arduino.impl,
+ org.gemoc.arduino.concurrent.xarduino.arduino.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 
