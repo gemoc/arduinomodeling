@@ -5,7 +5,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import java.util.List
-import org.gemoc.arduino.concurrent.model.ArduinoUtils
 import org.gemoc.arduino.concurrent.arduino.BinaryBooleanExpression
 import org.gemoc.arduino.concurrent.arduino.BinaryExpression
 import org.gemoc.arduino.concurrent.arduino.BinaryIntegerExpression
@@ -59,9 +58,55 @@ import static extension org.gemoc.arduino.concurrent.k3dsa.ArduinoCommunicationM
 import static extension org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect.*
 import static extension org.gemoc.arduino.concurrent.k3dsa.PushButton_ToggleAspect.*
 import static extension org.gemoc.arduino.concurrent.k3dsa.Project_ExecutableAspect.*
+import static extension org.gemoc.arduino.concurrent.k3dsa.Module_UtilitiesAspect.*
 import org.gemoc.arduino.concurrent.arduino.PushButton
 import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
 import org.eclipse.emf.common.util.EList
+import org.gemoc.arduino.concurrent.arduino.ArduinoBoard
+
+@Aspect(className=Module)
+class Module_UtilitiesAspect {
+	
+	
+	private def Project getProject() {
+		var Project project = null
+
+		var current = _self.eContainer()
+		while (current != null) {
+			if (current instanceof Project) {
+				project = current as Project
+				return project
+			}
+			current = current.eContainer()
+		}
+		
+		return project
+	}
+	
+	def protected Pin getPin() {
+		var Pin pin = null
+		
+		val project = _self.getProject()
+
+		for (board : project.boards) {
+			if (board != null && board instanceof ArduinoBoard) {
+				var ArduinoBoard arduinoBoard = board as ArduinoBoard
+				for (analogPin : arduinoBoard.analogPins) {
+					if (analogPin.module == _self) {
+						return analogPin
+					}
+				}
+				for (digitalPin : arduinoBoard.digitalPins) {
+					if (digitalPin.module == _self) {
+						return digitalPin
+					}
+				}
+			}
+		}
+		
+		return pin
+	}
+}
 
 @Aspect(className=Instruction)
 class Instruction_ExecutableAspect {
@@ -174,7 +219,7 @@ class ModuleAssignment_ExecutableAspect extends ModuleInstruction_ExecutableAspe
 //	@Step
 	@OverrideAspectMethod
 	def void execute() {
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.module.getPin()
 		var Object value = null
 		switch (_self.operand){
 			BinaryIntegerExpression: value  = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.operand) as Integer
@@ -244,7 +289,7 @@ class If_EvaluableAspect extends Control_EvaluableAspect {
 
 		if (_self.condition instanceof ModuleGet){
 			var Module m = (_self.condition as ModuleGet).module
-			resCond = ArduinoUtils.getPin(m).level != 0
+			resCond = m.getPin().level != 0
 		}
 		return resCond
 	}
@@ -419,7 +464,7 @@ class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 //			println(res);
 //			return res;
 //		}
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.module.getPin()
 		if (pin.level == 0){
 			return false
 		}
@@ -454,7 +499,7 @@ class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
 			return temp
 		}
 		
-		val pin = ArduinoUtils.getPin(_self.module)
+		val pin = _self.module.getPin()
 		return pin.level	
 	}
 }
@@ -674,7 +719,7 @@ abstract class PushButton_ToggleAspect {
 	def void toggle(){
 		println('xtend toggle() call !!!')
 		_self.isPushed = !_self.isPushed
-		val pin = ArduinoUtils.getPin(_self)
+		val pin = _self.getPin()
 		if(_self.isPushed){
 			pin.level = HIGH
 		}else{

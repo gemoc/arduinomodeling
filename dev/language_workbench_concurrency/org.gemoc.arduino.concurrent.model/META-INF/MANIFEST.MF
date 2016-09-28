@@ -13,7 +13,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gemoc.arduino.concurrent.arduino,
  org.gemoc.arduino.concurrent.arduino.impl,
- org.gemoc.arduino.concurrent.arduino.util,
- org.gemoc.arduino.concurrent.model
+ org.gemoc.arduino.concurrent.arduino.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 
