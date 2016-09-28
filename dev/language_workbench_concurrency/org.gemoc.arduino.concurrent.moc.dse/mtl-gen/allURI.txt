@@ -2,4 +2,4 @@
 'http://org.gemoc.moccml/1.0', 
 'http://fr.inria.aoste.timemodel',
 'http://org.gemoc.moccml.fsmmodel/1.0',
-'http://execarduino/'
+'http://org.gemoc.arduino.concurrent.xarduino/arduino/'

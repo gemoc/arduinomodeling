@@ -8,7 +8,7 @@
 	'http://www.eclipse.org/xtend', 
 	'http://www.eclipse.org/xtend/RichString', 
 	'http://www.eclipse.org/xtext/xbase/Xbase',
-	'http://execarduino/') ]
+	'http://org.gemoc.arduino.concurrent.xarduino/arduino/') ]
 [template public generate(aProject : Project)]
 [comment @main/]
 [file (aProject.name+'_FiacreProcess.fcr', false, 'UTF-8')]

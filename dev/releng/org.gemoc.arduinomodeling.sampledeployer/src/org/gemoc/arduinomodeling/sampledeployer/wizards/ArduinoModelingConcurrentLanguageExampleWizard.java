@@ -28,13 +28,14 @@ public class ArduinoModelingConcurrentLanguageExampleWizard
 		List<ProjectDescriptor> projects = new ArrayList<ProjectDescriptor>(1);
 		
 		// sequential projects
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.zip", 						"org.gemoc.arduino.concurrent"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.design.zip", 			"org.gemoc.arduino.concurrent.design"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.ecl.zip", 				"org.gemoc.arduino.concurrent.ecl"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.execarduino.zip", 		"org.gemoc.arduino.concurrent.execarduino"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.execarduino.edit.zip", 	"org.gemoc.arduino.concurrent.execarduino.edit"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.execarduino.editor.zip", "org.gemoc.arduino.concurrent.execarduino.editor"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.operationalsemantics.zip", "org.gemoc.arduino.concurrent.operationalsemantics"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.zip", 					"org.gemoc.arduino.concurrent"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.model.zip", 				"org.gemoc.arduino.concurrent.model"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.xarduino.design.zip", 	"org.gemoc.arduino.concurrent.xarduino.design"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.moc.dse.zip", 			"org.gemoc.arduino.concurrent.moc.dse"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.xarduino.zip", 			"org.gemoc.arduino.concurrent.xarduino"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.xarduino.edit.zip", 		"org.gemoc.arduino.concurrent.xarduino.edit"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.xarduino.editor.zip", 	"org.gemoc.arduino.concurrent.xarduino.editor"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.concurrent.k3dsa.zip", 				"org.gemoc.arduino.concurrent.k3dsa"));
 
 		return projects;
 	}

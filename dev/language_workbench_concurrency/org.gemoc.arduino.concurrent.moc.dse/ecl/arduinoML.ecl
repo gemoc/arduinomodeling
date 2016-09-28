@@ -1,5 +1,5 @@
-import 'http://execarduino/'
---import 'platform:/resource/org.gemoc.arduino.concurrent.execarduino/model/ExecArduino.ecore'
+import 'http://org.gemoc.arduino.concurrent.xarduino/arduino/'
+--import 'platform:/resource/org.gemoc.arduino.concurrent.xarduino/model/XArduino.ecore'
 import _'http://www.eclipse.org/emf/2002/Ecore'
 
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"

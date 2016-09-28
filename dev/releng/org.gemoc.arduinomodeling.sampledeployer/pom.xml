@@ -78,23 +78,26 @@
 								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.zip">
 									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.design.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.design/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.model.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.model/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.ecl.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.ecl/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.xarduino.design.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.xarduino.design/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.moc.dse.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.moc.dse/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.edit.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino.edit/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.xarduino.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.xarduino/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.execarduino.editor.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.execarduino.editor/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.xarduino.edit.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.xarduino.edit/" />
 								</zip>
-								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.operationalsemantics.zip">
-									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.operationalsemantics/" />
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.xarduino.editor.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.xarduino.editor/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.gemoc.arduino.concurrent.k3dsa.zip">
+									<fileset dir="${gemoc_concurrent_lw_root}/org.gemoc.arduino.concurrent.k3dsa/" />
 								</zip>
 								<!-- Arduino Modeling Workbench  -->
 								
