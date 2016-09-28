@@ -29,13 +29,13 @@ public class ArduinoModelingSequentialLanguageExampleWizard
 		
 		// sequential projects
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.zip",						"org.gemoc.arduino.sequential"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.arduino.zip",				"org.gemoc.arduino.sequential.arduino"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.arduino.edit.zip",			"org.gemoc.arduino.sequential.arduino.edit"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.arduino.editor.zip",			"org.gemoc.arduino.sequential.arduino.editor"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.arduino.trace.zip",			"org.gemoc.arduino.sequential.arduino.trace"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.design.zip",					"org.gemoc.arduino.sequential.design"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.k3dsa.zip",					"org.gemoc.arduino.sequential.k3dsa"));
 		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.model.zip",					"org.gemoc.arduino.sequential.model"));
-		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.operationalsemantics.zip",	"org.gemoc.arduino.sequential.operationalsemantics"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.xarduino.zip",				"org.gemoc.arduino.sequential.xarduino"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.xarduino.design.zip",		"org.gemoc.arduino.sequential.xarduino.design"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.xarduino.edit.zip",			"org.gemoc.arduino.sequential.xarduino.edit"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.xarduino.editor.zip",		"org.gemoc.arduino.sequential.xarduino.editor"));
+		projects.add(new ProjectDescriptor(Activator.PLUGIN_ID, "zips/org.gemoc.arduino.sequential.xarduino.trace.zip",			"org.gemoc.arduino.sequential.xarduino.trace"));
 
 		return projects;
 	}
