@@ -1,27 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
   <extension point="org.gemoc.gemoc_language_workbench.concurrent.xdsml">
-    <XDSML_Definition codeExecutor_class="xarduino.xdsml.api.impl.XArduinoCodeExecutor" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.concurrent.XArduino" solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.moc.dse/qvto-gen/modeling/arduinoML.qvto" xdsmlFilePath="/org.gemoc.arduino.concurrent/src/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange">
-      <XDSML_Definition_Customization fileExtensions="arduino" />
+    <XDSML_Definition codeExecutor_class="xarduino.xdsml.api.impl.XArduinoCodeExecutor" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.concurrent.XArduino" solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.moc.dse/qvto-gen/modeling/arduinoML.qvto" xdsmlFilePath="/org.gemoc.arduino.concurrent/bin/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange">
+      <XDSML_Definition_Customization fileExtensions="arduino"/>
     </XDSML_Definition>
   </extension>
-  <!--
-  <extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="org.gemoc.arduino.concurrent.ArduinoConcurrentMT" uri="http://arduinoconcurrentmt/" />
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.arduino.concurrent.XArduinoMT" uri="http://org.gemoc.arduino.concurrent.xarduinomt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" entryPoints="" exactType="org.gemoc.arduino.concurrent.ArduinoConcurrentMT" id="org.gemoc.arduino.concurrent.ArduinoConcurrent" uri="http://execarduino/">
-      <adapter class="org.gemoc.arduino.concurrent.arduinoconcurrent.adapters.arduinoconcurrentmt.ArduinoConcurrentAdapter" modeltypeId="org.gemoc.arduino.concurrent.ArduinoConcurrentMT" />
-    </language>
-  </extension>
-  !-->
-  <extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="org.gemoc.arduino.concurrent.XArduinoMT" uri="http://org.gemoc.arduino.concurrent.xarduinomt/" />
-  </extension>
-  <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" entryPoints="" exactType="org.gemoc.arduino.concurrent.XArduinoMT" id="org.gemoc.arduino.concurrent.XArduino" uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/">
-      <adapter class="org.gemoc.arduino.concurrent.xarduino.adapters.xarduinomt.XArduinoAdapter" modeltypeId="org.gemoc.arduino.concurrent.XArduinoMT" />
+    <language aspects="VariableRef:org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspect;Variable:org.gemoc.arduino.concurrent.xarduino.aspects.Variable_EvaluableAspect;Constant:org.gemoc.arduino.concurrent.xarduino.aspects.Constant_EvaluableAspect;ModuleAssignment:org.gemoc.arduino.concurrent.xarduino.aspects.ModuleAssignment_ExecutableAspect;BooleanModuleGet:org.gemoc.arduino.concurrent.xarduino.aspects.BooleanModuleGet_ExecutableAspect;Repeat:org.gemoc.arduino.concurrent.xarduino.aspects.Repeat_EvaluableAspect;ModuleInstruction:org.gemoc.arduino.concurrent.xarduino.aspects.ModuleInstruction_ExecutableAspect;Instruction:org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect;Delay:org.gemoc.arduino.concurrent.xarduino.aspects.Delay_ExecutableAspect;Control:org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspect,org.gemoc.arduino.concurrent.xarduino.aspects.Control_EvaluableAspect;Utilities:org.gemoc.arduino.concurrent.xarduino.aspects.Utilities_ExecutableAspect;BooleanExpression:org.gemoc.arduino.concurrent.xarduino.aspects.BooleanExpression_EvaluableAspect;IntegerVariable:org.gemoc.arduino.concurrent.xarduino.aspects.IntegerVariable_EvaluableAspect;BinaryExpression:org.gemoc.arduino.concurrent.xarduino.aspects.BinaryExpression_EvaluableAspect;VariableDeclaration:org.gemoc.arduino.concurrent.xarduino.aspects.VariableDeclaration_ExecutableAspect;IntegerModuleGet:org.gemoc.arduino.concurrent.xarduino.aspects.IntegerModuleGet_ExecutableAspect;VariableAssignment:org.gemoc.arduino.concurrent.xarduino.aspects.VariableAssignment_ExecutableAspect;BinaryIntegerExpression:org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspect;IntegerExpression:org.gemoc.arduino.concurrent.xarduino.aspects.IntegerExpression_EvaluableAspect;While:org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspect;BinaryBooleanExpression:org.gemoc.arduino.concurrent.xarduino.aspects.BinaryBooleanExpression_EvaluableAspect;IntegerConstant:org.gemoc.arduino.concurrent.xarduino.aspects.IntegerConstant_ExecutableAspect;BluetoothTransceiver:org.gemoc.arduino.concurrent.xarduino.aspects.BluetoothTransceiver_PushAspect;Project:org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspect;Pin:org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspect;Expression:org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect;BooleanVariable:org.gemoc.arduino.concurrent.xarduino.aspects.BooleanVariable_EvaluableAspect;ArduinoCommunicationModule:org.gemoc.arduino.concurrent.xarduino.aspects.ArduinoCommunicationModule_PushAspect;BooleanConstant:org.gemoc.arduino.concurrent.xarduino.aspects.BooleanConstant_ExecutableAspect;Module:org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect;PushButton:org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspect;If:org.gemoc.arduino.concurrent.xarduino.aspects.If_EvaluableAspect" entryPoints="" exactType="org.gemoc.arduino.concurrent.XArduinoMT" id="org.gemoc.arduino.concurrent.XArduino" uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/">
+      <adapter class="org.gemoc.arduino.concurrent.xarduino.adapters.xarduinomt.XArduinoAdapter" modeltypeId="org.gemoc.arduino.concurrent.XArduinoMT"/>
     </language>
   </extension>
 </plugin>
