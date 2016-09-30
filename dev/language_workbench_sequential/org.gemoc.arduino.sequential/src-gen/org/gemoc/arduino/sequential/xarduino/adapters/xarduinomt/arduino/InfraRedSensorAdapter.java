@@ -2,11 +2,12 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.InfraRedSensor;
 
 @SuppressWarnings("all")
 public class InfraRedSensorAdapter extends EObjectAdapter<InfraRedSensor> implements org.gemoc.arduino.sequential.xarduinomt.arduino.InfraRedSensor {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public InfraRedSensorAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

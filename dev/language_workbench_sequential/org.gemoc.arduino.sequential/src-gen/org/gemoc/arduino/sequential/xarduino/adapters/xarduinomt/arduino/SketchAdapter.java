@@ -2,6 +2,7 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.Sketch;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Block;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Board;
@@ -9,7 +10,7 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Project;
 
 @SuppressWarnings("all")
 public class SketchAdapter extends EObjectAdapter<Sketch> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Sketch {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public SketchAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

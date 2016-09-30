@@ -2,13 +2,14 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.BinaryBooleanExpression;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryBooleanOperatorKind;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Expression;
 
 @SuppressWarnings("all")
 public class BinaryBooleanExpressionAdapter extends EObjectAdapter<BinaryBooleanExpression> implements org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryBooleanExpression {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public BinaryBooleanExpressionAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

@@ -2,11 +2,12 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.PushButton;
 
 @SuppressWarnings("all")
 public class PushButtonAdapter extends EObjectAdapter<PushButton> implements org.gemoc.arduino.sequential.xarduinomt.arduino.PushButton {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public PushButtonAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

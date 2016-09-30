@@ -33,7 +33,7 @@ public class StandaloneSetup {
   
   public void doAdaptersRegistration() {
     MelangeRegistry.LanguageDescriptor xArduino = new MelangeRegistryImpl.LanguageDescriptorImpl(
-    	"org.gemoc.arduino.sequential.XArduino", "", "http://xarduino/arduino/", "org.gemoc.arduino.sequential.XArduinoMT"
+    	"org.gemoc.arduino.sequential.XArduino", "", "http://org.gemoc.arduino.sequential.xarduino/arduino/", "org.gemoc.arduino.sequential.XArduinoMT"
     );
     xArduino.addAdapter("org.gemoc.arduino.sequential.XArduinoMT", org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoAdapter.class);
     MelangeRegistry.INSTANCE.getLanguageMap().put(
@@ -41,7 +41,7 @@ public class StandaloneSetup {
     	xArduino
     );
     MelangeRegistry.ModelTypeDescriptor xArduinoMT = new MelangeRegistryImpl.ModelTypeDescriptorImpl(
-    	"org.gemoc.arduino.sequential.XArduinoMT", "", "http://xarduinomt/"
+    	"org.gemoc.arduino.sequential.XArduinoMT", "", "http://org.gemoc.arduino.sequential.xarduinomt/"
     );
     MelangeRegistry.INSTANCE.getModelTypeMap().put(
     	"org.gemoc.arduino.sequential.XArduinoMT",

@@ -2,12 +2,13 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleInstruction;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Module;
 
 @SuppressWarnings("all")
 public class ModuleInstructionAdapter extends EObjectAdapter<ModuleInstruction> implements org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleInstruction {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public ModuleInstructionAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

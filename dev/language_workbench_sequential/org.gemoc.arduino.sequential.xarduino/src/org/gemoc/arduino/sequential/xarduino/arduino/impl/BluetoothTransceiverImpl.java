@@ -8,7 +8,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage;
@@ -98,7 +98,7 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	 */
 	public EList<Integer> getDataToSend() {
 		if (dataToSend == null) {
-			dataToSend = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
+			dataToSend = new EDataTypeEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
 		}
 		return dataToSend;
 	}
@@ -110,7 +110,7 @@ public class BluetoothTransceiverImpl extends ArduinoAnalogModuleImpl implements
 	 */
 	public EList<Integer> getDataReceived() {
 		if (dataReceived == null) {
-			dataReceived = new EDataTypeUniqueEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
+			dataReceived = new EDataTypeEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);
 		}
 		return dataReceived;
 	}

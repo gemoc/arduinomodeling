@@ -2,12 +2,13 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.DigitalPin;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoDigitalModule;
 
 @SuppressWarnings("all")
 public class DigitalPinAdapter extends EObjectAdapter<DigitalPin> implements org.gemoc.arduino.sequential.xarduinomt.arduino.DigitalPin {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public DigitalPinAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

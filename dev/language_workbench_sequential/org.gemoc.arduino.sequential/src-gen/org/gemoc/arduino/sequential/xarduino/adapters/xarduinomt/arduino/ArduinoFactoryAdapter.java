@@ -2,6 +2,7 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.AmbientLightSensor;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoBoard;
@@ -43,7 +44,7 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.While;
 
 @SuppressWarnings("all")
 public class ArduinoFactoryAdapter extends EFactoryImpl implements ArduinoFactory {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
+  private XArduinoMTAdaptersFactory adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   
   private org.gemoc.arduino.sequential.xarduino.arduino.ArduinoFactory arduinoAdaptee = org.gemoc.arduino.sequential.xarduino.arduino.ArduinoFactory.eINSTANCE;
   

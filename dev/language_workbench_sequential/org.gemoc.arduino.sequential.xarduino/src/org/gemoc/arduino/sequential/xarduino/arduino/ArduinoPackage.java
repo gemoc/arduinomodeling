@@ -39,7 +39,7 @@ public interface ArduinoPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://xarduino/arduino/";
+	String eNS_URI = "http://org.gemoc.arduino.sequential.xarduino/arduino/";
 
 	/**
 	 * The package namespace name.

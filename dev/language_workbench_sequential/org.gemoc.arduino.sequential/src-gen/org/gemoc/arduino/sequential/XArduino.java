@@ -5,6 +5,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.gemoc.arduino.sequential.XArduinoMT;
 
 @SuppressWarnings("all")
 public class XArduino implements IMetamodel {
@@ -18,7 +19,7 @@ public class XArduino implements IMetamodel {
     this.resource = resource;
   }
   
-  public static org.gemoc.arduino.sequential.XArduino load(final String uri) {
+  public static XArduino load(final String uri) {
     ResourceSet rs = new ResourceSetImpl();
     Resource res = rs.getResource(URI.createURI(uri), true);
     XArduino mm = new XArduino();
@@ -26,7 +27,7 @@ public class XArduino implements IMetamodel {
     return mm ;
   }
   
-  public org.gemoc.arduino.sequential.XArduinoMT toXArduinoMT() {
+  public XArduinoMT toXArduinoMT() {
     org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoAdapter adaptee = new org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoAdapter() ;
     adaptee.setAdaptee(resource);
     return adaptee;

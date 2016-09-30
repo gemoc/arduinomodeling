@@ -59,7 +59,7 @@ public interface IntegerVariable extends Variable {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getIntegerVariable_Value()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	Integer getValue();

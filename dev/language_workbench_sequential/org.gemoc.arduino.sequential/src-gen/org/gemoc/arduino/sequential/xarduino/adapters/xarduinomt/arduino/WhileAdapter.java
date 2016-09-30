@@ -2,13 +2,14 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.While;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Block;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanExpression;
 
 @SuppressWarnings("all")
 public class WhileAdapter extends EObjectAdapter<While> implements org.gemoc.arduino.sequential.xarduinomt.arduino.While {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public WhileAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

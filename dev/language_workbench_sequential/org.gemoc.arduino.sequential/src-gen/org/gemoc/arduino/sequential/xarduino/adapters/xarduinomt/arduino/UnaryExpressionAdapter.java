@@ -2,12 +2,13 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.UnaryExpression;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Expression;
 
 @SuppressWarnings("all")
 public class UnaryExpressionAdapter extends EObjectAdapter<UnaryExpression> implements org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryExpression {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public UnaryExpressionAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

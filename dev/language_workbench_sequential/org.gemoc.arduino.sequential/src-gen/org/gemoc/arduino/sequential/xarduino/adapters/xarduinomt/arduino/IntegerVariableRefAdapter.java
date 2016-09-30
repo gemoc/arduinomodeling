@@ -2,12 +2,13 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariable;
 
 @SuppressWarnings("all")
 public class IntegerVariableRefAdapter extends EObjectAdapter<IntegerVariableRef> implements org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariableRef {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public IntegerVariableRefAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

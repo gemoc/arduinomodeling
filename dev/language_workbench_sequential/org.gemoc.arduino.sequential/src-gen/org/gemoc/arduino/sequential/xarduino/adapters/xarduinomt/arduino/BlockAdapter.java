@@ -4,12 +4,13 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.Block;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Instruction;
 
 @SuppressWarnings("all")
 public class BlockAdapter extends EObjectAdapter<Block> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Block {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public BlockAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

@@ -59,7 +59,7 @@ public interface BooleanVariable extends Variable {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Boolean)
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getBooleanVariable_Value()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	Boolean getValue();

@@ -4,11 +4,12 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 
 @SuppressWarnings("all")
 public class BluetoothTransceiverAdapter extends EObjectAdapter<BluetoothTransceiver> implements org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public BluetoothTransceiverAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

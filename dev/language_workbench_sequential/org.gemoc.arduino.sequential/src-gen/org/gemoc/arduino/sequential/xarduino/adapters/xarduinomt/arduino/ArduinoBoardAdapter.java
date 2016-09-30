@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoBoard;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.AnalogPin;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.DigitalPin;
@@ -11,7 +12,7 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Project;
 
 @SuppressWarnings("all")
 public class ArduinoBoardAdapter extends EObjectAdapter<ArduinoBoard> implements org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoBoard {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public ArduinoBoardAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

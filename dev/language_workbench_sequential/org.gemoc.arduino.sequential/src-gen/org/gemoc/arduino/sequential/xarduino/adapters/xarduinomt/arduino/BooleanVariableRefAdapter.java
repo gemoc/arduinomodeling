@@ -2,12 +2,13 @@ package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariableRef;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariable;
 
 @SuppressWarnings("all")
 public class BooleanVariableRefAdapter extends EObjectAdapter<BooleanVariableRef> implements org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariableRef {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public BooleanVariableRefAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

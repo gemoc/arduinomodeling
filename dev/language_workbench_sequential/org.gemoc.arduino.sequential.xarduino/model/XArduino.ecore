@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://xarduino/arduino/" nsPrefix="arduino">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://org.gemoc.arduino.sequential.xarduino/arduino/" nsPrefix="arduino">
   <eClassifiers xsi:type="ecore:EClass" name="Board" abstract="true" eSuperTypes="//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/boards"/>
   </eClassifiers>
@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//ArduinoDigitalModule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" unique="false">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>
@@ -205,7 +205,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="0">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>
@@ -217,7 +217,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     </eStructuralFeatures>
@@ -315,11 +315,11 @@
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" upperBound="-1" eType="//BluetoothTransceiver"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" unique="false" upperBound="-1">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" unique="false" upperBound="-1">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     </eStructuralFeatures>

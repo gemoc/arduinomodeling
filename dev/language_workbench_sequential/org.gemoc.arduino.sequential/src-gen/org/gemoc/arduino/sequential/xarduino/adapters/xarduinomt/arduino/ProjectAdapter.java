@@ -4,13 +4,14 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.Project;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Board;
 import org.gemoc.arduino.sequential.xarduinomt.arduino.Sketch;
 
 @SuppressWarnings("all")
 public class ProjectAdapter extends EObjectAdapter<Project> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Project {
-  private org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory adaptersFactory;
+  private XArduinoMTAdaptersFactory adaptersFactory;
   
   public ProjectAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());

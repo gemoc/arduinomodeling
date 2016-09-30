@@ -31,7 +31,7 @@ public interface Pin extends NamedElement {
 	 * @return the value of the '<em>Level</em>' attribute.
 	 * @see #setLevel(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getPin_Level()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	Integer getLevel();
