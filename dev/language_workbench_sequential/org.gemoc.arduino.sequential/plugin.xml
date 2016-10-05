@@ -7,7 +7,7 @@
           name="org.gemoc.arduino.sequential.XArduino"
           xdsmlFilePath="/org.gemoc.arduino.sequential/bin/org/gemoc/arduino/sequential/Main.melange">
        <XDSML_Definition_Customization
-             fileExtensions="xarduino">
+             fileExtensions="xsarduino">
        </XDSML_Definition_Customization>
     </XDSML_Definition>
   </extension>
