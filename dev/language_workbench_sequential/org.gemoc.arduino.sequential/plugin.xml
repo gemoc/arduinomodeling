@@ -2,7 +2,14 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.sequential.XArduino" xdsmlFilePath="/org.gemoc.arduino.sequential/bin/org/gemoc/arduino/sequential/Main.melange" />
+    <XDSML_Definition
+          modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader"
+          name="org.gemoc.arduino.sequential.XArduino"
+          xdsmlFilePath="/org.gemoc.arduino.sequential/bin/org/gemoc/arduino/sequential/Main.melange">
+       <XDSML_Definition_Customization
+             fileExtensions="xarduino">
+       </XDSML_Definition_Customization>
+    </XDSML_Definition>
   </extension>
   <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.arduino.sequential.XArduinoMT" uri="http://org.gemoc.arduino.sequential.xarduinomt/" />
