@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://org.gemoc.arduino.sequential.xarduino/arduino/">
+  <boards xsi:type="arduino:ArduinoBoard">
+    <digitalPins>
+      <module xsi:type="arduino:LED" name="led"/>
+    </digitalPins>
+  </boards>
+  <sketches>
+    <block>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant"/>
+      </instructions>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant" value="1024"/>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>
