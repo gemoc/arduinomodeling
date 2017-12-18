@@ -11,27 +11,29 @@ import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
   @OverrideAspectMethod
   public static Object evaluate(final IntegerVariable _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect._privk3_evaluate(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Variable){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.Variable_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Variable)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.Object)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_evaluate(_self_, _self);
+	;
+	return (java.lang.Object) result;
+}
   
   public static Integer value(final IntegerVariable _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_value(_self_, _self);;
-    return (java.lang.Integer)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_value(_self_, _self);
+	;
+	return (java.lang.Integer) result;
+}
   
   public static void value(final IntegerVariable _self, final Integer value) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext.getSelf(_self);
-    _privk3_value(_self_, _self,value);;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext
+			.getSelf(_self);
+	_privk3_value(_self_, _self, value);
+	;
+}
   
   protected static Object _privk3_evaluate(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self) {
     return IntegerVariable_EvaluableAspect.value(_self);
@@ -45,6 +47,8 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.lang.Integer) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -55,15 +59,20 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
   }
   
   protected static void _privk3_value(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self, final Integer value) {
-    _self_.value = value; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setValue")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, value);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.value = value;
     }
   }
 }

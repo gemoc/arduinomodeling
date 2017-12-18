@@ -9,7 +9,6 @@ import org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspec
 import org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable;
-import org.gemoc.arduino.sequential.xarduino.arduino.Expression;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.Variable;
 import org.gemoc.arduino.sequential.xarduino.arduino.VariableAssignment;
@@ -20,25 +19,24 @@ public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableA
   @Step
   @OverrideAspectMethod
   public static void execute(final VariableAssignment _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.VariableAssignment){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    						@Override
-    						public void execute() {
-    							org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspect._privk3_execute(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.VariableAssignment)_self);
-    						}
-    					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    					if (manager != null) {
-    						manager.executeStep(_self,command,"VariableAssignment","execute");
-    					} else {
-    						command.execute();
-    					}
-    					;
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_execute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "VariableAssignment", "execute");
+	} else {
+		command.execute();
+	}
+	;
+	;
+}
   
   private static void super_execute(final VariableAssignment _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);
@@ -47,8 +45,7 @@ public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableA
   
   protected static void _privk3_execute(final VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_, final VariableAssignment _self) {
     final Variable variable = _self.getVariable();
-    Expression _operand = _self.getOperand();
-    final Object value = Expression_EvaluableAspect.evaluate(_operand);
+    final Object value = Expression_EvaluableAspect.evaluate(_self.getOperand());
     if ((variable instanceof IntegerVariable)) {
       IntegerVariable_EvaluableAspect.value(((IntegerVariable)variable), ((Integer) value));
     }

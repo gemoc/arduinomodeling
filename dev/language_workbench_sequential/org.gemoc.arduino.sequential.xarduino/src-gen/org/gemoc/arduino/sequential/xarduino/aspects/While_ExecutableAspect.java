@@ -6,7 +6,6 @@ import org.gemoc.arduino.sequential.xarduino.aspects.Block_ExecutableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspectWhileAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.arduino.Block;
 import org.gemoc.arduino.sequential.xarduino.arduino.While;
 
 @Aspect(className = While.class)
@@ -14,15 +13,11 @@ import org.gemoc.arduino.sequential.xarduino.arduino.While;
 public class While_ExecutableAspect extends Control_ExecutableAspect {
   @OverrideAspectMethod
   public static void execute(final While _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspectWhileAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspectWhileAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.While){
-    					org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspect._privk3_execute(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.While)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Control)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspectWhileAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.While_ExecutableAspectWhileAspectContext
+			.getSelf(_self);
+	_privk3_execute(_self_, _self);
+	;
+}
   
   private static void super_execute(final While _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
@@ -31,8 +26,7 @@ public class While_ExecutableAspect extends Control_ExecutableAspect {
   
   protected static void _privk3_execute(final While_ExecutableAspectWhileAspectProperties _self_, final While _self) {
     while ((Control_EvaluableAspect.evaluate(_self)).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     }
   }
 }

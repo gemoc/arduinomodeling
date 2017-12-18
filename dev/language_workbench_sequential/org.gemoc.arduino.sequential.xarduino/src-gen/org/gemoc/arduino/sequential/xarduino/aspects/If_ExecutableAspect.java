@@ -17,27 +17,24 @@ public class If_ExecutableAspect extends Control_ExecutableAspect {
   @Step
   @OverrideAspectMethod
   public static void execute(final If _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspectIfAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspectIfAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.If){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    						@Override
-    						public void execute() {
-    							org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspect._privk3_execute(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.If)_self);
-    						}
-    					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    					if (manager != null) {
-    						manager.executeStep(_self,command,"If","execute");
-    					} else {
-    						command.execute();
-    					}
-    					;
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Control)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspectIfAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspectIfAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_execute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "If", "execute");
+	} else {
+		command.execute();
+	}
+	;
+	;
+}
   
   private static void super_execute(final If _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
@@ -47,14 +44,12 @@ public class If_ExecutableAspect extends Control_ExecutableAspect {
   protected static void _privk3_execute(final If_ExecutableAspectIfAspectProperties _self_, final If _self) {
     Boolean _evaluate = If_EvaluableAspect.evaluate(_self);
     if ((_evaluate).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     } else {
       Block _elseBlock = _self.getElseBlock();
       boolean _notEquals = (!Objects.equal(_elseBlock, null));
       if (_notEquals) {
-        Block _elseBlock_1 = _self.getElseBlock();
-        Block_ExecutableAspect.execute(_elseBlock_1);
+        Block_ExecutableAspect.execute(_self.getElseBlock());
       }
     }
   }

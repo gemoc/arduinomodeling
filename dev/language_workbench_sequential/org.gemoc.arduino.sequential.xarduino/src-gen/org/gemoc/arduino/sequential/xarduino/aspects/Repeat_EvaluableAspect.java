@@ -11,25 +11,21 @@ import org.gemoc.arduino.sequential.xarduino.arduino.Repeat;
 public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
   @OverrideAspectMethod
   public static Boolean evaluate(final Repeat _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect._privk3_evaluate(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Control)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.Boolean)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_evaluate(_self_, _self);
+	;
+	return (java.lang.Boolean) result;
+}
   
   @OverrideAspectMethod
   public static void finalize(final Repeat _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect._privk3_finalize(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.finalize((org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext
+			.getSelf(_self);
+	_privk3_finalize(_self_, _self);
+	;
+}
   
   private static Integer i(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
@@ -78,6 +74,8 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.lang.Integer) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -88,15 +86,20 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
   }
   
   protected static void _privk3_i(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self, final Integer i) {
-    _self_.i = i; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setI")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, i);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.i = i;
     }
   }
 }

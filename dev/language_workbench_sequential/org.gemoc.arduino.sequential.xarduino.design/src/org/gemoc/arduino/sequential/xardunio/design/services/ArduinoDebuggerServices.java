@@ -10,7 +10,7 @@ import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
 import org.gemoc.arduino.sequential.xarduino.arduino.Project;
 import org.gemoc.arduino.sequential.xarduino.design.ArduinoDesignerUtils;
-import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
+import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
@@ -52,6 +52,6 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 	}
 	
 	public String getModelIdentifier() {
-		return org.gemoc.execution.sequential.javaengine.ui.Activator.PLUGIN_ID+".debugModel";
+		return org.eclipse.gemoc.execution.sequential.javaengine.ui.Activator.PLUGIN_ID+".debugModel";
 	}
 }

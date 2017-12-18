@@ -15,32 +15,33 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   @Step
   @OverrideAspectMethod
   public static void push(final BluetoothTransceiver _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    						@Override
-    						public void execute() {
-    							org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect._privk3_push(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver)_self);
-    						}
-    					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    					if (manager != null) {
-    						manager.executeStep(_self,command,"BluetoothTransceiver","push");
-    					} else {
-    						command.execute();
-    					}
-    					;
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.ArduinoCommunicationModule){
-    					org.gemoc.arduino.sequential.xarduino.aspects.ArduinoCommunicationModule_PushAspect.push((org.gemoc.arduino.sequential.xarduino.arduino.ArduinoCommunicationModule)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_push(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "BluetoothTransceiver", "push");
+	} else {
+		command.execute();
+	}
+	;
+	;
+}
   
   public static EList<Integer> dataToSend(final BluetoothTransceiver _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_dataToSend(_self_, _self);;
-    return (org.eclipse.emf.common.util.EList<java.lang.Integer>)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_dataToSend(_self_, _self);
+	;
+	return (org.eclipse.emf.common.util.EList) result;
+}
   
   public static void dataToSend(final BluetoothTransceiver _self, final EList<Integer> dataToSend) {
     final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
@@ -48,11 +49,13 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   public static EList<Integer> dataReceived(final BluetoothTransceiver _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_dataReceived(_self_, _self);;
-    return (org.eclipse.emf.common.util.EList<java.lang.Integer>)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_dataReceived(_self_, _self);
+	;
+	return (org.eclipse.emf.common.util.EList) result;
+}
   
   public static void dataReceived(final BluetoothTransceiver _self, final EList<Integer> dataReceived) {
     final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
@@ -60,18 +63,15 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_push(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
-    EList<BluetoothTransceiver> _connectedTransceiver = _self.getConnectedTransceiver();
     final Consumer<BluetoothTransceiver> _function = (BluetoothTransceiver t) -> {
       final EList<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(t);
-      EList<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
       final Consumer<Integer> _function_1 = (Integer i) -> {
         l.add(i);
       };
-      _dataToSend.forEach(_function_1);
+      BluetoothTransceiver_PushAspect.dataToSend(_self).forEach(_function_1);
     };
-    _connectedTransceiver.forEach(_function);
-    EList<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
-    _dataToSend.clear();
+    _self.getConnectedTransceiver().forEach(_function);
+    BluetoothTransceiver_PushAspect.dataToSend(_self).clear();
   }
   
   protected static EList<Integer> _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
@@ -82,6 +82,8 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (org.eclipse.emf.common.util.EList) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -92,15 +94,20 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self, final EList<Integer> dataToSend) {
-    _self_.dataToSend = dataToSend; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setDataToSend")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, dataToSend);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.dataToSend = dataToSend;
     }
   }
   
@@ -112,6 +119,8 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (org.eclipse.emf.common.util.EList) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -122,15 +131,20 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_dataReceived(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self, final EList<Integer> dataReceived) {
-    _self_.dataReceived = dataReceived; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setDataReceived")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, dataReceived);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.dataReceived = dataReceived;
     }
   }
 }

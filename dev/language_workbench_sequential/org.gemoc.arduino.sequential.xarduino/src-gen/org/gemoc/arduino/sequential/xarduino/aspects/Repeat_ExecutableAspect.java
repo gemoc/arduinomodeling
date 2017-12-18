@@ -8,7 +8,6 @@ import org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.arduino.Block;
 import org.gemoc.arduino.sequential.xarduino.arduino.Repeat;
 
 @Aspect(className = Repeat.class)
@@ -17,27 +16,24 @@ public class Repeat_ExecutableAspect extends Control_ExecutableAspect {
   @Step
   @OverrideAspectMethod
   public static void execute(final Repeat _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    						@Override
-    						public void execute() {
-    							org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspect._privk3_execute(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self);
-    						}
-    					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    					if (manager != null) {
-    						manager.executeStep(_self,command,"Repeat","execute");
-    					} else {
-    						command.execute();
-    					}
-    					;
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Control)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.execute((org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_execute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "Repeat", "execute");
+	} else {
+		command.execute();
+	}
+	;
+	;
+}
   
   private static void super_execute(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
@@ -46,8 +42,7 @@ public class Repeat_ExecutableAspect extends Control_ExecutableAspect {
   
   protected static void _privk3_execute(final Repeat_ExecutableAspectRepeatAspectProperties _self_, final Repeat _self) {
     while ((Control_EvaluableAspect.evaluate(_self)).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     }
     Instruction_ExecutableAspect.finalize(_self);
   }

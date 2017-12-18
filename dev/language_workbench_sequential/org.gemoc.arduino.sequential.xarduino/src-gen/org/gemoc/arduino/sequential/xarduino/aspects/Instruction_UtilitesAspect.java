@@ -42,8 +42,7 @@ public class Instruction_UtilitesAspect {
           project = ((Project) current);
           return project;
         }
-        EObject _eContainer = current.eContainer();
-        current = _eContainer;
+        current = current.eContainer();
       }
     }
     return project;
@@ -54,14 +53,7 @@ public class Instruction_UtilitesAspect {
     final Project project = Instruction_UtilitesAspect.getProject(_self, module);
     EList<Board> _boards = project.getBoards();
     for (final Board board : _boards) {
-      boolean _and = false;
-      boolean _notEquals = (!Objects.equal(board, null));
-      if (!_notEquals) {
-        _and = false;
-      } else {
-        _and = (board instanceof ArduinoBoard);
-      }
-      if (_and) {
+      if (((!Objects.equal(board, null)) && (board instanceof ArduinoBoard))) {
         ArduinoBoard arduinoBoard = ((ArduinoBoard) board);
         EList<AnalogPin> _analogPins = arduinoBoard.getAnalogPins();
         for (final AnalogPin analogPin : _analogPins) {

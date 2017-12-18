@@ -13,15 +13,13 @@ import org.gemoc.arduino.sequential.xarduino.arduino.If;
 public class If_EvaluableAspect extends Control_EvaluableAspect {
   @OverrideAspectMethod
   public static Boolean evaluate(final If _self) {
-    final org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspectIfAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspectIfAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.If){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspect._privk3_evaluate(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.If)_self);
-    } else  if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control){
-    					result = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Control)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.Boolean)result;
-  }
+	final org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspectIfAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspectIfAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_evaluate(_self_, _self);
+	;
+	return (java.lang.Boolean) result;
+}
   
   private static Boolean super_evaluate(final If _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectContext.getSelf(_self);
@@ -32,8 +30,7 @@ public class If_EvaluableAspect extends Control_EvaluableAspect {
     Boolean resCond = Boolean.valueOf(false);
     BooleanExpression _condition = _self.getCondition();
     if ((_condition instanceof BooleanExpression)) {
-      BooleanExpression _condition_1 = _self.getCondition();
-      Object _evaluate = Expression_EvaluableAspect.evaluate(_condition_1);
+      Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getCondition());
       resCond = ((Boolean) _evaluate);
     }
     return resCond;

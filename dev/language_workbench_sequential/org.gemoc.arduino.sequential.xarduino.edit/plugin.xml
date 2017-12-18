@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated XArduino -->
       <factory
-            uri="http://xarduino/arduino/"
+            uri="http://org.gemoc.arduino.sequential.xarduino/arduino/"
             class="org.gemoc.arduino.sequential.xarduino.arduino.provider.ArduinoItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
