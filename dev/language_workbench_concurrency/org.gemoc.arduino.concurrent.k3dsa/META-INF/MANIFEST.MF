@@ -5,8 +5,7 @@ Bundle-SymbolicName: org.gemoc.arduino.concurrent.k3dsa
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,
- fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="1.0.0",
- fr.obeo.dsl.debug.ide,
+ fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="1.0.0", 
  org.eclipse.xtend.core;bundle-version="2.7.3",
  org.eclipse.emf.ecore,
  org.eclipse.core.resources;bundle-version="3.9.1",
@@ -17,5 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gemoc.arduino.concurrent.k3dsa
-Import-Package: org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher,
- org.gemoc.executionframework.engine.ui.launcher
+Import-Package: org.eclipse.gemoc.execution.concurrent.ccsljavaengine.ui.launcher,
+ org.eclipse.gemoc.executionframework.engine.ui.launcher
+ 
