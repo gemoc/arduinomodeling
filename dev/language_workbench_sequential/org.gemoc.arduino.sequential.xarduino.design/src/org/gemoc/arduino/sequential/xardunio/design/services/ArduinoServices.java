@@ -51,6 +51,7 @@ import org.gemoc.arduino.sequential.xarduino.arduino.Block;
 import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.xarduino.arduino.Board;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanConstant;
+import org.gemoc.arduino.sequential.xarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanModuleGet;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariableRef;
@@ -95,7 +96,7 @@ import org.gemoc.arduino.sequential.xarduino.design.ArduinoDesignerUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import javafx.beans.binding.BooleanExpression;
+
 
 public class ArduinoServices {
 	
