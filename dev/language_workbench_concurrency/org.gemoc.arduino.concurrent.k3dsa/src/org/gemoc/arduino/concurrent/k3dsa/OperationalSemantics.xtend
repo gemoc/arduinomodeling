@@ -72,7 +72,7 @@ class Module_UtilitiesAspect {
 		var Project project = null
 
 		var current = _self.eContainer()
-		while (current != null) {
+		while (current !== null) {
 			if (current instanceof Project) {
 				project = current as Project
 				return project
@@ -89,7 +89,7 @@ class Module_UtilitiesAspect {
 		val project = _self.getProject()
 
 		for (board : project.boards) {
-			if (board != null && board instanceof ArduinoBoard) {
+			if (board !== null && board instanceof ArduinoBoard) {
 				var ArduinoBoard arduinoBoard = board as ArduinoBoard
 				for (analogPin : arduinoBoard.analogPins) {
 					if (analogPin.module == _self) {
@@ -694,7 +694,7 @@ abstract class BinaryExpression_EvaluableAspect extends Expression_EvaluableAspe
 
 @Aspect(className=ArduinoCommunicationModule)
 abstract class ArduinoCommunicationModule_PushAspect {
-	@ReplaceAspectMethod
+	
 	abstract def void push()
 } 
 
@@ -715,7 +715,7 @@ abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicationModul
 abstract class PushButton_ToggleAspect {
 	public boolean isPushed
 	
-	@ReplaceAspectMethod
+	
 	def void toggle(){
 		println('xtend toggle() call !!!')
 		_self.isPushed = !_self.isPushed

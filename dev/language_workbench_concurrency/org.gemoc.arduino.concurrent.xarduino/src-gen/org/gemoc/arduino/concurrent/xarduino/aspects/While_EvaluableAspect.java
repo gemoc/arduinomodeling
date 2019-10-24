@@ -20,15 +20,13 @@ import org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspectWhileA
 public class While_EvaluableAspect extends Control_EvaluableAspect {
   @OverrideAspectMethod
   public static Boolean evaluate(final While _self) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspectWhileAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspectWhileAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.While){
-    					result = org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspect._privk3_evaluate(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.While)_self);
-    } else  if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Control){
-    					result = org.gemoc.arduino.concurrent.xarduino.aspects.Control_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.xarduino.arduino.Control)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.Boolean)result;
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspectWhileAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.While_EvaluableAspectWhileAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_evaluate(_self_, _self);
+	;
+	return (java.lang.Boolean) result;
+}
   
   private static Boolean super_evaluate(final While _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Control_EvaluableAspectControlAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Control_EvaluableAspectControlAspectContext.getSelf(_self);
@@ -39,35 +37,29 @@ public class While_EvaluableAspect extends Control_EvaluableAspect {
     Boolean resCond = Boolean.valueOf(false);
     BooleanExpression _condition = _self.getCondition();
     boolean _matched = false;
-    if (!_matched) {
-      if (_condition instanceof BinaryBooleanExpression) {
-        _matched=true;
-        BooleanExpression _condition_1 = _self.getCondition();
-        Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_condition_1);
-        resCond = ((Boolean) _evaluate);
-      }
+    if (_condition instanceof BinaryBooleanExpression) {
+      _matched=true;
+      Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.getCondition());
+      resCond = ((Boolean) _evaluate);
     }
     if (!_matched) {
       if (_condition instanceof BooleanVariableRef) {
         _matched=true;
-        BooleanExpression _condition_1 = _self.getCondition();
-        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_condition_1);
+        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_self.getCondition());
         resCond = ((Boolean) _evaluate);
       }
     }
     if (!_matched) {
       if (_condition instanceof BooleanConstant) {
         _matched=true;
-        BooleanExpression _condition_1 = _self.getCondition();
-        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_condition_1);
+        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_self.getCondition());
         resCond = ((Boolean) _evaluate);
       }
     }
     if (!_matched) {
       if (_condition instanceof BooleanModuleGet) {
         _matched=true;
-        BooleanExpression _condition_1 = _self.getCondition();
-        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_condition_1);
+        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_self.getCondition());
         resCond = ((Boolean) _evaluate);
       }
     }

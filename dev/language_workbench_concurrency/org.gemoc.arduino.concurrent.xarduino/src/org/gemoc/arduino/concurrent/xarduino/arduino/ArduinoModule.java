@@ -13,5 +13,5 @@ package org.gemoc.arduino.concurrent.xarduino.arduino;
  * @model abstract="true"
  * @generated
  */
-public interface ArduinoModule extends Module {
+public interface ArduinoModule extends org.gemoc.arduino.concurrent.xarduino.arduino.Module {
 } // ArduinoModule

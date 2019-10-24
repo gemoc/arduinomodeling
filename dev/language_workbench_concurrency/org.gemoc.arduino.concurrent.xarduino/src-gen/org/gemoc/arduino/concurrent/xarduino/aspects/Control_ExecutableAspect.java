@@ -11,13 +11,11 @@ import org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspec
 public class Control_ExecutableAspect extends Instruction_ExecutableAspect {
   @OverrideAspectMethod
   public static void execute(final Control _self) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
-     if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Control){
-    					org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspect._privk3_execute(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.Control)_self);
-    } else  if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Instruction){
-    					org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect.execute((org.gemoc.arduino.concurrent.xarduino.arduino.Instruction)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Control_ExecutableAspectControlAspectContext
+			.getSelf(_self);
+	_privk3_execute(_self_, _self);
+	;
+}
   
   private static void super_execute(final Control _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);

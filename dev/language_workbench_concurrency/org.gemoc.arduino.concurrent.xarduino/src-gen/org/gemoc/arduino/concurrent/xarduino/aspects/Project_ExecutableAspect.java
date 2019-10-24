@@ -3,7 +3,6 @@ package org.gemoc.arduino.concurrent.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -24,19 +23,19 @@ public class Project_ExecutableAspect {
   @InitializeModel
   public static void initializeModel(final Project _self, final EList<String> args) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspectProjectAspectContext.getSelf(_self);
-    _privk3_initializeModel(_self_, _self,args);;
+    // #DispatchPointCut_before# void initializeModel(EList<String>)
+    if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Project){
+    	org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspect._privk3_initializeModel(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.Project)_self,args);
+    };
   }
   
   protected static void _privk3_initializeModel(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self, final EList<String> args) {
-    TreeIterator<EObject> _eAllContents = _self.eAllContents();
     final Procedure1<EObject> _function = (EObject o) -> {
       if ((o instanceof IntegerVariable)) {
-        int _initialValue = ((IntegerVariable)o).getInitialValue();
-        IntegerVariable_EvaluableAspect.value(((IntegerVariable)o), Integer.valueOf(_initialValue));
+        IntegerVariable_EvaluableAspect.value(((IntegerVariable)o), Integer.valueOf(((IntegerVariable)o).getInitialValue()));
       } else {
         if ((o instanceof BooleanVariable)) {
-          boolean _isInitialValue = ((BooleanVariable)o).isInitialValue();
-          BooleanVariable_EvaluableAspect.value(((BooleanVariable)o), Boolean.valueOf(_isInitialValue));
+          BooleanVariable_EvaluableAspect.value(((BooleanVariable)o), Boolean.valueOf(((BooleanVariable)o).isInitialValue()));
         } else {
           if ((o instanceof Pin)) {
             Pin_EvaluableAspect.level(((Pin) o), Integer.valueOf(0));
@@ -48,6 +47,6 @@ public class Project_ExecutableAspect {
         }
       }
     };
-    IteratorExtensions.<EObject>forEach(_eAllContents, _function);
+    IteratorExtensions.<EObject>forEach(_self.eAllContents(), _function);
   }
 }

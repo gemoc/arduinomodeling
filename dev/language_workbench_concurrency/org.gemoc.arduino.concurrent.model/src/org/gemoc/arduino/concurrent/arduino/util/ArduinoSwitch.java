@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.gemoc.arduino.concurrent.arduino.*;
+import org.gemoc.arduino.concurrent.arduino.Module;
 
 /**
  * <!-- begin-user-doc -->

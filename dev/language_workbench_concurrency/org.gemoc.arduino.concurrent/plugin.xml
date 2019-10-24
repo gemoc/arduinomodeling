@@ -6,7 +6,11 @@
     </XDSML_Definition>
   </extension>
   
-<extension point="fr.inria.diverse.melange.modeltype">
+   <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XArduinoMT -->
+    <package class="org.gemoc.arduino.concurrent.xarduinomt.arduino.ArduinoPackage" genModel="model-gen/XArduinoMT.genmodel" uri="http://org.gemoc.arduino.concurrent.xarduinomt/arduino/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.arduino.concurrent.XArduinoMT" uri="http://org.gemoc.arduino.concurrent.xarduinomt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">

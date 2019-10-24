@@ -163,7 +163,7 @@ public class PushButtonImpl extends ArduinoDigitalModuleImpl implements PushButt
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isPushed: ");
 		result.append(isPushed);
 		result.append(')');

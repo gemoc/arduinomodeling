@@ -1,0 +1,120 @@
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanModuleGet_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BooleanModuleGet){
+			result = org.gemoc.arduino.concurrent.k3dsa.BooleanModuleGet_ExecutableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.BooleanModuleGet)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanModuleGet_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BinaryBooleanExpression_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BinaryBooleanExpression){
+			result = org.gemoc.arduino.concurrent.k3dsa.BinaryBooleanExpression_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.BinaryBooleanExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BinaryBooleanExpression_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.VariableDeclaration_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.VariableDeclaration){
+			org.gemoc.arduino.concurrent.k3dsa.VariableDeclaration_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.VariableDeclaration)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.VariableDeclaration_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerModuleGet_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.IntegerModuleGet){
+			result = org.gemoc.arduino.concurrent.k3dsa.IntegerModuleGet_ExecutableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.IntegerModuleGet)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerModuleGet_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanVariable_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BooleanVariable){
+			result = org.gemoc.arduino.concurrent.k3dsa.BooleanVariable_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.BooleanVariable)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanVariable_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.ModuleAssignment){
+			org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.ModuleAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.If_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.If){
+			result = org.gemoc.arduino.concurrent.k3dsa.If_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.If)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.If_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.Constant_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Constant){
+			result = org.gemoc.arduino.concurrent.k3dsa.Constant_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.Constant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.Constant_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Delay){
+			org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.Delay)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerConstant_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.IntegerConstant){
+			result = org.gemoc.arduino.concurrent.k3dsa.IntegerConstant_ExecutableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.IntegerConstant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerConstant_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.While_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.While){
+			result = org.gemoc.arduino.concurrent.k3dsa.While_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.While)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.While_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.VariableAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.VariableAssignment){
+			org.gemoc.arduino.concurrent.k3dsa.VariableAssignment_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.VariableAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.VariableAssignment_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.ArduinoCommunicationModule_PushAspect#void push() from org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver){
+			org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect.push((org.gemoc.arduino.concurrent.arduino.BluetoothTransceiver)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.ArduinoCommunicationModule_PushAspect#void push() from org.gemoc.arduino.concurrent.k3dsa.BluetoothTransceiver_PushAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void finalize() from org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Repeat){
+			org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect.finalize((org.gemoc.arduino.concurrent.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void finalize() from org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Control_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Control){
+			org.gemoc.arduino.concurrent.k3dsa.Control_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.Control)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Control_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Utilities_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Delay){
+			org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.Delay)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Utilities_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Delay_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanConstant_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BooleanConstant){
+			result = org.gemoc.arduino.concurrent.k3dsa.BooleanConstant_ExecutableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.BooleanConstant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BooleanConstant_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerVariable_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.IntegerVariable){
+			result = org.gemoc.arduino.concurrent.k3dsa.IntegerVariable_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.IntegerVariable)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.IntegerVariable_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.VariableRef_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.VariableRef){
+			result = org.gemoc.arduino.concurrent.k3dsa.VariableRef_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.VariableRef)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.VariableRef_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.ModuleInstruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.ModuleAssignment){
+			org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.ModuleAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.ModuleInstruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleAssignment_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BinaryIntegerExpression_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.BinaryIntegerExpression){
+			result = org.gemoc.arduino.concurrent.k3dsa.BinaryIntegerExpression_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.BinaryIntegerExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.concurrent.k3dsa.BinaryIntegerExpression_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Repeat){
+			result = org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.concurrent.k3dsa.Repeat_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Utilities_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.Utilities){
+			org.gemoc.arduino.concurrent.k3dsa.Utilities_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.Utilities)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.Utilities_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleInstruction_ExecutableAspect
+		if (_self instanceof org.gemoc.arduino.concurrent.arduino.ModuleInstruction){
+			org.gemoc.arduino.concurrent.k3dsa.ModuleInstruction_ExecutableAspect.execute((org.gemoc.arduino.concurrent.arduino.ModuleInstruction)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.concurrent.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.concurrent.k3dsa.ModuleInstruction_ExecutableAspect

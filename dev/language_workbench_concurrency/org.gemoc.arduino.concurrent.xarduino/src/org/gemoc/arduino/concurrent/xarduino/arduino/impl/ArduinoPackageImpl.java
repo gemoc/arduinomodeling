@@ -52,7 +52,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.concurrent.xarduino.arduino.MicroServo;
-import org.gemoc.arduino.concurrent.xarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleGet;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleInstruction;
@@ -568,7 +567,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ArduinoPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -582,7 +581,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		if (isInited) return (ArduinoPackage)EPackage.Registry.INSTANCE.getEPackage(ArduinoPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ArduinoPackageImpl theArduinoPackage = (ArduinoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArduinoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArduinoPackageImpl());
+		Object registeredArduinoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ArduinoPackageImpl theArduinoPackage = registeredArduinoPackage instanceof ArduinoPackageImpl ? (ArduinoPackageImpl)registeredArduinoPackage : new ArduinoPackageImpl();
 
 		isInited = true;
 
@@ -595,7 +595,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		// Mark meta-data to indicate it can't be changed
 		theArduinoPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ArduinoPackage.eNS_URI, theArduinoPackage);
 		return theArduinoPackage;
@@ -1891,7 +1890,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBoard_Project(), this.getProject(), this.getProject_Boards(), "project", null, 1, 1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(moduleEClass, org.gemoc.arduino.concurrent.xarduino.arduino.Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(digitalPinEClass, DigitalPin.class, "DigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDigitalPin_Module(), this.getArduinoDigitalModule(), null, "module", null, 0, 1, DigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1932,9 +1931,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(controlEClass, Control.class, "Control", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControl_Block(), this.getBlock(), null, "block", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(controlEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(controlEClass, ecorePackage.getEBooleanObject(), "evaluate", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(controlEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(utilitiesEClass, Utilities.class, "Utilities", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2164,190 +2163,190 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	protected void createAspectAnnotations() {
-		String source = "aspect";	
+		String source = "aspect";
 		addAnnotation
-		  (getPin_Level(), 
-		   source, 
+		  (getPin_Level(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (projectEClass.getEOperations().get(0), 
-		   source, 
+		  (projectEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (instructionEClass.getEOperations().get(0), 
-		   source, 
+		  (instructionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (instructionEClass.getEOperations().get(1), 
-		   source, 
+		  (instructionEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (moduleAssignmentEClass.getEOperations().get(0), 
-		   source, 
+		  (moduleAssignmentEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (moduleInstructionEClass.getEOperations().get(0), 
-		   source, 
+		  (moduleInstructionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (controlEClass.getEOperations().get(0), 
-		   source, 
+		  (controlEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (controlEClass.getEOperations().get(1), 
-		   source, 
+		  (controlEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (utilitiesEClass.getEOperations().get(0), 
-		   source, 
+		  (utilitiesEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (delayEClass.getEOperations().get(0), 
-		   source, 
+		  (delayEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (repeatEClass.getEOperations().get(0), 
-		   source, 
+		  (repeatEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (repeatEClass.getEOperations().get(1), 
-		   source, 
+		  (repeatEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getRepeat_I(), 
-		   source, 
+		  (getRepeat_I(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (whileEClass.getEOperations().get(0), 
-		   source, 
+		  (whileEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (variableEClass.getEOperations().get(0), 
-		   source, 
+		  (variableEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (variableAssignmentEClass.getEOperations().get(0), 
-		   source, 
+		  (variableAssignmentEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (binaryIntegerExpressionEClass.getEOperations().get(0), 
-		   source, 
+		  (binaryIntegerExpressionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (binaryBooleanExpressionEClass.getEOperations().get(0), 
-		   source, 
+		  (binaryBooleanExpressionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (expressionEClass.getEOperations().get(0), 
-		   source, 
+		  (expressionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (constantEClass.getEOperations().get(0), 
-		   source, 
+		  (constantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (ifEClass.getEOperations().get(0), 
-		   source, 
+		  (ifEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerConstantEClass.getEOperations().get(0), 
-		   source, 
+		  (integerConstantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanConstantEClass.getEOperations().get(0), 
-		   source, 
+		  (booleanConstantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerVariableEClass.getEOperations().get(0), 
-		   source, 
+		  (integerVariableEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getIntegerVariable_Value(), 
-		   source, 
+		  (getIntegerVariable_Value(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanVariableEClass.getEOperations().get(0), 
-		   source, 
+		  (booleanVariableEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getBooleanVariable_Value(), 
-		   source, 
+		  (getBooleanVariable_Value(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanModuleGetEClass.getEOperations().get(0), 
-		   source, 
+		  (booleanModuleGetEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerModuleGetEClass.getEOperations().get(0), 
-		   source, 
+		  (integerModuleGetEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (variableDeclarationEClass.getEOperations().get(0), 
-		   source, 
+		  (variableDeclarationEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (variableRefEClass.getEOperations().get(0), 
-		   source, 
+		  (variableRefEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (pushButtonEClass.getEOperations().get(0), 
-		   source, 
+		  (pushButtonEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getPushButton_IsPushed(), 
-		   source, 
+		  (getPushButton_IsPushed(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arduinoCommunicationModuleEClass.getEOperations().get(0), 
-		   source, 
+		  (arduinoCommunicationModuleEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (bluetoothTransceiverEClass.getEOperations().get(0), 
-		   source, 
+		  (bluetoothTransceiverEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getBluetoothTransceiver_DataToSend(), 
-		   source, 
+		  (getBluetoothTransceiver_DataToSend(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getBluetoothTransceiver_DataReceived(), 
-		   source, 
+		  (getBluetoothTransceiver_DataReceived(),
+		   source,
 		   new String[] {
 		   });
 	}

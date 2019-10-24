@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.gemoc.arduino.concurrent.arduino.*;
+import org.gemoc.arduino.concurrent.arduino.Module;
 
 /**
  * <!-- begin-user-doc -->

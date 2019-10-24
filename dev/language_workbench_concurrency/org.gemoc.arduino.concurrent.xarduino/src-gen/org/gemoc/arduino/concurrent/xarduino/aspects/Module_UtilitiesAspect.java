@@ -10,57 +10,54 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoBoard;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoDigitalModule;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.xarduino.arduino.DigitalPin;
-import org.gemoc.arduino.concurrent.xarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
 import org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectProperties;
 
-@Aspect(className = Module.class)
+@Aspect(className = org.gemoc.arduino.concurrent.xarduino.arduino.Module.class)
 @SuppressWarnings("all")
 public class Module_UtilitiesAspect {
-  private static Project getProject(final Module _self) {
+  private static Project getProject(final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getProject(_self_, _self);;
+    // #DispatchPointCut_before# Project getProject()
+    if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Module){
+    	result = org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect._privk3_getProject(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.Module)_self);
+    };
     return (org.gemoc.arduino.concurrent.xarduino.arduino.Project)result;
   }
   
-  protected static Pin getPin(final Module _self) {
+  protected static Pin getPin(final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getPin(_self_, _self);;
+    // #DispatchPointCut_before# Pin getPin()
+    if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Module){
+    	result = org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect._privk3_getPin(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.Module)_self);
+    };
     return (org.gemoc.arduino.concurrent.xarduino.arduino.Pin)result;
   }
   
-  protected static Project _privk3_getProject(final Module_UtilitiesAspectModuleAspectProperties _self_, final Module _self) {
+  protected static Project _privk3_getProject(final Module_UtilitiesAspectModuleAspectProperties _self_, final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     Project project = null;
     EObject current = _self.eContainer();
-    while ((!Objects.equal(current, null))) {
+    while ((current != null)) {
       {
         if ((current instanceof Project)) {
           project = ((Project) current);
           return project;
         }
-        EObject _eContainer = current.eContainer();
-        current = _eContainer;
+        current = current.eContainer();
       }
     }
     return project;
   }
   
-  protected static Pin _privk3_getPin(final Module_UtilitiesAspectModuleAspectProperties _self_, final Module _self) {
+  protected static Pin _privk3_getPin(final Module_UtilitiesAspectModuleAspectProperties _self_, final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     Pin pin = null;
     final Project project = Module_UtilitiesAspect.getProject(_self);
     EList<Board> _boards = project.getBoards();
     for (final Board board : _boards) {
-      boolean _and = false;
-      boolean _notEquals = (!Objects.equal(board, null));
-      if (!_notEquals) {
-        _and = false;
-      } else {
-        _and = (board instanceof ArduinoBoard);
-      }
-      if (_and) {
+      if (((board != null) && (board instanceof ArduinoBoard))) {
         ArduinoBoard arduinoBoard = ((ArduinoBoard) board);
         EList<AnalogPin> _analogPins = arduinoBoard.getAnalogPins();
         for (final AnalogPin analogPin : _analogPins) {
