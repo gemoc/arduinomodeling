@@ -5,13 +5,12 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Module;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
 import org.gemoc.arduino.concurrent.xarduino.design.ArduinoDesignerUtils;
-import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
-
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
@@ -52,7 +51,7 @@ public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 		return ArduinoDesignerUtils.getPin(module).getLevel() > 0;
 	}
 	
-	public String getModelIdentifier() {
-		return org.gemoc.execution.concurrent.ccsljavaengine.ui.Activator.PLUGIN_ID+".debugModel";
+	public String getModelIdentifier() {		
+		return org.eclipse.gemoc.execution.concurrent.ccsljavaengine.ui.Activator.PLUGIN_ID+".debugModel";
 	}
 }
