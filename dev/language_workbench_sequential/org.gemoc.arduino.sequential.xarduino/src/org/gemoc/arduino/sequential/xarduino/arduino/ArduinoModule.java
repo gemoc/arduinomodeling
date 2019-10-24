@@ -13,5 +13,5 @@ package org.gemoc.arduino.sequential.xarduino.arduino;
  * @model abstract="true"
  * @generated
  */
-public interface ArduinoModule extends Module {
+public interface ArduinoModule extends org.gemoc.arduino.sequential.xarduino.arduino.Module {
 } // ArduinoModule

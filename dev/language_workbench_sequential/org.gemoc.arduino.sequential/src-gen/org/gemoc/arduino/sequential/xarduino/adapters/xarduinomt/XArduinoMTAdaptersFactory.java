@@ -99,7 +99,6 @@ import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.sequential.xarduino.arduino.LED;
 import org.gemoc.arduino.sequential.xarduino.arduino.MicroServo;
-import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleGet;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleInstruction;
@@ -267,7 +266,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public ModuleAdapter createModuleAdapter(final Module adaptee, final Resource res) {
+  public ModuleAdapter createModuleAdapter(final org.gemoc.arduino.sequential.xarduino.arduino.Module adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);

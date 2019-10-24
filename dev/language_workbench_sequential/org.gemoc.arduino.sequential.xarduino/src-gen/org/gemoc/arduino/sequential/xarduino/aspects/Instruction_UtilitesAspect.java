@@ -12,28 +12,33 @@ import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoDigitalModule;
 import org.gemoc.arduino.sequential.xarduino.arduino.Board;
 import org.gemoc.arduino.sequential.xarduino.arduino.DigitalPin;
 import org.gemoc.arduino.sequential.xarduino.arduino.Instruction;
-import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
 import org.gemoc.arduino.sequential.xarduino.arduino.Project;
 
 @Aspect(className = Instruction.class)
 @SuppressWarnings("all")
 public class Instruction_UtilitesAspect {
-  private static Project getProject(final Instruction _self, final Module module) {
+  private static Project getProject(final Instruction _self, final org.gemoc.arduino.sequential.xarduino.arduino.Module module) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspectInstructionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getProject(_self_, _self,module);;
+    // #DispatchPointCut_before# Project getProject(Module)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
+    	result = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspect._privk3_getProject(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self,module);
+    };
     return (org.gemoc.arduino.sequential.xarduino.arduino.Project)result;
   }
   
-  protected static Pin getPin(final Instruction _self, final Module module) {
+  protected static Pin getPin(final Instruction _self, final org.gemoc.arduino.sequential.xarduino.arduino.Module module) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspectInstructionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getPin(_self_, _self,module);;
+    // #DispatchPointCut_before# Pin getPin(Module)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction){
+    	result = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspect._privk3_getPin(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Instruction)_self,module);
+    };
     return (org.gemoc.arduino.sequential.xarduino.arduino.Pin)result;
   }
   
-  protected static Project _privk3_getProject(final Instruction_UtilitesAspectInstructionAspectProperties _self_, final Instruction _self, final Module module) {
+  protected static Project _privk3_getProject(final Instruction_UtilitesAspectInstructionAspectProperties _self_, final Instruction _self, final org.gemoc.arduino.sequential.xarduino.arduino.Module module) {
     Project project = null;
     EObject current = _self.eContainer();
     while ((!Objects.equal(current, null))) {
@@ -48,7 +53,7 @@ public class Instruction_UtilitesAspect {
     return project;
   }
   
-  protected static Pin _privk3_getPin(final Instruction_UtilitesAspectInstructionAspectProperties _self_, final Instruction _self, final Module module) {
+  protected static Pin _privk3_getPin(final Instruction_UtilitesAspectInstructionAspectProperties _self_, final Instruction _self, final org.gemoc.arduino.sequential.xarduino.arduino.Module module) {
     Pin pin = null;
     final Project project = Instruction_UtilitesAspect.getProject(_self, module);
     EList<Board> _boards = project.getBoards();

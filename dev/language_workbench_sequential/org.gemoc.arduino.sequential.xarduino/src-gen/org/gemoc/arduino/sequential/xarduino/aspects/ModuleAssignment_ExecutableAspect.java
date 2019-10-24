@@ -13,7 +13,6 @@ import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.xarduino.arduino.Expression;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerExpression;
-import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
 
@@ -63,11 +62,11 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
         Pin_EvaluableAspect.level(pin, Pin_EvaluableAspect.LOW);
       }
     }
-    Module _module = _self.getModule();
+    org.gemoc.arduino.sequential.xarduino.arduino.Module _module = _self.getModule();
     if ((_module instanceof BluetoothTransceiver)) {
-      Module _module_1 = _self.getModule();
+      org.gemoc.arduino.sequential.xarduino.arduino.Module _module_1 = _self.getModule();
       BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_1)).add(Pin_EvaluableAspect.level(pin));
-      Module _module_2 = _self.getModule();
+      org.gemoc.arduino.sequential.xarduino.arduino.Module _module_2 = _self.getModule();
       BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_2));
     }
   }

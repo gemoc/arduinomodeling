@@ -50,7 +50,6 @@ import org.gemoc.sequential.model.arduino.IntegerModuleGet;
 import org.gemoc.sequential.model.arduino.IntegerVariable;
 import org.gemoc.sequential.model.arduino.IntegerVariableRef;
 import org.gemoc.sequential.model.arduino.MicroServo;
-import org.gemoc.sequential.model.arduino.Module;
 import org.gemoc.sequential.model.arduino.ModuleAssignment;
 import org.gemoc.sequential.model.arduino.ModuleGet;
 import org.gemoc.sequential.model.arduino.ModuleInstruction;
@@ -559,7 +558,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ArduinoPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -573,7 +572,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		if (isInited) return (ArduinoPackage)EPackage.Registry.INSTANCE.getEPackage(ArduinoPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ArduinoPackageImpl theArduinoPackage = (ArduinoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArduinoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArduinoPackageImpl());
+		Object registeredArduinoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ArduinoPackageImpl theArduinoPackage = registeredArduinoPackage instanceof ArduinoPackageImpl ? (ArduinoPackageImpl)registeredArduinoPackage : new ArduinoPackageImpl();
 
 		isInited = true;
 
@@ -586,7 +586,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		// Mark meta-data to indicate it can't be changed
 		theArduinoPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ArduinoPackage.eNS_URI, theArduinoPackage);
 		return theArduinoPackage;
@@ -1809,7 +1808,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBoard_Project(), this.getProject(), this.getProject_Boards(), "project", null, 1, 1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(moduleEClass, org.gemoc.sequential.model.arduino.Module.class, "Module", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(digitalPinEClass, DigitalPin.class, "DigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDigitalPin_Module(), this.getArduinoDigitalModule(), null, "module", null, 0, 1, DigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

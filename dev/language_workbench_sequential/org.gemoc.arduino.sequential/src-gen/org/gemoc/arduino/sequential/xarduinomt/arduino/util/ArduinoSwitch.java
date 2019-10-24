@@ -7,7 +7,64 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.gemoc.arduino.sequential.xarduinomt.arduino.*;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.AmbientLightSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.AnalogPin;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoAnalogModule;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoBoard;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoCommunicationModule;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoDigitalModule;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoModule;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Assignment;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryBooleanExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryIntegerExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Block;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Board;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanConstant;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanModuleGet;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariable;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariableRef;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Buzzer;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Constant;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Control;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Delay;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.DigitalPin;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Expression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Fan;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.If;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.InfraRedSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Instruction;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerConstant;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerModuleGet;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariable;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariableRef;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.LED;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.MicroServo;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleAssignment;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleGet;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleInstruction;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.MusicPlayer;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.NamedElement;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Pin;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Project;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.PushButton;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Repeat;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.RotationSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Sketch;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.SoundSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Utilities;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Variable;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.VariableAssignment;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.VariableDeclaration;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.VariableRef;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.While;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +131,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case ArduinoPackage.MODULE: {
-				Module module = (Module)theEObject;
+				org.gemoc.arduino.sequential.xarduinomt.arduino.Module module = (org.gemoc.arduino.sequential.xarduinomt.arduino.Module)theEObject;
 				T result = caseModule(module);
 				if (result == null) result = caseNamedElement(module);
 				if (result == null) result = defaultCase(theEObject);
@@ -570,7 +627,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModule(Module object) {
+	public T caseModule(org.gemoc.arduino.sequential.xarduinomt.arduino.Module object) {
 		return null;
 	}
 
