@@ -63,7 +63,10 @@ public class Project_ExecutableAspect {
   @InitializeModel
   public static void initializeModel(final Project _self, final EList<String> args) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectContext.getSelf(_self);
-    _privk3_initializeModel(_self_, _self,args);;
+    // #DispatchPointCut_before# void initializeModel(EList<String>)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Project){
+    	org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspect._privk3_initializeModel(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Project)_self,args);
+    };
   }
   
   protected static void _privk3_execute(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self) {

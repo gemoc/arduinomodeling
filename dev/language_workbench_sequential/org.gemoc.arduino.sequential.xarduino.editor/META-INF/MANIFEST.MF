@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.gemoc.arduino.sequential.xarduino.editor;singleton:=true
+Automatic-Module-Name: org.gemoc.arduino.sequential.xarduino.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.gemoc.arduino.sequential.xarduino.arduino.presentation.XArduinoEditorPlugin$Implementation

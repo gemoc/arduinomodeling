@@ -4,7 +4,6 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleInstruction;
-import org.gemoc.arduino.sequential.xarduinomt.arduino.Module;
 
 @SuppressWarnings("all")
 public class ModuleInstructionAdapter extends EObjectAdapter<ModuleInstruction> implements org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleInstruction {
@@ -16,12 +15,12 @@ public class ModuleInstructionAdapter extends EObjectAdapter<ModuleInstruction> 
   }
   
   @Override
-  public Module getModule() {
-    return (Module) adaptersFactory.createAdapter(adaptee.getModule(), eResource);
+  public org.gemoc.arduino.sequential.xarduinomt.arduino.Module getModule() {
+    return (org.gemoc.arduino.sequential.xarduinomt.arduino.Module) adaptersFactory.createAdapter(adaptee.getModule(), eResource);
   }
   
   @Override
-  public void setModule(final Module o) {
+  public void setModule(final org.gemoc.arduino.sequential.xarduinomt.arduino.Module o) {
     if (o != null)
     	adaptee.setModule(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleAdapter) o).getAdaptee());
     else adaptee.setModule(null);

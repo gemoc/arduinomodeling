@@ -2,10 +2,10 @@ package org.gemoc.arduino.concurrent;
 
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystem;
+import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystemManager;
 import org.osgi.framework.BundleContext;
 
-import fr.inria.diverse.commons.eclipse.messagingsystem.api.MessagingSystemManager;
-import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -23,7 +23,7 @@ public class Activator extends Plugin {
 		if (messagingSystem == null) {
 			MessagingSystemManager msm = new MessagingSystemManager();
 			// use the baseMessageGroup of the engine in order to share consoles instead of duplicating them
-			messagingSystem = msm.createBestPlatformMessagingSystem(org.gemoc.executionframework.engine.Activator.PLUGIN_ID, "Modeling Workbench Console");
+			messagingSystem = msm.createBestPlatformMessagingSystem(org.eclipse.gemoc.executionframework.engine.Activator.PLUGIN_ID, "Modeling Workbench Console");
 		}
 		return messagingSystem;
 	}

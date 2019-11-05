@@ -12,15 +12,15 @@ public class Control_EvaluableAspect extends Instruction_ExecutableAspect {
 	final org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.If) {
-		result = org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspect
-				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.If) _self);
+	if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat) {
+		result = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect
+				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Repeat) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.While) {
 		result = org.gemoc.arduino.sequential.xarduino.aspects.While_EvaluableAspect
 				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.While) _self);
-	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat) {
-		result = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect
-				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Repeat) _self);
+	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.If) {
+		result = org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspect
+				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.If) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control) {
 		result = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect._privk3_evaluate(_self_,
 				(org.gemoc.arduino.sequential.xarduino.arduino.Control) _self);

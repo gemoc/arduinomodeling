@@ -11,7 +11,50 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.gemoc.arduino.sequential.xarduinomt.arduino.*;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.AmbientLightSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.AnalogPin;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoBoard;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoFactory;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryBooleanExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryBooleanOperatorKind;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryIntegerExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BinaryIntegerOperatorKind;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Block;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanConstant;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanModuleGet;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariable;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.BooleanVariableRef;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Buzzer;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Color;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Delay;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.DigitalPin;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Fan;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.If;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.InfraRedSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerConstant;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerModuleGet;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariable;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariableRef;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.LED;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.MicroServo;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleAssignment;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.MusicPlayer;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Project;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.PushButton;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Repeat;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.RotationSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Sketch;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.SoundSensor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Time;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanOperatorKind;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerExpression;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerOperatorKind;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.VariableAssignment;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.VariableDeclaration;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.While;
 
 /**
  * <!-- begin-user-doc -->

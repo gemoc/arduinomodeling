@@ -52,7 +52,7 @@ public interface Control extends Instruction {
 	 * @model
 	 * @generated
 	 */
-	void execute();
+	Boolean evaluate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,6 +60,6 @@ public interface Control extends Instruction {
 	 * @model
 	 * @generated
 	 */
-	Boolean evaluate();
+	void execute();
 
 } // Control

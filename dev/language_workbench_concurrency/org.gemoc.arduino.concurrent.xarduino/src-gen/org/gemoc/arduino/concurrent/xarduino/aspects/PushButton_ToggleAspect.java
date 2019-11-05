@@ -1,7 +1,6 @@
 package org.gemoc.arduino.concurrent.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.PushButton;
@@ -12,23 +11,28 @@ import org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPush
 @Aspect(className = PushButton.class)
 @SuppressWarnings("all")
 public abstract class PushButton_ToggleAspect {
-  @ReplaceAspectMethod
   public static void toggle(final PushButton _self) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext.getSelf(_self);
-    _privk3_toggle(_self_, _self);;
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext
+			.getSelf(_self);
+	_privk3_toggle(_self_, _self);
+	;
+}
   
   public static boolean isPushed(final PushButton _self) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_isPushed(_self_, _self);;
-    return (boolean)result;
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_isPushed(_self_, _self);
+	;
+	return (boolean) result;
+}
   
   public static void isPushed(final PushButton _self, final boolean isPushed) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext.getSelf(_self);
-    _privk3_isPushed(_self_, _self,isPushed);;
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext
+			.getSelf(_self);
+	_privk3_isPushed(_self_, _self, isPushed);
+	;
+}
   
   protected static void _privk3_toggle(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self) {
     InputOutput.<String>println("xtend toggle() call !!!");
@@ -47,13 +51,12 @@ public abstract class PushButton_ToggleAspect {
   protected static boolean _privk3_isPushed(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    		if (m.getName().equals("getIsPushed") &&
+    		if (m.getName().equals("isIsPushed") &&
     			m.getParameterTypes().length == 0) {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (boolean) ret;
-    				}
-    		}
+    				}		}
     	}
     } catch (Exception e) {
     	// Chut !
@@ -62,15 +65,20 @@ public abstract class PushButton_ToggleAspect {
   }
   
   protected static void _privk3_isPushed(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self, final boolean isPushed) {
-    _self_.isPushed = isPushed; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setIsPushed")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, isPushed);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.isPushed = isPushed;
     }
   }
 }

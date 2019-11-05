@@ -152,7 +152,7 @@ public abstract class PinImpl extends NamedElementImpl implements Pin {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (level: ");
 		result.append(level);
 		result.append(')');

@@ -26,15 +26,13 @@ import org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspect
 public class BinaryIntegerExpression_EvaluableAspect extends BinaryExpression_EvaluableAspect {
   @OverrideAspectMethod
   public static Object evaluate(final BinaryIntegerExpression _self) {
-    final org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.BinaryIntegerExpression){
-    					result = org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspect._privk3_evaluate(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.BinaryIntegerExpression)_self);
-    } else  if (_self instanceof org.gemoc.arduino.concurrent.xarduino.arduino.Expression){
-    					result = org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect.evaluate((org.gemoc.arduino.concurrent.xarduino.arduino.Expression)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.Object)result;
-  }
+	final org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_evaluate(_self_, _self);
+	;
+	return (java.lang.Object) result;
+}
   
   private static Object super_evaluate(final BinaryIntegerExpression _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
@@ -47,67 +45,57 @@ public class BinaryIntegerExpression_EvaluableAspect extends BinaryExpression_Ev
     int iLeft = 0;
     Expression _left = _self.getLeft();
     boolean _matched = false;
-    if (!_matched) {
-      if (_left instanceof BinaryBooleanExpression) {
-        _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_left_1);
-        bLeft = (((Boolean) _evaluate)).booleanValue();
-      }
+    if (_left instanceof BinaryBooleanExpression) {
+      _matched=true;
+      Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.getLeft());
+      bLeft = (((Boolean) _evaluate)).booleanValue();
     }
     if (!_matched) {
       if (_left instanceof BinaryIntegerExpression) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = BinaryIntegerExpression_EvaluableAspect.evaluate(_left_1);
+        Object _evaluate = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.getLeft());
         iLeft = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched) {
       if (_left instanceof IntegerVariableRef) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_left_1);
+        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_self.getLeft());
         iLeft = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched) {
       if (_left instanceof IntegerModuleGet) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = IntegerModuleGet_ExecutableAspect.evaluate(_left_1);
+        Object _evaluate = IntegerModuleGet_ExecutableAspect.evaluate(_self.getLeft());
         iLeft = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched) {
       if (_left instanceof BooleanVariableRef) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_left_1);
+        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_self.getLeft());
         bLeft = (((Boolean) _evaluate)).booleanValue();
       }
     }
     if (!_matched) {
       if (_left instanceof IntegerConstant) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = IntegerConstant_ExecutableAspect.evaluate(_left_1);
+        Object _evaluate = IntegerConstant_ExecutableAspect.evaluate(_self.getLeft());
         iLeft = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched) {
       if (_left instanceof BooleanConstant) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_left_1);
+        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_self.getLeft());
         bLeft = (((Boolean) _evaluate)).booleanValue();
       }
     }
     if (!_matched) {
       if (_left instanceof BooleanModuleGet) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_left_1);
+        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_self.getLeft());
         bLeft = (((Boolean) _evaluate)).booleanValue();
       }
     }
@@ -115,67 +103,57 @@ public class BinaryIntegerExpression_EvaluableAspect extends BinaryExpression_Ev
     int iRight = 0;
     Expression _right = _self.getRight();
     boolean _matched_1 = false;
-    if (!_matched_1) {
-      if (_right instanceof BinaryBooleanExpression) {
-        _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_right_1);
-        bRight = (((Boolean) _evaluate)).booleanValue();
-      }
+    if (_right instanceof BinaryBooleanExpression) {
+      _matched_1=true;
+      Object _evaluate = BinaryBooleanExpression_EvaluableAspect.evaluate(_self.getRight());
+      bRight = (((Boolean) _evaluate)).booleanValue();
     }
     if (!_matched_1) {
       if (_right instanceof BinaryIntegerExpression) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = BinaryIntegerExpression_EvaluableAspect.evaluate(_right_1);
+        Object _evaluate = BinaryIntegerExpression_EvaluableAspect.evaluate(_self.getRight());
         iRight = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof IntegerVariableRef) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_right_1);
+        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_self.getRight());
         iRight = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof IntegerModuleGet) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = IntegerModuleGet_ExecutableAspect.evaluate(_right_1);
+        Object _evaluate = IntegerModuleGet_ExecutableAspect.evaluate(_self.getRight());
         iRight = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof BooleanVariableRef) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_right_1);
+        Object _evaluate = VariableRef_EvaluableAspect.evaluate(_self.getRight());
         bRight = (((Boolean) _evaluate)).booleanValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof IntegerConstant) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = IntegerConstant_ExecutableAspect.evaluate(_right_1);
+        Object _evaluate = IntegerConstant_ExecutableAspect.evaluate(_self.getRight());
         iRight = (((Integer) _evaluate)).intValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof BooleanConstant) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_right_1);
+        Object _evaluate = BooleanConstant_ExecutableAspect.evaluate(_self.getRight());
         bRight = (((Boolean) _evaluate)).booleanValue();
       }
     }
     if (!_matched_1) {
       if (_right instanceof BooleanModuleGet) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_right_1);
+        Object _evaluate = BooleanModuleGet_ExecutableAspect.evaluate(_self.getRight());
         bRight = (((Boolean) _evaluate)).booleanValue();
       }
     }
@@ -186,12 +164,10 @@ public class BinaryIntegerExpression_EvaluableAspect extends BinaryExpression_Ev
           res = Integer.valueOf((iLeft / iRight));
           break;
         case MAX:
-          int _max = Math.max(iLeft, iRight);
-          res = Integer.valueOf(_max);
+          res = Integer.valueOf(Math.max(iLeft, iRight));
           break;
         case MIN:
-          int _min = Math.min(iLeft, iRight);
-          res = Integer.valueOf(_min);
+          res = Integer.valueOf(Math.min(iLeft, iRight));
           break;
         case MINUS:
           res = Integer.valueOf((iLeft - iRight));

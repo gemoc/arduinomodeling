@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
 <plugin>
-
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated XArduino -->
-      <package
-            uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/"
-            class="org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage"
-            genModel="model/XArduino.genmodel"/>
-   </extension>
-
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XArduino -->
+    <package uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/" class="org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage" genModel="model/XArduino.genmodel" />
+  </extension>
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition name="org.gemoc.arduino.concurrent.XArduino" xdsmlFilePath="platform:/plugin/org.gemoc.arduino.concurrent.xarduino/XArduino.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  </extension>
 </plugin>

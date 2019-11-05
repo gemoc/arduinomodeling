@@ -1,0 +1,150 @@
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.ModuleAssignment){
+			org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.ModuleAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BinaryBooleanExpression_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BinaryBooleanExpression){
+			result = org.gemoc.arduino.sequential.k3dsa.BinaryBooleanExpression_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.BinaryBooleanExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BinaryBooleanExpression_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerModuleGet_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.IntegerModuleGet){
+			result = org.gemoc.arduino.sequential.k3dsa.IntegerModuleGet_ExecutableAspect.evaluate((org.gemoc.sequential.model.arduino.IntegerModuleGet)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerModuleGet_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.If){
+			org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.If)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.While){
+			org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.While)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Utilities_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Utilities){
+			org.gemoc.arduino.sequential.k3dsa.Utilities_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Utilities)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Utilities_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleInstruction_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.ModuleInstruction){
+			org.gemoc.arduino.sequential.k3dsa.ModuleInstruction_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.ModuleInstruction)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleInstruction_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Repeat){
+			org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.If){
+			org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.If)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.If_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Repeat){
+			result = org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanConstant_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BooleanConstant){
+			result = org.gemoc.arduino.sequential.k3dsa.BooleanConstant_ExecutableAspect.evaluate((org.gemoc.sequential.model.arduino.BooleanConstant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanConstant_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Delay){
+			org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Delay)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BinaryIntegerExpression_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BinaryIntegerExpression){
+			result = org.gemoc.arduino.sequential.k3dsa.BinaryIntegerExpression_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.BinaryIntegerExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BinaryIntegerExpression_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.ArduinoCommunicationModule_PushAspect#void push() from org.gemoc.arduino.sequential.k3dsa.BluetoothTransceiver_PushAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BluetoothTransceiver){
+			org.gemoc.arduino.sequential.k3dsa.BluetoothTransceiver_PushAspect.push((org.gemoc.sequential.model.arduino.BluetoothTransceiver)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.ArduinoCommunicationModule_PushAspect#void push() from org.gemoc.arduino.sequential.k3dsa.BluetoothTransceiver_PushAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanVariable_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BooleanVariable){
+			result = org.gemoc.arduino.sequential.k3dsa.BooleanVariable_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.BooleanVariable)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanVariable_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.While){
+			org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.While)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.While_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.While_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.While){
+			result = org.gemoc.arduino.sequential.k3dsa.While_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.While)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.While_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerVariable_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.IntegerVariable){
+			result = org.gemoc.arduino.sequential.k3dsa.IntegerVariable_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.IntegerVariable)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Variable_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerVariable_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.VariableRef_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.VariableRef){
+			result = org.gemoc.arduino.sequential.k3dsa.VariableRef_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.VariableRef)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.VariableRef_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Repeat){
+			org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Repeat_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanModuleGet_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.BooleanModuleGet){
+			result = org.gemoc.arduino.sequential.k3dsa.BooleanModuleGet_ExecutableAspect.evaluate((org.gemoc.sequential.model.arduino.BooleanModuleGet)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.BooleanModuleGet_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void finalize() from org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Repeat){
+			org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect.finalize((org.gemoc.sequential.model.arduino.Repeat)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void finalize() from org.gemoc.arduino.sequential.k3dsa.Repeat_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerConstant_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.IntegerConstant){
+			result = org.gemoc.arduino.sequential.k3dsa.IntegerConstant_ExecutableAspect.evaluate((org.gemoc.sequential.model.arduino.IntegerConstant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.IntegerConstant_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.If_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.If){
+			result = org.gemoc.arduino.sequential.k3dsa.If_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.If)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Control_EvaluableAspect#Boolean evaluate() from org.gemoc.arduino.sequential.k3dsa.If_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.VariableDeclaration_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.VariableDeclaration){
+			org.gemoc.arduino.sequential.k3dsa.VariableDeclaration_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.VariableDeclaration)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.VariableDeclaration_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Utilities_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Delay){
+			org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Delay)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Utilities_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.Constant_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Constant){
+			result = org.gemoc.arduino.sequential.k3dsa.Constant_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.Constant)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.Constant_EvaluableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.Control){
+			org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Control)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Control_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.VariableAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.VariableAssignment){
+			org.gemoc.arduino.sequential.k3dsa.VariableAssignment_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.VariableAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.VariableAssignment_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.ModuleInstruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.ModuleAssignment){
+			org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.ModuleAssignment)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.ModuleInstruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.ModuleAssignment_ExecutableAspect

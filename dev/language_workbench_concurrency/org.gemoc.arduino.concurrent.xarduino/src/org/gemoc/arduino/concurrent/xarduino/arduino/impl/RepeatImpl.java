@@ -204,7 +204,7 @@ public class RepeatImpl extends ControlImpl implements Repeat {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (iteration: ");
 		result.append(iteration);
 		result.append(", i: ");

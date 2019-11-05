@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.4"?><plugin>
-  <extension point="org.gemoc.gemoc_language_workbench.concurrent.xdsml">
-    <XDSML_Definition codeExecutor_class="xarduino.xdsml.api.impl.XArduinoCodeExecutor" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.concurrent.XArduino" solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.moc.dse/qvto-gen/modeling/arduinoML.qvto" xdsmlFilePath="/org.gemoc.arduino.concurrent/bin/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange">
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.concurrent.xdsml">
+    <XDSML_Definition codeExecutor_class="xarduino.xdsml.api.impl.XArduinoCodeExecutor" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.concurrent.XArduino" solver_class="org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.moc.dse/qvto-gen/modeling/arduinoML.qvto" xdsmlFilePath="/org.gemoc.arduino.concurrent/bin/org/gemoc/arduino/concurrent/ArduinoConcurrent.melange">
       <XDSML_Definition_Customization fileExtensions="arduino"/>
     </XDSML_Definition>
   </extension>
   
-<extension point="fr.inria.diverse.melange.modeltype">
+   <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XArduinoMT -->
+    <package class="org.gemoc.arduino.concurrent.xarduinomt.arduino.ArduinoPackage" genModel="model-gen/XArduinoMT.genmodel" uri="http://org.gemoc.arduino.concurrent.xarduinomt/arduino/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.arduino.concurrent.XArduinoMT" uri="http://org.gemoc.arduino.concurrent.xarduinomt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">

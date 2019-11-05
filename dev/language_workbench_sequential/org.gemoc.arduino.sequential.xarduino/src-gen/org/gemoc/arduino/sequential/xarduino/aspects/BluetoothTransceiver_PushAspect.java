@@ -45,7 +45,10 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   
   public static void dataToSend(final BluetoothTransceiver _self, final EList<Integer> dataToSend) {
     final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-    _privk3_dataToSend(_self_, _self,dataToSend);;
+    // #DispatchPointCut_before# void dataToSend(EList<Integer>)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver){
+    	org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect._privk3_dataToSend(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver)_self,dataToSend);
+    };
   }
   
   public static EList<Integer> dataReceived(final BluetoothTransceiver _self) {
@@ -59,7 +62,10 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   
   public static void dataReceived(final BluetoothTransceiver _self, final EList<Integer> dataReceived) {
     final org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspectBluetoothTransceiverAspectContext.getSelf(_self);
-    _privk3_dataReceived(_self_, _self,dataReceived);;
+    // #DispatchPointCut_before# void dataReceived(EList<Integer>)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver){
+    	org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect._privk3_dataReceived(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver)_self,dataReceived);
+    };
   }
   
   protected static void _privk3_push(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {

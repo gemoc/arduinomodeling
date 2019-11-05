@@ -29,12 +29,12 @@ public interface ModuleInstruction extends Instruction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
-	 * @see #setModule(Module)
+	 * @see #setModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module)
 	 * @see org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage#getModuleInstruction_Module()
 	 * @model required="true"
 	 * @generated
 	 */
-	Module getModule();
+	org.gemoc.arduino.concurrent.xarduino.arduino.Module getModule();
 
 	/**
 	 * Sets the value of the '{@link org.gemoc.arduino.concurrent.xarduino.arduino.ModuleInstruction#getModule <em>Module</em>}' reference.
@@ -44,7 +44,7 @@ public interface ModuleInstruction extends Instruction {
 	 * @see #getModule()
 	 * @generated
 	 */
-	void setModule(Module value);
+	void setModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module value);
 
 	/**
 	 * <!-- begin-user-doc -->

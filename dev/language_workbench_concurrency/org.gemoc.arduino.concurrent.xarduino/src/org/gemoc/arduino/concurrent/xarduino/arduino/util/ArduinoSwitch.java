@@ -7,7 +7,64 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.gemoc.arduino.concurrent.xarduino.arduino.*;
+import org.gemoc.arduino.concurrent.xarduino.arduino.AmbientLightSensor;
+import org.gemoc.arduino.concurrent.xarduino.arduino.AnalogPin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoAnalogModule;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoBoard;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoCommunicationModule;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoDigitalModule;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoModule;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Assignment;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BinaryBooleanExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BinaryExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BinaryIntegerExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Block;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BluetoothTransceiver;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Board;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanConstant;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanModuleGet;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanVariable;
+import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanVariableRef;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Buzzer;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Constant;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Control;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Delay;
+import org.gemoc.arduino.concurrent.xarduino.arduino.DigitalPin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Expression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Fan;
+import org.gemoc.arduino.concurrent.xarduino.arduino.If;
+import org.gemoc.arduino.concurrent.xarduino.arduino.InfraRedSensor;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Instruction;
+import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerConstant;
+import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerModuleGet;
+import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariable;
+import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
+import org.gemoc.arduino.concurrent.xarduino.arduino.LED;
+import org.gemoc.arduino.concurrent.xarduino.arduino.MicroServo;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleAssignment;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleGet;
+import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleInstruction;
+import org.gemoc.arduino.concurrent.xarduino.arduino.MusicPlayer;
+import org.gemoc.arduino.concurrent.xarduino.arduino.NamedElement;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
+import org.gemoc.arduino.concurrent.xarduino.arduino.PushButton;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Repeat;
+import org.gemoc.arduino.concurrent.xarduino.arduino.RotationSensor;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Sketch;
+import org.gemoc.arduino.concurrent.xarduino.arduino.SoundSensor;
+import org.gemoc.arduino.concurrent.xarduino.arduino.UnaryBooleanExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.UnaryExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.UnaryIntegerExpression;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Utilities;
+import org.gemoc.arduino.concurrent.xarduino.arduino.Variable;
+import org.gemoc.arduino.concurrent.xarduino.arduino.VariableAssignment;
+import org.gemoc.arduino.concurrent.xarduino.arduino.VariableDeclaration;
+import org.gemoc.arduino.concurrent.xarduino.arduino.VariableRef;
+import org.gemoc.arduino.concurrent.xarduino.arduino.While;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +131,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case ArduinoPackage.MODULE: {
-				Module module = (Module)theEObject;
+				org.gemoc.arduino.concurrent.xarduino.arduino.Module module = (org.gemoc.arduino.concurrent.xarduino.arduino.Module)theEObject;
 				T result = caseModule(module);
 				if (result == null) result = caseNamedElement(module);
 				if (result == null) result = defaultCase(theEObject);
@@ -577,7 +634,7 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModule(Module object) {
+	public T caseModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module object) {
 		return null;
 	}
 

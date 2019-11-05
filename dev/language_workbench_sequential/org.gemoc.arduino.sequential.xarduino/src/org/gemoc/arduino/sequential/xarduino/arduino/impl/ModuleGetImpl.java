@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage;
-import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.ModuleGet;
 
 /**
@@ -35,7 +34,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * @generated
 	 * @ordered
 	 */
-	protected Module module;
+	protected org.gemoc.arduino.sequential.xarduino.arduino.Module module;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +60,10 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Module getModule() {
+	public org.gemoc.arduino.sequential.xarduino.arduino.Module getModule() {
 		if (module != null && module.eIsProxy()) {
 			InternalEObject oldModule = (InternalEObject)module;
-			module = (Module)eResolveProxy(oldModule);
+			module = (org.gemoc.arduino.sequential.xarduino.arduino.Module)eResolveProxy(oldModule);
 			if (module != oldModule) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.MODULE_GET__MODULE, oldModule, module));
@@ -78,7 +77,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Module basicGetModule() {
+	public org.gemoc.arduino.sequential.xarduino.arduino.Module basicGetModule() {
 		return module;
 	}
 
@@ -87,8 +86,8 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModule(Module newModule) {
-		Module oldModule = module;
+	public void setModule(org.gemoc.arduino.sequential.xarduino.arduino.Module newModule) {
+		org.gemoc.arduino.sequential.xarduino.arduino.Module oldModule = module;
 		module = newModule;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.MODULE_GET__MODULE, oldModule, module));
@@ -118,7 +117,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArduinoPackage.MODULE_GET__MODULE:
-				setModule((Module)newValue);
+				setModule((org.gemoc.arduino.sequential.xarduino.arduino.Module)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +132,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ArduinoPackage.MODULE_GET__MODULE:
-				setModule((Module)null);
+				setModule((org.gemoc.arduino.sequential.xarduino.arduino.Module)null);
 				return;
 		}
 		super.eUnset(featureID);

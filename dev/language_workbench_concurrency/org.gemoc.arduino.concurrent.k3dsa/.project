@@ -11,7 +11,7 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.ajdt.core.ajbuilder</name>
+			<name>fr.inria.diverse.k3.ui.k3Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -27,7 +27,7 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.ajdt.ui.ajnature</nature>
+		<nature>fr.inria.diverse.k3.ui.k3Nature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>

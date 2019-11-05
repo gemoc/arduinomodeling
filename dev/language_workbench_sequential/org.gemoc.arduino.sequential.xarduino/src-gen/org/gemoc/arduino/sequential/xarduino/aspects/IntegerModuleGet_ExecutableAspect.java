@@ -12,7 +12,6 @@ import org.gemoc.arduino.sequential.xarduino.aspects.IntegerModuleGet_Executable
 import org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerModuleGet;
-import org.gemoc.arduino.sequential.xarduino.arduino.Module;
 import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
 
 @Aspect(className = IntegerModuleGet.class)
@@ -34,9 +33,9 @@ public class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspec
   }
   
   protected static Object _privk3_evaluate(final IntegerModuleGet_ExecutableAspectIntegerModuleGetAspectProperties _self_, final IntegerModuleGet _self) {
-    Module _module = _self.getModule();
+    org.gemoc.arduino.sequential.xarduino.arduino.Module _module = _self.getModule();
     if ((_module instanceof BluetoothTransceiver)) {
-      Module _module_1 = _self.getModule();
+      org.gemoc.arduino.sequential.xarduino.arduino.Module _module_1 = _self.getModule();
       final EList<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(((BluetoothTransceiver) _module_1));
       final Integer res = IterableExtensions.<Integer>head(l);
       boolean _notEquals = (!Objects.equal(res, null));

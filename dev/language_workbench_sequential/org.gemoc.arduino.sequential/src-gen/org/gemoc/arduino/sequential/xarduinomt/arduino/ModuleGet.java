@@ -29,12 +29,12 @@ public interface ModuleGet extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
-	 * @see #setModule(Module)
+	 * @see #setModule(org.gemoc.arduino.sequential.xarduinomt.arduino.Module)
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getModuleGet_Module()
 	 * @model required="true"
 	 * @generated
 	 */
-	Module getModule();
+	org.gemoc.arduino.sequential.xarduinomt.arduino.Module getModule();
 
 	/**
 	 * Sets the value of the '{@link org.gemoc.arduino.sequential.xarduinomt.arduino.ModuleGet#getModule <em>Module</em>}' reference.
@@ -44,6 +44,6 @@ public interface ModuleGet extends Expression {
 	 * @see #getModule()
 	 * @generated
 	 */
-	void setModule(Module value);
+	void setModule(org.gemoc.arduino.sequential.xarduinomt.arduino.Module value);
 
 } // ModuleGet

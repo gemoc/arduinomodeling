@@ -30,13 +30,19 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
   private static Integer i(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_i(_self_, _self);;
+    // #DispatchPointCut_before# Integer i()
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat){
+    	result = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect._privk3_i(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self);
+    };
     return (java.lang.Integer)result;
   }
   
   private static void i(final Repeat _self, final Integer i) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
-    _privk3_i(_self_, _self,i);;
+    // #DispatchPointCut_before# void i(Integer)
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Repeat){
+    	org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect._privk3_i(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self,i);
+    };
   }
   
   private static Boolean super_evaluate(final Repeat _self) {
