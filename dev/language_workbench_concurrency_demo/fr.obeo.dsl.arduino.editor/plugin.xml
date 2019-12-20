@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2013 Obeo.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+ Contributors:
+    Obeo - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated arduino -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.obeo.dsl.arduino.presentation.ArduinoModelWizardID"
+            name="%_UI_ArduinoModelWizard_label"
+            class="fr.obeo.dsl.arduino.presentation.ArduinoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArduinoModelFile.gif">
+         <description>%_UI_ArduinoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated arduino -->
+      <editor
+            id="fr.obeo.dsl.arduino.presentation.ArduinoEditorID"
+            name="%_UI_ArduinoEditor_label"
+            icon="icons/full/obj16/ArduinoModelFile.gif"
+            extensions="arduino"
+            class="fr.obeo.dsl.arduino.presentation.ArduinoEditor"
+            contributorClass="fr.obeo.dsl.arduino.presentation.ArduinoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

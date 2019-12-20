@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.arduino.arduino.trace/src" modelPluginID="org.gemoc.arduino.arduino.trace" modelName="ArduinoTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/tmp/diverse2517149663390657657tracemmgeneration/arduinoTrace.ecore</foreignModel>
+  <genPackages prefix="ArduinoTrace" disposableProviderFactory="true">
+    <ecorePackage href="arduinoTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="arduinoTrace.ecore#//Trace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_Delay_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_If_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_ModuleAssignment_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_Project_Setup_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_VariableAssignment_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/Arduino_VariableDeclaration_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/arduino_tracedAnalogPins"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/arduino_tracedBooleanVariables"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/arduino_tracedDigitalPins"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/arduino_tracedIntegerVariables"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/rootSteps"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Trace/statesTrace"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="arduinoTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_Delay_Execute"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Arduino_Delay_Execute/subSteps"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_Delay_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_Delay_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_Delay_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_If_Execute"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Arduino_If_Execute/subSteps"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_If_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_If_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_If_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_ModuleAssignment_Execute"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Arduino_ModuleAssignment_Execute/subSteps"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_ModuleAssignment_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_ModuleAssignment_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_ModuleAssignment_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_Project_Setup"/>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_Project_Setup/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableAssignment_Execute"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Arduino_VariableAssignment_Execute/subSteps"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_VariableAssignment_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableAssignment_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableAssignment_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableDeclaration_Execute"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Arduino_VariableDeclaration_Execute/subSteps"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="arduinoTrace.ecore#//Steps/Arduino_VariableDeclaration_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableDeclaration_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Arduino_VariableDeclaration_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/BigStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/SmallStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="arduinoTrace.ecore#//Steps/Step"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Step/endingState"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//Steps/Step/startingState"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="arduinoTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//States/BooleanVariable_value_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/BooleanVariable_value_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/BooleanVariable_value_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="arduinoTrace.ecore#//States/BooleanVariable_value_Value/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//States/IntegerVariable_value_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/IntegerVariable_value_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/IntegerVariable_value_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="arduinoTrace.ecore#//States/IntegerVariable_value_Value/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//States/Pin_level_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="arduinoTrace.ecore#//States/Pin_level_Value/level"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/Pin_level_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/Pin_level_Value/states"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="arduinoTrace.ecore#//States/State"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/State/booleanVariable_value_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/State/endedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/State/integerVariable_value_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/State/pin_level_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/State/startedSteps"/>
+        </genFeatures>
+      </genClasses>
+      <nestedGenPackages prefix="Arduino" disposableProviderFactory="true">
+        <ecorePackage href="arduinoTrace.ecore#//States/arduino"/>
+        <genClasses>
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedAnalogPin"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedAnalogPin/module"/>
+          </genFeatures>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedAnalogPin/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedBooleanExpression"/>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedBooleanVariable"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedBooleanVariable/originalObject"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedBooleanVariable/valueSequence"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedDigitalPin"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedDigitalPin/module"/>
+          </genFeatures>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedDigitalPin/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedExpression"/>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedIntegerExpression"/>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedIntegerVariable"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedIntegerVariable/originalObject"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedIntegerVariable/valueSequence"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedNamedElement"/>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedPin"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="arduinoTrace.ecore#//States/arduino/TracedPin/levelSequence"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="arduinoTrace.ecore#//States/arduino/TracedVariable"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../fr.obeo.dsl.arduino/model/arduino.genmodel#//arduino"/>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+  <usedGenPackages href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.genmodel#//mse"/>
+</genmodel:GenModel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="generateCode"
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.arduino"
+            id="fr.obeo.dsl.arduino.gen.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="generate code" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="fr.obeo.dsl.arduino.gen.ui.popupMenus.AcceleoGenerateGenAction"
+               enablesFor="+"
+               id="fr.obeo.dsl.arduino.gen.ui.popupMenus.acceleoGenerateGenAction"
+               icon="icons/default.gif"
+               label="Generate code"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>
