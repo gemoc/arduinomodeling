@@ -25,3 +25,4 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  org.gemoc.arduino.sequential.k3dsa,
  org.gemoc.arduino.sequential.xarduino
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: org.gemoc.arduino.sequential

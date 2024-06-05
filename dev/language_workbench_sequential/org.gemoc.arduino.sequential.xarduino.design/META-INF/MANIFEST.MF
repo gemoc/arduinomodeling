@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: org.gemoc.arduino.sequential.xarduino.design
 Bundle-Name: org.gemoc.arduino.sequential.design
 Bundle-SymbolicName: org.gemoc.arduino.sequential.xarduino.design;singleton:=true
 Bundle-Version: 1.0.0.qualifier
@@ -23,7 +24,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gemoc.execution.sequential.javaengine.ui;bundle-version="0.1.0",
  org.gemoc.arduino.sequential.xarduino;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Import-Package: com.google.common.collect,
  org.eclipse.xtext.resource
 Export-Package: org.gemoc.arduino.sequential.xarduino.design,

@@ -24,4 +24,4 @@ Export-Package: org.gemoc.arduino.sequential.xarduino.aspects,
  org.gemoc.arduino.sequential.xarduino.arduino,
  org.gemoc.arduino.sequential.xarduino.arduino.impl,
  org.gemoc.arduino.sequential.xarduino.arduino.util
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-17
