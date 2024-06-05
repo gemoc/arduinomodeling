@@ -17,7 +17,7 @@ public interface ModuleAssignment extends ModuleInstruction, Assignment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();

@@ -79,7 +79,7 @@ public interface Delay extends Utilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();

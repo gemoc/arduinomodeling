@@ -10,51 +10,51 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Variable;
 @SuppressWarnings("all")
 public class VariableAssignmentAdapter extends EObjectAdapter<VariableAssignment> implements org.gemoc.arduino.sequential.xarduinomt.arduino.VariableAssignment {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public VariableAssignmentAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public Expression getOperand() {
     return (Expression) adaptersFactory.createAdapter(adaptee.getOperand(), eResource);
   }
-  
+
   @Override
   public void setOperand(final Expression o) {
     if (o != null)
     	adaptee.setOperand(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ExpressionAdapter) o).getAdaptee());
     else adaptee.setOperand(null);
   }
-  
+
   @Override
   public Variable getVariable() {
     return (Variable) adaptersFactory.createAdapter(adaptee.getVariable(), eResource);
   }
-  
+
   @Override
   public void setVariable(final Variable o) {
     if (o != null)
     	adaptee.setVariable(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableAdapter) o).getAdaptee());
     else adaptee.setVariable(null);
   }
-  
+
   @Override
   public void execute() {
     org.gemoc.arduino.sequential.xarduino.aspects.VariableAssignment_ExecutableAspect.execute(adaptee);
   }
-  
+
   @Override
   public void finalize() {
     org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.finalize(adaptee);
   }
-  
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getVariableAssignment();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -66,7 +66,7 @@ public class VariableAssignmentAdapter extends EObjectAdapter<VariableAssignment
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -78,7 +78,7 @@ public class VariableAssignmentAdapter extends EObjectAdapter<VariableAssignment
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {
@@ -96,7 +96,7 @@ public class VariableAssignmentAdapter extends EObjectAdapter<VariableAssignment
     
     super.eSet(featureID, newValue);
   }
-  
+
   @Override
   public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
     if (baseClass == org.gemoc.arduino.sequential.xarduinomt.arduino.Assignment.class) {
@@ -109,7 +109,7 @@ public class VariableAssignmentAdapter extends EObjectAdapter<VariableAssignment
     
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
-  
+
   @Override
   public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
     if (baseClass == org.gemoc.arduino.sequential.xarduinomt.arduino.Assignment.class) {

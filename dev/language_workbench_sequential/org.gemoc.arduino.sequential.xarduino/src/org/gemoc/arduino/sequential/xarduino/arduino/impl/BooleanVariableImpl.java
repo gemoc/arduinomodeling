@@ -90,6 +90,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isInitialValue() {
 		return initialValue;
 	}
@@ -99,6 +100,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInitialValue(boolean newInitialValue) {
 		boolean oldInitialValue = initialValue;
 		initialValue = newInitialValue;
@@ -111,6 +113,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getValue() {
 		return value;
 	}
@@ -120,6 +123,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(Boolean newValue) {
 		Boolean oldValue = value;
 		value = newValue;

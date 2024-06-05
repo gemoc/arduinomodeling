@@ -9,54 +9,54 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoAnalogModule;
 @SuppressWarnings("all")
 public class AnalogPinAdapter extends EObjectAdapter<AnalogPin> implements org.gemoc.arduino.sequential.xarduinomt.arduino.AnalogPin {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public AnalogPinAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public String getName() {
     return adaptee.getName();
   }
-  
+
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
   }
-  
+
   @Override
   public ArduinoAnalogModule getModule() {
     return (ArduinoAnalogModule) adaptersFactory.createAdapter(adaptee.getModule(), eResource);
   }
-  
+
   @Override
   public void setModule(final ArduinoAnalogModule o) {
     if (o != null)
     	adaptee.setModule(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoAnalogModuleAdapter) o).getAdaptee());
     else adaptee.setModule(null);
   }
-  
+
   @Override
   public Integer getLevel() {
     return org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect.level(adaptee);
   }
-  
+
   @Override
   public void setLevel(final Integer level) {
     org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect.level(adaptee, level
     );
   }
-  
-  protected final static String NAME_EDEFAULT = null;
-  
-  protected final static Integer LEVEL_EDEFAULT = null;
-  
+
+  protected static final String NAME_EDEFAULT = null;
+
+  protected static final Integer LEVEL_EDEFAULT = null;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getAnalogPin();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -70,7 +70,7 @@ public class AnalogPinAdapter extends EObjectAdapter<AnalogPin> implements org.g
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -84,7 +84,7 @@ public class AnalogPinAdapter extends EObjectAdapter<AnalogPin> implements org.g
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

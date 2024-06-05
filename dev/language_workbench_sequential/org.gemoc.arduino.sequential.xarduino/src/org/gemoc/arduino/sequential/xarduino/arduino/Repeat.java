@@ -24,10 +24,6 @@ public interface Repeat extends Control {
 	 * Returns the value of the '<em><b>Iteration</b></em>' attribute.
 	 * The default value is <code>"5"</code>.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Iteration</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Iteration</em>' attribute.
 	 * @see #setIteration(int)
@@ -50,7 +46,7 @@ public interface Repeat extends Control {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();
@@ -58,7 +54,7 @@ public interface Repeat extends Control {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	Boolean evaluate();
@@ -66,7 +62,7 @@ public interface Repeat extends Control {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void finalize();

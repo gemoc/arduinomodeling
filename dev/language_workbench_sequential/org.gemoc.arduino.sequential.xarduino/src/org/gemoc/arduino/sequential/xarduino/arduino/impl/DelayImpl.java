@@ -91,6 +91,7 @@ public class DelayImpl extends UtilitiesImpl implements Delay {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Time getUnit() {
 		return unit;
 	}
@@ -100,6 +101,7 @@ public class DelayImpl extends UtilitiesImpl implements Delay {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit(Time newUnit) {
 		Time oldUnit = unit;
 		unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
@@ -112,6 +114,7 @@ public class DelayImpl extends UtilitiesImpl implements Delay {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 		return value;
 	}
@@ -121,6 +124,7 @@ public class DelayImpl extends UtilitiesImpl implements Delay {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;

@@ -10,46 +10,46 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerOperatorKind;
 @SuppressWarnings("all")
 public class UnaryIntegerExpressionAdapter extends EObjectAdapter<UnaryIntegerExpression> implements org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerExpression {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public UnaryIntegerExpressionAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public UnaryIntegerOperatorKind getOperator() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerOperatorKind.get(adaptee.getOperator().getValue());
   }
-  
+
   @Override
   public void setOperator(final UnaryIntegerOperatorKind o) {
     adaptee.setOperator(org.gemoc.arduino.sequential.xarduino.arduino.UnaryIntegerOperatorKind.get(o.getValue()));
   }
-  
+
   @Override
   public Expression getOperand() {
     return (Expression) adaptersFactory.createAdapter(adaptee.getOperand(), eResource);
   }
-  
+
   @Override
   public void setOperand(final Expression o) {
     if (o != null)
     	adaptee.setOperand(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ExpressionAdapter) o).getAdaptee());
     else adaptee.setOperand(null);
   }
-  
+
   @Override
   public Object evaluate() {
     return org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect.evaluate(adaptee);
   }
-  
-  protected final static UnaryIntegerOperatorKind OPERATOR_EDEFAULT = org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerOperatorKind.MINUS;
-  
+
+  protected static final UnaryIntegerOperatorKind OPERATOR_EDEFAULT = org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryIntegerOperatorKind.MINUS;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getUnaryIntegerExpression();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -61,7 +61,7 @@ public class UnaryIntegerExpressionAdapter extends EObjectAdapter<UnaryIntegerEx
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -73,7 +73,7 @@ public class UnaryIntegerExpressionAdapter extends EObjectAdapter<UnaryIntegerEx
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

@@ -2,8 +2,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.gemoc.arduino.sequential.xarduino.aspects.Constant_EvaluableAspectConstantAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanConstant;
 import org.gemoc.arduino.sequential.xarduino.arduino.Constant;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerConstant;
@@ -20,12 +18,12 @@ public class Constant_EvaluableAspect extends Expression_EvaluableAspect {
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final Constant _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final Constant_EvaluableAspectConstantAspectProperties _self_, final Constant _self) {
     boolean _matched = false;
     if (_self instanceof BooleanConstant) {

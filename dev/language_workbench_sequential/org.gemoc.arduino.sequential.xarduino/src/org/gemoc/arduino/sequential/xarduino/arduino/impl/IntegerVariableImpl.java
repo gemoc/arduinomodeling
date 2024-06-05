@@ -90,6 +90,7 @@ public class IntegerVariableImpl extends VariableImpl implements IntegerVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getInitialValue() {
 		return initialValue;
 	}
@@ -99,6 +100,7 @@ public class IntegerVariableImpl extends VariableImpl implements IntegerVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInitialValue(int newInitialValue) {
 		int oldInitialValue = initialValue;
 		initialValue = newInitialValue;
@@ -111,6 +113,7 @@ public class IntegerVariableImpl extends VariableImpl implements IntegerVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getValue() {
 		return value;
 	}
@@ -120,6 +123,7 @@ public class IntegerVariableImpl extends VariableImpl implements IntegerVariable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(Integer newValue) {
 		Integer oldValue = value;
 		value = newValue;

@@ -10,11 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.gemoc.arduino.sequential.xarduino.aspects.Block_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
@@ -30,7 +25,7 @@ public class Project_ExecutableAspect {
 	_privk3_execute(_self_, _self);
 	;
 }
-  
+
   @Main
   public static void main(final Project _self) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectContext
@@ -38,7 +33,7 @@ public class Project_ExecutableAspect {
 	_privk3_main(_self_, _self);
 	;
 }
-  
+
   @Step
   public static void setup(final Project _self) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectContext
@@ -59,7 +54,7 @@ public class Project_ExecutableAspect {
 	;
 	;
 }
-  
+
   @InitializeModel
   public static void initializeModel(final Project _self, final EList<String> args) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspectProjectAspectContext.getSelf(_self);
@@ -68,7 +63,7 @@ public class Project_ExecutableAspect {
     	org.gemoc.arduino.sequential.xarduino.aspects.Project_ExecutableAspect._privk3_initializeModel(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Project)_self,args);
     };
   }
-  
+
   protected static void _privk3_execute(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self) {
     final EList<Sketch> sketches = _self.getSketches();
     while (true) {
@@ -78,14 +73,14 @@ public class Project_ExecutableAspect {
       sketches.forEach(_function);
     }
   }
-  
+
   protected static void _privk3_main(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self) {
     final long start = System.nanoTime();
     Project_ExecutableAspect.execute(_self);
     final long stop = System.nanoTime();
     InputOutput.<String>println(("time to execute " + Long.valueOf((stop - start))));
   }
-  
+
   protected static void _privk3_setup(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self) {
     final Procedure1<EObject> _function = (EObject o) -> {
       if ((o instanceof IntegerVariable)) {
@@ -102,7 +97,7 @@ public class Project_ExecutableAspect {
     };
     IteratorExtensions.<EObject>forEach(_self.eAllContents(), _function);
   }
-  
+
   protected static void _privk3_initializeModel(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self, final EList<String> args) {
     Project_ExecutableAspect.setup(_self);
   }

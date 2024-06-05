@@ -27,10 +27,6 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	 * Returns the value of the '<em><b>Connected Transceiver</b></em>' reference list.
 	 * The list contents are of type {@link org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Connected Transceiver</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connected Transceiver</em>' reference list.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getBluetoothTransceiver_ConnectedTransceiver()
@@ -43,14 +39,11 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	 * Returns the value of the '<em><b>Data To Send</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.Integer}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data To Send</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data To Send</em>' attribute list.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getBluetoothTransceiver_DataToSend()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EList<Integer> getDataToSend();
@@ -59,14 +52,11 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	 * Returns the value of the '<em><b>Data Received</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.Integer}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Received</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Received</em>' attribute list.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getBluetoothTransceiver_DataReceived()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EList<Integer> getDataReceived();
@@ -74,7 +64,7 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void push();

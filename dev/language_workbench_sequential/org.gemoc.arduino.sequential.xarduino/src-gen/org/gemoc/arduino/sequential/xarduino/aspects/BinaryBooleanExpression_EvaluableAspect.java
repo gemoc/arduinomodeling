@@ -2,8 +2,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.gemoc.arduino.sequential.xarduino.aspects.BinaryBooleanExpression_EvaluableAspectBinaryBooleanExpressionAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.BinaryBooleanExpression;
 import org.gemoc.arduino.sequential.xarduino.arduino.BinaryBooleanOperatorKind;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanExpression;
@@ -22,12 +20,12 @@ public class BinaryBooleanExpression_EvaluableAspect extends Expression_Evaluabl
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final BinaryBooleanExpression _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final BinaryBooleanExpression_EvaluableAspectBinaryBooleanExpressionAspectProperties _self_, final BinaryBooleanExpression _self) {
     boolean leftIsBoolean = false;
     boolean rightIsBoolean = false;

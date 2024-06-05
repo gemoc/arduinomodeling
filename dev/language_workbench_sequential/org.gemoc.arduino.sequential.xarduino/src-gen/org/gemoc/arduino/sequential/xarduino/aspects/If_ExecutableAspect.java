@@ -4,10 +4,6 @@ import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.gemoc.arduino.sequential.xarduino.aspects.Block_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.If_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.If_ExecutableAspectIfAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.Block;
 import org.gemoc.arduino.sequential.xarduino.arduino.If;
 
@@ -35,12 +31,12 @@ public class If_ExecutableAspect extends Control_ExecutableAspect {
 	;
 	;
 }
-  
+
   private static void super_execute(final If _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final If_ExecutableAspectIfAspectProperties _self_, final If _self) {
     Boolean _evaluate = If_EvaluableAspect.evaluate(_self);
     if ((_evaluate).booleanValue()) {

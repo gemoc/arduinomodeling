@@ -8,9 +8,9 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoFactory;
 
 @SuppressWarnings("all")
 public interface XArduinoMT extends IModelType {
-  public abstract EList<EObject> getContents();
-  
-  public abstract ArduinoFactory getArduinoFactory();
-  
-  public abstract void save(final String uri) throws IOException;
+  public EList<EObject> getContents();
+
+  public ArduinoFactory getArduinoFactory();
+
+  public void save(final String uri) throws IOException;
 }

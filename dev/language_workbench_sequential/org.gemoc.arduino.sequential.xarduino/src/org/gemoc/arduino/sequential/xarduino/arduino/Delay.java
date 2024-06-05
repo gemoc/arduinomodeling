@@ -25,10 +25,6 @@ public interface Delay extends Utilities {
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.gemoc.arduino.sequential.xarduino.arduino.Time}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Unit</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.Time
@@ -53,10 +49,6 @@ public interface Delay extends Utilities {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
@@ -79,7 +71,7 @@ public interface Delay extends Utilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();

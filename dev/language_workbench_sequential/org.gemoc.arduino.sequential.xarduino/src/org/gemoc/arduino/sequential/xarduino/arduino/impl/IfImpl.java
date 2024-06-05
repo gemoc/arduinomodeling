@@ -74,6 +74,7 @@ public class IfImpl extends ControlImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanExpression getCondition() {
 		return condition;
 	}
@@ -98,6 +99,7 @@ public class IfImpl extends ControlImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(BooleanExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
@@ -117,6 +119,7 @@ public class IfImpl extends ControlImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Block getElseBlock() {
 		return elseBlock;
 	}
@@ -141,6 +144,7 @@ public class IfImpl extends ControlImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElseBlock(Block newElseBlock) {
 		if (newElseBlock != elseBlock) {
 			NotificationChain msgs = null;

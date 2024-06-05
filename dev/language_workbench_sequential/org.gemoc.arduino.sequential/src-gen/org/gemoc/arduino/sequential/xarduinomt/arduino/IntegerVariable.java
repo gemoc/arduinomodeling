@@ -60,6 +60,7 @@ public interface IntegerVariable extends Variable {
 	 * @see #setValue(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getIntegerVariable_Value()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Integer getValue();
@@ -78,6 +79,7 @@ public interface IntegerVariable extends Variable {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.sequential.xarduinomt.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

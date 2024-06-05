@@ -17,7 +17,7 @@ public interface ArduinoCommunicationModule extends ArduinoDigitalModule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void push();

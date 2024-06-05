@@ -10,46 +10,46 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanOperatorKind;
 @SuppressWarnings("all")
 public class UnaryBooleanExpressionAdapter extends EObjectAdapter<UnaryBooleanExpression> implements org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanExpression {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public UnaryBooleanExpressionAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public UnaryBooleanOperatorKind getOperator() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanOperatorKind.get(adaptee.getOperator().getValue());
   }
-  
+
   @Override
   public void setOperator(final UnaryBooleanOperatorKind o) {
     adaptee.setOperator(org.gemoc.arduino.sequential.xarduino.arduino.UnaryBooleanOperatorKind.get(o.getValue()));
   }
-  
+
   @Override
   public Expression getOperand() {
     return (Expression) adaptersFactory.createAdapter(adaptee.getOperand(), eResource);
   }
-  
+
   @Override
   public void setOperand(final Expression o) {
     if (o != null)
     	adaptee.setOperand(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ExpressionAdapter) o).getAdaptee());
     else adaptee.setOperand(null);
   }
-  
+
   @Override
   public Object evaluate() {
     return org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect.evaluate(adaptee);
   }
-  
-  protected final static UnaryBooleanOperatorKind OPERATOR_EDEFAULT = org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanOperatorKind.NOT;
-  
+
+  protected static final UnaryBooleanOperatorKind OPERATOR_EDEFAULT = org.gemoc.arduino.sequential.xarduinomt.arduino.UnaryBooleanOperatorKind.NOT;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getUnaryBooleanExpression();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -61,7 +61,7 @@ public class UnaryBooleanExpressionAdapter extends EObjectAdapter<UnaryBooleanEx
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -73,7 +73,7 @@ public class UnaryBooleanExpressionAdapter extends EObjectAdapter<UnaryBooleanEx
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

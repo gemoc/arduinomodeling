@@ -32,6 +32,7 @@ public interface Pin extends NamedElement {
 	 * @see #setLevel(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getPin_Level()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Integer getLevel();

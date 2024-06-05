@@ -63,7 +63,7 @@ public interface Project extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();
@@ -71,7 +71,7 @@ public interface Project extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void main();
@@ -79,7 +79,7 @@ public interface Project extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void setup();
@@ -88,6 +88,7 @@ public interface Project extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model argsMany="true"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	void initializeModel(EList<String> args);

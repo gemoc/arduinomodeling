@@ -10,53 +10,53 @@ import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 @SuppressWarnings("all")
 public class BluetoothTransceiverAdapter extends EObjectAdapter<BluetoothTransceiver> implements org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public BluetoothTransceiverAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public String getName() {
     return adaptee.getName();
   }
-  
+
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
   }
-  
+
   private EList<org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver> connectedTransceiver_;
-  
+
   @Override
   public EList<org.gemoc.arduino.sequential.xarduinomt.arduino.BluetoothTransceiver> getConnectedTransceiver() {
     if (connectedTransceiver_ == null)
     	connectedTransceiver_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getConnectedTransceiver(), adaptersFactory, eResource);
     return connectedTransceiver_;
   }
-  
+
   @Override
   public EList<Integer> getDataReceived() {
     return org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect.dataReceived(adaptee);
   }
-  
+
   @Override
   public EList<Integer> getDataToSend() {
     return org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect.dataToSend(adaptee);
   }
-  
+
   @Override
   public void push() {
     org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect.push(adaptee);
   }
-  
-  protected final static String NAME_EDEFAULT = null;
-  
+
+  protected static final String NAME_EDEFAULT = null;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getBluetoothTransceiver();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -72,7 +72,7 @@ public class BluetoothTransceiverAdapter extends EObjectAdapter<BluetoothTransce
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -88,7 +88,7 @@ public class BluetoothTransceiverAdapter extends EObjectAdapter<BluetoothTransce
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

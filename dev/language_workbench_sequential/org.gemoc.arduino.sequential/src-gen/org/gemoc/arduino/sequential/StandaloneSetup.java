@@ -14,7 +14,7 @@ public class StandaloneSetup {
     setup.doEMFRegistration();
     setup.doAdaptersRegistration();
   }
-  
+
   public void doEMFRegistration() {
     EPackage.Registry.INSTANCE.put(
     	org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage.eNS_URI,
@@ -30,7 +30,7 @@ public class StandaloneSetup {
     	new MelangeResourceFactoryImpl()
     );
   }
-  
+
   public void doAdaptersRegistration() {
     MelangeRegistry.LanguageDescriptor xArduino = new MelangeRegistryImpl.LanguageDescriptorImpl(
     	"org.gemoc.arduino.sequential.XArduino", "", "http://org.gemoc.arduino.sequential.xarduino/arduino/", "org.gemoc.arduino.sequential.XArduinoMT"

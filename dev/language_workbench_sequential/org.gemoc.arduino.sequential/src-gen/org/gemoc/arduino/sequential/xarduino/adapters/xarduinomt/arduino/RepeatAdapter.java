@@ -9,56 +9,56 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Block;
 @SuppressWarnings("all")
 public class RepeatAdapter extends EObjectAdapter<Repeat> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Repeat {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public RepeatAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public int getIteration() {
     return adaptee.getIteration();
   }
-  
+
   @Override
   public void setIteration(final int o) {
     adaptee.setIteration(o);
   }
-  
+
   @Override
   public Block getBlock() {
     return (Block) adaptersFactory.createAdapter(adaptee.getBlock(), eResource);
   }
-  
+
   @Override
   public void setBlock(final Block o) {
     if (o != null)
     	adaptee.setBlock(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BlockAdapter) o).getAdaptee());
     else adaptee.setBlock(null);
   }
-  
+
   @Override
   public void execute() {
     org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspect.execute(adaptee);
   }
-  
+
   @Override
   public Boolean evaluate() {
     return org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect.evaluate(adaptee);
   }
-  
+
   @Override
   public void finalize() {
     org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect.finalize(adaptee);
   }
-  
-  protected final static int ITERATION_EDEFAULT = 5;
-  
+
+  protected static final int ITERATION_EDEFAULT = 5;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getRepeat();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -70,7 +70,7 @@ public class RepeatAdapter extends EObjectAdapter<Repeat> implements org.gemoc.a
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -82,7 +82,7 @@ public class RepeatAdapter extends EObjectAdapter<Repeat> implements org.gemoc.a
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

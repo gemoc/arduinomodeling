@@ -3,10 +3,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.gemoc.arduino.sequential.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.sequential.xarduino.arduino.Variable;
@@ -36,12 +32,12 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
 	;
 	;
 }
-  
+
   private static void super_execute(final VariableDeclaration _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties _self_, final VariableDeclaration _self) {
     Variable _variable = _self.getVariable();
     boolean _matched = false;

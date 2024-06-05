@@ -8,42 +8,42 @@ import org.gemoc.arduino.sequential.xarduino.arduino.Pin;
 @SuppressWarnings("all")
 public class PinAdapter extends EObjectAdapter<Pin> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Pin {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public PinAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public String getName() {
     return adaptee.getName();
   }
-  
+
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
   }
-  
+
   @Override
   public Integer getLevel() {
     return org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect.level(adaptee);
   }
-  
+
   @Override
   public void setLevel(final Integer level) {
     org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect.level(adaptee, level
     );
   }
-  
-  protected final static String NAME_EDEFAULT = null;
-  
-  protected final static Integer LEVEL_EDEFAULT = null;
-  
+
+  protected static final String NAME_EDEFAULT = null;
+
+  protected static final Integer LEVEL_EDEFAULT = null;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getPin();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -55,7 +55,7 @@ public class PinAdapter extends EObjectAdapter<Pin> implements org.gemoc.arduino
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -67,7 +67,7 @@ public class PinAdapter extends EObjectAdapter<Pin> implements org.gemoc.arduino
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

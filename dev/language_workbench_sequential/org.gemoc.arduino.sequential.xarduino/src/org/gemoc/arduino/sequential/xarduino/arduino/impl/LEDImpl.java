@@ -70,6 +70,7 @@ public class LEDImpl extends ArduinoDigitalModuleImpl implements LED {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Color getColor() {
 		return color;
 	}
@@ -79,6 +80,7 @@ public class LEDImpl extends ArduinoDigitalModuleImpl implements LED {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setColor(Color newColor) {
 		Color oldColor = color;
 		color = newColor == null ? COLOR_EDEFAULT : newColor;

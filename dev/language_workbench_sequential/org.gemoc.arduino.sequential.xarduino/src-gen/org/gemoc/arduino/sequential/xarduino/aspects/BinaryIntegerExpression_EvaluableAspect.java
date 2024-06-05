@@ -2,8 +2,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.gemoc.arduino.sequential.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.BinaryIntegerExpression;
 import org.gemoc.arduino.sequential.xarduino.arduino.BinaryIntegerOperatorKind;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanExpression;
@@ -22,12 +20,12 @@ public class BinaryIntegerExpression_EvaluableAspect extends Expression_Evaluabl
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final BinaryIntegerExpression _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties _self_, final BinaryIntegerExpression _self) {
     Integer res = null;
     boolean bLeft = false;
