@@ -7,6 +7,7 @@ Export-Package: org.gemoc.arduino.sequential,
  org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino,
  org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt
 Bundle-Name: Arduino
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  org.eclipse.xtend.lib,
