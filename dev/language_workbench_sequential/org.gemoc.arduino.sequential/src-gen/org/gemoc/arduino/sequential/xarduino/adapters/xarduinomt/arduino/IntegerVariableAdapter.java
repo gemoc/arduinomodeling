@@ -8,59 +8,59 @@ import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 @SuppressWarnings("all")
 public class IntegerVariableAdapter extends EObjectAdapter<IntegerVariable> implements org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerVariable {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public IntegerVariableAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public String getName() {
     return adaptee.getName();
   }
-  
+
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
   }
-  
+
   @Override
   public int getInitialValue() {
     return adaptee.getInitialValue();
   }
-  
+
   @Override
   public void setInitialValue(final int o) {
     adaptee.setInitialValue(o);
   }
-  
+
   @Override
   public Object evaluate() {
     return org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect.evaluate(adaptee);
   }
-  
+
   @Override
   public Integer getValue() {
     return org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect.value(adaptee);
   }
-  
+
   @Override
   public void setValue(final Integer value) {
     org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspect.value(adaptee, value
     );
   }
-  
-  protected final static String NAME_EDEFAULT = null;
-  
-  protected final static int INITIAL_VALUE_EDEFAULT = 0;
-  
-  protected final static Integer VALUE_EDEFAULT = null;
-  
+
+  protected static final String NAME_EDEFAULT = null;
+
+  protected static final int INITIAL_VALUE_EDEFAULT = 0;
+
+  protected static final Integer VALUE_EDEFAULT = null;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getIntegerVariable();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -74,7 +74,7 @@ public class IntegerVariableAdapter extends EObjectAdapter<IntegerVariable> impl
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -88,7 +88,7 @@ public class IntegerVariableAdapter extends EObjectAdapter<IntegerVariable> impl
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

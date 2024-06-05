@@ -60,6 +60,7 @@ public interface BooleanVariable extends Variable {
 	 * @see #setValue(Boolean)
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getBooleanVariable_Value()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Boolean getValue();
@@ -78,6 +79,7 @@ public interface BooleanVariable extends Variable {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.sequential.xarduinomt.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

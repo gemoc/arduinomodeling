@@ -25,10 +25,6 @@ public interface IntegerVariable extends Variable {
 	 * Returns the value of the '<em><b>Initial Value</b></em>' attribute.
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Initial Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Value</em>' attribute.
 	 * @see #setInitialValue(int)
@@ -51,15 +47,12 @@ public interface IntegerVariable extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getIntegerVariable_Value()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Integer getValue();
@@ -78,6 +71,7 @@ public interface IntegerVariable extends Variable {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.sequential.xarduino.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

@@ -70,6 +70,7 @@ public class BinaryBooleanExpressionImpl extends BinaryExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BinaryBooleanOperatorKind getOperator() {
 		return operator;
 	}
@@ -79,6 +80,7 @@ public class BinaryBooleanExpressionImpl extends BinaryExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperator(BinaryBooleanOperatorKind newOperator) {
 		BinaryBooleanOperatorKind oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;

@@ -3,12 +3,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.gemoc.arduino.sequential.xarduino.aspects.BluetoothTransceiver_PushAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Expression_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Instruction_UtilitesAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.ModuleInstruction_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Pin_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.sequential.xarduino.arduino.BooleanExpression;
 import org.gemoc.arduino.sequential.xarduino.arduino.Expression;
@@ -40,12 +34,12 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
 	;
 	;
 }
-  
+
   private static void super_execute(final ModuleAssignment _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.ModuleInstruction_ExecutableAspectModuleInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.ModuleInstruction_ExecutableAspectModuleInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.ModuleInstruction_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties _self_, final ModuleAssignment _self) {
     final Pin pin = Instruction_UtilitesAspect.getPin(_self, _self.getModule());
     Expression _operand = _self.getOperand();

@@ -39,6 +39,7 @@ public abstract class VariableImpl extends NamedElementImpl implements Variable 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object evaluate() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

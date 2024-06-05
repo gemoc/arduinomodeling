@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?eclipse version="3.4"?><plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated XArduinoMT -->
     <package class="org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage" genModel="model-gen/XArduinoMT.genmodel" uri="http://org.gemoc.arduino.sequential.xarduinomt/arduino/"/>
   </extension>
-  
-<extension point="fr.inria.diverse.melange.modeltype">
+    
+
+  <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.arduino.sequential.XArduinoMT" uri="http://org.gemoc.arduino.sequential.xarduinomt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">

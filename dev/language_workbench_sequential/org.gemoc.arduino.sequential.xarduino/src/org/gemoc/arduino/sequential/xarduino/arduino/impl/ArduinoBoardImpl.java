@@ -78,6 +78,7 @@ public class ArduinoBoardImpl extends BoardImpl implements ArduinoBoard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<DigitalPin> getDigitalPins() {
 		if (digitalPins == null) {
 			digitalPins = new EObjectContainmentEList<DigitalPin>(DigitalPin.class, this, ArduinoPackage.ARDUINO_BOARD__DIGITAL_PINS);
@@ -90,6 +91,7 @@ public class ArduinoBoardImpl extends BoardImpl implements ArduinoBoard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AnalogPin> getAnalogPins() {
 		if (analogPins == null) {
 			analogPins = new EObjectContainmentEList<AnalogPin>(AnalogPin.class, this, ArduinoPackage.ARDUINO_BOARD__ANALOG_PINS);

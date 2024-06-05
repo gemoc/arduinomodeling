@@ -51,6 +51,7 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	 * @return the value of the '<em>Data To Send</em>' attribute list.
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getBluetoothTransceiver_DataToSend()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EList<Integer> getDataToSend();
@@ -67,6 +68,7 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	 * @return the value of the '<em>Data Received</em>' attribute list.
 	 * @see org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage#getBluetoothTransceiver_DataReceived()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EList<Integer> getDataReceived();
@@ -74,7 +76,7 @@ public interface BluetoothTransceiver extends ArduinoAnalogModule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void push();

@@ -3,11 +3,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.gemoc.arduino.sequential.xarduino.aspects.Block_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Repeat_ExecutableAspectRepeatAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.Repeat;
 
 @Aspect(className = Repeat.class)
@@ -34,12 +29,12 @@ public class Repeat_ExecutableAspect extends Control_ExecutableAspect {
 	;
 	;
 }
-  
+
   private static void super_execute(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspectControlAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.Control_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final Repeat_ExecutableAspectRepeatAspectProperties _self_, final Repeat _self) {
     while ((Control_EvaluableAspect.evaluate(_self)).booleanValue()) {
       Block_ExecutableAspect.execute(_self.getBlock());

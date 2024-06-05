@@ -53,6 +53,7 @@ public interface BinaryIntegerExpression extends BinaryExpression, IntegerExpres
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.sequential.xarduinomt.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

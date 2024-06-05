@@ -124,20 +124,20 @@ import org.gemoc.arduino.sequential.xarduino.arduino.While;
 @SuppressWarnings("all")
 public class XArduinoMTAdaptersFactory implements AdaptersFactory {
   private static XArduinoMTAdaptersFactory instance;
-  
+
   public static XArduinoMTAdaptersFactory getInstance() {
     if (instance == null) {
     	instance = new org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory();
     }
     return instance;
   }
-  
+
   private WeakHashMap<EObject, EObjectAdapter> register;
-  
+
   public XArduinoMTAdaptersFactory() {
     register = new WeakHashMap();
   }
-  
+
   public EObjectAdapter createAdapter(final EObject o, final Resource res) {
     if (o instanceof org.gemoc.arduino.sequential.xarduino.arduino.DigitalPin){
     	return createDigitalPinAdapter((org.gemoc.arduino.sequential.xarduino.arduino.DigitalPin) o, res);
@@ -250,7 +250,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     
     return null;
   }
-  
+
   public BoardAdapter createBoardAdapter(final Board adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -265,7 +265,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BoardAdapter) adapter;
     }
   }
-  
+
   public ModuleAdapter createModuleAdapter(final org.gemoc.arduino.sequential.xarduino.arduino.Module adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -280,7 +280,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleAdapter) adapter;
     }
   }
-  
+
   public DigitalPinAdapter createDigitalPinAdapter(final DigitalPin adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -295,7 +295,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.DigitalPinAdapter) adapter;
     }
   }
-  
+
   public PinAdapter createPinAdapter(final Pin adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -310,7 +310,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.PinAdapter) adapter;
     }
   }
-  
+
   public AnalogPinAdapter createAnalogPinAdapter(final AnalogPin adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -325,7 +325,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.AnalogPinAdapter) adapter;
     }
   }
-  
+
   public SketchAdapter createSketchAdapter(final Sketch adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -340,7 +340,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.SketchAdapter) adapter;
     }
   }
-  
+
   public ProjectAdapter createProjectAdapter(final Project adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -355,7 +355,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ProjectAdapter) adapter;
     }
   }
-  
+
   public InstructionAdapter createInstructionAdapter(final Instruction adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -370,7 +370,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.InstructionAdapter) adapter;
     }
   }
-  
+
   public ModuleAssignmentAdapter createModuleAssignmentAdapter(final ModuleAssignment adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -385,7 +385,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleAssignmentAdapter) adapter;
     }
   }
-  
+
   public ModuleInstructionAdapter createModuleInstructionAdapter(final ModuleInstruction adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -400,7 +400,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleInstructionAdapter) adapter;
     }
   }
-  
+
   public ControlAdapter createControlAdapter(final Control adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -415,7 +415,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ControlAdapter) adapter;
     }
   }
-  
+
   public UtilitiesAdapter createUtilitiesAdapter(final Utilities adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -430,7 +430,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.UtilitiesAdapter) adapter;
     }
   }
-  
+
   public DelayAdapter createDelayAdapter(final Delay adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -445,7 +445,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.DelayAdapter) adapter;
     }
   }
-  
+
   public NamedElementAdapter createNamedElementAdapter(final NamedElement adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -460,7 +460,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.NamedElementAdapter) adapter;
     }
   }
-  
+
   public RepeatAdapter createRepeatAdapter(final Repeat adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -475,7 +475,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.RepeatAdapter) adapter;
     }
   }
-  
+
   public ModuleGetAdapter createModuleGetAdapter(final ModuleGet adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -490,7 +490,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleGetAdapter) adapter;
     }
   }
-  
+
   public WhileAdapter createWhileAdapter(final While adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -505,7 +505,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.WhileAdapter) adapter;
     }
   }
-  
+
   public BinaryExpressionAdapter createBinaryExpressionAdapter(final BinaryExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -520,7 +520,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BinaryExpressionAdapter) adapter;
     }
   }
-  
+
   public VariableAdapter createVariableAdapter(final Variable adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -535,7 +535,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableAdapter) adapter;
     }
   }
-  
+
   public VariableAssignmentAdapter createVariableAssignmentAdapter(final VariableAssignment adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -550,7 +550,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableAssignmentAdapter) adapter;
     }
   }
-  
+
   public BinaryIntegerExpressionAdapter createBinaryIntegerExpressionAdapter(final BinaryIntegerExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -565,7 +565,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BinaryIntegerExpressionAdapter) adapter;
     }
   }
-  
+
   public BinaryBooleanExpressionAdapter createBinaryBooleanExpressionAdapter(final BinaryBooleanExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -580,7 +580,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BinaryBooleanExpressionAdapter) adapter;
     }
   }
-  
+
   public ExpressionAdapter createExpressionAdapter(final Expression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -595,7 +595,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ExpressionAdapter) adapter;
     }
   }
-  
+
   public ConstantAdapter createConstantAdapter(final Constant adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -610,7 +610,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ConstantAdapter) adapter;
     }
   }
-  
+
   public IfAdapter createIfAdapter(final If adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -625,7 +625,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IfAdapter) adapter;
     }
   }
-  
+
   public IntegerConstantAdapter createIntegerConstantAdapter(final IntegerConstant adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -640,7 +640,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IntegerConstantAdapter) adapter;
     }
   }
-  
+
   public BooleanConstantAdapter createBooleanConstantAdapter(final BooleanConstant adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -655,7 +655,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BooleanConstantAdapter) adapter;
     }
   }
-  
+
   public BooleanExpressionAdapter createBooleanExpressionAdapter(final BooleanExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -670,7 +670,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BooleanExpressionAdapter) adapter;
     }
   }
-  
+
   public IntegerExpressionAdapter createIntegerExpressionAdapter(final IntegerExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -685,7 +685,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IntegerExpressionAdapter) adapter;
     }
   }
-  
+
   public AssignmentAdapter createAssignmentAdapter(final Assignment adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -700,7 +700,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.AssignmentAdapter) adapter;
     }
   }
-  
+
   public IntegerVariableAdapter createIntegerVariableAdapter(final IntegerVariable adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -715,7 +715,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IntegerVariableAdapter) adapter;
     }
   }
-  
+
   public BooleanVariableAdapter createBooleanVariableAdapter(final BooleanVariable adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -730,7 +730,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BooleanVariableAdapter) adapter;
     }
   }
-  
+
   public BooleanModuleGetAdapter createBooleanModuleGetAdapter(final BooleanModuleGet adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -745,7 +745,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BooleanModuleGetAdapter) adapter;
     }
   }
-  
+
   public IntegerModuleGetAdapter createIntegerModuleGetAdapter(final IntegerModuleGet adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -760,7 +760,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IntegerModuleGetAdapter) adapter;
     }
   }
-  
+
   public UnaryExpressionAdapter createUnaryExpressionAdapter(final UnaryExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -775,7 +775,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.UnaryExpressionAdapter) adapter;
     }
   }
-  
+
   public UnaryBooleanExpressionAdapter createUnaryBooleanExpressionAdapter(final UnaryBooleanExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -790,7 +790,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.UnaryBooleanExpressionAdapter) adapter;
     }
   }
-  
+
   public UnaryIntegerExpressionAdapter createUnaryIntegerExpressionAdapter(final UnaryIntegerExpression adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -805,7 +805,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.UnaryIntegerExpressionAdapter) adapter;
     }
   }
-  
+
   public VariableDeclarationAdapter createVariableDeclarationAdapter(final VariableDeclaration adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -820,7 +820,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableDeclarationAdapter) adapter;
     }
   }
-  
+
   public VariableRefAdapter createVariableRefAdapter(final VariableRef adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -835,7 +835,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableRefAdapter) adapter;
     }
   }
-  
+
   public IntegerVariableRefAdapter createIntegerVariableRefAdapter(final IntegerVariableRef adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -850,7 +850,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.IntegerVariableRefAdapter) adapter;
     }
   }
-  
+
   public LEDAdapter createLEDAdapter(final LED adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -865,7 +865,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.LEDAdapter) adapter;
     }
   }
-  
+
   public PushButtonAdapter createPushButtonAdapter(final PushButton adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -880,7 +880,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.PushButtonAdapter) adapter;
     }
   }
-  
+
   public BuzzerAdapter createBuzzerAdapter(final Buzzer adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -895,7 +895,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BuzzerAdapter) adapter;
     }
   }
-  
+
   public RotationSensorAdapter createRotationSensorAdapter(final RotationSensor adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -910,7 +910,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.RotationSensorAdapter) adapter;
     }
   }
-  
+
   public MicroServoAdapter createMicroServoAdapter(final MicroServo adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -925,7 +925,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.MicroServoAdapter) adapter;
     }
   }
-  
+
   public InfraRedSensorAdapter createInfraRedSensorAdapter(final InfraRedSensor adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -940,7 +940,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.InfraRedSensorAdapter) adapter;
     }
   }
-  
+
   public AmbientLightSensorAdapter createAmbientLightSensorAdapter(final AmbientLightSensor adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -955,7 +955,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.AmbientLightSensorAdapter) adapter;
     }
   }
-  
+
   public SoundSensorAdapter createSoundSensorAdapter(final SoundSensor adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -970,7 +970,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.SoundSensorAdapter) adapter;
     }
   }
-  
+
   public FanAdapter createFanAdapter(final Fan adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -985,7 +985,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.FanAdapter) adapter;
     }
   }
-  
+
   public MusicPlayerAdapter createMusicPlayerAdapter(final MusicPlayer adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1000,7 +1000,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.MusicPlayerAdapter) adapter;
     }
   }
-  
+
   public ArduinoModuleAdapter createArduinoModuleAdapter(final ArduinoModule adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1015,7 +1015,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoModuleAdapter) adapter;
     }
   }
-  
+
   public BlockAdapter createBlockAdapter(final Block adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1030,7 +1030,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BlockAdapter) adapter;
     }
   }
-  
+
   public ArduinoBoardAdapter createArduinoBoardAdapter(final ArduinoBoard adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1045,7 +1045,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoBoardAdapter) adapter;
     }
   }
-  
+
   public ArduinoDigitalModuleAdapter createArduinoDigitalModuleAdapter(final ArduinoDigitalModule adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1060,7 +1060,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoDigitalModuleAdapter) adapter;
     }
   }
-  
+
   public ArduinoAnalogModuleAdapter createArduinoAnalogModuleAdapter(final ArduinoAnalogModule adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1075,7 +1075,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoAnalogModuleAdapter) adapter;
     }
   }
-  
+
   public BooleanVariableRefAdapter createBooleanVariableRefAdapter(final BooleanVariableRef adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1090,7 +1090,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.BooleanVariableRefAdapter) adapter;
     }
   }
-  
+
   public ArduinoCommunicationModuleAdapter createArduinoCommunicationModuleAdapter(final ArduinoCommunicationModule adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -1105,7 +1105,7 @@ public class XArduinoMTAdaptersFactory implements AdaptersFactory {
     	return (org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ArduinoCommunicationModuleAdapter) adapter;
     }
   }
-  
+
   public BluetoothTransceiverAdapter createBluetoothTransceiverAdapter(final BluetoothTransceiver adaptee, final Resource res) {
     if (adaptee == null)
     	return null;

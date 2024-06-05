@@ -68,6 +68,7 @@ public class BlockImpl extends EObjectImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Instruction> getInstructions() {
 		if (instructions == null) {
 			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, ArduinoPackage.BLOCK__INSTRUCTIONS);
@@ -80,6 +81,7 @@ public class BlockImpl extends EObjectImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void execute() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

@@ -8,29 +8,29 @@ import org.gemoc.arduino.sequential.xarduino.arduino.Buzzer;
 @SuppressWarnings("all")
 public class BuzzerAdapter extends EObjectAdapter<Buzzer> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Buzzer {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public BuzzerAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public String getName() {
     return adaptee.getName();
   }
-  
+
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
   }
-  
-  protected final static String NAME_EDEFAULT = null;
-  
+
+  protected static final String NAME_EDEFAULT = null;
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getBuzzer();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -40,7 +40,7 @@ public class BuzzerAdapter extends EObjectAdapter<Buzzer> implements org.gemoc.a
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -50,7 +50,7 @@ public class BuzzerAdapter extends EObjectAdapter<Buzzer> implements org.gemoc.a
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

@@ -54,6 +54,7 @@ public abstract class BoardImpl extends NamedElementImpl implements Board {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Project getProject() {
 		if (eContainerFeatureID() != ArduinoPackage.BOARD__PROJECT) return null;
 		return (Project)eInternalContainer();
@@ -74,6 +75,7 @@ public abstract class BoardImpl extends NamedElementImpl implements Board {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProject(Project newProject) {
 		if (newProject != eInternalContainer() || (eContainerFeatureID() != ArduinoPackage.BOARD__PROJECT && newProject != null)) {
 			if (EcoreUtil.isAncestor(this, newProject))

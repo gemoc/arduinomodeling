@@ -2,8 +2,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect;
-import org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.Repeat;
 
 @Aspect(className = Repeat.class)
@@ -18,7 +16,7 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
 	;
 	return (java.lang.Boolean) result;
 }
-  
+
   @OverrideAspectMethod
   public static void finalize(final Repeat _self) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext
@@ -26,7 +24,7 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
 	_privk3_finalize(_self_, _self);
 	;
 }
-  
+
   private static Integer i(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
     Object result = null;
@@ -36,7 +34,7 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     };
     return (java.lang.Integer)result;
   }
-  
+
   private static void i(final Repeat _self, final Integer i) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspectRepeatAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void i(Integer)
@@ -44,12 +42,12 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     	org.gemoc.arduino.sequential.xarduino.aspects.Repeat_EvaluableAspect._privk3_i(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.Repeat)_self,i);
     };
   }
-  
+
   private static Boolean super_evaluate(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspectControlAspectContext.getSelf(_self);
     return  org.gemoc.arduino.sequential.xarduino.aspects.Control_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Boolean _privk3_evaluate(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self) {
     Boolean resCond = Boolean.valueOf(false);
     Integer _i = Repeat_EvaluableAspect.i(_self);
@@ -61,17 +59,17 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     Repeat_EvaluableAspect.i(_self, Integer.valueOf(_plus));
     return resCond;
   }
-  
+
   private static void super_finalize(final Repeat _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect._privk3_finalize(_self_, _self);
   }
-  
+
   protected static void _privk3_finalize(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self) {
     Repeat_EvaluableAspect.i(_self, Integer.valueOf(0));
     return;
   }
-  
+
   protected static Integer _privk3_i(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
@@ -81,8 +79,8 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     				if (ret != null) {
     					return (java.lang.Integer) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {
@@ -90,7 +88,7 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     }
     return _self_.i;
   }
-  
+
   protected static void _privk3_i(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self, final Integer i) {
     boolean setterCalled = false;
     try {

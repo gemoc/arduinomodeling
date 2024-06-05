@@ -78,6 +78,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Project getProject() {
 		if (eContainerFeatureID() != ArduinoPackage.SKETCH__PROJECT) return null;
 		return (Project)eInternalContainer();
@@ -98,6 +99,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProject(Project newProject) {
 		if (newProject != eInternalContainer() || (eContainerFeatureID() != ArduinoPackage.SKETCH__PROJECT && newProject != null)) {
 			if (EcoreUtil.isAncestor(this, newProject))
@@ -119,6 +121,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Block getBlock() {
 		return block;
 	}
@@ -143,6 +146,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBlock(Block newBlock) {
 		if (newBlock != block) {
 			NotificationChain msgs = null;
@@ -162,6 +166,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Board getBoard() {
 		if (board != null && board.eIsProxy()) {
 			InternalEObject oldBoard = (InternalEObject)board;
@@ -188,6 +193,7 @@ public class SketchImpl extends NamedElementImpl implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBoard(Board newBoard) {
 		Board oldBoard = board;
 		board = newBoard;

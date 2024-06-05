@@ -41,6 +41,7 @@ public abstract class InstructionImpl extends EObjectImpl implements Instruction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void execute() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -52,6 +53,7 @@ public abstract class InstructionImpl extends EObjectImpl implements Instruction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void finalize() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

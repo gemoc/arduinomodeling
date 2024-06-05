@@ -69,6 +69,7 @@ public class RepeatImpl extends ControlImpl implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getIteration() {
 		return iteration;
 	}
@@ -78,6 +79,7 @@ public class RepeatImpl extends ControlImpl implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIteration(int newIteration) {
 		int oldIteration = iteration;
 		iteration = newIteration;

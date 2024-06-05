@@ -41,10 +41,6 @@ public enum Time implements Enumerator {
 	/**
 	 * The '<em><b>Milli Second</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Milli Second</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MILLI_SECOND
 	 * @model name="MilliSecond"
@@ -56,10 +52,6 @@ public enum Time implements Enumerator {
 	/**
 	 * The '<em><b>Micro Second</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Micro Second</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MICRO_SECOND
 	 * @model name="MicroSecond"
@@ -177,6 +169,7 @@ public enum Time implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -186,6 +179,7 @@ public enum Time implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -195,6 +189,7 @@ public enum Time implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

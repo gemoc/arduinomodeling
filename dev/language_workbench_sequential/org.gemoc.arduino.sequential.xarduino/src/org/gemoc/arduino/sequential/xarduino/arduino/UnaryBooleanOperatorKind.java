@@ -31,10 +31,6 @@ public enum UnaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Not</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Not</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NOT
 	 * @model name="not"
@@ -151,6 +147,7 @@ public enum UnaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -160,6 +157,7 @@ public enum UnaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -169,6 +167,7 @@ public enum UnaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

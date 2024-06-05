@@ -4,8 +4,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.gemoc.arduino.sequential.xarduino.aspects.Delay_ExecutableAspectDelayAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.Utilities_ExecutableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.Delay;
 
 @Aspect(className = Delay.class)
@@ -32,12 +30,12 @@ public class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
 	;
 	;
 }
-  
+
   private static void super_execute(final Delay _self) {
     final org.gemoc.arduino.sequential.xarduino.aspects.Utilities_ExecutableAspectUtilitiesAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.Utilities_ExecutableAspectUtilitiesAspectContext.getSelf(_self);
      org.gemoc.arduino.sequential.xarduino.aspects.Utilities_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final Delay_ExecutableAspectDelayAspectProperties _self_, final Delay _self) {
     try {
       Thread.sleep(_self.getValue());

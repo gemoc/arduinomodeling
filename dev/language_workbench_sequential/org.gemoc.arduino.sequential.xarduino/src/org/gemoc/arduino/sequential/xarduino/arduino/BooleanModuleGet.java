@@ -18,6 +18,7 @@ public interface BooleanModuleGet extends ModuleGet, BooleanExpression {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.sequential.xarduino.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

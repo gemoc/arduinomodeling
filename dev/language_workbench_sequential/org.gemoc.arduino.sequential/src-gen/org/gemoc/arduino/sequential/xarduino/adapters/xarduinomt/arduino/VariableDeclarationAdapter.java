@@ -9,39 +9,39 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Variable;
 @SuppressWarnings("all")
 public class VariableDeclarationAdapter extends EObjectAdapter<VariableDeclaration> implements org.gemoc.arduino.sequential.xarduinomt.arduino.VariableDeclaration {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public VariableDeclarationAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public Variable getVariable() {
     return (Variable) adaptersFactory.createAdapter(adaptee.getVariable(), eResource);
   }
-  
+
   @Override
   public void setVariable(final Variable o) {
     if (o != null)
     	adaptee.setVariable(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.VariableAdapter) o).getAdaptee());
     else adaptee.setVariable(null);
   }
-  
+
   @Override
   public void execute() {
     org.gemoc.arduino.sequential.xarduino.aspects.VariableDeclaration_ExecutableAspect.execute(adaptee);
   }
-  
+
   @Override
   public void finalize() {
     org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.finalize(adaptee);
   }
-  
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getVariableDeclaration();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -51,7 +51,7 @@ public class VariableDeclarationAdapter extends EObjectAdapter<VariableDeclarati
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -61,7 +61,7 @@ public class VariableDeclarationAdapter extends EObjectAdapter<VariableDeclarati
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

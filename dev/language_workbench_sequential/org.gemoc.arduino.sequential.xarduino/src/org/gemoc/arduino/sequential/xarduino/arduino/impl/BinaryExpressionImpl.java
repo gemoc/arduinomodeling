@@ -73,6 +73,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getLeft() {
 		return left;
 	}
@@ -97,6 +98,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(Expression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -116,6 +118,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getRight() {
 		return right;
 	}
@@ -140,6 +143,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(Expression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

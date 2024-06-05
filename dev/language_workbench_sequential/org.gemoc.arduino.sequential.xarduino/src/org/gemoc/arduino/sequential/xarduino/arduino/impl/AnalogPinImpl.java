@@ -62,6 +62,7 @@ public class AnalogPinImpl extends PinImpl implements AnalogPin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArduinoAnalogModule getModule() {
 		return module;
 	}
@@ -86,6 +87,7 @@ public class AnalogPinImpl extends PinImpl implements AnalogPin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModule(ArduinoAnalogModule newModule) {
 		if (newModule != module) {
 			NotificationChain msgs = null;

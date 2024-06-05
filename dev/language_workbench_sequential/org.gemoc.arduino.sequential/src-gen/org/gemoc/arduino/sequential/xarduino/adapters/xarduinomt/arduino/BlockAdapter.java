@@ -11,31 +11,31 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Instruction;
 @SuppressWarnings("all")
 public class BlockAdapter extends EObjectAdapter<Block> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Block {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public BlockAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   private EList<Instruction> instructions_;
-  
+
   @Override
   public EList<Instruction> getInstructions() {
     if (instructions_ == null)
     	instructions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getInstructions(), adaptersFactory, eResource);
     return instructions_;
   }
-  
+
   @Override
   public void execute() {
     org.gemoc.arduino.sequential.xarduino.aspects.Block_ExecutableAspect.execute(adaptee);
   }
-  
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getBlock();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -45,7 +45,7 @@ public class BlockAdapter extends EObjectAdapter<Block> implements org.gemoc.ard
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -55,7 +55,7 @@ public class BlockAdapter extends EObjectAdapter<Block> implements org.gemoc.ard
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

@@ -9,39 +9,39 @@ import org.gemoc.arduino.sequential.xarduinomt.arduino.Expression;
 @SuppressWarnings("all")
 public class AssignmentAdapter extends EObjectAdapter<Assignment> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Assignment {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public AssignmentAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public Expression getOperand() {
     return (Expression) adaptersFactory.createAdapter(adaptee.getOperand(), eResource);
   }
-  
+
   @Override
   public void setOperand(final Expression o) {
     if (o != null)
     	adaptee.setOperand(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ExpressionAdapter) o).getAdaptee());
     else adaptee.setOperand(null);
   }
-  
+
   @Override
   public void execute() {
     org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.execute(adaptee);
   }
-  
+
   @Override
   public void finalize() {
     org.gemoc.arduino.sequential.xarduino.aspects.Instruction_ExecutableAspect.finalize(adaptee);
   }
-  
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getAssignment();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -51,7 +51,7 @@ public class AssignmentAdapter extends EObjectAdapter<Assignment> implements org
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -61,7 +61,7 @@ public class AssignmentAdapter extends EObjectAdapter<Assignment> implements org
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

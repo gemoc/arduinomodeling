@@ -2,8 +2,6 @@ package org.gemoc.arduino.sequential.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties;
-import org.gemoc.arduino.sequential.xarduino.aspects.Variable_EvaluableAspect;
 import org.gemoc.arduino.sequential.xarduino.arduino.IntegerVariable;
 
 @Aspect(className = IntegerVariable.class)
@@ -18,7 +16,7 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
 	;
 	return (java.lang.Object) result;
 }
-  
+
   public static Integer value(final IntegerVariable _self) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext
 			.getSelf(_self);
@@ -27,18 +25,18 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
 	;
 	return (java.lang.Integer) result;
 }
-  
+
   public static void value(final IntegerVariable _self, final Integer value) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.IntegerVariable_EvaluableAspectIntegerVariableAspectContext
 			.getSelf(_self);
 	_privk3_value(_self_, _self, value);
 	;
 }
-  
+
   protected static Object _privk3_evaluate(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self) {
     return IntegerVariable_EvaluableAspect.value(_self);
   }
-  
+
   protected static Integer _privk3_value(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
@@ -48,8 +46,8 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
     				if (ret != null) {
     					return (java.lang.Integer) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {
@@ -57,7 +55,7 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
     }
     return _self_.value;
   }
-  
+
   protected static void _privk3_value(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self, final Integer value) {
     boolean setterCalled = false;
     try {

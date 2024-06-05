@@ -3135,6 +3135,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @return the meta object for data type '<em>Object</em>'.
 	 * @see java.lang.Object
 	 * @model instanceClass="java.lang.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EDataType getObject();

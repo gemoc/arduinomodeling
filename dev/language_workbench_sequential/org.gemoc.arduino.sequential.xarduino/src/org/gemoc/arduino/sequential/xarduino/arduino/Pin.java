@@ -23,15 +23,12 @@ public interface Pin extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Level</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Level</em>' attribute.
 	 * @see #setLevel(Integer)
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getPin_Level()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Integer getLevel();

@@ -61,6 +61,7 @@ public class IntegerVariableRefImpl extends VariableRefImpl implements IntegerVa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerVariable getVariable() {
 		if (variable != null && variable.eIsProxy()) {
 			InternalEObject oldVariable = (InternalEObject)variable;
@@ -87,6 +88,7 @@ public class IntegerVariableRefImpl extends VariableRefImpl implements IntegerVa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(IntegerVariable newVariable) {
 		IntegerVariable oldVariable = variable;
 		variable = newVariable;

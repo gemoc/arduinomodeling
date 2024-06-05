@@ -26,10 +26,6 @@ public interface ArduinoBoard extends Board {
 	 * Returns the value of the '<em><b>Digital Pins</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gemoc.arduino.sequential.xarduino.arduino.DigitalPin}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Digital Pins</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Digital Pins</em>' containment reference list.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getArduinoBoard_DigitalPins()
@@ -42,10 +38,6 @@ public interface ArduinoBoard extends Board {
 	 * Returns the value of the '<em><b>Analog Pins</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gemoc.arduino.sequential.xarduino.arduino.AnalogPin}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analog Pins</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Analog Pins</em>' containment reference list.
 	 * @see org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage#getArduinoBoard_AnalogPins()

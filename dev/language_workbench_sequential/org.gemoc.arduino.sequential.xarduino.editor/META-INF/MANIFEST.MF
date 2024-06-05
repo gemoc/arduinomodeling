@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.gemoc.arduino.sequential.xarduino.arduino.presentation.XArduinoEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gemoc.arduino.sequential.xarduino.arduino.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

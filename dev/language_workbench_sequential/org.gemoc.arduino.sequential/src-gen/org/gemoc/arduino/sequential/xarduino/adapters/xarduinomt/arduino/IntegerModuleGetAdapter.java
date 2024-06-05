@@ -8,34 +8,34 @@ import org.gemoc.arduino.sequential.xarduino.arduino.IntegerModuleGet;
 @SuppressWarnings("all")
 public class IntegerModuleGetAdapter extends EObjectAdapter<IntegerModuleGet> implements org.gemoc.arduino.sequential.xarduinomt.arduino.IntegerModuleGet {
   private XArduinoMTAdaptersFactory adaptersFactory;
-  
+
   public IntegerModuleGetAdapter() {
     super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
     adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
   }
-  
+
   @Override
   public org.gemoc.arduino.sequential.xarduinomt.arduino.Module getModule() {
     return (org.gemoc.arduino.sequential.xarduinomt.arduino.Module) adaptersFactory.createAdapter(adaptee.getModule(), eResource);
   }
-  
+
   @Override
   public void setModule(final org.gemoc.arduino.sequential.xarduinomt.arduino.Module o) {
     if (o != null)
     	adaptee.setModule(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleAdapter) o).getAdaptee());
     else adaptee.setModule(null);
   }
-  
+
   @Override
   public Object evaluate() {
     return org.gemoc.arduino.sequential.xarduino.aspects.IntegerModuleGet_ExecutableAspect.evaluate(adaptee);
   }
-  
+
   @Override
   public EClass eClass() {
     return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getIntegerModuleGet();
   }
-  
+
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
@@ -45,7 +45,7 @@ public class IntegerModuleGetAdapter extends EObjectAdapter<IntegerModuleGet> im
     
     return super.eGet(featureID, resolve, coreType);
   }
-  
+
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
@@ -55,7 +55,7 @@ public class IntegerModuleGetAdapter extends EObjectAdapter<IntegerModuleGet> im
     
     return super.eIsSet(featureID);
   }
-  
+
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {

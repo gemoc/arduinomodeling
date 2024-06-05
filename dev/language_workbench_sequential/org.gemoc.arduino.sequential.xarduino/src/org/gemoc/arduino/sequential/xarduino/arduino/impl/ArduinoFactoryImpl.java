@@ -200,6 +200,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DigitalPin createDigitalPin() {
 		DigitalPinImpl digitalPin = new DigitalPinImpl();
 		return digitalPin;
@@ -210,6 +211,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnalogPin createAnalogPin() {
 		AnalogPinImpl analogPin = new AnalogPinImpl();
 		return analogPin;
@@ -220,6 +222,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Sketch createSketch() {
 		SketchImpl sketch = new SketchImpl();
 		return sketch;
@@ -230,6 +233,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Project createProject() {
 		ProjectImpl project = new ProjectImpl();
 		return project;
@@ -240,6 +244,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ModuleAssignment createModuleAssignment() {
 		ModuleAssignmentImpl moduleAssignment = new ModuleAssignmentImpl();
 		return moduleAssignment;
@@ -250,6 +255,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Delay createDelay() {
 		DelayImpl delay = new DelayImpl();
 		return delay;
@@ -260,6 +266,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Repeat createRepeat() {
 		RepeatImpl repeat = new RepeatImpl();
 		return repeat;
@@ -270,6 +277,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public While createWhile() {
 		WhileImpl while_ = new WhileImpl();
 		return while_;
@@ -280,6 +288,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public VariableAssignment createVariableAssignment() {
 		VariableAssignmentImpl variableAssignment = new VariableAssignmentImpl();
 		return variableAssignment;
@@ -290,6 +299,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BinaryIntegerExpression createBinaryIntegerExpression() {
 		BinaryIntegerExpressionImpl binaryIntegerExpression = new BinaryIntegerExpressionImpl();
 		return binaryIntegerExpression;
@@ -300,6 +310,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BinaryBooleanExpression createBinaryBooleanExpression() {
 		BinaryBooleanExpressionImpl binaryBooleanExpression = new BinaryBooleanExpressionImpl();
 		return binaryBooleanExpression;
@@ -310,6 +321,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public If createIf() {
 		IfImpl if_ = new IfImpl();
 		return if_;
@@ -320,6 +332,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerConstant createIntegerConstant() {
 		IntegerConstantImpl integerConstant = new IntegerConstantImpl();
 		return integerConstant;
@@ -330,6 +343,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanConstant createBooleanConstant() {
 		BooleanConstantImpl booleanConstant = new BooleanConstantImpl();
 		return booleanConstant;
@@ -340,6 +354,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerVariable createIntegerVariable() {
 		IntegerVariableImpl integerVariable = new IntegerVariableImpl();
 		return integerVariable;
@@ -350,6 +365,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanVariable createBooleanVariable() {
 		BooleanVariableImpl booleanVariable = new BooleanVariableImpl();
 		return booleanVariable;
@@ -360,6 +376,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanModuleGet createBooleanModuleGet() {
 		BooleanModuleGetImpl booleanModuleGet = new BooleanModuleGetImpl();
 		return booleanModuleGet;
@@ -370,6 +387,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerModuleGet createIntegerModuleGet() {
 		IntegerModuleGetImpl integerModuleGet = new IntegerModuleGetImpl();
 		return integerModuleGet;
@@ -380,6 +398,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UnaryBooleanExpression createUnaryBooleanExpression() {
 		UnaryBooleanExpressionImpl unaryBooleanExpression = new UnaryBooleanExpressionImpl();
 		return unaryBooleanExpression;
@@ -390,6 +409,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UnaryIntegerExpression createUnaryIntegerExpression() {
 		UnaryIntegerExpressionImpl unaryIntegerExpression = new UnaryIntegerExpressionImpl();
 		return unaryIntegerExpression;
@@ -400,6 +420,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public VariableDeclaration createVariableDeclaration() {
 		VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
 		return variableDeclaration;
@@ -410,6 +431,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerVariableRef createIntegerVariableRef() {
 		IntegerVariableRefImpl integerVariableRef = new IntegerVariableRefImpl();
 		return integerVariableRef;
@@ -420,6 +442,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LED createLED() {
 		LEDImpl led = new LEDImpl();
 		return led;
@@ -430,6 +453,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PushButton createPushButton() {
 		PushButtonImpl pushButton = new PushButtonImpl();
 		return pushButton;
@@ -440,6 +464,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Buzzer createBuzzer() {
 		BuzzerImpl buzzer = new BuzzerImpl();
 		return buzzer;
@@ -450,6 +475,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RotationSensor createRotationSensor() {
 		RotationSensorImpl rotationSensor = new RotationSensorImpl();
 		return rotationSensor;
@@ -460,6 +486,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MicroServo createMicroServo() {
 		MicroServoImpl microServo = new MicroServoImpl();
 		return microServo;
@@ -470,6 +497,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfraRedSensor createInfraRedSensor() {
 		InfraRedSensorImpl infraRedSensor = new InfraRedSensorImpl();
 		return infraRedSensor;
@@ -480,6 +508,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AmbientLightSensor createAmbientLightSensor() {
 		AmbientLightSensorImpl ambientLightSensor = new AmbientLightSensorImpl();
 		return ambientLightSensor;
@@ -490,6 +519,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoundSensor createSoundSensor() {
 		SoundSensorImpl soundSensor = new SoundSensorImpl();
 		return soundSensor;
@@ -500,6 +530,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Fan createFan() {
 		FanImpl fan = new FanImpl();
 		return fan;
@@ -510,6 +541,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MusicPlayer createMusicPlayer() {
 		MusicPlayerImpl musicPlayer = new MusicPlayerImpl();
 		return musicPlayer;
@@ -520,6 +552,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Block createBlock() {
 		BlockImpl block = new BlockImpl();
 		return block;
@@ -530,6 +563,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArduinoBoard createArduinoBoard() {
 		ArduinoBoardImpl arduinoBoard = new ArduinoBoardImpl();
 		return arduinoBoard;
@@ -540,6 +574,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanVariableRef createBooleanVariableRef() {
 		BooleanVariableRefImpl booleanVariableRef = new BooleanVariableRefImpl();
 		return booleanVariableRef;
@@ -550,6 +585,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BluetoothTransceiver createBluetoothTransceiver() {
 		BluetoothTransceiverImpl bluetoothTransceiver = new BluetoothTransceiverImpl();
 		return bluetoothTransceiver;
@@ -698,6 +734,7 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArduinoPackage getArduinoPackage() {
 		return (ArduinoPackage)getEPackage();
 	}
