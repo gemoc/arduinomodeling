@@ -60,6 +60,7 @@ public abstract class ModuleInstructionImpl extends InstructionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.gemoc.arduino.concurrent.xarduino.arduino.Module getModule() {
 		if (module != null && module.eIsProxy()) {
 			InternalEObject oldModule = (InternalEObject)module;
@@ -86,6 +87,7 @@ public abstract class ModuleInstructionImpl extends InstructionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module newModule) {
 		org.gemoc.arduino.concurrent.xarduino.arduino.Module oldModule = module;
 		module = newModule;

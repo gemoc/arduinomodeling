@@ -24,10 +24,6 @@ public interface Board extends NamedElement {
 	 * Returns the value of the '<em><b>Project</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.concurrent.xarduino.arduino.Project#getBoards <em>Boards</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Project</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Project</em>' container reference.
 	 * @see #setProject(Project)

@@ -39,6 +39,7 @@ public abstract class ArduinoCommunicationModuleImpl extends ArduinoAnalogModule
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void push() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

@@ -41,6 +41,7 @@ public abstract class ExpressionImpl extends EObjectImpl implements Expression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object evaluate() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

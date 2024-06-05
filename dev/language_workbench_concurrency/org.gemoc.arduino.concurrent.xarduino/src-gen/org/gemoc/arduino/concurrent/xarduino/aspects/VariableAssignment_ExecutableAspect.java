@@ -15,17 +15,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Variable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.VariableAssignment;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryBooleanExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspect;
 
 @Aspect(className = VariableAssignment.class)
 @SuppressWarnings("all")
@@ -37,12 +26,12 @@ public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableA
 	_privk3_execute(_self_, _self);
 	;
 }
-  
+
   private static void super_execute(final VariableAssignment _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_, final VariableAssignment _self) {
     final Variable variable = _self.getVariable();
     Object value = null;

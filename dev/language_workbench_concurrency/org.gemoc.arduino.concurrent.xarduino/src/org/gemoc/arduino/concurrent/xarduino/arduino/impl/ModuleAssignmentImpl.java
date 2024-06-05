@@ -63,6 +63,7 @@ public class ModuleAssignmentImpl extends ModuleInstructionImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getOperand() {
 		return operand;
 	}
@@ -87,6 +88,7 @@ public class ModuleAssignmentImpl extends ModuleInstructionImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(Expression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;

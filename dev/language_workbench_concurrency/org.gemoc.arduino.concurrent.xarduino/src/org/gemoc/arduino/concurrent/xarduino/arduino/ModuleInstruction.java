@@ -23,10 +23,6 @@ public interface ModuleInstruction extends Instruction {
 	/**
 	 * Returns the value of the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Module</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
 	 * @see #setModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module)
@@ -49,7 +45,7 @@ public interface ModuleInstruction extends Instruction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void execute();

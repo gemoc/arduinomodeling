@@ -80,6 +80,7 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Board> getBoards() {
 		if (boards == null) {
 			boards = new EObjectContainmentWithInverseEList<Board>(Board.class, this, ArduinoPackage.PROJECT__BOARDS, ArduinoPackage.BOARD__PROJECT);
@@ -92,6 +93,7 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Sketch> getSketches() {
 		if (sketches == null) {
 			sketches = new EObjectContainmentWithInverseEList<Sketch>(Sketch.class, this, ArduinoPackage.PROJECT__SKETCHES, ArduinoPackage.SKETCH__PROJECT);
@@ -104,6 +106,7 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void initializeModel(EList<String> args) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

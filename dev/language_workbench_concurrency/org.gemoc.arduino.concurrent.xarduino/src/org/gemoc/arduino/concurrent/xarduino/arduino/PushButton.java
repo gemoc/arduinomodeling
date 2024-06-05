@@ -23,15 +23,12 @@ public interface PushButton extends ArduinoDigitalModule {
 	/**
 	 * Returns the value of the '<em><b>Is Pushed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Pushed</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Pushed</em>' attribute.
 	 * @see #setIsPushed(boolean)
 	 * @see org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage#getPushButton_IsPushed()
 	 * @model unique="false"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	boolean isIsPushed();
@@ -49,7 +46,7 @@ public interface PushButton extends ArduinoDigitalModule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	void toggle();

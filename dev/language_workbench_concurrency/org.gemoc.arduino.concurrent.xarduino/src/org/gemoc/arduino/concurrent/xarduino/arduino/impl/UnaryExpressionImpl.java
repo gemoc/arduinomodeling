@@ -62,6 +62,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getOperand() {
 		return operand;
 	}
@@ -86,6 +87,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(Expression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;

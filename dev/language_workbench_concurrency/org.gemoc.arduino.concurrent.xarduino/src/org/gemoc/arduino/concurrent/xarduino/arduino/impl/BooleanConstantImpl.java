@@ -69,6 +69,7 @@ public class BooleanConstantImpl extends ConstantImpl implements BooleanConstant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class BooleanConstantImpl extends ConstantImpl implements BooleanConstant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(boolean newValue) {
 		boolean oldValue = value;
 		value = newValue;

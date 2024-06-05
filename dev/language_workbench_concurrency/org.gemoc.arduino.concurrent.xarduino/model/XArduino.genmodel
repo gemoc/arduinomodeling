@@ -177,10 +177,10 @@
         <ecoreFeature xsi:type="ecore:EReference" href="XArduino.ecore#//Control/block"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="XArduino.ecore#//Control/execute"/>
+        <ecoreOperation href="XArduino.ecore#//Control/evaluate"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="XArduino.ecore#//Control/evaluate"/>
+        <ecoreOperation href="XArduino.ecore#//Control/execute"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">

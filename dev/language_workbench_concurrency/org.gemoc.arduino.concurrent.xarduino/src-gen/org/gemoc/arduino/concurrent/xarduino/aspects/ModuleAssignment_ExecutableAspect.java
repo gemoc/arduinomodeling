@@ -14,18 +14,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ModuleAssignment;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryBooleanExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BluetoothTransceiver_PushAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties;
-import org.gemoc.arduino.concurrent.xarduino.aspects.ModuleInstruction_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspect;
 
 @Aspect(className = ModuleAssignment.class)
 @SuppressWarnings("all")
@@ -37,12 +25,12 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
 	_privk3_execute(_self_, _self);
 	;
 }
-  
+
   private static void super_execute(final ModuleAssignment _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.ModuleInstruction_ExecutableAspectModuleInstructionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.ModuleInstruction_ExecutableAspectModuleInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.concurrent.xarduino.aspects.ModuleInstruction_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties _self_, final ModuleAssignment _self) {
     final Pin pin = Module_UtilitiesAspect.getPin(_self.getModule());
     Object value = null;

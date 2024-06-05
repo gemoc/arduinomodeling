@@ -7,10 +7,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanVariable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Variable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.VariableDeclaration;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties;
 
 @Aspect(className = VariableDeclaration.class)
 @SuppressWarnings("all")
@@ -22,12 +18,12 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
 	_privk3_execute(_self_, _self);
 	;
 }
-  
+
   private static void super_execute(final VariableDeclaration _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspectInstructionAspectContext.getSelf(_self);
      org.gemoc.arduino.concurrent.xarduino.aspects.Instruction_ExecutableAspect._privk3_execute(_self_, _self);
   }
-  
+
   protected static void _privk3_execute(final VariableDeclaration_ExecutableAspectVariableDeclarationAspectProperties _self_, final VariableDeclaration _self) {
     InputOutput.<String>println(_self.getVariable().eClass().getName());
     Variable _variable = _self.getVariable();

@@ -84,6 +84,7 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<BluetoothTransceiver> getConnectedTransceiver() {
 		if (connectedTransceiver == null) {
 			connectedTransceiver = new EObjectResolvingEList<BluetoothTransceiver>(BluetoothTransceiver.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
@@ -96,6 +97,7 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Integer> getDataToSend() {
 		if (dataToSend == null) {
 			dataToSend = new EDataTypeEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_TO_SEND);
@@ -108,6 +110,7 @@ public class BluetoothTransceiverImpl extends ArduinoCommunicationModuleImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Integer> getDataReceived() {
 		if (dataReceived == null) {
 			dataReceived = new EDataTypeEList<Integer>(Integer.class, this, ArduinoPackage.BLUETOOTH_TRANSCEIVER__DATA_RECEIVED);

@@ -4,9 +4,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.PushButton;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties;
 
 @Aspect(className = PushButton.class)
 @SuppressWarnings("all")
@@ -17,7 +14,7 @@ public abstract class PushButton_ToggleAspect {
 	_privk3_toggle(_self_, _self);
 	;
 }
-  
+
   public static boolean isPushed(final PushButton _self) {
 	final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext
 			.getSelf(_self);
@@ -26,14 +23,14 @@ public abstract class PushButton_ToggleAspect {
 	;
 	return (boolean) result;
 }
-  
+
   public static void isPushed(final PushButton _self, final boolean isPushed) {
 	final org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspectPushButtonAspectContext
 			.getSelf(_self);
 	_privk3_isPushed(_self_, _self, isPushed);
 	;
 }
-  
+
   protected static void _privk3_toggle(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self) {
     InputOutput.<String>println("xtend toggle() call !!!");
     boolean _isPushed = PushButton_ToggleAspect.isPushed(_self);
@@ -47,7 +44,7 @@ public abstract class PushButton_ToggleAspect {
       Pin_EvaluableAspect.level(pin, Pin_EvaluableAspect.LOW);
     }
   }
-  
+
   protected static boolean _privk3_isPushed(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
@@ -63,7 +60,7 @@ public abstract class PushButton_ToggleAspect {
     }
     return _self_.isPushed;
   }
-  
+
   protected static void _privk3_isPushed(final PushButton_ToggleAspectPushButtonAspectProperties _self_, final PushButton _self, final boolean isPushed) {
     boolean setterCalled = false;
     try {

@@ -62,6 +62,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.gemoc.arduino.concurrent.xarduino.arduino.Module getModule() {
 		if (module != null && module.eIsProxy()) {
 			InternalEObject oldModule = (InternalEObject)module;
@@ -88,6 +89,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModule(org.gemoc.arduino.concurrent.xarduino.arduino.Module newModule) {
 		org.gemoc.arduino.concurrent.xarduino.arduino.Module oldModule = module;
 		module = newModule;
@@ -100,6 +102,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void execute() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -111,6 +114,7 @@ public abstract class ModuleGetImpl extends ExpressionImpl implements ModuleGet 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void finalize() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

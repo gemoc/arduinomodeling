@@ -25,10 +25,6 @@ public interface LED extends ArduinoDigitalModule {
 	 * The default value is <code>"blue"</code>.
 	 * The literals are from the enumeration {@link org.gemoc.arduino.concurrent.xarduino.arduino.Color}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Color</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Color</em>' attribute.
 	 * @see org.gemoc.arduino.concurrent.xarduino.arduino.Color

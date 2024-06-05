@@ -5,10 +5,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.gemoc.arduino.concurrent.xarduino.arduino.BooleanVariableRef;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
 import org.gemoc.arduino.concurrent.xarduino.arduino.VariableRef;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspectVariableRefAspectProperties;
 
 @Aspect(className = VariableRef.class)
 @SuppressWarnings("all")
@@ -22,12 +18,12 @@ public class VariableRef_EvaluableAspect extends Expression_EvaluableAspect {
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final VariableRef _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final VariableRef_EvaluableAspectVariableRefAspectProperties _self_, final VariableRef _self) {
     boolean _matched = false;
     if (_self instanceof BooleanVariableRef) {

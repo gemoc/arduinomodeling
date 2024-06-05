@@ -12,7 +12,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.Board;
 import org.gemoc.arduino.concurrent.xarduino.arduino.DigitalPin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectProperties;
 
 @Aspect(className = org.gemoc.arduino.concurrent.xarduino.arduino.Module.class)
 @SuppressWarnings("all")
@@ -26,7 +25,7 @@ public class Module_UtilitiesAspect {
     };
     return (org.gemoc.arduino.concurrent.xarduino.arduino.Project)result;
   }
-  
+
   protected static Pin getPin(final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspectModuleAspectContext.getSelf(_self);
     Object result = null;
@@ -36,7 +35,7 @@ public class Module_UtilitiesAspect {
     };
     return (org.gemoc.arduino.concurrent.xarduino.arduino.Pin)result;
   }
-  
+
   protected static Project _privk3_getProject(final Module_UtilitiesAspectModuleAspectProperties _self_, final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     Project project = null;
     EObject current = _self.eContainer();
@@ -51,7 +50,7 @@ public class Module_UtilitiesAspect {
     }
     return project;
   }
-  
+
   protected static Pin _privk3_getPin(final Module_UtilitiesAspectModuleAspectProperties _self_, final org.gemoc.arduino.concurrent.xarduino.arduino.Module _self) {
     Pin pin = null;
     final Project project = Module_UtilitiesAspect.getProject(_self);

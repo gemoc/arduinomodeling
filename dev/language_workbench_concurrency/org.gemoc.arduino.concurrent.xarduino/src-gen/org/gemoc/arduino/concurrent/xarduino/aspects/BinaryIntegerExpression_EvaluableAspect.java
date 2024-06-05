@@ -12,14 +12,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.Expression;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerConstant;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariableRef;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryBooleanExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryExpression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerConstant_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerModuleGet_ExecutableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.VariableRef_EvaluableAspect;
 
 @Aspect(className = BinaryIntegerExpression.class, with = { BinaryExpression_EvaluableAspect.class })
 @SuppressWarnings("all")
@@ -33,12 +25,12 @@ public class BinaryIntegerExpression_EvaluableAspect extends BinaryExpression_Ev
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final BinaryIntegerExpression _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final BinaryIntegerExpression_EvaluableAspectBinaryIntegerExpressionAspectProperties _self_, final BinaryIntegerExpression _self) {
     Integer res = null;
     boolean bLeft = false;

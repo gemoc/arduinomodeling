@@ -3,7 +3,6 @@ package org.gemoc.arduino.concurrent.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoCommunicationModule;
-import org.gemoc.arduino.concurrent.xarduino.aspects.ArduinoCommunicationModule_PushAspectArduinoCommunicationModuleAspectProperties;
 
 @Aspect(className = ArduinoCommunicationModule.class)
 @SuppressWarnings("all")
@@ -24,7 +23,7 @@ public abstract class ArduinoCommunicationModule_PushAspect {
 	}
 	;
 }
-  
+
   protected static void _privk3_push(final ArduinoCommunicationModule_PushAspectArduinoCommunicationModuleAspectProperties _self_, final ArduinoCommunicationModule _self) {
     throw new java.lang.RuntimeException("Not implemented");
   }

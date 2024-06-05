@@ -62,6 +62,7 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Block getBlock() {
 		return block;
 	}
@@ -86,6 +87,7 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBlock(Block newBlock) {
 		if (newBlock != block) {
 			NotificationChain msgs = null;
@@ -105,6 +107,7 @@ public abstract class ControlImpl extends InstructionImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean evaluate() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

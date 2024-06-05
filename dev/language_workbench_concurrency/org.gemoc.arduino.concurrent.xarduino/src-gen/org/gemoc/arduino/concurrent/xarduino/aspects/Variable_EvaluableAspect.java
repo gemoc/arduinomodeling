@@ -3,7 +3,6 @@ package org.gemoc.arduino.concurrent.xarduino.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Variable;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Variable_EvaluableAspectVariableAspectProperties;
 
 @Aspect(className = Variable.class)
 @SuppressWarnings("all")
@@ -29,7 +28,7 @@ public abstract class Variable_EvaluableAspect {
 	;
 	return (java.lang.Object) result;
 }
-  
+
   protected static Object _privk3_evaluate(final Variable_EvaluableAspectVariableAspectProperties _self_, final Variable _self) {
     throw new java.lang.RuntimeException("Not implemented");
   }

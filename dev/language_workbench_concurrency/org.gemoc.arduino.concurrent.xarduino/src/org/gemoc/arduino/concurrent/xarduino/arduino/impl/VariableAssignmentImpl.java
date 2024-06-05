@@ -75,6 +75,7 @@ public class VariableAssignmentImpl extends InstructionImpl implements VariableA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getOperand() {
 		return operand;
 	}
@@ -99,6 +100,7 @@ public class VariableAssignmentImpl extends InstructionImpl implements VariableA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(Expression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;
@@ -118,6 +120,7 @@ public class VariableAssignmentImpl extends InstructionImpl implements VariableA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Variable getVariable() {
 		if (variable != null && variable.eIsProxy()) {
 			InternalEObject oldVariable = (InternalEObject)variable;
@@ -144,6 +147,7 @@ public class VariableAssignmentImpl extends InstructionImpl implements VariableA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(Variable newVariable) {
 		Variable oldVariable = variable;
 		variable = newVariable;

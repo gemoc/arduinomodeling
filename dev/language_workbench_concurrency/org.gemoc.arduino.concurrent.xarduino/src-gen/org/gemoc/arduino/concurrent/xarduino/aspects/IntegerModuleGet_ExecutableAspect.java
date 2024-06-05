@@ -6,11 +6,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.gemoc.arduino.concurrent.xarduino.arduino.BluetoothTransceiver;
 import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerModuleGet;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BluetoothTransceiver_PushAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerModuleGet_ExecutableAspectIntegerModuleGetAspectProperties;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Module_UtilitiesAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspect;
 
 @Aspect(className = IntegerModuleGet.class)
 @SuppressWarnings("all")
@@ -24,12 +19,12 @@ public class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspec
 	;
 	return (java.lang.Object) result;
 }
-  
+
   private static Object super_evaluate(final IntegerModuleGet _self) {
     final org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspectExpressionAspectContext.getSelf(_self);
     return  org.gemoc.arduino.concurrent.xarduino.aspects.Expression_EvaluableAspect._privk3_evaluate(_self_, _self);
   }
-  
+
   protected static Object _privk3_evaluate(final IntegerModuleGet_ExecutableAspectIntegerModuleGetAspectProperties _self_, final IntegerModuleGet _self) {
     org.gemoc.arduino.concurrent.xarduino.arduino.Module _module = _self.getModule();
     if ((_module instanceof BluetoothTransceiver)) {

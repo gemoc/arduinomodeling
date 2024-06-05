@@ -61,6 +61,7 @@ public class BooleanVariableRefImpl extends VariableRefImpl implements BooleanVa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanVariable getVariable() {
 		if (variable != null && variable.eIsProxy()) {
 			InternalEObject oldVariable = (InternalEObject)variable;
@@ -87,6 +88,7 @@ public class BooleanVariableRefImpl extends VariableRefImpl implements BooleanVa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(BooleanVariable newVariable) {
 		BooleanVariable oldVariable = variable;
 		variable = newVariable;

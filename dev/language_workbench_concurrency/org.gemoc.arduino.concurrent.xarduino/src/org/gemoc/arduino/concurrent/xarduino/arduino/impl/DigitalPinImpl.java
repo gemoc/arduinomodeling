@@ -62,6 +62,7 @@ public class DigitalPinImpl extends PinImpl implements DigitalPin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArduinoDigitalModule getModule() {
 		return module;
 	}
@@ -86,6 +87,7 @@ public class DigitalPinImpl extends PinImpl implements DigitalPin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModule(ArduinoDigitalModule newModule) {
 		if (newModule != module) {
 			NotificationChain msgs = null;

@@ -69,6 +69,7 @@ public abstract class PinImpl extends NamedElementImpl implements Pin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getLevel() {
 		return level;
 	}
@@ -78,6 +79,7 @@ public abstract class PinImpl extends NamedElementImpl implements Pin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLevel(Integer newLevel) {
 		Integer oldLevel = level;
 		level = newLevel;

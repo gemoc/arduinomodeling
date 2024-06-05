@@ -11,11 +11,6 @@ import org.gemoc.arduino.concurrent.xarduino.arduino.IntegerVariable;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Project;
 import org.gemoc.arduino.concurrent.xarduino.arduino.PushButton;
-import org.gemoc.arduino.concurrent.xarduino.aspects.BooleanVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.IntegerVariable_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspect;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspectProjectAspectProperties;
-import org.gemoc.arduino.concurrent.xarduino.aspects.PushButton_ToggleAspect;
 
 @Aspect(className = Project.class)
 @SuppressWarnings("all")
@@ -28,7 +23,7 @@ public class Project_ExecutableAspect {
     	org.gemoc.arduino.concurrent.xarduino.aspects.Project_ExecutableAspect._privk3_initializeModel(_self_, (org.gemoc.arduino.concurrent.xarduino.arduino.Project)_self,args);
     };
   }
-  
+
   protected static void _privk3_initializeModel(final Project_ExecutableAspectProjectAspectProperties _self_, final Project _self, final EList<String> args) {
     final Procedure1<EObject> _function = (EObject o) -> {
       if ((o instanceof IntegerVariable)) {

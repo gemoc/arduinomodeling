@@ -70,6 +70,7 @@ public class UnaryIntegerExpressionImpl extends UnaryExpressionImpl implements U
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UnaryIntegerOperatorKind getOperator() {
 		return operator;
 	}
@@ -79,6 +80,7 @@ public class UnaryIntegerExpressionImpl extends UnaryExpressionImpl implements U
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperator(UnaryIntegerOperatorKind newOperator) {
 		UnaryIntegerOperatorKind oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;

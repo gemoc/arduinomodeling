@@ -42,4 +42,3 @@ Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.gemoc.arduino.concurrent.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-

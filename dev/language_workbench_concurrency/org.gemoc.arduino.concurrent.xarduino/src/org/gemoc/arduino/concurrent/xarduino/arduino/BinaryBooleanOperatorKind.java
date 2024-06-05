@@ -101,10 +101,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Inf</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Inf</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INF
 	 * @model name="inf"
@@ -116,10 +112,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Sup</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sup</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUP
 	 * @model name="sup"
@@ -131,10 +123,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Inf Or Equal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Inf Or Equal</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INF_OR_EQUAL
 	 * @model name="infOrEqual"
@@ -146,10 +134,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Sup Or Equal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sup Or Equal</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUP_OR_EQUAL
 	 * @model name="supOrEqual"
@@ -161,10 +145,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Equal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Equal</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EQUAL
 	 * @model name="equal"
@@ -176,10 +156,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>And</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>And</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #AND
 	 * @model name="and"
@@ -191,10 +167,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Or</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Or</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OR
 	 * @model name="or"
@@ -206,10 +178,6 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Different</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Different</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DIFFERENT
 	 * @model name="Different"
@@ -340,6 +308,7 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -349,6 +318,7 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -358,6 +328,7 @@ public enum BinaryBooleanOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

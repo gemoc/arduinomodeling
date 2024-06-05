@@ -70,6 +70,7 @@ public class UnaryBooleanExpressionImpl extends UnaryExpressionImpl implements U
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UnaryBooleanOperatorKind getOperator() {
 		return operator;
 	}
@@ -79,6 +80,7 @@ public class UnaryBooleanExpressionImpl extends UnaryExpressionImpl implements U
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperator(UnaryBooleanOperatorKind newOperator) {
 		UnaryBooleanOperatorKind oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;

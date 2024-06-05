@@ -5,7 +5,17 @@
     <!-- @generated XArduino -->
     <package uri="http://org.gemoc.arduino.concurrent.xarduino/arduino/" class="org.gemoc.arduino.concurrent.xarduino.arduino.ArduinoPackage" genModel="model/XArduino.genmodel" />
   </extension>
-  <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition name="org.gemoc.arduino.concurrent.XArduino" xdsmlFilePath="platform:/plugin/org.gemoc.arduino.concurrent.xarduino/XArduino.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.xdsml">
+    <XDSML_Definition name="org.gemoc.arduino.concurrent.XArduino" xdsmlFilePath="/org.gemoc.arduino.concurrent.xarduino/XArduino.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  </extension>
+  <extension
+        point="org.eclipse.gemoc.gemoc_language_workbench.moccml.xdsml.addition">
+     <MOCCML_XDSML_Addition
+           name="org.gemoc.arduino.concurrent.XArduino"
+           referencedXDSMLName="org.gemoc.arduino.concurrent.XArduino"
+            solver_class="org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver"
+            toCCSLQVTOFilePath="/org.gemoc.arduino.concurrent.moc.dse/qvto-gen/modeling/arduinoML.qvto"
+            codeExecutor_class="sigpml.xdsml.api.impl.SigPMLCodeExecutor" >
+     </MOCCML_XDSML_Addition>
   </extension>
 </plugin>

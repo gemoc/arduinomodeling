@@ -18,6 +18,7 @@ public interface IntegerModuleGet extends ModuleGet, IntegerExpression {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.gemoc.arduino.concurrent.xarduino.arduino.Object"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	Object evaluate();

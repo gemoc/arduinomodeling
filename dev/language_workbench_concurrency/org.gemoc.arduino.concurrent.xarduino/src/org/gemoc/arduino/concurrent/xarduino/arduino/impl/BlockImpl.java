@@ -68,6 +68,7 @@ public class BlockImpl extends EObjectImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Instruction> getInstructions() {
 		if (instructions == null) {
 			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, ArduinoPackage.BLOCK__INSTRUCTIONS);

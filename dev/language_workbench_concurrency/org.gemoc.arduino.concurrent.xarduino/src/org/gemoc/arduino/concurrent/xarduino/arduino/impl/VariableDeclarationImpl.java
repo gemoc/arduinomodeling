@@ -62,6 +62,7 @@ public class VariableDeclarationImpl extends InstructionImpl implements Variable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Variable getVariable() {
 		return variable;
 	}
@@ -86,6 +87,7 @@ public class VariableDeclarationImpl extends InstructionImpl implements Variable
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(Variable newVariable) {
 		if (newVariable != variable) {
 			NotificationChain msgs = null;

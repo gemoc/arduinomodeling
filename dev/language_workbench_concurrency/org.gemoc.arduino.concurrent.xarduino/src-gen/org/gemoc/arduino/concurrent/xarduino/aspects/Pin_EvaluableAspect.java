@@ -2,15 +2,14 @@ package org.gemoc.arduino.concurrent.xarduino.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.arduino.concurrent.xarduino.arduino.Pin;
-import org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspectPinAspectProperties;
 
 @Aspect(className = Pin.class)
 @SuppressWarnings("all")
 public class Pin_EvaluableAspect {
-  public final static Integer LOW = Integer.valueOf(0);
-  
-  public final static Integer HIGH = Integer.valueOf(1023);
-  
+  public static final Integer LOW = Integer.valueOf(0);
+
+  public static final Integer HIGH = Integer.valueOf(1023);
+
   public static Integer level(final Pin _self) {
 	final org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspectPinAspectContext
 			.getSelf(_self);
@@ -19,14 +18,14 @@ public class Pin_EvaluableAspect {
 	;
 	return (java.lang.Integer) result;
 }
-  
+
   public static void level(final Pin _self, final Integer level) {
 	final org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = org.gemoc.arduino.concurrent.xarduino.aspects.Pin_EvaluableAspectPinAspectContext
 			.getSelf(_self);
 	_privk3_level(_self_, _self, level);
 	;
 }
-  
+
   protected static Integer _privk3_level(final Pin_EvaluableAspectPinAspectProperties _self_, final Pin _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
@@ -36,8 +35,8 @@ public class Pin_EvaluableAspect {
     				if (ret != null) {
     					return (java.lang.Integer) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {
@@ -45,7 +44,7 @@ public class Pin_EvaluableAspect {
     }
     return _self_.level;
   }
-  
+
   protected static void _privk3_level(final Pin_EvaluableAspectPinAspectProperties _self_, final Pin _self, final Integer level) {
     boolean setterCalled = false;
     try {

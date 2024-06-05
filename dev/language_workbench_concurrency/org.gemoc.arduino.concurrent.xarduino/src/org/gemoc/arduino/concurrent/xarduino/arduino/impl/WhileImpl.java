@@ -62,6 +62,7 @@ public class WhileImpl extends ControlImpl implements While {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanExpression getCondition() {
 		return condition;
 	}
@@ -86,6 +87,7 @@ public class WhileImpl extends ControlImpl implements While {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(BooleanExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;

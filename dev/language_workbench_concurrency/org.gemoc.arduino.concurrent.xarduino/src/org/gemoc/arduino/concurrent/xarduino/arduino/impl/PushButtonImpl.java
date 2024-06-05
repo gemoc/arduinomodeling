@@ -69,6 +69,7 @@ public class PushButtonImpl extends ArduinoDigitalModuleImpl implements PushButt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsPushed() {
 		return isPushed;
 	}
@@ -78,6 +79,7 @@ public class PushButtonImpl extends ArduinoDigitalModuleImpl implements PushButt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsPushed(boolean newIsPushed) {
 		boolean oldIsPushed = isPushed;
 		isPushed = newIsPushed;
@@ -90,6 +92,7 @@ public class PushButtonImpl extends ArduinoDigitalModuleImpl implements PushButt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void toggle() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

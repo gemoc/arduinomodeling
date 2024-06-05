@@ -26,10 +26,6 @@ public interface Sketch extends NamedElement {
 	 * Returns the value of the '<em><b>Project</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gemoc.arduino.concurrent.xarduino.arduino.Project#getSketches <em>Sketches</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Project</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Project</em>' container reference.
 	 * @see #setProject(Project)
@@ -53,10 +49,6 @@ public interface Sketch extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Block</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Block</em>' containment reference.
 	 * @see #setBlock(Block)
@@ -79,10 +71,6 @@ public interface Sketch extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Board</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Board</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Board</em>' reference.
 	 * @see #setBoard(Board)

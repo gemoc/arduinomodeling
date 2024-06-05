@@ -91,10 +91,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Minus</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Minus</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MINUS
 	 * @model name="minus"
@@ -106,10 +102,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Plus</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Plus</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PLUS
 	 * @model name="plus"
@@ -121,10 +113,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Mul</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Mul</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MUL
 	 * @model name="mul"
@@ -136,10 +124,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Div</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Div</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DIV
 	 * @model name="div"
@@ -151,10 +135,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Min</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Min</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MIN
 	 * @model name="min"
@@ -166,10 +146,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Max</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Max</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MAX
 	 * @model name="max"
@@ -181,10 +157,6 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	/**
 	 * The '<em><b>Pourcent</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Pourcent</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POURCENT
 	 * @model name="pourcent"
@@ -313,6 +285,7 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -322,6 +295,7 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -331,6 +305,7 @@ public enum BinaryIntegerOperatorKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}
